@@ -1,0 +1,32 @@
+// Copy to config.js
+
+const config = {
+    // To configure CORS headers
+    frontend: {
+      url: 'http://localhost',
+      port: 8080,
+    },
+    // Express port
+    app: {
+        port: 3000,
+    },
+    // PostgreSQL DB
+    db: {
+        host: 'localhost',
+        port: 5432,
+        name: 'gbf',
+        user: 'pguser',
+        password: '',
+        // Absolute path where the version file of the DB is
+        versionFile: '/db.version',
+    },
+    jwt: {
+      // 512 bits key minimum.
+      // https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
+      secret: 'my secret secret',
+      BCRYPT_SALT_ROUNDS: 12,
+      secureCookie: true,
+    }
+};
+
+module.exports = config;

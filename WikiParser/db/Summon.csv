@@ -1,0 +1,268 @@
+2030000	Tiamat	ティアマト	3	3	1	1	\N	\N	160	970	\N	\N	63	404	\N	\N	\N
+2030001	Colossus	コロッサス	3	3	1	0	\N	\N	165	990	\N	\N	63	410	\N	\N	\N
+2030002	Proto Bahamut	プロトバハムート	3	3	1	5	\N	\N	160	1000	\N	\N	60	380	\N	\N	\N
+2030003	Griffin	グリフォン	3	3	1	1	1000	\N	215	1250	\N	\N	82	497	\N	\N	\N
+2030005	Golem	ゴーレム	3	3	1	2	1000	\N	165	1025	\N	\N	96	569	\N	\N	\N
+2030006	Hydra	ヒドラ	3	3	1	0	1000	\N	210	1285	\N	\N	80	530	\N	\N	\N
+2030007	Wyvern	ワイバーン	3	3	1	1	1000	\N	230	1360	\N	\N	85	515	\N	\N	\N
+2030008	Myconid	マイコニド	3	3	1	2	1000	\N	185	1115	\N	\N	88	524	\N	\N	\N
+2030009	Hellhound	ヘルハウンド	3	3	1	0	1000	\N	220	1280	\N	\N	83	505	\N	\N	\N
+2030010	Doomworm	グレイブディガー	3	3	1	2	1000	\N	185	1140	\N	\N	90	533	\N	\N	\N
+2030011	Leviathan	リヴァイアサン	3	3	1	3	\N	\N	150	985	\N	\N	86	420	\N	\N	\N
+2030012	Basilisk	バジリスク	3	3	1	5	\N	2014-09-27	240	1350	\N	\N	81	503	\N	\N	\N
+2030013	Machina Soldier MK II	機械兵・改	3	3	1	0	\N	\N	180	1100	\N	\N	93	551	\N	\N	\N
+2030015	Yggdrasil	ユグドラシル	3	3	1	2	\N	\N	155	1005	\N	\N	86	425	\N	\N	\N
+2030016	Peridot Carbuncle	カーバンクル・ペリドット	3	3	1	1	\N	\N	150	950	\N	\N	60	380	\N	\N	\N
+2030018	Hitodama	たゆたう焔魂	3	3	1	0	\N	2014-03-31	160	960	\N	\N	61	397	\N	\N	\N
+2030019	Wilinus Icewyrm	氷竜ウィリヌス	3	3	1	3	1000	2014-03-31	215	1340	\N	\N	88	516	\N	\N	\N
+2030020	Elmenhilde Windsprite	風霊エルメンヒルデ	3	3	1	1	1000	2014-03-31	215	1270	\N	\N	87	530	\N	\N	\N
+2030021	Aquamarine Carbuncle	カーバンクル・アクアマリン	3	3	1	3	1000	2014-04-16	205	1280	\N	\N	88	516	\N	\N	\N
+2030022	Vrazarek Firewyrm	火竜ヴレッザレク	3	3	1	0	1000	2014-04-30	235	1365	\N	\N	84	514	\N	\N	\N
+2030023	Stone Golem	ストーンゴーレム	3	3	1	2	1000	2014-04-30	180	1120	\N	\N	92	550	\N	\N	\N
+2030024	Zircon Carbuncle	カーバンクル・ジルコン	3	3	1	2	1000	2015-05-14	210	1285	\N	\N	87	517	\N	\N	\N
+2030025	Ruination Gargoyle	ルインガーゴイル	3	3	1	2	1000	2014-05-31	245	1490	\N	\N	76	449	\N	\N	\N
+2030026	White Rabbit	ホワイトラビット	3	3	1	4	\N	\N	155	965	\N	\N	61	386	\N	\N	\N
+2030028	Pixie	ピクシー	3	3	1	4	1000	2014-05-31	225	1365	\N	\N	80	474	\N	\N	\N
+2030029	Anneliefe	アニーリーフ	3	3	1	0	\N	2014-09-27	205	1170	\N	\N	88	540	\N	\N	\N
+2030031	Garnet Carbuncle	カーバンクル・ガーネット	3	3	1	0	1000	2014-06-17	225	1300	\N	\N	84	514	\N	\N	\N
+2030032	Luminiera	シュヴァリエ	3	3	1	4	\N	\N	160	1010	\N	\N	64	424	\N	\N	\N
+2030033	Elusious Windwyrm	風竜イールシアス	3	3	1	1	1000	2014-06-30	235	1385	\N	\N	86	524	\N	\N	\N
+2030034	Angelie Cascade	カスケードジェリー	3	3	1	3	1000	2014-06-30	220	1385	\N	\N	85	495	\N	\N	\N
+2030039	Onyx Carbuncle	カーバンクル・オニキス	3	3	1	5	1000	2014-07-31	235	1310	\N	\N	82	512	\N	\N	\N
+2030040	Nopal	カクターマン	3	3	1	3	\N	\N	185	1150	\N	\N	92	536	\N	\N	\N
+2030041	Celeste	セレスト	3	3	1	5	\N	\N	180	1030	\N	\N	60	420	\N	\N	\N
+2030042	Opal Carbuncle	カーバンクル・オパール	3	3	1	4	1000	2014-08-31	215	1290	\N	\N	86	516	\N	\N	\N
+2030051	Belle Sylphid	シルフィードベル	3	3	1	1	\N	\N	140	865	\N	\N	67	433	\N	\N	\N
+2030062	Tiamat Alter	嵐竜のティアマト	3	3	1	1	\N	\N	145	870	\N	\N	57	364	\N	\N	\N
+2030063	Colossus Alter	機炎のコロッサス	3	3	1	0	\N	\N	150	890	\N	\N	56	369	\N	\N	\N
+2030064	Leviathan Alter	海神のリヴァイアサン	3	3	1	3	\N	\N	135	885	\N	\N	61	378	\N	\N	\N
+2030065	Yggdrasil Alter	創樹のユグドラシル	3	3	1	2	\N	\N	140	905	\N	\N	62	382	\N	\N	\N
+2030066	Luminiera Alter	騎解のシュヴァリエ	3	3	1	4	\N	\N	145	910	\N	\N	58	381	\N	\N	\N
+2030067	Celeste Alter	黒霧のセレスト	3	3	1	5	\N	\N	160	930	\N	\N	54	377	\N	\N	\N
+2030068	Diantha	ディアンサ	1	1	1	3	\N	2016-02-29	100	657	\N	\N	45	280	\N	\N	\N
+2030069	Linaria	リナリア	1	1	1	5	\N	2016-02-29	120	687	\N	\N	40	280	\N	\N	\N
+2030070	Harie	ハリエ	1	1	1	0	\N	2016-02-29	110	660	\N	\N	42	273	\N	\N	\N
+2030071	Canna	カンナ	1	1	1	1	\N	2016-02-29	107	647	\N	\N	42	269	\N	\N	\N
+2030072	Diola	ジオラ	1	1	1	2	\N	2016-02-29	103	670	\N	\N	45	283	\N	\N	\N
+2030073	Ruby Carbuncle	紅玉のカーバンクル	3	3	1	0	\N	\N	140	860	\N	\N	53	338	\N	\N	\N
+2030074	Sapphire Carbuncle	藍玉のカーバンクル	3	3	1	3	\N	\N	120	840	\N	\N	57	342	\N	\N	\N
+2030075	Amber Carbuncle	琥珀のカーバンクル	3	3	1	2	\N	\N	125	845	\N	\N	56	341	\N	\N	\N
+2030076	Jade Carbuncle	翠玉のカーバンクル	3	3	1	1	\N	\N	135	855	\N	\N	54	339	\N	\N	\N
+2030077	Moonlight Carbuncle	月白のカーバンクル	3	3	1	4	\N	\N	130	850	\N	\N	55	340	\N	\N	\N
+2030078	Obsidian Carbuncle	黒玉のカーバンクル	3	3	1	5	\N	\N	150	870	\N	\N	51	336	\N	\N	\N
+2030079	Black Rabbit	ブラックラビット	3	3	1	5	\N	\N	155	965	\N	\N	61	386	\N	\N	\N
+2030080	Clay Golem	クレイゴーレム	3	3	1	2	1000	2017-02-25	190	1300	\N	\N	92	530	\N	\N	\N
+2030081	Justice	ジャスティス	3	3	1	3	\N	2017-11-29	170	1120	\N	\N	77	475	\N	\N	\N
+2030085	The Hanged Man	ザ・ハングドマン	3	3	1	2	\N	2017-11-29	185	1180	\N	\N	73	452	\N	\N	\N
+2030089	Death	デス	3	3	1	5	\N	2017-11-29	210	1205	\N	\N	71	469	\N	\N	\N
+2030093	Temperance	テンペランス	3	3	1	1	\N	2017-11-29	185	1135	\N	\N	74	472	\N	\N	\N
+2030097	The Devil	ザ・デビル	3	3	1	0	\N	2017-11-29	190	1140	\N	\N	73	471	\N	\N	\N
+2030101	The Tower	ザ・タワー	3	3	1	2	\N	2017-11-29	174	1125	\N	\N	76	474	\N	\N	\N
+2030105	The Star	ザ・スター	3	3	1	4	\N	2017-11-29	190	1185	\N	\N	75	473	\N	\N	\N
+2030109	The Moon	ザ・ムーン	3	3	1	3	\N	2017-11-29	180	1175	\N	\N	74	453	\N	\N	\N
+2030113	The Sun	ザ・サン	3	3	1	0	\N	2017-11-29	200	1195	\N	\N	70	449	\N	\N	\N
+2030117	Judgement	ジャッジメント	3	3	1	1	\N	2017-11-29	195	1190	\N	\N	71	450	\N	\N	\N
+2040001	Satan	サタン	3	3	2	5	1000	\N	415	2390	\N	\N	115	710	\N	\N	\N
+2040002	Macula Marius (Summon)	マキュラ・マリウス	3	4	2	3	1000	\N	305	1880	2270	\N	135	796	960	\N	\N
+2040003	Bahamut	バハムート	3	5	2	5	1600	2014-04-30	380	2160	3050	3495	140	850	1210	1390	{"0":[{"percent":100,"element":"dark","aura_type":"elemental","stat":"atk"}],"3":[{"percent":120,"element":"dark","aura_type":"elemental","stat":"atk"}],"4":[{"percent":130,"element":"dark","aura_type":"elemental","stat":"atk"}],"5":[{"percent":150,"element":"dark","aura_type":"elemental","stat":"atk"}]}
+2040004	Vortex Dragon	雷霆公	3	4	2	4	1000	\N	330	1985	2400	\N	126	756	910	\N	\N
+2040005	Dark Angel Olivia	Dエンジェル・オリヴィエ	3	4	2	5	1000	\N	335	2000	2420	\N	128	770	930	\N	\N
+2040006	Anat	アナト	3	3	2	1	\N	2014-09-27	320	1940	\N	\N	132	784	\N	\N	{"0":[{"percent":50,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"wind","aura_type":"elemental","stat":"atk"}]}
+2040007	Grani	グラニ	3	4	2	3	1000	2014-03-31	315	1890	2280	\N	126	756	910	\N	\N
+2040008	Phoenix	フェニックス	3	3	2	0	\N	2014-03-31	245	1455	\N	\N	91	576	\N	\N	\N
+2040009	Quetzalcoatl	ケツァルカトル	3	3	2	1	1000	2014-04-16	320	1895	\N	\N	125	755	\N	\N	\N
+2040010	Cocytus	コキュートス	3	4	2	3	\N	2014-04-24	220	1430	1670	\N	100	606	710	\N	\N
+2040011	Nephthys	ネフティス	3	3	2	1	\N	2014-04-30	240	1450	\N	\N	94	577	\N	\N	\N
+2040012	Lich	リッチ	3	4	2	5	1000	2014-05-14	390	2240	2700	\N	111	700	850	\N	\N
+2040013	Baal (Summon)	バアル	3	4	2	2	1000	2014-05-31	310	1900	2300	\N	127	755	910	\N	{"0":[{"percent":40,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":40,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":60,"element":"light","aura_type":"elemental","stat":"atk"}],"4":[{"percent":70,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":70,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":25,"element":"earth","aura_type":"elemental","stat":"hp"},{"percent":25,"element":"light","aura_type":"elemental","stat":"hp"}]}
+2040014	Vohu Manah	ウォフマナフ	3	4	2	2	\N	2014-05-15	230	1440	1680	\N	94	579	680	\N	\N
+2040015	Manawydan	マナウィダン	3	3	2	3	\N	2014-05-31	225	1435	\N	\N	95	580	\N	\N	\N
+2040016	Ifrit	イフリート	3	4	2	0	\N	2014-06-17	290	1745	2040	\N	82	518	610	\N	\N
+2040017	Siren	セイレーン	3	3	2	1	1000	2014-06-30	325	1925	\N	\N	127	767	\N	\N	\N
+2040018	Midgardsormr	ミドガルズオルム	3	3	2	2	\N	2014-06-30	235	1510	\N	\N	94	577	\N	\N	\N
+2040019	Behemoth	ベヒーモス	3	3	2	5	\N	2014-06-23	285	1670	\N	\N	114	656	\N	\N	\N
+2040020	Tiamat Omega	ティアマト・マグナ	3	4	2	1	\N	\N	270	1630	1960	\N	104	650	780	\N	{"0":[{"percent":50,"element":"wind","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"wind","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"wind","aura_type":"omega","stat":"atk"}]}
+2040021	Athena	アテナ	3	4	2	0	1000	2014-07-16	360	2090	2520	\N	125	770	930	\N	{"0":[{"percent":50,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"fire","aura_type":"elemental","stat":"atk"}],"4":[{"percent":80,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"fire","aura_type":"elemental","stat":"hp"}]}
+2040022	Grendel	ベオウルフ	3	3	2	0	\N	2014-07-23	295	1660	\N	\N	112	658	\N	\N	\N
+2040023	Apollo	アポロン	3	4	2	4	1000	2014-07-31	340	2040	2470	\N	130	780	940	\N	{"0":[{"percent":50,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"light","aura_type":"elemental","stat":"atk"}],"4":[{"percent":80,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}]}
+2040024	Albacore	アルバコア	3	3	2	5	\N	2014-07-31	245	1550	\N	\N	91	557	\N	\N	{"0":[{"percent":20,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":20,"element":"dark","aura_type":"normal","stat":"hp"}],"3":[{"percent":25,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":25,"element":"dark","aura_type":"normal","stat":"hp"}]}
+2040025	Cait Sith	ケット・シー	3	3	2	4	\N	\N	320	1920	\N	\N	128	768	\N	\N	\N
+2040026	Gugalanna	グガランナ	3	3	2	1	\N	2014-08-20	290	1655	\N	\N	113	659	\N	\N	\N
+2040027	Yggdrasil Omega	ユグドラシル・マグナ	3	4	2	2	\N	\N	260	1620	1950	\N	106	651	781	\N	{"0":[{"percent":50,"element":"earth","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"earth","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"earth","aura_type":"omega","stat":"atk"}]}
+2040028	Leviathan Omega	リヴァイアサン・マグナ	3	4	2	3	\N	\N	255	1615	1945	\N	107	652	782	\N	{"0":[{"percent":50,"element":"water","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"water","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"water","aura_type":"omega","stat":"atk"}]}
+2040029	Odin	オーディン	3	4	2	4	1000	2014-08-31	340	2100	2540	\N	135	860	1040	\N	\N
+2040030	Hekatonkheir	ヘカトンケイル	3	3	2	4	\N	2014-08-31	230	1480	\N	\N	93	570	\N	\N	\N
+2040031	Sagittarius	サジタリウス	3	4	2	1	\N	2014-08-25	235	1445	1690	\N	100	600	700	\N	\N
+2040032	Cerberus	ケルベロス	3	4	2	5	\N	2014-09-12	300	1755	2050	\N	80	516	600	\N	\N
+2040033	Oceanus	オケアノス	3	4	2	3	1000	2014-11-30	310	1910	2310	\N	130	800	970	\N	\N
+2040034	Colossus Omega	コロッサス・マグナ	3	4	2	0	\N	\N	275	1635	1965	\N	103	648	778	\N	{"0":[{"percent":50,"element":"fire","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"fire","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"fire","aura_type":"omega","stat":"atk"}]}
+2040035	Allosaurus	アロザロウス	3	3	2	2	\N	2014-09-19	280	1645	\N	\N	115	661	\N	\N	\N
+2040036	Cybele	キュベレー	3	4	2	2	1000	2014-09-30	315	1920	2320	\N	129	790	960	\N	\N
+2040037	Poseidon	ポセイドン	3	4	2	3	\N	2014-09-30	245	1575	1840	\N	95	565	660	\N	\N
+2040038	Brunnhilde	ブリュンヒルデ	3	3	2	5	\N	2014-10-14	250	1750	\N	\N	77	500	\N	\N	\N
+2040039	Mithra	ミスラ	3	3	2	1	\N	\N	195	1200	\N	\N	105	650	\N	\N	\N
+2040041	Jack-o'-Lantern	ジャック・オー・ランタン	3	3	2	5	\N	2014-10-24	255	1600	\N	\N	99	550	\N	\N	\N
+2040042	Nezha	ナタク	3	4	2	1	1000	2014-10-31	355	2115	2560	\N	121	729	880	\N	\N
+2040043	Marduk	マルドゥーク	3	4	2	2	\N	2014-10-31	240	1600	1940	\N	93	548	660	\N	\N
+2040044	Corow	コロゥ	3	4	2	4	\N	2014-11-07	240	1535	1790	\N	92	560	650	\N	\N
+2040045	Audumbla	アウズンブラ	3	3	2	3	\N	2014-11-21	275	1640	\N	\N	120	662	\N	\N	\N
+2040046	Celeste Omega	セレスト・マグナ	3	4	2	5	\N	\N	285	1645	1975	\N	101	646	776	\N	{"0":[{"percent":50,"element":"dark","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"dark","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"dark","aura_type":"omega","stat":"atk"}]}
+2040047	Luminiera Omega	シュヴァリエ・マグナ	3	4	2	4	\N	\N	265	1625	1955	\N	105	650	780	\N	{"0":[{"percent":50,"element":"light","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"light","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"light","aura_type":"omega","stat":"atk"}]}
+2040048	Sylph	シルフ	3	3	2	0	\N	2014-11-30	220	1310	\N	\N	96	605	\N	\N	\N
+2040049	Fenrir	フェンリル	3	4	2	3	\N	2014-12-16	225	1535	1800	\N	95	560	650	\N	\N
+2040050	Mahisha	マヒシャ	3	3	2	4	\N	2014-11-21	285	1650	\N	\N	114	660	\N	\N	\N
+2040053	Satyr	サテュロス	3	4	2	0	1000	2015-03-31	325	1950	2360	\N	127	785	950	\N	\N
+2040055	Wind God and Thunder God	風神・雷神	3	3	2	1	\N	2014-12-31	265	1595	\N	\N	87	550	\N	\N	\N
+2040056	Lucifer	ルシフェル	3	5	2	4	1600	2014-12-31	340	2015	2850	3268	136	900	1280	1470	{"0":[{"percent":100,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"elemental","stat":"atk"}],"4":[{"percent":130,"element":"light","aura_type":"elemental","stat":"atk"}],"5":[{"percent":150,"element":"light","aura_type":"elemental","stat":"atk"}]}
+2040057	Ranko Kanzaki	[覚醒魔王]神崎蘭子	3	4	2	5	\N	2015-01-16	180	1250	1666	\N	100	666	740	\N	\N
+2040058	Kirari Moroboshi	諸星きらり	3	3	2	2	\N	2015-01-16	200	1400	\N	\N	91	615	\N	\N	\N
+2040059	Medusa	メドゥーサ	3	4	2	2	1000	2015-01-31	325	1970	2380	\N	128	780	940	\N	\N
+2040060	Branwen	ブランウェン	3	3	2	3	\N	2015-01-31	215	1300	\N	\N	105	200	\N	\N	\N
+2040062	Diablo	ディアボロス	3	4	2	5	\N	2015-02-07	300	1755	2050	\N	80	516	600	\N	\N
+2040063	Twin Elements	フラム＝グラス	3	4	2	0	1000	2015-02-28	360	2120	2560	\N	120	728	880	\N	\N
+2040064	Magus	マギ	3	3	2	4	\N	2015-02-28	225	1450	\N	\N	94	580	\N	\N	\N
+2040065	Grand Order	ジ・オーダー・グランデ	3	3	2	4	1600	2015-03-10	350	2080	\N	\N	140	880	\N	\N	\N
+2040067	Mammon	マモーナス	3	3	2	1	\N	2015-03-31	270	1640	\N	\N	86	540	\N	\N	\N
+2040069	Neptune	ネプチューン	3	3	2	3	1000	2015-05-31	330	2070	\N	\N	125	740	\N	\N	\N
+2040071	Garuda	ガルーダ	3	4	2	1	1000	2015-04-30	320	1980	2400	\N	131	775	940	\N	\N
+2040072	Avaritia	アワリティア	3	3	2	2	\N	2015-04-30	215	1300	\N	\N	97	610	\N	\N	{"0":[{"percent":30,"element":"earth","aura_type":"normal","stat":"atk"}],"3":[{"percent":40,"element":"earth","aura_type":"normal","stat":"atk"}]}
+2040073	Kirari	[ラブリーナイト]きらり	3	3	2	2	\N	2015-05-03	150	1150	\N	\N	110	700	\N	\N	\N
+2040076	Oxymoron	オクシモロン	3	3	2	0	\N	2015-05-31	200	1270	\N	\N	100	634	\N	\N	\N
+2040080	Zeus	ゼウス	3	4	2	4	1600	2015-06-30	370	2220	3145	\N	130	790	1120	\N	{"0":[{"percent":80,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"light","aura_type":"optimus","stat":"atk"}]}
+2040081	Robomi Rocket	ロボミ発進指令	3	3	2	4	\N	2015-06-30	200	1270	\N	\N	100	634	\N	\N	\N
+2040084	Titan	ティターン	3	4	2	2	1600	2015-07-31	310	1940	2755	\N	140	920	1310	\N	{"0":[{"percent":80,"element":"earth","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"earth","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"earth","aura_type":"optimus","stat":"atk"}]}
+2040085	Ebisu	ヱビス	3	3	2	3	\N	2015-07-31	225	1390	\N	\N	97	600	\N	\N	\N
+2040086	Inchoate World	胎動する世界	3	3	2	5	\N	2015-09-17	245	1420	\N	\N	85	555	\N	\N	\N
+2040090	Hades	ハデス	3	4	2	5	1600	2015-08-31	420	2350	3315	\N	123	755	1071	\N	{"0":[{"percent":80,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"dark","aura_type":"optimus","stat":"atk"}]}
+2040091	Veselago	ヴェセラゴ	3	3	2	4	\N	2015-08-31	225	1325	\N	\N	94	610	\N	\N	\N
+2040094	Agni	アグニス	3	4	2	0	1600	2015-09-30	385	2270	3213	\N	127	770	1092	\N	{"0":[{"percent":80,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"fire","aura_type":"optimus","stat":"atk"}]}
+2040095	Deirdre	ディアドラ	3	3	2	1	\N	2015-09-30	240	1520	\N	\N	92	572	\N	\N	\N
+2040096	Pierre	ピエール	3	3	2	4	\N	2015-10-07	235	1450	\N	\N	92	575	\N	\N	\N
+2040097	Harvest Myconid	オータム・マイコニド	3	3	2	2	\N	2015-10-31	200	1295	\N	\N	99	608	\N	\N	\N
+2040098	Zephyrus	ゼピュロス	3	4	2	1	1600	2015-10-31	380	2250	3185	\N	128	774	1097	\N	{"0":[{"percent":80,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"wind","aura_type":"optimus","stat":"atk"}]}
+2040099	Fafnir	ファフニール	3	3	2	0	\N	2015-11-30	240	1520	\N	\N	91	575	\N	\N	\N
+2040100	Varuna	ヴァルナ	3	4	2	3	1600	2015-12-02	370	2150	3040	\N	130	800	1135	\N	{"0":[{"percent":80,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"water","aura_type":"optimus","stat":"atk"}]}
+2040105	Rose Queen	ローズクイーン	3	4	2	1	1000	2017-02-28	304	1870	2260	\N	140	780	940	\N	\N
+2040109	Illuyanka	イルルヤンカシュ	3	3	2	3	\N	2016-06-09	265	1695	\N	\N	107	650	\N	\N	\N
+2040113	Odajumoki Gang	オダヅモッキー・ギャングスタ	3	3	2	3	\N	2015-12-31	250	1580	\N	\N	90	551	\N	\N	\N
+2040114	Kaguya	カグヤ	3	3	2	3	1600	2015-12-31	350	2140	\N	\N	150	860	\N	\N	\N
+2040115	Joya	ジョヤ	3	3	2	1	\N	2018-01-31	235	1447	\N	\N	92	575	\N	\N	\N
+2040122	Morrigna (Summon)	バイヴカハ	3	4	2	1	1000	2016-01-31	305	1915	2320	\N	140	823	990	\N	\N
+2040123	King Krustacea	氷海の覇王	3	3	2	5	\N	2016-01-31	245	1290	\N	\N	91	622	\N	\N	\N
+2040124	Ti Icniuhtli Xolotl	ティクニウトリ・ショロトル	3	3	2	4	\N	2016-02-29	225	1400	\N	\N	90	560	\N	\N	\N
+2040125	Prometheus	プロメテウス	3	4	2	0	1000	2016-02-29	300	1920	2330	\N	140	822	990	\N	\N
+2040129	Lady Katapillar	キャタピラさん	3	3	2	0	\N	2016-03-31	230	1410	\N	\N	95	600	\N	\N	\N
+2040130	Gilgamesh	ギルガメッシュ	3	4	2	2	1000	2016-04-04	300	1905	2310	\N	140	825	1000	\N	\N
+2040131	Bahamut Unchained	拘束破りし黒銀の翼	3	3	2	5	\N	2016-06-09	295	1725	\N	\N	101	644	\N	\N	\N
+2040133	Druj	ドゥルジ	3	3	2	4	\N	2016-05-02	250	1530	\N	\N	90	570	\N	\N	\N
+2040134	Anubis	アヌビス	3	4	2	5	1000	2016-05-02	300	1930	2340	\N	140	820	990	\N	\N
+2040141	Queen Bee	クイーンビー	3	3	2	1	\N	2016-06-09	240	1465	\N	\N	109	680	\N	\N	\N
+2040142	Ikelos	イケロス	3	3	2	3	\N	2016-05-31	200	1300	\N	\N	102	620	\N	\N	\N
+2040144	Hector	ヘクトル	3	4	2	4	1000	2016-05-31	300	1910	2310	\N	140	824	1000	\N	\N
+2040157	Huanglong	黄龍	3	3	2	4	\N	2016-06-23	260	1650	\N	\N	105	645	\N	\N	{"0":[{"percent":40,"element":"any","aura_type":"elemental","stat":"atk"}],"3":[{"percent":50,"element":"any","aura_type":"elemental","stat":"atk"}]}
+2040158	Qilin	黒麒麟	3	3	2	5	\N	2016-06-23	250	1630	\N	\N	107	649	\N	\N	{"0":[{"percent":40,"element":"any","aura_type":"elemental","stat":"atk"}],"3":[{"percent":50,"element":"any","aura_type":"elemental","stat":"atk"}]}
+2040159	Super Robo Gigantes	超鋼巨人・ゴッドギガンテス	3	3	2	4	\N	2016-06-30	230	1440	\N	\N	93	576	\N	\N	\N
+2040160	Ca Ong	カー・オン	3	4	2	3	1000	2016-06-30	300	1990	2410	\N	140	804	970	\N	\N
+2040167	Bonito	カツウォヌス	3	4	2	3	1000	2016-07-31	295	1800	2180	\N	120	716	860	\N	\N
+2040168	Custos Citrullus	守畏禍	3	3	2	2	\N	2016-07-31	250	1530	\N	\N	90	570	\N	\N	\N
+2040170	Milia	ミリア	3	3	2	5	\N	2016-09-01	300	1700	\N	\N	79	525	\N	\N	\N
+2040171	Sethlans	セスランス	3	4	2	0	1000	2016-08-31	305	1820	2200	\N	118	712	860	\N	\N
+2040172	Treant	トレント	3	3	2	1	\N	2016-08-31	215	1300	\N	\N	96	605	\N	\N	\N
+2040173	Tezcatlipoca	テスカトリポカ	3	4	2	2	1000	2016-09-30	300	1810	2190	\N	119	716	860	\N	\N
+2040175	Verona Heart	ヴェローナ・ハート	3	3	2	3	\N	2016-09-30	220	1420	\N	\N	95	580	\N	\N	\N
+2040177	Setekh	セト	3	4	2	1	1000	2016-10-31	300	1800	2170	\N	119	717	860	\N	\N
+2040178	Grueler	ゲルラ	3	3	2	0	\N	2016-11-01	250	1460	\N	\N	90	570	\N	\N	\N
+2040180	Typhon	テュポーン	3	4	2	5	1000	2016-11-30	340	2095	2530	\N	120	735	890	\N	\N
+2040181	Dragon Knights	ドラゴンナイツ	3	4	2	1	\N	2016-11-30	235	1450	1750	\N	92	575	700	\N	\N
+2040184	Blue Orbit	ブルーオービット	3	3	2	1	\N	2016-12-31	230	1440	\N	\N	93	573	\N	\N	\N
+2040185	Shiva	シヴァ	3	3	2	0	1600	2016-12-31	345	2150	\N	\N	135	850	\N	\N	{"0":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"fire","aura_type":"elemental","stat":"atk"}]}
+2040188	Thor	トール	3	4	2	4	1000	2017-01-31	310	1810	2190	\N	117	710	860	\N	\N
+2040189	Levin Sisters	レヴィオンシスターズ	3	3	2	4	\N	2017-01-31	220	1425	\N	\N	95	570	\N	\N	\N
+2040192	Bellringer Angel	ベルエンジェル	3	3	2	4	\N	2017-02-22	200	1400	\N	\N	91	575	\N	\N	{"0":[{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}],"3":[{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}]}
+2040195	Sandalphon	サンダルフォン	3	3	2	4	\N	2018-02-28	240	1410	\N	\N	90	580	\N	\N	{"0":[{"percent":50,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"light","aura_type":"elemental","stat":"hp","slot":"sub"}],"3":[{"percent":70,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"light","aura_type":"elemental","stat":"hp","slot":"sub"}]}
+2040198	Dark Flame Scion	闇の炎の子	3	3	2	5	\N	2017-03-01	245	1420	\N	\N	86	556	\N	\N	\N
+2040202	Raphael	ラファエル	3	3	2	1	1600	2018-06-30	251	1750	\N	\N	158	930	\N	\N	{"0":[{"percent":100,"element":"wind","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040203	Uriel	ウリエル	3	3	2	2	1600	2018-04-30	352	2180	\N	\N	133	844	\N	\N	{"0":[{"percent":100,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040205	Godsworn Alexiel	ゴッドガード・ブローディア	3	3	2	2	1600	2017-03-31	320	2100	\N	\N	140	870	\N	\N	{"0":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"earth","aura_type":"elemental","stat":"atk"}]}
+2040207	H.P.A.	K・B・S・N	3	3	2	5	\N	2017-04-01	250	1470	\N	\N	83	574	\N	\N	\N
+2040211	Super Cute Genius Alchemist	美少女錬金術師	3	3	2	5	\N	2017-04-30	240	1450	\N	\N	91	578	\N	\N	\N
+2040212	Nacht	ナハト	3	4	2	5	1000	2017-04-30	285	1780	2150	\N	128	731	880	\N	\N
+2040214	Lumiel Gourmet	リュミエールグルメ	3	3	2	1	\N	2017-05-31	235	1440	\N	\N	92	577	\N	\N	\N
+2040216	Aphrodite	アフロディーテ	3	4	2	4	1000	2017-05-31	290	1795	2170	\N	124	724	870	\N	\N
+2040219	Forest Ranger	フォレストレンジャー	3	3	2	2	\N	2017-06-30	231	1446	\N	\N	93	575	\N	\N	\N
+2040221	Garula, Shining Hawk	シャインホーク・ガルラ	3	3	2	1	1000	2017-06-30	320	1880	\N	\N	107	693	\N	\N	\N
+2040224	Urkin	ンニ	3	3	2	0	\N	2017-07-31	220	1420	\N	\N	95	580	\N	\N	\N
+2040225	Europa	エウロペ	3	3	2	3	1600	2017-07-31	325	2070	\N	\N	150	880	\N	\N	{"0":[{"percent":120,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"water","aura_type":"elemental","stat":"atk"}]}
+2040228	Lonesome Dragoness	孤独の竜姫	3	3	2	0	\N	2017-08-31	225	1430	\N	\N	94	578	\N	\N	\N
+2040229	Zaoshen	ザオシェン	3	4	2	0	1000	2017-08-31	293	1711	\N	\N	122	756	\N	\N	\N
+2040232	Sharom	シャローム	3	3	2	5	\N	2017-09-30	230	1320	\N	\N	95	600	\N	\N	\N
+2040233	Ankusha	アンクシャ	3	3	2	2	1000	2017-09-30	261	1521	\N	\N	129	796	\N	\N	\N
+2040234	Kero-chan	ケロちゃん	3	3	2	4	\N	2017-10-10	245	1450	\N	\N	90	575	\N	\N	\N
+2040236	Justice	ジャスティス	3	5	2	3	20	2017-11-29	260	1660	2365	2717	116	702	990	1134	\N
+2040237	The Hanged Man	ザ・ハングドマン	3	5	2	2	20	2017-11-29	280	1745	2465	2825	109	667	951	1093	{"3":[{"percent":100,"element":"earth","aura_type":"normal","stat":"atk"},{"percent":7,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":110,"element":"earth","aura_type":"normal","stat":"atk"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"5":[{"percent":130,"element":"earth","aura_type":"normal","stat":"atk"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040238	Death	デス	3	5	2	5	20	2017-11-29	300	1770	2490	2850	109	695	984	1128	{"3":[{"percent":120,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":7,"element":"dark","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"dark","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"dark","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"dark","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":130,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"5":[{"percent":140,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040239	Temperance	テンペランス	3	5	2	1	20	2017-11-29	275	1675	2380	2732	113	699	987	1131	\N
+2040240	The Devil	ザ・デビル	3	5	2	0	20	2017-11-29	280	1680	2385	2737	112	698	986	1130	\N
+2040241	The Tower	ザ・タワー	3	5	2	2	20	2017-11-29	265	1665	2370	2722	115	700	989	1133	\N
+2040242	The Star	ザ・スター	3	5	2	4	20	2017-11-29	280	1750	2470	2830	113	699	988	1132	{"3":[{"percent":7,"element":"light","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"light","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"light","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"light","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":10,"element":"light","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040243	The Moon	ザ・ムーン	3	5	2	3	20	2017-11-29	275	1740	2460	2820	110	668	952	1094	{"3":[{"percent":110,"element":"water","aura_type":"normal","stat":"atk"},{"percent":7,"element":"water","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"water","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"water","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"water","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":120,"element":"water","aura_type":"normal","stat":"atk"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"5":[{"percent":140,"element":"water","aura_type":"normal","stat":"atk"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040244	The Sun	ザ・サン	3	5	2	0	20	2017-11-29	295	1765	2480	2837	106	664	948	1090	{"3":[{"percent":7,"element":"fire","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"fire","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"fire","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"fire","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"5":[{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040245	Judgement	ジャッジメント	3	5	2	1	20	2017-11-29	290	1760	2475	2832	107	665	949	1091	{"3":[{"percent":100,"element":"wind","aura_type":"normal","stat":"atk"},{"percent":7,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":7,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":7,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":7,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"4":[{"percent":110,"element":"wind","aura_type":"normal","stat":"atk"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"5":[{"percent":130,"element":"wind","aura_type":"normal","stat":"atk"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040248	Sapphire Dance: Gentiana	蒼紅之舞・竜胆	3	3	2	3	\N	2017-10-31	220	1435	\N	\N	95	580	\N	\N	\N
+2040249	Snow White	スノウホワイト	3	3	2	3	1000	2017-10-31	276	1772	\N	\N	124	722	\N	\N	\N
+2040252	Knight of Knights	俊秀の義剣士	3	3	2	1	\N	2017-09-30	250	1455	\N	\N	90	570	\N	\N	\N
+2040253	Adramelech	アドラメレク	3	3	2	4	1000	2017-11-30	300	1808	\N	\N	106	715	\N	\N	\N
+2040255	Eren	エレン	3	3	2	0	\N	2017-12-08	251	1495	\N	\N	88	559	\N	\N	\N
+2040259	Crimson Spear, Ebony Scythe	紅き穿光と黒き大鎌	3	3	2	0	\N	2017-12-31	240	1455	\N	\N	91	574	\N	\N	\N
+2040261	Grimnir	グリームニル	3	3	2	1	1600	2017-12-31	347	2145	\N	\N	134	851	\N	\N	{"0":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"wind","aura_type":"elemental","stat":"atk"}]}
+2040263	Tsukuyomi	ツクヨミ	3	3	2	5	1000	2018-01-31	319	1828	\N	\N	116	711	\N	\N	\N
+2040269	Demi Agni	アグニス・ディヴィジョン	3	4	2	0	\N	2018-02-28	270	1630	\N	\N	103	647	\N	\N	{"0":[{"percent":70,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"fire","aura_type":"optimus","stat":"atk"}]}
+2040270	Demi Varuna	ヴァルナ・ディヴィジョン	3	4	2	3	\N	2018-02-28	250	1610	\N	\N	107	653	\N	\N	{"0":[{"percent":70,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"water","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"water","aura_type":"optimus","stat":"atk"}]}
+2040271	Demi Titan	ティターン・ディヴィジョン	3	4	2	2	\N	2018-02-28	255	1615	\N	\N	106	650	\N	\N	{"0":[{"percent":70,"element":"earth","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"earth","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"earth","aura_type":"optimus","stat":"atk"}]}
+2040272	Demi Zephyrus	ゼピュロス・ディヴィジョン	3	4	2	1	\N	2018-02-28	265	1625	\N	\N	104	648	\N	\N	{"0":[{"percent":70,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"wind","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"wind","aura_type":"optimus","stat":"atk"}]}
+2040273	Demi Zeus	ゼウス・ディヴィジョン	3	4	2	4	\N	2018-02-28	260	1620	2300	\N	105	651	924	\N	{"0":[{"percent":70,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"light","aura_type":"optimus","stat":"atk"}]}
+2040274	Demi Hades	ハデス・ディヴィジョン	3	4	2	5	\N	2018-02-28	280	1640	2320	\N	101	645	917	\N	{"0":[{"percent":70,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"dark","aura_type":"optimus","stat":"atk"}]}
+2040275	Halluel and Malluel	ハールート・マールート	3	3	2	4	1600	2018-02-28	350	2075	\N	\N	135	808	\N	\N	\N
+2040279	Gigante Blazer	ロボミ発進指令	3	3	2	4	\N	2018-03-31	195	1425	\N	\N	100	580	\N	\N	\N
+2040281	Freyr	フレイ	3	3	2	1	1000	2018-03-31	312	1835	\N	\N	117	710	\N	\N	\N
+2040282	Unrivaled Fighter	古今独歩の大拳豪	3	3	2	0	\N	2018-04-30	260	1567	\N	\N	87	551	\N	\N	\N
+2040285	Gorilla	ゴリラ	3	4	2	2	1000	2018-05-31	397	2132	2570	\N	100	650	790	\N	{"0":[{"percent":50,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"}],"4":[{"percent":110,"element":"earth","aura_type":"elemental","stat":"atk"}]}
+2040286	Lunalu	ルナール	3	3	2	5	\N	2018-05-31	240	1452	\N	\N	91	578	\N	\N	\N
+2040288	Morgana Car	モルガナカー	3	4	2	5	\N	2018-06-18	270	1492	1800	\N	85	570	690	\N	\N
+2040290	Nobiyo	ノビヨ	3	3	2	4	\N	2018-06-30	192	1214	\N	\N	98	622	\N	\N	{"3":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}]}
+2040291	Narita	ナリタ	3	3	2	5	\N	2018-06-30	300	1761	\N	\N	79	512	\N	\N	\N
+2040292	Electric Eal	デンキンナギ	3	3	2	4	\N	2018-07-31	250	1580	\N	\N	90	550	\N	\N	\N
+2040293	Macula Marius	マキュラ・マリウス	3	4	2	3	1030	2018-07-31	345	2090	2530	\N	125	755	910	\N	{"0":[{"percent":60,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"water","aura_type":"elemental","stat":"atk"}],"4":[{"percent":90,"element":"water","aura_type":"elemental","stat":"atk"}]}
+2040294	JEHUTY	ジェフティ	3	3	2	4	\N	2018-08-24	230	1472	\N	\N	93	570	\N	\N	\N
+2040295	Gearcycle	ケッタギア	3	3	2	1	\N	2018-08-31	250	1610	\N	\N	69	460	\N	\N	\N
+2040296	Hamsa	ハンサ	3	4	2	1	1000	2018-08-31	305	1800	2170	\N	120	720	870	\N	\N
+2040297	Anat, for Love and War	愛と戦いの神 アナト	3	3	2	1	1000	2018-09-30	295	1750	\N	\N	120	725	\N	\N	{"0":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"wind","aura_type":"elemental","stat":"atk"}]}
+2040298	H.D. Mining Excavator	坑道用大型掘削機	3	3	2	2	\N	2018-09-30	235	1325	\N	\N	90	600	\N	\N	\N
+2040299	Mepple and Mipple	メップル＆ミップル	3	4	2	4	\N	2018-10-14	245	1475	1780	\N	90	570	690	\N	\N
+2040300	Vane's Cooking	クッキング・ヴェイン	3	3	2	0	\N	2017-09-30	245	1537	\N	\N	90	557	\N	\N	\N
+2040301	Krelkulkil	カラクラキル	3	3	2	5	\N	2018-11-30	270	1562	\N	\N	84	556	\N	\N	\N
+2040302	Poseidon, the Tide Father	気高き水神 ポセイドン	3	3	2	3	1000	2018-11-27	272	1752	\N	\N	123	726	\N	\N	{"0":[{"percent":120,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"water","aura_type":"elemental","stat":"atk"}]}
+2040303	Princess Knight	プリンセスナイト	3	3	2	4	\N	2018-12-09	220	1422	\N	\N	95	580	\N	\N	\N
+2040304	Sylph, Flutterspirit of Purity	白純の霊蝶 シルフ	3	3	2	0	1000	2018-12-28	300	1780	\N	\N	100	720	\N	\N	{"0":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"fire","aura_type":"elemental","stat":"atk"}]}
+2040305	Cerberus, Hellhound Trifecta	冥界の三魔犬 ケルベロス	3	3	2	5	1000	2019-01-17	350	1860	\N	\N	110	705	\N	\N	{"0":[{"percent":100,"element":"dark","aura_type":"elemental","stat":"atk"}],"3":[{"percent":120,"element":"dark","aura_type":"elemental","stat":"atk"}]}
+2040306	Michael	ミカエル	3	3	2	0	1600	2018-10-31	359	2240	\N	\N	129	832	\N	\N	{"0":[{"percent":100,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"fire","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"fire","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"fire","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"fire","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"fire","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040309	Flamek Pact	フラメクの契約者	3	3	2	5	\N	2018-12-31	270	1495	\N	\N	85	570	\N	\N	\N
+2040310	Magus, Triad of Wisdom	三知一鎧の賢者 マギ	3	3	2	4	1000	2019-01-31	292	1767	\N	\N	121	723	\N	\N	{"0":[{"percent":100,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"elemental","stat":"atk"}]}
+2040311	Gabriel	ガブリエル	3	3	2	3	1600	2018-12-31	375	2100	\N	\N	140	850	\N	\N	{"0":[{"percent":100,"element":"water","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"water","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"water","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"water","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"water","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"water","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"water","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040312	Cat Parade	ビッグマーチ・オブ・ネコ	3	3	2	2	\N	2019-01-31	245	1562	\N	\N	90	552	\N	\N	\N
+2040323	Marduk, Battlefield Reaper	破格の戦鬼 マルドゥーク	3	3	2	2	1000	2019-02-28	272	1767	\N	\N	125	723	\N	\N	{"0":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"earth","aura_type":"elemental","stat":"atk"}]}
+2040324	Dragon's Rage	神撃の竜	3	3	2	5	\N	2019-02-28	225	1437	\N	\N	94	577	\N	\N	\N
+2040325	Delinquent Spirit	ツッパリ魂	3	3	2	1	\N	2019-03-31	235	1400	\N	\N	92	580	\N	\N	\N
+2040326	Demonbream	魔鯛	3	3	2	1	1000	2019-03-31	327	1990	\N	\N	114	679	\N	\N	\N
+2040327	Sariel	サリエル	3	3	2	5	1600	2019-04-30	357	2155	\N	\N	132	790	\N	\N	{"0":[{"percent":100,"element":"dark","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"dark","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"dark","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"dark","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"dark","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"dark","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"dark","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040328	Gorgon Sisters	ゴルゴーン三姉妹	3	3	2	2	\N	2019-04-30	220	1522	\N	\N	95	560	\N	\N	\N
+2040329	From Ladiva with Love	レスラーより愛をこめて	3	3	2	4	\N	2019-05-27	210	1422	\N	\N	97	580	\N	\N	\N
+2040330	Metatron	メタトロン	3	3	2	4	1600	2019-05-31	327	2022	\N	\N	138	816	\N	\N	{"0":[{"percent":100,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"light","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"light","aura_type":"seraphic","stat":"atk_cap"},{"percent":5,"element":"light","aura_type":"seraphic","stat":"ca_dmg"},{"percent":5,"element":"light","aura_type":"seraphic","stat":"ca_cap"}],"3":[{"percent":120,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"light","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
+2040331	C.C.	C.C.	3	4	2	5	\N	2019-06-14	215	1300	1570	\N	100	650	790	\N	\N
+2040332	Rainy Day	RAINY DAY	3	3	2	5	\N	2019-06-27	270	1572	\N	\N	85	550	\N	\N	\N
+2040333	Yggdrasil (Summer)	ユグドラシル	3	4	2	2	1030	2019-06-30	332	2002	2500	\N	137	820	1030	\N	\N
+2040334	God Albacore	ゴッド・アルバコア	3	3	2	3	\N	2019-07-26	240	1330	\N	\N	91	600	\N	\N	\N
+2040335	Satyr (Summer)	サテュロス	3	4	2	0	1030	2019-07-31	347	2050	2476	\N	134	810	979	\N	\N
+2040336	Rose Queen	ローズクイーン	3	4	2	1	1030	2019-08-15	342	1900	2290	\N	135	840	1020	\N	{"0":[{"percent":80,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":100,"element":"wind","aura_type":"elemental","stat":"atk"}],"4":[{"percent":110,"element":"wind","aura_type":"elemental","stat":"atk"}]}
+2040337	Dancing Man	ダンシング・マン	3	3	2	0	\N	2019-08-28	235	1200	\N	\N	92	625	\N	\N	\N
+2040338	Surtr	スルト	3	3	2	0	1000	2019-08-31	367	2102	\N	\N	130	800	\N	\N	\N
