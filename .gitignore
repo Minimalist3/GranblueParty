@@ -15,6 +15,7 @@ Frontend/nginx/
 Frontend/src/img/*/**
 !Frontend/src/img/*.png
 !Frontend/src/img/*.jpg
+!Frontend/src/img/item/**
 Frontend/src/js/config.js
 
 WikiParser/__pycache__/
