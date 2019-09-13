@@ -30,7 +30,8 @@ module.exports = (env, argv) => {
             publicPath: "/",
             hot: true,
             watchOptions: {
-                poll: true,
+              aggregateTimeout: 300,
+              poll: true,
             },
             historyApiFallback: true,
         },

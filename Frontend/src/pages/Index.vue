@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero is-black">
+    <section class="hero is-black" style="background-color: #000;">
       <div class="hero-head">
         <div class="container">
           <h1 class="title">
@@ -114,7 +114,7 @@
             <div class="tile is-child is-8">
               <h1 class="title has-text-light">Changelog</h1>
               <p class="content">
-                <b>Last update:</b> Tabina (2019-08-31)
+                <b>Last update:</b> Nobiyo 4* (2019-09-12)
               </p>
               <ul>
                 <li>2019-08-30: Wide layout for Party Builder. The Details tab hides an experimental damage calculator</li>
@@ -135,9 +135,18 @@
 
             <div class="tile is-vertical">
               <div class="tile is-child">
-                <h1 class="title has-text-light">Contact</h1>
-                E-mail: contact [at] granblue.party<br>
-                Twitter: <a href="https://twitter.com/GranblueParty" target="_blank">@GranblueParty</a>
+                <h1 class="title has-text-light">Social</h1>
+                <img src="/src/img/email.png" class="valign-img"> contact [at] granblue.party
+                <br>
+                <a href="https://twitter.com/GranblueParty" target="_blank">
+                  <img src="/src/img/twitter.png" class="valign-img">
+                  @GranblueParty
+                </a>
+                <br>
+                <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
+                  <img src="/src/img/github.png" class="valign-img">
+                  Minimalist3/GranblueParty
+                </a>
               </div>
 
               <div class="tile is-child">

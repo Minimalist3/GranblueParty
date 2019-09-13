@@ -229,8 +229,8 @@
 2040285	Gorilla	ゴリラ	3	4	2	2	1000	2018-05-31	397	2132	2570	\N	100	650	790	\N	{"0":[{"percent":50,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"}],"4":[{"percent":110,"element":"earth","aura_type":"elemental","stat":"atk"}]}
 2040286	Lunalu	ルナール	3	3	2	5	\N	2018-05-31	240	1452	\N	\N	91	578	\N	\N	\N
 2040288	Morgana Car	モルガナカー	3	4	2	5	\N	2018-06-18	270	1492	1800	\N	85	570	690	\N	\N
-2040290	Nobiyo	ノビヨ	3	3	2	4	\N	2018-06-30	192	1214	\N	\N	98	622	\N	\N	{"3":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}]}
-2040291	Narita	ナリタ	3	3	2	5	\N	2018-06-30	300	1761	\N	\N	79	512	\N	\N	\N
+2040290	Nobiyo	ノビヨ	3	4	2	4	\N	2018-06-30	192	1214	1406	\N	98	622	720	\N	{"3":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}]}
+2040291	Narita	ナリタ	3	4	2	5	\N	2018-06-30	300	1761	2061	\N	79	512	591	\N	\N
 2040292	Electric Eal	デンキンナギ	3	3	2	4	\N	2018-07-31	250	1580	\N	\N	90	550	\N	\N	\N
 2040293	Macula Marius	マキュラ・マリウス	3	4	2	3	1030	2018-07-31	345	2090	2530	\N	125	755	910	\N	{"0":[{"percent":60,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"water","aura_type":"elemental","stat":"atk"}],"4":[{"percent":90,"element":"water","aura_type":"elemental","stat":"atk"}]}
 2040294	JEHUTY	ジェフティ	3	3	2	4	\N	2018-08-24	230	1472	\N	\N	93	570	\N	\N	\N

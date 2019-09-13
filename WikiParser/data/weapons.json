@@ -9938,7 +9938,7 @@
   {
     "id": "1040110400",
     "name": "Mittron's Treasured Blade",
-    "jpname": "",
+    "jpname": "\u30df\u30c8\u30ed\u30f3\u306e\u5b9d\u5263",
     "evo base": "3",
     "evo max": "4",
     "rarity": "SSR",
@@ -19107,11 +19107,11 @@
     "s3u1 icon": "",
     "s3u1 lvl": "",
     "atk1": "390",
-    "atk2": "0",
+    "atk2": "2440",
     "atk3": "2950",
     "atk4": "0",
     "hp1": "30",
-    "hp2": "0",
+    "hp2": "178",
     "hp3": "220",
     "hp4": "0"
   },

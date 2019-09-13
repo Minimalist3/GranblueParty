@@ -53,7 +53,16 @@
 
           <footer class="footer has-background-dark">
             <div class="content has-text-centered is-small">
-              Follow me on Twitter: <a href="https://twitter.com/GranblueParty" target="_blank">@GranblueParty</a><br>
+              <a href="https://twitter.com/GranblueParty" target="_blank">
+                <img src="/src/img/twitter.png" class="valign-img">
+                @GranblueParty
+              </a>
+              &nbsp;&nbsp;
+              <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
+                <img src="/src/img/github.png" class="valign-img">
+                Minimalist3/GranblueParty
+              </a>
+              <br>
               Granblue Fantasy content and materials are trademarks and copyrights of Cygames, Inc. or its licensors. All rights reserved.</div>
           </footer>
         </div>

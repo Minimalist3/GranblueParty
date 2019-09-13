@@ -15,14 +15,7 @@ import mwparserfromhell
 from config import defines
 import database
 
-# Missing
-# Characters: skill names and icons (a1_name, a1_icon, ... a4_)
-# Summons: -
-# Weapons: -
-# Classes: -
-#
-# https://gbf.wiki/api.php?action=query&format=json&prop=imageinfo&titles=File:ws_skill_atk_4_3.png&iiprop=url
-
+FRONTEND_DIR = 'Frontend'
 addToDB = True
 verbose = False
 TABLES = {
@@ -215,7 +208,7 @@ def getTemplateValueOrNone(template, value):
 def updateCharacters():
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
   images_file = os.path.join('data', 'characters.images')
-  images_dir = os.path.join('..', 'GBF-Frontend', 'src', 'img', 'chara_skills')
+  images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'chara_skills')
   values = []
   weaponspec_values = []
   skills = []
@@ -491,7 +484,7 @@ def downloadSkillIcon(images_dir, icon):
 def updateWeapons():
   working_file = os.path.join('data', 'weapons.json')
   images_file = os.path.join('data', 'weapons.images')
-  images_dir = os.path.join('..', 'GBF-Frontend', 'src', 'img', 'weapon_skills')
+  images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'weapon_skills')
   values = []
   skills = []
   
@@ -599,7 +592,7 @@ def updateWeapons():
 
 def updateClasses():
   working_file = os.path.join('data', 'class_skill.json')
-  images_dir = os.path.join('..', 'GBF-Frontend', 'src', 'img', 'class_skills')
+  images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'class_skills')
 
   with open(working_file, "r") as read_file:
     class_values = []
