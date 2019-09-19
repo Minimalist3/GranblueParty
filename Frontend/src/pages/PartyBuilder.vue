@@ -536,7 +536,7 @@ const elem_superiority = {
   none: {
     superior: '',
     weak: ''
-  }
+  },
 }
 
 const defaultValues = {
@@ -1198,7 +1198,7 @@ export default {
     /**
      * Details, damage calculator
      */
-    getSummonAuras(character) {
+    getSummonAuras(character, chara_element) {
       let auras = {
         elemental: Object.assign({}, ratio_types),
         normal: Object.assign({}, ratio_types),
@@ -1212,7 +1212,7 @@ export default {
       [this.summons[0], this.summons[5]].forEach(summon => {
         if ( ! Utils.isEmpty(summon) && summon.current_data) {
           for (let aura of summon.current_data) {
-            if (DataModel.e.data[character.elementid].name.toLowerCase() === aura.element) {
+            if (chara_element === aura.element || aura.element === "any") {
               // TODO formula
               auras[aura.aura_type][aura.stat] += aura.percent / 100;
             }
@@ -1223,9 +1223,7 @@ export default {
       this.summons.slice(1, 5).forEach(summon => {
         if ( ! Utils.isEmpty(summon) && summon.current_data) {
           for (let aura of summon.current_data) {
-            if (aura.slot === 'sub' &&
-                DataModel.e.data[character.elementid].name.toLowerCase() === aura.element)
-            {
+            if (aura.slot === 'sub' && (chara_element === aura.element || aura.element === "any")) {
               // TODO formula
               auras[aura.aura_type][aura.stat] += aura.percent / 100;
             }
@@ -1293,7 +1291,7 @@ export default {
       for (let i=0; i<5; i++) {
         const s = this.summons[i];
 
-        if (s.level) {
+        if (s.nameen) {
           this.summonsAtk += s.atk;
           this.summonsHP += s.hp;
 
@@ -1341,7 +1339,16 @@ export default {
             },
           }
 
-          const chara_element = DataModel.e.data[c.elementid].name.toLowerCase();
+          let chara_element = DataModel.e.data[c.elementid].name.toLowerCase();
+          // Characters with "any" element get the main weapon element
+          if (chara_element === "any") {
+            if ( ! Utils.isEmpty(this.weapons[0])) {
+              chara_element = DataModel.e.data[this.weapons[0].elementid].name.toLowerCase();
+            }
+            else {
+              chara_element = "dark";
+            }
+          }
           const chara_race = DataModel.ra.data[c.raceid].name.toLowerCase();
           const chara_weapons = c.weapontypeid.flatMap(w => [DataModel.w.data[w].name.toLowerCase()]);
           
@@ -1412,7 +1419,7 @@ export default {
           data.atk += this.getStatsFromSummons[0] + c.pluses * 3;
           data.hp += this.getStatsFromSummons[1] + c.pluses;
 
-          const chara_auras = this.getSummonAuras(c);
+          const chara_auras = this.getSummonAuras(c, chara_element);
           const elem_sup = this.getElemSuperiority(chara_element);
 
           data.elem_atk =  (1

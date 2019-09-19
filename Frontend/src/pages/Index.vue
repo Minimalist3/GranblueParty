@@ -136,15 +136,15 @@
             <div class="tile is-vertical">
               <div class="tile is-child">
                 <h1 class="title has-text-light">Social</h1>
-                <img src="/src/img/email.png" class="valign-img"> contact [at] granblue.party
+                <img src="/img/email.png" class="valign-img"> contact [at] granblue.party
                 <br>
                 <a href="https://twitter.com/GranblueParty" target="_blank">
-                  <img src="/src/img/twitter.png" class="valign-img">
+                  <img src="/img/twitter.png" class="valign-img">
                   @GranblueParty
                 </a>
                 <br>
                 <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
-                  <img src="/src/img/github.png" class="valign-img">
+                  <img src="/img/github.png" class="valign-img">
                   Minimalist3/GranblueParty
                 </a>
               </div>

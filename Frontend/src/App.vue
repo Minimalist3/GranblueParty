@@ -54,12 +54,12 @@
           <footer class="footer has-background-dark">
             <div class="content has-text-centered is-small">
               <a href="https://twitter.com/GranblueParty" target="_blank">
-                <img src="/src/img/twitter.png" class="valign-img">
+                <img src="/img/twitter.png" class="valign-img">
                 @GranblueParty
               </a>
               &nbsp;&nbsp;
               <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
-                <img src="/src/img/github.png" class="valign-img">
+                <img src="/img/github.png" class="valign-img">
                 Minimalist3/GranblueParty
               </a>
               <br>
