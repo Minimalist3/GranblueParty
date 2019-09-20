@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 :exclamation: Your distribution might use pip3 instead. Make sure you don't install Python 2 modules by mistake.
 
-Copy `./config/database.ini.template` to `./config/database.ini` and edit relevant values.
+Copy `./config/config.ini.template` to `./config/config.ini` and edit relevant values.
 
 ## Usage
 - `./database.py --create` to create the dabatase and its tables.

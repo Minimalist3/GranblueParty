@@ -19,5 +19,5 @@ Frontend/src/img/*/**
 Frontend/src/js/config.js
 
 WikiParser/__pycache__/
-WikiParser/config/database.ini
+WikiParser/config/config.ini
 WikiParser/data/cache/*

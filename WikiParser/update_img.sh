@@ -33,6 +33,13 @@ function list_files() {
   done
 }
 
-DEST=$(pwd)/data
-cd ~/code/GBF-Frontend/src/img
-list_files $DEST
+DATADIR=$(pwd)/data
+FRONTEND=$(grep "^frontend=" ./config/config.ini | cut -d '=' -f 2)
+if [ -z ${FRONTEND} ]
+then
+  echo "./config/config.ini doesn't contain the [path] section"
+  exit 1
+fi
+
+cd ../${FRONTEND}/src/img
+list_files ${DATADIR}

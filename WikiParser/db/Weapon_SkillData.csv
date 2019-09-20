@@ -771,3 +771,5 @@
 770	ws_skill_job_weapon.png	Shield-Tearing Dance	\N
 771	ws_skill_tec_1_2.png	Hellfire's Verity	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"crit"}]}
 772	ws_skill_guard_4_1.png	Wind's Garrison	\N
+773	ws_skill_resist_5_1.png	Light's Refuge	\N
+774	ws_skill_job_weapon.png	Volcanic Blade	\N

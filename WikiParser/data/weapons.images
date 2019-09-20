@@ -985,6 +985,7 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040709000.jpg -O ./weapon/1040709000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040709100.jpg -O ./weapon/1040709100.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040709200.jpg -O ./weapon/1040709200.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040709300.jpg -O ./weapon/1040709300.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040800000.jpg -O ./weapon/1040800000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040800100.jpg -O ./weapon/1040800100.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040800200.jpg -O ./weapon/1040800200.jpg
@@ -1196,3 +1197,4 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040911000.jpg -O ./weapon/1040911000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040911100.jpg -O ./weapon/1040911100.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040911200.jpg -O ./weapon/1040911200.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/1040911300.jpg -O ./weapon/1040911300.jpg

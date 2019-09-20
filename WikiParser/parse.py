@@ -15,7 +15,7 @@ import mwparserfromhell
 from config import defines
 import database
 
-FRONTEND_DIR = 'Frontend'
+FRONTEND_DIR = defines.getConfig('config/config.ini', 'path')['frontend']
 addToDB = True
 verbose = False
 TABLES = {
