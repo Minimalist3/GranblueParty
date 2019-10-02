@@ -92,12 +92,13 @@ def downloadCategory(path, category):
       url = 'https://gbf.wiki/api.php',
       params = {
         'action': 'query',
-        'list': 'categorymembers',
-        'cmtitle': 'Category:' + category,
+        'prop': 'info',
+        'generator': 'categorymembers',
+        'gcmtitle': 'Category:' + category,
         'format': 'json',
-        'cmlimit': limit,
-        'cmcontinue': cmcontinue
-      })    
+        'gcmlimit': limit,
+        'gcmcontinue': cmcontinue
+      })
     
     request_json = request.json()
 
@@ -109,11 +110,12 @@ def downloadCategory(path, category):
       sys.exit(1)
 
     # Remove the 'title' part
-    for res in request_json['query']['categorymembers']:
-      results += [res]
+    for res in request_json['query']['pages']:
+      res_values = { your_key: request_json['query']['pages'][res][your_key] for your_key in ['pageid', 'title', 'lastrevid'] }
+      results += [res_values]
 
     if 'continue' in request_json:
-      cmcontinue = request_json['continue']['cmcontinue']      
+      cmcontinue = request_json['continue']['gcmcontinue']      
     else:
       break
 
@@ -124,8 +126,9 @@ def downloadCategory(path, category):
 def updateCache(category):
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
 
-  with open(os.path.join('data', category + '_category.json'), 'r', encoding='utf8') as fd:
+  with open(os.path.join('data', category + '_category.json'), 'r', encoding='utf8') as fd, open(os.path.join('data', 'cache_revisions.json'), 'r+', encoding='utf8') as fd_revs:
     data = json.load(fd)
+    data_revs = json.load(fd_revs)
 
     for unit in data:
       page_id = str(unit['pageid'])
@@ -135,8 +138,8 @@ def updateCache(category):
       if page_title.endswith(' List') or page_title.startswith('Category:'):
         continue
 
-      if not os.path.isfile(page_name):
-        print("Downloading " + page_title + ' [' + page_id + ']')
+      if not os.path.isfile(page_name) or not page_id in data_revs or data_revs[page_id] != unit['lastrevid']:
+        print("Downloading ", page_title, ' [' + page_id + ']')
         time.sleep(.1) # Don't hammer the server
         request = sessionGet(
           url = 'https://gbf.wiki/api.php',
@@ -151,6 +154,13 @@ def updateCache(category):
         request_json = request.json()['query']['pages'][page_id]['revisions'][0]['*']
         with open(page_name, 'w', encoding='utf8') as wiki_file:
           wiki_file.write(request_json)
+        
+        data_revs[page_id] = unit['lastrevid']
+
+    # Write new revision cache
+    fd_revs.seek(0)
+    json.dump(data_revs, fd_revs, indent=2)
+    fd_revs.truncate()    
 
 
 def getImageURL(image):

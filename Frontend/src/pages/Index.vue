@@ -114,7 +114,7 @@
             <div class="tile is-child is-8">
               <h1 class="title has-text-light">Changelog</h1>
               <p class="content">
-                <b>Last update:</b> Nobiyo 4* (2019-09-12)
+                <b>Last update:</b> Grand Monika, Fire Siegfried (2019-09-30)
               </p>
               <ul>
                 <li>2019-08-30: Wide layout for Party Builder. The Details tab hides an experimental damage calculator</li>

@@ -1942,5 +1942,41 @@
     "row": "12",
     "ex": "0",
     "icon": "Ability Three-Round Burst.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Devotion",
+    "ix": "ex1",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Devotion.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Recursive Nightmare",
+    "ix": "ex2",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Recursive Nightmare.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Barbed Wire",
+    "ix": "ex3",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Barbed Wire.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Execute",
+    "ix": "s1",
+    "family": "assassin",
+    "row": "12",
+    "ex": "0",
+    "icon": "Ability Execute.png"
   }
 ]

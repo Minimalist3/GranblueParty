@@ -59,7 +59,7 @@ CLASSES = [
 	('Weapon Master', 100201), ('Holy Saber', 110201), ('Bishop', 120201), ('Hermit', 130201), ('Hawkeye', 140201), ('Dark Fencer', 150201), ('Ogre', 160201), ('Sidewinder', 170201), ('Superstar', 180201), ('Valkyrie', 190201), ('Gladiator', 300201),
 	('Berserker', 100301), ('Spartan', 110301), ('Sage', 120301), ('Warlock', 130301), ('Bandit Tycoon', 140301), ('Chaos Ruler', 150301), ('Luchador', 160301), ('Nighthound', 170301), ('Elysian', 180301), ('Apsaras', 190301), ('Chrysaor', 300301),
 	('Alchemist', 200201), ('Ninja', 210201), ('Samurai', 220201), ('Sword Master', 230201), ('Gunslinger', 240201), ('Mystic', 250201), ('Assassin', 260201), ('Drum Master', 270201), ('Dancer', 280201), ('Mechanic', 290201),
-	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301)
+	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301), ('Tormentor', 260301)
 ]
 
 IGNORE_MISSING_SKILL = ['3358', '3855', '3936', '4055', '4080', '4200', '4302']

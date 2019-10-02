@@ -28,10 +28,10 @@
     "sitemap-webpack-plugin": "^0.6.0",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.40.1",
+    "webpack": "^4.41.0",
     "webpack-cdn-plugin": "^3.1.4",
-    "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
     "axios": "^0.19.0",

@@ -21,6 +21,7 @@ module.exports = (env, argv) => {
 
     let config = {
         entry: './src/app.js',
+        stats: 'minimal',
         output: {
             filename: devMode ? 'main.js' : 'main-[contenthash].js',
             path: path.resolve(__dirname, 'dist'),

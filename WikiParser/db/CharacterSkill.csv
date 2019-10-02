@@ -95,7 +95,7 @@
 3020046	1	Armor Adjustment	25
 3020047	0	Amplifier	1
 3020047	1	Discharger	25
-3020048	0	I've got your back!	1
+3020048	0	I've Got Your Back!	1
 3020048	1	I've Got Your Back Till The End!	25
 3020049	0	Fire Bow Barrage	1
 3020049	1	Here boy! Ruff Ruff!	25
@@ -936,6 +936,9 @@
 3030274	0	Evening Swipe	1
 3030274	1	Moonlit Blade	1
 3030274	2	Brilliant Wisdom	35
+3030275	0	Organic Heal	1
+3030275	1	Renoncule	1
+3030275	2	Brise de Fleurs	35
 3040000	0	Fracture	1
 3040000	1	Rebellion	1
 3040000	2	Noblesse Oblige	45
@@ -1111,15 +1114,16 @@
 3040051	0	Bal-Sagoth	1
 3040051	1	Power Within	1
 3040051	2	Half-God Half-Demon	45
-3040052	0	Infernal Skybreaker	1
-3040052	1	Flashbeat Branding Palm	1
-3040052	2	True Avidya	45
+3040052	0	Skybreaker / Infernal Skybreaker	1
+3040052	1	Branding Palm / Flashbeat Branding Palm	1
+3040052	2	Avidya / True Avidya	45
 3040053	0	Fascinate	1
 3040053	1	Estrella Sprite	1
 3040053	2	Lyst	45
 3040054	0	Enchanted Lands	1
 3040054	1	Loengard	1
 3040054	2	Light Wall Divider	45
+3040054	3	Vow by the Sword	95
 3040055	0	Envy Doll	1
 3040055	1	Grim Reaper II	1
 3040055	2	Upgrade	45
@@ -1135,6 +1139,7 @@
 3040059	0	Spitfire	1
 3040059	1	Duration II	1
 3040059	2	Double Tap	45
+3040059	3	Guiding Firearm	95
 3040060	0	Graven Image	1
 3040060	1	Autumnal	1
 3040060	2	Reckoning Night	45
@@ -1179,7 +1184,7 @@
 3040072	2	Descent of the Flames	45
 3040073	0	Vergiften	1
 3040073	1	Grausam	1
-3040073	2	Hin Liechten	45
+3040073	2	Hinrichten	45
 3040074	0	Nocturnal	1
 3040074	1	Ivsa Lora	1
 3040074	2	Violet Assassination	45
@@ -1668,3 +1673,16 @@
 3040234	0	Iiedad	1
 3040234	1	Al-Matar Takil	1
 3040234	2	Dhanusha Lana	45
+3040235	0	Flashpoint	1
+3040235	1	Force Field	1
+3040235	2	Standby Mode	45
+3040236	0	Affectio	1
+3040236	1	Tonitrua	1
+3040236	2	Afflatus	45
+3040237	0	Verdrangen	1
+3040237	1	Mirage	1
+3040237	2	Salvator	45
+3040238	0	Flash and Thunder	1
+3040238	1	Field Dressing	1
+3040238	2	Winds of White Wings	1
+3040238	3	Thunderclap Burst	45
