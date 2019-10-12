@@ -7,7 +7,7 @@
       {{ object.nameen }}
     </span>
     <img
-      class="portrait-img"
+      class="portrait-img is-clickable"
       :src="getPortraitImage"
       @click="onClickPortrait"
     >

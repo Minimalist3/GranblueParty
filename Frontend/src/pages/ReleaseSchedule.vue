@@ -32,10 +32,10 @@
           Obtain&nbsp;
           <button
             class="button is-small"
-            :class="{'is-info': showObtainGatcha}"
-            @click="showObtainGatcha = ! showObtainGatcha"      
+            :class="{'is-info': showObtainGacha}"
+            @click="showObtainGacha = ! showObtainGacha"      
           >
-            Gatcha
+            Gacha
           </button>
           <button
             class="button is-small"
@@ -151,7 +151,7 @@ export default {
       filters: [],
       showCharacters: true,
       showSummons: true,
-      showObtainGatcha: true,
+      showObtainGacha: true,
       showObtainOther: true,
     }
   },
@@ -173,7 +173,7 @@ export default {
           if ( ! this.filters.every(e => this.dataModel[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.showObtainGatcha && unit.d >= 1000) {
+          if ( ! this.showObtainGacha && unit.d >= 1000) {
             return;
           }
           if ( ! this.showObtainOther && unit.d < 1000) {
@@ -199,7 +199,7 @@ export default {
           if ( ! this.filters.every(e => this.dataModel[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.showObtainGatcha && unit.d >= 1000) {
+          if ( ! this.showObtainGacha && unit.d >= 1000) {
             return;
           }
           if ( ! this.showObtainOther && unit.d < 1000) {

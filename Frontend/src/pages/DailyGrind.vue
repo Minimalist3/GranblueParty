@@ -900,6 +900,9 @@ export default {
     currentList() {
       return this.myLists[this.listIndex].data;
     },
+    currentListIds() {
+      return this.currentList.flatMap(r => [{id: r.id}]);
+    },
     currentListName: {
       get() {
         return this.myLists[this.listIndex].name;
@@ -922,6 +925,11 @@ export default {
     renameLists() {
       lsMgt.setValue('renameLists', this);
     },
+    currentList() {
+      if ( ! this.isUserLogged) {
+        lsMgt.setValue('currentListIds', this);
+      }
+    }
   },
   mounted() {
     lsMgt.getValue(this, 'isMagfes');
@@ -930,6 +938,12 @@ export default {
 
     if (this.isUserLogged) {
       this.loadLists();
+    }
+    else {
+      const listIds = lsMgt.fetchValue('currentListIds');
+      if (listIds !== undefined) {
+        listIds.forEach(r => this.addRaid(r.id, this.myLists[0].data));
+      }
     }
   }
 }

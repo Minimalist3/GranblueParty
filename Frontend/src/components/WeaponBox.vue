@@ -12,6 +12,7 @@
     <span class="scaledText" v-else> </span>
 
     <img
+      class="is-clickable"
       :draggable="object.nameen"
       @click="onClick(index)"
       :src="getImage"

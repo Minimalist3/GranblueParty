@@ -8,7 +8,7 @@
     <img
       v-for="i in getYellowStarsCount"
       :key="'y' + i"
-      class="column"
+      class="column is-clickable"
       :src="getImage('y', i)"
       :style="'width: ' + 100/max + '%;'"
       @click="click(i)"
@@ -16,7 +16,7 @@
     <img
       v-for="i in getBlueStarsCount"
       :key="'b' + i"
-      class="column"
+      class="column is-clickable"
       :src="getImage('b', i+base)"
       :style="'width: ' + 100/max + '%;'"
       @click="click(i+base)"

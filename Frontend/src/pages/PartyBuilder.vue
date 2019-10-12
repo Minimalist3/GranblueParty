@@ -72,6 +72,65 @@
       </div>
     </div>
 
+
+    <div class="box has-background-light" v-if="showBookmarklet">
+      <div v-if="showUpdateBookmarklet">
+        <p class="has-topbot-margins">
+          <span class="title">A new version of the Bookmarklet is available</span><br>
+          You should update to the last version to benefit from an improved export.<br>
+          All you need to do is to update your Bookmark in Chrome with the following JavaScript code:
+          <a href="https://github.com/Minimalist3/GBF-Bookmarklet/raw/master/bookmarklet.min.js" target="_blank">bookmarklet.min.js</a>.
+        </p>
+      </div>
+      <div v-else>
+        <p class="has-topbot-margins">
+          <span class="title">What is this</span><br>
+          Open a Party page in GBF and export the class, characters, summons and weapons here in a single click.
+        </p>
+        <p class="has-topbot-margins">
+          <span class="title">How to install</span><br>
+          All you need is to create a new Bookmark in Chrome with the following JavaScript code:
+          <a href="https://github.com/Minimalist3/GBF-Bookmarklet/raw/master/bookmarklet.min.js" target="_blank">bookmarklet.min.js</a>.
+        </p>
+      </div>
+
+      <p class="has-topbot-margins">
+        <span class="title">More information</span><br>
+        You can find the source code and a comprehensive Readme here:
+        <a href="https://github.com/Minimalist3/GBF-Bookmarklet" target="_blank">GBF-Bookmarklet</a>.
+      </p>
+    </div>
+
+    <div class="box has-background-light" v-if="showHelp">
+      <p class="has-topbot-margins">
+        <span class="title">My Parties</span><br>
+        By logging into your account, you can save and load as many parties as you want, then share the link to each one with your friends.<br>
+        Only you can modify your parties. When you click the Update button, people will automatically see the updated version.
+      </p>
+      <p class="has-topbot-margins">
+        <span class="title">The Edit checkbox</span><br>
+        When the Edit checkbox is checked, you can add elements to your party.<br>
+        Uncheck it to click on character skills and summons.
+      </p>
+      <p class="has-topbot-margins">
+        <span class="title">Drag and Drop support</span><br>
+        You can drag and drop character, summons and weapons to other slots.<br>
+        If something is already at the destination, the two items will swap places.<br>
+        You can also hold the Ctrl key while before dropping to duplicate the item instead.<br>
+      </p>
+      <p class="has-topbot-margins">
+        <span class="title">Customize your party</span><br>
+        Set the uncap level of your party by clicking of the stars.<br>
+        You can set a Perpetuity Ring on each character by clicking on the lower right corner of the portrait.<br>
+        Click on the lock icon of the weapon skills to select a skill key.<br>
+      </p>
+      <p class="has-topbot-margins">
+        <span class="title">Copy PermaURL (deprecated)</span><br>
+        You can share your team setup by clicking the "Copy PermaURL" button and copying the URL of the page.<br>
+        This feature will be removed in the coming months, to be replaced by "My Parties".
+      </p>
+    </div>
+
     <div class="field is-grouped is-grouped-multiline vcenter-line" v-if="isUserLogged">
       <div class="control">
         My parties
@@ -166,64 +225,6 @@
       </transition>
     </div>
 
-    <div class="box has-background-light" v-if="showBookmarklet">
-      <div v-if="showUpdateBookmarklet">
-        <p class="has-topbot-margins">
-          <span class="title">A new version of the Bookmarklet is available</span><br>
-          You should update to the last version to benefit from an improved export.<br>
-          All you need to do is to update your Bookmark in Chrome with the following JavaScript code:
-          <a href="https://github.com/Minimalist3/GBF-Bookmarklet/raw/master/bookmarklet.min.js" target="_blank">bookmarklet.min.js</a>.
-        </p>
-      </div>
-      <div v-else>
-        <p class="has-topbot-margins">
-          <span class="title">What is this</span><br>
-          Open a Party page in GBF and export the class, characters, summons and weapons here in a single click.
-        </p>
-        <p class="has-topbot-margins">
-          <span class="title">How to install</span><br>
-          All you need is to create a new Bookmark in Chrome with the following JavaScript code:
-          <a href="https://github.com/Minimalist3/GBF-Bookmarklet/raw/master/bookmarklet.min.js" target="_blank">bookmarklet.min.js</a>.
-        </p>
-      </div>
-
-      <p class="has-topbot-margins">
-        <span class="title">More information</span><br>
-        You can find the source code and a comprehensive Readme here:
-        <a href="https://github.com/Minimalist3/GBF-Bookmarklet" target="_blank">GBF-Bookmarklet</a>.
-      </p>
-    </div>
-
-    <div class="box has-background-light" v-if="showHelp">
-      <p class="has-topbot-margins">
-        <span class="title">My Parties</span><br>
-        By logging into your account, you can save and load as many parties as you want, then share the link to each one with your friends.<br>
-        Only you can modify your parties. When you click the Update button, people will automatically see the updated version.
-      </p>
-      <p class="has-topbot-margins">
-        <span class="title">The Edit checkbox</span><br>
-        When the Edit checkbox is checked, you can add elements to your party.<br>
-        Uncheck it to click on character skills and summons.
-      </p>
-      <p class="has-topbot-margins">
-        <span class="title">Drag and Drop support</span><br>
-        You can drag and drop character, summons and weapons to other slots.<br>
-        If something is already at the destination, the two items will swap places.<br>
-        You can also hold the Ctrl key while before dropping to duplicate the item instead.<br>
-      </p>
-      <p class="has-topbot-margins">
-        <span class="title">Customize your party</span><br>
-        Set the uncap level of your party by clicking of the stars.<br>
-        You can set a Perpetuity Ring on each character by clicking on the lower right corner of the portrait.<br>
-        Click on the lock icon of the weapon skills to select a skill key.<br>
-      </p>
-      <p class="has-topbot-margins">
-        <span class="title">Copy PermaURL (deprecated)</span><br>
-        You can share your team setup by clicking the "Copy PermaURL" button and copying the URL of the page.<br>
-        This feature will be removed in the coming months, to be replaced by "My Parties".
-      </p>
-    </div>
-
     <div class="row">
 
       <span class="block" style="order: 1">
@@ -260,7 +261,7 @@
           ></summon-box>
         </span>
         <span class="main-summons">
-          <span style="margin-left: auto; margin-right: auto;">
+          <span class="is-unselectable" style="margin-left: auto; margin-right: auto;">
             <span class="tag is-dark is-medium">Atk</span> {{ getStatsFromSummons[0] }}
             <span class="tag is-dark is-medium">HP</span> {{ getStatsFromSummons[1] }}
           </span>

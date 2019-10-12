@@ -50,6 +50,18 @@ class LocalStorageMgt {
       obj[name] = JSON.parse(tmpValue);
     }
   }
+
+  // Return the value without setting data
+  fetchValue(name) {
+    if (typeof name !== "string") {
+      throw "name is not a String!"
+    }
+    const tmpValue = localStorage.getItem(this.page + '-' + name);    
+    if (tmpValue) {
+      return JSON.parse(tmpValue);
+    }
+    return undefined;
+  }
 }
 
 export default {

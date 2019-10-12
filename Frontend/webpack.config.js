@@ -23,9 +23,16 @@ module.exports = (env, argv) => {
         entry: './src/app.js',
         stats: 'minimal',
         output: {
-            filename: devMode ? 'main.js' : 'main-[contenthash].js',
+            filename: devMode ? 'main.js' : '[name]-[contenthash].js',
+            chunkFilename: devMode ? '[name].js' : '[name]-[contenthash].js',
             path: path.resolve(__dirname, 'dist'),
             publicPath: '/',
+            crossOriginLoading: 'anonymous',
+        },
+        optimization: {
+          splitChunks: {
+            chunks: 'all',
+          },
         },
         devServer: {
             publicPath: "/",
@@ -102,14 +109,14 @@ module.exports = (env, argv) => {
             new WebpackCdnPlugin({
                 modules: [
                     {
-                        name: 'vue',
-                        var: 'Vue',
-                        path: devMode ? 'vue.runtime.js' : 'vue.runtime.min.js'
+                      name: 'vue',
+                      var: 'Vue',
+                      path: devMode ? 'vue.runtime.js' : 'vue.runtime.min.js'
                     },
                     {
-                        name: 'vue-router',
-                        var: 'VueRouter',
-                        path: devMode ? 'vue-router.js' : 'vue-router.min.js'
+                      name: 'vue-router',
+                      var: 'VueRouter',
+                      path: devMode ? 'vue-router.js' : 'vue-router.min.js'
                     },
                     {
                       name: 'vuex',
@@ -117,19 +124,21 @@ module.exports = (env, argv) => {
                       path: devMode ? 'vuex.js' : 'vuex.min.js'
                     },
                     {
-                        name: 'axios',
-                        var: 'axios',
-                        path: 'axios.min.js'
+                      name: 'axios',
+                      var: 'axios',
+                      path: 'axios.min.js'
                     },
                 ],
                 prodUrl: 'https://cdnjs.cloudflare.com/ajax/libs/:name/:version/:path',
                 devUrl: ':name/dist/:path',
                 prod: ! devMode,
-                publicPath: '../node_modules'
+                publicPath: '../node_modules',
+                crossOrigin: 'anonymous',
+                sri: true,
             }),
             new MiniCssExtractPlugin({
                 filename: devMode ? '[name].css' : '[name]-[contenthash].css',
-                chunkFilename: devMode ? '[id].css' : '[id]-[contenthash].css',
+                chunkFilename: devMode ? '[name].css' : '[name]-[contenthash].css',
             }),
             new CopyPlugin( [{ from: 'src/img', to: 'img' }] ),
         ],

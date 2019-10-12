@@ -13,6 +13,7 @@
     
     <span class="portrait-img">
       <img
+        class="is-clickable"
         :draggable="object.nameen"
         :src="getImage"
         @click="onClickPortrait(index)"
@@ -31,7 +32,7 @@
 
       <img
         v-if="object.nameen !== undefined && object.haspring !== undefined"
-        class="ring-img"
+        class="ring-img is-clickable"
         :class="object.haspring ? '' : 'ring-disabled'"
         src="@/img/icon_pring.png"
         title="Perpetuity Ring"
@@ -68,7 +69,7 @@
       <span
         v-for="skill in getSkills"
         :key="skill.index"
-        class="skillButton"
+        class="skillButton is-clickable"
         :style="'background-image: url(./img/chara_skills/' + object.characterid + '_' + skill.index + '.png);'"
         @click="onClickSkill(index, skill.index)"
       >

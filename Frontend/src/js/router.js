@@ -7,14 +7,14 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/pages/Index.vue'),
+      component: () => import(/* webpackChunkName: "index" */ '@/pages/Index.vue'),
       meta: {
         title: 'Granblue Fantasy Tools - Home',
       },
     },
     {
       path: '/builder',
-      component: () => import('@/pages/PartyBuilder.vue'),
+      component: () => import(/* webpackChunkName: "builder" */ '@/pages/PartyBuilder.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Party Builder',
@@ -24,7 +24,8 @@ const router = new VueRouter({
     },
     {
       path: '/collection',
-      component: () => import('@/pages/CollectionTracker.vue'),
+      name: 'collection',
+      component: () => import(/* webpackChunkName: "collection" */ '@/pages/CollectionTracker.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         needAuth: true,
@@ -36,7 +37,7 @@ const router = new VueRouter({
     },
     {
       path: '/collection/:collection_id',
-      component: () => import('@/pages/CollectionTracker.vue'),
+      component: () => import(/* webpackChunkName: "collection" */ '@/pages/CollectionTracker.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - View Collection',
@@ -47,7 +48,7 @@ const router = new VueRouter({
     {
       path: '/collection401',
       name: 'collection401',
-      component: () => import('@/pages/Collection401.vue'),
+      component: () => import(/* webpackChunkName: "error" */ '@/pages/Collection401.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - My Collection',
@@ -57,7 +58,7 @@ const router = new VueRouter({
     },
     {
       path: '/account',
-      component: () => import('@/pages/Account.vue'),
+      component: () => import(/* webpackChunkName: "account" */ '@/pages/Account.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         needAuth: true,        
@@ -66,7 +67,7 @@ const router = new VueRouter({
     },
     {
       path: '/calcevoker',
-      component: () => import('@/pages/CalcEvoker.vue'),
+      component: () => import(/* webpackChunkName: "evoker" */ '@/pages/CalcEvoker.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Evoker Calculator',
@@ -76,7 +77,7 @@ const router = new VueRouter({
     },
     {
       path: '/calcgw',
-      component: () => import('@/pages/CalcGW.vue'),
+      component: () => import(/* webpackChunkName: "gw" */ '@/pages/CalcGW.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Guild Wars Tokens Calculator',
@@ -86,7 +87,7 @@ const router = new VueRouter({
     },
     {
       path: '/release',
-      component: () => import('@/pages/ReleaseSchedule.vue'),
+      component: () => import(/* webpackChunkName: "schedule" */ '@/pages/ReleaseSchedule.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Release Schedule',
@@ -96,7 +97,7 @@ const router = new VueRouter({
     },
     {
       path: '/friendsum',
-      component: () => import('@/pages/FriendSummons.vue'),
+      component: () => import(/* webpackChunkName: "friend" */ '@/pages/FriendSummons.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Friend Summons',
@@ -106,7 +107,7 @@ const router = new VueRouter({
     },
     {
       path: '/dailygrind',
-      component: () => import('@/pages/DailyGrind.vue'),
+      component: () => import(/* webpackChunkName: "daily" */ '@/pages/DailyGrind.vue'),
       pathToRegexpOptions: { strict: true },
       meta: {
         title: 'Granblue Fantasy Tools - Daily Grind',
@@ -130,18 +131,23 @@ const router = new VueRouter({
       component: () => import('@/pages/admin/Summons.vue'),
       pathToRegexpOptions: { strict: true },
     },
+    {
+      path: '/admin/sandbox',
+      component: () => import('@/pages/admin/Sandbox.vue'),
+      pathToRegexpOptions: { strict: true },
+    },
 /// #endif    
     {
       path: '/401',
       name: '401',
-      component: () => import('@/pages/NotLoggedIn.vue'),
+      component: () => import(/* webpackChunkName: "error" */ '@/pages/NotLoggedIn.vue'),
       meta: {
         title: 'Granblue Fantasy Tools - 401',
       }
     },
     {
       path: '*',
-      component: () => import('@/pages/NotFound.vue'),
+      component: () => import(/* webpackChunkName: "error" */ '@/pages/NotFound.vue'),
       meta: {
         title: 'Granblue Fantasy Tools - 404',
         desc: 'Page not found'

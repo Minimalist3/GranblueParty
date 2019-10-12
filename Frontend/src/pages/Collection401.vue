@@ -9,3 +9,19 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    getUsername() {
+      return this.$store.getters.getUsername;
+    }
+  },
+  watch: {
+    getUsername(to, from) {
+      // When a user logs in, go back to collection
+      this.$router.push({name: "collection"});
+    },
+  }
+}
+</script>

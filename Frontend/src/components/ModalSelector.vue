@@ -204,3 +204,16 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+
+.modal {
+  justify-content: initial;
+}
+
+.modal-card {
+  top: 4vh;
+  max-height: 92vh;
+}
+
+</style>

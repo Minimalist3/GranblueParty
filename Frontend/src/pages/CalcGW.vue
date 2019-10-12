@@ -5,8 +5,6 @@
       <label>Boxes needed <input class="input is-small" type="number" min="1" style="width: 10ch;" v-model.lazy="boxes_needed"></label>
       &nbsp;
       <label>Already opened <input class="input is-small" type="number" min="0" style="width: 10ch;" v-model.lazy="boxes_opened"></label>
-      &nbsp;
-      <label>Total AP <input class="input is-small" type="number" min="1" style="width: 10ch;" v-model.lazy="total_ap"></label>
       <br>
       Tokens needed: {{ tokens_needed }} [{{ tokens_explained }}]
       <br>
@@ -88,7 +86,7 @@
             <td v-if="show_join">{{ (data.cost_ep ? (data.token / data.cost_ep).toFixed(2) : '') }}</td>
             <td>{{ Math.ceil(tokens_needed / data.token) }}</td>
             <td v-if="show_host">{{ data.cost_meat > 0 ? Math.ceil(tokens_needed / data.token * data.cost_meat ) : '' }}</td>
-            <td v-if="show_host">{{ data.cost_ap > 0 ? Math.ceil(tokens_needed / data.token * (data.cost_ap / Math.floor(total_ap / 2)) ) : '' }}</td>
+            <td v-if="show_host">{{ data.cost_ap > 0 ? Math.ceil(tokens_needed / data.token * (data.cost_ap / 75) ) : '' }}</td>
             <td v-if="show_join">{{ data.cost_ep > 0 ? Math.ceil(tokens_needed / data.token * data.cost_ep ) : '' }}</td>
           </tr>
         </tbody>
@@ -182,7 +180,6 @@ export default {
     return {
       boxes_needed: 40,
       boxes_opened: 0,
-      total_ap: 120,
       total_honor: 0,
       tokens_explained: '',
       tokens_obtained: 0,
@@ -375,9 +372,6 @@ export default {
     boxes_opened() {
       lsMgt.setValue('boxes_opened', this);
     },
-    total_ap() {
-      lsMgt.setValue('total_ap', this);
-    },
     show_fight() {
       lsMgt.setValue('show_fight', this);
     },
@@ -400,7 +394,6 @@ export default {
   created() {
     lsMgt.getValue(this, 'boxes_needed');
     lsMgt.getValue(this, 'boxes_opened');
-    lsMgt.getValue(this, 'total_ap');
     lsMgt.getValue(this, 'show_fight');
     lsMgt.getValue(this, 'show_host');
     lsMgt.getValue(this, 'show_join');

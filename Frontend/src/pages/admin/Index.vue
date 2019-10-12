@@ -5,6 +5,7 @@
     <div>
       <router-link to="/admin/summons">Summons</router-link><br>
       <router-link to="/admin/weapons">Weapons</router-link><br>
+      <router-link to="/admin/sandbox">Sandbox</router-link><br>
     </div>
   </div>
 </template>

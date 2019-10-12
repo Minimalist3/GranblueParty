@@ -3,6 +3,12 @@
     <!-- Top bar -->
     <div v-if="isOwnCollection" class="field is-grouped is-grouped-multiline vcenter-line">
       <div class="control">
+        <button class="button is-light is-outlined" @click="$refs.importModal.showModal()">
+          Load Wiki collection
+        </button>
+      </div>
+
+      <div class="control">
         <button class="button is-info is-outlined" @click="shareCollection">
           Share
         </button>
@@ -89,7 +95,7 @@
         <div class="column is-narrow content">
           Characters <span class="tag is-link is-rounded">{{ chara_count.sum }}/{{ chara_total.sum }}</span>
           <ul id="checkboxes">
-            <li>Gatcha</li>
+            <li>Gacha</li>
             <ul>
               <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1000]"> Premium Draw</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ chara_count[1000] }}/{{ chara_total[1000] }}</span></li>
@@ -108,7 +114,7 @@
               <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1600]"> Premium Gala</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ chara_count[1600] }}/{{ chara_total[1600] }}</span></li>
             </ul>
-            <li>Non-gatcha</li>
+            <li>Non-gacha</li>
             <ul>
               <li><label><input class="checkbox" type="checkbox" v-model="chara_show[10]"> Eternals</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ chara_count[10] }}/{{ chara_total[10] }}</span></li>
@@ -122,7 +128,7 @@
         <div class="column is-narrow content">
           Summons <span class="tag is-link is-rounded">{{ summon_count.sum }}/{{ summon_total.sum }}</span>
           <ul id="checkboxes">
-            <li>Gatcha</li>
+            <li>Gacha</li>
             <ul>
               <li><label><input class="checkbox" type="checkbox" v-model="summon_show[1000]"> Premium Draw</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ summon_count[1000] }}/{{ summon_total[1000] }}</span></li>
@@ -131,7 +137,7 @@
               <li><label><input class="checkbox" type="checkbox" v-model="summon_show[1600]"> Non-ticketable</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ summon_count[1600] }}/{{ summon_total[1600] }}</span></li>
             </ul>
-            <li>Non-gatcha</li>
+            <li>Non-gacha</li>
             <ul>
               <li><label><input class="checkbox" type="checkbox" v-model="summon_show[20]"> Arcarum</label>&nbsp;
                   <span class="tag is-info is-rounded">{{ summon_count[20] }}/{{ summon_total[20] }}</span></li>
@@ -229,6 +235,7 @@
         </div>
       </div>
     </div>
+
     <!-- For clipboard support -->
     <input
       v-show="clipboardText.length > 0"
@@ -237,14 +244,18 @@
       type="text"
       :value="clipboardText"
     >
+
+    <modal-url ref="importModal" :onImport="loadWikiCollection"></modal-url>
   </div>
 </template>
 
 <script>
+import base64js from '@/js/base64js.js'
 import Utils from '@/js/utils.js'
 import DataModel from '@/js/dataModel.js'
 
 import DataFilter from '@/components/DataFilter.vue'
+import ModalUrl from '@/components/ModalURL.vue'
 import StarsLine from '@/components/StarsLine.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('CollectionTracker');
@@ -348,6 +359,7 @@ const initialData = () => {
 export default {
   components: {
     DataFilter,
+    ModalUrl,
     StarsLine,
   },
   data() {
@@ -503,6 +515,72 @@ export default {
                 this.loading++;
               })
               .catch(error => console.log(error));
+    },
+    loadWikiCollection(url) {
+      this.saveMessage = "";
+      let units = new Map();
+
+      let parts = url.split(';');
+      for (let i = 1; i <= 7; i++) {
+        if (typeof parts[i] !== 'string') {
+          parts[i] = '';
+        }
+      }
+      const strings = { 
+        3020000: parts[3], 3030000: parts[2], 3040000: parts[1],
+        2020000: parts[6], 2030000: parts[5], 2040000: parts[4]
+      };
+
+      // Is URL valid ?
+      if (parts[1].length + parts[2].length + parts[3].length + parts[4].length + parts[5].length + parts[6].length < 1) {
+        this.saveMessage = "Invalid wiki collection URL";
+        return;
+      }
+
+      for (let [key, value] of Object.entries(strings)) {
+        if(value.length < 1)
+          continue;
+        
+        let buffer = base64js.toByteArray(value);
+        let len = buffer.length / 3;
+        for (let i = 0; i < len; i++) {
+          let evos = 0;
+          evos |= (buffer[i*3  ] <<  0);
+          evos |= (buffer[i*3+1] <<  8);
+          evos |= (buffer[i*3+2] << 16);
+
+          for (let j = 0; j < 8; j++) {
+            let evo = ((evos >> (j*3)) & 0x07) - 1;
+            if (evo < 0)
+              continue;
+            let short_id = parseInt(key, 10) + (i*8+j);
+            units.set(short_id, evo);
+          }
+        }
+      }
+
+      this.characters.flat().forEach(c => {
+        const stars = units.get(c.id);
+        if (stars !== undefined) {
+          c.owned = true;
+          c.sc = stars;
+        }
+        else if (c.owned === true) {
+          c.owned = false;
+        }
+      });
+      this.summons.flat().forEach(c => {
+        const stars = units.get(c.id);
+        if (stars !== undefined) {
+          c.owned = true;
+          c.sc = stars;
+        }
+        else if (c.owned === true) {
+          c.owned = false;
+        }
+      });
+
+      this.modification = true;
     }
   },
   computed: {

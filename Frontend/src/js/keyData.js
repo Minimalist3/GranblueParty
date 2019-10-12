@@ -526,17 +526,19 @@ const data = {
       data: [ { "percent": {"1": 50}, "aura_type": "normal", "stat": "chainburst_cap" } ],
     },
   ],
-  // Dark Opus 3rd keys Magna
+  // Dark Opus 3rd keys Omega
   21: [
     {
       name: 'Vulcan\'s Stamina II',
       icon: 'ws_skill_whole_m_1_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["fire"] }} ]
     },
     {
       name: 'Vulcan\'s Enmity II',
       icon: 'ws_skill_backwater_m_1_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["fire"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Vulcan\'s Trium II',
@@ -554,11 +556,13 @@ const data = {
       name: 'Ezili\'s Stamina II',
       icon: 'ws_skill_whole_m_2_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["water"] }} ]
     },
     {
       name: 'Ezili\'s Enmity II',
       icon: 'ws_skill_backwater_m_2_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["water"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Ezili\'s Trium II',
@@ -576,11 +580,13 @@ const data = {
       name: 'Gaia\'s Stamina II',
       icon: 'ws_skill_whole_m_3_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["earth"] }} ]
     },
     {
       name: 'Gaia\'s Enmity II',
       icon: 'ws_skill_backwater_m_3_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["earth"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Gaia\'s Trium II',
@@ -598,11 +604,13 @@ const data = {
       name: 'Aeolus\'s Stamina II',
       icon: 'ws_skill_whole_m_4_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["wind"] }} ]
     },
     {
       name: 'Aeolus\'s Enmity II',
       icon: 'ws_skill_backwater_m_4_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["wind"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Aeolus\'s Trium II',
@@ -620,11 +628,13 @@ const data = {
       name: 'Horus\'s Stamina II',
       icon: 'ws_skill_whole_m_5_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["light"] }} ]
     },
     {
       name: 'Horus\'s Enmity II',
       icon: 'ws_skill_backwater_m_5_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["light"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Horus\'s Trium II',
@@ -642,11 +652,13 @@ const data = {
       name: 'Shalim\'s Stamina II',
       icon: 'ws_skill_whole_m_6_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["dark"] }} ]
     },
     {
       name: 'Shalim\'s Enmity II',
       icon: 'ws_skill_backwater_m_6_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["dark"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
       name: 'Shalim\'s Trium II',
@@ -665,11 +677,13 @@ const data = {
       name: 'Inferno\'s Stamina',
       icon: 'ws_skill_whole_1_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["fire"] }} ]
     },
     {
       name: 'Inferno\'s Enmity',
       icon: 'ws_skill_backwater_1_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["fire"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Hellfire\'s Trium',
@@ -687,11 +701,13 @@ const data = {
       name: 'Hoarfrost\'s Stamina',
       icon: 'ws_skill_whole_2_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["water"] }} ]
     },
     {
       name: 'Hoarfrost\'s Enmity',
       icon: 'ws_skill_backwater_2_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["water"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Tsunami\'s Trium',
@@ -709,11 +725,13 @@ const data = {
       name: 'Terra\'s Stamina',
       icon: 'ws_skill_whole_3_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["earth"] }} ]
     },
     {
       name: 'Terra\'s Enmity',
       icon: 'ws_skill_backwater_3_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["earth"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Mountain\'s Trium',
@@ -731,11 +749,13 @@ const data = {
       name: 'Ventosus\'s Stamina',
       icon: 'ws_skill_whole_4_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["wind"] }} ]
     },
     {
       name: 'Ventosus\'s Enmity',
       icon: 'ws_skill_backwater_4_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["wind"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Whirlwind\'s Trium',
@@ -753,11 +773,13 @@ const data = {
       name: 'Zion\'s Stamina',
       icon: 'ws_skill_whole_5_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["light"] }} ]
     },
     {
       name: 'Zion\'s Enmity',
       icon: 'ws_skill_backwater_5_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["light"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Thunder\'s Trium',
@@ -775,11 +797,13 @@ const data = {
       name: 'Oblivion\'s Stamina',
       icon: 'ws_skill_whole_6_3.png',
       desc: 'Pendulum of Strength',
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["dark"] }} ]
     },
     {
       name: 'Oblivion\'s Enmity',
       icon: 'ws_skill_backwater_6_3.png',
       desc: 'Pendulum of Zeal',
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["dark"]}, "aura_type": "optimus", "stat": "enmity"} ]
     },
     {
       name: 'Hatred\'s Trium',
