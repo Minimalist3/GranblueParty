@@ -68,7 +68,7 @@
           <div class="tile is-child">
             <h1 class="title has-text-light">Last update</h1>
             <p class="content">
-              <b>2019-09-30:</b> Grand Monika, Fire Siegfried
+              <b>2019-10-16:</b> Halloween characters
             </p>
           </div>
 

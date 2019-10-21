@@ -347,7 +347,7 @@
   {
     "pageid": 96059,
     "title": "Bridgette and Cordelia",
-    "lastrevid": 280998
+    "lastrevid": 302998
   },
   {
     "pageid": 3439,
@@ -452,7 +452,7 @@
   {
     "pageid": 84233,
     "title": "Catherine (SR)",
-    "lastrevid": 272220
+    "lastrevid": 302886
   },
   {
     "pageid": 15751,
@@ -552,7 +552,7 @@
   {
     "pageid": 103815,
     "title": "Colossus",
-    "lastrevid": 300781
+    "lastrevid": 301366
   },
   {
     "pageid": 50762,
@@ -662,7 +662,7 @@
   {
     "pageid": 31092,
     "title": "Dorothy and Claudia",
-    "lastrevid": 283154
+    "lastrevid": 301878
   },
   {
     "pageid": 20224,
@@ -677,7 +677,7 @@
   {
     "pageid": 3580,
     "title": "Eahta",
-    "lastrevid": 300496
+    "lastrevid": 301367
   },
   {
     "pageid": 3585,
@@ -762,7 +762,7 @@
   {
     "pageid": 99933,
     "title": "Europa (Summer)",
-    "lastrevid": 289733
+    "lastrevid": 301865
   },
   {
     "pageid": 3605,
@@ -972,7 +972,12 @@
   {
     "pageid": 3716,
     "title": "Hallessena",
-    "lastrevid": 288278
+    "lastrevid": 302899
+  },
+  {
+    "pageid": 105186,
+    "title": "Hallessena (Halloween)",
+    "lastrevid": 302956
   },
   {
     "pageid": 98423,
@@ -1162,7 +1167,7 @@
   {
     "pageid": 3785,
     "title": "Jin (Ronin)",
-    "lastrevid": 284983
+    "lastrevid": 301371
   },
   {
     "pageid": 16637,
@@ -1172,7 +1177,7 @@
   {
     "pageid": 3786,
     "title": "Jin (Wind)",
-    "lastrevid": 273167
+    "lastrevid": 301373
   },
   {
     "pageid": 3789,
@@ -1257,17 +1262,17 @@
   {
     "pageid": 3805,
     "title": "Katalina",
-    "lastrevid": 291215
-  },
-  {
-    "pageid": 19691,
-    "title": "Katalina (Dark)",
-    "lastrevid": 274446
+    "lastrevid": 302889
   },
   {
     "pageid": 3806,
     "title": "Katalina (Grand)",
-    "lastrevid": 300805
+    "lastrevid": 301330
+  },
+  {
+    "pageid": 19691,
+    "title": "Katalina (Promo)",
+    "lastrevid": 301387
   },
   {
     "pageid": 3807,
@@ -1487,7 +1492,7 @@
   {
     "pageid": 87271,
     "title": "Lobelia",
-    "lastrevid": 293193
+    "lastrevid": 302676
   },
   {
     "pageid": 3859,
@@ -1737,12 +1742,12 @@
   {
     "pageid": 32718,
     "title": "Mirin",
-    "lastrevid": 301070
+    "lastrevid": 301362
   },
   {
     "pageid": 86880,
     "title": "Mirin (Light)",
-    "lastrevid": 299811
+    "lastrevid": 301363
   },
   {
     "pageid": 3918,
@@ -1922,7 +1927,7 @@
   {
     "pageid": 3979,
     "title": "Pengy (Event)",
-    "lastrevid": 273114
+    "lastrevid": 301331
   },
   {
     "pageid": 3980,
@@ -2257,12 +2262,12 @@
   {
     "pageid": 4133,
     "title": "Sevilbarra",
-    "lastrevid": 284416
+    "lastrevid": 301364
   },
   {
     "pageid": 70285,
     "title": "Sevilbarra (Event)",
-    "lastrevid": 284417
+    "lastrevid": 301365
   },
   {
     "pageid": 4135,
@@ -2412,7 +2417,7 @@
   {
     "pageid": 18430,
     "title": "Sutera (Event)",
-    "lastrevid": 281243
+    "lastrevid": 301332
   },
   {
     "pageid": 4210,
@@ -2512,7 +2517,7 @@
   {
     "pageid": 4259,
     "title": "Tien",
-    "lastrevid": 291739
+    "lastrevid": 302497
   },
   {
     "pageid": 58426,
@@ -2552,7 +2557,7 @@
   {
     "pageid": 36205,
     "title": "Vajra",
-    "lastrevid": 283024
+    "lastrevid": 301369
   },
   {
     "pageid": 4299,
@@ -2592,12 +2597,12 @@
   {
     "pageid": 4303,
     "title": "Vaseraga",
-    "lastrevid": 283195
+    "lastrevid": 301554
   },
   {
     "pageid": 36425,
     "title": "Vaseraga (Earth)",
-    "lastrevid": 269869
+    "lastrevid": 301559
   },
   {
     "pageid": 4305,
@@ -2662,7 +2667,7 @@
   {
     "pageid": 25908,
     "title": "Walder (Event)",
-    "lastrevid": 272929
+    "lastrevid": 302447
   },
   {
     "pageid": 4323,
@@ -2780,6 +2785,11 @@
     "lastrevid": 283977
   },
   {
+    "pageid": 105190,
+    "title": "Zaja (Halloween)",
+    "lastrevid": 302957
+  },
+  {
     "pageid": 4372,
     "title": "Zehek",
     "lastrevid": 273007
@@ -2792,22 +2802,27 @@
   {
     "pageid": 4375,
     "title": "Zeta",
-    "lastrevid": 282902
+    "lastrevid": 301531
   },
   {
     "pageid": 17247,
     "title": "Zeta (Dark)",
-    "lastrevid": 283204
+    "lastrevid": 301541
   },
   {
     "pageid": 36424,
     "title": "Zeta (Event)",
-    "lastrevid": 284422
+    "lastrevid": 301550
   },
   {
     "pageid": 4376,
     "title": "Zeta (Summer)",
-    "lastrevid": 283149
+    "lastrevid": 301537
+  },
+  {
+    "pageid": 105182,
+    "title": "Zeta and Vaseraga (Halloween)",
+    "lastrevid": 302997
   },
   {
     "pageid": 37610,
