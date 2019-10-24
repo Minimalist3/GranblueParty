@@ -66,7 +66,7 @@
         <span class="is-size-4">{{ step.name }}</span>
         <br>
         <span v-for="item in getItems(step.items)" :key="item.icon">
-          <img :src="'/img/item/' + item.icon" class="vcenter-img">&nbsp;
+          <img :src="'/img/item/' + item.icon" class="vcenter-img" style="max-height: 25px; max-width: 25px;">&nbsp;
           {{ item.name }} x {{ item.q }} (<a :href="'https://gbf.wiki/' + item.name" target="_blank" ref="external">wiki</a>)
           <br>
         </span>
