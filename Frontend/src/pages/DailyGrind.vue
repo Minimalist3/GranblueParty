@@ -155,7 +155,7 @@
                     style="min-width: 32px;"
                   ></span>
                 </span>
-                <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" class="vcenter-img">
+                <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
                 {{ raidVal.name }}
                 <span v-if="raidVal.times">
                   <br>
@@ -207,7 +207,7 @@
         :key="raid.id"
       >
         <span class="tag is-light">x{{ raid.remaining }}</span>
-        <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img">
+        <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
         {{ raid.name }}
         <span class="tag is-black">{{ getCategories[raid.category].name }}</span>
         <br>
