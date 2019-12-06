@@ -1,149 +1,92 @@
 <template>
-  <div>
-    <h1 class="title has-text-white">Friend Summons</h1>
+  <div class="flex flex-col">
 
-    <div class="field is-grouped is-grouped-multiline vcenter-line">
-      <div class="control">
-        <button
-          class="button is-light is-outlined"
-          @click="clickCopyURL"
-        >
-          Copy PermaURL
-        </button>
-      </div>
+    <h1>Friend Summons</h1>
 
-      <div class="control">
-        <button
-          class="button is-light is-info"
-          :class="showHelp ? '' : 'is-outlined'"
-          @click="showHelp = ! showHelp"
-        >
-          💡Usage
-        </button>
-      </div>
+    <div class="flex flex-row flex-wrap items-center mb-4">
+      <button class="btn mr-2" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
+        <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
+      </button>
 
-      <div class="control">
-        <label>My ID <input class="input is-small" type="number" min="1" style="width: 20ch;" v-model="id"></label>
-      </div>
+      <button class="btn btn-white mr-2" @click="clickCopyURL">
+        <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
+      </button>
+
+      <label>My ID <input class="input is-small" type="number" min="1" style="width: 15ch;" v-model="id"></label>
     </div>
 
-    <div class="box has-background-light" v-if="showHelp">
-      <p>
-        <span class="title">Click on the stars</span><br>
+    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+      <h2>Click on the stars</h2>
+      <p class="pb-4">
         You can set the uncap level of the summons by clicking on the stars.
       </p>
-      <p>
-        <span class="title">Copy PermaURL</span><br>
-        You can share your friend summons by clicking the "Copy PermaURL" button and copying the URL of the page.
+      <h2>Share your summons</h2>
+      <p class="pb-4">
+        You can share your friend summons by clicking the "Share" button and copying the URL of the page.
       </p>
     </div>
-    <br>
 
-    <div class="columns is-centered is-multiline is-mobile">
-      <span class="column is-narrow has-text-centered">
-        <span class="tag is-medium is-rounded is-unselectable has-text-light" style="background-color: rgb(224, 36, 22);">Fire</span>
-        <summon-box
-          ref="summonBox0"
-          :index="0"
-          :object="summons[0]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <summon-box
-          ref="summonBox1"
-          :index="1"
-          :object="summons[1]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <span class="tag is-medium is-rounded is-unselectable has-text-light" style="margin-top: 4px; background-color: rgb(9, 145, 16);">Wind</span>
-      </span>
-
-      <span class="column is-narrow has-text-centered">
-        <span class="tag is-medium is-rounded is-unselectable has-text-light" style="background-color: rgb(17, 135, 209);">Water</span>
-        <summon-box
-          ref="summonBox3"
-          :index="3"
-          :object="summons[3]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <summon-box
-          ref="summonBox4"
-          :index="4"
-          :object="summons[4]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <span class="tag is-medium is-rounded is-unselectable has-text-black" style="margin-top: 4px; background-color: rgb(242, 232, 29);">Light</span>
-      </span>
-
-      <span class="column is-narrow has-text-centered">
-        <span class="tag is-medium is-rounded is-unselectable has-text-light" style="background-color: rgb(158, 99, 9);">Earth</span>
-        <summon-box
-          ref="summonBox2"
-          :index="2"
-          :object="summons[2]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <summon-box
-          ref="summonBox5"
-          :index="5"
-          :object="summons[5]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <span class="tag is-medium is-rounded is-unselectable has-text-light" style="margin-top: 4px; background-color: rgb(116, 10, 168);">Dark</span>
-      </span>
-
-      <span class="column is-narrow has-text-centered">
-        <span class="tag is-medium is-rounded is-light is-unselectable">Misc.</span>
-        <summon-box
-          ref="summonBox6"
-          :index="6"
-          :object="summons[6]"
-          :onClick="clickSummon"
-        ></summon-box>
-        <summon-box
-          ref="summonBox7"
-          :index="7"
-          :object="summons[7]"
-          :onClick="clickSummon"
-        ></summon-box>
-      </span>
+    <div class="flex flex-row flex-wrap self-center mb-4">
+      <div class="flex flex-col items-center mr-4">
+        <span class="px-3 py-1 my-1 rounded-full text-white bg-red-600">Fire</span>
+        <box-summon class="mb-4" :object="summons[0]" :showLevel="false" @click-portrait="showModal(0)"></box-summon>
+        <box-summon :object="summons[1]" :showLevel="false" @click-portrait="showModal(1)"></box-summon>
+        <span class="px-3 py-1 my-1 rounded-full text-white bg-green-600">Wind</span>
+      </div>
+      <div class="flex flex-col items-center mr-4">
+        <span class="px-3 py-1 my-1 rounded-full text-white bg-blue-600">Water</span>
+        <box-summon class="mb-4" :object="summons[3]" :showLevel="false" @click-portrait="showModal(3)"></box-summon>
+        <box-summon :object="summons[4]" :showLevel="false" @click-portrait="showModal(4)"></box-summon>
+        <span class="px-3 py-1 my-1 rounded-full text-black bg-yellow-400">Light</span>
+      </div>
+      <div class="flex flex-col items-center mr-4">
+        <span class="px-3 py-1 my-1 rounded-full text-white bg-yellow-800">Earth</span>
+        <box-summon class="mb-4" :object="summons[2]" :showLevel="false" @click-portrait="showModal(2)"></box-summon>
+        <box-summon :object="summons[5]" :showLevel="false" @click-portrait="showModal(5)"></box-summon>
+        <span class="px-3 py-1 my-1 rounded-full text-white bg-purple-600">Dark</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="px-3 py-1 my-1 rounded-full text-black bg-white">Misc</span>
+        <box-summon class="mb-4" :object="summons[6]" :showLevel="false" @click-portrait="showModal(6)"></box-summon>
+        <box-summon :object="summons[7]" :showLevel="false" @click-portrait="showModal(7)"></box-summon>
+      </div>
     </div>
 
-    <span class="column has-text-centered is-size-4">ID: {{ id }}</span>
+    <span class="text-center text-xl font-semibold">ID: {{ id }}</span>
 
-    <modal-selector
-      ref="modalSummon"
-      route="party/summons"
-      :categories="modalSummonData"
-      :selected="whenSummonSelected"
-    ></modal-selector>
 
-    <input
-      v-show="clipboardText.length > 0"
-      id="clipboardInput"
-      readonly
-      type="text"
-      :value="clipboardText"
-    >
+    <!-- Modal -->
+    <modal
+      v-model="show_modal"
+      route="/party/summons"
+      :categories="categories"
+      :dataModel="data_model"
+      @item-selected="changeObject"
+    ></modal>
+
+    <!-- Clipboard -->
+    <input v-show="clipboard_text.length > 0" id="clipboardInput" readonly type="text" :value="clipboard_text">
   </div>
 </template>
 
 <script>
-import SummonBox from '@/components/SummonBox.vue'
-import ModalSelector from '@/components/ModalSelector.vue'
-
-import msgpack from '@/js/msgpack.js'
-import base64js from '@/js/base64js.js'
+import msgpack from '@/js/libs/msgpack.js'
+import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
+import DataModel from '@/js/data-model'
+
+import BoxSummon from "@/components/BoxSummon.vue";
+import Modal from '@/components/ModalSelector.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('FriendSummons');
 
-const defaultValues = {
+const DEFAULT_VALUES = {
   summons: [{}, {}, {}, {}, {}, {}, {}, {}],
 }
 // Helper to match categories with proper default values
 const getDefaultValues = (data, category) => {
   if (Utils.isEmpty(data[category])) {
-    return defaultValues[category];
+    return Utils.copy(DEFAULT_VALUES[category]);
   }
   if (data[category] instanceof Array) {          
     return data[category].map(e => Utils.isEmpty(e) ? {} : e);
@@ -153,14 +96,18 @@ const getDefaultValues = (data, category) => {
 
 export default {
   components: {
-    SummonBox,
-    ModalSelector
+    BoxSummon,
+    Modal,
   },
   data() {
     return {
       id: 1,
-      summons: defaultValues['summons'],
-      modalSummonData: [
+      clipboard_text: '',
+      show_help: false,
+      show_modal: false,
+      selected_box_index: 0,
+      summons: Utils.copy(DEFAULT_VALUES['summons']),
+      categories: [
         {
           name: "Name",
           isColumn: true,
@@ -180,29 +127,29 @@ export default {
           key: "e",
         },
       ],
-      clipboardText: '',
-      showHelp: false,
+      data_model: {
+        e: Utils.copy(DataModel.e)
+      },
     }
   },
   methods: {
-    range(start, end) {
-      return Array(end - start + 1).fill().map((_, idx) => start + idx)
-    },
-    clickSummon(slot) {
-      if (slot < 6) {
-        this.$refs.modalSummon.dataModel.e.data.forEach(d => d.checked = false);
-        this.$refs.modalSummon.dataModel.e.data[slot].checked = true;
-      } 
+    showModal(index) {
+      if (index < 6) {
+        this.data_model.e.data.forEach(d => d.checked = false);
+        this.data_model.e.data[index].checked = true;
+      }
       else {
-        this.$refs.modalSummon.dataModel.e.data.forEach(d => d.checked = true);
-      }     
+        this.data_model.e.data.forEach(d => d.checked = true);
+      }
 
-      this.$refs.modalSummon.showModal(slot);
+      this.selected_box_index = index;
+      this.show_modal = true;
     },
-    whenSummonSelected(id, slot) {
+    changeObject(id) {
       if (Utils.isEmpty(id)) return;
 
-      return this.$http.get('/party/summons/' + id)
+      const slot = this.selected_box_index;
+      this.$http.get('/party/summons/' + id)
         .then(response => Vue.set(this.summons, slot, response.data))
         .catch(error => console.log(error));
     },
@@ -218,7 +165,7 @@ export default {
       });
       
       const text = '?f=' + Utils.escapeBase64(base64js.fromByteArray(msgpack.serialize(data))) + window.location.hash;
-      this.clipboardText = window.location.href.split('?')[0] + text;
+      this.clipboard_text = window.location.href.split('?')[0] + text;
       history.replaceState(null, null, text);
 
       let self = this;
@@ -226,7 +173,7 @@ export default {
         const input = document.getElementById("clipboardInput");
         input.select();
         document.execCommand("copy");
-        self.clipboardText = '';
+        self.clipboard_text = '';
       });
     },
   },

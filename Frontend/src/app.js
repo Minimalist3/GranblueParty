@@ -1,18 +1,34 @@
 import Vue from 'vue'
 import Axios from 'axios'
 
-import App from '@/App.vue'
-import Config from '@/js/config'
-import router from '@/js/router'
-import store from '@/store'
+import { library as faCore } from '@fortawesome/fontawesome-svg-core'
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import {
+  faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
+  faFile, faFolderOpen, faInfoCircle, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon as faVue } from '@fortawesome/vue-fontawesome'
 
-require('./app.css')
+import App from './App.vue'
+import Config from './js/config'
+import router from './router'
+import store from './store'
+
+require('./css/app.css')
 require('./robots.txt')
 require('./favicon.ico')
 require('./favicon.png')
 require('./favicon-32.png')
 require('./favicon-64.png')
 require('./favicon-96.png')
+
+// FontAwesome setup
+faCore.add(
+  faTwitter, faGithub, faEnvelope, faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
+  faFile, faFolderOpen, faInfoCircle, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
+);
+Vue.component('fa-icon', faVue);
 
 // Use Axios globally
 Vue.prototype.$http = Axios.create({
@@ -21,6 +37,9 @@ Vue.prototype.$http = Axios.create({
 });
 // Always send the cookie. This needs to be set globally, else it won't work
 Vue.prototype.$http.defaults.withCredentials = true;
+
+// Remove prod warning
+Vue.config.productionTip = false;
 
 // Load state of localStorage
 const username = localStorage.getItem('username');

@@ -1,172 +1,123 @@
 <template>
   <div>
     <!-- Top bar -->
-    <div v-if="isOwnCollection" class="field is-grouped is-grouped-multiline vcenter-line">
-      <div class="control">
-        <button class="button is-light is-outlined" @click="$refs.importModal.showModal()">
-          Load Wiki collection
-        </button>
-      </div>
-
-      <div class="control">
-        <button class="button is-info is-outlined" @click="shareCollection">
-          Share
-        </button>
-      </div>
-      
-      <div class="control">
-        <button class="button is-info" @click="saveCollection" :disabled="! modification">
-          Save changes
-        </button>
-      </div>
-
-      <div class="control">
-        {{ saveMessage }}
-      </div>
+    <div v-if="isOwnCollection" class="flex flex-row flex-wrap items-center mb-4">
+      <button class="btn btn-white mr-4" @click="show_modal_url = true">
+        <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load Wiki collection
+      </button>
+      <button class="btn btn-white mr-4" @click="shareCollection">
+       <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
+      </button>    
+      <button class="btn btn-blue mr-4" @click="saveCollection" :disabled="! modification">
+        <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save changes
+      </button>
+      <span>{{ saveMessage }}</span>
     </div>
     
     <!-- Data filters -->
-    <div class="field is-grouped is-grouped-multiline">
+    <div class="flex flex-row flex-wrap items-center mb-4">
       <data-filter
+        class="my-2 mr-2"
         v-for="category in filters"
         :key="category.name"
-        :data="dataModel[category.key].data"
         :category="category.name"
+        :data="dataModel[category.key].data"        
       ></data-filter>
 
-      <div class="field has-addons">
-        Show names&nbsp;
-        <p class="control">
-          <button
-            class="button is-small"
-            :class="{'is-info': showNames}"
-            @click="setShowNames(true)"
-          >
-            Yes
-          </button>
-        </p>
-        <p class="control">
-          <button
-            class="button is-small"
-            :class="{'is-info': ! showNames}"
-            @click="setShowNames(false)"
-          >
-            No
-          </button>
-        </p>
-        &nbsp;
+      <div class="flex flex-row flex-wrap items-center btn-group my-2 mr-2">
+        <span class="mr-2">Show</span>
+        <button class="btn btn-sm" :class="showCharacters ? 'btn-blue' : 'btn-white'" @click="setShowCharacters()">Characters</button>
+        <button class="btn btn-sm" :class="showSummons ? 'btn-blue' : 'btn-white'" @click="setShowSummons()">Summons</button>
       </div>
 
-      <div class="field has-addons">
-        Show&nbsp;
-        <p class="control">
-          <button
-            class="button is-small"
-            :class="{'is-info': showCharacters}"
-            @click="setShowCharacters()"
-          >
-            Characters
-          </button>
-        </p>
-        <p class="control">
-          <button
-            class="button is-small"
-            :class="{'is-info': showSummons}"
-            @click="setShowSummons() "
-          >
-            Summons
-          </button>
-        </p>
-        &nbsp;
-      </div>
+      <checkbox class="mr-2 my-2" v-model="showNames">Show names</checkbox>
+      <checkbox class="my-2" v-model="showStars">Show stars</checkbox>
     </div>
 
     <!-- Draw stats -->
-    <div class="message is-info" style="width: max-content;">
-      <header class="message-header" title="Click to toggle...">
-        <a
-          @click="showStats = !showStats"
-          style="text-decoration: none;"
-        >
-          {{ showStats ? '-' : '+' }} Collection statistics {{ filtersActive ? '(filters active)' : '' }}
-        </a>
-      </header>
-      <div class="columns is-multiline message-body" v-if="showStats">
-        <div class="column is-narrow content">
-          Characters <span class="tag is-link is-rounded">{{ chara_count.sum }}/{{ chara_total.sum }}</span>
-          <ul id="checkboxes">
-            <li>Gacha</li>
-            <ul>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1000]"> Premium Draw</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1000] }}/{{ chara_total[1000] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1010]"> Valentine</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1010] }}/{{ chara_total[1010] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1020]"> Holiday</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1020] }}/{{ chara_total[1020] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1030]"> Summer</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1030] }}/{{ chara_total[1030] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1040]"> Halloween</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1040] }}/{{ chara_total[1040] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1050]"> Zodiac</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1050] }}/{{ chara_total[1050] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1500]"> Flash Gala</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1500] }}/{{ chara_total[1500] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[1600]"> Premium Gala</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[1600] }}/{{ chara_total[1600] }}</span></li>
-            </ul>
-            <li>Non-gacha</li>
-            <ul>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[10]"> Eternals</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[10] }}/{{ chara_total[10] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[20]"> Evokers</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[20] }}/{{ chara_total[20] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="chara_show[null]"> Others</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ chara_count[null] }}/{{ chara_total[null] }}</span></li>
-            </ul>
+    <div class="flex flex-col items-start mb-8">
+      <a 
+        class="btn-blue rounded-t font-bold hover:text-primary cursor-pointer p-2"
+        :class="showStats ? '' : 'rounded-b'"
+        @click="showStats = !showStats"
+        title="Click to toggle..."
+      >
+        Collection statistics {{ filtersActive ? '(filters active)' : '' }}
+        <fa-icon v-if=" ! showStats" :icon="['fas', 'angle-right']" class="ml-2"></fa-icon>
+        <fa-icon v-if="showStats" :icon="['fas', 'angle-down']" class="ml-2"></fa-icon>
+      </a>
+      <div class="flex flex-row flex-wrap p-2 bg-secondary" v-if="showStats">
+        <div class="flex flex-col mx-4">
+          <span class="mb-2">Characters <span class="tag text-inverse bg-inverse">{{ chara_count.sum }}/{{ chara_total.sum }}</span></span>
+          <ul class="list-disc ml-4">
+            <li class="mb-2">Gacha
+              <ul>
+                <li><label><input type="checkbox" v-model="chara_show[1000]"> Premium Draw</label>
+                    <span class="tag bg-primary">{{ chara_count[1000] }}/{{ chara_total[1000] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1010]"> Valentine</label>
+                    <span class="tag bg-primary">{{ chara_count[1010] }}/{{ chara_total[1010] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1020]"> Holiday</label>
+                    <span class="tag bg-primary">{{ chara_count[1020] }}/{{ chara_total[1020] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1030]"> Summer</label>
+                    <span class="tag bg-primary">{{ chara_count[1030] }}/{{ chara_total[1030] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1040]"> Halloween</label>
+                    <span class="tag bg-primary">{{ chara_count[1040] }}/{{ chara_total[1040] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1050]"> Zodiac</label>
+                    <span class="tag bg-primary">{{ chara_count[1050] }}/{{ chara_total[1050] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1500]"> Flash Gala</label>
+                    <span class="tag bg-primary">{{ chara_count[1500] }}/{{ chara_total[1500] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[1600]"> Premium Gala</label>
+                    <span class="tag bg-primary">{{ chara_count[1600] }}/{{ chara_total[1600] }}</span></li>
+              </ul>
+            </li>
+            <li class="mb-2">Non-gacha
+              <ul>
+                <li><label><input type="checkbox" v-model="chara_show[10]"> Eternals</label>
+                    <span class="tag bg-primary">{{ chara_count[10] }}/{{ chara_total[10] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[20]"> Evokers</label>
+                    <span class="tag bg-primary">{{ chara_count[20] }}/{{ chara_total[20] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[null]"> Others</label>
+                    <span class="tag bg-primary">{{ chara_count[null] }}/{{ chara_total[null] }}</span></li>
+              </ul>
+            </li>
           </ul>
         </div>
-        <div class="column is-narrow content">
-          Summons <span class="tag is-link is-rounded">{{ summon_count.sum }}/{{ summon_total.sum }}</span>
-          <ul id="checkboxes">
-            <li>Gacha</li>
-            <ul>
-              <li><label><input class="checkbox" type="checkbox" v-model="summon_show[1000]"> Premium Draw</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ summon_count[1000] }}/{{ summon_total[1000] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="summon_show[1030]"> Summer</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ summon_count[1030] }}/{{ summon_total[1030] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="summon_show[1600]"> Non-ticketable</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ summon_count[1600] }}/{{ summon_total[1600] }}</span></li>
-            </ul>
-            <li>Non-gacha</li>
-            <ul>
-              <li><label><input class="checkbox" type="checkbox" v-model="summon_show[20]"> Arcarum</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ summon_count[20] }}/{{ summon_total[20] }}</span></li>
-              <li><label><input class="checkbox" type="checkbox" v-model="summon_show[null]"> Others</label>&nbsp;
-                  <span class="tag is-info is-rounded">{{ summon_count[null] }}/{{ summon_total[null] }}</span></li>
-            </ul>
+        <div class="flex flex-col mx-4">
+          <span class="mb-2">Summons <span class="tag text-inverse bg-inverse">{{ summon_count.sum }}/{{ summon_total.sum }}</span></span>
+          <ul class="list-disc ml-4">
+            <li class="mb-2">Gacha
+              <ul>
+                <li><label><input type="checkbox" v-model="summon_show[1000]"> Premium Draw</label>
+                    <span class="tag bg-primary">{{ summon_count[1000] }}/{{ summon_total[1000] }}</span></li>
+                <li><label><input type="checkbox" v-model="summon_show[1030]"> Summer</label>
+                    <span class="tag bg-primary">{{ summon_count[1030] }}/{{ summon_total[1030] }}</span></li>
+                <li><label><input type="checkbox" v-model="summon_show[1600]"> Non-ticketable</label>
+                    <span class="tag bg-primary">{{ summon_count[1600] }}/{{ summon_total[1600] }}</span></li>
+              </ul>
+            </li>
+            <li class="mb-2">Non-gacha
+              <ul>
+                <li><label><input type="checkbox" v-model="summon_show[20]"> Arcarum</label>
+                    <span class="tag bg-primary">{{ summon_count[20] }}/{{ summon_total[20] }}</span></li>
+                <li><label><input type="checkbox" v-model="summon_show[null]"> Others</label>
+                    <span class="tag bg-primary">{{ summon_count[null] }}/{{ summon_total[null] }}</span></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <br>
     <!-- Collection -->
     <div v-if="loading !== 2">
       Loading...
     </div>
     <div v-else>
-      <div
-        v-for="i in 7"
-        :key="i"
-      >
-        <div class="tracker_images" v-if="showCharacters">
-          <span
-            style="width: 105px;"
-            v-for="chara in getCharacters(i-1)"
-            :key="chara.id"
-          >
+      <div v-for="i in 7" :key="i" class="mb-4">
+        <div class="flex flex-row flex-wrap" v-if="showCharacters">
+          <span class="flex flex-col" style="width: 105px;" v-for="chara in getCharacters(i-1)" :key="chara.id">
             <a
-              class="scaledText has-text-white"
+              class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
               :href="'https://gbf.wiki/' + chara.n"
               :title="chara.n"
@@ -175,16 +126,13 @@
               {{ chara.n }}
             </a>
             <img
-              class="tracker_image"
-              :class="{ tracker_disable: ! chara.owned }"            
+              :class="chara.owned ? '' : 'grayscale-80'"
+              style="height: 60px;"
               :title="chara.n"
               :src="'/img/unit_small/' + chara.id + '000.jpg'"
               @click="selectChara(chara)"
             >
-            <span
-              class="tracker_stars"
-              @click="starsModified()"
-            >
+            <span @click="starsModified()" style="height: 21px;" v-if="showStars">
               <stars-line
                 v-if="chara.owned"
                 :base="chara.sb"
@@ -196,14 +144,10 @@
             </span>
           </span>
         </div>
-        <div class="tracker_images" v-if="showSummons">
-          <span
-            style="width: 105px;"
-            v-for="summon in getSummons(i-1)"
-            :key="summon.id"
-          >
+        <div class="flex flex-row flex-wrap" v-if="showSummons">
+          <span class="flex flex-col" style="width: 105px;" v-for="summon in getSummons(i-1)" :key="summon.id">
             <a
-              class="scaledText has-text-white"
+              class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
               :href="'https://gbf.wiki/' + summon.n"
               :title="summon.n"
@@ -212,16 +156,13 @@
               {{ summon.n }}
             </a>
             <img            
-              class="tracker_image"
-              :class="{ tracker_disable: ! summon.owned }"            
+              :class="summon.owned ? '' : 'grayscale-80'"
+              style="height: 60px;"
               :title="summon.n"
               :src="'/img/unit_small/' + summon.id + '000.jpg'"
               @click="selectSummon(summon)"
             >
-            <span
-              class="tracker_stars"
-              @click="starsModified()"
-            >
+            <span @click="starsModified()" style="height: 21px;" v-if="showStars">
               <stars-line
                 v-if="summon.owned"
                 :base="summon.sb"
@@ -237,75 +178,26 @@
     </div>
 
     <!-- For clipboard support -->
-    <input
-      v-show="clipboardText.length > 0"
-      id="clipboardInput"
-      readonly
-      type="text"
-      :value="clipboardText"
-    >
+    <input v-show="clipboardText.length > 0" id="clipboardInput" readonly type="text" :value="clipboardText">
 
-    <modal-url ref="importModal" :onImport="loadWikiCollection"></modal-url>
+    <!-- Modal -->
+    <modal-url v-model="show_modal_url" @import="loadWikiCollection"></modal-url>
   </div>
 </template>
 
 <script>
-import base64js from '@/js/base64js.js'
+import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
-import DataModel from '@/js/dataModel.js'
+import DataModel from '@/js/data-model.js'
 
+import Checkbox from '@/components/common/Checkbox.vue'
 import DataFilter from '@/components/DataFilter.vue'
-import ModalUrl from '@/components/ModalURL.vue'
+import ModalUrl from '@/components/ModalWikiURL.vue'
 import StarsLine from '@/components/StarsLine.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('CollectionTracker');
 
-const categories = [
-  {
-    name: "Name",
-    isColumn: true,
-    isFilter: false,
-    key: "n",
-  },
-  {
-    name: "Rarity",
-    isColumn: false,
-    isFilter: true,
-    key: "ri",
-  },
-  {
-    name: "Element",
-    isColumn: true,
-    isFilter: true,
-    key: "e",
-  },
-  {
-    name: "Type",
-    isColumn: true,
-    isFilter: true,
-    key: "t",
-  },
-  {
-    name: "Race",
-    isColumn: true,
-    isFilter: true,
-    key: "ra",        
-  },
-  {
-    name: "Weapon",
-    isColumn: true,
-    isFilter: true,
-    key: "w",
-  },
-  {
-    name: "Owned",
-    isColumn: false,
-    isFilter: true,
-    key: "owned",
-  },
-];
-
-const initialData = () => {
+const INITIAL_DATA = () => {
   return {
     characters: [[], [], [], [], [], [], []],      
     summons: [[], [], [], [], [], [], []],
@@ -347,9 +239,11 @@ const initialData = () => {
     filters: [],
     modification: false,
     showNames: true,
+    showStars: true,
     showCharacters: true,
     showSummons: true,
     showStats: false,
+    show_modal_url: false,
     saveMessage: '',
     clipboardText: '',
     loading: 0,
@@ -358,12 +252,13 @@ const initialData = () => {
 
 export default {
   components: {
+    Checkbox,
     DataFilter,
     ModalUrl,
     StarsLine,
   },
   data() {
-    return initialData();
+    return INITIAL_DATA();
   },
   methods: {
     getCharacters(element) {
@@ -388,10 +283,6 @@ export default {
           return this.dataModel[e.key].show(summ[e.key])
         })
       })
-    },
-    setShowNames(value) {
-      this.showNames = value;
-      lsMgt.setValue('showNames', this);
     },
     setShowCharacters() {
       this.showCharacters = ! this.showCharacters;
@@ -472,9 +363,9 @@ export default {
       });  
     },
     loadCollection() {
-      this.filters = categories.filter(c => { return c.isFilter });
+      this.filters = this.getCategories.filter(c => { return c.isFilter });
       // Copy the data model locally to modify "checked" properties
-      categories.forEach(c => {
+      this.getCategories.forEach(c => {
         Vue.set(this.dataModel, c.key, Utils.copy(DataModel[c.key]));
       });
 
@@ -584,6 +475,52 @@ export default {
     }
   },
   computed: {
+    getCategories() {
+      return [
+        {
+          name: "Name",
+          isColumn: true,
+          isFilter: false,
+          key: "n",
+        },
+        {
+          name: "Rarity",
+          isColumn: false,
+          isFilter: true,
+          key: "ri",
+        },
+        {
+          name: "Element",
+          isColumn: true,
+          isFilter: true,
+          key: "e",
+        },
+        {
+          name: "Type",
+          isColumn: true,
+          isFilter: true,
+          key: "t",
+        },
+        {
+          name: "Race",
+          isColumn: true,
+          isFilter: true,
+          key: "ra",        
+        },
+        {
+          name: "Weapon",
+          isColumn: true,
+          isFilter: true,
+          key: "w",
+        },
+        {
+          name: "Owned",
+          isColumn: false,
+          isFilter: true,
+          key: "owned",
+        },
+      ];
+    },
     filtersActive() {
       return Object.values(this.chara_show).some(c => !c) || Object.values(this.summon_show).some(c => !c)
     },
@@ -593,6 +530,7 @@ export default {
   },
   created() {
     lsMgt.getValue(this, 'showNames');
+    lsMgt.getValue(this, 'showStars');
     lsMgt.getValue(this, 'showCharacters');
     lsMgt.getValue(this, 'showSummons');
     lsMgt.getValue(this, 'chara_show');
@@ -603,7 +541,7 @@ export default {
   watch: {
     '$route'(to, from) {
       // When the route changes from "Other collection" to "My collection"
-      Object.assign(this.$data, initialData());
+      Object.assign(this.$data, INITIAL_DATA());
       this.loadCollection();
     },
     chara_show: {
@@ -618,27 +556,12 @@ export default {
       },
       deep: true
     },
+    showNames() {
+      lsMgt.setValue('showNames', this);
+    },
+    showStars() {
+      lsMgt.setValue('showStars', this);
+    }
   }
 }
 </script>
-
-<style scoped>
-
-.tracker_images #starsLine {
-  width: 105px;  
-}
-
-.tracker_stars {
-  height: 21px;
-}
-
-.tracker_disable {
-  filter: grayscale(80%);
-}
-
-#checkboxes ul {
-  margin-left: 1em;
-  list-style: none;
-}
-
-</style>

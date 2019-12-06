@@ -1,21 +1,17 @@
 <template>
-  <tr
-    class="is-size-7"
-  >
-    <td>
+  <tr class="text-sm">
+    <td class="w-32">
       {{ page*10 + index }}-
-      <a :href="'https://gbf.wiki/' + item.nameen" target="_blank">
-        {{ item.nameen }}
-      </a><br>
+      <a :href="'https://gbf.wiki/' + item.nameen" target="_blank">{{ item.nameen }}</a><br>
       {{ item.starsmax }}*<br>
-      <label class="checkbox"><input type="checkbox" v-model="item.ignore" tabindex="-1"> Ignore</label>
+      <label><input type="checkbox" v-model="item.ignore" tabindex="-1"> Ignore</label>
     </td>
-    <td>
+    <td class="w-128">
       <div v-for="aura in [{name: 'aura', index: 0}, {name: 'auramlb', index: 3}, {name: 'auraflb', index: 4}, {name: 'auraulb', index: 5}, ]" :key="aura.index">
         <span v-if="item[aura.name] !== null">
-          <span class="field is-grouped has-no-margin">
-            <button class="button is-small is-dark" tabindex="-1" @click="addProp(aura.index)">+</button>
-            <button class="button is-small is-dark" tabindex="-1" @click="removeProp(aura.index)">-</button>
+          <span class="flex flex-row items-center">
+            <button class="btn btn-blue btn-sm mr-1" tabindex="-1" @click="addProp(aura.index)">+</button>
+            <button class="btn btn-blue btn-sm mr-1" tabindex="-1" @click="removeProp(aura.index)">-</button>
             <span>
               {{ aura.index }}: {{ item[aura.name] }}
               <span v-if="item['sub' + aura.name] !== null"><br>{{ aura.index }}s: {{ item['sub' + aura.name] }}</span>
@@ -27,14 +23,9 @@
         </span>
       </div>
     </td>
-    <td>            
-      <textarea
-        class="textarea is-small has-background-dark has-text-grey-light"
-        spellcheck="false"
-        style="width: 80ch; font-family: monospace;"
-        v-model.lazy="getObjectJSON"
-      ></textarea>
-    </td>          
+    <td class="align-top h-full">
+      <textarea class="font-mono text-primary bg-tertiary w-full h-full" spellcheck="false" v-model.lazy="getObjectJSON"></textarea>
+    </td>
   </tr>
 </template>
 
@@ -97,11 +88,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-.has-no-margin {
-  margin-bottom: 0 !important;
-}
-
-</style>

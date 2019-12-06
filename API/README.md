@@ -2,7 +2,7 @@
 REST API for [granblue.party](https://www.granblue.party) website.
 
 ## Requirements
-- NodeJS 10
+- NodeJS 12
 
 ## Installation
 To install the necessary modules, run `npm install` in the current folder.

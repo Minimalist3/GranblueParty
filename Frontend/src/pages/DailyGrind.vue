@@ -1,166 +1,110 @@
 <template>
   <div>
-    <h1 class="title has-text-white">Daily Grind Lists</h1>
+    <h1>Daily Grind Lists</h1>
 
     <!-- Top bar -->
-    <div class="field is-grouped is-grouped-multiline vcenter-line has-topbot-margins has-leftright-margins">
-      <div class="control">
-        <button
-          class="button is-info"
-          :class="showHelp ? '' : 'is-outlined'"
-          @click="showHelp = ! showHelp"
-        >
-          💡Usage
-        </button>
-      </div>
+    <div class="flex flex-row flex-wrap py-2">
+      <button class="btn mr-2" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
+        <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
+      </button>
+      
+      <checkbox class="mr-2" v-model="isMagfes">MagnaFest</checkbox>
 
-      <div class="control">
-        <input class="switch is-rounded is-info" type="checkbox" id="isMagfes" v-model="isMagfes">
-        <label for="isMagfes">MagnaFest</label>
-      </div>
+      <checkbox class="mr-2" v-model="editMode">Edit mode</checkbox>
 
-      <div class="control">
-        <input class="switch is-rounded is-info" type="checkbox" id="editMode" v-model="editMode">
-        <label for="editMode">Edit mode</label>
-      </div>
-
-      <div class="control" v-if="isUserLogged">
-        <input class="switch is-rounded is-info" type="checkbox" id="renameLists" v-model="renameLists">
-        <label for="renameLists">Rename lists</label>
-      </div>
+      <checkbox class="mr-2" v-model="renameLists">Rename lists</checkbox>
     </div>
 
     <!-- Usage -->
-    <div class="box has-background-light" v-if="showHelp">
-      <p class="has-topbot-margins">
-        <span class="title">Launch Raids</span><br>
+    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+      <h2>Launch Raids</h2>
+      <p class="pb-4">
         From the "All Content" tab, you can click on any raid to launch it directly in the Granblue Fantasy Tab.
         Keep this tab open, all the raids will open in the same one.<br>
         From the "My List" tab, simply click on "Launch Raid" to start the first raid on the list.
         Click again to start the next one, until the list is empty.<br>
         You can then click on "Reset" to display the whole list again.
       </p>
-      <p class="has-topbot-margins">
-        <span class="title">Edit Mode</span><br>
+      <h2>Edit Mode</h2>
+      <p class="pb-4">
         Enable Edit Mode to add raids to a list. From the "All Content" tab, click on each raid you want to add to the list.
         The order of the raid in the list in shown on the left of each box.
       </p>
-      <p class="has-topbot-margins">
-        <span class="title">List managment</span><br>
-        You can manage multiple lists with different raids in each. Simply select the one you want to use.<br>
+      <h2>List managment</h2>
+      <p class="pb-4">
+        You can manage multiple lists with different raids in each. Simply select the one you want to use.
         Lists can be created, renamed or deleted. Clicking the "Save All" button saves all the lists at once.
       </p>
     </div>    
 
     <div v-if="isUserLogged">
-      <div class="field is-grouped is-grouped-multiline">
-        <div class="control">
-          <div class="select">
-            <select v-model="listIndex" style="width: 25ch;">
-              <option
-                v-for="(list, index) in myLists"
-                :key="index"
-                :value="index"
-              >{{ list.name }}</option>
-            </select>
-          </div>
-        </div>
-        <div class="control" style="position: absolute;" v-if="renameLists">
-          <input
-            class="input"
-            style="height: 2rem; margin-top: 0.125rem; border-style: none; box-shadow: none; width: 21ch;"
-            type="text"
-            placeholder="Default list"
-            v-model="currentListName"
-          >
+      <div class="flex flex-row flex-wrap items-center">
+        <dropdown v-model.number="listIndex" class="w-64">
+          <option v-for="(list, index) in myLists" :key="index" :value="index">{{ list.name }}</option>
+        </dropdown>
+        <div class="absolute" v-if="renameLists">
+          <input class="input border-none focus:shadow-none ml-1" style="width: 14rem;" type="text" placeholder="Default list" v-model="currentListName">
         </div>
 
-        <div class="control">
-          <button
-            class="button is-light is-outlined"
-            @click="clickListSave()"
-          >
-            💾Save All
-          </button>
-        </div>
+        <button class="btn btn-blue ml-2" @click="clickListSave()">
+          <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save All
+        </button>
 
-        <div class="control">
-          <button
-            class="button is-light is-outlined"
-            @click="clickListNew()"
-          >
-            📄New List
-          </button>
-        </div>
+        <button class="btn btn-blue ml-2" @click="clickListNew()">
+          <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> New List
+        </button>
 
-        <div class="control">
-          <button
-            class="button is-light is-outlined is-danger"
-            :disabled="listIndex === 0"
-            @click="clickListDelete()"            
-          >
-            🗑️Delete List
-          </button>
-        </div>
+        <button class="btn btn-red ml-2" :disabled="listIndex === 0" @click="clickListDelete()">
+          <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete List
+        </button>
 
-        <div class="control">
+        <p class="pl-4 self-center">
           {{ saveMessage }}
-        </div>
+        </p>        
       </div>
     </div>
 
     <!-- Tabs -->
-    <div class="tabs has-background-dark has-text-grey-light">
-      <ul>
-        <li :class="showTab === 0 ? 'is-active' : ''"><a @click="showTab = 0">All Content</a></li>
-        <li :class="showTab === 1 ? 'is-active' : ''"><a @click="showTab = 1">My List</a></li>
-      </ul>
+    <div class="flex flex-row border-primary border-b pt-4 font-bold">
+      <a @click="showTab = 0" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="showTab === 0 ? 'bg-secondary' : ''">All Content</a>
+      <a @click="showTab = 1" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="showTab === 1 ? 'bg-secondary' : ''">My List</a>
     </div>
 
     <!-- All Content tab -->
     <div v-if="showTab === 0">
-      <div
-        v-for="content in getContent"
-        :key="content.name"
-        class="content"
-      >
-        <div class="subtitle has-text-light">
-          {{ content.name }}
-        </div>
-        <div
-          v-for="(catVal, catKey) in content.data"
-          :key="catKey"
-          class="columns is-vcentered is-mobile"
-        >
-          <div class="column is-narrow">
+      <div v-for="content in getContent" :key="content.name">
+        
+        <h2 class="py-4">{{ content.name }}</h2>
+
+        <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-row">
+
+          <div class="flex flex-col pr-4 whitespace-no-wrap">
             {{ catVal.name }}
-            <span v-if="catVal.times !== undefined">
-              <br>
-              <span class="tag is-black">x{{ catVal.times }}</span>
-              <span class="tag is-black">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
+            <span v-if="catVal.times !== undefined" class="flex flex-row">
+              <span class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
+              <span class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
             </span>
           </div>
 
-          <div class="column has-leftright-margins raid-line is-unselectable">
+          <div class="flex flex-row flex-wrap select-none py-1">
             <a v-for="(raidVal, raidKey) in catVal.raids"
                :key="raidKey"
                @click="clickRaid(raidKey)"
+               class="p-1 cursor-pointer"
             >
-              <div class="raid-back has-topbot-margins">
-                <span v-if="editMode">                  
+              <div class="p-4 rounded flex flex-col items-center bg-secondary text-primary hover:bg-tertiary">
+                <span>
                   <span
-                    class="tag"
-                    :class="getIndex(raidKey) >= 0 ? 'is-light' : 'is-dark'"
-                    v-html="getIndexString(raidKey)"
-                    style="min-width: 32px;"
-                  ></span>
+                    v-if="editMode"
+                    class="tag inline-block text-inverse" style="min-width: 1.5rem"
+                    :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
+                  >{{ getIndexString(raidKey) }}</span>
+                  <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 25px; max-width: 25px;">
+                  {{ raidVal.name }}
                 </span>
-                <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
-                {{ raidVal.name }}
-                <span v-if="raidVal.times">
-                  <br>
-                  <span class="tag is-black">x{{ raidVal.times }}</span>
-                  <span class="tag is-black">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                <span v-if="raidVal.times" class="flex flex-row">
+                  <span class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
+                  <span class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
                 </span>                
               </div>
             </a>
@@ -170,60 +114,26 @@
     </div>
 
     <!-- My List tab -->
-    <div v-if="showTab === 1">
-      <div class="content">
-        AP needed: {{ getTotalAP }}
-      </div>      
+    <div v-if="showTab === 1" class="flex flex-col mt-4">
+      <span class="font-semibold">AP needed: {{ getTotalAP }}</span>      
 
-      <div class="field is-grouped is-grouped-multiline vcenter-line">
-        <div class="control">
-          <button
-            class="button is-info is-outlined"
-            @click="undoRaid()"
-          >
-            Undo
-          </button>
-        </div>
-        <div class="control">
-          <button
-            class="button is-info"
-            @click="launchRaid()"
-          >
-            Launch Raid
-          </button>
-        </div>
-        <div class="control">
-          <button
-            class="button is-info is-outlined"
-            @click="skipRaid()"
-          >
-            Skip
-          </button>
-        </div>
+      <div class="flex flex-row flex-wrap my-4">
+        <button class="btn btn-white mr-2" @click="undoRaid()">Undo</button>
+        <button class="btn btn-blue mr-2" @click="launchRaid()">Launch Raid</button>
+        <button class="btn btn-white" @click="skipRaid()">Skip</button>
       </div>
 
-      <span
-        v-for="raid in currentList.slice(raidIndex)"
-        :key="raid.id"
-      >
-        <span class="tag is-light">x{{ raid.remaining }}</span>
+      <span v-for="raid in currentList.slice(raidIndex)" :key="raid.id" class="mb-1">
+        <span class="tag bg-inverse text-inverse">x{{ raid.remaining }}</span>
         <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
         {{ raid.name }}
-        <span class="tag is-black">{{ getCategories[raid.category].name }}</span>
+        <span class="tag bg-tertiary">{{ getCategories[raid.category].name }}</span>
         <br>
       </span>
-      <br>
 
-      <div class="field is-grouped is-grouped-multiline vcenter-line">          
-        <div class="control">
-          <button
-            class="button is-info is-outlined"
-            @click="resetRaid()"
-          >
-            Reset
-          </button>
-        </div>
-      </div>
+      <span class="mt-4">
+        <button class="btn btn-white" @click="resetRaid()">Reset</button>
+      </span>
     </div>
 
   </div>
@@ -231,6 +141,9 @@
 
 <script>
 import Utils from '@/js/utils.js'
+
+import Checkbox from '@/components/common/Checkbox.vue'
+import Dropdown from '@/components/common/Dropdown.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('DailyGrind');
 
@@ -731,10 +644,14 @@ const catImpossible = {
 };
 
 export default {
+  components: {
+    Checkbox,
+    Dropdown,
+  },
   data() {
     return {
       isMagfes: false,
-      showHelp: false,
+      show_help: false,
       editMode: false,
       renameLists: true,
       showTab: 0,
@@ -801,7 +718,7 @@ export default {
     },
     getIndexString(raidKey) {
       const index = this.getIndex(raidKey);
-      return index >= 0 ? index + 1 : '&nbsp;';
+      return index >= 0 ? index + 1 : '.';
     },
     clickListSave() {
       let data = [];
@@ -953,24 +870,6 @@ export default {
 
 .columns:not(:last-child) {
   margin-bottom: 0px;
-}
-
-.raid-line {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.raid-back {
-  color: hsl(0, 0%, 96%);
-  background-color: #262626;
-  border-radius: 4px;
-  padding: 0.75rem;
-  text-align: center;
-}
-
-.raid-back:hover {
-  color: #209cee;
-  background-color: #404040;
 }
 
 </style>

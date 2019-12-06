@@ -1,118 +1,92 @@
 <template>
-  <div
-    class="modal"
-    :class="{'is-active': show}"
-    v-if="show"
-  >
-    <div
-      class="modal-background"
-      @click="closeModal"
-    ></div>
-    <div class="modal-card has-text-dark">
-      <form @submit.prevent="doLogin">
-        <header class="modal-card-head">
-          <div class="modal-card-title">
-            Login
-          </div>
-        </header>
-        <section class="modal-card-body">
-          <div>
-            <label for="username">Username</label>
-            <input
-              class="input"
-              id="username"
-              ref="username"
-              type="text"
-              v-model="username"
-              required
-              autofocus
-            >
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input
-              class="input"
-              id="password"
-              ref="password"
-              type="password"
-              minlength="1"
-              required
-            >
-          </div>
-          <div class="has-text-danger">
-            {{ errorMessage }}&nbsp;
-          </div>
-        </section>
-        <footer class="modal-card-foot">
-          <input
-            class="button is-link"
-            type="submit"
-            value="Login"
-          >
-        </footer>
-      </form>
-    </div>
-    <button
-      aria-label="close"
-      class="modal-close is-large"      
-      @click="closeModal"
-    ></button>
-  </div>
+  <modal :show="show" @close="$emit('close', false)">
+    <template v-slot:header>
+      <h1>Login</h1>
+    </template>
+
+    <form @submit.prevent="doLogin()" class="m-1">
+      <div>
+        <label for="username" class="">Username</label>
+        <input class="input w-full" id="username" ref="username" type="text" placeholder="Username" v-model="username" required autofocus>
+      </div>
+      <div class="pb-2">
+        <label for="password">Password</label>
+        <input class="input w-full" id="password" ref="password" placeholder="Password" type="password" minlength="1" required>
+      </div>
+
+      <p v-if="error_message.length > 0">
+        <fa-icon :icon="['fas', 'exclamation-triangle']" class="text-red-400"></fa-icon>
+        {{ error_message }}
+      </p>
+      <p v-else>&nbsp;</p>
+
+      <input class="btn btn-blue pt-2" type="submit" value="Login">
+    </form>
+  </modal>
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
+
 export default {
-  data() {
-    return {
-      show: false,
-      username: "",
-      errorMessage: "",
-    }
+  model: {
+    prop: 'show',
+    event: 'close'
+  },
+  components: {
+    Modal
   },
   props: {
-    userLogged: Function,
+    show: {
+      type: Boolean,
+      required: true
+    },
+  },
+  data() {
+    return {
+      username: "",
+      error_message: "",
+    }
   },
   methods: {
-    showModal() {
-      this.show = true;
-      document.querySelector("HTML").classList.add("is-clipped");
-
-      let self = this;
-      Vue.nextTick().then(() => {
-        self.$refs.username.focus();
-      });
-    },
-    closeModal() {
-      this.show = false;
-      document.querySelector("HTML").classList.remove("is-clipped");
-    },
     doLogin() {
+      this.error_message = "";
+
       const body = {
         username: this.username,
         password: this.$refs.password.value,
       }
-      this.errorMessage = "";
 
       this.$http.post('/user/login', body)
         .then(response => {
-          this.closeModal();          
-          this.userLogged(this.username, response.data.data.userid);
+          this.$emit('close', false);
+          this.$emit('user-logged', this.username, response.data.data.userid);
         })
         .catch(error => {
           if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
-            this.errorMessage = error.response.data.error.message;
+            this.error_message = error.response.data.error.message;
           } else if (error.request) {
             // The request was made but no response was received
             // `error.request` is an instance of XMLHttpRequest in the browser
-            this.errorMessage = "Cannot contact login server";
+            this.error_message = "Cannot contact login server";
           } else {
             // Something happened in setting up the request that triggered an Error
-            this.errorMessage = error.message;
+            this.error_message = error.message;
           }
         });
-    },
+    }
   },
+  watch: {
+    show() {
+      if (this.show === true) {
+        let self = this;
+        Vue.nextTick().then(() => {
+          self.$refs.username.focus();
+        });
+      }
+    }
+  }
 }
 </script>

@@ -1,27 +1,26 @@
 <template>
-  <div class="field has-addons">
-    {{ category }}&nbsp;
-    <p class="control">
+  <div class="flex flex-row items-center">
+    <span class="pr-2">{{ category }}</span>
+
+    <span class="inline-flex flex-row flex-wrap btn-group">
       <button
-        class="button is-small"
-        :class="{'is-link': all}"
-        @click="clickAll"
+        class="btn btn-sm"
+        :class="all ? 'btn-blue' : 'btn-white'"
+        @click="clickAll()"
       >
         All
       </button>
-    </p>
-    <p class="control">
+
       <button
-        v-for="item in items"
-        :key="item.name"
-        class="button is-small"
-        :class="{'is-info': item.checked}"
-        @click="clickItem(item)"      
+        class="btn btn-sm"
+        :class="item.checked ? 'btn-blue ' : 'btn-white '"
+        v-for="(item, index) in data_view"
+        :key="index"
+        @click="clickItem(index)"
       >
         {{ item.name }}
       </button>
-    </p>
-    &nbsp;
+    </span>
   </div>
 </template>
 
@@ -42,39 +41,42 @@ export default {
   data() {
     return {
       all: true,
-      items: [],
+      data_view: [],
     }
   },
   methods: {
-    clickItem(item) {
-      item.checked = ! item.checked;
-      this.all = false;
-      // Propagate change
-      for (let i=0; i<this.data.length; i++) {
-        Vue.set(this.data[i], 'checked', this.items[i].checked);
+    clickAll() {
+      // check
+      if ( ! this.all) {
+        this.all = true;
+        this.data_view.forEach(e => e.checked = false);
+        this.data.forEach(e => e.checked = true);        
       }
     },
-    clickAll() {
-      // uncheck only
-      if ( ! this.all) {
-        this.items.forEach(e => e.checked = false);
-        this.all = true;
+    clickItem(index) {
+      this.data_view[index].checked = ! this.data_view[index].checked;
+
+      if (this.all) {
+        this.all = false;
+        // Propagate change
         for (let i=0; i<this.data.length; i++) {
-          Vue.set(this.data[i], 'checked', true);
+          Vue.set(this.data[i], 'checked', this.data_view[i].checked);
         }
       }
-    },
+      else {
+        Vue.set(this.data[index], 'checked', this.data_view[index].checked);
+      }
+    }
   },
   mounted() {
-    this.items = Utils.copy(this.data);
-    for (let i=0; i<this.items.length; i++) {
-      this.items[i].index = i;
-    }
-    if (this.items.some(e => { return ! e.checked })) {
+    // Copy data locally to deal with the All button
+    this.data_view = Utils.copy(this.data);
+
+    if (this.data_view.some(e => { return ! e.checked })) {
       this.all = false;
     }
     else {
-      this.items.forEach(e => e.checked = false);
+      this.data_view.forEach(e => e.checked = false);
       this.all = true;        
     }    
   },

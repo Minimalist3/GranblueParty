@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1 class="title is-unselectable has-text-light">My Collection</h1>
-    <img src="@/img/preview_collection.jpg">
-    <div>
-      Create a free account to gain access to "My Collection".<br><br>
+    <h1>My Collection</h1>
+    <img src="/img/preview_collection.png">
+    <p>
+      Create a free account to gain access to "My Collection".
+    </p>
+    <p class="pt-4">
       Choose the characters and summons you own, then hit the "Save changes" button.<br>
       You can share your collection by clicking the "Share" button and giving the unique URL of the page to your friends.
-    </div>
+    </p>
   </div>
 </template>
 

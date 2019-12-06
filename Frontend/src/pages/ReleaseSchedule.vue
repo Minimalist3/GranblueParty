@@ -1,93 +1,92 @@
 <template>
   <div>
-    <h1 class="title has-text-white">Release Schedule for Characters and Summons</h1>
+    <h1>Release Schedule</h1>
+    
     <div v-if="loading !== 2">
       Loading...
     </div>
     <div v-else>
       <!-- Data filters -->
-      <div class="field is-grouped is-grouped-multiline">
+      <div class="flex flex-row flex-wrap items-center">
         <data-filter
-          v-for="category in filters"
+          class="mr-2 my-2"
+          v-for="category in getFilters"
           :key="category.name"
-          :data="dataModel[category.key].data"
           :category="category.name"
+          :data="data_model[category.key].data"          
         ></data-filter>
 
-        <div class="field has-addons">
-          Year&nbsp;
+        <div class="inline-flex flex-row flex-wrap items-center btn-group mr-2">
+          <span class="mr-2 my-2">Year</span>
           <button
-            v-for="year in getYears"
+            v-for="(year, index) in getYears"
             :key="year"
-            class="button is-small"
-            :class="{'is-info': year === currentYear}"
-            @click="currentYear = year"      
+            class="btn btn-sm"
+            :class="getYears[index] === current_year ? 'btn-blue' : 'btn-white'"
+            @click="current_year = year"
           >
             {{ year }}
           </button>
-          &nbsp;
         </div>
 
-        <div class="field has-addons">
-          Obtain&nbsp;
+        <div class="inline-flex flex-row flex-wrap items-center btn-group mr-2">
+          <span class="mr-2 my-2">Obtain</span>
           <button
-            class="button is-small"
-            :class="{'is-info': showObtainGacha}"
-            @click="showObtainGacha = ! showObtainGacha"      
+            class="btn btn-sm"
+            :class="show_obtain_gacha ? 'btn-blue' : 'btn-white'"
+            @click="show_obtain_gacha = ! show_obtain_gacha"
           >
             Gacha
           </button>
           <button
-            class="button is-small"
-            :class="{'is-info': showObtainOther}"
-            @click="showObtainOther = ! showObtainOther"      
+            class="btn btn-sm"
+            :class="show_obtain_other ? 'btn-blue' : 'btn-white'"
+            @click="show_obtain_other = ! show_obtain_other"
           >
             Other
           </button>
-          &nbsp;
         </div>
 
-        <div class="field has-addons">
-          Show&nbsp;
+        <div class="inline-flex flex-row flex-wrap items-center btn-group">
+          <span class="mr-2 my-2">Show</span>
           <button
-            class="button is-small"
-            :class="{'is-info': showCharacters}"
-            @click="showCharacters = ! showCharacters"      
+            class="btn btn-sm"
+            :class="show_characters ? 'btn-blue' : 'btn-white'"
+            @click="show_characters = ! show_characters"
           >
             Characters
           </button>
-          <button
-            class="button is-small"
-            :class="{'is-info': showSummons}"
-            @click="showSummons = ! showSummons"      
+          <button 
+            class="btn btn-sm"
+            :class="show_summons ? 'btn-blue' : 'btn-white'"
+            @click="show_summons = ! show_summons"
           >
             Summons
           </button>
-          &nbsp;
         </div>
       </div>
 
-      <div class="content">
-        <span class="is-size-5">Statistics:</span><br>
-        Characters: {{ countCharacters }}<br>
-        Summons: {{ countSummons }}
+      <!-- Stats -->
+      <div class="content mt-4 mb-8">
+        <h2>Statistics:</h2>
+        Characters: {{ count_characters }}<br>
+        Summons: {{ count_summons }}
       </div>
 
-      <div
-        v-for="days in getRelease"
-        :key="days[0]"
-      >
-        <div>
-          <span class="is-size-5">{{ days[1][0].rd.toLocaleDateString("default", { month: 'long', day: 'numeric' }) }}</span>
+      <!-- List -->
+      <div v-for="days in getRelease" :key="days[0]">
+        <div class="mt-4">
+          <span class="text-xl font-bold">{{ days[1][0].rd.toLocaleDateString("default", { month: 'long', day: 'numeric' }) }}</span>
           <br>
-          <div class="tracker_images">
+          <div class="flex flex-row flex-wrap">
             <span
+              class="flex flex-col"
               style="width: 105px;"
               v-for="unit in days[1]"
               :key="unit.id"
             >
               <a
-                class="scaledText has-text-white"
+                class="text-xs text-primary h-5 px-1 text-center truncate"
                 target="_blank"
                 :href="'https://gbf.wiki/' + unit.n"
                 :title="unit.n"
@@ -95,7 +94,7 @@
                 {{ unit.n }}
               </a>
               <img
-                class="tracker_image"
+                style="height: 60px;"
                 :title="unit.n"
                 :src="'/img/unit_small/' + unit.id + '000.jpg'"
               >
@@ -108,7 +107,7 @@
 </template>
 
 <script>
-import DataModel from '@/js/dataModel.js'
+import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
 
 import DataFilter from '@/components/DataFilter.vue'
@@ -142,17 +141,16 @@ export default {
     return {
       loading: 0,
       now: new Date(),
-      currentYear: new Date().getFullYear(),
+      current_year: new Date().getFullYear(),
       characters: [],
       summons: [],
-      countCharacters: 0,
-      countSummons: 0,
-      dataModel: {},
-      filters: [],
-      showCharacters: true,
-      showSummons: true,
-      showObtainGacha: true,
-      showObtainOther: true,
+      count_characters: 0,
+      count_summons: 0,
+      data_model: {},
+      show_characters: true,
+      show_summons: true,
+      show_obtain_gacha: true,
+      show_obtain_other: true,
     }
   },
   computed: {
@@ -163,25 +161,28 @@ export default {
       }
       return years;
     },
+    getFilters() {
+      return categories.filter(c => { return c.isFilter });
+    },
     getRelease() {
       const releaseMap = new Map();
       let countCharacters = 0;
       let countSummons = 0;
 
-      if (this.showCharacters) {
+      if (this.show_characters) {
         this.characters.forEach(unit => {
-          if ( ! this.filters.every(e => this.dataModel[e.key].show(unit[e.key]))) {
+          if ( ! this.getFilters.every(e => this.data_model[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.showObtainGacha && unit.d >= 1000) {
+          if ( ! this.show_obtain_gacha && unit.d >= 1000) {
             return;
           }
-          if ( ! this.showObtainOther && unit.d < 1000) {
+          if ( ! this.show_obtain_other && unit.d < 1000) {
             return;
           }
 
           // Filter date
-          if (unit.rd.getFullYear() === this.currentYear) {
+          if (unit.rd.getFullYear() === this.current_year) {
             const dateString = unit.rd.toLocaleDateString("en-US", { month: '2-digit', day: '2-digit' });
             if (releaseMap.has(dateString)) {
               releaseMap.get(dateString).push(unit);
@@ -194,19 +195,19 @@ export default {
         });
       }
 
-      if (this.showSummons) {
+      if (this.show_summons) {
         this.summons.forEach(unit => {
-          if ( ! this.filters.every(e => this.dataModel[e.key].show(unit[e.key]))) {
+          if ( ! this.getFilters.every(e => this.data_model[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.showObtainGacha && unit.d >= 1000) {
+          if ( ! this.show_obtain_gacha && unit.d >= 1000) {
             return;
           }
-          if ( ! this.showObtainOther && unit.d < 1000) {
+          if ( ! this.show_obtain_other && unit.d < 1000) {
             return;
           }
 
-          if (unit.rd.getFullYear() === this.currentYear) {
+          if (unit.rd.getFullYear() === this.current_year) {
             const dateString = unit.rd.toLocaleDateString("en-US", { month: '2-digit', day: '2-digit' });
             if (releaseMap.has(dateString)) {
               releaseMap.get(dateString).push(unit);
@@ -219,20 +220,18 @@ export default {
         });
       }
 
-      this.countCharacters = countCharacters;
-      this.countSummons = countSummons;
-      const days = [...releaseMap.entries()].sort((a, b) => a[0] < b[0]);
-      return days;
+      this.count_characters = countCharacters;
+      this.count_summons = countSummons;
+      return [...releaseMap.entries()].sort((a, b) => a[0] < b[0]);
     }
   },
-  created() {
-    this.filters = categories.filter(c => { return c.isFilter });
+  mounted() {
     // Copy the data model locally to modify "checked" properties
     categories.forEach(c => {
-      Vue.set(this.dataModel, c.key, Utils.copy(DataModel[c.key]));
+      Vue.set(this.data_model, c.key, Utils.copy(DataModel[c.key]));
     });
     // Set rarity to All
-    Object.values(this.dataModel.ri.data).forEach(v => v.checked = true)
+    Object.values(this.data_model.ri.data).forEach(v => v.checked = true);
     
     this.$http.get("/release/characters")
       .then(response => {
@@ -255,6 +254,6 @@ export default {
         this.loading++;
       })
       .catch(error => console.log(error));
-  },
+  }
 }
 </script>

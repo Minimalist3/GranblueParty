@@ -1,57 +1,43 @@
 <template>
-  <div>
-    <div>
-      <a href="/admin">Up</a>
-      <button
-        class="button is-light is-outlined"
-        @click="saveData()"
-      >
-        Save
-      </button>
-      <button
-        class="button is-info is-outlined"
-        @click="hideNonEmptySkills()"
-      >
-        Hide
-      </button>
+  <div class="flex flex-col">
+    <div class="flex flex-row flex-wrap items-center mb-4">
+      <a class="mr-4" href="/admin">Up</a>
+      <button class="btn btn-white mr-4" @click="saveData()">Save</button>
+      <button class="btn btn-white mr-4" @click="hideNonEmptySkills()">Hide</button>
 
-      <input class="switch is-rounded is-info" type="checkbox" id="hide_skill_job_weapon" v-model="hide_skill_job_weapon">
+      <input class="" type="checkbox" id="hide_skill_job_weapon" v-model="hide_skill_job_weapon">
       <label for="hide_skill_job_weapon">hide_skill_job_weapon</label>
     </div>
 
     Skills: {{ getSkills.length }}
 
-    <table class="table is-narrow is-fullwidth has-background-dark">
+    <table class="table">
       <tbody>
-        <tr
-          v-for="(item, index) in getSkills"
-          :key="item.skillname + item.icon"
-        >
-          <td>
-            {{ index }}
-          </td>
+        <tr v-for="(item, index) in getSkills" :key="item.skillname + item.icon">
+          <td>{{ index }}</td>
           <td>
             <img style="min-width: 20px; width: 30px;" :src="'/img/weapon_skills/' + item.icon">
           </td>
-          <td>
+          <td class="w-24">
             {{ item.skillname }}<br>
             {{ item.icon }}
           </td>
-          <td>
+          <td class="w-32">
             <a :href="'https://gbf.wiki/' + item.weapons[0].nameen" target="_blank">
               Wiki link
               <!--<img style="height: 60px;" :src="'/img/weapon/' + item.weapons[0].weaponid + '00.jpg'">--><br>
             </a>            
             <span>
-              <div class="select is-small">
-                <select>
-                  <option v-for="weapon in item.weapons" :key="weapon.weaponid">{{ weapon.nameen }}</option>
-                </select>
-              </div> {{ item.weapons.length }}
+              <dropdown class="w-32" value="0">
+                <option v-for="(weapon, index) in item.weapons" :key="weapon.weaponid" :value="index">
+                  {{ weapon.nameen }}
+                </option>
+              </dropdown>
+              {{ item.weapons.length }}
             </span>
           </td>
           <td>
-            <button class="button is-small is-dark" @click="addProp(item)">+</button>
+            <button class="btn btn-blue btn-sm" @click="addProp(item)">+</button>
           </td>
           <td>
             <span v-if="item.data">
@@ -67,7 +53,7 @@
             -->
           </td>
           <td>
-            <button class="button is-small is-dark" @click="removeProp(item)">-</button>
+            <button class="btn btn-blue btn-sm" @click="removeProp(item)">-</button>
           </td>
         </tr>
       </tbody>
@@ -77,6 +63,7 @@
 
 <script>
 import WeaponProps from './WeaponProps.vue'
+import Dropdown from '@/components/common/Dropdown.vue'
 
 /**
  * .data object
@@ -105,6 +92,7 @@ import WeaponProps from './WeaponProps.vue'
 export default {
   components: {
     WeaponProps,
+    Dropdown
   },
   data() {
     return {
@@ -179,23 +167,15 @@ export default {
   },
   mounted() {
     this.$http.get('/admin/weapons')
-            .then(response => {
-              for (let s of response.data) {
-                if (s.data) {
-                  s.data = s.data.data;
-                }
-              }
-              this.message = response.data;
-            })
-            .catch(error => console.log(error));
+      .then(response => {
+        for (let s of response.data) {
+          if (s.data) {
+            s.data = s.data.data;
+          }
+        }
+        this.message = response.data;
+      })
+      .catch(error => console.log(error));
   }
 }
 </script>
-
-<style scoped>
-
-.table {
-    color: hsl(0, 0%, 98%);
-}
-
-</style>

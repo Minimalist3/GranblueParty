@@ -1,19 +1,15 @@
 <template>
   <div>
-    <h1 class="is-size-2">Account properties</h1>
-    <p>
+    <h1>Account properties</h1>
+
+    <p class="pt-8">
       Account name: {{ $store.getters.getUsername }}
     </p>
-    <br>
-    <p>
-      <button
-        class="button is-danger is-outlined"
-        @click="deleteAccount"
-      >
-        Delete account
-      </button>
+
+    <p class="pt-8">
+      <button class="btn btn-red" @click="deleteAccount">Delete account</button>
       <br>
-      This action cannot be reverted
+      <fa-icon :icon="['fas', 'exclamation-triangle']" class="text-red-400"></fa-icon> This action cannot be reverted
     </p>
   </div>
 </template>

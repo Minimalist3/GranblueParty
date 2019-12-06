@@ -1,63 +1,58 @@
 <template>
-  <div>
-    <h1 class="title has-text-white">Guild Wars tokens and boxes Calculator</h1>
-    <div class="form">
-      <label>Boxes needed <input class="input is-small" type="number" min="1" style="width: 10ch;" v-model.lazy="boxes_needed"></label>
-      &nbsp;
-      <label>Already opened <input class="input is-small" type="number" min="0" style="width: 10ch;" v-model.lazy="boxes_opened"></label>
-      <br>
-      Tokens needed: {{ tokens_needed }} [{{ tokens_explained }}]
-      <br>
-      Progress: {{ (100 - (tokens_needed / tokens_total * 100)).toFixed(2) }}%
-      <br>
-      <label>Tokens obtained <input class="input is-small" type="number" min="0" style="width: 15ch;" v-model.lazy="tokens_obtained"></label>
-      &nbsp;
-      <label>Total honor <input class="input is-small" type="number" min="0" style="width: 20ch;" v-model.lazy="total_honor"></label>
-      {{ total_honor >= 1000000 ? '(approximately ' + (total_honor / 1000000).toFixed(2) + 'm)' : '' }}
-    </div>
-    <br>
+  <div class="flex flex-col">
+    <h1>Guild Wars tokens and boxes Calculator</h1>
 
-    <div class="field is-grouped is-grouped-multiline">
-      <div class="field has-addons">
-        Fight&nbsp;
+    <!-- Stats -->
+    <div class="flex flex-col mb-8">
+      <span class="flex flex-row flex-wrap items-center">
+        <label class="mr-4">Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
+        <label class="mr-4">Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
+        <span>Progress: {{ (100 - (tokens_needed / tokens_total * 100)).toFixed(2) }}%</span>
+      </span>
+
+      <span class="flex flex-row flex-wrap items-center">
+        <label class="mr-4">Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
+        <span>
+          <label>Total honor <input class="input input-sm" type="number" min="0" style="width: 14ch;" v-model.lazy="total_honor"></label>
+          {{ total_honor >= 1000000 ? '(&asymp;' + (total_honor / 1000000).toFixed(2) + 'm)' : '' }}
+        </span>
+      </span>
+
+      <span>{{ tokens_explained }}</span>
+      <span class="text-lg font-bold">Tokens needed: {{ tokens_needed }}</span>
+    </div>
+
+    <!-- Select fights -->
+    <div class="flex flex-row flex-wrap mb-4 items-center">
+      <span class="mr-4 inline-flex flex-row btn-group">
+        <span class="mr-2">Fight</span>
         <button
           v-for="(fight, index) in getFightNames"
           :key="index"
-          class="button is-small"
-          :class="{'is-info': show_fight[index]}"
+          class="btn btn-sm"
+          :class="show_fight[index] ? 'btn-blue' : 'btn-white'"
           @click="showFight(index)"
         >
           {{ fight }}
         </button>
-      </div>
-      &nbsp;
-      <div class="field has-addons">
-        Type&nbsp;
-        <button
-          class="button is-small"
-          :class="{'is-info': show_host}"
-          @click="show_host = ! show_host"
-        >
+      </span>
+      
+      <span class="inline-flex flex-row mr-4 btn-group">
+        <span class="mr-2">Type</span>
+        <button class="btn btn-sm" :class="show_host ? 'btn-blue' : 'btn-white'" @click="show_host = ! show_host">
           Host
-        </button>        
-        <button
-          class="button is-small"
-          :class="{'is-info': show_join}"
-          @click="show_join = ! show_join"
-        >
+        </button>
+        <button class="btn btn-sm" :class="show_join ? 'btn-blue' : 'btn-white'" @click="show_join = ! show_join">
           Join
         </button>
-      </div>
-      &nbsp;
-      <div class="field">
-        <input class="switch is-rounded is-info is-rtl" type="checkbox" id="addHonor" v-model="add_honor">
-        <label for="addHonor">Include honor to tokens sum</label>
-      </div>
-    </div>
-    <br>
+      </span>
 
-    <div class="table-container">
-      <table class="table is-hoverable is-striped is-bordered ">
+      <checkbox v-model="add_honor">Include honor to tokens sum</checkbox>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-y-auto">
+      <table class="table table-striped table-px w-auto">
         <thead>
           <tr>
             <th>Name</th>
@@ -98,9 +93,11 @@
 <script>
 import Utils from '@/js/utils.js'
 
+import Checkbox from '@/components/common/Checkbox.vue'
+
 const lsMgt = new Utils.LocalStorageMgt('CalcGW');
 
-const fight_data = [
+const FIGHT_DATA = [
   {
     name: 'Very Hard',
     cost_ap: 30,
@@ -173,9 +170,24 @@ const fight_data = [
     token_2: 30,
     token_3: 20
   },
+  {
+    name: 'NM 150',
+    cost_ap: 50,
+    cost_meat: 20,
+    cost_ep: 3,
+    honor: 3600000,
+    token_host: 100,
+    token_join: 68,
+    token_1: 52,
+    token_2: 42,
+    token_3: 30
+  },
 ];
 
 export default {
+  components: {
+    Checkbox
+  },
   data() {
     return {
       boxes_needed: 40,
@@ -276,7 +288,7 @@ export default {
   },
   computed: {
     getData() {
-      return fight_data.flatMap((f, index) => {
+      return FIGHT_DATA.flatMap((f, index) => {
         if (this.show_fight[index]) {
           return this.getFightData(f);
         }
@@ -284,7 +296,7 @@ export default {
       });
     },
     getFightNames() {
-      return fight_data.map(f => f.name);
+      return FIGHT_DATA.map(f => f.name);
     },
     getBoxesNeeded() {
       return parseInt(this.boxes_needed, 10)
@@ -303,10 +315,10 @@ export default {
       let boxes = this.getBoxesNeeded - this.getBoxesOpened;
       this.tokens_explained = '';
       if (boxes ===  1) {
-        this.tokens_explained = boxes + ' box (';
+        this.tokens_explained = boxes + ' box = (';
       }
       else if (boxes > 1) {
-        this.tokens_explained = boxes + ' boxes (';
+        this.tokens_explained = boxes + ' boxes = (';
       }
       let add_plus = false;
 
@@ -403,12 +415,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-.is-td-vcentered {
-  vertical-align: middle;
-  text-align: center;
-}
-
-</style>

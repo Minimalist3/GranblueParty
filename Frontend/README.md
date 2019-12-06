@@ -2,7 +2,7 @@
 Vue.js Frontend for [granblue.party](https://www.granblue.party) website.
 
 ## Requirements
-- NodeJS 10
+- NodeJS 12
 
 ## Installation
 To install the necessary modules, run `npm install` in the current folder.
@@ -18,6 +18,7 @@ The website is using Nginx to run in production, but you can use whatever you pr
 
 ## Changelog
 
+- 2019-12-06: Version 2: new design, using TailwindCSS and Font Awesome.
 - 2019-08-30: Wide layout for Party Builder. The Details tab hides an experimental damage calculator
 - 2019-08-11: Support for Skill Keys and Perpetuity Rings added in Party Builder.
 - 2019-08-06: Save and load parties with your account. No need for PermaURL anymore!

@@ -1,30 +1,17 @@
 <template>
-  <div>
-    <div>
-      <a href="/admin">Up</a>
-      <button
-        class="button is-light is-outlined"
-        @click="saveData()"
-      >
-        Save
-      </button>
-      <button
-        class="button is-info is-outlined"
-        @click="hideNonEmptySkills()"
-      >
-        Hide
-      </button>
+  <div class="flex flex-col">
+    <div class="flex flex-row flex-wrap items-center mb-4">
+      <a class="mr-4" href="/admin">Up</a>
+      <button class="btn btn-white mr-4" @click="saveData()">Save</button>
+      <button class="btn btn-white" @click="hideNonEmptySkills()">Hide</button>
     </div>
 
-    <nav class="pagination" role="navigation" aria-label="pagination">
-      <ul class="pagination-list">
-        <li
-          v-for="i in Math.ceil(message.length / 10)"
-          :key="i"
-        >
-          <a
-            class="pagination-link has-text-light"
-            :class="index === i-1 ? 'is-current' : ''"
+    <nav class="mb-4" role="navigation" aria-label="pagination">
+      <ul class="flex flex-row flex-wrap">
+        <li v-for="i in Math.ceil(message.length / 10)" :key="i">
+          <a 
+            class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
+            :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
             @click="index = i-1"
           >
             {{i}}
@@ -33,7 +20,7 @@
       </ul>
     </nav>
 
-    <table class="table is-narrow is-fullwidth has-background-dark">
+    <table class="table mb-4">
       <tbody>
         <summon-line
           v-for="(item, i) in getSummons"
@@ -46,15 +33,12 @@
       </tbody>
     </table>
 
-    <nav class="pagination" role="navigation" aria-label="pagination">
-      <ul class="pagination-list">
-        <li
-          v-for="i in Math.ceil(message.length / 10)"
-          :key="i"
-        >
+    <nav role="navigation" aria-label="pagination">
+      <ul class="flex flex-row flex-wrap">
+        <li v-for="i in Math.ceil(message.length / 10)" :key="i">
           <a
-            class="pagination-link has-text-light"
-            :class="index === i-1 ? 'is-current' : ''"
+            class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
+            :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
             @click="index = i-1"
           >
             {{i}}
@@ -149,36 +133,14 @@ export default {
   computed: {
     getSummons() {
       return this.message
-        .flatMap(s => {
-          if (s.hide === true) {
-            return [];
-          }
-          return [s];
-        })
+        .flatMap(s => s.hide ? [] : [s])
         .slice(this.index * this.slice_size, this.index * this.slice_size + this.slice_size);
     },
   },
   mounted() {
     this.$http.get('/admin/summons')
-      .then(response => {
-        for (let s of response.data) {
-          if (s.data) {
-            s.data = JSON.stringify(s.data);
-            s.data = s.data.replace(/],/g, "],\n");
-            s.data = s.data.slice(0, 1) + "\n" + s.data.slice(1, s.data.length-1) + "\n" + s.data.slice(s.data.length-1);
-          }
-        }
-        this.message = response.data;
-      })
+      .then(response => this.message = response.data)
       .catch(error => console.log(error));
   }
 }
 </script>
-
-<style scoped>
-
-.table {
-  color: hsl(0, 0%, 98%);
-}
-
-</style>

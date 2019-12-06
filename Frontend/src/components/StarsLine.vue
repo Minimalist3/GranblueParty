@@ -1,14 +1,9 @@
 <template>
-  <span
-    v-if="base !== undefined"
-    id="starsLine"
-    class="columns is-gapless is-marginless is-mobile"
-    title="Uncap level"
-  >
+  <div v-if="base !== undefined" class="flex flex-row flex-no-wrap" title="Uncap level">
     <img
       v-for="i in getYellowStarsCount"
       :key="'y' + i"
-      class="column is-clickable"
+      :class="readOnly ? '' : 'cursor-pointer'"
       :src="getImage('y', i)"
       :style="'width: ' + 100/max + '%;'"
       @click="click(i)"
@@ -16,7 +11,7 @@
     <img
       v-for="i in getBlueStarsCount"
       :key="'b' + i"
-      class="column is-clickable"
+      :class="readOnly ? '' : 'cursor-pointer'"
       :src="getImage('b', i+base)"
       :style="'width: ' + 100/max + '%;'"
       @click="click(i+base)"
@@ -24,11 +19,11 @@
     <img
       v-for="i in getInvisibleStarsCount"
       :key="'i' + i"
-      class="column is-invisible"
-      src="@/img/star_b1.png"
+      class="hidden"
+      src="/img/star_b1.png"
       :style="'width: ' + 100/max + '%;'"
     >
-  </span>
+  </div>
 </template>
 
 <script>
@@ -55,39 +50,26 @@ export default {
       default: false
     }
   },
-  data() {
-    return {
-      current_stars: this.current,
-    }
-  },
   methods: {
     getImage(type, index) {
-      return '/img/star_' + type + (index <= this.current_stars ? "1" : "0") + '.png';
+      return '/img/star_' + type + (index <= this.current ? "1" : "0") + '.png';
     },
     click(index) {
       if (this.readOnly) {
         return;
       }
 
-      if (index === 1 && this.current_stars !== 0) {
+      let current_stars = index;
+
+      if (index === 1 && this.current !== 0) {
         // First click on 1st star sets 0 stars instead of 1
-        this.current_stars = 0;
+        current_stars = 0;
       }
-      else if (index === this.current_stars) {
-        this.current_stars = index - 1;
-      }
-      else {
-        this.current_stars = index;
+      else if (index === this.current) {
+        current_stars = index - 1;
       }
 
-      this.$emit('update:current', this.current_stars);
-    },
-    clear() {
-      if (this.readOnly) {
-        return;
-      }
-      this.state.fill(false);
-      this.click();
+      this.$emit('update:current', current_stars);
     }
   },
   computed: {
@@ -108,18 +90,5 @@ export default {
       return this.max - baseStars;
     },
   },
-  watch: {
-    current() {
-      this.current_stars = this.current;
-    }
-  },
 }
 </script>
-
-<style>
-
-#starsLine {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-</style>

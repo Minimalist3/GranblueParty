@@ -1,98 +1,65 @@
 <template>
-  <div
-    class="modal"
-    :class="{'is-active': show}"
-    v-if="show"
-  >
-    <div
-      class="modal-background"
-      @click="closeModal"
-    ></div>
-    <div class="modal-card has-text-dark">
-      <header class="modal-card-head">
-        <div class="field is-grouped is-grouped-multiline">
-          <div class="field has-addons">
-            <input
-              class="input is-small"
-              placeholder="Name"
-              ref="nameField"
-              type="text"
-              v-model="nameSearched"
-            >
-            &nbsp;
-            <button
-              class="button is-small is-danger is-outlined"
-              @click="nameSearched = ''"
-            >
-              Clear
-            </button>
-            &nbsp;
-          </div>
-          <data-filter
-            v-for="category in filters"
-            :key="category.name"
-            :data="dataModel[category.key].data"
-            :category="category.name"
-          ></data-filter>
-        </div>
-      </header>
-      <section class="modal-card-body">
-        <div v-if="message.length > 0">
-          <table class="table is-hoverable is-narrow is-fullwidth">
-            <thead>
-              <tr>
-                <th
-                  v-for="(category, index) in colums"
-                  :key="index"
-                >
-                  {{ category.name }}
-                </th>
-              </tr>
-            </thead>
-            <tbody class="is-unselectable">
-              <tr
-                v-for="item in filteredData"
-                :key="item.id"
-                @click="selectItem(item.id)"
-              >
-                <td
-                  v-for="(val, index) in filterColumn(item)"
-                  :key="index"
-                >
-                  {{ val }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div v-else>
-          Loading...
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        {{ getResultsCount }}
-      </footer>
+  <modal :show="show" @close="close()">
+    <template v-slot:header>
+      <span class="flex flex-row flex-wrap items-center">
+        <input class="input input-sm" placeholder="Name" ref="nameField" type="text" v-model="name_searched">
+        <button class="btn btn-sm btn-red mx-2" @click="name_searched = ''">Clear</button>
+
+        <data-filter
+          class="my-2 mr-2"
+          v-for="(category, index) in getFilters"
+          :key="index"
+          :category="category.name"
+          :data="data_model[category.key].data">
+        </data-filter>
+      </span>
+    </template>
+
+    <div v-if="message.length < 1">
+      Loading...
     </div>
-    <button
-      aria-label="close"
-      class="modal-close is-large"      
-      @click="closeModal"
-    ></button>
-  </div>
+    <div v-else>      
+      <table class="table">
+        <thead>
+          <tr>
+            <th v-for="(category, index) in getColumns" :key="index">{{ category.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in getData" :key="item.id" @click="selectItem(item.id)">
+            <td v-for="(val, index) in getColumn(item)" :key="index">{{ val }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <template v-slot:footer>
+      {{ getResultsCount }}
+    </template>
+  </modal>
 </template>
 
 <script>
+import DataModel from '@/js/data-model'
+import Utils from '@/js/utils'
 
-import Utils from '@/js/utils.js'
-import DataModel from '@/js/dataModel.js'
-
-import DataFilter from '@/components/DataFilter.vue'
+import Modal from './common/Modal.vue'
+import DataFilter from './DataFilter.vue'
 
 export default {
+  model: {
+    prop: 'show',
+    event: 'close'
+  },
   components: {
-    DataFilter,
+    Modal,
+    DataFilter
   },
   props: {
+    show: {
+      type: Boolean,
+      required: true
+    },
     route: {
       type: String,
       required: true
@@ -105,115 +72,95 @@ export default {
       type: Array,
       required: true
     },
-    selected: {
-      type: Function,
-      required: true
-    },
+    dataModel: {
+      type: Object,
+      default: undefined
+    }
   },
   data() {
     return {
-      show: false,
       message: [],
-      dataModel: [],
-      filters: [],
-      colums: [],
-      nameSearched: '',
       previousRoute: '',
-      slot: 0,
-      resultsCount: 0,
+      data_model: {},
+      name_searched: '',
     }
   },
   methods: {
-    showModal(slot) {
-      this.slot = slot;
-      this.show = true;
-      document.querySelector("HTML").classList.add("is-clipped");
+    selectItem(id) {
+      this.$emit('item-selected', id);
+      this.close();
     },
-    closeModal() {
-      this.show = false;
-      document.querySelector("HTML").classList.remove("is-clipped");
+    close() {
+      this.$emit('close', false);
     },
-    selectItem(e) {
-      this.closeModal();
-      this.selected(e, this.slot);
-    },
-    filterColumn(item) {      
-      return this.colums.map(c => {
-        return this.dataModel[c.key].expand(item[c.key]);
+    getColumn(item) {
+      return this.getColumns.map(c => {
+        return this.data_model[c.key].expand(item[c.key]);
       });
-    },
+    }
   },
   computed: {
-    filteredData() {      
-      // Filter list
-      const res = this.message.filter(message => {
-        return message.n.toLowerCase().includes(this.nameSearched.toLowerCase()) &&
-               this.filters.every(f => {
-                 return this.dataModel[f.key].show(message[f.key])
-               });
-      })
-      // TODO Sort list
-      //res.sort((lhs, rhs) => lhs.n > rhs.n);
-
-      this.resultsCount = res.length;
-      return res;
+    getData() {
+      return this.message.filter(item => {
+        return item.n.toLowerCase().includes(this.name_searched.toLowerCase()) &&
+          this.getFilters.every(f => {
+            return this.data_model[f.key].show(item[f.key])
+          });
+      });
     },
     getResultsCount() {
-      if (this.resultsCount == 1) {
-        return this.resultsCount + ' result'
+      if (this.getData.length == 1) {
+        return this.getData.length + ' result'
       }
-      return this.resultsCount + ' results'
+      return this.getData.length + ' results'
     },
-  },  
+    getColumns() {
+      return this.categories.filter(c => { return c.isColumn });
+    },
+    getFilters() {
+      return this.categories.filter(c => { return c.isFilter });
+    }
+  },
   watch: {
     show() {
       if (this.show) {
-        let currentRoute = '/' + this.route;
+        let currentRoute = this.route;
         if (this.routeParameters !== undefined) {
           currentRoute += '?' + this.routeParameters;
         }
         
         // Fetch the message again if the route changed
         if (this.previousRoute !== currentRoute) {
-          this.message = '';
+          this.message = [];
         }
         this.previousRoute = currentRoute;
 
-        if (this.message.length === 0) {          
+        if (this.message.length === 0) {
           this.$http.get(currentRoute)
-            .then(response => this.message = response.data)
-            .catch(error => console.log(error));
+                    .then(response => this.message = response.data)
+                    .catch(error => console.log(error));
         }
 
         let self = this;
         Vue.nextTick().then(() => {
-          self.nameSearched = '';
+          self.name_searched = '';
           self.$refs.nameField.focus();
         });
       }
-    },
+    }
   },
   mounted() {
-    this.filters = this.categories.filter(c => { return c.isFilter });
-    this.colums = this.categories.filter(c => { return c.isColumn });
-
     // Copy the data model locally to modify "checked" properties
     this.categories.forEach(c => {
-      Vue.set(this.dataModel, c.key, Utils.copy(DataModel[c.key]));
-    });    
-  },
+      Vue.set(this.data_model, c.key, Utils.copy(DataModel[c.key]));
+    });
+
+    // Overload data model if specified
+    if (this.dataModel !== undefined) {
+      for (let [key, data] of Object.entries(this.dataModel)) {
+        Vue.set(this.data_model, key, data);
+      }
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-.modal {
-  justify-content: initial;
-}
-
-.modal-card {
-  top: 4vh;
-  max-height: 92vh;
-}
-
-</style>
