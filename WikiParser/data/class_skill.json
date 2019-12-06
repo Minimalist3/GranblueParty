@@ -442,7 +442,7 @@
   },
   {
     "class": "Warrior",
-    "name": "Defense Breach",
+    "name": "Armor Break",
     "ix": "s3",
     "family": "fighter",
     "row": "2",
@@ -1086,7 +1086,7 @@
     "family": "enhancer",
     "row": "4",
     "ex": "1",
-    "icon": "Ability_Pilfer.png"
+    "icon": "Ability_Chaos.png"
   },
   {
     "class": "Chaos Ruler",
@@ -1870,6 +1870,42 @@
     "row": "12",
     "ex": "0",
     "icon": "Ability Cat's Meow.png"
+  },
+  {
+    "class": "Rising Force",
+    "name": "Mosh Pit",
+    "ix": "ex1",
+    "family": "drummaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Mosh Pit.png"
+  },
+  {
+    "class": "Rising Force",
+    "name": "Jet To Jet",
+    "ix": "ex2",
+    "family": "drummaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Jet To Jet.png"
+  },
+  {
+    "class": "Rising Force",
+    "name": "Unleash the Fury",
+    "ix": "ex3",
+    "family": "drummaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability Unleash the Fury.png"
+  },
+  {
+    "class": "Rising Force",
+    "name": "Rising Force",
+    "ix": "s1",
+    "family": "drummaster",
+    "row": "12",
+    "ex": "0",
+    "icon": "Ability Rising Force.png"
   },
   {
     "class": "Runeslayer",

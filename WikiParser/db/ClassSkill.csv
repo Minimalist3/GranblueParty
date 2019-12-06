@@ -20,7 +20,7 @@
 19	Double Trouble	\N	f
 20	Full Arsenal	0	f
 21	Rage II	\N	f
-22	Defense Breach	\N	f
+22	Armor Break	\N	f
 23	Phalanx	1	f
 24	Overdrive Surge II	\N	f
 25	Centurion	\N	f
@@ -218,3 +218,7 @@
 217	Devotion	17	t
 218	Recursive Nightmare	17	t
 219	Barbed Wire	17	t
+220	Rising Force	18	f
+221	Mosh Pit	18	t
+222	Jet To Jet	18	t
+223	Unleash the Fury	18	t

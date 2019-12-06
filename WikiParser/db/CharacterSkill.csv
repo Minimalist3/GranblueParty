@@ -942,6 +942,12 @@
 3030276	0	Behandeln	1
 3030276	1	Herzens Zaehlen	1
 3030276	2	Orkvogel	35
+3030277	0	Have a Treat!	1
+3030277	1	You're Toast!	1
+3030277	2	Curl Up and Die!	35
+3030278	0	Enhancement Dice II	1
+3030278	1	Deadlock Dice	1
+3030278	2	Charged Dice	35
 3040000	0	Fracture	1
 3040000	1	Rebellion	1
 3040000	2	Noblesse Oblige	45
@@ -1025,8 +1031,8 @@
 3040025	0	Uwe	1
 3040025	1	Manigance	1
 3040025	2	Delirium	45
-3040026	0	Nemesis	1
-3040026	1	Domination	1
+3040026	0	Rosa Alba	1
+3040026	1	Snowthorn Barrier	1
 3040026	2	Illuminati Flow	45
 3040027	0	All of Creation	1
 3040027	1	All is Vanity	1
@@ -1070,9 +1076,9 @@
 3040037	1	Purgatory	1
 3040037	2	Dance of the Gods	45
 3040037	3	Eight-Life's Pilgrimage	100
-3040038	0	Ninanana	1
-3040038	1	Kuorria	1
-3040038	2	Defandue	45
+3040038	0	Ninna Nanna	1
+3040038	1	Qualia	1
+3040038	2	Defendu	45
 3040038	3	Nine-Realm's Security	100
 3040039	0	Intense Bullet	1
 3040039	1	The Final Order	1
@@ -1154,7 +1160,7 @@
 3040062	2	Reinforce	45
 3040063	0	Butterfly Effect	1
 3040063	1	Transient	1
-3040063	2	Kyogasuigetsu	45
+3040063	2	Kyokasuigetsu	45
 3040063	3	Glasswing Waltz	100
 3040064	0	Awakening	1
 3040064	1	Hymn of the Hundreds	1
@@ -1214,8 +1220,9 @@
 3040081	1	Des Vetements	1
 3040081	2	Viscos	45
 3040082	0	Quadspell	1
-3040082	1	Drain	1
+3040082	1	Drain / Onyx Drain	1
 3040082	2	Acumen	45
+3040082	3	Protector's Sword	95
 3040083	0	Waves of Fire	1
 3040083	1	Flame Wreath	1
 3040083	2	Thunder	45
@@ -1695,3 +1702,21 @@
 3040240	0	Carve You Up!	1
 3040240	1	This Is Not a Drill	1
 3040240	2	Party Nightmare	45
+3040241	0	First Dance: Tamagushi	1
+3040241	1	Sixth Dance: Sakara	1
+3040241	2	Vitality Dance: Shinwa	45
+3040242	0	Ninth Dance: Akezome	1
+3040242	1	Vessel's Kindling	1
+3040242	2	Ninth Dance: Sakuya	45
+3040244	0	Fleeting Fortune	1
+3040244	1	Double Weave	1
+3040244	2	Luminous Return	45
+3040245	0	Sacred Reversal	1
+3040245	1	Sanctify	1
+3040245	2	Eternal Divinity	45
+3040246	0	Hull Breacher II	1
+3040246	1	Mirage Dive	1
+3040246	2	Nitro Boost	45
+3040247	0	Serenade	1
+3040247	1	O Holy Night Ray	1
+3040247	2	Land Eruption	45
