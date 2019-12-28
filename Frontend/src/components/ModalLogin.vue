@@ -78,6 +78,9 @@ export default {
         });
     }
   },
+  mounted() {
+    this.username = this.$store.getters.getUsername;
+  },
   watch: {
     show() {
       if (this.show === true) {
@@ -86,6 +89,9 @@ export default {
           self.$refs.username.focus();
         });
       }
+    },
+    '$store.getters.getUsername'() {
+      this.username = this.$store.getters.getUsername;
     }
   }
 }

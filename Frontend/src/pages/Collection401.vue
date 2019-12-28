@@ -14,15 +14,25 @@
 
 <script>
 export default {
-  computed: {
-    getUsername() {
-      return this.$store.getters.getUsername;
+  methods: {
+    goToCollection() {
+      // When a user logs in, go back to collection
+      if (this.getUserId !== null) {
+        this.$router.push({name: "collection"});
+      }
     }
   },
+  computed: {
+    getUserId() {
+      return this.$store.getters.getUserId;
+    }
+  },
+  mounted() {
+    this.goToCollection();
+  },
   watch: {
-    getUsername(to, from) {
-      // When a user logs in, go back to collection
-      this.$router.push({name: "collection"});
+    getUserId(to, from) {
+      this.goToCollection();
     },
   }
 }

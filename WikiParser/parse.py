@@ -497,11 +497,12 @@ def updateWeapons():
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'weapon_skills')
   values = []
   skills = []
+  weapon_ids = set()
   
   with open(working_file, "r") as read_file, open(images_file, 'w', encoding='utf8') as images_file:
     data = json.load(read_file)
     add_element = set()
-
+    
     for weapon in data:
       if weapon['id'].endswith('_note'):
         add_element.add(weapon['name'])
@@ -515,6 +516,8 @@ def updateWeapons():
       images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/' + weapon['id'] + '.jpg -O ./weapon/' + weapon['id'] + '.jpg\n')
 
       weapon_id = weapon['id'][:-2]
+      weapon_ids.add(int(weapon_id))
+
       name = defines.unescape(weapon['name'])
       if name in add_element:
         name += ' (' + weapon['element'][0].upper() + weapon['element'][1:] + ')'
@@ -595,6 +598,11 @@ def updateWeapons():
     database.dico_tables.get('Weapon').drop()
     database.dico_tables.get('Weapon').insert(values)
     database.dico_tables.get('Weapon_Skill').insert(skills)
+
+    orphans = database.dico_tables.get('Weapon').getOrphans(weapon_ids, 'weaponId')
+    database.dico_tables.get('Weapon_Skill').removeOrphans(orphans, 'weaponId')
+    database.dico_tables.get('Weapon').removeOrphans(orphans, 'weaponId')
+
   if verbose:
     print(values)
     print(skills)

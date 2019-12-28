@@ -159,7 +159,7 @@ const router = new VueRouter({
 // Unauthenticated users are redirected to / on routes with auth
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.needAuth)) {
-    if ( ! store.getters.getUsername) {
+    if ( ! store.getters.getUserId) {
       next({name: to.meta.redirectTo ? to.meta.redirectTo : "401"});
     }
     else {

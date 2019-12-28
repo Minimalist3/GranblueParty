@@ -15,7 +15,7 @@
         </li>
       </ul>
 
-      <div style="width: 600px" v-for="(section, index) in sections " :key="index">
+      <div style="max-width: 600px" v-for="(section, index) in sections " :key="index">
         <div v-show="preview_index === index" @mouseenter="change_image = false" @mouseleave="change_image = true"  @mousedown="change_image = false" @mouseup="change_image = true">
           <h1>{{ section.title }}</h1>
           <router-link :to="section.link"><img :src="section.image"></router-link>
@@ -25,8 +25,8 @@
     </div>
     
     <!-- About -->
-    <div class="pt-16 flex flex-row justify-around">
-      <div>
+    <div class="pt-16 flex flex-row flex-wrap justify-around">
+      <div class="mb-4">
         <h2 class="text-center">Social</h2>
         <ul>
           <li>
@@ -47,10 +47,10 @@
         </ul>        
       </div>
 
-      <div>
+      <div class="mb-4">
         <h2 class="text-center">Last update</h2>
         <p>
-          <b>2019-11-30:</b> Magisa, Meteon
+          <b>2019-12-28:</b> Helel ben Shalem
         </p>
       </div>
 

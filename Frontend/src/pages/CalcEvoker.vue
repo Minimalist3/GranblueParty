@@ -5,7 +5,7 @@
     <!-- Form -->
     <div class="flex flex-row flex-wrap items-center mb-8">
 
-      <dropdown v-model.number="evoker_index">
+      <dropdown class="mr-2" v-model.number="evoker_index">
         <option :value="-1" disabled hidden>--- Select an Evoker ---</option>
         <option
           v-for="(target, index) in getTargets"
@@ -16,7 +16,7 @@
         </option>
       </dropdown>
 
-      <span class="ml-2">
+      <span class="mr-2">
         from step
         <dropdown v-model.number="from_index" @change="selectFromStep">
           <option :value="0">No Summon</option>
@@ -30,7 +30,7 @@
         </dropdown>
       </span>
       
-      <span class="ml-2">
+      <span class="mr-2">
         to step
         <dropdown v-model.number="to_index">
           <option
@@ -44,7 +44,7 @@
         </dropdown>
       </span>
 
-      <checkbox class="ml-2" v-model="splitMats">Split materials for each step</checkbox>
+      <checkbox v-model="splitMats">Split materials for each step</checkbox>
     </div>
 
     <!-- Show materials -->

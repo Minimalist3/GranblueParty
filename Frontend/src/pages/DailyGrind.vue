@@ -12,7 +12,7 @@
 
       <checkbox class="mr-2" v-model="editMode">Edit mode</checkbox>
 
-      <checkbox class="mr-2" v-model="renameLists">Rename lists</checkbox>
+      <checkbox v-model="renameLists">Rename lists</checkbox>
     </div>
 
     <!-- Usage -->
@@ -39,26 +39,28 @@
 
     <div v-if="isUserLogged">
       <div class="flex flex-row flex-wrap items-center">
-        <dropdown v-model.number="listIndex" class="w-64">
-          <option v-for="(list, index) in myLists" :key="index" :value="index">{{ list.name }}</option>
-        </dropdown>
-        <div class="absolute" v-if="renameLists">
-          <input class="input border-none focus:shadow-none ml-1" style="width: 14rem;" type="text" placeholder="Default list" v-model="currentListName">
+        <div class="relative mr-2">
+          <dropdown v-model.number="listIndex" class="w-64">
+            <option v-for="(list, index) in myLists" :key="index" :value="index">{{ list.name }}</option>
+          </dropdown>
+          <div class="absolute top-0 left-0" v-if="renameLists">
+            <input class="input border-none focus:shadow-none ml-2 p-0" style="width: 14rem;" type="text" placeholder="Default list" v-model="currentListName">
+          </div>
         </div>
 
-        <button class="btn btn-blue ml-2" @click="clickListSave()">
+        <button class="btn btn-blue mr-2" @click="clickListSave()">
           <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save All
         </button>
 
-        <button class="btn btn-blue ml-2" @click="clickListNew()">
+        <button class="btn btn-blue mr-2" @click="clickListNew()">
           <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> New List
         </button>
 
-        <button class="btn btn-red ml-2" :disabled="listIndex === 0" @click="clickListDelete()">
+        <button class="btn btn-red mr-4" :disabled="listIndex === 0" @click="clickListDelete()">
           <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete List
         </button>
 
-        <p class="pl-4 self-center">
+        <p class="self-center">
           {{ saveMessage }}
         </p>        
       </div>

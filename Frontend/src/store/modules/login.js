@@ -2,6 +2,7 @@ export default {
   state: {
     username: null,
     userId: null,
+    show_modal_login: false,
   },
   getters: {
     getUsername: state => {
@@ -9,6 +10,9 @@ export default {
     },
     getUserId: state => {
       return state.userId;
+    },
+    showModalLogin: state => {
+      return state.show_modal_login;
     },
   },
   mutations: {
@@ -18,11 +22,16 @@ export default {
       state.userId = object.userId;
       localStorage.setItem('userId', object.userId);
     },
-    logout(state) {
-      state.username = null;
-      localStorage.removeItem('username');
+    logout(state, full = true) {
+      if (full === true) {
+        state.username = null;
+        localStorage.removeItem('username');
+      }
       state.userId = null;
       localStorage.removeItem('userId');
     },
+    show_modal_login(state, value) {
+      state.show_modal_login = value;
+    }
   },
 }

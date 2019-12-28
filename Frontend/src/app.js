@@ -37,6 +37,18 @@ Vue.prototype.$http = Axios.create({
 });
 // Always send the cookie. This needs to be set globally, else it won't work
 Vue.prototype.$http.defaults.withCredentials = true;
+// Deal with 401 unauthorized
+Vue.prototype.$http.interceptors.response.use(
+  response => response,
+  error => {
+    if (error && error.response && error.response.status === 401) {
+      store.commit('logout', false);
+      store.commit('show_modal_login', true);
+      return new Promise(() => {});
+    }
+    return Promise.reject(error);
+  }
+);
 
 // Remove prod warning
 Vue.config.productionTip = false;

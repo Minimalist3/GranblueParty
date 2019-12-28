@@ -139,6 +139,20 @@ class Table:
     if len(returning) > 0:
       return dbconfig.getCursor().fetchone()[0]
 
+  def getOrphans(self, reference, column):
+    orphans = set()
+    dbconfig.getCursor().execute('SELECT ' + column + ' FROM ' + self.name + ';')
+
+    for record in dbconfig.getCursor():
+      if not record[0] in reference:
+        orphans.add(record[0])
+
+    return orphans
+
+  def removeOrphans(self, orphans, column):
+    for orphan in orphans:
+      dbconfig.getCursor().execute('DELETE FROM ' + self.name + ' WHERE ' + column + '= %s;', [orphan])
+
   def getCount(self):
     dbconfig.getCursor().execute('SELECT COUNT(*) FROM ' + self.name + ';')
     return dbconfig.getCursor().fetchone()[0]
@@ -428,8 +442,7 @@ def main(argv):
   for opt, _ in opts:
     if opt == '--create':
       # Table migration
-      dbconfig.getCursor().execute('DROP TABLE IF EXISTS weaponskill_weapon;')
-      dbconfig.getCursor().execute('DROP TABLE IF EXISTS weaponskill;')
+      #dbconfig.getCursor().execute('DROP TABLE IF EXISTS xxx;')
 
       for i in all_tables:
         i.create()
@@ -445,11 +458,8 @@ def main(argv):
         i.update()
       
       # Delete bad rows
-      dbconfig.getCursor().execute('DELETE FROM summonaura WHERE summonid = 2040199;')
-      dbconfig.getCursor().execute('DELETE FROM summonaura WHERE summonid = 2030017;')
-      dbconfig.getCursor().execute('DELETE FROM summon WHERE summonid = 2040199;')
-      dbconfig.getCursor().execute('DELETE FROM summon WHERE summonid = 2030017;')
-      
+      #dbconfig.getCursor().execute('DELETE FROM xxx WHERE xxx = 0000;')
+
       output = open(os.path.join('..', 'db.version'), 'w', encoding='utf8')
       output.write(str(datetime.datetime.now()))
       output.close()

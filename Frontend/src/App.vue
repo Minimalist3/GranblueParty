@@ -28,7 +28,7 @@
       
       <!-- right -->
       <div class="flex flex-row items-center">
-        <div v-if="getUsername === null">
+        <div v-if="getUserId === null">
           <button class="btn btn-blue mx-2" @click="show_modal_signup = true">Sign up</button>
           <button class="btn btn-white mx-2" @click="show_modal_login = true">Log in</button>
         </div>
@@ -58,7 +58,7 @@
       </div>
 
       <!-- Common -->
-      <div v-if="getUsername !== null" class="flex flex-col text-primary border-b border-primary">
+      <div v-if="getUserId !== null" class="flex flex-col text-primary border-b border-primary">
         <span class="p-2 select-none">Account: {{ getUsername }} <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
         <div class="px-2 flex flex-col bg-secondary">
           <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/account">Properties</router-link>
@@ -121,7 +121,6 @@ export default {
     return {
       now: new Date(),
       menu_popup: false,
-      show_modal_login: false,
       show_modal_signup: false,
       theme_dark: true,
     }
@@ -164,6 +163,17 @@ export default {
   computed: {
     getUsername() {
       return this.$store.getters.getUsername;
+    },
+    getUserId() {
+      return this.$store.getters.getUserId;
+    },
+    show_modal_login: {
+      get() {
+        return this.$store.getters.showModalLogin;
+      },
+      set(value) {
+        this.$store.commit('show_modal_login', value);
+      }
     },
     getJST() {
       return new Intl.DateTimeFormat("default", getJST_options).format(this.now);
