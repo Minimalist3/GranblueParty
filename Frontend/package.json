@@ -1,15 +1,17 @@
 {
   "name": "gbf-frontend",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Granblue Party Frontend",
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
-    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js",
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.js",
     "build:static": "cross-env NODE_ENV=production webpack --config webpack.static.config.js",
-    "dev:client": "webpack-dev-server --config webpack.client.config.js",
+    "build": "npm run build:server && npm run build:client && npm run build:static",
     "dev:server": "webpack -w --config webpack.server.config.js",
+    "dev:client": "webpack-dev-server --config webpack.client.config.js",
+    "dev:static": "webpack --config webpack.static.config.js",
     "nodemon": "nodemon --trace-warnings server.js"
   },
   "author": {

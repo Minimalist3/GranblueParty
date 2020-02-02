@@ -5,6 +5,9 @@ const nodeExternals = require('webpack-node-externals')
 const baseConfig = require('./webpack.base.config.js')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
+const devMode = process.env.NODE_ENV !== 'production';
+const dist_path = devMode ? 'dist_dev' : 'dist_new';
+
 module.exports = merge(baseConfig, {
   // Point entry to your app's server entry file
   entry: './src/entry-server.js',
@@ -19,7 +22,7 @@ module.exports = merge(baseConfig, {
 
   // This tells the server bundle to use Node-style exports
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, dist_path),
     libraryTarget: 'commonjs2'
   },
 

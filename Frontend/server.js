@@ -4,25 +4,33 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const { createBundleRenderer } = require('vue-server-renderer');
 
+const dev_mode = process.env.NODE_ENV !== 'production';
+const dist_dir = dev_mode ? 'dist_dev' : 'dist';
+
 const app = express();
-const template = require('fs').readFileSync('./dist/index.html', 'utf-8');
-const serverBundle = require('./dist/vue-ssr-server-bundle.json');
-const clientManifest = require('./dist/vue-ssr-client-manifest.json');
+const template = require('fs').readFileSync('./' + dist_dir + '/index.html', 'utf-8');
+const serverBundle = require('./' + dist_dir + '/vue-ssr-server-bundle.json');
+const clientManifest = require('./' + dist_dir + '/vue-ssr-client-manifest.json');
 
 const renderer = createBundleRenderer(serverBundle, {
   runInNewContext: false, // recommended
   template,
-  clientManifest // (optional) client build manifest
+  clientManifest, // (optional) client build manifest
+  shouldPrefetch: (file, type) => {
+    // type is inferred based on the file extension.
+    // https://fetch.spec.whatwg.org/#concept-request-destination
+    if (type === 'script' || type === 'style') {
+      return false
+    }
+  }
 });
-
-const dev_mode = process.env.NODE_ENV !== 'production';
 
 app.use(cookieParser());
 app.disable('x-powered-by');
 
 if (dev_mode) {
-  console.log('[DEV] Serving /static folder')
-  app.use('/', express.static('./dist/static'));
+  console.log('[DEV] Serving ' + dist_dir + '/img folder')
+  app.use('/img', express.static(dist_dir + '/img'));
 }
 
 app.get('*', (req, res) => {
@@ -32,15 +40,11 @@ app.get('*', (req, res) => {
   }
 
   if (dev_mode) {
-    if (/\.(png|jpg|gif|ico|txt)$/.test(req.url)) {
-      res.sendStatus(404);
-      return;
-    }
     if (/\.html$/.test(req.url)) {
       res.set('Content-Type', 'text/html');
     }
-    if (/\.(js|css)$/.test(req.url)) {
-      res.sendFile(req.url, {root: './dist'});
+    if (/\.(js|css|png|jpg|gif|ico|txt)$/.test(req.url)) {
+      res.sendFile(req.url, {root: dist_dir});
       return;
     }
 

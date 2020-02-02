@@ -9,13 +9,14 @@ const WebpackCdnPlugin = require('webpack-cdn-plugin');
 const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default;
 
 const devMode = process.env.NODE_ENV !== 'production';
+const dist_path = devMode ? 'dist_dev' : 'dist_new';
 
 let config = merge(baseConfig, {
   entry: './src/entry-client.js',
   output: {
     filename: devMode ? 'main.js' : '[name]-[contenthash].js',
     chunkFilename: devMode ? '[name].js' : '[name]-[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, dist_path),
     publicPath: '/',
     crossOriginLoading: 'anonymous',
   },
@@ -36,10 +37,10 @@ let config = merge(baseConfig, {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.template.html'),
       inject: ! devMode,
+      chunks: ['axios.min.js', 'svg-with-js.min.css'],
       minify: {
         html5: ! devMode,
         collapseWhitespace: ! devMode,
-        //minifyJS: ! devMode
       }
     }),
   ]
@@ -48,7 +49,7 @@ let config = merge(baseConfig, {
 if (devMode) {
   config = merge(config, {
     output: {
-      publicPath: 'http://localhost:8081/dist/',
+      publicPath: 'http://localhost:8081/dist_dev/',
     },
     devServer: {
       writeToDisk: true,
@@ -72,6 +73,8 @@ if (devMode) {
         path.join(__dirname, 'nginx'),
         path.join(__dirname, 'node_modules'),
         path.join(__dirname, 'src', 'img'),
+        path.join(__dirname, 'dist_new'),
+        path.join(__dirname, 'dist'),
       ]),
     ],
     devtool: 'source-map',
