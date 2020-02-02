@@ -422,9 +422,8 @@
 3030092	0	Console	1
 3030092	1	Guilt and Remorse	1
 3030092	2	Mortal Sin	35
-3030093	0	Dragon Impact	1
+3030093	0	Whiplash	1
 3030093	1	Growing Pains	1
-3030093	2	Iln Marion	35
 3030094	0	Foresight	1
 3030094	1	Iron Guardian	1
 3030094	2	Svel II	35
@@ -1047,6 +1046,7 @@
 3040028	0	Spear of Arvess	1
 3040028	1	Rhapsody	1
 3040028	2	Thousand Flames	45
+3040028	3	Rain of Fury	100
 3040029	0	Great Scythe Grynoth	1
 3040029	1	Instinction	1
 3040029	2	Forgotten Tales	45
@@ -1302,6 +1302,7 @@
 3040107	0	Spirit Drums	1
 3040107	1	Finding Flight	1
 3040107	2	Feather the Nest	45
+3040107	3	On the Shoulders of Giants	100
 3040108	0	Unholy Warcry	1
 3040108	1	Mystic Moon	1
 3040108	2	Reign of Terror	45
@@ -1741,3 +1742,27 @@
 3040251	0	Abacab	1
 3040251	1	Invisible Touch	1
 3040251	2	Los Endos	45
+3040252	0	Ring the Dormouse	1
+3040252	1	Dazzling Dreams	1
+3040252	2	Fantasy Festival	45
+3040253	0	A Mafiosa Scorned	1
+3040253	1	Moonless Dawn	1
+3040253	2	Make Your Peace	45
+3040254	0	Whitefire Blade	1
+3040254	1	Demon-Crush	1
+3040254	2	Optimized Speed	45
+3040255	0	Radiation Bolt II	1
+3040255	1	Sacred Shield	1
+3040255	2	Halo of Invocation	45
+3040256	0	Fused Doll	1
+3040256	1	Twin Reaper	1
+3040256	2	Halbmond	45
+3040257	0	Valiance	1
+3040257	1	Quick as a Blade	1
+3040257	2	Second Sight	45
+3040258	0	Call to Arms	1
+3040258	1	Midnight Mover	1
+3040258	2	Guns R Us	45
+3040259	0	Trice Blade	1
+3040259	1	Indistinct Divide	1
+3040259	2	Endless Acclivity	45

@@ -11,17 +11,17 @@
       <button class="btn btn-blue mr-4" @click="saveCollection" :disabled="! modification">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save changes
       </button>
-      <span>{{ saveMessage }}</span>
+      <span>{{ save_message }}</span>
     </div>
     
     <!-- Data filters -->
     <div class="flex flex-row flex-wrap items-center mb-4">
       <data-filter
         class="my-2 mr-2"
-        v-for="category in filters"
+        v-for="category in getFilters"
         :key="category.name"
         :category="category.name"
-        :data="dataModel[category.key].data"        
+        :data="data_model[category.key].data"        
       ></data-filter>
 
       <div class="flex flex-row flex-wrap items-center btn-group my-2 mr-2">
@@ -109,7 +109,7 @@
     </div>
 
     <!-- Collection -->
-    <div v-if="loading !== 2">
+    <div v-if="loading === true">
       Loading...
     </div>
     <div v-else>
@@ -122,9 +122,7 @@
               :href="'https://gbf.wiki/' + chara.n"
               :title="chara.n"
               v-if="showNames"
-            >
-              {{ chara.n }}
-            </a>
+            >{{ chara.n }}</a>
             <img
               :class="chara.owned ? '' : 'grayscale-80'"
               style="height: 60px;"
@@ -152,9 +150,7 @@
               :href="'https://gbf.wiki/' + summon.n"
               :title="summon.n"
               v-if="showNames"
-            >
-              {{ summon.n }}
-            </a>
+            >{{ summon.n }}</a>
             <img            
               :class="summon.owned ? '' : 'grayscale-80'"
               style="height: 60px;"
@@ -178,7 +174,7 @@
     </div>
 
     <!-- For clipboard support -->
-    <input v-show="clipboardText.length > 0" id="clipboardInput" readonly type="text" :value="clipboardText">
+    <input v-show="clipboard_text.length > 0" id="clipboardInput" readonly type="text" :value="clipboard_text">
 
     <!-- Modal -->
     <modal-url v-model="show_modal_url" @import="loadWikiCollection"></modal-url>
@@ -186,9 +182,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
 import DataModel from '@/js/data-model.js'
+import collectionModule from '@/store/modules/collection-tracker'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import DataFilter from '@/components/DataFilter.vue'
@@ -197,46 +196,69 @@ import StarsLine from '@/components/StarsLine.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('CollectionTracker');
 
+const categories = [
+  {
+    name: "Name",
+    isColumn: true,
+    isFilter: false,
+    key: "n",
+  },
+  {
+    name: "Rarity",
+    isColumn: false,
+    isFilter: true,
+    key: "ri",
+  },
+  {
+    name: "Element",
+    isColumn: true,
+    isFilter: true,
+    key: "e",
+  },
+  {
+    name: "Type",
+    isColumn: true,
+    isFilter: true,
+    key: "t",
+  },
+  {
+    name: "Race",
+    isColumn: true,
+    isFilter: true,
+    key: "ra",        
+  },
+  {
+    name: "Weapon",
+    isColumn: true,
+    isFilter: true,
+    key: "w",
+  },
+  {
+    name: "Owned",
+    isColumn: false,
+    isFilter: true,
+    key: "owned",
+  },
+];
+
+function getDataModel() {
+  // Copy the data model locally to modify "checked" properties
+  return Object.fromEntries(categories.map(c => [c.key, Utils.copy(DataModel[c.key])]));
+}
+
 const INITIAL_DATA = () => {
   return {
-    characters: [[], [], [], [], [], [], []],      
-    summons: [[], [], [], [], [], [], []],
-    chara_count: {
-      null: 0, 10: 0, 20: 0,
-      1000: 0, 1010: 0, 1020: 0, 1030: 0, 1040: 0, 1050: 0,
-      1500: 0, 1600: 0,
-      'sum': 0,
-    },
-    chara_total: {
-      null: 0, 10: 0, 20: 0,
-      1000: 0, 1010: 0, 1020: 0, 1030: 0, 1040: 0, 1050: 0,
-      1500: 0, 1600: 0,
-      'sum': 0,
-    },
     chara_show: {
       null: true, 10: true, 20: true,
       1000: true, 1010: true, 1020: true, 1030: true, 1040: true, 1050: true,
       1500: true, 1600: true,
-    },
-    summon_count: {
-      null: 0, 20: 0,
-      1000: 0, 1030: 0,
-      1600: 0,
-      'sum': 0,
-    },
-    summon_total: {
-      null: 0, 20: 0,
-      1000: 0, 1030: 0,
-      1600: 0,
-      'sum': 0,
     },
     summon_show: {
       null: true, 20: true,
       1000: true, 1030: true,
       1600: true,
     },    
-    dataModel: {},
-    filters: [],
+    data_model: getDataModel(),
     modification: false,
     showNames: true,
     showStars: true,
@@ -244,9 +266,9 @@ const INITIAL_DATA = () => {
     showSummons: true,
     showStats: false,
     show_modal_url: false,
-    saveMessage: '',
-    clipboardText: '',
-    loading: 0,
+    save_message: '',
+    clipboard_text: '',
+    loading: true,
   }
 }
 
@@ -257,6 +279,12 @@ export default {
     ModalUrl,
     StarsLine,
   },
+  head: {
+    title: 'Granblue.Party - Collection Tracker',
+    desc: 'Track the characters and summons you unlocked, and share your collection with your friends',
+    image: 'https://www.granblue.party/img/preview_collection.png',
+    keywords: 'collection, tracker, characters, summons, share'
+  },
   data() {
     return INITIAL_DATA();
   },
@@ -266,21 +294,21 @@ export default {
         if ( ! this.chara_show[chara.d]) {
           return false;
         }
-        return this.filters.every(e => {
-          return this.dataModel[e.key].show(chara[e.key])
+        return this.getFilters.every(e => {
+          return this.data_model[e.key].show(chara[e.key])
         })
       })
     },
     getSummons(element) {
       return this.summons[element].filter(summ => {
-        return this.filters.every(e => {
+        return this.getFilters.every(e => {
           if (summ[e.key] === undefined) {
             return true;
           }
           if ( ! this.summon_show[summ.d]) {
             return false;
           }
-          return this.dataModel[e.key].show(summ[e.key])
+          return this.data_model[e.key].show(summ[e.key])
         })
       })
     },
@@ -343,72 +371,40 @@ export default {
           });
         });
 
-        this.saveMessage = '';
-        this.$http.post('/tracker/save', postData)
-          .then(response => this.saveMessage = 'Collection saved successfully at ' + new Date().toLocaleTimeString())
-          .catch(e => this.saveMessage = 'Failed to save collection')
+        this.save_message = '';
+        this.axios.post('/tracker/save', postData)
+          .then(response => this.save_message = 'Collection saved successfully at ' + new Date().toLocaleTimeString())
+          .catch(e => this.save_message = 'Failed to save collection')
       }
     },
     shareCollection() {
       const text = window.location.href  + '/' + this.$store.getters.getUserId;
-      this.saveMessage = text + ' (copied to clipboard)'
+      this.save_message = text + ' (copied to clipboard)'
       // Put in clipboard
-      this.clipboardText = text;
+      this.clipboard_text = text;
       let self = this;
-      Vue.nextTick().then(() => {
+      this.$nextTick().then(() => {
         const input = document.getElementById("clipboardInput");
         input.select();
         document.execCommand("copy");
-        self.clipboardText = '';
-      });  
+        self.clipboard_text = '';
+      })
+      .catch(e => console.log(e));  
     },
     loadCollection() {
-      this.filters = this.getCategories.filter(c => { return c.isFilter });
-      // Copy the data model locally to modify "checked" properties
-      this.getCategories.forEach(c => {
-        Vue.set(this.dataModel, c.key, Utils.copy(DataModel[c.key]));
-      });
-
       let userId = "";
       if (this.isOwnCollection) {
-        userId = '/' + this.$store.getters.getUserId;
+        userId = this.$store.getters.getUserId;
       }
       else {
         // Defined when viewing other collections
-        userId = '/' + this.$route.params.collection_id;
+        userId = this.$route.params.collection_id;
       }
 
-      this.$http.get("/tracker/charas" + userId)
-              .then(response => {
-                response.data.forEach(chara => {
-                  this.characters[chara.e].push(chara);
-                  if (chara.owned) {
-                    this.chara_count.sum++;
-                    this.chara_count[chara.d]++;
-                  }
-                  this.chara_total[chara.d]++;
-                });
-                this.chara_total.sum = response.data.length;
-                this.loading++;
-              })
-              .catch(error => console.log(error));
-      this.$http.get("/tracker/summons" + userId)
-              .then(response => {
-                response.data.forEach(summ => {
-                  this.summons[summ.e].push(summ)
-                  if (summ.owned) {
-                    this.summon_count.sum++;
-                    this.summon_count[summ.d]++;
-                  }
-                  this.summon_total[summ.d]++;
-                });
-                this.summon_total.sum = response.data.length;
-                this.loading++;
-              })
-              .catch(error => console.log(error));
+      return this.$store.dispatch('collection/fetchCollection', userId);
     },
     loadWikiCollection(url) {
-      this.saveMessage = "";
+      this.save_message = "";
       let units = new Map();
 
       let parts = url.split(';');
@@ -424,7 +420,7 @@ export default {
 
       // Is URL valid ?
       if (parts[1].length + parts[2].length + parts[3].length + parts[4].length + parts[5].length + parts[6].length < 1) {
-        this.saveMessage = "Invalid wiki collection URL";
+        this.save_message = "Invalid wiki collection URL";
         return;
       }
 
@@ -475,51 +471,16 @@ export default {
     }
   },
   computed: {
-    getCategories() {
-      return [
-        {
-          name: "Name",
-          isColumn: true,
-          isFilter: false,
-          key: "n",
-        },
-        {
-          name: "Rarity",
-          isColumn: false,
-          isFilter: true,
-          key: "ri",
-        },
-        {
-          name: "Element",
-          isColumn: true,
-          isFilter: true,
-          key: "e",
-        },
-        {
-          name: "Type",
-          isColumn: true,
-          isFilter: true,
-          key: "t",
-        },
-        {
-          name: "Race",
-          isColumn: true,
-          isFilter: true,
-          key: "ra",        
-        },
-        {
-          name: "Weapon",
-          isColumn: true,
-          isFilter: true,
-          key: "w",
-        },
-        {
-          name: "Owned",
-          isColumn: false,
-          isFilter: true,
-          key: "owned",
-        },
-      ];
+    ...mapState('collection', [
+      'characters',
+      'chara_count',
+      'chara_total',
+      'summons',
+      'summon_count',
+      'summon_total'
+    ]),
+    getFilters() {
+      return categories.filter(c => { return c.isFilter });
     },
     filtersActive() {
       return Object.values(this.chara_show).some(c => !c) || Object.values(this.summon_show).some(c => !c)
@@ -528,7 +489,10 @@ export default {
       return this.$route.params.collection_id === undefined;
     },
   },
-  created() {
+  serverPrefetch() {
+    return this.loadCollection();
+  },
+  async mounted() {
     lsMgt.getValue(this, 'showNames');
     lsMgt.getValue(this, 'showStars');
     lsMgt.getValue(this, 'showCharacters');
@@ -536,13 +500,32 @@ export default {
     lsMgt.getValue(this, 'chara_show');
     lsMgt.getValue(this, 'summon_show');
 
-    this.loadCollection();
+    await this.loadCollection()
+      .then(_ => this.loading = false);
+  },
+  beforeCreate() {
+    const preserve_state = !! this.$store.state.collection
+    this.$store.registerModule('collection', collectionModule, { preserveState: preserve_state });
+  },
+  destroyed () {
+    this.$store.unregisterModule('collection')
   },
   watch: {
-    '$route'(to, from) {
+    '$store.getters.getUserId'(id) {
+      if (id === null) {
+        this.$router.push({name: "collection401"});
+      }
+      else {
+        Object.assign(this.$data, INITIAL_DATA());
+        this.loadCollection()
+          .then(_ => this.loading = false);
+      }
+    },
+    '$route'(to, from) {      
       // When the route changes from "Other collection" to "My collection"
       Object.assign(this.$data, INITIAL_DATA());
-      this.loadCollection();
+      this.loadCollection()
+        .then(_ => this.loading = false);
     },
     chara_show: {
       handler() {

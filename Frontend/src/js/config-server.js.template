@@ -1,0 +1,8 @@
+const config = {
+  server: {
+    // Must be the same as the API key
+    jwt: 'my secret secret',
+  },
+};
+
+module.exports = config;

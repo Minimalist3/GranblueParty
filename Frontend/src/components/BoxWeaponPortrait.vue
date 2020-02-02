@@ -2,7 +2,7 @@
   <span class="relative">
     <img
       class="cursor-pointer w-full"
-      style="min-height: 60px; max-height: 60px;"
+      style="max-height: 60px;"
       :draggable="! objectIsEmpty"
       :src="getImage"
       @click="$emit('click-portrait')"

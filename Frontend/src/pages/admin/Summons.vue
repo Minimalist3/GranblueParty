@@ -13,9 +13,7 @@
             class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
             :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
             @click="index = i-1"
-          >
-            {{i}}
-          </a>
+          >{{i}}</a>
         </li>
       </ul>
     </nav>
@@ -40,9 +38,7 @@
             class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
             :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
             @click="index = i-1"
-          >
-            {{i}}
-          </a>
+          >{{i}}</a>
         </li>
       </ul>
     </nav>
@@ -105,7 +101,7 @@ export default {
         }
       })
 
-      this.$http.post('/admin/summons', postdata)
+      this.axios.post('/admin/summons', postdata)
         .then(response => console.log('Saved'))
         .catch(error => {
           if (error.response) {
@@ -125,7 +121,7 @@ export default {
     hideNonEmptySkills() {
       this.message.forEach(s => {
         if (s.data !== null) {
-          Vue.set(s, 'hide', true);
+          this.$set(s, 'hide', true);
         }
       })
     }
@@ -138,7 +134,7 @@ export default {
     },
   },
   mounted() {
-    this.$http.get('/admin/summons')
+    this.axios.get('/admin/summons')
       .then(response => this.message = response.data)
       .catch(error => console.log(error));
   }

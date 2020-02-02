@@ -136,13 +136,13 @@ export default {
         this.previousRoute = currentRoute;
 
         if (this.message.length === 0) {
-          this.$http.get(currentRoute)
+          this.axios.get(currentRoute)
                     .then(response => this.message = response.data)
                     .catch(error => console.log(error));
         }
 
         let self = this;
-        Vue.nextTick().then(() => {
+        this.$nextTick().then(() => {
           self.name_searched = '';
           self.$refs.nameField.focus();
         });
@@ -152,13 +152,13 @@ export default {
   mounted() {
     // Copy the data model locally to modify "checked" properties
     this.categories.forEach(c => {
-      Vue.set(this.data_model, c.key, Utils.copy(DataModel[c.key]));
+      this.$set(this.data_model, c.key, Utils.copy(DataModel[c.key]));
     });
 
     // Overload data model if specified
     if (this.dataModel !== undefined) {
       for (let [key, data] of Object.entries(this.dataModel)) {
-        Vue.set(this.data_model, key, data);
+        this.$set(this.data_model, key, data);
       }
     }
   }

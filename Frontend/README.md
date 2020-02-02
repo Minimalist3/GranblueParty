@@ -1,5 +1,5 @@
 # Frontend
-Vue.js Frontend for [granblue.party](https://www.granblue.party) website.
+Vue.js Frontend for [granblue.party](https://www.granblue.party) website with Server Side Rendering.
 
 ## Requirements
 - NodeJS 12
@@ -7,17 +7,30 @@ Vue.js Frontend for [granblue.party](https://www.granblue.party) website.
 ## Installation
 To install the necessary modules, run `npm install` in the current folder.
 
-Copy `./src/js/config.js.template` to `./src/js/config.js` and edit relevant values.
+Copy `./src/js/config.js.template` to `./src/js/config.js` and edit relevant values. \
+Copy `./src/js/config-server.js.template` to `./src/js/config-server.js` and edit relevant values.
 
 ## Usage
-- `npm start` to run in development mode
-- `npm run build` to build the site for production
+- `npm run build:static` to build static assets
+
+### Development mode
+Each instance needs to run for HMR to work. Wait for a command to finish producing its files before running the next one.
+
+- `npm run dev:server`
+- `npm run dev:client`
+- `npm run nodemon`
+
+### Production
+- `npm run build:server`
+- `npm run build:client`
+- `npm start`
 
 ## Hosting the site
-The website is using Nginx to run in production, but you can use whatever you prefer. Since the frontend is using Vue Router, you will need to modify your server configuration for it to work: https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+The website is using Nginx to run in production, but you can use whatever you prefer. Since the frontend is using Vue Server Side Rendering, it is recommanded to host the Node instance behind a reverse proxy. The default port is 4000.
 
 ## Changelog
 
+- 2020-02-01: Server Side Rendering
 - 2019-12-06: Version 2: new design, using TailwindCSS and Font Awesome.
 - 2019-08-30: Wide layout for Party Builder. The Details tab hides an experimental damage calculator
 - 2019-08-11: Support for Skill Keys and Perpetuity Rings added in Party Builder.

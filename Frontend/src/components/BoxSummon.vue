@@ -8,9 +8,7 @@
       :style="getTitleColor"
       :title="object.nameen"
       v-if="! objectIsEmpty"
-    >
-      {{ object.nameen }}
-    </a>
+    >{{ object.nameen }}</a>
     <span class="text-xs h-5" v-else> </span>
 
     <!-- Portrait -->
@@ -31,8 +29,9 @@
 </template>
 
 <script>
-import Utils from '@/js/utils'
 import { objectIsEmpty } from "@/js/mixins"
+import Utils from '@/js/utils'
+import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxSummonPortrait.vue'
 import StatInput from '@/components/common/StatInput.vue'
@@ -62,39 +61,14 @@ export default {
         this.$emit('swap', JSON.parse(data));
       }
     },
-    setCurrentData() {
-      if (this.object.data) {
-        switch (this.object.stars) {
-          case 5:
-            if (this.object.data["5"]) {
-              Vue.set(this.object, "current_data", 5);
-              break;
-            }
-          case 4:
-            if (this.object.data["4"]) {
-              Vue.set(this.object, "current_data", 4);
-              break;
-            }
-          case 3:
-            if (this.object.data["3"]) {
-              Vue.set(this.object, "current_data", 3);
-              break;
-            }
-          default:
-            Vue.set(this.object, "current_data", 0);
-        }
-      } else {
-        Vue.set(this.object, "current_data", undefined);
-      }
-    },
     starsChanged(count) {
-      Vue.set(this.object, "stars", count);
+      this.$set(this.object, "stars", count);
 
-      if (object.level > this.getLevel || !this.showLevel) {
-        Vue.set(this.object, "level", this.getLevel);
+      if ( ! this.showLevel || this.object.level > this.getLevel) {
+        this.$set(this.object, "level", this.getLevel);
       }
 
-      this.setCurrentData();
+      UtilsParty.setSummonCurrentData(this.object);
     },
   },
   computed: {
@@ -111,35 +85,8 @@ export default {
       }
     },
     getLevel() {
-      switch (this.object.stars) {
-        case 0:
-          return 40;
-        case 1:
-          return 60;
-        case 2:
-          return 80;
-        case 3:
-          return 100;
-        case 4:
-          return 150;
-      }
-      return 200;
+      return UtilsParty.getSummonLevel(this.object);
     }
   },
-  watch: {
-    object() {
-      if (Utils.isEmpty(this.object)) {
-        return;
-      }
-
-      if (this.object.level === undefined) {
-        Vue.set(this.object, 'level', this.getLevel);
-      }
-      if (this.object.pluses === undefined) {
-        Vue.set(this.object, 'pluses', 0);
-      }
-      this.setCurrentData();
-    },
-  }
 }
 </script>

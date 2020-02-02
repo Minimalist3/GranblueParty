@@ -60,15 +60,15 @@ export default {
         this.all = false;
         // Propagate change
         for (let i=0; i<this.data.length; i++) {
-          Vue.set(this.data[i], 'checked', this.data_view[i].checked);
+          this.$set(this.data[i], 'checked', this.data_view[i].checked);
         }
       }
       else {
-        Vue.set(this.data[index], 'checked', this.data_view[index].checked);
+        this.$set(this.data[index], 'checked', this.data_view[index].checked);
       }
     }
   },
-  mounted() {
+  created() {
     // Copy data locally to deal with the All button
     this.data_view = Utils.copy(this.data);
 

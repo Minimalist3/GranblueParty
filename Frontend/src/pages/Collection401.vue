@@ -14,6 +14,12 @@
 
 <script>
 export default {
+  head: {
+    title: 'Granblue.Party - Collection Tracker',
+    desc: 'Track the characters and summons you unlocked, and share your collection with your friends',
+    image: 'https://www.granblue.party/img/preview_collection.png',
+    keywords: 'collection, tracker, characters, summons, share'
+  },
   methods: {
     goToCollection() {
       // When a user logs in, go back to collection

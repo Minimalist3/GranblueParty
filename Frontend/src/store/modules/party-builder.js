@@ -1,4 +1,7 @@
+import Vue from 'vue'
+
 import Utils from '@/js/utils'
+import UtilsParty from '@/js/utils-party'
 
 const ActionType = {
   SKILL: 0,
@@ -7,26 +10,22 @@ const ActionType = {
 }
 
 export default {
-  state: {
-    percentHP: 100,
-    classe: {},
-    characters: [{}, {}, {}, {}, {}],
-    summons: [{}, {}, {}, {}, {}, {}],
-    weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {},],
-    actions: [],
+  state() {
+    return {
+      percent_HP: 100,
+      classe: {},
+      characters: [{}, {}, {}, {}, {}],
+      summons: [{}, {}, {}, {}, {}, {}],
+      weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+      weapons_skills: [[], [], [], [], [], [], [], [], [], []],
+      actions: [],
+      show_bookmarklet: false,
+      show_update_bookmarklet: false,
+    }
   },
   getters: {
-    getPercentHP: state => {
-      return state.percentHP;
-    },
-    getClasse: state => {
-      return state.classe;
-    },
-    getCharacters: state => {
-      return state.characters;
-    },
-    getSummons: state => {
-      return state.summons;
+    getWeaponsCurrentData: state => {
+      return state.weapons_skills.map(w => w.flatMap(s => s.data ? [s.data] : []));
     },
     getSummonsStats: state => {
       let result = {atk: 0, hp: 0};
@@ -63,12 +62,6 @@ export default {
 
       return result;
     },
-    getWeapons: state => {
-      return state.weapons;
-    },
-    getActions: state => {
-      return state.actions;
-    },
     getActionsText: state => {
       let actions = '';
       state.actions.forEach(a => {
@@ -85,11 +78,17 @@ export default {
         }
       })
       return actions;
-    }
+    },
   },
   mutations: {
     setPercentHP(state, value) {
-      state.percentHP = Math.min(Math.max(0, value), 100);
+      state.percent_HP = Math.min(Math.max(0, value), 100);
+    },
+    setShowBookmarklet(state, value) {
+      state.show_bookmarklet = value;
+    },
+    setShowUpdateBookmarklet(state, value) {
+      state.show_update_bookmarklet = value;
     },
     /**
      * Classes
@@ -107,7 +106,7 @@ export default {
           value.skills.push(null);
         }
       }
-      state.classe = value;
+      Vue.set(state, 'classe', value);
     },
     setClasseSkill(state, { slot, data }) {
       if (Utils.isEmpty(state.classe.skills[slot]) || ! state.classe.skills[slot].fixed) {
@@ -117,20 +116,58 @@ export default {
     /**
      * Characters
      */
-    setCharacters(state, value) {
-      state.characters = value;
+    setCharacter(state, { index, data }) {
+      if ( ! Utils.isEmpty(data)) {
+        if (data.level === undefined) {
+          Vue.set(data, 'level', UtilsParty.getCharacterLevel(data));
+        }
+        if (data.pluses === undefined) {
+          Vue.set(data, 'pluses', 0);
+        }
+        if (data.haspring === undefined) {
+          Vue.set(data, 'haspring', false);
+        }
+      }
+
+      Vue.set(state.characters, index, data);
     },
     /**
      * Summons
      */
-    setSummons(state, value) {
-      state.summons = value;
+    setSummon(state, { index, data }) {
+      if ( ! Utils.isEmpty(data)) {
+        if (data.level === undefined) {
+          Vue.set(data, 'level', UtilsParty.getSummonLevel(data));
+        }
+        if (data.pluses === undefined) {
+          Vue.set(data, 'pluses', 0);
+        }
+        UtilsParty.setSummonCurrentData(data);
+      }
+
+      Vue.set(state.summons, index, data);
     },
     /**
      * Weapons
      */
-    setWeapons(state, value) {
-      state.weapons = value;
+    setWeapon(state, { index, data }) {
+      if ( ! Utils.isEmpty(data)) {
+        if (data.level === undefined) {
+          Vue.set(data, 'level', UtilsParty.getWeaponLevel(data));
+        }
+        if (data.sklevel === undefined) {
+          Vue.set(data, 'sklevel', UtilsParty.getWeaponSkillLevel(data));
+        }
+        if (data.pluses === undefined) {
+          Vue.set(data, 'pluses', 0);
+        }
+        if (data.keys === undefined) {
+          Vue.set(data, 'keys', [null, null, null]);
+        }
+      }
+
+      Vue.set(state.weapons, index, data);
+      Vue.set(state.weapons_skills, index, []);
     },
     /**
      * Actions
@@ -173,6 +210,21 @@ export default {
     },
   },
   actions: {
+    setCharacters({ commit }, value) {
+      for (let i=0; i<value.length; i++) {
+        commit('setCharacter', { index: i, data: value[i] });
+      }
+    },
+    setSummons({ commit }, value) {
+      for (let i=0; i<value.length; i++) {
+        commit('setSummon', { index: i, data: value[i] });
+      }
+    },
+    setWeapons({ commit }, value) {
+      for (let i=0; i<value.length; i++) {
+        commit('setWeapon', { index: i, data: value[i] });
+      }
+    },
     addActions({ commit }, actions) {
       actions.forEach(e => {
         switch(e[2]) {

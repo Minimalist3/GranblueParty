@@ -16,9 +16,12 @@
 
 <script>
 export default {
+  head: {
+    title: 'Granblue.Party - My Account',
+  },
   methods: {
     deleteAccount() {
-      this.$http.post('/user/delete')
+      this.axios.post('/user/delete')
         .then(response => {
           this.$store.commit('logout');
           this.$router.push({name: "home"});

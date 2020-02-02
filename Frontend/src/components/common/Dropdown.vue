@@ -30,7 +30,7 @@ export default {
   watch: {
     value() {
       // Selected index takes some time to update. Don't batch it in changeValue
-      Vue.nextTick().then(() => {
+      this.$nextTick().then(() => {
         this.$emit('update:index', this.$refs.select.selectedIndex);
       });
     }

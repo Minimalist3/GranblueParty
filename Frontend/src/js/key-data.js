@@ -3,7 +3,7 @@ const getSkillByName = (name) => {
     for (let entry of keys) {
       if (name === entry.name) {
         entry['level'] = 1;
-        entry['keyid'] = keyid;
+        entry['keyid'] = parseInt(keyid, 10);
         return entry;
       }
     }

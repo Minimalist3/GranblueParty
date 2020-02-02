@@ -54,10 +54,35 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Utils from '@/js/utils'
 
 import BoxSummon from "@/components/BoxSummon.vue";
 import Modal from '@/components/ModalSelector.vue'
+
+const CATEGORIES = [
+  {
+    name: "Name",
+    isColumn: true,
+    isFilter: false,
+    key: "n",
+  },
+  {
+    name: "Rarity",
+    isColumn: true,
+    isFilter: true,
+    key: "ri",
+  },
+  {
+    name: "Element",
+    isColumn: true,
+    isFilter: true,
+    key: "e",
+  },
+];
+
+const INDEXES = [[1, 2], [3, 4]];
 
 export default {
   components: {
@@ -65,10 +90,6 @@ export default {
     Modal,
   },
   props: {
-    objects: {
-      type: Array,
-      required: true
-    },
     editMode: {
       type: Boolean,
       default: true
@@ -101,44 +122,28 @@ export default {
       if (Utils.isEmpty(id)) return;
 
       const slot = this.selected_box_index;
-      this.$http.get('/party/summons/' + id)
-        .then(response => Vue.set(this.objects, slot, response.data))
+      this.axios.get('/party/summons/' + id)
+        .then(response => this.$store.commit('setSummon', { index: slot, data: response.data }))
         .catch(error => console.log(error));
     },
     swap(from, to) {
       let tmp = this.objects[from];
-      Vue.set(this.objects, from, this.objects[to]);
-      Vue.set(this.objects, to, tmp);
+      this.$store.commit('setSummon', { index: from, data: this.objects[to] })
+      this.$store.commit('setSummon', { index: to, data: tmp })
     }
   },
   computed: {
+    ...mapState({
+      objects: state => state.party_builder.summons
+    }),
     getStats() {
       return this.$store.getters.getSummonsStats;
     },
     getCategories() {
-      return [
-        {
-          name: "Name",
-          isColumn: true,
-          isFilter: false,
-          key: "n",
-        },
-        {
-          name: "Rarity",
-          isColumn: true,
-          isFilter: true,
-          key: "ri",
-        },
-        {
-          name: "Element",
-          isColumn: true,
-          isFilter: true,
-          key: "e",
-        },
-      ];
+      return CATEGORIES;
     },
     getIndexes() {
-      return [[1, 2], [3, 4]];
+      return INDEXES;
     }
   }
 }

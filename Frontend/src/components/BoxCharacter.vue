@@ -7,9 +7,7 @@
       :href="'https://gbf.wiki/' + object.nameen"
       :title="object.nameen"
       v-if="! objectIsEmpty"
-    >
-      {{ object.nameen }}
-    </a>
+    >{{ object.nameen }}</a>
     <span class="text-xs h-5" v-else> </span>
 
     <!-- Portrait -->
@@ -39,6 +37,7 @@
 <script>
 import { objectIsEmpty } from "@/js/mixins"
 import Utils from '@/js/utils'
+import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxCharacterPortrait.vue'
 import Skills from '@/components/BoxCharacterSkills.vue'
@@ -71,75 +70,17 @@ export default {
       }
     },
     starsChanged(object, count) {
-      Vue.set(object, "stars", count);
+      this.$set(object, "stars", count);
 
-      if (object.level > this.getLevel || ! this.showLevel) {
-        Vue.set(object, "level", this.getLevel);
+      if ( ! this.showLevel || object.level > this.getLevel) {
+        this.$set(object, "level", this.getLevel);
       }
     },
   },
   computed: {
     getLevel() {
-      switch(this.object.rarityid) {
-        // SSR
-        case 2:
-          switch(this.object.stars) {
-            case 0:
-              return 40;
-            case 1:
-              return 50;
-            case 2:
-              return 60;
-            case 3:
-              return 70;
-            case 4:
-              return 80;
-          }
-          return 100;
-        // SR
-        case 1:
-          switch(this.object.stars) {
-            case 0:
-              return 30;
-            case 1:
-              return 40;
-            case 2:
-              return 50;
-            case 3:
-              return 60;
-            case 4:
-              return 70;
-          }
-          return 90;
-      }
-      // R
-      switch(this.object.stars) {
-        case 0:
-          return 20;
-        case 1:
-          return 30;
-        case 2:
-          return 40;
-      }
-      return 50;
-    },
+      return UtilsParty.getCharacterLevel(this.object);
+    }
   },
-  watch: {
-    object() {
-      if (Utils.isEmpty(this.object)) {
-        return;
-      }
-
-      if (this.object.level === undefined) {
-        Vue.set(this.object, 'level', this.getLevel);
-      }
-      if (this.object.pluses === undefined) {
-        Vue.set(this.object, 'pluses', 0);
-      }
-      if (this.object.haspring === undefined) {
-        Vue.set(this.object, 'haspring', false);
-      }
-    },
-  }
 }
 </script>

@@ -25,7 +25,7 @@ const config = {
       // https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
       secret: 'my secret secret',
       BCRYPT_SALT_ROUNDS: 12,
-      secureCookie: true,
+      secureCookie: true, // Marks the cookie to be used with HTTPS only
     }
 };
 

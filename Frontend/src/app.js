@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Axios from 'axios'
 
 import { library as faCore } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -9,19 +8,21 @@ import {
   faFile, faFolderOpen, faInfoCircle, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon as faVue } from '@fortawesome/vue-fontawesome'
+import faCSS from '@fortawesome/fontawesome-free/css/svg-with-js.min.css'
 
-import App from './App.vue'
-import Config from './js/config'
-import router from './router'
-import store from './store'
-
-require('./css/app.css')
 require('./robots.txt')
 require('./favicon.ico')
 require('./favicon.png')
 require('./favicon-32.png')
 require('./favicon-64.png')
 require('./favicon-96.png')
+require('./css/app.css')
+
+import App from './App.vue'
+import { createRouter } from './router'
+import { createStore } from './store'
+import HeadMixin from '@/js/mixin-head'
+import getAxiosInstance from '@/js/axios'
 
 // FontAwesome setup
 faCore.add(
@@ -30,43 +31,43 @@ faCore.add(
 );
 Vue.component('fa-icon', faVue);
 
-// Use Axios globally
-Vue.prototype.$http = Axios.create({
-  baseURL: Config.app.baseURL,
-  timeout: Config.app.timeout,
-});
-// Always send the cookie. This needs to be set globally, else it won't work
-Vue.prototype.$http.defaults.withCredentials = true;
-// Deal with 401 unauthorized
-Vue.prototype.$http.interceptors.response.use(
-  response => response,
-  error => {
-    if (error && error.response && error.response.status === 401) {
-      store.commit('logout', false);
-      store.commit('show_modal_login', true);
-      return new Promise(() => {});
-    }
-    return Promise.reject(error);
+// Mixin for <Head> tags
+Vue.mixin(HeadMixin);
+
+// Set axios globally
+Vue.mixin({
+  beforeCreate () {
+    this.axios = this.$root.axios;
   }
-);
+})
 
 // Remove prod warning
 Vue.config.productionTip = false;
 
-// Load state of localStorage
-const username = localStorage.getItem('username');
-const userId = localStorage.getItem('userId');
-if (username) {
-  store.commit({
-    type: 'login',
-    username: username,
-    userId: userId,
-  });
-}
+export function createApp(user = null) {
+  // create router and store instances
+  const store = createStore()
 
-new Vue({
-  el: '#app',
-  render: h => h(App),
-  store,
-  router,
-})
+  if (user !== null) {
+    store.commit('login_server', user);
+  }
+
+  const router = createRouter(store)
+
+  const axios = getAxiosInstance(store, user);
+
+  // create the app instance, injecting both the router and the store
+  const app = new Vue({
+    router,
+    store,
+    render: h => h(App),
+    data: {
+      axios: axios
+    }
+  });
+  
+  store.axios = axios;
+
+  // expose the app, the router and the store.
+  return { app, router, store }
+}

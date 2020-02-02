@@ -6,9 +6,11 @@ import partyBuilderModule from './modules/party-builder'
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  modules: {
-    loginModule,
-    partyBuilderModule
-  },
-})
+export function createStore () {
+  return new Vuex.Store({
+    modules: {
+      login: loginModule,
+      party_builder: partyBuilderModule,
+    },
+  })
+}

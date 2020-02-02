@@ -54,7 +54,7 @@ export default {
       }
     },
     selectKey(key) {
-      Vue.set(this.object.keys, this.modal_skill_index, key);
+      this.$set(this.object.keys, this.modal_skill_index, key);
     }
   },
 }

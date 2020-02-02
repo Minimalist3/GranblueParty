@@ -2,7 +2,7 @@
   <div>
     <h1>Release Schedule</h1>
     
-    <div v-if="loading !== 2">
+    <div v-if="loading === true">
       Loading...
     </div>
     <div v-else>
@@ -90,9 +90,7 @@
                 target="_blank"
                 :href="'https://gbf.wiki/' + unit.n"
                 :title="unit.n"
-              >
-                {{ unit.n }}
-              </a>
+              >{{ unit.n }}</a>
               <img
                 style="height: 60px;"
                 :title="unit.n"
@@ -107,8 +105,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
+import releaseModule from '@/store/modules/release-schedule'
 
 import DataFilter from '@/components/DataFilter.vue'
 
@@ -133,27 +134,52 @@ const categories = [
   },
 ];
 
+function getDataModel() {
+  // Copy the data model locally to modify "checked" properties
+  let result = Object.fromEntries(categories.map(c => [c.key, Utils.copy(DataModel[c.key])]));
+  
+  // Set rarity to All
+  Object.values(result.ri.data).forEach(v => v.checked = true);
+  return result;
+}
+
 export default {
   components: {
     DataFilter,
   },
+  head: {
+    title: 'Granblue.Party - Release Schedule',
+    desc: 'Take a look at every character and summoned already released, sorted by date',
+    image: 'https://www.granblue.party/img/preview_release.png',
+    keywords: 'release, schedule, new units, new characters, new summons, gacha, event'
+  },
   data() {
     return {
-      loading: 0,
       now: new Date(),
       current_year: new Date().getFullYear(),
-      characters: [],
-      summons: [],
       count_characters: 0,
       count_summons: 0,
-      data_model: {},
+      data_model: getDataModel(),
       show_characters: true,
       show_summons: true,
       show_obtain_gacha: true,
       show_obtain_other: true,
-    }
+      loading: true,
+   }
+  },
+  methods: {
+    loadData() {
+      return Promise.all([
+          this.$store.dispatch('release/fetchCharacters'),
+          this.$store.dispatch('release/fetchSummons')
+        ])        
+    },
   },
   computed: {
+    ...mapState('release', [
+      'characters',
+      'summons'
+    ]),
     getYears() {
       let years = [];
       for (let i = this.now.getFullYear(); i>=2014; i--) {
@@ -223,37 +249,22 @@ export default {
       this.count_characters = countCharacters;
       this.count_summons = countSummons;
       return [...releaseMap.entries()].sort((a, b) => a[0] < b[0]);
-    }
+    },
   },
-  mounted() {
-    // Copy the data model locally to modify "checked" properties
-    categories.forEach(c => {
-      Vue.set(this.data_model, c.key, Utils.copy(DataModel[c.key]));
-    });
-    // Set rarity to All
-    Object.values(this.data_model.ri.data).forEach(v => v.checked = true);
-    
-    this.$http.get("/release/characters")
-      .then(response => {
-        response.data.forEach(element => {
-          element.rd = new Date(element.rd);
-        });
-
-        this.characters = response.data;
-        this.loading++;
-      })
-      .catch(error => console.log(error));
-
-    this.$http.get("/release/summons")
-      .then(response => {
-        response.data.forEach(element => {
-          element.rd = new Date(element.rd);
-        });
-
-        this.summons = response.data;
-        this.loading++;
-      })
-      .catch(error => console.log(error));
-  }
+  serverPrefetch() {
+    return this.loadData();
+  },
+  async mounted() {
+    await this.loadData()
+      .then(_ => this.$store.dispatch('release/makeDates'))
+      .then(_ => this.loading = false);
+  },
+  beforeCreate() {
+    const preserve_state = !! this.$store.state.release;
+    this.$store.registerModule('release', releaseModule, { preserveState: preserve_state });
+  },
+  destroyed () {
+    this.$store.unregisterModule('release');
+  },
 }
 </script>

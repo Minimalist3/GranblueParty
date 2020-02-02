@@ -72,21 +72,21 @@ export default {
     changeObject(id) {
       if (Utils.isEmpty(id)) return;
 
-      this.$http.get('/party/classes/' + id)
+      this.axios.get('/party/classes/' + id)
         .then(response => this.$store.commit('setClasse', response.data))
         .catch(error => console.log(error));
     },
     changeSkill(id) {
       if (Utils.isEmpty(id)) return;
 
-      this.$http.get('/party/skills/' + id)
+      this.axios.get('/party/skills/' + id)
         .then(response => this.$store.commit('setClasseSkill', {slot: this.selected_skill_index, data: response.data}))
         .catch(error => console.log(error));
     },
   },
   computed: {
     getObject() {
-      return this.$store.getters.getClasse;
+      return this.$store.state.party_builder.classe;
     },
     getCategoriesClass() {
       return [

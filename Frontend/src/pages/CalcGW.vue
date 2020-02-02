@@ -188,6 +188,12 @@ export default {
   components: {
     Checkbox
   },
+  head: {
+    title: 'Granblue.Party - Guild Wars Tokens Calculator',
+    desc: 'Calculator for Guild Wars tokens and boxes',
+    image: 'https://www.granblue.party/img/preview_calcgw.png',
+    keywords: 'Guild Wars, GW, Unite and Fight, U&F, 40 boxes, calculator, eternals, meat, gold bar'
+  },
   data() {
     return {
       boxes_needed: 40,
@@ -204,7 +210,7 @@ export default {
   },
   methods: {
     showFight(index) {
-      Vue.set(this.show_fight, index, ! this.show_fight[index]);
+      this.$set(this.show_fight, index, ! this.show_fight[index]);
     },
     getFightData(fight) {
       let result = [];
@@ -403,7 +409,7 @@ export default {
       lsMgt.setValue('add_honor', this);
     },
   },
-  created() {
+  mounted() {
     lsMgt.getValue(this, 'boxes_needed');
     lsMgt.getValue(this, 'boxes_opened');
     lsMgt.getValue(this, 'show_fight');

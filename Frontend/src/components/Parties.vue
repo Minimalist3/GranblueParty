@@ -3,7 +3,7 @@
     <div class="flex flex-row flex-wrap items-center mb-4" v-if="isUserLogged">
       <span class="mr-2">My parties</span>
 
-      <dropdown class="mr-2" :disabled="parties.length === 0" v-model.number="selected_party" :index.sync="selected_party_index">
+      <dropdown class="mr-2" :disabled="parties.length === 0" v-model.number="selected_party" :index="selected_party_index">
         <option disabled :value="-1">Please select a party</option>
         <option
           v-for="(party, index) in parties"
@@ -55,10 +55,13 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 import msgpack from '@/js/libs/msgpack.js'
 import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
 import KeyData from '@/js/key-data'
+import partiesModule from '@/store/modules/parties'
 
 import Dropdown from '@/components/common/Dropdown.vue';
 
@@ -85,11 +88,6 @@ export default {
   },
   data() {
     return {
-      parties: [],
-      selected_party: -1,       // Select Option value
-      selected_party_index: 0, // Select Option index
-      current_party: null,
-      party_name: "",
       party_message: "",
       clipboard_text: '',
     }
@@ -99,20 +97,19 @@ export default {
       this.current_party = null;
       this.party_message = "";
       this.$store.commit('setClasse', Utils.copy(DEFAULT_VALUES['classe']));
-      this.$store.commit('setCharacters', Utils.copy(DEFAULT_VALUES['characters']));
-      this.$store.commit('setSummons', Utils.copy(DEFAULT_VALUES['summons']));
-      this.$store.commit('setWeapons', Utils.copy(DEFAULT_VALUES['weapons']));
+      this.$store.dispatch('setCharacters', Utils.copy(DEFAULT_VALUES['characters']));
+      this.$store.dispatch('setSummons', Utils.copy(DEFAULT_VALUES['summons']));
+      this.$store.dispatch('setWeapons', Utils.copy(DEFAULT_VALUES['weapons']));
       this.$store.commit('clearActions');
 
       // Clean the URL
       if (clean_url) {
         history.pushState(null, null, window.location.origin + window.location.pathname);
         this.selected_party = -1;
-        this.selected_party_index = 0;
       }
     },
     clickPartyLoad() {
-      this.$http.get('/party/load/' + this.selected_party)
+      this.axios.get('/party/load/' + this.selected_party)
         .then(response => {
           this.loadPartyFromResponse(response);
           
@@ -127,7 +124,7 @@ export default {
       history.pushState(null, null, text);
 
       let self = this;
-      Vue.nextTick().then(() => {
+      this.$nextTick().then(() => {
         const input = document.getElementById("clipboardInput");
         input.select();
         document.execCommand("copy");
@@ -137,7 +134,7 @@ export default {
     },
     clickPartyDelete() {
       if (this.parties.length !== 0) {
-        this.$http.post('/party/delete', {id: this.selected_party})
+        this.axios.post('/party/delete', {id: this.selected_party})
           .then(() => {
             this.clickPartyNew();
             this.loadParties();
@@ -148,50 +145,41 @@ export default {
     },
     clickPartySave(partyId) {
       let data = {
-        classe: this.getClasse.classid,
-        class_skills: Utils.isEmpty(this.getClasse.skills) ? null : this.getClasse.skills.map(s => {return s ? s.skillid : null}), // Skill ids
-        characters: this.getCharacters.map(e => { return Utils.isEmpty(e) ? null : e.characterid }),
-        characters_stars: this.getCharacters.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
-        characters_levels: this.getCharacters.map(e => { return Utils.isEmpty(e) ? null : e.level }),
-        characters_pluses: this.getCharacters.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
-        characters_prings: this.getCharacters.map(e => { return Utils.isEmpty(e) ? null : e.haspring }),
-        summons: this.getSummons.map(e => { return Utils.isEmpty(e) ? null : e.summonid }),
-        summons_levels: this.getSummons.map(e => { return Utils.isEmpty(e) ? null : e.level }),
-        summons_pluses: this.getSummons.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
-        summons_stars: this.getSummons.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
-        weapons: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.weaponid }),
-        weapons_levels: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.level }),
-        weapons_pluses: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
-        weapons_skill_levels: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.sklevel }),
-        weapons_skill_names: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.keys.map(k => k ? k.name : null) }),
-        weapons_stars: this.getWeapons.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
-        actions: this.$store.getters.getActions.map(e => { return [e.sourceSlot-1, e.skillSlot-1, e.type] })
+        classe: this.classe.classid,
+        class_skills: Utils.isEmpty(this.classe.skills) ? null : this.classe.skills.map(s => {return s ? s.skillid : null}), // Skill ids
+        characters: this.characters.map(e => { return Utils.isEmpty(e) ? null : e.characterid }),
+        characters_stars: this.characters.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
+        characters_levels: this.characters.map(e => { return Utils.isEmpty(e) ? null : e.level }),
+        characters_pluses: this.characters.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
+        characters_prings: this.characters.map(e => { return Utils.isEmpty(e) ? null : e.haspring }),
+        summons: this.summons.map(e => { return Utils.isEmpty(e) ? null : e.summonid }),
+        summons_levels: this.summons.map(e => { return Utils.isEmpty(e) ? null : e.level }),
+        summons_pluses: this.summons.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
+        summons_stars: this.summons.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
+        weapons: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.weaponid }),
+        weapons_levels: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.level }),
+        weapons_pluses: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.pluses }),
+        weapons_skill_levels: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.sklevel }),
+        weapons_skill_names: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.keys.map(k => k ? k.name : null) }),
+        weapons_stars: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
+        actions: this.actions.map(e => { return [e.sourceSlot-1, e.skillSlot-1, e.type] })
       }
 
-      this.$http.post('/party/save', {
+      this.axios.post('/party/save', {
           id: partyId,
           name: this.party_name,
           data: data
         })
         .then(response => {
           this.current_party = response.data.id;
-          this.loadParties(this.current_party);
-          this.party_message = 'Party saved successfully at ' + new Date().toLocaleTimeString();
+          return this.loadParties();
         })
+        .then(_ => this.party_message = 'Party saved successfully at ' + new Date().toLocaleTimeString())
+        .then(_ => this.selected_party = this.current_party)
         .catch(error => console.log(error));
     },
-    loadParties(select_value = null) {
-      this.$http.get('/party/list')
-        .then(response => {
-          this.parties = response.data;
-          if (select_value !== null) {
-            let context = this;
-            Vue.nextTick().then(() => {
-              context.selected_party = select_value;
-            });            
-          }
-        })
-        .catch(error => console.log(error));
+    loadParties() {
+      return this.$store.dispatch('parties/fetchParties');
     },
     loadPartyFromResponse(response) {
       this.loadParty(response.data, {
@@ -220,144 +208,144 @@ export default {
 
       this.$store.commit('setClasse', getDefaultValues(data, 'classe'));
       
-      if ( ! Utils.isEmpty(data['class_skills']) && ! Utils.isEmpty(this.getClasse)) {
+      if ( ! Utils.isEmpty(data['class_skills']) && ! Utils.isEmpty(this.classe)) {
         data['class_skills'].forEach((e, slot) => {
           this.$store.commit('setClasseSkill', {slot: slot, data: e});
         });
       }
-      this.$store.commit('setCharacters', getDefaultValues(data, 'characters'));
-      this.$store.commit('setSummons', getDefaultValues(data, 'summons'));
-      this.$store.commit('setWeapons', getDefaultValues(data, 'weapons'));
+      this.$store.dispatch('setCharacters', getDefaultValues(data, 'characters'));
+      this.$store.dispatch('setSummons', getDefaultValues(data, 'summons'));
+      this.$store.dispatch('setWeapons', getDefaultValues(data, 'weapons'));
 
       // Set stars
       if (characters_stars) {
-        for (let i=0; i<this.getCharacters.length && i<characters_stars.length; i++) {
+        for (let i=0; i<this.characters.length && i<characters_stars.length; i++) {
           if (characters_stars[i] !== null) {
-            Vue.set(this.getCharacters[i], 'stars', characters_stars[i]);
+            this.$set(this.characters[i], 'stars', characters_stars[i]);
           }
         }
       }
       else if (characters_levels) {
-        for (let i=0; i<this.getCharacters.length && i<characters_levels.length; i++) {
+        for (let i=0; i<this.characters.length && i<characters_levels.length; i++) {
           if (characters_levels[i] === null) {
             continue;
           }
           let lvl = parseInt(characters_levels[i], 10);
           if (lvl > 80) {
-            Vue.set(this.getCharacters[i], 'stars', 5);
+            this.$set(this.characters[i], 'stars', 5);
           }
           else if (lvl > 60) {
-            Vue.set(this.getCharacters[i], 'stars', 4);
+            this.$set(this.characters[i], 'stars', 4);
           }
           else if (lvl > 40) {
-            Vue.set(this.getCharacters[i], 'stars', 3);
+            this.$set(this.characters[i], 'stars', 3);
           }
           else if (lvl > 20) {
-            Vue.set(this.getCharacters[i], 'stars', 2);
+            this.$set(this.characters[i], 'stars', 2);
           }
           else if (lvl > 1) {
-            Vue.set(this.getCharacters[i], 'stars', 1);
+            this.$set(this.characters[i], 'stars', 1);
           }
           else {
-            Vue.set(this.getCharacters[i], 'stars', 0);
+            this.$set(this.characters[i], 'stars', 0);
           }
         }
       }
       if (characters_levels) {
-        for (let i=0; i<this.getCharacters.length && i<characters_levels.length; i++) {
+        for (let i=0; i<this.characters.length && i<characters_levels.length; i++) {
           if (characters_levels[i] !== null) {
-            Vue.set(this.getCharacters[i], 'level', characters_levels[i]);
+            this.$set(this.characters[i], 'level', characters_levels[i]);
           }
         }
       }
       if (characters_pluses) {
-        for (let i=0; i<this.getCharacters.length && i<characters_pluses.length; i++) {
+        for (let i=0; i<this.characters.length && i<characters_pluses.length; i++) {
           if (characters_pluses[i] !== null) {
-            Vue.set(this.getCharacters[i], 'pluses', characters_pluses[i]);
+            this.$set(this.characters[i], 'pluses', characters_pluses[i]);
           }
         }
       }
       if (characters_prings) {
-        for (let i=0; i<this.getCharacters.length && i<characters_prings.length; i++) {
+        for (let i=0; i<this.characters.length && i<characters_prings.length; i++) {
           if (characters_prings[i] !== null) {
-            Vue.set(this.getCharacters[i], 'haspring', characters_prings[i]);
+            this.$set(this.characters[i], 'haspring', characters_prings[i]);
           }
         }
       }
 
       if (summons_stars) {
-        for (let i=0; i<this.getSummons.length && i<summons_stars.length; i++) {
+        for (let i=0; i<this.summons.length && i<summons_stars.length; i++) {
           if (summons_stars[i] !== null) {
-            Vue.set(this.getSummons[i], 'stars', summons_stars[i]);
+            this.$set(this.summons[i], 'stars', summons_stars[i]);
           }
         }
       }
       if (summons_levels) {
-        for (let i=0; i<this.getSummons.length && i<summons_levels.length; i++) {
+        for (let i=0; i<this.summons.length && i<summons_levels.length; i++) {
           if (summons_levels[i] !== null) {
-            Vue.set(this.getSummons[i], 'level', summons_levels[i]);
+            this.$set(this.summons[i], 'level', summons_levels[i]);
           }
         }
       }
       if (summons_pluses) {
-        for (let i=0; i<this.getSummons.length && i<summons_pluses.length; i++) {
+        for (let i=0; i<this.summons.length && i<summons_pluses.length; i++) {
           if (summons_pluses[i] !== null) {
-            Vue.set(this.getSummons[i], 'pluses', summons_pluses[i]);
+            this.$set(this.summons[i], 'pluses', summons_pluses[i]);
           }
         }
       }
 
       if (weapons_stars) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_stars.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_stars.length; i++) {
           if (weapons_stars[i] !== null) {
-            Vue.set(this.getWeapons[i], 'stars', weapons_stars[i]);
+            this.$set(this.weapons[i], 'stars', weapons_stars[i]);
           }
         }
       }
       else if (weapons_skill_levels) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_skill_levels.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_skill_levels.length; i++) {
           let sl = parseInt(weapons_skill_levels[i], 10);
           if (sl > 15) {
-            Vue.set(this.getWeapons[i], 'stars', 5);
+            this.$set(this.weapons[i], 'stars', 5);
           }
           else if (sl > 10) {
-            Vue.set(this.getWeapons[i], 'stars', 4);
+            this.$set(this.weapons[i], 'stars', 4);
           }
           else if (sl > 1) {
-            Vue.set(this.getWeapons[i], 'stars', 3);
+            this.$set(this.weapons[i], 'stars', 3);
           }
           // SL1 means Special Skill with no SL
         }
       }
       if (weapons_skill_levels) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_skill_levels.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_skill_levels.length; i++) {
           if (weapons_skill_levels[i] !== null) {
-            Vue.set(this.getWeapons[i], 'sklevel', weapons_skill_levels[i]);
+            this.$set(this.weapons[i], 'sklevel', weapons_skill_levels[i]);
           }
         }
       }
       if (weapons_levels) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_levels.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_levels.length; i++) {
           if (weapons_levels[i] !== null) {
-            Vue.set(this.getWeapons[i], 'level', weapons_levels[i]);
+            this.$set(this.weapons[i], 'level', weapons_levels[i]);
           }
         }
       }
       if (weapons_pluses) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_pluses.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_pluses.length; i++) {
           if (weapons_pluses[i] !== null) {
-            Vue.set(this.getWeapons[i], 'pluses', weapons_pluses[i]);
+            this.$set(this.weapons[i], 'pluses', weapons_pluses[i]);
           }
         }
       }
       if (weapons_skill_names) {
-        for (let i=0; i<this.getWeapons.length && i<weapons_skill_names.length; i++) {
+        for (let i=0; i<this.weapons.length && i<weapons_skill_names.length; i++) {
           if (weapons_skill_names[i] !== null) {
-            Vue.set(this.getWeapons[i], 'keys', [null, null, null]);
+            this.$set(this.weapons[i], 'keys', [null, null, null]);
 
             for (let j=0; j<weapons_skill_names[i].length; j++) {
               if (weapons_skill_names[i][j]) {
-                Vue.set(this.getWeapons[i].keys, j, KeyData.getSkillByName(weapons_skill_names[i][j].trim()));
+                this.$set(this.weapons[i].keys, j, KeyData.getSkillByName(weapons_skill_names[i][j].trim()));
               }
             }
           }
@@ -370,56 +358,61 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      classe: state => state.party_builder.classe,
+      characters: state => state.party_builder.characters,
+      summons: state => state.party_builder.summons,
+      weapons: state => state.party_builder.weapons,
+      actions: state => state.party_builder.actions,
+    }),
+    ...mapGetters('parties', {
+      selected_party_index: 'getSelectedPartyIndex'
+    }),
     isUserLogged() {
       return this.$store.getters.getUserId !== null;
     },
-    getClasse() {
-      return this.$store.getters.getClasse;
+    parties: {
+      get() { return this.$store.state.parties.parties },
+      set(value) { this.$store.commit('parties/setParties', value) }
     },
-    getCharacters() {
-      return this.$store.getters.getCharacters;
+    selected_party: {
+      get() { return this.$store.state.parties.selected_party },
+      set(value) { this.$store.dispatch('parties/setSelectedParty', value) }
     },
-    getSummons() {
-      return this.$store.getters.getSummons;
+    current_party: {
+      get() { return this.$store.state.parties.current_party },
+      set(value) { this.$store.commit('parties/setCurrentParty', value) }
     },
-    getWeapons() {
-      return this.$store.getters.getWeapons;
-    },
+    party_name: {
+      get() { return this.$store.state.parties.party_name },
+      set(value) { this.$store.commit('parties/setPartyName', value) }
+    }
   },
   watch: {
-    '$store.getters.getUserId'() {
-      this.loadParties();
-    },
-    selected_party() {
-      // Firefox triggers this too early
-      let context = this;
-      Vue.nextTick().then(() => {
-        if (context.selected_party_index > 0) {
-          context.party_name = context.parties[context.selected_party_index - 1].name;
-        }
-        else {
-          context.party_name = "";
-        }
-      });
+    '$store.getters.getUserId'(id) {
+      if (id !== null) {
+        this.$store.commit('parties/clearParties');
+        this.loadParties();
+      }
     },
   },
-  mounted() {
+  serverPrefetch() {
+    let promises = [];
+
     /**
      * Load parties list
      */
     if (this.isUserLogged) {
-      this.loadParties();
+      promises.push(this.loadParties());
     }
 
     /**
      * Load party from URL
      */
-    const urlParams = new URLSearchParams(window.location.search);
 
     // permaURL
-    if (urlParams.has('t')) {
-      const param = urlParams.get('t');
-      const data = msgpack.deserialize(base64js.toByteArray(Utils.unescapeBase64(param)));
+    if ( ! Utils.isEmpty(this.$route.query.t)) {
+      const data = msgpack.deserialize(base64js.toByteArray(Utils.unescapeBase64(this.$route.query.t)));
       const postData = {
         classe: Utils.isEmpty(data[0]) ? null : data[0][0],
         skills: Utils.isEmpty(data[0]) ? null : data[0].slice(1), // Skill IDs
@@ -428,14 +421,15 @@ export default {
         weapons: data[3],
       }
 
-      this.$http.post('/party/load', postData)
-        .then(response => this.loadParty(response.data, {actions: data[4]}))
-        .catch(error => console.log(error));
+      promises.push(
+        this.axios.post('/party/load', postData)
+          .then(response => this.loadParty(response.data, {actions: data[4]}))
+          .catch(error => console.log(error))
+      );
     }
     // Bookmarklet
-    else if (urlParams.has('l')) {
-      const param = urlParams.get('l');
-      const data = JSON.parse(param);
+    else if ( ! Utils.isEmpty(this.$route.query.l)) {
+      const data = JSON.parse(this.$route.query.l);
       const postData = {
         classe: data.p,
         class_skills: data.ps, // Skill names
@@ -448,40 +442,62 @@ export default {
         this.$emit('update-bookmarklet');
       }
 
-      this.$http.post('/party/load', postData)
-        .then(response => this.loadParty(response.data, {
-          characters_levels: data.cl,
-          characters_stars: data.cs,
-          characters_pluses: data.cp,
-          characters_prings: data.cwr,
-          summons_levels: data.sl,
-          summons_stars: data.ss,
-          summons_pluses: data.sp,
-          weapons_levels: data.wll,
-          weapons_skill_levels: data.wl,
-          weapons_skill_names: data.wsn,
-          weapons_pluses: data.wp
-        }))
-        .catch(error => console.log(error));
+      promises.push(
+        this.axios.post('/party/load', postData)
+          .then(response => this.loadParty(response.data,
+          {
+            characters_levels: data.cl,
+            characters_stars: data.cs,
+            characters_pluses: data.cp,
+            characters_prings: data.cwr,
+            summons_levels: data.sl,
+            summons_stars: data.ss,
+            summons_pluses: data.sp,
+            weapons_levels: data.wll,
+            weapons_skill_levels: data.wl,
+            weapons_skill_names: data.wsn,
+            weapons_pluses: data.wp
+          }))
+          .catch(error => console.log(error))
+      );
     }
     // Party ID
-    else if (urlParams.has('p')) {
-      const param = parseInt(urlParams.get('p'), 10);
+    else if ( ! Utils.isEmpty(this.$route.query.p)) {
+      const param = parseInt(this.$route.query.p, 10);
 
-      this.$http.get('/party/load/' + param)
-        .then(response => {
-          this.loadPartyFromResponse(response);
-          // Preselect party if it belongs to current user
-          this.parties.forEach(p => {
-            if (p.id === param) {
-              this.current_party = p.id;
-              this.selected_party = p.id;
-            }
+      promises.push(
+        this.axios.get('/party/load/' + param)
+          .then(response => {
+            this.loadPartyFromResponse(response);
+            // Preselect party if it belongs to current user
+            this.parties.forEach(p => {
+              if (p.id === param) {
+                this.current_party = p.id;
+                this.selected_party = p.id;
+              }
+            })
           })
-        })
-        .catch(error => {console.log(error);  this.party_message = 'Party not found'});
+          .catch(error => {console.log(error);  this.party_message = 'Party not found'})
+      );
     }
-  }
+
+    return Promise.all(promises);
+  },
+  mounted() {
+    /**
+     * Load parties list
+     */
+    if (this.isUserLogged && this.$store.state.parties.parties.length === 0) {
+      this.loadParties();
+    }
+  },
+  beforeCreate() {
+    const preserve_state = !! this.$store.state.parties
+    this.$store.registerModule('parties', partiesModule, { preserveState: preserve_state });
+  },
+  destroyed () {
+    this.$store.unregisterModule('parties')
+  },
 }
 </script>
 

@@ -50,7 +50,7 @@
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
         <p>
-          <b>2019-12-28:</b> Helel ben Shalem
+          <b>2020-01-31:</b> Yodahra (Wind), Ilsa (Light)
         </p>
       </div>
 
@@ -128,6 +128,9 @@ All the raids will open in the same window, reducing the number of clicks needed
 ]
 
 export default {
+  head: {
+    title: 'Granblue.Party - Home',
+  },
   data() {
     return {
       preview_index: 0,
@@ -163,7 +166,7 @@ export default {
       return SECTIONS;
     }
   },
-  created() {
+  mounted() {
     this.startTimer();
   },
   beforeDestroy() {

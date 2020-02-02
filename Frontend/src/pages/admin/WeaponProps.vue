@@ -101,17 +101,17 @@ export default {
   methods: {
     addRestriction(category, element) {
       if (element.length === 0) {
-        Vue.delete(this.object.restriction, category);
+        this.$delete(this.object.restriction, category);
 
         if (Object.keys(this.object.restriction).length === 0) {
-          Vue.delete(this.object, 'restriction');
+          this.$delete(this.object, 'restriction');
         }
       }
       else {
         if ( ! this.object.hasOwnProperty('restriction')) {
-          Vue.set(this.object, 'restriction', {});
+          this.$set(this.object, 'restriction', {});
         }
-        Vue.set(this.object.restriction, category, element);
+        this.$set(this.object.restriction, category, element);
       }
     },
     linkRestrictions() {
@@ -135,7 +135,7 @@ export default {
       },
       set(value) {
         for (let [key, val] of Object.entries(JSON.parse(value))) {
-          Vue.set(this.object, key, val);
+          this.$set(this.object, key, val);
         }
         this.linkRestrictions();
       },
@@ -144,22 +144,22 @@ export default {
   watch: {
     'object.percent.1'() {
       if ( ! this.object.percent['1']) {
-        Vue.delete(this.object.percent, '1');
+        this.$delete(this.object.percent, '1');
       }
     },
     'object.percent.10'() {
       if ( ! this.object.percent['10']) {
-        Vue.delete(this.object.percent, '10');
+        this.$delete(this.object.percent, '10');
       }
     },
     'object.percent.15'() {
       if ( ! this.object.percent['15']) {
-        Vue.delete(this.object.percent, '15');
+        this.$delete(this.object.percent, '15');
       }
     },
     'object.percent.20'() {
       if ( ! this.object.percent['20']) {
-        Vue.delete(this.object.percent, '20');
+        this.$delete(this.object.percent, '20');
       }
     },
     restriction_elem() {

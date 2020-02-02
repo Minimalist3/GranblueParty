@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col" style="min-width: 105px; max-width: 105px;">
+  <div class="flex flex-col" style="max-width: 105px;">
     <!-- Title -->
     <a
       class="text-xs text-primary h-5 px-1 text-center truncate"
@@ -7,9 +7,7 @@
       :href="'https://gbf.wiki/' + object.nameen"
       :title="object.nameen"
       v-if="! objectIsEmpty"
-    >
-      {{ object.nameen }}
-    </a>
+    >{{ object.nameen }}</a>
     <span class="text-xs h-5" v-else> </span>
 
     <!-- Portrait -->
@@ -34,8 +32,9 @@
 </template>
 
 <script>
-import Utils from '@/js/utils'
 import { objectIsEmpty } from "@/js/mixins"
+import Utils from '@/js/utils'
+import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxWeaponPortrait.vue'
 import Skills from '@/components/BoxWeaponSkills.vue'
@@ -55,6 +54,10 @@ export default {
       type: Object,
       required: true
     },
+    skills: {
+      type: Array,
+      required: true
+    },
     showLevel: {
       type: Boolean,
       default: false,
@@ -68,13 +71,13 @@ export default {
       }
     },
     starsChanged(object, count) {
-      Vue.set(object, "stars", count);
+      this.$set(object, "stars", count);
 
-      if (object.level > this.getLevel || ! this.showLevel) {
-        Vue.set(object, 'level', this.getLevel);
+      if ( ! this.showLevel || object.level > this.getLevel) {
+        this.$set(object, 'level', this.getLevel);
       }
-      if (object.sklevel > this.getSkillLevel || ! this.showLevel) {
-        Vue.set(object, 'sklevel', this.getSkillLevel);
+      if ( ! this.showLevel || object.sklevel > this.getSkillLevel) {
+        this.$set(object, 'sklevel', this.getSkillLevel);
       }      
     },
     getWeaponSkillValue(skill_level, percent, stat) {
@@ -117,31 +120,13 @@ export default {
   },
   computed: {
     getPercentHP() {
-      return this.$store.getters.getPercentHP;
+      return this.$store.state.party_builder.percent_HP;
     },
     getLevel() {
-      switch(this.object.stars) {
-        case 0:
-          return 40;
-        case 1:
-          return 60;
-        case 2:
-          return 80;
-        case 3:
-          return 100;
-        case 4:
-          return 150;
-      }
-      return 200;
+      return UtilsParty.getWeaponLevel(this.object);
     },
     getSkillLevel() {
-      switch(this.object.stars) {
-        case 5:
-          return 20;
-        case 4:
-          return 15;
-      }
-      return 10;
+      return UtilsParty.getWeaponSkillLevel(this.object);
     },
     getSkills() {
       if (this.object.skills === undefined) {
@@ -170,41 +155,18 @@ export default {
       skills.forEach(s => {
         if (s.data) {
           for (let d of s.data) {
-            Vue.set(d, 'value', this.getWeaponSkillValue(this.object.sklevel, d.percent, d.stat));
+            this.$set(d, 'value', this.getWeaponSkillValue(this.object.sklevel, d.percent, d.stat));
           }
         }
       });
 
-      // TODO Temporary, to make PartyDetails work
-      Vue.set(this.object, 'current_data', skills.flatMap(s => {
-        if (s.data) {
-          return [s.data];
-        }
-        return [];
-      }));
+      // Keep in the store
+      for (let i=0; i<skills.length; i++) {
+        this.$set(this.skills, i, skills[i]);
+      }
 
       return skills;
     }
   },
-  watch: {
-    object() {
-      if (Utils.isEmpty(this.object)) {
-        return;
-      }
-
-      if (this.object.level === undefined) {
-        Vue.set(this.object, 'level', this.getLevel);
-      }
-      if (this.object.sklevel === undefined) {
-        Vue.set(this.object, 'sklevel', this.getSkillLevel);
-      }
-      if (this.object.pluses === undefined) {
-        Vue.set(this.object, 'pluses', 0);
-      }
-      if (this.object.keys === undefined) {
-        Vue.set(this.object, 'keys', [null, null, null]);
-      }
-    },
-  }
 }
 </script>

@@ -40,8 +40,8 @@
     <div v-if="isUserLogged">
       <div class="flex flex-row flex-wrap items-center">
         <div class="relative mr-2">
-          <dropdown v-model.number="listIndex" class="w-64">
-            <option v-for="(list, index) in myLists" :key="index" :value="index">{{ list.name }}</option>
+          <dropdown v-model.number="list_index" class="w-64">
+            <option v-for="(list, index) in my_lists" :key="index" :value="index">{{ list.name }}</option>
           </dropdown>
           <div class="absolute top-0 left-0" v-if="renameLists">
             <input class="input border-none focus:shadow-none ml-2 p-0" style="width: 14rem;" type="text" placeholder="Default list" v-model="currentListName">
@@ -56,12 +56,12 @@
           <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> New List
         </button>
 
-        <button class="btn btn-red mr-4" :disabled="listIndex === 0" @click="clickListDelete()">
+        <button class="btn btn-red mr-4" :disabled="list_index === 0" @click="clickListDelete()">
           <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete List
         </button>
 
         <p class="self-center">
-          {{ saveMessage }}
+          {{ save_message }}
         </p>        
       </div>
     </div>
@@ -125,7 +125,7 @@
         <button class="btn btn-white" @click="skipRaid()">Skip</button>
       </div>
 
-      <span v-for="raid in currentList.slice(raidIndex)" :key="raid.id" class="mb-1">
+      <span v-for="raid in currentList.slice(raid_index)" :key="raid.id" class="mb-1">
         <span class="tag bg-inverse text-inverse">x{{ raid.remaining }}</span>
         <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
         {{ raid.name }}
@@ -143,6 +143,7 @@
 
 <script>
 import Utils from '@/js/utils.js'
+import grindModule from '@/store/modules/daily-grind'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import Dropdown from '@/components/common/Dropdown.vue'
@@ -150,7 +151,7 @@ import Dropdown from '@/components/common/Dropdown.vue'
 const lsMgt = new Utils.LocalStorageMgt('DailyGrind');
 
 // Standard raids
-const catStandard = {
+const CAT_STANDARD = {
   30: {
     name: 'Hard',
     stars: 3,
@@ -439,7 +440,7 @@ const catStandard = {
 };
 
 // Impossible raids
-const catImpossible = {
+const CAT_IMPOSSIBLE = {
   1010: {
     name: 'Impossible Omega',
     tier: 'impossible',
@@ -571,7 +572,7 @@ const catImpossible = {
   1041: {
     name: 'Impossible Malice',
     tier: 'impossible',
-    stars: 4,
+    stars: 5,
     cost: 80,
     magfes: 40,
     times: 1,
@@ -583,13 +584,24 @@ const catImpossible = {
       '303241/1/0/106': {
         name: 'Tiamat Malice',
         icon: 'atercentrum'
-      }
+      },
+      '305151/1/0/101': {
+        name: 'Leviathan Malice',
+        icon: 'rubeuscentrum'
+      },
+      '305151/1/0/102': {
+        name: 'Leviathan Malice',
+        icon: 'indicuscentrum'
+      },
+      '303271/1/0/506': {
+        name: 'Lucilius',
+      },
     }
   },
   1050: {
     name: 'Impossible Nightmare',
     tier: 'impossible',
-    stars: 5,
+    stars: 6,
     raids: {
       '301061/1/0/59': {
         name: 'Proto Bahamut',
@@ -603,16 +615,16 @@ const catImpossible = {
         magfes: 45,
         times: 1,
       },
-      '303271/1/0/506': {
-        name: 'Lucilius',
-        cost: 80,
-        magfes: 40,
-        times: 1,
-      },
       '303291/1/0/5311': {
         name: 'The Four Primarchs',
         cost: 80,
         magfes: 40,
+        times: 1,
+      },
+      '305161/1/0/83': {
+        name: 'Grand Order',
+        cost: 90,
+        magfes: 45,
         times: 1,
       },
     }
@@ -620,7 +632,7 @@ const catImpossible = {
   1060: {
     name: 'Impossible Ultimate',
     tier: 'impossible',
-    stars: 6,
+    stars: 7,
     cost: 100,
     magfes: 50,
     times: 1,
@@ -633,7 +645,7 @@ const catImpossible = {
   1070: {
     name: 'Impossible Rapture',
     tier: 'impossible',
-    stars: 7,
+    stars: 8,
     cost: 100,
     magfes: 50,
     times: 1,
@@ -645,10 +657,24 @@ const catImpossible = {
   },
 };
 
+// Merge categories
+const CATEGORIES = Object.assign({}, CAT_STANDARD, CAT_IMPOSSIBLE);
+
+const CONTENT = [
+  { name: 'Standard Raids', data: CAT_STANDARD },
+  { name: 'Impossible Raids', data: CAT_IMPOSSIBLE },
+];
+
 export default {
   components: {
     Checkbox,
     Dropdown,
+  },
+  head: {
+    title: 'Granblue.Party - Daily Grind',
+    desc: 'Choose the content you want to farm and click Next to grind!',
+    image: 'https://www.granblue.party/img/preview_dailygrind.png',
+    keywords: 'raid, raids, host, magnafest, grind, farming'
   },
   data() {
     return {
@@ -657,13 +683,8 @@ export default {
       editMode: false,
       renameLists: true,
       showTab: 0,
-
-      raidIndex: 0,
-
-      myLists: [{name: 'Default list', data: []}],
-      listIndex: 0,
-      listName: "",
-      saveMessage: "",
+      raid_index: 0,
+      save_message: "",
     }
   },
   methods: {
@@ -690,15 +711,15 @@ export default {
       }
     },
     undoRaid() {
-      if (this.raidIndex > 0) {
-        this.raidIndex--;
-        let raid = this.currentList[this.raidIndex];
+      if (this.raid_index > 0) {
+        this.raid_index--;
+        let raid = this.currentList[this.raid_index];
         raid.remaining = raid.times;
       }
     },
     launchRaid() {
-      if (this.raidIndex < this.currentList.length) {
-        let raid = this.currentList[this.raidIndex];
+      if (this.raid_index < this.currentList.length) {
+        let raid = this.currentList[this.raid_index];
         window.open('http://game.granbluefantasy.jp/#quest/supporter/' + raid.id, 'gbf');
         raid.remaining--;
         if (raid.remaining < 1) {
@@ -707,13 +728,13 @@ export default {
       }
     },
     skipRaid() {
-      if (this.raidIndex < this.currentList.length) {
-        this.raidIndex++;
+      if (this.raid_index < this.currentList.length) {
+        this.raid_index++;
       }
     },
     resetRaid() {
       this.currentList.forEach(r => r.remaining = r.times);
-      this.raidIndex = 0;
+      this.raid_index = 0;
     },
     getIndex(raidKey) {
       return this.currentList.findIndex(e => e.id === raidKey);
@@ -724,67 +745,86 @@ export default {
     },
     clickListSave() {
       let data = [];
-      this.myLists.forEach(l => {
+      this.my_lists.forEach(l => {
         data.push({
           name: l.name,
           data: l.data.flatMap(r => [{id: r.id}])
         })
       });
 
-      this.$http.post('/daily/save', data)
+      this.axios.post('/daily/save', data)
         .then(response => {
-          this.saveMessage = 'Lists saved successfully at ' + new Date().toLocaleTimeString();
+          this.save_message = 'Lists saved successfully at ' + new Date().toLocaleTimeString();
         })
         .catch(error => console.log(error));
     },
     clickListNew() {
-      this.myLists.push({name: 'List ' + (this.myLists.length + 1), data: []});
-      this.listIndex = this.myLists.length-1;
+      this.my_lists.push({name: 'List ' + (this.my_lists.length + 1), data: []});
+      this.list_index = this.my_lists.length-1;
     },
     clickListDelete() {
-      if (this.listIndex > 0) {
-        this.myLists.splice(this.listIndex, 1);
-        this.listIndex = 0;
+      if (this.list_index > 0) {
+        this.my_lists.splice(this.list_index, 1);
+        this.list_index = 0;
       }
     },
-    loadLists() {
-      this.$http.get('/daily/load')
-        .then(response => {
-          if (response.data !== null) {
-            this.myLists = [];            
-            response.data.forEach(l => {
-              let obj = {
-                name: l.name,
-                data: []
-              }              
-              l.data.forEach(r => this.addRaid(r.id, obj.data));
-              this.myLists.push(obj);
-            });
-            this.listIndex = 0;
-          }
-        })
-        .catch(error => console.log(error));
+    loadServerLists() {
+      if (this.list_fetched === false) {
+        return this.axios.get('/daily/load')
+          .then(response => {
+            if (response.data !== null) {
+              let user_lists = [];
+              response.data.forEach(l => {
+                let obj = {
+                  name: l.name,
+                  data: []
+                }              
+                l.data.forEach(r => this.addRaid(r.id, obj.data));
+                user_lists.push(obj);
+              });
+              this.$set(this, 'my_lists', user_lists);
+              this.list_index = 0;
+              this.list_fetched = true;
+            }
+          })
+          .catch(error => console.log(error));
+      }
     },
+    loadList() {
+      if (this.isUserLogged) {
+        this.loadServerLists();
+      }
+      else {
+        this.$store.commit('daily_grind/resetMyLists');
+
+        const listIds = lsMgt.fetchValue('currentListIds');
+        if (listIds !== undefined) {
+          listIds.forEach(r => this.addRaid(r.id, this.my_lists[0].data));
+        }
+      }
+    }
   },
   computed: {
+    my_lists: {
+      get() { return this.$store.state.daily_grind.my_lists },
+      set(value) { this.$store.commit('daily_grind/setMyLists', value) }
+    },
+    list_index: {
+      get() { return this.$store.state.daily_grind.list_index },
+      set(value) { this.$store.commit('daily_grind/setListIndex', value) }
+    },
+    list_fetched: {
+      get() { return this.$store.state.daily_grind.list_fetched },
+      set(value) { this.$store.commit('daily_grind/setListFetched', value) }
+    },
     isUserLogged() {
       return this.$store.getters.getUserId !== null;
     },
     getContent() {
-      return [
-        {
-          name: 'Standard Raids',
-          data: catStandard
-        },
-        {
-          name: 'Impossible Raids',
-          data: catImpossible
-        },
-      ];
+      return CONTENT;
     },
     getCategories() {
-      // Merge categories
-      return Object.assign({}, catStandard, catImpossible);
+      return CATEGORIES;
     },
     getRaids() {
       // Index by raid ID
@@ -804,7 +844,7 @@ export default {
       }
 
       let total = 0;
-      this.currentList.slice(this.raidIndex).forEach(val => {
+      this.currentList.slice(this.raid_index).forEach(val => {
         let res = 0;
         if (this.isMagfes) {
           res = (val.magfes ? val.magfes : this.getCategories[val.category].magfes);
@@ -817,23 +857,24 @@ export default {
       return total;
     },
     currentList() {
-      return this.myLists[this.listIndex].data;
+      return this.my_lists[this.list_index].data;
     },
     currentListIds() {
       return this.currentList.flatMap(r => [{id: r.id}]);
     },
     currentListName: {
       get() {
-        return this.myLists[this.listIndex].name;
+        return this.my_lists[this.list_index].name;
       },
       set(value) {
-        this.myLists[this.listIndex].name = value;
+        this.my_lists[this.list_index].name = value;
       }      
     }
   },
   watch: {
     '$store.getters.getUserId'() {
-      this.loadLists();
+      this.list_fetched = false;
+      this.loadList();
     },
     isMagfes() {
       lsMgt.setValue('isMagfes', this);
@@ -850,21 +891,25 @@ export default {
       }
     }
   },
+  serverPrefetch() {
+    if (this.isUserLogged) {
+      return this.loadServerLists();
+    }
+  },
   mounted() {
     lsMgt.getValue(this, 'isMagfes');
     lsMgt.getValue(this, 'showTab');
     lsMgt.getValue(this, 'renameLists');
 
-    if (this.isUserLogged) {
-      this.loadLists();
-    }
-    else {
-      const listIds = lsMgt.fetchValue('currentListIds');
-      if (listIds !== undefined) {
-        listIds.forEach(r => this.addRaid(r.id, this.myLists[0].data));
-      }
-    }
-  }
+    this.loadList();
+  },
+  beforeCreate() {
+    const preserve_state = !! this.$store.state.daily_grind;
+    this.$store.registerModule('daily_grind', grindModule, { preserveState: preserve_state });
+  },
+  destroyed () {
+    this.$store.unregisterModule('daily_grind')
+  },
 }
 </script>
 

@@ -115,7 +115,7 @@ export default {
         }
       })
 
-      this.$http.post('/admin/weapons', postdata)
+      this.axios.post('/admin/weapons', postdata)
         .then(response => console.log('Saved'))
         .catch(error => {
           if (error.response) {
@@ -134,7 +134,7 @@ export default {
     },
     addProp(item) {
       if ( ! item.data) {
-        Vue.set(item, 'data', []);
+        this.$set(item, 'data', []);
       }
       item.data.push({percent: {}});
     },
@@ -143,14 +143,14 @@ export default {
         item.data.pop();
         
         if (item.data.length === 0) {
-          Vue.delete(item, 'data');
+          this.$delete(item, 'data');
         }
       }
     },
     hideNonEmptySkills() {
       this.message.forEach(s => {
         if (s.data !== null) {
-          Vue.set(s, 'hide', true);
+          this.$set(s, 'hide', true);
         }
       })
     }
@@ -166,7 +166,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/admin/weapons')
+    this.axios.get('/admin/weapons')
       .then(response => {
         for (let s of response.data) {
           if (s.data) {

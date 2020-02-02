@@ -1,8 +1,10 @@
 export default {
-  state: {
-    username: null,
-    userId: null,
-    show_modal_login: false,
+  state () {
+    return {
+      username: null,
+      userId: null,
+      show_modal_login: false,
+    }
   },
   getters: {
     getUsername: state => {
@@ -21,6 +23,13 @@ export default {
       localStorage.setItem('username', object.username);
       state.userId = object.userId;
       localStorage.setItem('userId', object.userId);
+    },
+    login_client(state, object) {
+      state.username = object.username;
+    },
+    login_server(state, object) {
+      state.username = object.username;
+      state.userId = object.userId;
     },
     logout(state, full = true) {
       if (full === true) {

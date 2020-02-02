@@ -135,11 +135,10 @@ export default {
       this.menu_popup = false;
     },
     doLogout() {
-      this.$http.post('/user/logout')
+      this.axios.post('/user/logout')
         .finally(() => {
           this.$store.commit('logout');
           this.menu_popup = false;
-          this.$router.push({name: "home"});
         });
     },
     closePopup(e) {
@@ -184,7 +183,7 @@ export default {
       this.menu_popup = false;      
     }
   },
-  created() {
+  mounted() {
     setInterval(() => this.now = new Date(), 1000 * 60);
   }
 }

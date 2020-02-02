@@ -98,31 +98,31 @@
     <div class="flex flex-row flex-wrap">
       <group-class :editMode="edit_mode" class="pr-2"></group-class>
 
-      <group-characters :objects="getCharacters" :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-characters>
+      <group-characters :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-characters>
 
-      <group-summons :objects="getSummons" :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-summons>
+      <group-summons :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-summons>
 
       <hr v-if="layout === 'square'" class="w-full invisible mb-2">
 
-      <group-weapons :objects="getWeapons" :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-weapons>
+      <group-weapons :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-weapons>
 
       <hr v-if="layout === 'wide'" class="w-full invisible">
 
       <!-- Tabs -->
-      <span class="flex flex-col" :class="layout === 'square' ? 'w-128' : 'w-full'">
-        <div class="self-start flex flex-row border-primary border-b font-bold" :class="layout === 'square' ? 'w-128' : 'w-full'">
+      <span class="flex flex-col" :class="layout === 'square' ? 'w-full md:w-128' : 'w-full'">
+        <div class="self-start flex flex-row border-primary border-b font-bold" :class="layout === 'square' ? 'w-full md:w-128' : 'w-full'">
           <a @click="show_tab = 0" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 0 ? 'bg-secondary' : ''">Actions</a>
           <a @click="show_tab = 1" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 1 ? 'bg-secondary' : ''">Details</a>
         </div>
 
         <!-- Tab actions -->
-        <group-actions v-if="show_tab === 0" class="flex-grow w-128"></group-actions>        
+        <group-actions v-if="show_tab === 0" class="flex-grow w-full md:w-128"></group-actions>        
 
         <!-- Tab stats -->
         <div v-if="show_tab === 1" class="flex-grow">
-          <party-details></party-details>          
+          <party-details></party-details>
         </div>
-      </span>      
+      </span>
     </div>
   </div>
 </template>
@@ -155,10 +155,14 @@ export default {
     MyParties,
     PartyDetails
   },
+  head: {
+    title: 'Granblue.Party - Party Builder',
+    desc: 'Build and share Granblue Fantasy teams and grids with your friends.',
+    image: 'https://www.granblue.party/img/preview_party.png',
+    keywords: 'party builder, team builder, grid, characters, summons, weapons, share, import, bookmarklet, damage calculator, OTK'
+  },
   data() {
     return {
-      show_bookmarklet: false,
-      show_update_bookmarklet: false,
       show_help: false,
       edit_mode: true,
       show_level: true,
@@ -173,14 +177,13 @@ export default {
     }
   },
   computed: {
-    getCharacters() {
-      return this.$store.getters.getCharacters;
+    show_bookmarklet: {
+      get() { return this.$store.state.party_builder.show_bookmarklet },
+      set(value) { this.$store.commit('setShowBookmarklet', value) }
     },
-    getSummons() {
-      return this.$store.getters.getSummons;
-    },
-    getWeapons() {
-      return this.$store.getters.getWeapons;
+    show_update_bookmarklet: {
+      get() { return this.$store.state.party_builder.show_update_bookmarklet },
+      set(value) { this.$store.commit('setShowUpdateBookmarklet', value) }
     },
   },
   watch: {

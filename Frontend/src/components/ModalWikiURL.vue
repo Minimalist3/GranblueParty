@@ -47,7 +47,7 @@ export default {
     show() {
       if (this.show === true) {
         let self = this;
-        Vue.nextTick().then(() => {
+        this.$nextTick().then(() => {
           self.url = '';
           self.$refs.url.focus();
         });

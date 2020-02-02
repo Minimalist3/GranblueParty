@@ -78,6 +78,12 @@ export default {
     Checkbox,
     Dropdown
   },
+  head: {
+    title: 'Granblue.Party - Evoker Calculator',
+    desc: 'Get the complete list of materials needed to unlock a specific Arcarum summon and Evoker',
+    image: 'https://www.granblue.party/img/preview_calc.png',
+    keywords: 'Arcarum, summon, Evoker, astra, evolite'
+  },
   data() {
     return {
       evoker_index: -1,
@@ -633,7 +639,7 @@ export default {
       lsMgt.setValue('splitMats', this);
     }
   },
-  created() {
+  mounted() {
     lsMgt.getValue(this, 'evoker_index');
     lsMgt.getValue(this, 'from_index');
     lsMgt.getValue(this, 'to_index');

@@ -229,116 +229,125 @@ def updateCharacters():
 
     for unit in data:
       page_id = str(unit['pageid'])
+      name = ''
 
-      with open(os.path.join(cache_dir, page_id + '.page'), 'r', encoding='utf8') as page_file:
-        template = None
-        skins = []
-        for t in mwparserfromhell.parse(page_file.read()).filter_templates():
-          if t.name.matches('Character'):
-            template = t
-          elif t.name.matches('CharSkin'):
-            skins.append(getTemplateValue(t, 'id')[:-3])
+      try:
+        with open(os.path.join(cache_dir, page_id + '.page'), 'r', encoding='utf8') as page_file:
+          template = None
+          skins = []
+          for t in mwparserfromhell.parse(page_file.read()).filter_templates():
+            if t.name.matches('Character'):
+              template = t
+            elif t.name.matches('CharSkin'):
+              skins.append(getTemplateValue(t, 'id')[:-3])
+          
+          # Images
+          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
         
-        # Images
-        images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
-        images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
-      
-        character_id = getTemplateValue(template, 'id')[:-3]
-        name = defines.unescape(unit['title'])
-        rarity = defines.getValue(getTemplateValue(template, 'rarity'), defines.RARITIES)
-        element = defines.getValue(getTemplateValue(template, 'element'), defines.ELEMENTS)
-        chara_type = defines.getValue(getTemplateValue(template, 'type'), defines.CHARATYPES)
-        # TODO Deal with multi-race characters
-        race = defines.getValue(getTemplateValue(template, 'race').split(',')[0], defines.RACES)        
+          character_id = getTemplateValue(template, 'id')[:-3]
+          name = defines.unescape(unit['title'])
+          rarity = defines.getValue(getTemplateValue(template, 'rarity'), defines.RARITIES)
+          element = defines.getValue(getTemplateValue(template, 'element'), defines.ELEMENTS)
+          chara_type = defines.getValue(getTemplateValue(template, 'type'), defines.CHARATYPES)
+          # TODO Deal with multi-race characters
+          race = getTemplateValue(template, 'race').split(',')[0]
+          if race == 'Other':
+            race = 'Unknown'
+          race = defines.getValue(race, defines.RACES)        
 
-        # Obtain
-        recruit_id = None
-        recruit = getTemplateValue(template, 'join')
-        if recruit:
-          if character_id in defines.CHARA_EVOKERS:
-            recruit = 'Evoker'
-          elif character_id in defines.CHARA_ETERNALS:
-            recruit = 'Eternal'
-          elif 'Valentine Premium Draw' in recruit:
-            recruit = 'Valentine Premium Draw'
-          elif 'Holiday Premium Draw' in recruit:
-            recruit = 'Holiday Premium Draw'
-          elif 'Summer Premium Draw' in recruit or getTemplateValue(template, 'obtain') == 'premium,swimsuit':
-            recruit = 'Summer Premium Draw'
-          elif 'Halloween Premium Draw' in recruit:
-            recruit = 'Halloween Premium Draw'
-          elif 'Zodiac Character' in recruit:
-            recruit = 'Zodiac Premium Draw'
-          elif 'Premium Gala' in recruit:
-            recruit = 'Premium Gala'
+          # Obtain
+          recruit_id = None
+          recruit = getTemplateValue(template, 'join')
+          if recruit:
+            if character_id in defines.CHARA_EVOKERS:
+              recruit = 'Evoker'
+            elif character_id in defines.CHARA_ETERNALS:
+              recruit = 'Eternal'
+            elif 'Valentine Premium Draw' in recruit:
+              recruit = 'Valentine Premium Draw'
+            elif 'Holiday Premium Draw' in recruit:
+              recruit = 'Holiday Premium Draw'
+            elif 'Summer Premium Draw' in recruit or getTemplateValue(template, 'obtain') == 'premium,swimsuit':
+              recruit = 'Summer Premium Draw'
+            elif 'Halloween Premium Draw' in recruit:
+              recruit = 'Halloween Premium Draw'
+            elif 'Zodiac Character' in recruit:
+              recruit = 'Zodiac Premium Draw'
+            elif 'Premium Gala' in recruit:
+              recruit = 'Premium Gala'
 
-          if recruit in defines.OBTAIN:
-            recruit_id = defines.OBTAIN[recruit]
+            if recruit in defines.OBTAIN:
+              recruit_id = defines.OBTAIN[recruit]
 
-        # Check missing Atk and HP values
-        if int(getTemplateValue(template, 'max_evo')) == 5:
-          if getTemplateValueOrNone(template, 'flb_atk') == None:
-            print('[WARN] flb_atk missing for', name, page_id)
-          if getTemplateValueOrNone(template, 'flb_hp') == None:
-            print('[WARN] flb_hp missing for', name, page_id)
-        if int(getTemplateValue(template, 'max_evo')) >= 4:
-          if getTemplateValueOrNone(template, 'max_atk') == None:
-            print('[WARN] max_atk missing for', name, page_id)
-          if getTemplateValueOrNone(template, 'max_hp') == None:
-            print('[WARN] max_hp missing for', name, page_id)
-  
-        values += [(character_id, name, getTemplateValue(template, 'jpname'),
-          getTemplateValue(template, 'base_evo'), getTemplateValue(template, 'max_evo'),
-          rarity, element, chara_type, race, recruit_id, getTemplateValue(template, 'release_date'),
-          getTemplateValueOrNone(template, 'max_atk'), getTemplateValueOrNone(template, 'flb_atk'),
-          getTemplateValueOrNone(template, 'max_hp'), getTemplateValueOrNone(template, 'flb_hp') )]
+          # Check missing Atk and HP values
+          if int(getTemplateValue(template, 'max_evo')) == 5:
+            if getTemplateValueOrNone(template, 'flb_atk') == None:
+              print('[WARN] flb_atk missing for', name, page_id)
+            if getTemplateValueOrNone(template, 'flb_hp') == None:
+              print('[WARN] flb_hp missing for', name, page_id)
+          if int(getTemplateValue(template, 'max_evo')) >= 4:
+            if getTemplateValueOrNone(template, 'max_atk') == None:
+              print('[WARN] max_atk missing for', name, page_id)
+            if getTemplateValueOrNone(template, 'max_hp') == None:
+              print('[WARN] max_hp missing for', name, page_id)
+    
+          values += [(character_id, name, getTemplateValue(template, 'jpname'),
+            getTemplateValue(template, 'base_evo'), getTemplateValue(template, 'max_evo'),
+            rarity, element, chara_type, race, recruit_id, getTemplateValue(template, 'release_date'),
+            getTemplateValueOrNone(template, 'max_atk'), getTemplateValueOrNone(template, 'flb_atk'),
+            getTemplateValueOrNone(template, 'max_hp'), getTemplateValueOrNone(template, 'flb_hp') )]
 
-        # Weapons
-        for weapon in getTemplateValue(template, 'weapon').split(','):
-          weaponspec_values += [(character_id, defines.getValue(weapon.strip(), defines.WEAPONTYPES))]
-        
-        # Skills
-        for i in range(1, 5):
-          if template.has('a' + str(i) + '_name'):
-            skill_name = getTemplateValue(template, 'a' + str(i) + '_name')
+          # Weapons
+          for weapon in getTemplateValue(template, 'weapon').split(','):
+            weaponspec_values += [(character_id, defines.getValue(weapon.strip(), defines.WEAPONTYPES))]
+          
+          # Skills
+          for i in range(1, 5):
+            if template.has('a' + str(i) + '_name'):
+              skill_name = getTemplateValue(template, 'a' + str(i) + '_name')
 
-            if skill_name:
-              skill_name = mwparserfromhell.parse(skill_name.replace('<br />', ' ')).filter_text()[-1].strip()
-              skill_icon = getTemplateValue(template, 'a' + str(i) + '_icon').split(',')[0]
+              if skill_name:
+                skill_name = mwparserfromhell.parse(skill_name.replace('<br />', ' ')).filter_text()[-1].strip()
+                skill_icon = getTemplateValue(template, 'a' + str(i) + '_icon').split(',')[0]
 
-              skill_obtain = mwparserfromhell.parse(getTemplateValue(template, 'a' + str(i) + '_oblevel')).filter_templates()
-              if len(skill_obtain) > 0:
-                skill_template = None
-                for st in skill_obtain:
-                  if st.name.matches('InfoOb'):
-                    skill_template = st
-                    break                
-                if skill_template == None:
-                  print('[ERR] Skill', skill_name, 'for', name, 'id:', page_id, 'has no InfoOb')
-                  skill_obtain = 1
+                skill_obtain = mwparserfromhell.parse(getTemplateValue(template, 'a' + str(i) + '_oblevel')).filter_templates()
+                if len(skill_obtain) > 0:
+                  skill_template = None
+                  for st in skill_obtain:
+                    if st.name.matches('InfoOb'):
+                      skill_template = st
+                      break                
+                  if skill_template == None:
+                    print('[ERR] Skill', skill_name, 'for', name, 'id:', page_id, 'has no InfoOb')
+                    skill_obtain = 1
+                  else:
+                    skill_obtain = int(getTemplateValue(skill_template, 'obtained'))
+                    if skill_obtain < 1 or skill_obtain > 100:
+                      print('[ERR] Skill', skill_name, 'for', name, 'id:', page_id, 'has incorrect value', skill_obtain)
                 else:
-                  skill_obtain = int(getTemplateValue(skill_template, 'obtained'))
-                  if skill_obtain < 1 or skill_obtain > 100:
-                    print('[ERR] Skill', skill_name, 'for', name, 'id:', page_id, 'has incorrect value', skill_obtain)
-              else:
-                if page_id not in defines.IGNORE_MISSING_SKILL:
-                  print('[WARN] Skill', skill_name, 'for', name, 'id:', page_id, 'has no obtain level')
-                skill_obtain = 1
-              skills += [(character_id, i-1, skill_name, skill_obtain)]
+                  if page_id not in defines.IGNORE_MISSING_SKILL:
+                    print('[WARN] Skill', skill_name, 'for', name, 'id:', page_id, 'has no obtain level')
+                  skill_obtain = 1
+                skills += [(character_id, i-1, skill_name, skill_obtain)]
 
-              # Look for skill img
-              skill_filename = os.path.join(images_dir, str(character_id) + '_' + str(i-1) + '.png')
-              if not os.path.isfile(skill_filename):
-                skill_url = getImageURL(skill_icon)
-                print("Writing", skill_url, 'to', skill_filename)
-                r = sessionGet(skill_url)
+                # Look for skill img
+                skill_filename = os.path.join(images_dir, str(character_id) + '_' + str(i-1) + '.png')
+                if not os.path.isfile(skill_filename):
+                  skill_url = getImageURL(skill_icon)
+                  print("Writing", skill_url, 'to', skill_filename)
+                  r = sessionGet(skill_url)
 
-                with open(skill_filename, 'wb') as image_file:                  
-                  image_file.write(r.content)
+                  with open(skill_filename, 'wb') as image_file:                  
+                    image_file.write(r.content)
 
-        # Skins
-        for s in skins:
-          skin_values.append([s, character_id])
+          # Skins
+          for s in skins:
+            skin_values.append([s, character_id])
+
+      except Exception as e:
+        raise type(e)(str(e) + ' happens for %s (%s)' % (name, page_id)).with_traceback(sys.exc_info()[2])
+
 
   if addToDB:
     print('Updating Character table...')

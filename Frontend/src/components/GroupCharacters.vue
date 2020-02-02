@@ -22,10 +22,51 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Utils from '@/js/utils'
 
 import BoxCharacter from '@/components/BoxCharacter.vue'
 import Modal from '@/components/ModalSelector.vue'
+
+const CATEGORIES = [
+  {
+    name: "Name",
+    isColumn: true,
+    isFilter: false,
+    key: "n",
+  },
+  {
+    name: "Rarity",
+    isColumn: false,
+    isFilter: true,
+    key: "ri",
+  },
+  {
+    name: "Element",
+    isColumn: true,
+    isFilter: true,
+    key: "e",
+  },
+  {
+    name: "Type",
+    isColumn: true,
+    isFilter: true,
+    key: "t",
+  },
+  {
+    name: "Race",
+    isColumn: true,
+    isFilter: true,
+    key: "ra",        
+  },
+  {
+    name: "Weapon",
+    isColumn: true,
+    isFilter: true,
+    key: "w",        
+  },
+];
 
 export default {
   components: {
@@ -33,10 +74,6 @@ export default {
     Modal,
   },
   props: {
-    objects: {
-      type: Array,
-      required: true
-    },
     editMode: {
       type: Boolean,
       default: true
@@ -69,8 +106,8 @@ export default {
       if (Utils.isEmpty(id)) return;
 
       const slot = this.selected_box_index;
-      this.$http.get('/party/characters/' + id)
-        .then(response => Vue.set(this.objects, slot, response.data))
+      this.axios.get('/party/characters/' + id)
+        .then(response => this.$store.commit('setCharacter', { index: slot, data: response.data }))
         .catch(error => console.log(error));
     },
     clickSkill(index, skillIndex) {
@@ -83,50 +120,16 @@ export default {
     },
     swap(from, to) {
       let tmp = this.objects[from];
-      Vue.set(this.objects, from, this.objects[to]);
-      Vue.set(this.objects, to, tmp);
+      this.$store.commit('setCharacter', { index: from, data: this.objects[to] })
+      this.$store.commit('setCharacter', { index: to, data: tmp })
     }
   },
   computed: {
+    ...mapState({
+      objects: state => state.party_builder.characters
+    }),
     getCategories() {
-      return [
-        {
-          name: "Name",
-          isColumn: true,
-          isFilter: false,
-          key: "n",
-        },
-        {
-          name: "Rarity",
-          isColumn: false,
-          isFilter: true,
-          key: "ri",
-        },
-        {
-          name: "Element",
-          isColumn: true,
-          isFilter: true,
-          key: "e",
-        },
-        {
-          name: "Type",
-          isColumn: true,
-          isFilter: true,
-          key: "t",
-        },
-        {
-          name: "Race",
-          isColumn: true,
-          isFilter: true,
-          key: "ra",        
-        },
-        {
-          name: "Weapon",
-          isColumn: true,
-          isFilter: true,
-          key: "w",        
-        },
-      ];
+      return CATEGORIES;
     }
   }
 }

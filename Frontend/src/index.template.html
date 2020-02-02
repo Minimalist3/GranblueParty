@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ head_title }}</title>
+    <meta name="title" content="{{ head_title }}">
+    <meta name="description" content="{{ head_desc }}">
+    <meta name="keywords" content="{{ head_keywords }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@GranblueParty">
+    <meta name="twitter:creator" content="@GranblueParty">
+    <meta name="twitter:title" content="{{ head_title }}">
+    <meta name="twitter:description" content="{{ head_desc }}">
+    <meta name="twitter:image" content="{{ head_image }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ head_title }}">
+    <meta property="og:description" content="{{ head_desc }}">
+    <meta property="og:image" content="{{ head_image }}">
+    <meta property="og:url" content="{{ head_path }}">
+
+    <link rel="canonical" href="{{ head_path }}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="favicon-32.png" type="image/png">
+    <link rel="icon" sizes="64x64" href="favicon-64.png" type="image/png">
+    <link rel="icon" sizes="96x96" href="favicon-96.png" type="image/png"> 
+  </head>
+  <body class="leading-normal tracking-normal font-sans">
+    <!--vue-ssr-outlet-->
+  </body>
+</html>

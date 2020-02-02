@@ -57,7 +57,7 @@ export default {
         password: this.$refs.password.value,
       }
 
-      this.$http.post('/user/login', body)
+      this.axios.post('/user/login', body)
         .then(response => {
           this.$emit('close', false);
           this.$emit('user-logged', this.username, response.data.data.userid);
@@ -85,7 +85,7 @@ export default {
     show() {
       if (this.show === true) {
         let self = this;
-        Vue.nextTick().then(() => {
+        this.$nextTick().then(() => {
           self.$refs.username.focus();
         });
       }

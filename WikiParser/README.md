@@ -1,6 +1,6 @@
 # WikiParser
 Get data from [gbf.wiki](https://gbf.wiki/) \
-**Please use these script responsibly.** Be mindful of the Wiki bandwidth.
+**Please use these scripts responsibly.** Be mindful of the Wiki bandwidth.
 
 ## Requirements
 - PostgreSQL 11

@@ -22,12 +22,12 @@
   {
     "pageid": 33415,
     "title": "Adramelech",
-    "lastrevid": 251461
+    "lastrevid": 320023
   },
   {
     "pageid": 18537,
     "title": "Agni",
-    "lastrevid": 292121
+    "lastrevid": 318900
   },
   {
     "pageid": 16133,
@@ -37,12 +37,12 @@
   {
     "pageid": 17213,
     "title": "Albacore",
-    "lastrevid": 246442
+    "lastrevid": 318813
   },
   {
     "pageid": 16200,
     "title": "Allosaurus",
-    "lastrevid": 246454
+    "lastrevid": 318815
   },
   {
     "pageid": 16140,
@@ -77,12 +77,12 @@
   {
     "pageid": 21743,
     "title": "Angelie Cascade",
-    "lastrevid": 246395
+    "lastrevid": 318803
   },
   {
     "pageid": 31173,
     "title": "Ankusha",
-    "lastrevid": 246592
+    "lastrevid": 318920
   },
   {
     "pageid": 16252,
@@ -92,17 +92,17 @@
   {
     "pageid": 17408,
     "title": "Anubis",
-    "lastrevid": 304350
+    "lastrevid": 318921
   },
   {
     "pageid": 21632,
     "title": "Aphrodite",
-    "lastrevid": 246583
+    "lastrevid": 318922
   },
   {
     "pageid": 3366,
     "title": "Apollo",
-    "lastrevid": 291925
+    "lastrevid": 320547
   },
   {
     "pageid": 12549,
@@ -112,7 +112,7 @@
   {
     "pageid": 16084,
     "title": "Archangel Queen",
-    "lastrevid": 248178
+    "lastrevid": 318827
   },
   {
     "pageid": 15665,
@@ -122,22 +122,22 @@
   {
     "pageid": 17208,
     "title": "Audumbla",
-    "lastrevid": 246462
+    "lastrevid": 318814
   },
   {
     "pageid": 18581,
     "title": "Avaritia",
-    "lastrevid": 246485
+    "lastrevid": 318923
   },
   {
     "pageid": 17238,
     "title": "Baal (Summon)",
-    "lastrevid": 271821
+    "lastrevid": 318924
   },
   {
     "pageid": 15669,
     "title": "Bahamut",
-    "lastrevid": 297030
+    "lastrevid": 318925
   },
   {
     "pageid": 17228,
@@ -152,7 +152,12 @@
   {
     "pageid": 17212,
     "title": "Behemoth",
-    "lastrevid": 246437
+    "lastrevid": 318926
+  },
+  {
+    "pageid": 109613,
+    "title": "Belial",
+    "lastrevid": 320593
   },
   {
     "pageid": 25806,
@@ -167,7 +172,7 @@
   {
     "pageid": 16921,
     "title": "Bellringer Angel",
-    "lastrevid": 297779
+    "lastrevid": 318804
   },
   {
     "pageid": 23162,
@@ -177,7 +182,7 @@
   {
     "pageid": 15573,
     "title": "Blue Orbit",
-    "lastrevid": 297751
+    "lastrevid": 318805
   },
   {
     "pageid": 25803,
@@ -187,27 +192,27 @@
   {
     "pageid": 17204,
     "title": "Bonito",
-    "lastrevid": 263366
+    "lastrevid": 318807
   },
   {
     "pageid": 21186,
     "title": "Branwen",
-    "lastrevid": 246478
+    "lastrevid": 318806
   },
   {
     "pageid": 3435,
     "title": "Brunnhilde",
-    "lastrevid": 246457
+    "lastrevid": 319035
   },
   {
     "pageid": 96997,
     "title": "C.C.",
-    "lastrevid": 279586
+    "lastrevid": 320619
   },
   {
     "pageid": 17407,
     "title": "Ca Ong",
-    "lastrevid": 276069
+    "lastrevid": 318930
   },
   {
     "pageid": 17225,
@@ -232,7 +237,7 @@
   {
     "pageid": 13201,
     "title": "Celeste",
-    "lastrevid": 246397
+    "lastrevid": 318832
   },
   {
     "pageid": 21750,
@@ -242,12 +247,12 @@
   {
     "pageid": 12003,
     "title": "Celeste Omega",
-    "lastrevid": 246464
+    "lastrevid": 318829
   },
   {
     "pageid": 14508,
     "title": "Cerberus (Summon)",
-    "lastrevid": 246451
+    "lastrevid": 318831
   },
   {
     "pageid": 83848,
@@ -257,7 +262,7 @@
   {
     "pageid": 17172,
     "title": "Clay Golem",
-    "lastrevid": 292613
+    "lastrevid": 318830
   },
   {
     "pageid": 11413,
@@ -312,27 +317,27 @@
   {
     "pageid": 102964,
     "title": "Dancing Man",
-    "lastrevid": 297795
+    "lastrevid": 318808
   },
   {
     "pageid": 15670,
     "title": "Dark Angel Olivia",
-    "lastrevid": 246423
+    "lastrevid": 318809
   },
   {
     "pageid": 17358,
     "title": "Dark Flame Scion",
-    "lastrevid": 314092
+    "lastrevid": 318996
   },
   {
     "pageid": 33307,
     "title": "Death (SR)",
-    "lastrevid": 312487
+    "lastrevid": 319384
   },
   {
     "pageid": 33368,
     "title": "Death (SSR)",
-    "lastrevid": 315192
+    "lastrevid": 320601
   },
   {
     "pageid": 20556,
@@ -347,7 +352,7 @@
   {
     "pageid": 47487,
     "title": "Demi Agni",
-    "lastrevid": 292405
+    "lastrevid": 318176
   },
   {
     "pageid": 47494,
@@ -357,7 +362,7 @@
   {
     "pageid": 47489,
     "title": "Demi Titan",
-    "lastrevid": 292407
+    "lastrevid": 317934
   },
   {
     "pageid": 47488,
@@ -377,7 +382,7 @@
   {
     "pageid": 89269,
     "title": "Demonbream",
-    "lastrevid": 283507
+    "lastrevid": 319028
   },
   {
     "pageid": 3563,
@@ -397,7 +402,7 @@
   {
     "pageid": 105795,
     "title": "Dogu",
-    "lastrevid": 305545
+    "lastrevid": 319396
   },
   {
     "pageid": 21729,
@@ -407,7 +412,7 @@
   {
     "pageid": 14386,
     "title": "Dragon Knights",
-    "lastrevid": 297724
+    "lastrevid": 318929
   },
   {
     "pageid": 86611,
@@ -442,27 +447,27 @@
   {
     "pageid": 107422,
     "title": "Elil",
-    "lastrevid": 310127
+    "lastrevid": 319395
   },
   {
     "pageid": 21733,
     "title": "Elmenhilde Windsprite",
-    "lastrevid": 246382
+    "lastrevid": 318810
   },
   {
     "pageid": 21742,
     "title": "Elusious Windwyrm",
-    "lastrevid": 246394
+    "lastrevid": 318811
   },
   {
     "pageid": 34418,
     "title": "Eren",
-    "lastrevid": 273368
+    "lastrevid": 318928
   },
   {
     "pageid": 28381,
     "title": "Europa (Summon)",
-    "lastrevid": 312090
+    "lastrevid": 318817
   },
   {
     "pageid": 17221,
@@ -472,7 +477,7 @@
   {
     "pageid": 18504,
     "title": "Fenrir",
-    "lastrevid": 292514
+    "lastrevid": 321582
   },
   {
     "pageid": 25792,
@@ -487,12 +492,12 @@
   {
     "pageid": 25960,
     "title": "Forest Ranger",
-    "lastrevid": 297773
+    "lastrevid": 318818
   },
   {
     "pageid": 50118,
     "title": "Freyr",
-    "lastrevid": 303060
+    "lastrevid": 318819
   },
   {
     "pageid": 95535,
@@ -502,7 +507,7 @@
   {
     "pageid": 83193,
     "title": "Gabriel",
-    "lastrevid": 314179
+    "lastrevid": 318931
   },
   {
     "pageid": 12548,
@@ -512,12 +517,12 @@
   {
     "pageid": 21053,
     "title": "Garuda",
-    "lastrevid": 298373
+    "lastrevid": 318820
   },
   {
     "pageid": 25952,
     "title": "Garula, Shining Hawk",
-    "lastrevid": 297735
+    "lastrevid": 318821
   },
   {
     "pageid": 58329,
@@ -532,12 +537,12 @@
   {
     "pageid": 50089,
     "title": "Gigante Blazer",
-    "lastrevid": 297729
+    "lastrevid": 318823
   },
   {
     "pageid": 17240,
     "title": "Gilgamesh",
-    "lastrevid": 278737
+    "lastrevid": 318826
   },
   {
     "pageid": 16135,
@@ -552,7 +557,7 @@
   {
     "pageid": 18345,
     "title": "Godsworn Alexiel",
-    "lastrevid": 297790
+    "lastrevid": 318825
   },
   {
     "pageid": 21724,
@@ -567,12 +572,12 @@
   {
     "pageid": 53787,
     "title": "Gorilla",
-    "lastrevid": 311644
+    "lastrevid": 320445
   },
   {
     "pageid": 16627,
     "title": "Grand Order",
-    "lastrevid": 281637
+    "lastrevid": 318839
   },
   {
     "pageid": 20043,
@@ -582,17 +587,17 @@
   {
     "pageid": 17207,
     "title": "Grendel",
-    "lastrevid": 246440
+    "lastrevid": 318843
   },
   {
     "pageid": 13203,
     "title": "Griffin",
-    "lastrevid": 246367
+    "lastrevid": 318842
   },
   {
     "pageid": 36516,
     "title": "Grimnir (Summon)",
-    "lastrevid": 270578
+    "lastrevid": 318844
   },
   {
     "pageid": 3709,
@@ -602,7 +607,7 @@
   {
     "pageid": 17210,
     "title": "Gugalanna",
-    "lastrevid": 246444
+    "lastrevid": 318845
   },
   {
     "pageid": 59577,
@@ -612,22 +617,22 @@
   {
     "pageid": 18413,
     "title": "H.P.A.",
-    "lastrevid": 297748
+    "lastrevid": 318932
   },
   {
     "pageid": 15667,
     "title": "Hades",
-    "lastrevid": 292494
+    "lastrevid": 318933
   },
   {
     "pageid": 47452,
     "title": "Halluel and Malluel",
-    "lastrevid": 281408
+    "lastrevid": 318934
   },
   {
     "pageid": 58333,
     "title": "Hamsa",
-    "lastrevid": 279207
+    "lastrevid": 318935
   },
   {
     "pageid": 20815,
@@ -637,17 +642,22 @@
   {
     "pageid": 20640,
     "title": "Harvest Myconid",
-    "lastrevid": 246501
+    "lastrevid": 318937
   },
   {
     "pageid": 17313,
     "title": "Hector",
-    "lastrevid": 271043
+    "lastrevid": 318792
+  },
+  {
+    "pageid": 111343,
+    "title": "Heimdallr",
+    "lastrevid": 322057
   },
   {
     "pageid": 20636,
     "title": "Hekatonkheir",
-    "lastrevid": 246448
+    "lastrevid": 318938
   },
   {
     "pageid": 21728,
@@ -672,7 +682,7 @@
   {
     "pageid": 21725,
     "title": "Hydra",
-    "lastrevid": 246369
+    "lastrevid": 319032
   },
   {
     "pageid": 11411,
@@ -717,37 +727,37 @@
   {
     "pageid": 57702,
     "title": "JEHUTY",
-    "lastrevid": 292875
+    "lastrevid": 318846
   },
   {
     "pageid": 37746,
     "title": "Joya (Summon)",
-    "lastrevid": 246508
+    "lastrevid": 319254
   },
   {
     "pageid": 33335,
     "title": "Judgement (SR)",
-    "lastrevid": 297741
+    "lastrevid": 319382
   },
   {
     "pageid": 33375,
     "title": "Judgement (SSR)",
-    "lastrevid": 297742
+    "lastrevid": 319381
   },
   {
     "pageid": 33304,
     "title": "Justice (SR)",
-    "lastrevid": 292879
+    "lastrevid": 319398
   },
   {
     "pageid": 33366,
     "title": "Justice (SSR)",
-    "lastrevid": 292889
+    "lastrevid": 319397
   },
   {
     "pageid": 17202,
     "title": "Kaguya",
-    "lastrevid": 298377
+    "lastrevid": 319010
   },
   {
     "pageid": 31630,
@@ -767,17 +777,17 @@
   {
     "pageid": 17224,
     "title": "Kirari",
-    "lastrevid": 297871
+    "lastrevid": 319031
   },
   {
     "pageid": 17220,
     "title": "Kirari Moroboshi",
-    "lastrevid": 297746
+    "lastrevid": 319030
   },
   {
     "pageid": 33431,
     "title": "Knight of Knights",
-    "lastrevid": 246598
+    "lastrevid": 319011
   },
   {
     "pageid": 70206,
@@ -807,12 +817,12 @@
   {
     "pageid": 3844,
     "title": "Leviathan Omega",
-    "lastrevid": 292492
+    "lastrevid": 319012
   },
   {
     "pageid": 16383,
     "title": "Levin Sisters (Summon)",
-    "lastrevid": 297794
+    "lastrevid": 319013
   },
   {
     "pageid": 18538,
@@ -842,12 +852,12 @@
   {
     "pageid": 21586,
     "title": "Lumiel Gourmet",
-    "lastrevid": 297774
+    "lastrevid": 319014
   },
   {
     "pageid": 13200,
     "title": "Luminiera",
-    "lastrevid": 246393
+    "lastrevid": 319015
   },
   {
     "pageid": 21749,
@@ -857,12 +867,12 @@
   {
     "pageid": 12001,
     "title": "Luminiera Omega",
-    "lastrevid": 246466
+    "lastrevid": 319016
   },
   {
     "pageid": 53794,
     "title": "Lunalu (Summon)",
-    "lastrevid": 297744
+    "lastrevid": 319017
   },
   {
     "pageid": 21730,
@@ -877,7 +887,7 @@
   {
     "pageid": 16080,
     "title": "Macula Marius (Summon)",
-    "lastrevid": 297808
+    "lastrevid": 319018
   },
   {
     "pageid": 16145,
@@ -902,7 +912,7 @@
   {
     "pageid": 20635,
     "title": "Mammon",
-    "lastrevid": 246483
+    "lastrevid": 319019
   },
   {
     "pageid": 17218,
@@ -917,12 +927,12 @@
   {
     "pageid": 12142,
     "title": "Marduk",
-    "lastrevid": 281902
+    "lastrevid": 319020
   },
   {
     "pageid": 86948,
     "title": "Marduk, Battlefield Reaper",
-    "lastrevid": 251440
+    "lastrevid": 319021
   },
   {
     "pageid": 16076,
@@ -932,7 +942,7 @@
   {
     "pageid": 59928,
     "title": "Mepple and Mipple",
-    "lastrevid": 297730
+    "lastrevid": 319022
   },
   {
     "pageid": 96136,
@@ -942,7 +952,7 @@
   {
     "pageid": 64231,
     "title": "Michael",
-    "lastrevid": 297771
+    "lastrevid": 319023
   },
   {
     "pageid": 20634,
@@ -967,7 +977,7 @@
   {
     "pageid": 13204,
     "title": "Mithra",
-    "lastrevid": 251829
+    "lastrevid": 319024
   },
   {
     "pageid": 21755,
@@ -982,7 +992,7 @@
   {
     "pageid": 17406,
     "title": "Morrigna (Summon)",
-    "lastrevid": 275109
+    "lastrevid": 318904
   },
   {
     "pageid": 108098,
@@ -992,12 +1002,12 @@
   {
     "pageid": 21727,
     "title": "Myconid",
-    "lastrevid": 271517
+    "lastrevid": 319025
   },
   {
     "pageid": 20062,
     "title": "Nacht",
-    "lastrevid": 293385
+    "lastrevid": 319026
   },
   {
     "pageid": 55228,
@@ -1007,12 +1017,12 @@
   {
     "pageid": 21201,
     "title": "Nephthys",
-    "lastrevid": 246429
+    "lastrevid": 319027
   },
   {
     "pageid": 18539,
     "title": "Neptune",
-    "lastrevid": 297419
+    "lastrevid": 318875
   },
   {
     "pageid": 16081,
@@ -1022,7 +1032,7 @@
   {
     "pageid": 55173,
     "title": "Nobiyo",
-    "lastrevid": 299236
+    "lastrevid": 318849
   },
   {
     "pageid": 21744,
@@ -1037,17 +1047,17 @@
   {
     "pageid": 17194,
     "title": "Oceanus",
-    "lastrevid": 303658
+    "lastrevid": 318919
   },
   {
     "pageid": 17222,
     "title": "Odajumoki Gang",
-    "lastrevid": 253372
+    "lastrevid": 318876
   },
   {
     "pageid": 15764,
     "title": "Odin",
-    "lastrevid": 271236
+    "lastrevid": 318918
   },
   {
     "pageid": 12552,
@@ -1067,12 +1077,12 @@
   {
     "pageid": 12547,
     "title": "Peridot Carbuncle",
-    "lastrevid": 303645
+    "lastrevid": 318348
   },
   {
     "pageid": 21244,
     "title": "Phoenix",
-    "lastrevid": 246426
+    "lastrevid": 318877
   },
   {
     "pageid": 20992,
@@ -1087,12 +1097,12 @@
   {
     "pageid": 21741,
     "title": "Pixie",
-    "lastrevid": 246390
+    "lastrevid": 318917
   },
   {
     "pageid": 17219,
     "title": "Poseidon",
-    "lastrevid": 270675
+    "lastrevid": 318878
   },
   {
     "pageid": 70102,
@@ -1102,17 +1112,17 @@
   {
     "pageid": 76034,
     "title": "Princess Knight",
-    "lastrevid": 281908
+    "lastrevid": 320341
   },
   {
     "pageid": 104545,
     "title": "Princess Long Ji",
-    "lastrevid": 300926
+    "lastrevid": 321569
   },
   {
     "pageid": 15666,
     "title": "Prometheus",
-    "lastrevid": 246511
+    "lastrevid": 318879
   },
   {
     "pageid": 13202,
@@ -1122,7 +1132,7 @@
   {
     "pageid": 109504,
     "title": "Proto-Joya",
-    "lastrevid": 315757
+    "lastrevid": 317773
   },
   {
     "pageid": 25805,
@@ -1152,12 +1162,12 @@
   {
     "pageid": 4024,
     "title": "Ranko Kanzaki (Summon)",
-    "lastrevid": 291957
+    "lastrevid": 320141
   },
   {
     "pageid": 55225,
     "title": "Raphael",
-    "lastrevid": 297799
+    "lastrevid": 318880
   },
   {
     "pageid": 25796,
@@ -1167,7 +1177,7 @@
   {
     "pageid": 10490,
     "title": "Robomi Rocket",
-    "lastrevid": 246492
+    "lastrevid": 318882
   },
   {
     "pageid": 25799,
@@ -1177,7 +1187,7 @@
   {
     "pageid": 17286,
     "title": "Rose Queen",
-    "lastrevid": 292481
+    "lastrevid": 318881
   },
   {
     "pageid": 101540,
@@ -1202,7 +1212,7 @@
   {
     "pageid": 47498,
     "title": "Sandalphon (Summon)",
-    "lastrevid": 282251
+    "lastrevid": 318915
   },
   {
     "pageid": 21752,
@@ -1227,12 +1237,12 @@
   {
     "pageid": 17197,
     "title": "Satan",
-    "lastrevid": 272124
+    "lastrevid": 318884
   },
   {
     "pageid": 17199,
     "title": "Satyr",
-    "lastrevid": 286678
+    "lastrevid": 318885
   },
   {
     "pageid": 100031,
@@ -1247,32 +1257,32 @@
   {
     "pageid": 17653,
     "title": "Seraphim Cradle",
-    "lastrevid": 248179
+    "lastrevid": 319047
   },
   {
     "pageid": 4130,
     "title": "Setekh",
-    "lastrevid": 313020
+    "lastrevid": 318886
   },
   {
     "pageid": 17203,
     "title": "Sethlans",
-    "lastrevid": 251252
+    "lastrevid": 318887
   },
   {
     "pageid": 31174,
     "title": "Sharom",
-    "lastrevid": 246591
+    "lastrevid": 318907
   },
   {
     "pageid": 15592,
     "title": "Shiva (Summon)",
-    "lastrevid": 299187
+    "lastrevid": 318888
   },
   {
     "pageid": 17195,
     "title": "Siren",
-    "lastrevid": 246435
+    "lastrevid": 318893
   },
   {
     "pageid": 16148,
@@ -1302,7 +1312,7 @@
   {
     "pageid": 32208,
     "title": "Snow White",
-    "lastrevid": 271238
+    "lastrevid": 318909
   },
   {
     "pageid": 25744,
@@ -1312,7 +1322,7 @@
   {
     "pageid": 21735,
     "title": "Stone Golem",
-    "lastrevid": 246386
+    "lastrevid": 318910
   },
   {
     "pageid": 16143,
@@ -1322,17 +1332,22 @@
   {
     "pageid": 20061,
     "title": "Super Cute Genius Alchemist",
-    "lastrevid": 297737
+    "lastrevid": 318908
   },
   {
     "pageid": 17217,
     "title": "Super Robo Gigantes",
-    "lastrevid": 304320
+    "lastrevid": 318892
   },
   {
     "pageid": 103037,
     "title": "Surtr",
-    "lastrevid": 300925
+    "lastrevid": 319405
+  },
+  {
+    "pageid": 110961,
+    "title": "Swinger of the Ebony Scythe",
+    "lastrevid": 321572
   },
   {
     "pageid": 25791,
@@ -1342,12 +1357,12 @@
   {
     "pageid": 13851,
     "title": "Sylph",
-    "lastrevid": 246467
+    "lastrevid": 318914
   },
   {
     "pageid": 82397,
     "title": "Sylph, Flutterspirit of Purity",
-    "lastrevid": 246642
+    "lastrevid": 318906
   },
   {
     "pageid": 104179,
@@ -1357,77 +1372,77 @@
   {
     "pageid": 33308,
     "title": "Temperance (SR)",
-    "lastrevid": 297869
+    "lastrevid": 319404
   },
   {
     "pageid": 33369,
     "title": "Temperance (SSR)",
-    "lastrevid": 292893
+    "lastrevid": 319403
   },
   {
     "pageid": 17205,
     "title": "Tezcatlipoca",
-    "lastrevid": 300924
+    "lastrevid": 318901
   },
   {
     "pageid": 33330,
     "title": "The Devil (SR)",
-    "lastrevid": 297865
+    "lastrevid": 319400
   },
   {
     "pageid": 33370,
     "title": "The Devil (SSR)",
-    "lastrevid": 297864
+    "lastrevid": 319399
   },
   {
     "pageid": 33306,
     "title": "The Hanged Man (SR)",
-    "lastrevid": 297866
+    "lastrevid": 319386
   },
   {
     "pageid": 33367,
     "title": "The Hanged Man (SSR)",
-    "lastrevid": 292890
+    "lastrevid": 319385
   },
   {
     "pageid": 33333,
     "title": "The Moon (SR)",
-    "lastrevid": 297728
+    "lastrevid": 319390
   },
   {
     "pageid": 33373,
     "title": "The Moon (SSR)",
-    "lastrevid": 292897
+    "lastrevid": 319389
   },
   {
     "pageid": 33332,
     "title": "The Star (SR)",
-    "lastrevid": 297867
+    "lastrevid": 319388
   },
   {
     "pageid": 33372,
     "title": "The Star (SSR)",
-    "lastrevid": 292896
+    "lastrevid": 319387
   },
   {
     "pageid": 33334,
     "title": "The Sun (SR)",
-    "lastrevid": 292887
+    "lastrevid": 319380
   },
   {
     "pageid": 33374,
     "title": "The Sun (SSR)",
-    "lastrevid": 293044
+    "lastrevid": 319379
   },
   {
     "pageid": 33331,
     "title": "The Tower (SR)",
-    "lastrevid": 297870
+    "lastrevid": 319402
   },
   {
     "pageid": 33371,
     "title": "The Tower (SSR)",
-    "lastrevid": 292895
+    "lastrevid": 319401
   },
   {
     "pageid": 16413,
@@ -1437,7 +1452,7 @@
   {
     "pageid": 21051,
     "title": "Ti Icniuhtli Xolotl",
-    "lastrevid": 298739
+    "lastrevid": 318883
   },
   {
     "pageid": 13197,
@@ -1452,7 +1467,7 @@
   {
     "pageid": 12000,
     "title": "Tiamat Omega",
-    "lastrevid": 246438
+    "lastrevid": 318913
   },
   {
     "pageid": 16139,
@@ -1462,7 +1477,7 @@
   {
     "pageid": 17239,
     "title": "Titan",
-    "lastrevid": 292123
+    "lastrevid": 318897
   },
   {
     "pageid": 13364,
@@ -1482,7 +1497,7 @@
   {
     "pageid": 4277,
     "title": "Twin Elements",
-    "lastrevid": 298261
+    "lastrevid": 318896
   },
   {
     "pageid": 17206,
@@ -1492,7 +1507,7 @@
   {
     "pageid": 51590,
     "title": "Unrivaled Fighter",
-    "lastrevid": 297772
+    "lastrevid": 318912
   },
   {
     "pageid": 51568,
@@ -1507,12 +1522,12 @@
   {
     "pageid": 64244,
     "title": "Vane's Cooking",
-    "lastrevid": 297733
+    "lastrevid": 319038
   },
   {
     "pageid": 17200,
     "title": "Varuna",
-    "lastrevid": 292122
+    "lastrevid": 318894
   },
   {
     "pageid": 25798,
@@ -1522,7 +1537,7 @@
   {
     "pageid": 4309,
     "title": "Verona Heart",
-    "lastrevid": 297732
+    "lastrevid": 318916
   },
   {
     "pageid": 13363,
@@ -1562,7 +1577,7 @@
   {
     "pageid": 21732,
     "title": "Wilinus Icewyrm",
-    "lastrevid": 246381
+    "lastrevid": 318911
   },
   {
     "pageid": 16147,
@@ -1607,17 +1622,17 @@
   {
     "pageid": 29459,
     "title": "Zaoshen",
-    "lastrevid": 309634
+    "lastrevid": 318889
   },
   {
     "pageid": 18536,
     "title": "Zephyrus",
-    "lastrevid": 292124
+    "lastrevid": 318890
   },
   {
     "pageid": 17201,
     "title": "Zeus",
-    "lastrevid": 292125
+    "lastrevid": 318891
   },
   {
     "pageid": 12550,

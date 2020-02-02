@@ -53,10 +53,10 @@ export default {
   methods: {
     addProp(stars) {
       if ( ! this.item.data) {
-        Vue.set(this.item, 'data', {});
+        this.$set(this.item, 'data', {});
       }
       if ( ! this.item.data.hasOwnProperty(stars)) {
-        Vue.set(this.item.data, stars, []);
+        this.$set(this.item.data, stars, []);
       }
       this.item.data[stars].push({});
     },
@@ -64,10 +64,10 @@ export default {
       if (this.item.data) {
         this.item.data[stars].pop();
         if (this.item.data[stars].length === 0) {
-          Vue.delete(this.item.data, stars);
+          this.$delete(this.item.data, stars);
         }      
         if (Object.keys(this.item.data).length === 0) {
-          Vue.delete(this.item, 'data');
+          this.$delete(this.item, 'data');
         }
       }
     },
@@ -78,10 +78,10 @@ export default {
         return JSON.stringify(this.item.data);
       },
       set(value) {
-        Vue.set(this.item, 'data', {});
+        this.$set(this.item, 'data', {});
 
         for (let [key, val] of Object.entries(JSON.parse(value))) {
-          Vue.set(this.item.data, key, val);
+          this.$set(this.item.data, key, val);
         }
       },
     }, 

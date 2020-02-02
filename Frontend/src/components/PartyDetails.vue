@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Utils from '@/js/utils.js'
 import DataModel from '@/js/data-model'
 
@@ -197,7 +199,7 @@ export default {
         ranko: Object.assign({}, RATIO_TYPES),
       };
 
-      [this.getSummons[0], this.getSummons[5]].forEach(summon => {
+      [this.summons[0], this.summons[5]].forEach(summon => {
         if ( ! Utils.isEmpty(summon) && summon.current_data !== undefined) {
           for (let aura of summon.data[summon.current_data]) {
             if (chara_element === aura.element || aura.element === "any") {
@@ -208,7 +210,7 @@ export default {
         }
       })
 
-      this.getSummons.slice(1, 5).forEach(summon => {
+      this.summons.slice(1, 5).forEach(summon => {
         if ( ! Utils.isEmpty(summon) && summon.current_data !== undefined) {
           for (let aura of summon.data[summon.current_data]) {
             if (aura.slot === 'sub' && (chara_element === aura.element || aura.element === "any")) {
@@ -223,27 +225,19 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      characters: state => state.party_builder.characters,
+      summons: state => state.party_builder.summons,
+      weapons: state => state.party_builder.weapons,
+    }),
     percentHP: {
-      get() {
-        return this.$store.getters.getPercentHP
-      },
-      set(value) {
-        this.$store.commit('setPercentHP', value);
-      }
-    },
-    getCharacters() {
-      return this.$store.getters.getCharacters;
-    },
-    getSummons() {
-      return this.$store.getters.getSummons;
-    },
-    getWeapons() {
-      return this.$store.getters.getWeapons;
+      get() { return this.$store.state.party_builder.percent_HP },
+      set(value) { this.$store.commit('setPercentHP', value) }
     },
     getStatsForCharacters() {
       let stats = [];
 
-      for (let c of this.getCharacters) {
+      for (let c of this.characters) {
         if ( ! Utils.isEmpty(c)) {
           let data = {
             atk: c.stars > 4 ? c.atkflb : c.atkmlb,
@@ -263,8 +257,8 @@ export default {
           let chara_element = DataModel.e.data[c.elementid].name.toLowerCase();
           // Characters with "any" element get the main weapon element
           if (chara_element === "any") {
-            if ( ! Utils.isEmpty(this.getWeapons[0])) {
-              chara_element = DataModel.e.data[this.getWeapons[0].elementid].name.toLowerCase();
+            if ( ! Utils.isEmpty(this.weapons[0])) {
+              chara_element = DataModel.e.data[this.weapons[0].elementid].name.toLowerCase();
             }
             else {
               chara_element = "dark";
@@ -273,7 +267,9 @@ export default {
           const chara_race = DataModel.ra.data[c.raceid].name.toLowerCase();
           const chara_weapons = c.weapontypeid.flatMap(w => [DataModel.w.data[w].name.toLowerCase()]);
           
-          for (let w of this.getWeapons) {
+          for (let index=0; index<this.weapons.length; index++) {
+            const w = this.weapons[index];
+
             if ( ! Utils.isEmpty(w)) {
               // Character total attack
               let atk = w.atk;
@@ -303,35 +299,33 @@ export default {
               data.hp += Math.floor(hp);
 
               // Weapon skills
-              if (w.current_data) {
-                for (let skill_data of w.current_data.flat()) {
-                  let add_value = true;
-                  if (skill_data.restriction) {
-                    for (let [key, value] of Object.entries(skill_data.restriction)) {
-                      if (key === 'element') {
-                        if ( ! value.some(v => v === chara_element)) {
-                          add_value = false;
-                          break;
-                        }
+              for (let skill_data of this.$store.getters.getWeaponsCurrentData[index].flat()) {
+                let add_value = true;
+                if (skill_data.restriction) {
+                  for (let [key, value] of Object.entries(skill_data.restriction)) {
+                    if (key === 'element') {
+                      if ( ! value.some(v => v === chara_element)) {
+                        add_value = false;
+                        break;
                       }
-                      else if (key === 'race') {
-                        if ( ! value.some(v => v === chara_race)) {
-                          add_value = false;
-                          break;
-                        }
+                    }
+                    else if (key === 'race') {
+                      if ( ! value.some(v => v === chara_race)) {
+                        add_value = false;
+                        break;
                       }
-                      else if (key === 'weapon') {
-                        if ( ! value.some(v => chara_weapons.some(w => v === w))) {
-                          add_value = false;
-                          break;
-                        }
+                    }
+                    else if (key === 'weapon') {
+                      if ( ! value.some(v => chara_weapons.some(w => v === w))) {
+                        add_value = false;
+                        break;
                       }
                     }
                   }
+                }
 
-                  if (add_value === true) {
-                    data.ratio[skill_data.aura_type][skill_data.stat] += skill_data.value;
-                  }
+                if (add_value === true) {
+                  data.ratio[skill_data.aura_type][skill_data.stat] += skill_data.value;
                 }
               }
             }
@@ -477,7 +471,6 @@ export default {
           stats.push(data);
         }
       }
-
       
       return stats;
     }
@@ -496,7 +489,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
