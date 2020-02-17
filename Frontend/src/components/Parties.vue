@@ -44,10 +44,6 @@
       </div>
 
       <span class="mr-2" v-if="current_party === null">(unsaved)</span>
-
-      <transition name="fade" mode="out-in">
-        <span :key="party_message">{{ party_message }}</span>
-      </transition>
     </div>
 
     <input v-show="clipboard_text.length > 0" id="clipboardInput" readonly type="text" :value="clipboard_text">
@@ -88,14 +84,12 @@ export default {
   },
   data() {
     return {
-      party_message: "",
       clipboard_text: '',
     }
   },
   methods: {
     clickPartyNew({clean_url = true} = {}) {
       this.current_party = null;
-      this.party_message = "";
       this.$store.commit('setClasse', Utils.copy(DEFAULT_VALUES['classe']));
       this.$store.dispatch('setCharacters', Utils.copy(DEFAULT_VALUES['characters']));
       this.$store.dispatch('setSummons', Utils.copy(DEFAULT_VALUES['summons']));
@@ -115,7 +109,7 @@ export default {
           
           this.current_party = parseInt(this.selected_party, 10);
         })
-        .catch(error => console.log(error));
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickPartyShare() {
       const text = '?p=' + this.selected_party;
@@ -129,7 +123,8 @@ export default {
         input.select();
         document.execCommand("copy");
         self.clipboard_text = '';
-        self.party_message = 'URL copied to clipboard';
+
+        self.$store.dispatch('addMessage', {message: 'URL copied to clipboard'});
       });
     },
     clickPartyDelete() {
@@ -138,9 +133,10 @@ export default {
           .then(() => {
             this.clickPartyNew();
             this.loadParties();
-            this.party_message = 'Party deleted successfully at ' + new Date().toLocaleTimeString();
+
+            this.$store.dispatch('addMessage', {message: 'Party deleted successfully'});
           })
-          .catch(error => console.log(error));
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
       }
     },
     clickPartySave(partyId) {
@@ -174,9 +170,9 @@ export default {
           this.current_party = response.data.id;
           return this.loadParties();
         })
-        .then(_ => this.party_message = 'Party saved successfully at ' + new Date().toLocaleTimeString())
+        .then(_ => this.$store.dispatch('addMessage', {message: 'Party saved successfully'}))
         .then(_ => this.selected_party = this.current_party)
-        .catch(error => console.log(error));
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     loadParties() {
       return this.$store.dispatch('parties/fetchParties');
@@ -424,7 +420,7 @@ export default {
       promises.push(
         this.axios.post('/party/load', postData)
           .then(response => this.loadParty(response.data, {actions: data[4]}))
-          .catch(error => console.log(error))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
       );
     }
     // Bookmarklet
@@ -458,7 +454,7 @@ export default {
             weapons_skill_names: data.wsn,
             weapons_pluses: data.wp
           }))
-          .catch(error => console.log(error))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
       );
     }
     // Party ID
@@ -476,8 +472,10 @@ export default {
                 this.selected_party = p.id;
               }
             })
+            const timestamp = response.data.updated ? response.data.updated : '0';
+            this.$ssrContext.head_image = 'https://www.granblue.party/previews/' + 'party/party_' + param + '.' + timestamp + '.png';
           })
-          .catch(error => {console.log(error);  this.party_message = 'Party not found'})
+          .catch(_ => this.$store.dispatch('addMessage', { title: 'Error', message: 'Party not found'}))
       );
     }
 
@@ -500,15 +498,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .25s
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0
-}
-</style>

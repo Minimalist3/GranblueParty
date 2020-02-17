@@ -5,8 +5,6 @@ import getopt
 import os
 import sys
 
-import psycopg2
-
 from config import dbconfig
 from config import defines
 
@@ -394,7 +392,8 @@ all_tables = [
         [ Col('partyId', 'SERIAL', True),
           Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)'),
           Col('partyName', 'TEXT'),
-          Col('partyData', 'JSON NOT NULL')
+          Col('partyData', 'JSON NOT NULL'),
+          Col('updated', 'TIMESTAMP')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),

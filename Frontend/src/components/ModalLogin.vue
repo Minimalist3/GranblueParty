@@ -62,20 +62,7 @@ export default {
           this.$emit('close', false);
           this.$emit('user-logged', this.username, response.data.data.userid);
         })
-        .catch(error => {
-          if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            this.error_message = error.response.data.error.message;
-          } else if (error.request) {
-            // The request was made but no response was received
-            // `error.request` is an instance of XMLHttpRequest in the browser
-            this.error_message = "Cannot contact login server";
-          } else {
-            // Something happened in setting up the request that triggered an Error
-            this.error_message = error.message;
-          }
-        });
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     }
   },
   mounted() {

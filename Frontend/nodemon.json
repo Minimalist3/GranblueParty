@@ -1,6 +1,6 @@
 {
   "watch": [
-    "dist/vue-ssr-server-bundle.json",
+    "dist_dev/vue-ssr-server-bundle.json",
     "server.js"
   ],
   "ext": "json,js"

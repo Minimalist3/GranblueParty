@@ -49,9 +49,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p>
-          <b>2020-01-31:</b> Yodahra (Wind), Ilsa (Light)
-        </p>
+        <p><b>2020-02-14:</b> Valentine characters</p>
       </div>
 
       <div>
@@ -124,6 +122,13 @@ Your selection is memorized for when you want to come back.`
     text: 
 `Create lists of raids and launch them one by one by pressing a single button.
 All the raids will open in the same window, reducing the number of clicks needed to farm daily raids.`
+  },
+  {
+    title: 'Room Name Generator',
+    link: '/roomname',
+    image: '/img/preview_roomname.png',
+    text: 
+`Generate a japanese co-op room name in a few clicks for the raid you want to host.`
   },
 ]
 

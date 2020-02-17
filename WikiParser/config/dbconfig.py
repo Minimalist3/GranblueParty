@@ -23,7 +23,7 @@ def getCursor():
   return __Connection._cursor
 
 def closeConnection():
-  if __Connection._conn:
+  if __Connection and __Connection._conn:
     try:
       __Connection._conn.commit()
       __Connection._cursor.close()

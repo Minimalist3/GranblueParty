@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closePopup($event)">
+  <div id="app" class="text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
     <!-- Menu -->
     <nav class="bg-secondary shadow-md h-12 flex flex-row flex-wrap justify-between items-center">
       <!-- left -->
@@ -15,6 +15,7 @@
           <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/release">Release Schedule</router-link>
           <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/friendsum">Friend Summons</router-link>
           <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/dailygrind">Daily Grind List</router-link>
+          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/roomname">Room Name Gen.</router-link>
           <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
@@ -49,6 +50,7 @@
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/release">Release Schedule</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/friendsum">Friend Summons</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/dailygrind">Daily Grind List</router-link>
+        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/roomname">Room Name Generator</router-link>
         
         <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
         <div class="px-2 flex flex-col bg-secondary">
@@ -95,6 +97,19 @@
       </p>
     </footer>
 
+    <!-- Popups -->
+
+    <div class="fixed bottom-0 right-0">
+      <div @click="killPopup(key)" class="w-48 bg-tertiary rounded m-4 p-2 flex flex-col break-words" v-for="(msg, key) in getPopups" :key="key">
+        <div class="flex justify-between">
+          <span>{{ msg.title }}</span>
+          <fa-icon @click="killPopup(key)" :icon="['fas', 'times-circle']" class="text-link-primary hover:text-link-hover text-xl cursor-pointer"></fa-icon>
+        </div>
+        <span class="text-sm">{{ msg.message }}</span>
+        <div class="h-2 bg-primary rounded progress-animation" v-if="msg.timer"></div>
+      </div>
+    </div>
+
     <!-- Modals -->
     <modal-login v-model="show_modal_login" @user-logged="userLogged"></modal-login>
     <modal-signup v-model="show_modal_signup" @user-logged="userLogged"></modal-signup>
@@ -136,12 +151,13 @@ export default {
     },
     doLogout() {
       this.axios.post('/user/logout')
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
         .finally(() => {
           this.$store.commit('logout');
           this.menu_popup = false;
         });
     },
-    closePopup(e) {
+    closeMenu(e) {
       if (this.menu_popup === true) {
         const isPopup = (elem) => {
           if (elem.id === 'menu_popup' || elem.id === 'menu_burger') {
@@ -157,6 +173,9 @@ export default {
           this.menu_popup = false;
         }
       }
+    },
+    killPopup(index) {
+      this.$store.commit('removeMessage', index);
     }
   },
   computed: {
@@ -165,6 +184,9 @@ export default {
     },
     getUserId() {
       return this.$store.getters.getUserId;
+    },
+    getPopups() {
+      return this.$store.state.popups.messages;
     },
     show_modal_login: {
       get() {
@@ -198,6 +220,15 @@ export default {
 .gbf-menu-hoverable:hover > .gbf-menu-hover {
   @apply flex;
   @apply flex-col;
+}
+
+.progress-animation {
+  animation: progressAnimation 4s linear;
+}
+
+@keyframes progressAnimation {
+  0%   { width: 100%; }
+  100% { width: 0%; }
 }
 
 </style>

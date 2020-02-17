@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express');
+const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const { createBundleRenderer } = require('vue-server-renderer');
 
@@ -8,7 +9,7 @@ const dev_mode = process.env.NODE_ENV !== 'production';
 const dist_dir = dev_mode ? 'dist_dev' : 'dist';
 
 const app = express();
-const template = require('fs').readFileSync('./' + dist_dir + '/index.html', 'utf-8');
+const template = fs.readFileSync('./' + dist_dir + '/index.html', 'utf-8');
 const serverBundle = require('./' + dist_dir + '/vue-ssr-server-bundle.json');
 const clientManifest = require('./' + dist_dir + '/vue-ssr-client-manifest.json');
 
@@ -44,7 +45,12 @@ app.get('*', (req, res) => {
       res.set('Content-Type', 'text/html');
     }
     if (/\.(js|css|png|jpg|gif|ico|txt)$/.test(req.url)) {
-      res.sendFile(req.url, {root: dist_dir});
+      if (fs.existsSync(dist_dir + '/' + req.url)) {
+        res.sendFile(req.url, {root: dist_dir});
+      }
+      else {
+        res.sendStatus(404);
+      }
       return;
     }
 

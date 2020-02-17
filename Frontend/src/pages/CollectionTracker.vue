@@ -8,10 +8,9 @@
       <button class="btn btn-white mr-4" @click="shareCollection">
        <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
       </button>    
-      <button class="btn btn-blue mr-4" @click="saveCollection" :disabled="! modification">
+      <button class="btn btn-blue" @click="saveCollection" :disabled="! modification">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save changes
       </button>
-      <span>{{ save_message }}</span>
     </div>
     
     <!-- Data filters -->
@@ -266,7 +265,6 @@ const INITIAL_DATA = () => {
     showSummons: true,
     showStats: false,
     show_modal_url: false,
-    save_message: '',
     clipboard_text: '',
     loading: true,
   }
@@ -371,15 +369,13 @@ export default {
           });
         });
 
-        this.save_message = '';
         this.axios.post('/tracker/save', postData)
-          .then(response => this.save_message = 'Collection saved successfully at ' + new Date().toLocaleTimeString())
-          .catch(e => this.save_message = 'Failed to save collection')
+          .then(response => this.$store.dispatch('addMessage', {message: 'Collection saved successfully'}))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
       }
     },
     shareCollection() {
       const text = window.location.href  + '/' + this.$store.getters.getUserId;
-      this.save_message = text + ' (copied to clipboard)'
       // Put in clipboard
       this.clipboard_text = text;
       let self = this;
@@ -388,8 +384,9 @@ export default {
         input.select();
         document.execCommand("copy");
         self.clipboard_text = '';
-      })
-      .catch(e => console.log(e));  
+
+        self.$store.dispatch('addMessage', {message: 'URL copied to clipboard'})
+      });
     },
     loadCollection() {
       let userId = "";
@@ -404,7 +401,6 @@ export default {
       return this.$store.dispatch('collection/fetchCollection', userId);
     },
     loadWikiCollection(url) {
-      this.save_message = "";
       let units = new Map();
 
       let parts = url.split(';');
@@ -420,7 +416,7 @@ export default {
 
       // Is URL valid ?
       if (parts[1].length + parts[2].length + parts[3].length + parts[4].length + parts[5].length + parts[6].length < 1) {
-        this.save_message = "Invalid wiki collection URL";
+        this.$store.dispatch('addMessage', {title: 'Error', message: 'Invalid wiki collection URL'});
         return;
       }
 

@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 import config from '../config';
 import { pool } from '../db';
-
+import { previews_socket } from '../previews-server'
 /**
  * Utility functions
  */
@@ -266,8 +266,11 @@ const getPartyById = (req, response) => {
     'partyId': req.params.id,
   });
 
-  pool.query(`SELECT partyData FROM party ${query}`, values)
-    .then(res => getParty(res.rows[0].partydata, true, response))
+  pool.query(`SELECT partyData, EXTRACT(EPOCH FROM updated)::bigint AS updated FROM party ${query}`, values)
+    .then(res => {
+      res.rows[0].partydata.updated = res.rows[0].updated;
+      getParty(res.rows[0].partydata, true, response)
+    })
     .catch(() => response.sendStatus(400));
 }
 
@@ -359,10 +362,13 @@ const saveParty = (req, response) => {
   // New party
   if (partyId === null) {
     pool.query(
-     `INSERT INTO Party (userid, partyname, partydata) VALUES (${userId}, $1, $2) 
+     `INSERT INTO Party (userid, partyname, partydata, updated) VALUES (${userId}, $1, $2, CURRENT_TIMESTAMP) 
       ON CONFLICT DO NOTHING
       RETURNING partyid AS id;`, [partyName, partyData])
-    .then((res) => response.status(200).json(res.rows[0]))
+    .then((res) => {
+      response.status(200).json(res.rows[0]);
+      previews_socket.write(res.rows[0].id + '\n');
+    })
     .catch(() => response.sendStatus(400));
   }
   // Modify existing party
@@ -383,9 +389,12 @@ const saveParty = (req, response) => {
 
         values.push(partyName);
         values.push(partyData);
-        pool.query(`UPDATE party SET partyName = $2, partyData = $3 ${query};`, values)
-          .then(() => response.status(200).json({id: partyId}))
-          .catch(() => response.sendStatus(400));
+        pool.query(`UPDATE party SET partyName = $2, partyData = $3, updated = CURRENT_TIMESTAMP ${query};`, values)
+          .then(_ => {
+            response.status(200).json({id: partyId});
+            previews_socket.write(partyId + '\n');
+          })
+          .catch(_ => response.sendStatus(400));
       })
       .catch(() => response.sendStatus(400));
   }

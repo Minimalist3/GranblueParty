@@ -43,10 +43,10 @@ export default {
     }
   },
   actions: {
-    fetchParties({ commit }) {
+    fetchParties({ commit, dispatch }) {
       return this.axios.get('/party/list')
         .then(response => commit('setParties', response.data))
-        .catch(error => console.log(error));
+        .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}));
     },
     setSelectedParty({ state, getters, commit }, value) {
       state.selected_party = value;

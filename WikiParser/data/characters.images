@@ -388,6 +388,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040179000_01.jpg -O ./unit_small/3040179000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040212000_01.jpg -O ./unit/3040212000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040212000_01.jpg -O ./unit_small/3040212000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040261000_01.jpg -O ./unit/3040261000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040261000_01.jpg -O ./unit_small/3040261000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040168000_01.jpg -O ./unit/3040168000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040168000_01.jpg -O ./unit_small/3040168000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040079000_01.jpg -O ./unit/3040079000.jpg
@@ -910,6 +912,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3030063000_01.jpg -O ./unit_small/3030063000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040122000_01.jpg -O ./unit/3040122000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040122000_01.jpg -O ./unit_small/3040122000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040260000_01.jpg -O ./unit/3040260000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040260000_01.jpg -O ./unit_small/3040260000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040175000_01.jpg -O ./unit/3040175000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040175000_01.jpg -O ./unit_small/3040175000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030026000_01.jpg -O ./unit/3030026000.jpg

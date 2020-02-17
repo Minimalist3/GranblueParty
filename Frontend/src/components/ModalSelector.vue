@@ -138,7 +138,7 @@ export default {
         if (this.message.length === 0) {
           this.axios.get(currentRoute)
                     .then(response => this.message = response.data)
-                    .catch(error => console.log(error));
+                    .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
         }
 
         let self = this;

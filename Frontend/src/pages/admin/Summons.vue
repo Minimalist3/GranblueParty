@@ -102,21 +102,8 @@ export default {
       })
 
       this.axios.post('/admin/summons', postdata)
-        .then(response => console.log('Saved'))
-        .catch(error => {
-          if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data.error.message);
-          } else if (error.request) {
-            // The request was made but no response was received
-            // `error.request` is an instance of XMLHttpRequest in the browser
-            console.log("Cannot contact login server");
-          } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log(error.message);
-          }
-        });
+        .then(response => this.$store.dispatch('addMessage', {message: 'Saved'}))
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     hideNonEmptySkills() {
       this.message.forEach(s => {
@@ -136,7 +123,7 @@ export default {
   mounted() {
     this.axios.get('/admin/summons')
       .then(response => this.message = response.data)
-      .catch(error => console.log(error));
+      .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
   }
 }
 </script>

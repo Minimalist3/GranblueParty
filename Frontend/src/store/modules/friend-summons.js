@@ -31,7 +31,7 @@ export default {
     },
   },
   actions: {
-    fetchSummons({ state }, data) {
+    fetchSummons({ state, dispatch }, data) {
       return this.axios.post('/party/load', { summons: data.s })
         .then(response => {
           state.summons = getDefaultValues(response.data, 'summons');
@@ -43,7 +43,7 @@ export default {
             }
           }
         })
-        .catch(error => console.log(error));
+        .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}))
     }
   }
 }

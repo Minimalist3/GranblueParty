@@ -36,7 +36,7 @@ export default {
     return INITIAL_DATA();
   },
   actions: {
-    fetchCollection({ state }, userId) {
+    fetchCollection({ state, dispatch }, userId) {
       if (state.user_id !== userId) {
         // Reset the store
         Object.assign(state, INITIAL_DATA());
@@ -55,7 +55,7 @@ export default {
               });
               state.chara_total.sum = response.data.length;
             })
-            .catch(error => console.log(error)),
+            .catch(error => dispatch('addAxiosErrorMessage', error, {root: true})),
 
           this.axios.get("/tracker/summons/" + userId)
             .then(response => {
@@ -69,7 +69,7 @@ export default {
               });
               state.summon_total.sum = response.data.length;
             })
-            .catch(error => console.log(error))
+            .catch(error => dispatch('addAxiosErrorMessage', error, {root: true})),
           ]);
       }
     },

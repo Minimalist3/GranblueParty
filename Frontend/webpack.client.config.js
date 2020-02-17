@@ -37,7 +37,12 @@ let config = merge(baseConfig, {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.template.html'),
       inject: ! devMode,
-      chunks: ['axios.min.js', 'svg-with-js.min.css'],
+      chunks: [
+        'axios.min.js', 'svg-with-js.min.css',
+        'vue.runtime.min.js', 'vue.runtime.js',
+        'vue-router.min.js', 'vue-router.js',
+        'vuex.min.js', 'vuex.js'
+      ],
       minify: {
         html5: ! devMode,
         collapseWhitespace: ! devMode,
@@ -85,21 +90,21 @@ else {
     plugins: [
       new WebpackCdnPlugin({
         modules: [
-          // {
-          //   name: 'vue',
-          //   var: 'Vue',
-          //   path: devMode ? 'dist/vue.runtime.js' : 'dist/vue.runtime.min.js'
-          // },
-          // {
-          //   name: 'vue-router',
-          //   var: 'VueRouter',
-          //   path: devMode ? 'dist/vue-router.js' : 'dist/vue-router.min.js'
-          // },
-          // {
-          //   name: 'vuex',
-          //   var: 'Vuex',
-          //   path: devMode ? 'dist/vuex.js' : 'dist/vuex.min.js'
-          // },
+          {
+            name: 'vue',
+            var: 'Vue',
+            path: devMode ? 'dist/vue.runtime.js' : 'dist/vue.runtime.min.js'
+          },
+          {
+            name: 'vue-router',
+            var: 'VueRouter',
+            path: devMode ? 'dist/vue-router.js' : 'dist/vue-router.min.js'
+          },
+          {
+            name: 'vuex',
+            var: 'Vuex',
+            path: devMode ? 'dist/vuex.js' : 'dist/vuex.min.js'
+          },
           {
             name: 'axios',
             var: 'axios',
@@ -128,7 +133,8 @@ else {
           '/calcgw',
           '/release',
           '/friendsum',
-          '/dailygrind'
+          '/dailygrind',
+          '/roomname'
         ],
         {
           changeFreq: 'weekly',

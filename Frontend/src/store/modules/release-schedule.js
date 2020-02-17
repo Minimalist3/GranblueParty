@@ -7,18 +7,18 @@ export default {
     }
   },
   actions: {
-    fetchCharacters({ state }) {
+    fetchCharacters({ state, dispatch }) {
       if (state.characters.length === 0) {
         return this.axios.get("/release/characters")
           .then(response => state.characters = response.data)
-          .catch(error => console.log(error))
+          .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}))
       }
     },
-    fetchSummons({ state }) {
+    fetchSummons({ state, dispatch }) {
       if (state.summons.length === 0) {
         return this.axios.get("/release/summons")
           .then(response => state.summons = response.data)
-          .catch(error => console.log(error))
+          .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}))
       }
     },
     makeDates({ state }) {

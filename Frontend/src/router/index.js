@@ -71,6 +71,11 @@ export function createRouter(store) {
         component: () => import(/* webpackChunkName: "daily" */ '@/pages/DailyGrind.vue'),
         pathToRegexpOptions: { strict: true },
       },
+      {
+        path: '/roomname',
+        component: () => import(/* webpackChunkName: "roomname" */ '@/pages/RoomName.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
   /// #if DEBUG
       {
         path: '/admin',

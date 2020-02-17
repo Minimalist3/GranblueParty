@@ -148,7 +148,7 @@ export default {
       const slot = this.selected_box_index;
       this.axios.get('/party/summons/' + id)
         .then(response => this.$set(this.summons, slot, response.data))
-        .catch(error => console.log(error));
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickCopyURL() {
       let data = {
@@ -171,6 +171,8 @@ export default {
         input.select();
         document.execCommand("copy");
         self.clipboard_text = '';
+
+        self.$store.dispatch('addMessage', {message: 'URL copied to clipboard'});
       });
     },
   },

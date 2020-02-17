@@ -29,7 +29,7 @@ const serverTitleMixin = {
       this.$ssrContext.head_image = head.image || DEFAULT_IMAGE;
       this.$ssrContext.head_keywords = getKeywords(head);
 
-      this.$ssrContext.head_path = "https://www.granblue.party" + this.$route.path;
+      this.$ssrContext.head_path = "https://www.granblue.party" + this.$route.fullPath;
     }
   }
 }
@@ -49,6 +49,9 @@ function changeDocument(vm) {
     document.querySelector('meta[name="twitter:image"]').setAttribute('content', head.image || DEFAULT_IMAGE);
     document.querySelector('meta[property="og:image"]').setAttribute('content', head.image || DEFAULT_IMAGE);
 
+    document.querySelector('meta[property="og:url"]').setAttribute('content', "https://www.granblue.party" + vm.$route.fullPath);
+    document.querySelector('link[rel="canonical"]').setAttribute('href', "https://www.granblue.party" + vm.$route.fullPath);
+
     document.querySelector('meta[name="keywords"]').setAttribute('content', getKeywords(head));
   }
 }
@@ -58,7 +61,7 @@ const clientTitleMixin = {
     changeDocument(this);
   },
   watch: {
-    '$route.path'() {
+    '$route.fullPath'() {
       changeDocument(this);
     }
   }

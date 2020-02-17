@@ -108,7 +108,7 @@ export default {
       const slot = this.selected_box_index;
       this.axios.get('/party/characters/' + id)
         .then(response => this.$store.commit('setCharacter', { index: slot, data: response.data }))
-        .catch(error => console.log(error));
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickSkill(index, skillIndex) {
       if (this.editMode) {

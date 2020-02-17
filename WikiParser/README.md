@@ -15,6 +15,8 @@ pip install -r requirements.txt
 
 Copy `./config/config.ini.template` to `./config/config.ini` and edit relevant values.
 
+The previews server needs the PIL package. Pillow or Pillow-SIMD work as well.
+
 ## Usage
 - `./database.py --create` to create the dabatase and its tables.
 - `./database.py --update` to fill the tables with the data currently in the CSV files.
@@ -25,3 +27,5 @@ The images are not included in the repo to avoid copyright claims. If you want t
 The skill images come from the Wiki. To get them, you need to:
 - `./parse.py -d` to fetch fresh data from the Wiki.
 - `./parse.py --all` to parse that data and update the DB with it.
+
+The previews server is run by `make_party_preview.py`.

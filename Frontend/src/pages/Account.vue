@@ -26,7 +26,7 @@ export default {
           this.$store.commit('logout');
           this.$router.push({name: "home"});
         })
-        .catch(() => {});
+        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
   },
 }
