@@ -62,7 +62,7 @@ class PartyPreviewServer:
 
 previews_path = None
 
-font = ImageFont.truetype('DejaVuSansCondensed.ttf', 14)
+font = ImageFont.truetype('DejaVuSansCondensed.ttf', 16)
 TOP_BORDER = 10
 LEFT_BORDER = 10
 LINE_HEIGHT = 16
@@ -311,6 +311,9 @@ def main(argv):
       processRequest(party[0])
 
   else:
+    # Set non-blocking, read-only, SQL connection
+    dbconfig.setAutoCommit()
+
     # Start the processing queue in a single thread
     queue_thread = threading.Thread(target=processQueue)
     queue_thread.daemon = True

@@ -29,37 +29,20 @@ CHARA_EVOKERS = {'3040160', '3040161', '3040162', '3040163', '3040164', '3040165
 
 SUMMON_EVOKERS = {'2040236', '2040237', '2040238', '2040239', '2040240', '2040241', '2040242', '2040243', '2040244', '2040245'}
 
-# Fix URL redirects from the Wiki
-SUMMONS_REDIRECT = {
-		'Athena': 'Athena_(Summon)',
-		'Grimnir': 'Grimnir_(Summon)',
-		'Jormungand': 'Midgardsormr',
-		'Shiva': 'Shiva_(Summon)',
-		'Yggdrasil_(Skybound)': 'Yggdrasil_Alter',
-		'Tiamat_(Skybound)': 'Tiamat_Alter',
-		'Celeste_(Skybound)': 'Celeste_Alter',
-		'Luminiera_(Skybound)': 'Luminiera_Alter',
-		'Leviathan_(Skybound)': 'Leviathan_Alter',
-		'Colossus_(Skybound)': 'Colossus_Alter',
-		'Levin_Sisters': 'Levin_Sisters_(Summon)',
-		'Europa': 'Europa_(Summon)',
-		'Macula_Marius': 'Macula_Marius_(Summon)'
-	}
-
 CLASSES_ROWS = ['1', '2', '3', '4', '11', '12']
 CLASSES_ROWS_NAMES = ['1', '2', '3', '4', 'Ex1', 'Ex2']
 
 # Classes are a pain to scrape, let's hardcode the whole list
-# /!\ Always sort new classes with their index /!\
-# grep -oP '<a href=\".*?\"' Classes.html
+# /!\ Always add new classes at the END of the list /!\
 # http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/leader/quest/*_xx_0_01.jpg
+# In GBF Classes selection panel, see cnt-job-image > img-job, for xx value
 CLASSES = [
   ('Fighter', 100001), ('Knight', 110001), ('Priest', 120001), ('Wizard', 130001), ('Thief', 140001), ('Enhancer', 150001), ('Grappler', 160001), ('Ranger', 170001), ('Harpist', 180001), ('Lancer', 190001),
 	('Warrior', 100101), ('Sentinel', 110101), ('Cleric', 120101), ('Sorcerer', 130101), ('Raider', 140101), ('Arcana Dueler', 150101), ('Kung Fu Artist', 160101), ('Archer', 170101), ('Bard', 180101), ('Dragoon', 190101),
 	('Weapon Master', 100201), ('Holy Saber', 110201), ('Bishop', 120201), ('Hermit', 130201), ('Hawkeye', 140201), ('Dark Fencer', 150201), ('Ogre', 160201), ('Sidewinder', 170201), ('Superstar', 180201), ('Valkyrie', 190201), ('Gladiator', 300201),
 	('Berserker', 100301), ('Spartan', 110301), ('Sage', 120301), ('Warlock', 130301), ('Bandit Tycoon', 140301), ('Chaos Ruler', 150301), ('Luchador', 160301), ('Nighthound', 170301), ('Elysian', 180301), ('Apsaras', 190301), ('Chrysaor', 300301),
 	('Alchemist', 200201), ('Ninja', 210201), ('Samurai', 220201), ('Sword Master', 230201), ('Gunslinger', 240201), ('Mystic', 250201), ('Assassin', 260201), ('Drum Master', 270201), ('Dancer', 280201), ('Mechanic', 290201),
-	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301), ('Tormentor', 260301), ('Rising Force', 270301)
+	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301), ('Tormentor', 260301), ('Rising Force', 270301), ('Lumberjack', 410301), ('Cavalier', 420301),
 ]
 
 IGNORE_MISSING_SKILL = ['3358', '3855', '3936', '4055', '4080', '4200', '4302']
@@ -119,7 +102,7 @@ def toInt(str):
 		return 1
 	return int(str)
 
-ix_map = {'s1': 1, 's2': 2, 's3': 3, 's4': 4, 'ex1': 5, 'ex2': 6, 'ex3': 7, 'ex4': 8}
+ix_map = {'s1': 1, 's2': 2, 's3': 3, 's4': 4, 'ex1': 5, 'ex2': 6, 'ex3': 7, 'ex4': 8, 'ex5': 9}
 
 def sortClasse(a, b):
   if ix_map[a['ix']] < ix_map[b['ix']]:

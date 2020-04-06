@@ -982,6 +982,15 @@
   },
   {
     "class": "Apsaras",
+    "name": "Lightning Strike",
+    "ix": "ex5",
+    "family": "lancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Lightning Strike.png"
+  },
+  {
+    "class": "Apsaras",
     "name": "Thunder on the Water",
     "ix": "s1",
     "family": "lancer",
@@ -1015,6 +1024,15 @@
     "row": "4",
     "ex": "1",
     "icon": "Ability_RupieFlip.png"
+  },
+  {
+    "class": "Bandit Tycoon",
+    "name": "Spring's Gate",
+    "ix": "ex4",
+    "family": "thief",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Spring's Gate.png"
   },
   {
     "class": "Bandit Tycoon",
@@ -1054,12 +1072,57 @@
   },
   {
     "class": "Berserker",
+    "name": "Ulfhedinn",
+    "ix": "ex4",
+    "family": "fighter",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Ulfhedinn.png"
+  },
+  {
+    "class": "Berserker",
     "name": "Full Arsenal III",
     "ix": "s1",
     "family": "fighter",
     "row": "4",
     "ex": "0",
     "icon": "Ability_Burst.png"
+  },
+  {
+    "class": "Cavalier",
+    "name": "Dragphract",
+    "ix": "ex1",
+    "family": "cavalier",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Dragphract.png"
+  },
+  {
+    "class": "Cavalier",
+    "name": "Battering Ram",
+    "ix": "ex2",
+    "family": "cavalier",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Battering Ram.png"
+  },
+  {
+    "class": "Cavalier",
+    "name": "High Command",
+    "ix": "ex3",
+    "family": "cavalier",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability High Command.png"
+  },
+  {
+    "class": "Cavalier",
+    "name": "Horseman's Duty",
+    "ix": "s1",
+    "family": "cavalier",
+    "row": "4",
+    "ex": "0",
+    "icon": "Ability Horseman's Duty.png"
   },
   {
     "class": "Chaos Ruler",
@@ -1171,6 +1234,15 @@
   },
   {
     "class": "Elysian",
+    "name": "Oratorio",
+    "ix": "ex4",
+    "family": "harpist",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Oratorio.png"
+  },
+  {
+    "class": "Elysian",
     "name": "Concludere",
     "ix": "s1",
     "family": "harpist",
@@ -1215,6 +1287,42 @@
     "icon": "Ability_Counter.png"
   },
   {
+    "class": "Lumberjack",
+    "name": "Laughing Logger",
+    "ix": "ex1",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Laughing Logger.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Leaf Burning",
+    "ix": "ex2",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Leaf Burning.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Dappled Sunlight",
+    "ix": "ex3",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Dappled Sunlight.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Woodcutter's Song",
+    "ix": "s1",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "0",
+    "icon": "Ability Woodcutter's Song.png"
+  },
+  {
     "class": "Nighthound",
     "name": "Tactical Relocation",
     "ix": "ex1",
@@ -1249,6 +1357,15 @@
     "row": "4",
     "ex": "1",
     "icon": "Ability Judicious Shot.png"
+  },
+  {
+    "class": "Nighthound",
+    "name": "Time On Target",
+    "ix": "ex5",
+    "family": "ranger",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Time On Target.png"
   },
   {
     "class": "Nighthound",
@@ -1357,6 +1474,15 @@
     "row": "4",
     "ex": "1",
     "icon": "Ability_Choke.png"
+  },
+  {
+    "class": "Warlock",
+    "name": "Resounding Chant",
+    "ix": "ex4",
+    "family": "wizard",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability Resounding Chant.png"
   },
   {
     "class": "Warlock",

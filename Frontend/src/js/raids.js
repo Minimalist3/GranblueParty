@@ -475,66 +475,77 @@ const CAT_IMPOSSIBLE = {
     name: 'Impossible Malice',
     tier: 'impossible',
     stars: 5,
-    cost: 80,
-    magfes: 40,
     times: 1,
     raids: {
       '303241/1/0/104': {
         name: 'Tiamat Malice',
         namejp: 'ティアマト・マリス',
-        icon: 'galbinuscentrum'
+        icon: 'galbinuscentrum',
+        cost: 80,
+        magfes: 40,
       },
       '303241/1/0/106': {
         name: 'Tiamat Malice',
-        icon: 'atercentrum'
+        icon: 'atercentrum',
+        cost: 80,
+        magfes: 40,
       },
       '305151/1/0/101': {
         name: 'Leviathan Malice',
         namejp: 'リヴァイアサン・マリス',
-        icon: 'rubeuscentrum'
+        icon: 'rubeuscentrum',
+        cost: 80,
+        magfes: 40,
       },
       '305151/1/0/102': {
         name: 'Leviathan Malice',
-        icon: 'indicuscentrum'
+        icon: 'indicuscentrum',
+        cost: 80,
+        magfes: 40,
       },
       '303271/1/0/506': {
         name: 'Lucilius',
-        namejp: 'ルシファー'
+        namejp: 'ルシファー',
+        cost: 80,
+        magfes: 40,
       },
+      '305171/1/0/535': {
+        name: 'Lindwurm',
+        namejp: 'リンドヴルム',
+        cost: 90,
+        magfes: 90,
+      }
     }
   },
   1050: {
     name: 'Impossible Nightmare',
     tier: 'impossible',
     stars: 6,
+    times: 1,
     raids: {
       '301061/1/0/59': {
         name: 'Proto Bahamut',
         namejp: '強いバハ',
         cost: 90,
         magfes: 45,
-        times: 1,
       },
       '303251/1/0/533': {
         name: 'Akasha',
         namejp: 'アーカーシャ',
         cost: 90,
         magfes: 45,
-        times: 1,
       },
       '303291/1/0/5311': {
         name: 'The Four Primarchs',
         namejp: '四大天司ＨＬ',
         cost: 80,
         magfes: 40,
-        times: 1,
       },
       '305161/1/0/83': {
         name: 'Grand Order',
         namejp: 'グランデＨＬ',
         cost: 90,
         magfes: 45,
-        times: 1,
       },
     }
   },

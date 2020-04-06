@@ -629,6 +629,12 @@ def updateClasses():
     
     data = sorted(json.load(read_file), key=functools.cmp_to_key(defines.sortClasse))
 
+    # New skills are pushing the index, but it's too late to fix the model
+    # Hardcode an index for them
+    new_skills = ['Ulfhedinn', 'Lightning Strike', 'Spring\'s Gate', 'Oratorio', 'Time On Target', 'Resounding Chant']
+    new_skills_id_start = 224
+    new_skills_count = 0
+
     for (classe_name, classe_id) in defines.CLASSES:
       row = ''
       family_name = ''
@@ -637,7 +643,7 @@ def updateClasses():
       for skill in data:        
         if skill['class'] != classe_name:
           continue
-        
+
         if row == '':
           row = skill['row']
         elif row != skill['row']:
@@ -659,7 +665,12 @@ def updateClasses():
         if row == defines.CLASSES_ROWS[4] and (skill['ix'] == 's2' or skill['ix'] == 's3'):
           isExMastery = True
         
-        skill_id = len(skill_values)
+        skill_id = len(skill_values) - new_skills_count
+        if skill_id >= new_skills_id_start:
+          skill_id += new_skills_count
+        if skill['name'] in new_skills:
+          skill_id = new_skills_id_start + new_skills_count
+          new_skills_count += 1
 
         skill_filename = os.path.join(images_dir, str(skill_id) + '.png')
         if not os.path.isfile(skill_filename):

@@ -18,7 +18,10 @@
       <div style="max-width: 600px" v-for="(section, index) in sections " :key="index">
         <div v-show="preview_index === index" @mouseenter="change_image = false" @mouseleave="change_image = true"  @mousedown="change_image = false" @mouseup="change_image = true">
           <h1>{{ section.title }}</h1>
-          <router-link :to="section.link"><img :src="section.image"></router-link>
+          <router-link :to="section.link"><picture>
+            <source v-if="section.webp" type="image/webp" :srcset="section.webp">
+            <img :src="section.image">
+          </picture></router-link>
           <div class="self-start bg-secondary mt-2 p-2 rounded" style="min-height: 8em" v-html="section.text"/>
         </div>
       </div>
@@ -49,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-02-14:</b> Valentine characters</p>
+        <p><b>2020-04-02:</b> Sturm and Drang</p>
       </div>
 
       <div>
@@ -77,6 +80,7 @@ const SECTIONS = [
     title: 'Party Builder',
     link: '/builder',
     image: '/img/preview_party.png',
+    webp: '/img/preview_party.webp',
     text: 
 `Check the Edit checkbox to add or remove elements from your party.
 Uncheck it to use skills and summons.
@@ -96,7 +100,8 @@ You can share your collection by clicking the "Share" button and giving the uniq
     title: 'Calculators',
     link: '/calcevoker',
     image: '/img/preview_calc.png',
-    text: 
+    webp: '/img/preview_calc.webp',
+    text:
 `Choose what you want to unlock and get the complete list of materials needed to do it.
 Each material has a link to the english wiki.
 Your selection is memorized for when you want to come back.`
@@ -112,6 +117,7 @@ Your selection is memorized for when you want to come back.`
     title: 'Friend Summons',
     link: '/friendsum',
     image: '/img/preview_friendsum.png',
+    webp: '/img/preview_friendsum.webp',
     text: 
 `Set your friend summons and profile ID, then take a screenshot or share the link with your friends.`
   },

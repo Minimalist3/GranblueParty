@@ -22,7 +22,7 @@ module.exports = merge(baseConfig, {
   },
   module: {
     rules: [
-      { test: /\.(png|jpg|gif|ico|txt)$/,
+      { test: /\.(png|jpg|gif|ico|txt|webp)$/,
         use: [
           {
             loader: 'file-loader',

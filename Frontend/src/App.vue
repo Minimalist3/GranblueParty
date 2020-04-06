@@ -42,7 +42,7 @@
     </nav>
 
     <!-- Menu popup -->
-    <div class="bg-secondary shadow-md w-full lg:w-1/3 lg:rounded-bl absolute right-0 z-50" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
+    <nav class="bg-secondary shadow-md w-full lg:w-1/3 lg:rounded-bl absolute right-0 z-50" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
       <!-- For mobile -->
       <div class="lg:hidden flex flex-col text-primary border-b border-primary">
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/builder">Party Builder</router-link>
@@ -75,7 +75,7 @@
       </label></div>
 
       <div class="p-2 select-none">{{ getJST }} JST</div>
-    </div>
+    </nav>
 
     <!-- Main page -->
     <main class="p-4">
@@ -98,8 +98,7 @@
     </footer>
 
     <!-- Popups -->
-
-    <div class="fixed bottom-0 right-0">
+    <div class="fixed bottom-0 right-0" data-nosnippet>
       <div @click="killPopup(key)" class="w-48 bg-tertiary rounded m-4 p-2 flex flex-col break-words" v-for="(msg, key) in getPopups" :key="key">
         <div class="flex justify-between">
           <span>{{ msg.title }}</span>

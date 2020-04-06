@@ -1,5 +1,9 @@
+User-agent: Googlebot
+Disallow: /*?
+
 User-agent: *
 Disallow: /api
+Disallow: /collection/*
 
 User-agent: *
 Allow: /

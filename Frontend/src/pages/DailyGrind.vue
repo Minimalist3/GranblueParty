@@ -78,9 +78,9 @@
 
           <div class="flex md:flex-col self-center pr-2 whitespace-no-wrap">
             <span class="pr-2">{{ catVal.name }}</span>
-            <span v-if="catVal.times !== undefined" class="flex flex-row">
-              <span class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
-              <span class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
+            <span class="flex flex-row">
+              <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
+              <span v-if="catVal.cost" class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
             </span>
           </div>
 
@@ -100,10 +100,10 @@
                   <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 25px; max-width: 25px;">
                   {{ raidVal.name }}
                 </span>
-                <span v-if="raidVal.times" class="flex flex-row">
-                  <span class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
-                  <span class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
-                </span>                
+                <span class="flex flex-row">
+                  <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
+                  <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                </span>
               </div>
             </a>
           </div>

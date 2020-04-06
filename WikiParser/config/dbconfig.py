@@ -22,6 +22,11 @@ def getCursor():
 
   return __Connection._cursor
 
+def setAutoCommit():
+  if not __Connection._cursor:
+    getCursor()
+  __Connection._conn.set_session(readonly=True, autocommit=True)
+
 def closeConnection():
   if __Connection and __Connection._conn:
     try:

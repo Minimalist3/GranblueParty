@@ -25,7 +25,7 @@ export default {
     addAxiosErrorMessage({ dispatch }, error) {
       let msg = { title: 'Error', timer: false }
 
-      if (error.response.data) {
+      if (error.response && error.response.data) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
         if (error.response.data.error && error.response.data.error.message) {
