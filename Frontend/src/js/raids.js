@@ -1,6 +1,32 @@
-
 // Standard raids
 const CAT_STANDARD = {
+  20: {
+    name: 'Normal',
+    stars: 1,
+    cost: 10,
+    magfes: 0,
+    times: 3,
+    raids: {
+      '300031/1': {
+        name: 'Tiamat',
+      },
+      '300081/1': {
+        name: 'Colossus',
+      },
+      '300141/1': {
+        name: 'Leviathan',
+      },
+      '300181/1': {
+        name: 'Yggdrasil',
+      },
+      '300211/1': {
+        name: 'Luminiera',
+      },
+      '300241/1': {
+        name: 'Celeste',
+      },
+    }
+  },
   30: {
     name: 'Hard',
     stars: 3,
@@ -514,6 +540,7 @@ const CAT_IMPOSSIBLE = {
         namejp: 'リンドヴルム',
         cost: 90,
         magfes: 90,
+        times: 2
       }
     }
   },
@@ -579,7 +606,39 @@ const CAT_IMPOSSIBLE = {
   },
 };
 
+// Solo Content
+const CAT_SOLO = {
+  2500: {
+    name: 'Six-Dragon Advent',
+    stars: 1,
+    cost: 80,
+    magfes: 40,
+    times: 2,
+    raids: {
+      '103441/3': {
+        name: 'Vermillion'
+      },
+      '103471/3': {
+        name: 'Emerald',
+      },
+      '103451/3': {
+        name: 'Azure',
+      },
+      '103461/3': {
+        name: 'Gold',
+      },
+      '103481/3': {
+        name: 'White',
+      },
+      '103491/3': {
+        name: 'Black',
+      },
+    }
+  },
+};
+
 export default {
   CAT_STANDARD,
-  CAT_IMPOSSIBLE
+  CAT_IMPOSSIBLE,
+  CAT_SOLO
 }

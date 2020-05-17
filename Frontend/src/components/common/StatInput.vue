@@ -6,7 +6,7 @@
       type="tel"
       :style="'width: ' + length + 'ch;'"
       v-model.number.lazy="localProp"
-      @keydown.arrow-up="localProp++"
+      @keydown.arrow-up="incrementProp()"
       @keydown.arrow-down="decrementProp()"
     >
   </label>
@@ -18,9 +18,15 @@ export default {
     prop: Number,
     shortName: String,
     longName: String,
-    length: Number
+    length: Number,
+    max: Number
   },
   methods: {
+    incrementProp() {
+      if (this.max === undefined || this.max > this.localProp) {
+        this.localProp++;
+      }
+    },
     decrementProp() {
       if (this.localProp > 0) {
         this.localProp--;

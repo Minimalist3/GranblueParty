@@ -72,42 +72,48 @@
     <div v-if="showTab === 0">
       <div v-for="content in getContent" :key="content.name">
         
-        <h2 class="py-4">{{ content.name }}</h2>
+        <h2 class="py-4 cursor-pointer" @click="content.show = ! content.show">
+          <fa-icon v-if=" ! content.show" :icon="['fas', 'angle-right']"></fa-icon>
+          <fa-icon v-else :icon="['fas', 'angle-down']"></fa-icon>
+          {{ content.name }}
+        </h2>
 
-        <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
+        <span v-if="content.show === true">
+          <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
 
-          <div class="flex md:flex-col self-center pr-2 whitespace-no-wrap">
-            <span class="pr-2">{{ catVal.name }}</span>
-            <span class="flex flex-row">
-              <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
-              <span v-if="catVal.cost" class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
-            </span>
+            <div class="flex md:flex-col self-center pr-2 whitespace-no-wrap">
+              <span class="pr-2">{{ catVal.name }}</span>
+              <span class="flex flex-row">
+                <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
+                <span v-if="catVal.cost" class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
+              </span>
+            </div>
+
+            <div class="flex flex-row flex-wrap select-none py-1">
+              <a v-for="(raidVal, raidKey) in catVal.raids"
+                :key="raidKey"
+                @click="clickRaid(raidKey)"
+                class="p-1 cursor-pointer"
+              >
+                <div class="p-4 rounded flex flex-col items-center bg-secondary text-primary hover:bg-tertiary">
+                  <span>
+                    <span
+                      v-if="editMode"
+                      class="tag inline-block text-inverse" style="min-width: 1.5rem"
+                      :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
+                    >{{ getIndexString(raidKey) }}</span>
+                    <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 25px; max-width: 25px;">
+                    {{ raidVal.name }}
+                  </span>
+                  <span class="flex flex-row">
+                    <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
+                    <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
-
-          <div class="flex flex-row flex-wrap select-none py-1">
-            <a v-for="(raidVal, raidKey) in catVal.raids"
-               :key="raidKey"
-               @click="clickRaid(raidKey)"
-               class="p-1 cursor-pointer"
-            >
-              <div class="p-4 rounded flex flex-col items-center bg-secondary text-primary hover:bg-tertiary">
-                <span>
-                  <span
-                    v-if="editMode"
-                    class="tag inline-block text-inverse" style="min-width: 1.5rem"
-                    :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
-                  >{{ getIndexString(raidKey) }}</span>
-                  <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 25px; max-width: 25px;">
-                  {{ raidVal.name }}
-                </span>
-                <span class="flex flex-row">
-                  <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
-                  <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
+        </span>
       </div>
     </div>
 
@@ -148,12 +154,7 @@ import Dropdown from '@/components/common/Dropdown.vue'
 const lsMgt = new Utils.LocalStorageMgt('DailyGrind');
 
 // Merge categories
-const CATEGORIES = Object.assign({}, Raids.CAT_STANDARD, Raids.CAT_IMPOSSIBLE);
-
-const CONTENT = [
-  { name: 'Standard Raids', data: Raids.CAT_STANDARD },
-  { name: 'Impossible Raids', data: Raids.CAT_IMPOSSIBLE },
-];
+const CATEGORIES = Object.assign({}, Raids.CAT_STANDARD, Raids.CAT_IMPOSSIBLE, Raids.CAT_SOLO);
 
 export default {
   components: {
@@ -174,6 +175,11 @@ export default {
       renameLists: true,
       showTab: 0,
       raid_index: 0,
+      content: [
+        { name: 'Solo Content', data: Raids.CAT_SOLO, show: true },
+        { name: 'Standard Raids', data: Raids.CAT_STANDARD, show: true },
+        { name: 'Impossible Raids', data: Raids.CAT_IMPOSSIBLE, show: true },        
+      ]
     }
   },
   methods: {
@@ -308,7 +314,7 @@ export default {
       return this.$store.getters.getUserId !== null;
     },
     getContent() {
-      return CONTENT;
+      return this.content;
     },
     getCategories() {
       return CATEGORIES;

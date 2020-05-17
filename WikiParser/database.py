@@ -376,7 +376,8 @@ all_tables = [
         [ Col('userid', 'INT NOT NULL REFERENCES UserAccount(userid)', True),
           Col('characterId', 'INT NOT NULL REFERENCES Character(characterId)', True),
           Col('stars', 'INT'),
-          Col('owned', 'BOOLEAN NOT NULL')
+          Col('owned', 'BOOLEAN NOT NULL'),
+          Col('awakening', 'INT')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),

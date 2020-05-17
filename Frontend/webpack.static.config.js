@@ -36,7 +36,9 @@ module.exports = merge(baseConfig, {
     ]
   },
   plugins: [
-    new CopyPlugin( [{ from: path.resolve(__dirname, 'src', 'img'), to: 'img' }] ),
+    new CopyPlugin( { patterns: [
+      { from: path.resolve(__dirname, 'src', 'img'), to: 'img' }
+    ]} ),
     new ImageminPlugin({
       cacheFolder: path.resolve(__dirname, 'cache'),
       minFileSize: 1024,

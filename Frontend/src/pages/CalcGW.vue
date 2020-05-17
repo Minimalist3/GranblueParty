@@ -176,8 +176,8 @@ const FIGHT_DATA = [
     cost_meat: 20,
     cost_ep: 3,
     honor: 3600000,
-    token_host: 100,
-    token_join: 68,
+    token_host: 120,
+    token_join: 85,
     token_1: 52,
     token_2: 42,
     token_3: 30

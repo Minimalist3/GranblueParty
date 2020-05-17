@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-04-02:</b> Sturm and Drang</p>
+        <p><b>2020-05-15:</b> Illnott, Predator</p>
       </div>
 
       <div>

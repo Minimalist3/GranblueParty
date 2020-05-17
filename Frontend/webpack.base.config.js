@@ -7,7 +7,7 @@ const path = require("path");
 const { VueLoaderPlugin } = require('vue-loader');
 // CSS
 const ExtractCssPlugin = require('extract-css-chunks-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin')
+//const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -62,11 +62,12 @@ let config = {
               require('cssnano')({
                 preset: ['default', {
                   discardComments: { removeAll: ! devMode }
-                }],                              
+                }],
               })
             ]
           }
-        } ]
+        }
+       ]
       },
       { test: /\.(png|jpg|gif|ico|txt)$/,
         use: [
@@ -99,16 +100,16 @@ if (devMode) {
 else {
   console.log('Production mode');
 
-  config = merge(config, {
-    plugins: [
-      new PurgecssPlugin({
-        paths: glob.sync(path.join(__dirname, 'src', '**', '*'),  { nodir: true }),
-        content: ['index.html', 'index.template.html', '**/*.js', '**/*.html', '**/*.vue'],
-        // Include any special characters you're using in this regular expression
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-      })
-    ]
-  })
+  // config = merge(config, {
+  //   plugins: [
+  //     new PurgecssPlugin({
+  //       paths: glob.sync(path.join(__dirname, 'src', '**', '*'),  { nodir: true }),
+  //       content: ['index.html', 'index.template.html', '**/*.js', '**/*.html', '**/*.vue'],
+  //       // Include any special characters you're using in this regular expression
+  //       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+  //     })
+  //   ]
+  // })
 }
 
 module.exports = config;

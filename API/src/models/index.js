@@ -453,14 +453,15 @@ const getTrackerCharacters = (req, response, userid) => {
       Character.drawtypeid AS d,
       array_agg(WeaponSpecialty.weaponTypeId ORDER BY WeaponSpecialty.weaponTypeId ASC) AS w,
       UserCollectionCharacter.owned AS owned,
-      COALESCE(UserCollectionCharacter.stars, Character.starsmax) AS sc
+      COALESCE(UserCollectionCharacter.stars, Character.starsmax) AS sc,
+      COALESCE(UserCollectionCharacter.awakening, 0) as aw
       FROM Character
       INNER JOIN WeaponSpecialty
         ON Character.characterId = WeaponSpecialty.characterId
       LEFT OUTER JOIN UserCollectionCharacter
         ON character.characterid = UserCollectionCharacter.characterid
         AND UserCollectionCharacter.userid = ${userid} 
-      GROUP BY Character.characterId, UserCollectionCharacter.owned, UserCollectionCharacter.stars
+      GROUP BY Character.characterId, UserCollectionCharacter.owned, UserCollectionCharacter.stars, UserCollectionCharacter.awakening
       ORDER BY Character.nameEn ASC;`)
     .then(res => response.status(200).json(res.rows))
     .catch(() => response.sendStatus(400));
@@ -499,9 +500,9 @@ const saveCollection = (req, response) => {
       const userId = req.user.userid;
       for (let chara of req.body.c) {
         await client.query(
-          `INSERT INTO UserCollectionCharacter (userid, characterid, stars, owned)
-           VALUES (${userId}, $1, $2, $3)
-           ON CONFLICT (userid, characterid) DO UPDATE SET (stars, owned) = (Excluded.stars, Excluded.owned);`, chara);
+          `INSERT INTO UserCollectionCharacter (userid, characterid, stars, owned, awakening)
+           VALUES (${userId}, $1, $2, $3, $4)
+           ON CONFLICT (userid, characterid) DO UPDATE SET (stars, owned, awakening) = (Excluded.stars, Excluded.owned, Excluded.awakening);`, chara);
       }
       for (let summ of req.body.s) {
         await client.query(

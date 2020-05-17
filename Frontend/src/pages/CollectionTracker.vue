@@ -30,7 +30,8 @@
       </div>
 
       <checkbox class="mr-2 my-2" v-model="showNames">Show names</checkbox>
-      <checkbox class="my-2" v-model="showStars">Show stars</checkbox>
+      <checkbox class="mr-2 my-2" v-model="showStars">Show stars</checkbox>
+      <checkbox class="my-2" v-model="showAwakening">Show awakening</checkbox>      
     </div>
 
     <!-- Draw stats -->
@@ -43,7 +44,7 @@
       >
         Collection statistics {{ filtersActive ? '(filters active)' : '' }}
         <fa-icon v-if=" ! showStats" :icon="['fas', 'angle-right']" class="ml-2"></fa-icon>
-        <fa-icon v-if="showStats" :icon="['fas', 'angle-down']" class="ml-2"></fa-icon>
+        <fa-icon v-else :icon="['fas', 'angle-down']" class="ml-2"></fa-icon>
       </a>
       <div class="flex flex-row flex-wrap p-2 bg-secondary" v-if="showStats">
         <div class="flex flex-col mx-4">
@@ -139,6 +140,23 @@
                 :readOnly=" ! isOwnCollection"                
               ></stars-line>
             </span>
+            <span @click="starsModified()" v-if="showAwakening && chara.owned" class="text-sm pb-2 pl-1">
+              <stat-input
+                shortName="Awake"
+                longName="Awakening"
+                :class="chara.aw == 5 ? 'text-link-primary' : ''"
+                :prop.sync="chara.aw"
+                :length="1"
+                :max="5"
+              ></stat-input>
+              <fa-icon
+                v-if="chara.aw < 5"
+                @click="chara.aw = 5"
+                :icon="['fas', 'check']"
+                class="ml-1 cursor-pointer"
+                title="Maximize awakening"
+              ></fa-icon>
+            </span>
           </span>
         </div>
         <div class="flex flex-row flex-wrap" v-if="showSummons">
@@ -189,6 +207,7 @@ import DataModel from '@/js/data-model.js'
 import collectionModule from '@/store/modules/collection-tracker'
 
 import Checkbox from '@/components/common/Checkbox.vue'
+import StatInput from '@/components/common/StatInput.vue'
 import DataFilter from '@/components/DataFilter.vue'
 import ModalUrl from '@/components/ModalWikiURL.vue'
 import StarsLine from '@/components/StarsLine.vue'
@@ -261,6 +280,7 @@ const INITIAL_DATA = () => {
     modification: false,
     showNames: true,
     showStars: true,
+    showAwakening: false,
     showCharacters: true,
     showSummons: true,
     showStats: false,
@@ -273,6 +293,7 @@ const INITIAL_DATA = () => {
 export default {
   components: {
     Checkbox,
+    StatInput,
     DataFilter,
     ModalUrl,
     StarsLine,
@@ -357,7 +378,7 @@ export default {
         this.characters.forEach(cat => {
           cat.forEach(chara => {
             if (chara.owned != null) {
-              postData.c.push([chara.id, chara.sc, chara.owned]);
+              postData.c.push([chara.id, chara.sc, chara.owned, chara.aw]);
             }
           });
         });
@@ -491,6 +512,7 @@ export default {
   async mounted() {
     lsMgt.getValue(this, 'showNames');
     lsMgt.getValue(this, 'showStars');
+    lsMgt.getValue(this, 'showAwakening');    
     lsMgt.getValue(this, 'showCharacters');
     lsMgt.getValue(this, 'showSummons');
     lsMgt.getValue(this, 'chara_show');
@@ -540,6 +562,9 @@ export default {
     },
     showStars() {
       lsMgt.setValue('showStars', this);
+    },
+    showAwakening() {
+      lsMgt.setValue('showAwakening', this);
     }
   }
 }
