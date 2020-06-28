@@ -341,16 +341,23 @@ export default {
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2400';
         add_plus = true;
       }      
-      if (this.getBoxesOpened < 44 && boxes > 0) {
-        const sum = Math.min(40, boxes, 44-this.getBoxesOpened);
+      if (this.getBoxesOpened < 45 && boxes > 0) {
+        const sum = Math.min(41, boxes, 45-this.getBoxesOpened);
         tokens += 2000 * sum;
         boxes -= sum;
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2000';
         add_plus = true;
       }
+      if (this.getBoxesOpened < 80 && boxes > 0) {
+        const sum = Math.min(35, boxes, 80-this.getBoxesOpened);
+        tokens += 10000 * sum;
+        boxes -= sum;
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x10000';
+        add_plus = true;
+      }
       if (boxes > 0) {
-        tokens += 6000 * boxes;
-        this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x6000';
+        tokens += 15000 * boxes;
+        this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x15000';
       }
       this.tokens_total = tokens;
       if (this.tokens_explained) {

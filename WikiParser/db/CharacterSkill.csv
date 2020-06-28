@@ -625,9 +625,9 @@
 3030161	0	Wish for Joy	1
 3030161	1	Cuddle Time	1
 3030161	2	Circle of Friends	35
-3030162	0	Abbysian Magic / Wings of the Fallen Angel	1
-3030162	1	Crimson Zeal / Rozen Storm	1
-3030162	2	Awakening Pulse / Soul Guide	65
+3030162	0	Abbysian Magic	1
+3030162	1	Crimson Zeal	1
+3030162	2	Awakening Pulse	65
 3030163	0	Nayde Sinine	1
 3030163	1	Nayde Vanaroosa	1
 3030163	2	Soaring Star	35
@@ -731,9 +731,9 @@
 3030196	0	Yataghan	1
 3030196	1	Bunaltmak	1
 3030196	2	Golge Adim	35
-3030197	0	Black Down / Black Down Unbound	1
-3030197	1	Camouflage / Can't Touch This	1
-3030197	2	Walder the Super Ranger / I Am a Hero!	35
+3030197	0	Black Down	1
+3030197	1	Camouflage	1
+3030197	2	Walder the Super Ranger	35
 3030198	0	Dolphin Moon	1
 3030198	1	Flamme Shilt	1
 3030198	2	Sword of Lumiel	35
@@ -965,9 +965,9 @@
 3040003	0	Adamant Solace	1
 3040003	1	Strike Solace	1
 3040003	2	Stormwind's Solace	45
-3040004	0	Jewel Mirror	1
+3040004	0	Jewel Mirror / Pluvius	1
 3040004	1	Glorious Flame	1
-3040004	2	Regeneration	45
+3040004	2	Regeneration / Benedictive Light	45
 3040005	0	Dark Energy	1
 3040005	1	Deep Down	1
 3040005	2	Bane	45
@@ -995,7 +995,7 @@
 3040012	0	Bowstring Bow	1
 3040012	1	Starry Sky	1
 3040012	2	The Great Fall	45
-3040013	0	Quick Raid	1
+3040013	0	Courtly Blade	1
 3040013	1	Royal Curtain	1
 3040013	2	Regulus Gloria	45
 3040014	0	Prism Pillar	1
@@ -1294,9 +1294,9 @@
 3040104	0	Let it Snow	1
 3040104	1	Tabula Rasa	1
 3040104	2	Gaze into Snow Globe / End Gaze	45
-3040105	0	No Surrender / No Regrets	1
-3040105	1	Steadfast Shield / Ardent Blade	1
-3040105	2	Suppression / Unfettered	45
+3040105	0	No Surrender	1
+3040105	1	Steadfast Shield	1
+3040105	2	Suppression	45
 3040106	0	Revelation	1
 3040106	1	Out of the Ashes	1
 3040106	2	Awakenings	45
@@ -1814,9 +1814,24 @@
 3040275	1	Iolite Bloom	1
 3040275	2	Happiness Star	1
 3040275	3	Nagareboshi Kiseki	45
+3040276	0	Koikaze	1
+3040276	1	Mystical Aura	1
+3040276	2	It's Coming to Me!	45
 3040277	0	Burner Bomb	1
 3040277	1	The Gift Shop	1
 3040277	2	Ill Night	45
 3040278	0	Assault Blow	1
 3040278	1	Creeping Shadow	1
 3040278	2	Laughing Phantom	45
+3040279	0	Schlacht	1
+3040279	1	Wahrheit	1
+3040279	2	Koenig Wurde	45
+3040280	0	En Tournant	1
+3040280	1	Innocent Heart	1
+3040280	2	En Avant	45
+3040281	0	Kavalier	1
+3040281	1	Sechs	1
+3040281	2	Ausblenden	45
+3040282	0	P-EN Recharge	1
+3040282	1	Peeegiii!	1
+3040282	2	Pegi, Pegi, Pegi!	45

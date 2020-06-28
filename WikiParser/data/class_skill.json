@@ -1323,6 +1323,42 @@
     "icon": "Ability Woodcutter's Song.png"
   },
   {
+    "class": "Monk",
+    "name": "True Strike",
+    "ix": "ex1",
+    "family": "monk",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1198_1.png"
+  },
+  {
+    "class": "Monk",
+    "name": "Unyielding Form",
+    "ix": "ex2",
+    "family": "monk",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1199_1.png"
+  },
+  {
+    "class": "Monk",
+    "name": "Rock Crusher",
+    "ix": "ex3",
+    "family": "monk",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1200_1.png"
+  },
+  {
+    "class": "Monk",
+    "name": "Ascetic Stance",
+    "ix": "s1",
+    "family": "monk",
+    "row": "4",
+    "ex": "0",
+    "icon": "Ability_m_1197_1.png"
+  },
+  {
     "class": "Nighthound",
     "name": "Tactical Relocation",
     "ix": "ex1",

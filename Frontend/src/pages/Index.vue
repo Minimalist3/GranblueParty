@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-05-15:</b> Illnott, Predator</p>
+        <p><b>2020-06-22:</b> De La Fille 5*</p>
       </div>
 
       <div>
