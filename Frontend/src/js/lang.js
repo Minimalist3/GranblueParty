@@ -1,0 +1,1 @@
+export const LANGUAGES = Object.freeze({EN: 0, JP: 1});

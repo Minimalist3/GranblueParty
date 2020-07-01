@@ -1,7 +1,17 @@
+// expand gets the whole object in parameter
+// show only gets its own attribute
+
+import { LANGUAGES } from '@/js/lang'
+
 export default {
   'n': {
-    expand(e) { return e; },
-    show(e) { return true; },
+    expand(obj, lang) {
+      if (lang === LANGUAGES.JP && obj.hasOwnProperty('nj')) {
+        return obj.nj;
+      }
+      return obj.n;
+    },
+    show() { return true; },
   },
   'ri': {
     data: [
@@ -9,7 +19,7 @@ export default {
       { name: 'SR', checked: false },
       { name: 'SSR', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.ri].name; },
     show(e) { return this.data[e].checked; },
   },
   'e': {
@@ -22,7 +32,7 @@ export default {
       { name: 'Dark', checked: true },
       { name: 'Any', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.e].name; },
     show(e) { return this.data[e].checked; },
   },
   't': {
@@ -33,7 +43,7 @@ export default {
       { name: 'Heal', checked: true },
       { name: 'Special', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.t].name; },
     show(e) { return this.data[e].checked; },
   },
   'ra': {
@@ -45,7 +55,7 @@ export default {
       { name: 'Primal', checked: true },
       { name: 'Unknown', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.ra].name; },
     show(e) { return this.data[e].checked; },
   },
   'w': {
@@ -61,10 +71,10 @@ export default {
       { name: 'Spear', checked: true },
       { name: 'Staff', checked: true },
     ],
-    expand(e) {
-      if (Array.isArray(e)) {
+    expand(obj) {
+      if (Array.isArray(obj.w)) {
         let res = '';
-        e.forEach(w => {
+        obj.w.forEach(w => {
           if (res.length !== 0) {
             res += ', ';
           }
@@ -72,7 +82,7 @@ export default {
         })
         return res;
       }
-      return this.data[e].name;
+      return this.data[obj.w].name;
     },
     show(e) {
       if (Array.isArray(e)) {
@@ -90,7 +100,7 @@ export default {
       { name: 'Ex1', checked: true },
       { name: 'Ex2', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.row].name; },
     show(e) { return this.data[e].checked; },
   },
   'owned': {
@@ -98,7 +108,7 @@ export default {
       { name: 'Yes', checked: true },
       { name: 'No', checked: true },
     ],
-    expand(e) { return this.data[e].name; },
+    expand(obj) { return this.data[obj.owned].name; },
     show(e) {
       if (e) {
         return this.data[0].checked;

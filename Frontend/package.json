@@ -21,8 +21,8 @@
   },
   "license": "GPL-3.0",
   "devDependencies": {
-    "autoprefixer": "^9.8.2",
-    "copy-webpack-plugin": "^6.0.2",
+    "autoprefixer": "^9.8.4",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
@@ -35,8 +35,8 @@
     "nodemon": "^2.0.4",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "sitemap-webpack-plugin": "^0.8.0",
-    "vue-loader": "^15.9.2",
+    "sitemap-webpack-plugin": "^0.8.1",
+    "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.43.0",
     "webpack-cdn-plugin": "^3.3.1",
@@ -61,6 +61,6 @@
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vue-server-renderer": "^2.6.11",
-    "vuex": "^3.4.0"
+    "vuex": "^3.5.1"
   }
 }

@@ -223,7 +223,7 @@
 2040273	Demi Zeus	ゼウス・ディヴィジョン	3	4	2	4	\N	2018-02-28	260	1620	2300	\N	105	651	924	\N	{"0":[{"percent":70,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"light","aura_type":"optimus","stat":"atk"}]}
 2040274	Demi Hades	ハデス・ディヴィジョン	3	4	2	5	\N	2018-02-28	280	1640	2320	\N	101	645	917	\N	{"0":[{"percent":70,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"dark","aura_type":"optimus","stat":"atk"}]}
 2040275	Halluel and Malluel	ハールート・マールート	3	3	2	4	1600	2018-02-28	350	2075	\N	\N	135	808	\N	\N	\N
-2040279	Gigante Blazer	ロボミ発進指令	3	3	2	4	\N	2018-03-31	195	1425	\N	\N	100	580	\N	\N	\N
+2040279	Gigante Blazer	兄弟砲ギガントブレイザー	3	3	2	4	\N	2018-03-31	195	1425	\N	\N	100	580	\N	\N	\N
 2040281	Freyr	フレイ	3	4	2	1	1000	2018-03-31	312	1835	2220	\N	117	710	860	\N	\N
 2040282	Unrivaled Fighter	古今独歩の大拳豪	3	3	2	0	\N	2018-04-30	260	1567	\N	\N	87	551	\N	\N	\N
 2040285	Gorilla	ゴリラ	3	4	2	2	1000	2018-05-31	397	2132	2570	\N	100	650	790	\N	{"0":[{"percent":50,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"}],"4":[{"percent":110,"element":"earth","aura_type":"elemental","stat":"atk"}]}
@@ -287,3 +287,6 @@
 2040365	Goregrinders	ゴアグラインダー	3	3	2	1	\N	2020-05-29	255	1467	\N	\N	88	571	\N	\N	\N
 2040366	Owlcat	オウルキャット	3	3	2	1	1000	2020-05-31	362	2057	\N	\N	131	809	\N	\N	\N
 2040367	Xeno Ifrit	ゼノ・イフリート	3	4	2	0	\N	2020-06-13	280	1657	2346	\N	101	641	911	\N	\N
+2040368	Mammoth		3	3	2	2	1000	2020-06-30	317	2012	\N	\N	140	818	\N	\N	\N
+2040369	Athena		3	4	2	0	1030	2020-06-30	332	2027	2450	\N	137	815	980	\N	\N
+2040371	Deepflight Oyster	カキフライ	3	3	2	3	\N	2020-06-28	241	1546	\N	\N	91	555	\N	\N	\N

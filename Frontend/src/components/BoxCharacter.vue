@@ -5,9 +5,9 @@
       class="text-xs text-primary h-5 px-1 text-center truncate"
       target="_blank"
       :href="'https://gbf.wiki/' + object.nameen"
-      :title="object.nameen"
+      :title="getName"
       v-if="! objectIsEmpty"
-    >{{ object.nameen }}</a>
+    >{{ getName }}</a>
     <span class="text-xs h-5" v-else> </span>
 
     <!-- Portrait -->
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { objectIsEmpty } from "@/js/mixins"
+import { objectIsEmpty, getName } from "@/js/mixins"
 import Utils from '@/js/utils'
 import UtilsParty from '@/js/utils-party'
 
@@ -50,7 +50,8 @@ export default {
     StatInput,
   },
   mixins: [
-    objectIsEmpty
+    objectIsEmpty,
+    getName
   ],
   props: {
     object: {

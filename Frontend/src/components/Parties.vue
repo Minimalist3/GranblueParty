@@ -434,7 +434,7 @@ export default {
         weapons: data.w,
       }
 
-      if ( ! data.v || data.v < 4) {
+      if ( ! data.v || data.v < 5) {
         this.$emit('update-bookmarklet');
       }
 

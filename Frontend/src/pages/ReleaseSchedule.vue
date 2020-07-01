@@ -89,11 +89,11 @@
                 class="text-xs text-primary h-5 px-1 text-center truncate"
                 target="_blank"
                 :href="'https://gbf.wiki/' + unit.n"
-                :title="unit.n"
-              >{{ unit.n }}</a>
+                :title="getName(unit)"
+              >{{ getName(unit) }}</a>
               <img
                 style="height: 60px;"
-                :title="unit.n"
+                :title="getName(unit)"
                 :src="'/img/unit_small/' + unit.id + '000.jpg'"
               >
             </span>
@@ -109,6 +109,7 @@ import { mapState } from 'vuex'
 
 import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
+import { LANGUAGES } from '@/js/lang'
 import releaseModule from '@/store/modules/release-schedule'
 
 import DataFilter from '@/components/DataFilter.vue'
@@ -173,6 +174,12 @@ export default {
           this.$store.dispatch('release/fetchCharacters'),
           this.$store.dispatch('release/fetchSummons')
         ])        
+    },
+    getName(element) {
+      if (this.isLangEnglish) {
+        return element.n;
+      }
+      return element.nj;
     },
   },
   computed: {
@@ -250,6 +257,9 @@ export default {
       this.count_summons = countSummons;
       return [...releaseMap.entries()].sort((a, b) => a[0] < b[0]);
     },
+    isLangEnglish() {
+      return this.$store.getters.getLang === LANGUAGES.EN;
+    }
   },
   serverPrefetch() {
     return this.loadData();

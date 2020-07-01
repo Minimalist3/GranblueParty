@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-06-22:</b> De La Fille 5*</p>
+        <p><b>2020-06-30:</b> Grand Leona, Summer Kolulu, Abby</p>
       </div>
 
       <div>
@@ -100,7 +100,6 @@ You can share your collection by clicking the "Share" button and giving the uniq
     title: 'Calculators',
     link: '/calcevoker',
     image: '/img/preview_calc.png',
-    webp: '/img/preview_calc.webp',
     text:
 `Choose what you want to unlock and get the complete list of materials needed to do it.
 Each material has a link to the english wiki.

@@ -120,13 +120,13 @@
               class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
               :href="'https://gbf.wiki/' + chara.n"
-              :title="chara.n"
+              :title="getName(chara)"
               v-if="showNames"
-            >{{ chara.n }}</a>
+            >{{ getName(chara) }}</a>
             <img
               :class="chara.owned ? '' : 'grayscale-80'"
               style="height: 60px;"
-              :title="chara.n"
+              :title="getName(chara)"
               :src="'/img/unit_small/' + chara.id + '000.jpg'"
               @click="selectChara(chara)"
             >
@@ -165,13 +165,13 @@
               class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
               :href="'https://gbf.wiki/' + summon.n"
-              :title="summon.n"
+              :title="getName(summon)"
               v-if="showNames"
-            >{{ summon.n }}</a>
+            >{{ getName(summon) }}</a>
             <img            
               :class="summon.owned ? '' : 'grayscale-80'"
               style="height: 60px;"
-              :title="summon.n"
+              :title="getName(summon)"
               :src="'/img/unit_small/' + summon.id + '000.jpg'"
               @click="selectSummon(summon)"
             >
@@ -204,6 +204,7 @@ import { mapState } from 'vuex'
 import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
 import DataModel from '@/js/data-model.js'
+import { LANGUAGES } from '@/js/lang'
 import collectionModule from '@/store/modules/collection-tracker'
 
 import Checkbox from '@/components/common/Checkbox.vue'
@@ -308,6 +309,12 @@ export default {
     return INITIAL_DATA();
   },
   methods: {
+    getName(element) {
+      if (this.isLangEnglish) {
+        return element.n;
+      }
+      return element.nj;
+    },
     getCharacters(element) {
       return this.characters[element].filter(chara => {
         if ( ! this.chara_show[chara.d]) {
@@ -505,6 +512,9 @@ export default {
     isOwnCollection() {
       return this.$route.params.collection_id === undefined;
     },
+    isLangEnglish() {
+      return this.$store.getters.getLang === LANGUAGES.EN;
+    }
   },
   serverPrefetch() {
     return this.loadCollection();

@@ -95,7 +95,7 @@ export default {
     },
     getColumn(item) {
       return this.getColumns.map(c => {
-        return this.data_model[c.key].expand(item[c.key]);
+        return this.data_model[c.key].expand(item, this.getLang);
       });
     }
   },
@@ -119,6 +119,9 @@ export default {
     },
     getFilters() {
       return this.categories.filter(c => { return c.isFilter });
+    },
+    getLang() {
+      return this.$store.getters.getLang;
     }
   },
   watch: {

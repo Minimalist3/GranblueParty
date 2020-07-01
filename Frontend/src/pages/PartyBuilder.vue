@@ -59,6 +59,7 @@
         <a href="https://github.com/Minimalist3/GBF-Bookmarklet" target="_blank">GBF-Bookmarklet</a>.
       </p>
     </div>
+    <div v-else></div>
 
     <!-- Usage -->
     <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">

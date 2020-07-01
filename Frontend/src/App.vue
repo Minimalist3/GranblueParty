@@ -22,6 +22,7 @@
             <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
               <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevoker">Evokers</router-link>
               <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary whitespace-no-wrap" to="/calcgw">Guild Wars Tokens</router-link>
+              <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary whitespace-no-wrap" to="/calcevent">New Event Tokens</router-link>
             </div>
           </div>
         </div>
@@ -56,6 +57,7 @@
         <div class="px-2 flex flex-col bg-secondary">
           <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevoker">Evokers</router-link>
           <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcgw">Guild Wars Tokens</router-link>
+          <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevent">New Events Tokens</router-link>
         </div>
       </div>
 
@@ -67,6 +69,11 @@
           <a class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary cursor-pointer" @click="doLogout()">Log out</a>
         </div>
       </div>
+
+      <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
+        <input type="checkbox" v-model="lang" class="hidden">
+        <span>{{ getLangLabel }}</span>
+      </label></div>
 
       <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
         <input type="checkbox" v-model="theme_dark" class="hidden">
@@ -118,6 +125,7 @@
 <script>
 import ModalLogin from '@/components/ModalLogin.vue'
 import ModalSignup from '@/components/ModalSignup.vue'
+import { LANGUAGES } from './js/lang'
 
 const getJST_options = {
   timeZone: 'Asia/Tokyo',
@@ -186,6 +194,20 @@ export default {
     },
     getPopups() {
       return this.$store.state.popups.messages;
+    },
+    getLangLabel() {
+      if (this.$store.getters.getLang === LANGUAGES.EN) {
+        return 'Display names in: English';
+      }
+      return '名: 日本語';
+    },
+    lang: {
+      get() {
+        return this.$store.state.lang === LANGUAGES.EN;
+      },
+      set(value) {
+        this.$store.commit('setLang', value ? LANGUAGES.EN : LANGUAGES.JP);
+      }
     },
     show_modal_login: {
       get() {

@@ -41,7 +41,7 @@ const getAllCharacters = (req, response) => {
     'raceId': req.query.race
   });
 
-  pool.query('SELECT Character.characterId AS id, Character.nameEn AS n, Character.rarityId AS ri,' + 
+  pool.query('SELECT Character.characterId AS id, Character.nameEn AS n, Character.nameJp AS nj, Character.rarityId AS ri,' + 
              'Character.elementId AS e, Character.characterTypeId AS t, Character.raceId AS ra,' +
              'array_agg(WeaponSpecialty.weaponTypeId ORDER BY WeaponSpecialty.weaponTypeId ASC) AS w ' +
              'FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId ' +
@@ -143,7 +143,7 @@ const getAllSummons = (req, response) => {
     'elementId': req.query.element,
   });
 
-  pool.query('SELECT summonId AS id, nameEn AS n, rarityId AS ri, elementId AS e FROM Summon ' + query + ' ORDER BY nameEn ASC;', values)
+  pool.query('SELECT summonId AS id, nameEn AS n, nameJp AS nj, rarityId AS ri, elementId AS e FROM Summon ' + query + ' ORDER BY nameEn ASC;', values)
     .then(res => response.status(200).json(res.rows))
     .catch(() => response.sendStatus(400));
 }
@@ -201,7 +201,7 @@ const getAllWeapons = (req, response) => {
     'weaponTypeId': req.query.weapon,
   });
 
-  pool.query('SELECT weaponId AS id, nameEn AS n, rarityId AS ri, elementId AS e, weaponTypeId AS w FROM Weapon ' + query + ' ORDER BY nameEn ASC;', values)
+  pool.query('SELECT weaponId AS id, nameEn AS n, nameJp AS nj, rarityId AS ri, elementId AS e, weaponTypeId AS w FROM Weapon ' + query + ' ORDER BY nameEn ASC;', values)
       .then(res => response.status(200).json(res.rows))
       .catch(() => response.sendStatus(400));
 }
@@ -447,7 +447,7 @@ const listParties = (req, response) => {
  */
 const getTrackerCharacters = (req, response, userid) => {
   pool.query(
-     `SELECT Character.characterId AS id, Character.nameEn AS n, Character.rarityId AS ri,
+     `SELECT Character.characterId AS id, Character.nameEn AS n, Character.namejp AS nj, Character.rarityId AS ri,
       Character.elementId AS e, Character.characterTypeId AS t, Character.raceId AS ra,
       Character.starsbase AS sb, Character.starsmax AS sm,
       Character.drawtypeid AS d,
@@ -473,8 +473,8 @@ const getTrackerSummons = (req, response, userid) => {
   });
 
   pool.query(
-     `SELECT Summon.summonId AS id, Summon.nameEn AS n, Summon.rarityId AS ri, Summon.elementId AS e,
-      Summon.starsbase AS sb, Summon.starsmax AS sm, 
+     `SELECT Summon.summonId AS id, Summon.nameEn AS n, Summon.nameJp AS nj, Summon.rarityId AS ri,
+      Summon.elementId AS e, Summon.starsbase AS sb, Summon.starsmax AS sm, 
       Summon.drawtypeid AS d,
       UserCollectionSummon.owned AS owned,
       COALESCE(UserCollectionSummon.stars, 0) AS sc
@@ -726,7 +726,7 @@ const userDelete = (req, response) => {
  */
 const getReleaseCharacters = (req, response) => {
   pool.query(
-   `SELECT characterid AS id, nameen AS n, rarityId AS ri, elementid AS e, drawtypeid AS d, releasedate AS rd
+   `SELECT characterid AS id, nameen AS n, namejp AS nj, rarityId AS ri, elementid AS e, drawtypeid AS d, releasedate AS rd
     FROM character
     ORDER BY releasedate DESC, characterid;`)
     .then(res => response.status(200).json(res.rows))
@@ -735,7 +735,7 @@ const getReleaseCharacters = (req, response) => {
 
 const getReleaseSummons = (req, response) => {
   pool.query(
-   `SELECT summonid AS id, nameen AS n, rarityid AS ri, elementid AS e, drawtypeid AS d, releasedate AS rd
+   `SELECT summonid AS id, nameen AS n, namejp AS nj, rarityid AS ri, elementid AS e, drawtypeid AS d, releasedate AS rd
     FROM summon
     WHERE releasedate IS NOT null AND rarityid = 2
     ORDER BY releasedate DESC, summonid;`)

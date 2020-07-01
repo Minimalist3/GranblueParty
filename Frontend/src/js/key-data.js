@@ -1047,7 +1047,156 @@ const data = {
       level: 1,
       keyid: 36,
     },
-  ],  
+  ],
+  // Draconic 2nd skill
+  40: [
+    {
+      name: 'True Dragon Barrier',
+      icon: 'skill_damage_red_0.png',
+      desc: 'Endurance Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'Vermillion Barrier',
+      icon: 'ws_skill_damage_red_1.png',
+      desc: 'Inferno Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'Azure Barrier',
+      icon: 'ws_skill_damage_red_2.png',
+      desc: 'Abyss Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'Golden Barrier',
+      icon: 'ws_skill_damage_red_3.png',
+      desc: 'Crag Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'Emerald Barrier',
+      icon: 'ws_skill_damage_red_4.png',
+      desc: 'Tempest Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'White Barrier',
+      icon: 'ws_skill_damage_red_5.png',
+      desc: 'Aureole Teluma',
+      level: 150,
+      keyid: 40,
+    },
+    {
+      name: 'Black Barrier',
+      icon: 'ws_skill_damage_red_6.png',
+      desc: 'Malice Teluma',
+      level: 150,
+      keyid: 40,
+    },
+  ],
+  // Draconic 3rd skill
+  41: [
+    {
+      name: 'Inferno\'s Majesty',
+      icon: 'ws_skill_god_1_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 41,
+    },
+    {
+      name: 'Vulcan\'s Majesty III',
+      icon: 'ws_skill_god_m_1_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 41,
+    },
+  ],
+  42: [
+    {
+      name: 'Hoarfrost\'s Majesty',
+      icon: 'ws_skill_god_2_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 42,
+    },
+    {
+      name: 'Ezili\'s Majesty III',
+      icon: 'ws_skill_god_m_2_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 42,
+    },
+  ],
+  43: [
+    {
+      name: 'Terra\'s Majesty',
+      icon: 'ws_skill_god_3_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 43,
+    },
+    {
+      name: 'Gaia\'s Majesty III',
+      icon: 'ws_skill_god_m_3_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 43,
+    },
+  ],
+  44: [
+    {
+      name: 'Ventosus\'s Majesty',
+      icon: 'ws_skill_god_4_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 44,
+    },
+    {
+      name: 'Aeolus\'s Majesty III',
+      icon: 'ws_skill_god_m_4_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 44,
+    },
+  ],
+  45: [
+    {
+      name: 'Zion\'s Majesty',
+      icon: 'ws_skill_god_5_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 45,
+    },
+    {
+      name: 'Horus\'s Majesty III',
+      icon: 'ws_skill_god_m_5_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 45,
+    },
+  ],
+  46: [
+    {
+      name: 'Oblivion\'s Majesty',
+      icon: 'ws_skill_god_6_3.png',
+      desc: 'Optimus Teluma',
+      level: 200,
+      keyid: 46,
+    },
+    {
+      name: 'Shalim\'s Majesty III',
+      icon: 'ws_skill_god_m_6_3.png',
+      desc: 'Omega Teluma',
+      level: 200,
+      keyid: 46,
+    },
+  ],
 }
 
 export default {

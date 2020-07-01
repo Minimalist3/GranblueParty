@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <h1>Guild Wars tokens and boxes Calculator</h1>
+    <h1>New Event tokens Calculator</h1>
 
     <!-- Stats -->
     <div class="flex flex-col mb-8">
@@ -12,10 +12,10 @@
 
       <span class="flex flex-row flex-wrap items-center">
         <label class="mr-4">Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
-        <span>
-          <label>Total honor <input class="input input-sm" type="number" min="0" style="width: 14ch;" v-model.lazy="total_honor"></label>
-          {{ total_honor >= 1000000 ? '(&asymp;' + (total_honor / 1000000).toFixed(2) + 'm)' : '' }}
-        </span>
+      </span>
+
+      <span>
+        A Nightmare fight appears on average once every <input class="input input-sm" type="number" min="0" style="width: 5ch;" v-model.lazy="nightmare_rate"> raids
       </span>
 
       <span>{{ tokens_explained }}</span>
@@ -47,7 +47,7 @@
         </button>
       </span>
 
-      <checkbox v-model="add_honor">Include honor to tokens sum</checkbox>
+      <checkbox v-model="add_nightmare">Include Nightmare tokens to sum</checkbox>
     </div>
 
     <!-- Table -->
@@ -56,7 +56,6 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Solo honor</th>
             <th></th>
             <th></th>
             <th>Tokens</th>
@@ -72,10 +71,9 @@
         <tbody>
           <tr v-for="(data, index) in getData" :key="index">
             <td :rowspan="data.name_rows" class="is-td-vcentered" v-if="data.name">{{ data.name }}</td>
-            <td :rowspan="data.honor_rows" class="is-td-vcentered" v-if="data.honor">{{ data.honor }}</td>
             <td :rowspan="data.type_rows" class="is-td-vcentered" v-if="data.type">{{ data.type }}</td>
             <td>{{ data.finish }}</td>
-            <td>{{ data.token }}</td>
+            <td>{{ +data.token.toFixed(2) }}</td>
             <td v-if="show_host">{{ (data.cost_ap ? (data.token / data.cost_ap).toFixed(2) : '') }}</td>
             <td v-if="show_host">{{ (data.cost_meat ? (data.token / data.cost_meat).toFixed(2) : '') }}</td>
             <td v-if="show_join">{{ (data.cost_ep ? (data.token / data.cost_ep).toFixed(2) : '') }}</td>
@@ -87,6 +85,15 @@
         </tbody>
       </table>
     </div>
+
+    <span class="pt-4">
+      <h2>Additional information</h2>
+      <ul class="list-disc ml-4">
+        <li>You might need up to 14 additional tokens for carried over Damascus Crystals in boxes 4 to 10</li>
+        <li>Each daily mission gives an additional 200 tokens</li>
+        <li>Nightmare quest can only appear after raids you've hosted</li>
+      </ul>
+    </span>
   </div>
 </template>
 
@@ -95,93 +102,36 @@ import Utils from '@/js/utils.js'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 
-const lsMgt = new Utils.LocalStorageMgt('CalcGW');
+const lsMgt = new Utils.LocalStorageMgt('CalcEvent');
 
 const FIGHT_DATA = [
   {
     name: 'Very Hard',
-    cost_ap: 30,
+    cost_ap: 20,
     cost_meat: 0,
     cost_ep: 1,
-    honor: 21000,
-    token_host: 16,
-    token_join: 18,
-    token_1: 10,
-    token_2: 0,
-    token_3: 0
+    token_host: 6,
+    token_join: 11,
+    token_1: 6,
   },
   {
-    name: 'Ex',
+    name: 'Extreme',
     cost_ap: 30,
-    cost_meat: 0,
-    cost_ep: 1,
-    honor: 51000,
-    token_host: 22,
-    token_join: 20,
-    token_1: 14,
-    token_2: 0,
-    token_3: 0
+    cost_meat: 3,
+    cost_ep: 3,
+    token_host: 20,
+    token_join: 16,
+    token_1: 12,
   },
   {
-    name: 'Ex+',
-    cost_ap: 30,
-    cost_meat: 0,
-    cost_ep: 1,
-    honor: 72000,
-    token_host: 26,
-    token_join: 20,
-    token_1: 20,
-    token_2: 0,
-    token_3: 0
-  },
-  {
-    name: 'NM 90',
-    cost_ap: 30,
-    cost_meat: 5,
-    cost_ep: 2,
-    honor: 260000,
-    token_host: 45,
-    token_join: 20,
-    token_1: 18,
-    token_2: 10,
-    token_3: 5
-  },
-  {
-    name: 'NM 95',
+    name: 'Impossible',
     cost_ap: 40,
-    cost_meat: 10,
+    cost_meat: 5,
     cost_ep: 3,
-    honor: 910000,
-    token_host: 55,
-    token_join: 30,
-    token_1: 26,
-    token_2: 18,
-    token_3: 10
-  },
-  {
-    name: 'NM 100',
-    cost_ap: 50,
-    cost_meat: 20,
-    cost_ep: 3,
-    honor: 2650000,
-    token_host: 80,
-    token_join: 48,
-    token_1: 40,
-    token_2: 30,
-    token_3: 20
-  },
-  {
-    name: 'NM 150',
-    cost_ap: 50,
-    cost_meat: 20,
-    cost_ep: 3,
-    honor: 3600000,
-    token_host: 120,
-    token_join: 85,
-    token_1: 52,
-    token_2: 42,
-    token_3: 30
-  },
+    token_host: 44,
+    token_join: 28,
+    token_1: 24,
+  }
 ];
 
 export default {
@@ -189,26 +139,26 @@ export default {
     Checkbox
   },
   head: {
-    title: 'Granblue.Party - Guild Wars Tokens Calculator',
-    desc: 'Calculator for Guild Wars tokens and boxes',
-    image: 'https://www.granblue.party/img/preview_calcgw.png',
-    keywords: 'Guild Wars, GW, Unite and Fight, U&F, 40 boxes, calculator, eternals, meat, gold bar'
+    title: 'Granblue.Party - New Event Calculator',
+    desc: 'Calculator for new Event tokens and boxes',
+    image: 'https://www.granblue.party/img/preview_calcevent.png',
+    keywords: 'Event, boxes, tokens, Token Draw, calculator, crystals'
   },
   data() {
     return {
-      boxes_needed: 40,
+      boxes_needed: 20,
       boxes_opened: 0,
-      total_honor: 0,
       tokens_explained: '',
       tokens_obtained: 0,
       tokens_total: 0,
-      show_fight: [false, true, true, true, true, true, true],
+      nightmare_rate: 4,
+      show_fight: [true, true, true],
       show_host: true,
       show_join: true,
-      add_honor: false,
+      add_nightmare: false,
     }
   },
-  methods: {
+methods: {
     showFight(index) {
       this.$set(this.show_fight, index, ! this.show_fight[index]);
     },
@@ -219,35 +169,19 @@ export default {
       if (this.show_host) {
         result.push({
           name: fight.name,
-          name_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
+          name_rows: 4 / (this.show_join ? 1 : 2),
           honor: fight.honor,
-          honor_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
+          honor_rows: 4 / (this.show_join ? 1 : 2),
           type: 'Host',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: 2,
           finish: 'MVP',
-          token: fight.token_host + fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_host + fight.token_join + fight.token_1 + (this.add_nightmare ? this.getNightmareEarn : 0),
           cost_ap: fight.cost_ap,
           cost_meat: fight.cost_meat,
         })
-        if (fight.token_2 > 0) {
-          result.push({
-            finish: '2nd',
-            token: fight.token_host + fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-            cost_ap: fight.cost_ap,
-            cost_meat: fight.cost_meat,
-          })
-        }
-        if (fight.token_3 > 0) {
-          result.push({
-            finish: '3rd',
-            token: fight.token_host + fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-            cost_ap: fight.cost_ap,
-            cost_meat: fight.cost_meat,
-          })
-        }
         result.push({
           finish: '',
-          token: fight.token_host + fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_host + fight.token_join + (this.add_nightmare ? this.getNightmareEarn : 0),
           cost_ap: fight.cost_ap,
           cost_meat: fight.cost_meat,
         })
@@ -257,34 +191,18 @@ export default {
       if (this.show_join) {
         result.push({
           type: 'Join',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: 2,
           finish: 'MVP',
-          token: fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_join + fight.token_1,
           cost_ep: fight.cost_ep,
         })
         if ( ! this.show_host) {
           result[result.length-1].name = fight.name;
-          result[result.length-1].name_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-          result[result.length-1].honor = fight.honor;
-          result[result.length-1].honor_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-        }
-        if (fight.token_2 > 0) {
-          result.push({
-            finish: '2nd',
-            token: fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-            cost_ep: fight.cost_ep,
-          })
-        }
-        if (fight.token_3 > 0) {
-          result.push({
-            finish: '3rd',
-            token: fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-            cost_ep: fight.cost_ep,
-          })
+          result[result.length-1].name_rows = 2;
         }
         result.push({
           finish: '',
-          token: fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_join,
           cost_ep: fight.cost_ep,
         })
       }
@@ -313,15 +231,18 @@ export default {
     getTokensObtained() {
       return parseInt(this.tokens_obtained, 10)
     },
-    getTotalHonor() {
-      return parseInt(this.total_honor, 10)
-    },
     getProgress() {
       let result = (100 - (this.tokens_needed / this.tokens_total * 100)).toFixed(2);
       if (this.tokens_total == 0) {        
         return (100).toFixed(2);
       }
       return result;
+    },
+    getNightmareEarn() {
+      if (this.nightmare_rate < 1) {
+        return 0;
+      }
+      return 100 / this.nightmare_rate;
     },
     tokens_needed() {
       let tokens = 0;
@@ -336,35 +257,33 @@ export default {
       let add_plus = false;
 
       if (this.getBoxesOpened === 0 && boxes > 0) {
-        tokens += 1600;
+        tokens += 1198;
         boxes--;
-        this.tokens_explained += '1600';
-        add_plus = true;
-      }      
-      if (this.getBoxesOpened < 4 && boxes > 0) {
-        const sum = Math.min(3, boxes, 4-this.getBoxesOpened);
-        tokens += 2400 * sum;
-        boxes -= sum;
-        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2400';
-        add_plus = true;
-      }      
-      if (this.getBoxesOpened < 45 && boxes > 0) {
-        const sum = Math.min(41, boxes, 45-this.getBoxesOpened);
-        tokens += 2000 * sum;
-        boxes -= sum;
-        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2000';
+        this.tokens_explained += '1198';
         add_plus = true;
       }
-      if (this.getBoxesOpened < 80 && boxes > 0) {
-        const sum = Math.min(35, boxes, 80-this.getBoxesOpened);
-        tokens += 10000 * sum;
+      if (this.getBoxesOpened < 2 && boxes > 0) {
+        tokens += 1598;
+        boxes--;
+        this.tokens_explained += (add_plus ? ' + ' : '') + '1598';
+        add_plus = true;
+      }
+      if (this.getBoxesOpened < 3 && boxes > 0) {
+        tokens += 1998;
+        boxes--;
+        this.tokens_explained += (add_plus ? ' + ' : '') + '1998';
+        add_plus = true;
+      }
+      if (this.getBoxesOpened < 20 && boxes > 0) {
+        const sum = Math.min(17, boxes, 20-this.getBoxesOpened);
+        tokens += 2110 * sum;
         boxes -= sum;
-        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x10000';
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2110';
         add_plus = true;
       }
       if (boxes > 0) {
-        tokens += 15000 * boxes;
-        this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x15000';
+        tokens += 2104 * boxes;
+        this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x2104';
       }
 
       this.tokens_total = tokens;
@@ -381,20 +300,6 @@ export default {
           }
           else {
             this.tokens_explained += ' token obtained';
-          }
-        }
-      }
-
-      const honor_tokens = Math.floor(this.getTotalHonor * 60 / 1000000);
-      if (honor_tokens > 0) {
-        tokens -= honor_tokens;
-        if (this.tokens_total > 0) {
-          this.tokens_explained += ' - ' + honor_tokens;
-          if (honor_tokens > 1) {
-            this.tokens_explained += ' final rally tokens';
-          }
-          else {
-            this.tokens_explained += ' final rally token';
           }
         }
       }
@@ -421,12 +326,12 @@ export default {
     tokens_obtained() {
       lsMgt.setValue('tokens_obtained', this);
     },
-    total_honor() {
-      lsMgt.setValue('total_honor', this);
+    nightmare_rate() {
+      lsMgt.setValue('nightmare_rate', this);
     },
-    add_honor() {
-      lsMgt.setValue('add_honor', this);
-    },
+    add_nightmare() {
+      lsMgt.setValue('add_nightmare', this);
+    }
   },
   mounted() {
     lsMgt.getValue(this, 'boxes_needed');
@@ -435,8 +340,8 @@ export default {
     lsMgt.getValue(this, 'show_host');
     lsMgt.getValue(this, 'show_join');
     lsMgt.getValue(this, 'tokens_obtained');
-    lsMgt.getValue(this, 'total_honor');
-    lsMgt.getValue(this, 'add_honor');
+    lsMgt.getValue(this, 'nightmare_rate');
+    lsMgt.getValue(this, 'add_nightmare');
   },
 }
 </script>
