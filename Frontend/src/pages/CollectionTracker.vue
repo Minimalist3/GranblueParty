@@ -144,14 +144,14 @@
               <stat-input
                 shortName="Awake"
                 longName="Awakening"
-                :class="chara.aw == 5 ? 'text-link-primary' : ''"
+                :class="chara.aw == MAX_AWAKENING() ? 'text-link-primary' : ''"
                 :prop.sync="chara.aw"
                 :length="1"
-                :max="5"
+                :max="MAX_AWAKENING()"
               ></stat-input>
               <fa-icon
-                v-if="chara.aw < 5"
-                @click="chara.aw = 5"
+                v-if="chara.aw < MAX_AWAKENING()"
+                @click="chara.aw = MAX_AWAKENING()"
                 :icon="['fas', 'check']"
                 class="ml-1 cursor-pointer"
                 title="Maximize awakening"
@@ -309,6 +309,9 @@ export default {
     return INITIAL_DATA();
   },
   methods: {
+    MAX_AWAKENING() {
+      return 7;
+    },
     getName(element) {
       if (this.isLangEnglish) {
         return element.n;
@@ -431,7 +434,15 @@ export default {
     loadWikiCollection(url) {
       let units = new Map();
 
-      let parts = url.split(';');
+      let url_parts = url.split('#');
+      if (url_parts.length == 1) {
+        url_parts = url_parts[0];
+      }
+      else {
+        url_parts = url_parts[1];
+      }
+
+      let parts = url_parts.split('.');
       for (let i = 1; i <= 7; i++) {
         if (typeof parts[i] !== 'string') {
           parts[i] = '';

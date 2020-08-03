@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-06-30:</b> Grand Leona, Summer Kolulu, Abby</p>
+        <p><b>2020-07-31:</b> Anila (Summer), Rosamia (Yukata)</p>
       </div>
 
       <div>

@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const path = require("path");
 const nodeExternals = require('webpack-node-externals')
 const baseConfig = require('./webpack.base.config.js')
@@ -33,8 +33,8 @@ module.exports = merge(baseConfig, {
   externals: nodeExternals({
     // do not externalize dependencies that need to be processed by webpack.
     // you can add more file types here e.g. raw *.vue files
-    // you should also whitelist deps that modifies `global` (e.g. polyfills)
-    whitelist: /\.css$/
+    // you should also allowlist deps that modifies `global` (e.g. polyfills)
+    allowlist: /\.css$/
   }),
 
   // This is the plugin that turns the entire output of the server build

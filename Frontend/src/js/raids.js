@@ -529,6 +529,19 @@ const CAT_IMPOSSIBLE = {
         cost: 80,
         magfes: 40,
       },
+      '305251/1/0/103': {
+        name: 'Phronesis',
+        namejp: 'フロネシス',
+        icon: 'luteuscentrum',
+        cost: 80,
+        magfes: 40,
+      },
+      '305251/1/0/102': {
+        name: 'Phronesis',
+        icon: 'indicuscentrum',
+        cost: 80,
+        magfes: 40,
+      },
       '303271/1/0/506': {
         name: 'Lucilius',
         namejp: 'ルシファー',
@@ -579,14 +592,50 @@ const CAT_IMPOSSIBLE = {
   1060: {
     name: 'Impossible Ultimate',
     tier: 'impossible',
-    stars: 7,
-    cost: 100,
-    magfes: 50,
+    stars: 7,    
     times: 1,
     raids: {
       '303141/1/0/136': {
         name: 'Ultimate Bahamut',
-        namejp: 'アルバハＨＬ'
+        namejp: 'アルバハＨＬ',
+        cost: 100,
+        magfes: 50,
+      },
+      '305191/1/0/41': {
+        name: 'Wilnas (Fire)',
+        namejp: '火竜',
+        cost: 80,
+        magfes: 40,
+      },
+      '305201/1/0/42': {
+        name: 'Wamdus (Water)',
+        namejp: '水竜',
+        cost: 80,
+        magfes: 40,
+      },
+      '305211/1/0/43': {
+        name: 'Galleon (Earth)',
+        namejp: '土竜',
+        cost: 80,
+        magfes: 40,
+      },
+      '305221/1/0/44': {
+        name: 'Ewiyar (Wind)',
+        namejp: '風竜',
+        cost: 80,
+        magfes: 40,
+      },
+      '305231/1/0/45': {
+        name: 'Lu Woh (Light)',
+        namejp: '光竜',
+        cost: 80,
+        magfes: 40,
+      },
+      '305241/1/0/46': {
+        name: 'Fediel (Dark)',
+        namejp: '闇竜',
+        cost: 80,
+        magfes: 40,
       },
     }
   },

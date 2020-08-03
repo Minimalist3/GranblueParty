@@ -549,10 +549,10 @@
 3030134	0	Objective	1
 3030134	1	Pinpoint Assassination	1
 3030134	2	Hide	35
-3030135	0	Good Morning / Nighty Night	1
-3030135	1	Light Sleeper / Sleep Tight	1
+3030135	0	Good Morning	1
+3030135	1	Light Sleeper	1
 3030135	2	Dream Sharing	1
-3030135	3	Heavy Sleeper / Don't Let the Bedbugs Bite	35
+3030135	3	Heavy Sleeper	35
 3030136	0	Hell Pyre	1
 3030136	1	Rising Phoenix	1
 3030136	2	Fiery Beast	35
@@ -953,6 +953,12 @@
 3030280	0	Mirror Mochi	1
 3030280	1	Anatman	1
 3030280	2	Kleshas, Begone	35
+3030290	0	Ursula Bite	1
+3030290	1	Shark Tussle	1
+3030290	2	Jawsome Jolt	35
+3030300	0	Doppelte Starke	1
+3030300	1	Viel Lob	1
+3030300	2	Einheit	35
 3040000	0	Fracture	1
 3040000	1	Rebellion	1
 3040000	2	Noblesse Oblige	45
@@ -1297,7 +1303,7 @@
 3040105	0	No Surrender	1
 3040105	1	Steadfast Shield	1
 3040105	2	Suppression	45
-3040106	0	Revelation	1
+3040106	0	Walls of Babylon	1
 3040106	1	Out of the Ashes	1
 3040106	2	Awakenings	45
 3040107	0	Spirit Drums	1
@@ -1380,8 +1386,8 @@
 3040133	1	Half Dragon / Fury of the Storm	1
 3040133	2	Full Acceleration / Gloria	45
 3040134	0	The Maid Variable	1
-3040134	1	Maximum Service / Wachter	1
-3040134	2	Keeping It Clean / Door Knocker	1
+3040134	1	Maximum Service	1
+3040134	2	Keeping It Clean	1
 3040134	3	Servant Sterben	45
 3040135	0	Frightening Puppet	1
 3040135	1	Trick Reaper	1
@@ -1847,3 +1853,15 @@
 3040285	0	Cloudcutter	1
 3040285	1	Moonlit Crescent Blade	1
 3040285	2	Fortune Favors the Bold	45
+3040286	0	Revelation	1
+3040286	1	Oculus ex Inferni	1
+3040286	2	Without You	45
+3040287	0	Summer's End	1
+3040287	1	Radiant Heart	1
+3040287	2	Maximum Overload	45
+3040288	0	All of Creation	1
+3040288	1	First Initiation	1
+3040288	2	Puffy Summer Towers	45
+3040289	0	Fireblossom Talisman	1
+3040289	1	Dragonroar Talisman	1
+3040289	2	Phoenix Talisman	45

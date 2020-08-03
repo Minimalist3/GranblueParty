@@ -7,7 +7,7 @@
     <form @submit.prevent="getURL()" class="m-1">
       <div class="mb-2">
         <label for="url" class="">URL</label>
-        <input class="input w-full" id="url" ref="url" type="text" placeholder="Username" v-model="url" required autofocus>
+        <input class="input w-full" id="url" ref="url" type="text" placeholder="URL" v-model="url" required autofocus>
       </div>
 
       <input class="btn btn-blue pt-2" type="submit" value="Import">
