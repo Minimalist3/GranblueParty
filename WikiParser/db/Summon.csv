@@ -81,21 +81,21 @@
 2040017	Siren	セイレーン	3	3	2	1	1000	2014-06-30	325	1925	\N	\N	127	767	\N	\N	\N
 2040018	Midgardsormr	ミドガルズオルム	3	3	2	2	\N	2014-06-30	235	1510	\N	\N	94	577	\N	\N	\N
 2040019	Behemoth	ベヒーモス	3	3	2	5	\N	2014-06-23	285	1670	\N	\N	114	656	\N	\N	\N
-2040020	Tiamat Omega	ティアマト・マグナ	3	4	2	1	\N	\N	270	1630	1960	\N	104	650	780	\N	{"0":[{"percent":50,"element":"wind","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"wind","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"wind","aura_type":"omega","stat":"atk"}]}
+2040020	Tiamat Omega	ティアマト・マグナ	3	5	2	1	\N	2014-07-16	270	1630	1960	2310	104	650	780	923	{"0":[{"percent":50,"element":"wind","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"wind","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"wind","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"wind","aura_type":"omega","stat":"atk"}]}
 2040021	Athena	アテナ	3	4	2	0	1000	2014-07-16	360	2090	2520	\N	125	770	930	\N	{"0":[{"percent":50,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"fire","aura_type":"elemental","stat":"atk"}],"4":[{"percent":80,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"fire","aura_type":"elemental","stat":"hp"}]}
 2040022	Grendel	ベオウルフ	3	3	2	0	\N	2014-07-23	295	1660	\N	\N	112	658	\N	\N	\N
 2040023	Apollo	アポロン	3	4	2	4	1000	2014-07-31	340	2040	2470	\N	130	780	940	\N	{"0":[{"percent":50,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"light","aura_type":"elemental","stat":"atk"}],"4":[{"percent":80,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}]}
 2040024	Albacore	アルバコア	3	3	2	5	\N	2014-07-31	245	1550	\N	\N	91	557	\N	\N	{"0":[{"percent":20,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":20,"element":"dark","aura_type":"normal","stat":"hp"}],"3":[{"percent":25,"element":"dark","aura_type":"normal","stat":"atk"},{"percent":25,"element":"dark","aura_type":"normal","stat":"hp"}]}
 2040025	Cait Sith	ケット・シー	3	3	2	4	\N	\N	320	1920	\N	\N	128	768	\N	\N	\N
 2040026	Gugalanna	グガランナ	3	3	2	1	\N	2014-08-20	290	1655	\N	\N	113	659	\N	\N	\N
-2040027	Yggdrasil Omega	ユグドラシル・マグナ	3	4	2	2	\N	\N	260	1620	1950	\N	106	651	781	\N	{"0":[{"percent":50,"element":"earth","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"earth","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"earth","aura_type":"omega","stat":"atk"}]}
-2040028	Leviathan Omega	リヴァイアサン・マグナ	3	4	2	3	\N	\N	255	1615	1945	\N	107	652	782	\N	{"0":[{"percent":50,"element":"water","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"water","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"water","aura_type":"omega","stat":"atk"}]}
+2040027	Yggdrasil Omega	ユグドラシル・マグナ	3	5	2	2	\N	2014-08-28	260	1620	1950	2300	106	651	781	924	{"0":[{"percent":50,"element":"earth","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"earth","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"earth","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"earth","aura_type":"omega","stat":"atk"}]}
+2040028	Leviathan Omega	リヴァイアサン・マグナ	3	5	2	3	\N	2014-09-08	255	1615	1945	2295	107	652	782	925	{"0":[{"percent":50,"element":"water","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"water","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"water","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"water","aura_type":"omega","stat":"atk"}]}
 2040029	Odin	オーディン	3	4	2	4	1000	2014-08-31	340	2100	2540	\N	135	860	1040	\N	\N
 2040030	Hekatonkheir	ヘカトンケイル	3	3	2	4	\N	2014-08-31	230	1480	\N	\N	93	570	\N	\N	\N
 2040031	Sagittarius	サジタリウス	3	4	2	1	\N	2014-08-25	235	1445	1690	\N	100	600	700	\N	\N
 2040032	Cerberus	ケルベロス	3	4	2	5	\N	2014-09-12	300	1755	2050	\N	80	516	600	\N	\N
 2040033	Oceanus	オケアノス	3	4	2	3	1000	2014-11-30	310	1910	2310	\N	130	800	970	\N	\N
-2040034	Colossus Omega	コロッサス・マグナ	3	4	2	0	\N	\N	275	1635	1965	\N	103	648	778	\N	{"0":[{"percent":50,"element":"fire","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"fire","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"fire","aura_type":"omega","stat":"atk"}]}
+2040034	Colossus Omega	コロッサス・マグナ	3	5	2	0	\N	2014-10-08	275	1635	1965	2315	103	648	778	921	{"0":[{"percent":50,"element":"fire","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"fire","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"fire","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"fire","aura_type":"omega","stat":"atk"}]}
 2040035	Allosaurus	アロザロウス	3	3	2	2	\N	2014-09-19	280	1645	\N	\N	115	661	\N	\N	\N
 2040036	Cybele	キュベレー	3	4	2	2	1000	2014-09-30	315	1920	2320	\N	129	790	960	\N	\N
 2040037	Poseidon	ポセイドン	3	4	2	3	\N	2014-09-30	245	1575	1840	\N	95	565	660	\N	\N
@@ -106,8 +106,8 @@
 2040043	Marduk	マルドゥーク	3	4	2	2	\N	2014-10-31	240	1600	1940	\N	93	548	660	\N	\N
 2040044	Corow	コロゥ	3	4	2	4	\N	2014-11-07	240	1535	1790	\N	92	560	650	\N	\N
 2040045	Audumbla	アウズンブラ	3	3	2	3	\N	2014-11-21	275	1640	\N	\N	120	662	\N	\N	\N
-2040046	Celeste Omega	セレスト・マグナ	3	4	2	5	\N	\N	285	1645	1975	\N	101	646	776	\N	{"0":[{"percent":50,"element":"dark","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"dark","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"dark","aura_type":"omega","stat":"atk"}]}
-2040047	Luminiera Omega	シュヴァリエ・マグナ	3	4	2	4	\N	\N	265	1625	1955	\N	105	650	780	\N	{"0":[{"percent":50,"element":"light","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"light","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"light","aura_type":"omega","stat":"atk"}]}
+2040046	Celeste Omega	セレスト・マグナ	3	5	2	5	\N	2014-12-22	285	1645	1975	2325	101	646	776	919	{"0":[{"percent":50,"element":"dark","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"dark","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"dark","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"dark","aura_type":"omega","stat":"atk"}]}
+2040047	Luminiera Omega	シュヴァリエ・マグナ	3	5	2	4	\N	2014-11-27	265	1625	1955	2305	105	650	780	923	{"0":[{"percent":50,"element":"light","aura_type":"omega","stat":"atk"}],"3":[{"percent":100,"element":"light","aura_type":"omega","stat":"atk"}],"4":[{"percent":120,"element":"light","aura_type":"omega","stat":"atk"}],"5":[{"percent":140,"element":"light","aura_type":"omega","stat":"atk"}]}
 2040048	Sylph	シルフ	3	3	2	0	\N	2014-11-30	220	1310	\N	\N	96	605	\N	\N	\N
 2040049	Fenrir	フェンリル	3	4	2	3	\N	2014-12-16	225	1535	1800	\N	95	560	650	\N	\N
 2040050	Mahisha	マヒシャ	3	3	2	4	\N	2014-11-21	285	1650	\N	\N	114	660	\N	\N	\N
@@ -293,3 +293,11 @@
 2040371	Deepflight Oyster	カキフライ	3	3	2	3	\N	2020-06-28	241	1546	\N	\N	91	555	\N	\N	\N
 2040373	Colossal Hermit	灼弩火罹	3	3	2	4	\N	2020-07-29	245	1550	\N	\N	90	555	\N	\N	\N
 2040374	Freyr	フレイ	3	4	2	2	1030	2020-07-31	332	2027	2450	\N	137	815	980	\N	\N
+2040375	Kaguya	カグヤ	3	4	2	4	1030	2020-08-09	317	1912	2310	\N	147	880	1060	\N	\N
+2040376	Zhuque	朱雀	3	4	2	0	\N	2020-08-15	270	1632	2313	\N	103	646	918	\N	\N
+2040377	Xuanwu	玄武	3	4	2	3	\N	2020-08-15	275	1742	2476	\N	102	624	885	\N	\N
+2040378	Baihu	白虎	3	4	2	2	\N	2020-08-15	255	1617	2298	\N	106	649	921	\N	\N
+2040379	Qinglong	青龍	3	4	2	1	\N	2020-08-15	278	1708	2423	\N	104	647	919	\N	\N
+2040380	Blessed Wedding	結婚式	3	3	2	3	\N	2020-08-29	160	1162	\N	\N	107	632	\N	\N	\N
+2040381	Artemis	アルテミス	3	3	2	4	1000	2020-08-31	337	2032	\N	\N	136	814	\N	\N	\N
+2040382	Xeno Sagittarius	ゼノ・サジタリウス	3	4	2	1	\N	2020-09-08	265	1627	2308	\N	104	647	919	\N	\N

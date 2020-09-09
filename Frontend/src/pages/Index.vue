@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-07-31:</b> Anila (Summer), Rosamia (Yukata)</p>
+        <p><b>2020-08-31:</b> Juliet (Water)</p>
       </div>
 
       <div>

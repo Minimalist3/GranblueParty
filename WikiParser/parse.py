@@ -6,6 +6,7 @@ import getopt
 import json
 import math
 import os
+import re
 import sys
 import time
 import requests
@@ -21,7 +22,7 @@ verbose = False
 TABLES = {
   'characters': 'id,name,jpname,release_date,obtain_text,base_evo,max_evo,rarity,element,type,race,weapon',
   'summons': 'id,name,jpname,release_date,obtain,evo_base,evo_max,rarity,element',
-  'weapons': 'id,name,jpname,evo_base,evo_max,rarity,element,type,s1_name,s1_icon,s1_lvl,s1u1_name,s1u1_icon,s1u1_lvl,s2_name,s2_icon,s2_lvl,s2u1_name,s2u1_icon,s2u1_lvl,s3_name,s3_icon,s3_lvl,s3u1_name,s3u1_icon,s3u1_lvl,atk1,atk2,atk3,atk4,hp1,hp2,hp3,hp4',
+  'weapons': 'id,name,jpname,evo_base,evo_max,rarity,element,type,s1_name,s1_icon,s1_lvl,s1_desc,s1u1_name,s1u1_icon,s1u1_lvl,s1u1_desc,s2_name,s2_icon,s2_lvl,s2_desc,s2u1_name,s2u1_icon,s2u1_lvl,s2u1_desc,s3_name,s3_icon,s3_lvl,s3_desc,s3u1_name,s3u1_icon,s3u1_lvl,s3u1_desc,atk1,atk2,atk3,atk4,hp1,hp2,hp3,hp4',
   'class_skill': 'class,name,ix,family,row,ex,icon'
 }
 session = requests.Session()
@@ -175,7 +176,11 @@ def getImageURL(image):
       'titles': 'File:' + image
     })
   request_json = request.json()['query']['pages']
-  return next(iter(request_json.values()))['imageinfo'][0]['url']
+  try:
+    return next(iter(request_json.values()))['imageinfo'][0]['url']
+  except:
+    print(request_json)
+    raise
 
 def downloadNewData():
   # Create working directory
@@ -506,6 +511,8 @@ def updateWeapons():
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'weapon_skills')
   values = []
   skills = []
+  skills_desc = {}
+  skills_desc_regex = re.compile('([a-z]+) boost ')
   weapon_ids = set()
   
   with open(working_file, "r") as read_file, open(images_file, 'w', encoding='utf8') as images_file:
@@ -571,10 +578,13 @@ def updateWeapons():
       
       # Icons
       for (s, i) in [('s1 ', 1), ('s1u1 ', 1), ('s2 ', 2), ('s2u1 ', 2), ('s3 ', 3), ('s3u1 ', 3)]:
-        if len(weapon[s + 'icon']) > 0:
+        skillname = weapon[s + 'name'].strip().replace('  ', ' ')
+
+        # Ignore skills with no names. Sometimes, they have non-existing icons...
+        if len(skillname) > 0 and len(weapon[s + 'icon']) > 0:
           icon = weapon[s + 'icon'].lower().replace(' ', '_')
           downloadSkillIcon(images_dir, icon)
-                    
+
           skill_key = defines.getWeaponSkillKey(int(weapon_id), i)
           if skill_key != None:
             for key_image in defines.WEAPONS_KEYS_ICONS[skill_key]:              
@@ -584,7 +594,18 @@ def updateWeapons():
           if s == 's1u1 ' and skill_lvl == 1:
             skill_lvl = 101
 
-          skillname = weapon[s + 'name'].strip().replace('  ', ' ')
+          # Test boost type in descriptions
+          regex_result = skills_desc_regex.match(weapon[s + 'desc'].lower())
+          boost = None
+          if regex_result:
+            boost = regex_result.group(1)
+            boost_key = skillname + icon
+            if not boost_key in skills_desc:
+              skills_desc[boost_key] = boost
+              if boost not in defines.BOOST_TYPES:
+                print('[WARN] Unknown boost type', boost, 'for skill', skillname)
+            elif skills_desc[boost_key] != boost:
+              print('[ERR] Multiple descriptions for a skill:', skillname, skills_desc[boost_key], boost)
 
           # To clear orphaned skills:
           # DELETE FROM Weapon_Skilldata
@@ -596,7 +617,7 @@ def updateWeapons():
 
           # Get skilldata id
           skilldataId = database.dico_tables.get('Weapon_SkillData').getCount()
-          skilldata = [(skilldataId, icon, skillname, None)]
+          skilldata = [(skilldataId, icon, skillname, None, boost)]
           skilldataId = database.dico_tables.get('Weapon_SkillData').insert(skilldata, returning="skilldataId")
 
           skills += [(weapon_id, i, skill_lvl, skill_key, skilldataId)]

@@ -313,7 +313,8 @@ all_tables = [
         [ Col('skilldataId', 'INT NOT NULL', True),
           Col('icon', 'TEXT NOT NULL'),
           Col('skillName', 'TEXT NOT NULL'),
-          Col('data', 'JSON', updateOnInsert=False)
+          Col('data', 'JSON', updateOnInsert=False),
+          Col('boost', 'TEXT')
         ],
         constraint="UNIQUE(icon, skillName)",
         conflictCondition="icon, skillName")

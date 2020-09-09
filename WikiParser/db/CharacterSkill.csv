@@ -959,6 +959,12 @@
 3030300	0	Doppelte Starke	1
 3030300	1	Viel Lob	1
 3030300	2	Einheit	35
+3030310	0	Get 'Em, Geegee!	1
+3030310	1	C'mon Beppo, It's Payback Time!	1
+3030310	2	Feiern	35
+3030320	0	Aqua Heal	1
+3030320	1	Run, Swim, Run	1
+3030320	2	CPR	35
 3040000	0	Fracture	1
 3040000	1	Rebellion	1
 3040000	2	Noblesse Oblige	45
@@ -1281,7 +1287,7 @@
 3040096	2	Cielo della Grazia	45
 3040098	0	Lama Acuta	1
 3040098	1	Credenza	1
-3040098	2	Fiamma Blu	45
+3040098	2	Fiamma Blu / Solare Blu	45
 3040099	0	Flamek Thunder	1
 3040099	1	Tonight I Fly	1
 3040099	2	Wasted Earth	45
@@ -1530,9 +1536,9 @@
 3040181	0	White Veil	1
 3040181	1	Recognition	1
 3040181	2	Mark of Indistinction	45
-3040182	0	Ruthless Ricochet / Scharfe Schneide	1
-3040182	1	Fallschirm / Hone Instincts	1
-3040182	2	Cursed Malice / Energy Drain	45
+3040182	0	Ruthless Ricochet	1
+3040182	1	Fallschirm	1
+3040182	2	Cursed Malice	45
 3040183	0	Omoiyo Hitotsuninare	1
 3040183	1	I Want to Shine!	1
 3040183	2	Full Speed Ahead! Aye Aye!	1
@@ -1865,3 +1871,15 @@
 3040289	0	Fireblossom Talisman	1
 3040289	1	Dragonroar Talisman	1
 3040289	2	Phoenix Talisman	45
+3040290	0	Electron Tempest	1
+3040290	1	Devotion Impulse	1
+3040290	2	Lightning Burst II	45
+3040291	0	Vacationing Eagle	1
+3040291	1	Sunny Glare	1
+3040291	2	Volley Assist	45
+3040292	0	Ocean Reveille	1
+3040292	1	Beachside Bugle	1
+3040292	2	Brazen Gleam	45
+3040293	0	Fulmine Azzurro	1
+3040293	1	Lancia Sacra	1
+3040293	2	Bomboniere	45

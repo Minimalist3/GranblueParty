@@ -289,14 +289,14 @@ const CAT_STANDARD = {
           name: 'Huanglong',
           namejp: '黄龍',
           cost: 80,
-          magfes: 40,
+          magfes: 80,
           times: 1,
       },
       '301681/1/0/6005': {
           name: 'Qilin',
           namejp: '黒麒麟',
           cost: 80,
-          magfes: 40,
+          magfes: 80,
           times: 1,
       },
     }
@@ -454,7 +454,7 @@ const CAT_IMPOSSIBLE = {
     tier: 'impossible',
     stars: 3,
     cost: 90,
-    magfes: 45,
+    magfes: 90,
     times: 1,
     raids: {
       '303231/1/0/6005': {
@@ -605,37 +605,37 @@ const CAT_IMPOSSIBLE = {
         name: 'Wilnas (Fire)',
         namejp: '火竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
       '305201/1/0/42': {
         name: 'Wamdus (Water)',
         namejp: '水竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
       '305211/1/0/43': {
         name: 'Galleon (Earth)',
         namejp: '土竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
       '305221/1/0/44': {
         name: 'Ewiyar (Wind)',
         namejp: '風竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
       '305231/1/0/45': {
         name: 'Lu Woh (Light)',
         namejp: '光竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
       '305241/1/0/46': {
         name: 'Fediel (Dark)',
         namejp: '闇竜',
         cost: 80,
-        magfes: 40,
+        magfes: 80,
       },
     }
   },
@@ -650,6 +650,10 @@ const CAT_IMPOSSIBLE = {
       '303281/1/0/537': {
         name: 'Lucilius (Hard)',
         namejp: 'ルシファーＨＬ',
+      },
+      'ht305181/1/0/533': {
+        name: 'Beelzebub',
+        namejp: 'ベルゼバブ',
       },
     }
   },

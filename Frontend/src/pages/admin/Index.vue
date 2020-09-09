@@ -9,3 +9,14 @@
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    title: 'Granblue.Party - Admin',
+    desc: '',
+    image: '',
+    keywords: ''
+  },
+}
+</script>

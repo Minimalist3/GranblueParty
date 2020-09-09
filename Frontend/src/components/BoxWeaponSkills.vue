@@ -8,7 +8,7 @@
         @click="showKeyModal(skillIndex, skill.keyid)"
       >
       <span class="tooltip">
-        {{ skill.name }}<br>
+        {{ skill.name }} <span v-if="skill.boost">({{ skill.boost }})</span><br>
         <p v-if="skill.data !== null">
           <span class="font-mono text-xs" v-for="(data, dataIndex) in skill.data" :key="dataIndex">
             <span class="capitalize">{{ data.aura_type }}</span> {{ data.stat }} {{ (data.value * 100).toFixed(2) }}%<br>

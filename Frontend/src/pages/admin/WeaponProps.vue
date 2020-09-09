@@ -1,6 +1,9 @@
 <template>
-  <div class="flex flex-row items-center text-sm">
-    <span class="flex flex-col items-center">1 <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['1']"></span>
+  <div class="flex flex-row flex-grow items-center text-sm">
+    <span class="flex flex-col items-center">
+      1
+      <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['1']">
+    </span>
     <span class="flex flex-col items-center">10 <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['10']"></span>
     <span class="flex flex-col items-center">15 <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['15']"></span>
     <span class="flex flex-col items-center">20 <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['20']"></span>

@@ -11,53 +11,46 @@
 
     Skills: {{ getSkills.length }}
 
-    <table class="table">
-      <tbody>
-        <tr v-for="(item, index) in getSkills" :key="item.skillname + item.icon">
-          <td>{{ index }}</td>
-          <td>
-            <img style="min-width: 20px; width: 30px;" :src="'/img/weapon_skills/' + item.icon">
-          </td>
-          <td class="w-24">
-            {{ item.skillname }}<br>
-            {{ item.icon }}
-          </td>
-          <td class="w-32">
-            <a :href="'https://gbf.wiki/' + item.weapons[0].nameen" target="_blank">
-              Wiki link
-              <!--<img style="height: 60px;" :src="'/img/weapon/' + item.weapons[0].weaponid + '00.jpg'">--><br>
-            </a>            
-            <span>
-              <dropdown class="w-32" value="0">
-                <option v-for="(weapon, index) in item.weapons" :key="weapon.weaponid" :value="index">
-                  {{ weapon.nameen }}
-                </option>
-              </dropdown>
-              {{ item.weapons.length }}
-            </span>
-          </td>
-          <td>
-            <button class="btn btn-blue btn-sm" @click="addProp(item)">+</button>
-          </td>
-          <td>
-            <span v-if="item.data">
-              <weapon-props v-for="(d, i) in item.data" :key="i" :object="d"></weapon-props>
-            </span>
-            <!--
-            <textarea
-              class="textarea has-background-dark has-text-grey-light"
-              spellcheck="false"
-              style="width: 70ch; font-size: 12px; font-family: monospace;"
-              v-model="item.data"
-            ></textarea>
-            -->
-          </td>
-          <td>
-            <button class="btn btn-blue btn-sm" @click="removeProp(item)">-</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div 
+      class="flex flex-row items-center mb-4 space-x-2 border-b-2"
+      v-for="(item, index) in getSkills" :key="item.skillname + item.icon"
+    >
+      <span>{{ index }}</span>
+      <span>
+        <img style="min-width: 20px; width: 30px;" :src="'/img/weapon_skills/' + item.icon">
+      </span>
+      <span>
+        {{ item.skillname }}<br>
+        {{ item.icon }}
+        <span v-if="item.boost"><br>{{ item.boost }}</span>
+      </span>
+      <span class="w-32" v-if="item.weapons">
+        <a :href="'https://gbf.wiki/' + item.weapons[0].nameen" target="_blank">
+          Wiki link
+          <!--<img style="height: 60px;" :src="'/img/weapon/' + item.weapons[0].weaponid + '00.jpg'">--><br>
+        </a>            
+        <span>
+          <dropdown class="w-32" value="0">
+            <option v-for="(weapon, index) in item.weapons" :key="item.skillname+index+item.icon+weapon.weaponid" :value="index">
+              {{ weapon.nameen }}
+            </option>
+          </dropdown>
+          {{ item.weapons.length }}
+        </span>
+      </span>
+      <span>
+        <button class="btn btn-blue btn-sm" @click="addProp(item)">+</button>
+      </span>
+      <span class="flex flex-grow">
+        <span v-if="item.data" class="flex flex-col flex-grow space-y-2">
+          <weapon-props v-for="(d, i) in item.data" :key="i" :object="d"></weapon-props>
+        </span>
+      </span>
+      <span>
+        <button class="btn btn-blue btn-sm" @click="removeProp(item)">-</button>
+      </span>
+    </div>
+
   </div>
 </template>
 
@@ -93,6 +86,12 @@ export default {
   components: {
     WeaponProps,
     Dropdown
+  },
+  head: {
+    title: 'Granblue.Party - Admin',
+    desc: '',
+    image: '',
+    keywords: ''
   },
   data() {
     return {

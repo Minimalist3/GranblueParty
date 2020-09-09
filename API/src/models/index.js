@@ -223,7 +223,8 @@ const getWeaponById = (id) => {
             Weapon_Skill.keyid AS keyid,
             Weapon_Skilldata.skillname AS name,
             Weapon_Skilldata.icon AS icon,
-            Weapon_Skilldata.data->'data' AS data
+            Weapon_Skilldata.data->'data' AS data,
+            Weapon_Skilldata.boost AS boost
           FROM Weapon_Skill, Weapon_Skilldata
           WHERE Weapon_Skill.weaponid = Weapon.weaponid
           AND Weapon_Skill.skilldataid = Weapon_Skilldata.skilldataid
