@@ -552,7 +552,7 @@ const CAT_IMPOSSIBLE = {
         name: 'Lindwurm',
         namejp: 'リンドヴルム',
         cost: 90,
-        magfes: 90,
+        magfes: 45,
         times: 2
       }
     }
@@ -605,37 +605,37 @@ const CAT_IMPOSSIBLE = {
         name: 'Wilnas (Fire)',
         namejp: '火竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
       '305201/1/0/42': {
         name: 'Wamdus (Water)',
         namejp: '水竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
       '305211/1/0/43': {
         name: 'Galleon (Earth)',
         namejp: '土竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
       '305221/1/0/44': {
         name: 'Ewiyar (Wind)',
         namejp: '風竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
       '305231/1/0/45': {
         name: 'Lu Woh (Light)',
         namejp: '光竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
       '305241/1/0/46': {
         name: 'Fediel (Dark)',
         namejp: '闇竜',
         cost: 80,
-        magfes: 80,
+        magfes: 40,
       },
     }
   },

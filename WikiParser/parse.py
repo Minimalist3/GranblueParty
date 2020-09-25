@@ -2,6 +2,8 @@
 
 import datetime
 import functools
+import html
+from html.parser import HTMLParser
 import getopt
 import json
 import math
@@ -16,13 +18,136 @@ import mwparserfromhell
 from config import defines
 import database
 
+# Parse description tooltips
+class TooltipParser(HTMLParser):
+  def __init__(self):
+    self.text = ''
+    self.parens = []
+    self.ignoreTag = False
+    super().__init__()
+
+  def handle_starttag(self, tag, attrs):
+    if tag.lower() == "ref":
+      self.ignoreTag = True
+
+    newLevel = False
+    for attr in attrs:
+      if attr[1] != None and attr[1].lower() == 'tooltiptext':
+        #self.text += ' ('
+        self.parens.append(1)
+        newLevel = True
+    
+    if newLevel == False:
+      parensCount = len(self.parens)
+      if parensCount > 0:
+        self.parens[parensCount-1] += 1
+    
+    #print('START', tag, attrs, self.parens)
+
+  def handle_endtag(self, tag):
+    #print('END', tag, self.parens)
+    if tag.lower() == "ref":
+      self.ignoreTag = False
+
+    parensCount = len(self.parens)
+    if parensCount > 0:
+      self.parens[parensCount-1] -= 1
+      if self.parens[parensCount-1] < 1:
+        self.parens.pop()
+        #self.text += ')'      
+
+  def handle_data(self, data):
+    if self.ignoreTag:
+      return
+    if len(self.parens) > 0:
+      return
+    if len(self.text) > 0 and not self.text.endswith((' ', '(')):
+      self.text += ' '
+    #print(data, self.parens)
+    self.text += data
+
+
+unique_ref_regex = re.compile('\'\"`.*`\"\'')
+multiple_spaces_regex = re.compile('[ ]+')
+html_attr1_regex = re.compile('(<[^/][^>]*?=\"[a-zA-Z ]*?)([ ]*?[/]??>)')
+html_attr2_regex = re.compile('([a-zA-Z0-9])/>')
+def parseDescription(text):
+  #print(text)
+  skill_desc = html_attr1_regex.sub(r'\g<1>" \g<2>', text)
+  #print(skill_desc)
+  skill_desc = html_attr2_regex.sub(r'\g<1> />', skill_desc)
+  #print(skill_desc)
+  skill_desc = html.unescape(skill_desc).replace('&nbsp;', ' ').replace('\u007f', '')
+  parser = TooltipParser()
+  parser.feed(skill_desc)
+  skill_desc = mwparserfromhell.parse(parser.text)
+
+  # For character skills
+  for item in reversed(skill_desc.filter_templates()):
+    new_value = ''
+    if item.has('des'):
+      new_value += str(item.get('des').value)
+    if item.has('des1'):
+      des = str(item.get('des1').value)
+      if len(des) > 0:
+        if item.has('level1'):
+          new_value += ' At level ' + str(item.get('level1').value) + ": "
+        new_value += des
+    if item.has('des2'):
+      des = str(item.get('des2').value)
+      if len(des) > 0:
+        if item.has('level2'):
+          new_value += ' At level ' + str(item.get('level2').value) + ": "
+        new_value += des
+    if item.has('des3'):
+      des = str(item.get('des3').value)
+      if len(des) > 0:
+        if item.has('level3'):
+          new_value += ' At level ' + str(item.get('level3').value) + ": "
+        new_value += des
+
+    item_name_lower = item.name.lower()
+    if len(new_value) > 0:
+      skill_desc.replace(item, new_value)
+    elif item_name_lower in ['status', 'tt', 'verify']:
+      skill_desc.replace(item, item.params[0].value)
+    elif item_name_lower == 'infoskillupgrade':
+      if item.has('text'):
+        skill_desc.replace(item, item.params[0].value)
+      elif item.has('uncap'):
+        skill_desc.replace(item, 'After ' + str(item.params[0].value) + '★:')
+
+  # For weapons
+  for item in skill_desc.filter():
+    if isinstance(item, mwparserfromhell.nodes.wikilink.Wikilink):
+      item_title_lower = item.title.lower()
+      if item_title_lower.startswith('file:'):
+        skill_desc.remove(item)
+      elif item_title_lower.startswith('category:'):
+        skill_desc.remove(item)
+      elif item.text != None:
+        skill_desc.replace(item, item.text)
+      else:
+        skill_desc.replace(item, item.title)
+
+  # More cleanup
+  skill_desc = str(skill_desc)
+  skill_desc = unique_ref_regex.sub('', skill_desc)
+  skill_desc = skill_desc.replace('\'\'\'', '\'')
+  skill_desc = skill_desc.replace(') ,', '),')
+  skill_desc = skill_desc.replace('\n', '')
+  skill_desc = multiple_spaces_regex.sub(' ', skill_desc)
+  return skill_desc
+
+
 FRONTEND_DIR = defines.getConfig('config/config.ini', 'path')['frontend']
 addToDB = True
 verbose = False
+# https://gbf.wiki/Special:CargoTables
 TABLES = {
   'characters': 'id,name,jpname,release_date,obtain_text,base_evo,max_evo,rarity,element,type,race,weapon',
   'summons': 'id,name,jpname,release_date,obtain,evo_base,evo_max,rarity,element',
-  'weapons': 'id,name,jpname,evo_base,evo_max,rarity,element,type,s1_name,s1_icon,s1_lvl,s1_desc,s1u1_name,s1u1_icon,s1u1_lvl,s1u1_desc,s2_name,s2_icon,s2_lvl,s2_desc,s2u1_name,s2u1_icon,s2u1_lvl,s2u1_desc,s3_name,s3_icon,s3_lvl,s3_desc,s3u1_name,s3u1_icon,s3u1_lvl,s3u1_desc,atk1,atk2,atk3,atk4,hp1,hp2,hp3,hp4',
+  'weapons': 'id,name,jpname,evo_base,evo_max,rarity,element,type,ca1_desc,ca2_desc,ca3_desc,s1_name,s1_icon,s1_lvl,s1_desc,s1u1_name,s1u1_icon,s1u1_lvl,s1u1_desc,s2_name,s2_icon,s2_lvl,s2_desc,s2u1_name,s2u1_icon,s2u1_lvl,s2u1_desc,s3_name,s3_icon,s3_lvl,s3_desc,s3u1_name,s3u1_icon,s3u1_lvl,s3u1_desc,atk1,atk2,atk3,atk4,hp1,hp2,hp3,hp4',
   'class_skill': 'class,name,ix,family,row,ex,icon'
 }
 session = requests.Session()
@@ -213,12 +338,15 @@ def getTemplateValue(template, value):
     print(str(template.get('name').value).strip(), str(template.get('id').value).strip())
     raise
 
-def getTemplateValueOrNone(template, value):
+def getTemplateValueOrDefault(template, value, default):
   if template.has(value):
     result = str(template.get(value).value).strip()
     if len(result) > 0:
       return result
-  return None
+  return default
+
+def getTemplateValueOrNone(template, value):
+  return getTemplateValueOrDefault(template, value, default=None)
 
 def updateCharacters():
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
@@ -228,6 +356,7 @@ def updateCharacters():
   weaponspec_values = []
   skills = []
   skin_values = []
+  ougi_values = []
 
   with open(os.path.join('data', 'characters_category.json'), 'r', encoding='utf8') as fd, open(images_file, 'w', encoding='utf8') as images_file:
     data = json.load(fd)
@@ -315,6 +444,7 @@ def updateCharacters():
               if skill_name:
                 skill_name = mwparserfromhell.parse(skill_name.replace('<br />', ' ')).filter_text()[-1].strip()
                 skill_icon = getTemplateValue(template, 'a' + str(i) + '_icon').split(',')[0]
+                skill_desc = parseDescription(getTemplateValue(template, 'a' + str(i) + '_effdesc'))
 
                 skill_obtain = mwparserfromhell.parse(getTemplateValue(template, 'a' + str(i) + '_oblevel')).filter_templates()
                 if len(skill_obtain) > 0:
@@ -334,7 +464,7 @@ def updateCharacters():
                   if page_id not in defines.IGNORE_MISSING_SKILL:
                     print('[WARN] Skill', skill_name, 'for', name, 'id:', page_id, 'has no obtain level')
                   skill_obtain = 1
-                skills += [(character_id, i-1, skill_name, skill_obtain)]
+                skills += [(character_id, i-1, skill_name, skill_obtain, skill_desc)]
 
                 # Look for skill img
                 skill_filename = os.path.join(images_dir, str(character_id) + '_' + str(i-1) + '.png')
@@ -349,6 +479,28 @@ def updateCharacters():
           # Skins
           for s in skins:
             skin_values.append([s, character_id])
+          
+          # Ougi
+          ougi_name = getTemplateValue(template, 'ougi_name')
+          if len(ougi_name) > 0:
+            ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi_label', ''))
+            ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi_desc', ''))
+            ougi_values += [(character_id, 1, ougi_name, ougi_label + ' ' + ougi_desc)]
+          ougi_name = getTemplateValueOrDefault(template, 'ougi2_name', '')
+          if len(ougi_name) > 0:
+            ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi2_label', ''))
+            ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi2_desc', ''))
+            ougi_values += [(character_id, 2, ougi_name, ougi_label + ' ' + ougi_desc)]
+          ougi_name = getTemplateValueOrDefault(template, 'ougi3_name', '')
+          if len(ougi_name) > 0:
+            ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi3_label', ''))
+            ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi3_desc', ''))
+            ougi_values += [(character_id, 3, ougi_name, ougi_label + ' ' + ougi_desc)]
+          ougi_name = getTemplateValueOrDefault(template, 'ougi4_name', '')
+          if len(ougi_name) > 0:
+            ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi4_label', ''))
+            ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi4_desc', ''))
+            ougi_values += [(character_id, 4, ougi_name, ougi_label + ' ' + ougi_desc)]
 
       except Exception as e:
         raise type(e)(str(e) + ' happens for %s (%s)' % (name, page_id)).with_traceback(sys.exc_info()[2])
@@ -364,9 +516,12 @@ def updateCharacters():
     database.dico_tables.get('CharacterSkill').insert(skills)
     database.dico_tables.get('Skin_Character').drop()
     database.dico_tables.get('Skin_Character').insert(skin_values)
+    database.dico_tables.get('CharacterOugi').drop()
+    database.dico_tables.get('CharacterOugi').insert(ougi_values)
   if verbose:
     print(values)
     print(weaponspec_values)
+    print(ougi_values)
 
 
 def updateSummons():
@@ -376,7 +531,7 @@ def updateSummons():
   values = []
   auras = []
 
-  with open(working_file, "r") as read_file, open(images_file, 'w', encoding='utf8') as images_file:
+  with open(working_file, "r", encoding='utf8') as read_file, open(images_file, 'w', encoding='utf8') as images_file:
     data = json.load(read_file)
 
     for summon in data:
@@ -504,18 +659,20 @@ def downloadSkillIcon(images_dir, icon):
 
     with open(skill_filename, 'wb') as image_file:                  
       image_file.write(r.content)
-      
+
+
 def updateWeapons():
   working_file = os.path.join('data', 'weapons.json')
   images_file = os.path.join('data', 'weapons.images')
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'weapon_skills')
   values = []
+  ougis = []
   skills = []
   skills_desc = {}
   skills_desc_regex = re.compile('([a-z]+) boost ')
   weapon_ids = set()
   
-  with open(working_file, "r") as read_file, open(images_file, 'w', encoding='utf8') as images_file:
+  with open(working_file, "r", encoding='utf8') as read_file, open(images_file, 'w', encoding='utf8') as images_file:
     data = json.load(read_file)
     add_element = set()
     
@@ -568,7 +725,7 @@ def updateWeapons():
           print('[ERR] atk1 missing for', name, weapon_id)
         if int(weapon['hp1']) == 0:
           print('[ERR] hp1 missing for', name, weapon_id)
-    
+
       # Base infos
       values += [(weapon_id, name, weapon['jpname'], weapon['evo base'], weapon['evo max'],
         defines.getValue(weapon['rarity'], defines.RARITIES), defines.getValue(weapon['element'], defines.ELEMENTS),
@@ -576,6 +733,9 @@ def updateWeapons():
         int(weapon['atk1']), int(weapon['atk2']), int(weapon['atk3']), int(weapon['atk4']),
         int(weapon['hp1']), int(weapon['hp2']), int(weapon['hp3']), int(weapon['hp4']) )]
       
+      # Ougi
+      ougis += [(weapon_id, parseDescription(weapon['ca1 desc']), parseDescription(weapon['ca2 desc']), parseDescription(weapon['ca3 desc']))]
+
       # Icons
       for (s, i) in [('s1 ', 1), ('s1u1 ', 1), ('s2 ', 2), ('s2u1 ', 2), ('s3 ', 3), ('s3u1 ', 3)]:
         skillname = weapon[s + 'name'].strip().replace('  ', ' ')
@@ -594,8 +754,11 @@ def updateWeapons():
           if s == 's1u1 ' and skill_lvl == 1:
             skill_lvl = 101
 
+          # Description
+          skill_desc = parseDescription(weapon[s + 'desc'])
+
           # Test boost type in descriptions
-          regex_result = skills_desc_regex.match(weapon[s + 'desc'].lower())
+          regex_result = skills_desc_regex.match(skill_desc.lower())
           boost = None
           if regex_result:
             boost = regex_result.group(1)
@@ -620,13 +783,15 @@ def updateWeapons():
           skilldata = [(skilldataId, icon, skillname, None, boost)]
           skilldataId = database.dico_tables.get('Weapon_SkillData').insert(skilldata, returning="skilldataId")
 
-          skills += [(weapon_id, i, skill_lvl, skill_key, skilldataId)]
+          skills += [(weapon_id, i, skill_lvl, skill_key, skilldataId, skill_desc)]
 
   if addToDB:
     print('Updating Database...')
     database.dico_tables.get('Weapon_Skill').drop()
+    database.dico_tables.get('Weapon_Ougi').drop()
     database.dico_tables.get('Weapon').drop()
     database.dico_tables.get('Weapon').insert(values)
+    database.dico_tables.get('Weapon_Ougi').insert(ougis)
     database.dico_tables.get('Weapon_Skill').insert(skills)
 
     orphans = database.dico_tables.get('Weapon').getOrphans(weapon_ids, 'weaponId')
@@ -636,13 +801,14 @@ def updateWeapons():
   if verbose:
     print(values)
     print(skills)
+    print(ougis)
 
 
 def updateClasses():
   working_file = os.path.join('data', 'class_skill.json')
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'class_skills')
 
-  with open(working_file, "r") as read_file:
+  with open(working_file, "r", encoding='utf8') as read_file:
     class_values = []
     skill_values = []
     junction = []
@@ -729,6 +895,14 @@ def updateClasses():
       print(families)
 
 
+def testFunction():
+  skill_desc = ""
+  skill_desc = parseDescription(skill_desc)
+
+  print(skill_desc)
+  print('')
+
+
 def printHelp():
   print('-h: Print help')
   print('-d: Download new data in new directory')
@@ -744,7 +918,7 @@ def printHelp():
 
 def main(argv):
   try:
-    opts, args = getopt.getopt(argv, 'hdnv', ['cha', 'sum', 'wea', 'cla', 'all'])
+    opts, args = getopt.getopt(argv, 'hdnv', ['cha', 'sum', 'wea', 'cla', 'all', 'test'])
   except getopt.GetoptError:
     printHelp()
   if len(argv) == 0 or (len(opts) == 0 and len(args) > 0):
@@ -777,6 +951,8 @@ def main(argv):
       updateSummons()
       updateWeapons()
       updateClasses()
+    elif opt == '--test':
+      testFunction()
     elif opt != '-n' and opt != '-v':
       printHelp()
 

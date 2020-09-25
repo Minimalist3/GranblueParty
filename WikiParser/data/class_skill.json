@@ -1413,6 +1413,42 @@
     "icon": "Ability m 313_1.png"
   },
   {
+    "class": "Robin Hood",
+    "name": "Acrobatic Volley",
+    "ix": "ex1",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1274_4.png"
+  },
+  {
+    "class": "Robin Hood",
+    "name": "Emerald Fog",
+    "ix": "ex2",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1275_4.png"
+  },
+  {
+    "class": "Robin Hood",
+    "name": "Return of the Fox",
+    "ix": "ex3",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1276_3.png"
+  },
+  {
+    "class": "Robin Hood",
+    "name": "Opening Shot",
+    "ix": "s1",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "0",
+    "icon": "Ability_m_1273_1.png"
+  },
+  {
     "class": "Sage",
     "name": "Blessing II",
     "ix": "ex1",

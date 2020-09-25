@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-08-31:</b> Juliet (Water)</p>
+        <p><b>2020-09-16:</b> Golden Knight, Diantha</p>
       </div>
 
       <div>

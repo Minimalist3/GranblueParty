@@ -5,7 +5,7 @@ import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import {
   faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
-  faFile, faFolderOpen, faInfoCircle, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
+  faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon as faVue } from '@fortawesome/vue-fontawesome'
 import faCSS from '@fortawesome/fontawesome-free/css/svg-with-js.min.css'
@@ -27,7 +27,7 @@ import getAxiosInstance from '@/js/axios'
 // FontAwesome setup
 faCore.add(
   faTwitter, faGithub, faEnvelope, faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
-  faFile, faFolderOpen, faInfoCircle, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
+  faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave
 );
 Vue.component('fa-icon', faVue);
 

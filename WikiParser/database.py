@@ -209,42 +209,42 @@ class Table:
 # Static data
 all_tables = [
   Table('Rarity',
-        [ Col('rarityId', 'INT NOT NULL', True),
+        [ Col('rarityId', 'INT NOT NULL', primary=True),
           Col('rarityName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate()
         .setConstArray(defines.RARITIES),
   Table('Element',
-        [ Col('elementId', 'INT NOT NULL', True),
+        [ Col('elementId', 'INT NOT NULL', primary=True),
           Col('elementName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate()
         .setConstArray(defines.ELEMENTS),
   Table('CharacterType',
-        [ Col('characterTypeId', 'INT NOT NULL', True),
+        [ Col('characterTypeId', 'INT NOT NULL', primary=True),
           Col('characterTypeName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate()
         .setConstArray(defines.CHARATYPES),
   Table('Race',
-        [ Col('raceId', 'INT NOT NULL', True),
+        [ Col('raceId', 'INT NOT NULL', primary=True),
           Col('raceName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate()
         .setConstArray(defines.RACES),
   Table('WeaponType',
-        [ Col('weaponTypeId', 'INT NOT NULL', True),
+        [ Col('weaponTypeId', 'INT NOT NULL', primary=True),
           Col('weaponTypeName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate()
         .setConstArray(defines.WEAPONTYPES),
   Table('DrawType',
-        [ Col('drawTypeId', 'INT NOT NULL', True),
+        [ Col('drawTypeId', 'INT NOT NULL', primary=True),
           Col('drawTypeName', 'TEXT UNIQUE NOT NULL')
         ])
         .setDoNotCopy()
@@ -252,7 +252,7 @@ all_tables = [
         .setConstDict(defines.OBTAIN),
   # Stable, update
   Table('Character',
-        [ Col('characterId', 'INT NOT NULL', True),
+        [ Col('characterId', 'INT NOT NULL', primary=True),
           Col('nameEn', 'TEXT NOT NULL'),
           Col('nameJp', 'TEXT NOT NULL'),
           Col('starsBase', 'INT NOT NULL'),
@@ -270,7 +270,7 @@ all_tables = [
         ])
         .setUpdateOnConflict(),
   Table('Summon',
-        [ Col('summonId', 'INT NOT NULL', True),
+        [ Col('summonId', 'INT NOT NULL', primary=True),
           Col('nameEn', 'TEXT NOT NULL'),
           Col('nameJp', 'TEXT NOT NULL'),
           Col('starsBase', 'INT NOT NULL'),
@@ -291,7 +291,7 @@ all_tables = [
         ])
         .setUpdateOnConflict(),
   Table('Weapon',
-        [ Col('weaponId', 'INT NOT NULL', True),
+        [ Col('weaponId', 'INT NOT NULL', primary=True),
           Col('nameEn', 'TEXT NOT NULL'),
           Col('nameJp', 'TEXT NOT NULL'),
           Col('starsBase', 'INT NOT NULL'),
@@ -310,7 +310,7 @@ all_tables = [
         ])
         .setUpdateOnConflict(),
   Table('Weapon_SkillData',
-        [ Col('skilldataId', 'INT NOT NULL', True),
+        [ Col('skilldataId', 'INT NOT NULL', primary=True),
           Col('icon', 'TEXT NOT NULL'),
           Col('skillName', 'TEXT NOT NULL'),
           Col('data', 'JSON', updateOnInsert=False),
@@ -320,62 +320,78 @@ all_tables = [
         conflictCondition="icon, skillName")
         .setUpdateOnConflict(),
   Table('Weapon_Skill',
-        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', True),
-          Col('slot', 'INT NOT NULL', True),
-          Col('level', 'INT NOT NULL', True),
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('slot', 'INT NOT NULL', primary=True),
+          Col('level', 'INT NOT NULL', primary=True),
           Col('keyId', 'INT'),
-          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)')          
+          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)'),
+          Col('description', 'TEXT')
+        ])
+        .setUpdateOnConflict(),
+  Table('Weapon_Ougi',
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('ougiMLB', 'TEXT'),
+          Col('ougiFLB', 'TEXT'),
+          Col('ougiULB', 'TEXT')
         ])
         .setUpdateOnConflict(),
   # Clear
   Table('Class',
-        [ Col('classId', 'INT NOT NULL', True),
+        [ Col('classId', 'INT NOT NULL', primary=True),
           Col('nameEn', 'TEXT NOT NULL'),
           Col('row', 'INT NOT NULL'),
           Col('family', 'INT NOT NULL')
         ])
         .setDropBeforeUpdate(),
   Table('WeaponSpecialty',
-        [ Col('characterId', 'INT REFERENCES Character(characterId)', True),
-          Col('weaponTypeId', 'INT REFERENCES WeaponType(weaponTypeId)', True)
+        [ Col('characterId', 'INT REFERENCES Character(characterId)', primary=True),
+          Col('weaponTypeId', 'INT REFERENCES WeaponType(weaponTypeId)', primary=True)
         ])
         .setDropBeforeUpdate(),
   Table('CharacterSkill',
-        [ Col('characterId', 'INT REFERENCES Character(characterId)', True),
-          Col('characterSkillOrder', 'INT NOT NULL', True),
+        [ Col('characterId', 'INT REFERENCES Character(characterId)', primary=True),
+          Col('characterSkillOrder', 'INT NOT NULL', primary=True),
           Col('characterSkillName', 'TEXT NOT NULL'),
-          Col('characterSkillObtain', 'INT')
+          Col('characterSkillObtain', 'INT'),
+          Col('characterSkillDescription', 'TEXT'),
         ])
         .setDropBeforeUpdate(),
   Table('ClassSkill',
-        [ Col('skillId', 'INT NOT NULL', True),
+        [ Col('skillId', 'INT NOT NULL', primary=True),
           Col('nameEn', 'TEXT NOT NULL'),
           Col('family', 'INT'),
           Col('exMastery', 'BOOLEAN NOT NULL')
         ])
         .setDropBeforeUpdate(),
   Table('Class_ClassSkill',
-        [ Col('classId', 'INT NOT NULL REFERENCES Class(classId)', True),
-          Col('skillId', 'INT NOT NULL REFERENCES ClassSkill(skillId)', True),
+        [ Col('classId', 'INT NOT NULL REFERENCES Class(classId)', primary=True),
+          Col('skillId', 'INT NOT NULL REFERENCES ClassSkill(skillId)', primary=True),
           Col('index', 'INT NOT NULL')
         ])
         .setDropBeforeUpdate(),
   Table('Skin_Character',
-        [ Col('skinId', 'INT NOT NULL', True),
-          Col('characterId', 'INT REFERENCES Character(characterId)', True)
+        [ Col('skinId', 'INT NOT NULL', primary=True),
+          Col('characterId', 'INT REFERENCES Character(characterId)', primary=True)
         ])
-        .setDropBeforeUpdate(),      
+        .setDropBeforeUpdate(),
+  Table('CharacterOugi',
+        [ Col('characterId', 'INT NOT NULL REFERENCES Character(characterId)', primary=True),
+          Col('ougiIndex', 'INT NOT NULL', primary=True),
+          Col('ougiName', 'TEXT'),
+          Col('ougiDescription', 'TEXT'),
+        ])
+        .setDropBeforeUpdate(),
   # Protected
   Table('UserAccount',
-        [ Col('userid', 'SERIAL', True), # This column should be ignored by the iterators of class Table, but since the functions are not used for this table, it's Ok
+        [ Col('userid', 'SERIAL', primary=True), # This column should be ignored by the iterators of class Table, but since the functions are not used for this table, it's Ok
           Col('username', 'TEXT UNIQUE NOT NULL'),
           Col('password', 'TEXT NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
   Table('UserCollectionCharacter',
-        [ Col('userid', 'INT NOT NULL REFERENCES UserAccount(userid)', True),
-          Col('characterId', 'INT NOT NULL REFERENCES Character(characterId)', True),
+        [ Col('userid', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
+          Col('characterId', 'INT NOT NULL REFERENCES Character(characterId)', primary=True),
           Col('stars', 'INT'),
           Col('owned', 'BOOLEAN NOT NULL'),
           Col('awakening', 'INT')
@@ -383,15 +399,15 @@ all_tables = [
         .setDoNotCopy()
         .setDoNotUpdate(),
   Table('UserCollectionSummon',
-        [ Col('userid', 'INT NOT NULL REFERENCES UserAccount(userid)', True),
-          Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', True),
+        [ Col('userid', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
+          Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
           Col('stars', 'INT'),
           Col('owned', 'BOOLEAN NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
   Table('Party',
-        [ Col('partyId', 'SERIAL', True),
+        [ Col('partyId', 'SERIAL', primary=True),
           Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)'),
           Col('partyName', 'TEXT'),
           Col('partyData', 'JSON NOT NULL'),
@@ -400,13 +416,13 @@ all_tables = [
         .setDoNotCopy()
         .setDoNotUpdate(),
   Table('Daily',
-        [ Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', True),
+        [ Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
           Col('dailyData', 'JSON NOT NULL')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
   Table('SummonAura',
-        [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', True),
+        [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
           Col('aura', 'TEXT'),
           Col('auraMLB', 'TEXT'),
           Col('auraFLB', 'TEXT'),

@@ -8,7 +8,7 @@
 
     <nav class="mb-4" role="navigation" aria-label="pagination">
       <ul class="flex flex-row flex-wrap">
-        <li v-for="i in Math.ceil(message.length / 10)" :key="i">
+        <li v-for="i in Math.ceil(message.length / slice_size)" :key="i">
           <a 
             class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
             :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
@@ -33,7 +33,7 @@
 
     <nav role="navigation" aria-label="pagination">
       <ul class="flex flex-row flex-wrap">
-        <li v-for="i in Math.ceil(message.length / 10)" :key="i">
+        <li v-for="i in Math.ceil(message.length / slice_size)" :key="i">
           <a
             class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
             :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"

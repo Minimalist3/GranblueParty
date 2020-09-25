@@ -10,19 +10,35 @@
 
         <!-- For desktop -->
         <div class="hidden lg:flex lg:h-12">
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/builder">Party Builder</router-link>
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/collection">My Collection</router-link>
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/release">Release Schedule</router-link>
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/friendsum">Friend Summons</router-link>
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/dailygrind">Daily Grind List</router-link>
-          <router-link class="px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary" to="/roomname">Room Name Gen.</router-link>
+          <!-- Tools -->
+          <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
+            <span class="select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
+              <router-link class="gbf-menu-hoverable-link" to="/builder">Party Builder</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/collection">My Collection</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/dailygrind">Daily Grind List</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/roomname">Room Name Gen.</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/friendsum">Friend Summons</router-link>
+            </div>
+          </div>
+          <!-- Data -->
+          <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
+            <span class="select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">              
+              <router-link class="gbf-menu-hoverable-link" to="/release">Release Schedule</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/search">Search</router-link>
+            </div>
+          </div>
+          <!-- Calculators -->
           <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
             <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
-              <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevoker">Evokers</router-link>
-              <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary whitespace-no-wrap" to="/calcgw">Guild Wars Tokens</router-link>
-              <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary whitespace-no-wrap" to="/calcevent">New Event Tokens</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/calcevoker">Evokers</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/calcgw">Guild Wars Tokens</router-link>
+              <router-link class="gbf-menu-hoverable-link" to="/calcevent">New Event Tokens</router-link>
             </div>
           </div>
         </div>
@@ -49,6 +65,7 @@
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/builder">Party Builder</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/collection">My Collection</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/release">Release Schedule</router-link>
+        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/search">Search</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/friendsum">Friend Summons</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/dailygrind">Daily Grind List</router-link>
         <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/roomname">Room Name Generator</router-link>
@@ -241,6 +258,18 @@ export default {
 .gbf-menu-hoverable:hover > .gbf-menu-hover {
   @apply flex;
   @apply flex-col;
+}
+
+.gbf-menu-hoverable-link {
+  @apply p-2;
+  @apply pr-8;
+  @apply text-primary;
+  @apply whitespace-no-wrap;
+}
+
+.gbf-menu-hoverable-link:hover {
+  @apply bg-tertiary;
+  @apply text-primary;
 }
 
 .progress-animation {

@@ -63,6 +63,8 @@ app.use('/tracker', routes.tracker);
 app.use('/user', routes.user);
 // Release schedule
 app.use('/release', routes.release);
+// Search
+app.use('/search', routes.search);
 
 if (process.env.NODE_ENV === "production") {
 

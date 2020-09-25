@@ -51,17 +51,19 @@ let config = {
         {
           loader: 'postcss-loader',
           options: {
-            ident: 'postcss',
-            plugins: [
-              require('postcss-import'),
-              require('tailwindcss'),
-              require('autoprefixer'),
-              require('cssnano')({
-                preset: ['default', {
-                  discardComments: { removeAll: ! devMode }
-                }],
-              })
-            ]
+            postcssOptions: {
+              ident: 'postcss',
+              plugins: [
+                'postcss-import',
+                'tailwindcss',
+                'autoprefixer',
+                ['cssnano', {
+                  preset: ['default', {
+                    discardComments: { removeAll: ! devMode }
+                  }],
+                }]
+              ]
+            }
           }
         }
        ]

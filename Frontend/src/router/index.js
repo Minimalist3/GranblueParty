@@ -81,6 +81,11 @@ export function createRouter(store) {
         component: () => import(/* webpackChunkName: "roomname" */ '@/pages/RoomName.vue'),
         pathToRegexpOptions: { strict: true },
       },
+      {
+        path: '/search',
+        component: () => import(/* webpackChunkName: "search" */ '@/pages/Search.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
   /// #if DEBUG
       {
         path: '/admin',
