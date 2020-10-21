@@ -35,6 +35,11 @@ export default {
   state() {
     return INITIAL_DATA();
   },
+  mutations: {
+    resetCollection(state, value) {
+      Object.assign(state, INITIAL_DATA());
+    },
+  },
   actions: {
     fetchCollection({ state, dispatch }, userId) {
       if (state.user_id !== userId) {

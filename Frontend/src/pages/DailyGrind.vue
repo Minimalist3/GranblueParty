@@ -400,8 +400,8 @@ export default {
     const preserve_state = !! this.$store.state.daily_grind;
     this.$store.registerModule('daily_grind', grindModule, { preserveState: preserve_state });
   },
-  destroyed () {
-    this.$store.unregisterModule('daily_grind')
+  destroyed() {
+    this.$store.unregisterModule('daily_grind');
   },
 }
 </script>

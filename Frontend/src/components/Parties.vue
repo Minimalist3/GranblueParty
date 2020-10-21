@@ -493,8 +493,8 @@ export default {
     const preserve_state = !! this.$store.state.parties
     this.$store.registerModule('parties', partiesModule, { preserveState: preserve_state });
   },
-  destroyed () {
-    this.$store.unregisterModule('parties')
+  destroyed() {
+    this.$store.unregisterModule('parties');
   },
 }
 </script>

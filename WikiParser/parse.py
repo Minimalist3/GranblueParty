@@ -72,6 +72,9 @@ multiple_spaces_regex = re.compile('[ ]+')
 html_attr1_regex = re.compile('(<[^/][^>]*?=\"[a-zA-Z ]*?)([ ]*?[/]??>)')
 html_attr2_regex = re.compile('([a-zA-Z0-9])/>')
 def parseDescription(text):
+  if text == None:
+    return text
+
   #print(text)
   skill_desc = html_attr1_regex.sub(r'\g<1>" \g<2>', text)
   #print(skill_desc)
@@ -426,11 +429,12 @@ def updateCharacters():
             if getTemplateValueOrNone(template, 'max_hp') == None:
               print('[WARN] max_hp missing for', name, page_id)
     
-          values += [(character_id, name, getTemplateValue(template, 'jpname'),
+          values += [(character_id, name, getTemplateValueOrDefault(template, 'jpname', ''),
             getTemplateValue(template, 'base_evo'), getTemplateValue(template, 'max_evo'),
             rarity, element, chara_type, race, recruit_id, getTemplateValue(template, 'release_date'),
             getTemplateValueOrNone(template, 'max_atk'), getTemplateValueOrNone(template, 'flb_atk'),
-            getTemplateValueOrNone(template, 'max_hp'), getTemplateValueOrNone(template, 'flb_hp') )]
+            getTemplateValueOrNone(template, 'max_hp'), getTemplateValueOrNone(template, 'flb_hp'),
+            getTemplateValueOrNone(template, 'join_weapon') )]
 
           # Weapons
           for weapon in getTemplateValue(template, 'weapon').split(','):
@@ -635,10 +639,15 @@ def updateSummons():
               print('[WARN] aura2 missing for', name, page_id)
 
         auras += [(summon_id,
-          getTemplateValueOrNone(template, 'aura1'), getTemplateValueOrNone(template, 'aura2'),
-          getTemplateValueOrNone(template, 'aura3'), getTemplateValueOrNone(template, 'aura4'),
-          getTemplateValueOrNone(template, 'subaura1'), getTemplateValueOrNone(template, 'subaura2'),
-          getTemplateValueOrNone(template, 'subaura3'), getTemplateValueOrNone(template, 'subaura4'), False )]
+          parseDescription(getTemplateValueOrNone(template, 'aura1')),
+          parseDescription(getTemplateValueOrNone(template, 'aura2')),
+          parseDescription(getTemplateValueOrNone(template, 'aura3')),
+          parseDescription(getTemplateValueOrNone(template, 'aura4')),
+          parseDescription(getTemplateValueOrNone(template, 'subaura1')),
+          parseDescription(getTemplateValueOrNone(template, 'subaura2')),
+          parseDescription(getTemplateValueOrNone(template, 'subaura3')),
+          parseDescription(getTemplateValueOrNone(template, 'subaura4')),
+          False )]
 
   if addToDB:
     print('Updating Summon table...')

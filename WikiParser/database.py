@@ -267,6 +267,7 @@ all_tables = [
           Col('atkFLB', 'INT'),
           Col('hpMLB', 'INT'),
           Col('hpFLB', 'INT'),
+          Col('weapon', 'TEXT')
         ])
         .setUpdateOnConflict(),
   Table('Summon',
@@ -333,6 +334,19 @@ all_tables = [
           Col('ougiMLB', 'TEXT'),
           Col('ougiFLB', 'TEXT'),
           Col('ougiULB', 'TEXT')
+        ])
+        .setUpdateOnConflict(),
+  Table('SummonAura',
+        [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
+          Col('aura', 'TEXT'),
+          Col('auraMLB', 'TEXT'),
+          Col('auraFLB', 'TEXT'),
+          Col('auraULB', 'TEXT'),
+          Col('subaura', 'TEXT'),
+          Col('subauraMLB', 'TEXT'),
+          Col('subauraFLB', 'TEXT'),
+          Col('subauraULB', 'TEXT'),
+          Col('ignore', 'BOOLEAN DEFAULT False', updateOnInsert=False)
         ])
         .setUpdateOnConflict(),
   # Clear
@@ -421,21 +435,6 @@ all_tables = [
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
-  Table('SummonAura',
-        [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
-          Col('aura', 'TEXT'),
-          Col('auraMLB', 'TEXT'),
-          Col('auraFLB', 'TEXT'),
-          Col('auraULB', 'TEXT'),
-          Col('subaura', 'TEXT'),
-          Col('subauraMLB', 'TEXT'),
-          Col('subauraFLB', 'TEXT'),
-          Col('subauraULB', 'TEXT'),
-          Col('ignore', 'BOOLEAN DEFAULT False', updateOnInsert=False)
-        ])
-        .setDoNotCopy()
-        .setDoNotUpdate()
-        .setUpdateOnConflict(),
 ]
 
 dico_tables = {}

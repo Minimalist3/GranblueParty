@@ -273,7 +273,7 @@ export default {
     const preserve_state = !! this.$store.state.release;
     this.$store.registerModule('release', releaseModule, { preserveState: preserve_state });
   },
-  destroyed () {
+  destroyed() {
     this.$store.unregisterModule('release');
   },
 }

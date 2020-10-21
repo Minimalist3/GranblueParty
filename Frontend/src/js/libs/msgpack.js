@@ -4,15 +4,28 @@
 	// Serializes a value to a MessagePack byte array.
 	//
 	// data: The value to serialize. This can be a scalar, array or object.
-	function serialize(data) {
+	// options: An object that defined additional options.
+	// - multiple: Indicates whether multiple values in data are concatenated to multiple MessagePack arrays.
+	// - invalidTypeReplacement: The value that is used to replace values of unsupported types, or a function that returns such a value, given the original value as parameter.
+	function serialize(data, options) {
+		if (options && options.multiple && !Array.isArray(data)) {
+			throw new Error("Invalid argument type: Expected an Array to serialize multiple values.");
+		}
 		const pow32 = 0x100000000;   // 2^32
 		let floatBuffer, floatView;
 		let array = new Uint8Array(128);
 		let length = 0;
-		append(data);
+		if (options && options.multiple) {
+			for (let i = 0; i < data.length; i++) {
+				append(data[i]);
+			}
+		}
+		else {
+			append(data);
+		}
 		return array.subarray(0, length);
 
-		function append(data) {
+		function append(data, isReplacement) {
 			switch (typeof data) {
 				case "undefined":
 					appendNull(data);
@@ -42,6 +55,16 @@
 					else
 						appendObject(data);
 					break;
+				default:
+					if (!isReplacement && options && options.invalidTypeReplacement) {
+						if (typeof options.invalidTypeReplacement === "function")
+							append(options.invalidTypeReplacement(data), true);
+						else
+							append(options.invalidTypeReplacement, true);
+					}
+					else {
+						throw new Error("Invalid argument type: The type '" + (typeof data) + "' cannot be serialized.");
+					}
 			}
 		}
 
@@ -156,7 +179,11 @@
 
 		function appendObject(data) {
 			let length = 0;
-			for (let key in data) length++;
+			for (let key in data) {
+				if (data[key] !== undefined) {
+					length++;
+				}
+			}
 
 			if (length <= 0xf)
 				appendByte(0x80 + length);
@@ -166,8 +193,11 @@
 				appendBytes([0xdf, length >>> 24, length >>> 16, length >>> 8, length]);
 
 			for (let key in data) {
-				append(key);
-				append(data[key]);
+				let value = data[key];
+				if (value !== undefined) {
+					append(key);
+					append(value);
+				}
 			}
 		}
 
@@ -237,18 +267,34 @@
 	// Deserializes a MessagePack byte array to a value.
 	//
 	// array: The MessagePack byte array to deserialize. This must be an Array or Uint8Array containing bytes, not a string.
-	function deserialize(array) {
+	// options: An object that defined additional options.
+	// - multiple: Indicates whether multiple concatenated MessagePack arrays are returned as an array.
+	function deserialize(array, options) {
 		const pow32 = 0x100000000;   // 2^32
 		let pos = 0;
+		if (array instanceof ArrayBuffer) {
+			array = new Uint8Array(array);
+		}
 		if (typeof array !== "object" || typeof array.length === "undefined") {
 			throw new Error("Invalid argument type: Expected a byte array (Array or Uint8Array) to deserialize.");
+		}
+		if (!array.length) {
+			throw new Error("Invalid argument: The byte array to deserialize is empty.");
 		}
 		if (!(array instanceof Uint8Array)) {
 			array = new Uint8Array(array);
 		}
-		let data = read();
-		if (pos < array.length) {
-			// Junk data at the end
+		let data;
+		if (options && options.multiple) {
+			// Read as many messages as are available
+			data = [];
+			while (pos < array.length) {
+				data.push(read());
+			}
+		}
+		else {
+			// Read only one message and ignore additional data
+			data = read();
 		}
 		return data;
 
@@ -291,7 +337,8 @@
 			if (byte === 0xde) return readMap(-1, 2);   // map 16
 			if (byte === 0xdf) return readMap(-1, 4);   // map 32
 			if (byte >= 0xe0 && byte <= 0xff) return byte - 256;   // negative fixint
-			throw new Error("Invalid byte value " + byte + " in the MessagePack binary data : Expecting a range of 0 to 255. This is not a byte array.");
+			console.debug("msgpack array:", array);
+			throw new Error("Invalid byte value '" + byte + "' at index " + (pos - 1) + " in the MessagePack binary data (length " + array.length + "): Expecting a range of 0 to 255. This is not a byte array.");
 		}
 
 		function readInt(size) {
@@ -324,7 +371,7 @@
 		}
 
 		function readFloat(size) {
-			let view = new DataView(array.buffer, pos, size);
+			let view = new DataView(array.buffer, pos + array.byteOffset, size);
 			pos += size;
 			if (size === 4)
 				return view.getFloat32(0, false);
@@ -419,7 +466,7 @@
 				break;
 			}
 		}
-		
+
 		// Based on: https://gist.github.com/pascaldekloe/62546103a1576803dade9269ccf76330
 		let i = 0, bytes = new Uint8Array(str.length * (ascii ? 1 : 4));
 		for (let ci = 0; ci !== length; ci++) {
@@ -504,11 +551,6 @@
 	else {
 		// Global object
 		window[window.msgpackJsName || "msgpack"] = msgpack;
-
-		if (typeof define === "function" && define.amd) {
-			// AMD
-			define("msgpack", [], function () { return msgpack; });
-		}
 	}
 
-})(this);
+})();

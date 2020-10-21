@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-09-16:</b> Golden Knight, Diantha</p>
+        <p><b>2020-10-17:</b> Azazel (Halloween), Rosetta (Halloween)</p>
       </div>
 
       <div>
@@ -134,6 +134,16 @@ All the raids will open in the same window, reducing the number of clicks needed
     image: '/img/preview_roomname.png',
     text: 
 `Generate a japanese co-op room name in a few clicks for the raid you want to host.`
+  },
+  {
+    title: 'Spark Maker',
+    link: '/spark',
+    image: '/img/preview_spark.png',
+    webp: '/img/preview_spark.webp',
+    text: 
+`Record the result of your Spark while drawing it, then share it with your friends.
+You can search units by English, Japanese or Weapon name.
+The result of your Spark can be directly added to your Collection.`
   },
 ]
 

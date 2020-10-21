@@ -86,6 +86,11 @@ export function createRouter(store) {
         component: () => import(/* webpackChunkName: "search" */ '@/pages/Search.vue'),
         pathToRegexpOptions: { strict: true },
       },
+      {
+        path: '/spark',
+        component: () => import(/* webpackChunkName: "spark" */ '@/pages/Spark.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
   /// #if DEBUG
       {
         path: '/admin',

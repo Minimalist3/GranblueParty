@@ -495,9 +495,9 @@
 3030116	0	Steel Gram	1	200% Light damage to all foes (Damage cap: ~360,000). (Boost to damage as number of foes decrease) At level 45: Damage increased.
 3030116	1	Full Break II	1	150% Light damage to a foe (Damage cap: ~220,000). Inflict ATK Down, DEF Down, and Mode Bar Cut. At level 65: Effect enhanced.
 3030116	2	Beastial Power	35	Gain ATK Up, DEF Up, DA Up, and TA Up.
-3030117	0	Human Bullet Strength	1	Gain Substitute and DEF Up. Remove all DEF Lowered (Stackable) stacks caused by Deflection Muscles. ''(Uses 10% of charge bar)'' At level 45: Effect enhanced.
-3030117	1	Human Bullet Speed	1	Gain Substitute, DEF Up, and DA Up. ''(Uses 10% of charge bar)'' At level 65: Effect enhanced.
-3030117	2	Human Bullet Strike	35	Gain Substitute and Counters on Dodge. ''(Uses 30% of charge bar)''
+3030117	0	Human Bullet Strength	1	Gain Substitute and DEF Up. Remove all DEF Lowered (Stackable) stacks caused by Deflection Muscles. (Consumes 10% of charge bar.) At level 45: Effect enhanced.
+3030117	1	Human Bullet Speed	1	Gain Substitute, DEF Up, and DA Up. (Consumes 10% of charge bar.) At level 65: Effect enhanced.
+3030117	2	Human Bullet Strike	35	Gain Substitute and Counters on Dodge. (Consumes 30% of charge bar.)
 3030118	0	Clover Brand	1	Wind damage to a foe (Damage cap: ~270,000 per hit). Boost to number of attacks based on charge bar lvl (Max: 10 hits). ''(Uses all of charge bar)'' At level 45: Damage increased
 3030118	1	Hope of Tomorrow	1	Gain DEF Up and Mirror Image for 1 hit.
 3030118	2	Everchanging	35	Gain Uplifted.
@@ -620,8 +620,8 @@
 3030159	1	Blockade	1	Earth damage to all foes. Inflict Blind. At level 65: Effect enhanced.
 3030159	2	Nachtangriff	35	Grant an ally Critical Up and Hostility Boosted.
 3030160	0	Star Magic	1	Gain Bonus Water Damage.
-3030160	1	Twinkling Stars	1	Water damage to a foe. Gain Double Attack Rate Boosted.
-3030160	2	Icy Smile	35	Inflict Lyot and DEF Down on a foe.
+3030160	1	Twinkling Stars	1	100% Water damage to a foe (Damage cap: ~180.000). Gain Double Attack Rate Boosted.
+3030160	2	Icy Smile	35	Inflict Lyot and DEF Down on a foe. 
 3030161	0	Wish for Joy	1	All allies gain ATK Up. At level 45: Buff increased to ATK Up. 
 3030161	1	Cuddle Time	1	Restore an ally's HP (Healing cap: 750) and remove 1 debuff. ('Use Cuddly:' Affects all allies instead.)
 3030161	2	Circle of Friends	35	Inflict ATK Down and Persuasion on all foes. ('Use Cuddly:' Boost to Persuasion effectiveness. Inflict ATK Down.)
@@ -965,6 +965,9 @@
 3030320	0	Aqua Heal	1	Restore an ally's HP (Healing cap: 1000). Target ally gains ATK Boosted (Stackable) and DEF Boosted (Stackable). ('When target is below 25% HP:' Activates twice.)
 3030320	1	Run, Swim, Run	1	Switch out with a sub ally. Reset Rescue lvl. (All allies gain Refresh after switching out based on Rescue lvl.)
 3030320	2	CPR	35	Revive a Water ally. (Boost to HP restored based on Rescue lvl.)
+3030321	0	Schutz aus Eisen	1	Gain Substitute and Counters on DMG. Raise Lone Wolf Trick lvl by 1
+3030321	1	Nacht Fang	1	Gain Charge Bar. ('When Lone Wolf Trick lvl is 5:' Also gain Nacht Fang.)
+3030321	2	Wolf Schrei	35	Clear a foe's charge diamonds. (Can only be used when Lone Wolf Trick lvl is 5. Can't be recast.)
 3040000	0	Fracture	1	Wind damage to a foe. Inflict ATK Down. At level 90: Damage increased to 500%. Damage cap increased to ~820,000. Also inflict Earth ATK Lowered. Debuff strength increased to ATK Down. ATK Down base accuracy increased.
 3040000	1	Rebellion	1	1000% Wind damage to all foes (Damage cap: ~1,160,000). Gain Jammed. (Consumes 30% of max HP.)
 3040000	2	Noblesse Oblige	45	All allies gain 60% DMG Cut. At level 100: All allies also gain Debuff Resistance Boosted. Buff increased to 70% DMG Cut.
@@ -991,7 +994,7 @@
 3040007	1	Frozen Gale	1	150%-200% Water damage to all foes (Damage cap: ~420,000). Inflict Glaciate 3. At level 75: Damage increased to 250%-350%. At level 100: Damage increased to 400%. Damage cap increased to ~500,000. Glaciate 3 success rate increased to 100%. Also inflict ATK Down Stack and DEF Down Stack. 'When 2 or more races among main allies:' Damage cap increased to ~600,000. 'When 3 or more races among main allies:' Activates twice.
 3040007	2	White Heal	45	Restore 20% of all allies' HP (Healing cap: 1500) and remove 1 debuff.
 3040008	0	Mad Veil	1	All allies gain 70% Dark Cut and Aurora Crest 1. At level 95: All allies also gain Light ATK Up.
-3040008	1	Hitch Force	1	250%-300% Light damage to a foe (Damage cap: ~400,000). Inflict Holy Spike. At level 90: Also inflict Delay (Special). If successful, gain Charged. Damage cap increased to ~550,000.
+3040008	1	Hitch Force	1	250%-300% Light damage to a foe (Damage cap: ~400,000). Inflict Holy Spike. At level 90: Also inflict Delay (Special). If successful, gain Charged. Damage cap increased to ~550,000. 
 3040008	2	Holy Suction	45	Restore all allies' HP (Healing cap: 1500) and remove 1 debuff. 
 3040008	3	Void Soul	100	Gain Instant Charge. End cooldown for caster's other skills
 3040009	0	Collapse	1	400%-450% Earth damage to all foes (Damage cap: ~500,000). Inflict DEF Down. At level 90: Debuff increased to DEF Down. Also inflict Earth DEF Down.
@@ -1291,9 +1294,9 @@
 3040099	0	Flamek Thunder	1	Earth damage to all foes (Damage cap: ~480,000). Inflict Paralyzed 2. Raise Loaded lvl by 2. At level 55: Damage increased to 250%-350%.
 3040099	1	Tonight I Fly	1	400%-500% Earth damage to a foe (Damage cap: ~550,000). Inflict Earth DEF Lowered. 'Use 2 Loaded:' Activates twice. Boost debuff success rate to 100%. 
 3040099	2	Wasted Earth	45	All Earth allies gain Critical Hit Rate Boosted (Earth), DA Up, and TA Up. 'Use 2 Loaded:' All Earth allies also gain Keen. 
-3040100	0	Niflheim	1	Gain Icy Blade and ATK Boosted (Stackable/Can't be removed). At level 55: Buff increased to ATK Up Stack.
-3040100	1	Farewell	1	All allies gain Critical Up. (Consumes 20% of charge bar.) At level 75: Buff increased to Critical Up.
-3040100	2	Immutable Faith	45	Gain Charge Bar Speed UP and Hostility Lowered.
+3040100	0	Niflheim	1	500% Water damage to a foe (Damage cap: ~630,000). Gain 1 Icy Blade and ATK Boosted (Stackable/Can't be removed). At level 55: Effect enhanced.
+3040100	1	Farewell	1	All allies gain Critical Up. (Consumes 20% of charge bar.) At level 100: No longer consumes charge bar. All allies also gain Keen and Revitalize. 
+3040100	2	Immutable Faith	45	Gain Charge Bar Speed UP and Hostility Lowered. At level 90: No longer gain Charge Bar Speed UP and Hostility Lowered. Gain Ice Barrier and a shield effect worth 3000. (Ice Barrier ends when shield endurance hits 0.)
 3040101	0	Sonic Boom	1	500% Wind damage to a foe (Damage cap: ~700,000). Raise Silverwing Blessing lvl by 1 (Max: 3) At level 55: Effect enhanced.
 3040101	1	First Aid	1	Restore 10% of an ally's HP (Healing cap: 1000) and remove 1 debuff. If ally's HP is below 25%, ally also gains Shield.
 3040101	2	Stalwart Command	45	Gain Issue Orders. Orders lvl rises by 1 depending on the type of skill an ally uses. Skill cooldown set to 1 turn. (Recast skill to end orders.) 'On recast:' Consume all Order stacks and provide an effect depending on Order type. Skill cooldown set to 3 turns.
@@ -1895,3 +1898,15 @@
 3040297	0	Great Horizon	1	500% Earth damage to all foes (Damage cap: ~800,000) and remove 1 buff. Extend caster's buff durations by 1 turn. (Excludes 1-turn buffs.)
 3040297	1	Helio Drain	1	Inflict Delay (Special) on all foes. If successful, gain Charged. 
 3040297	2	Sword in Flux	45	Replicate caster's or an ally's skill. (Gains a buff based on the type of skill replicated.)
+3040298	0	Puncture	1	400% Light damage to a foe (Damage cap: ~630,000). Inflict Light Lowered (Stackable). Restore caster's HP (Healing cap: 2000). ('When below 25% HP:' Activates twice.)
+3040298	1	Onslaught	1	Gain Jammed, Bonus Light DMG, and Double Strike. (Consumes 40% of max HP.)
+3040298	2	Overcome	45	Gain Guaranteed TA and Critical Hit Rate Boosted. ('When below 25% HP:' Also gain Shield and Unchallenged.) 
+3040299	0	Nebbia	1	Inflict ATK Down 5, DA Down 5, TA Down 5, and Accuracy Lowered 5 on all foes. 
+3040299	1	Armonia	1	All allies gain 40% Earth Cut, Earth Switch, and Typhoon Crest 1. ('When Florence's Typhoon Crest is 3 or more:' All allies also gain Refresh.) 
+3040299	2	Speranza	45	Grant a Wind ally Instant Charge and end cooldown for skills. (Consumes 5 Typhoon Crest.)
+3040300	0	Dark Dominator	1	Gain Critical Up, DA Up, TA Up, and Keen. ('If a foe has Petrified:' Instantly perform a normal attack without using up a turn. 'Otherwise:' Affects all allies.)
+3040300	1	Fields of Despair	1	300% Fire damage to a foe. Inflict Delay. ('If a foe has Petrified:' Boost to damage specs. 'Otherwise:' Also inflict Petrified 3.)
+3040300	2	Shadow Cloak	45	Gain Counters on Dodge/DMG and Mirror Image. ('If a foe has Petrified:' Also gain DMG Amplified. 'Otherwise:' Affects all allies.)
+3040301	0	Midnight Rose Barrier	1	Remove all debuffs from caster. Deploy a Midnight Rose Barrier. (Consumes 1 Petals of Sapphire every turn. Ends when there are no Petals of Sapphire or after 3 turns.)
+3040301	1	Funeral Flower	1	Inflict ATK Down and DEF Down on a foe. Set a Flower Bud. ('When a foe uses a special attack the Flower Bud blooms:' Inflict Enthrallment 3 on all foes and remove 1 buff. Restores all allies' HP [Healing cap: 3000].)
+3040301	2	Rose Storm	45	8-hit Water damage to random foes. All allies gain Shield and Veil. 

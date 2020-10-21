@@ -41,11 +41,12 @@ const getAllCharacters = (req, response) => {
     'raceId': req.query.race
   });
 
-  pool.query('SELECT Character.characterId AS id, Character.nameEn AS n, Character.nameJp AS nj, Character.rarityId AS ri,' + 
-             'Character.elementId AS e, Character.characterTypeId AS t, Character.raceId AS ra,' +
-             'array_agg(WeaponSpecialty.weaponTypeId ORDER BY WeaponSpecialty.weaponTypeId ASC) AS w ' +
-             'FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId ' +
-              query + ' GROUP BY Character.characterId ORDER BY Character.nameEn ASC;', values)
+  pool.query(
+   `SELECT Character.characterId AS id, Character.nameEn AS n, Character.nameJp AS nj, Character.rarityId AS ri,
+    Character.elementId AS e, Character.characterTypeId AS t, Character.raceId AS ra,
+    array_agg(WeaponSpecialty.weaponTypeId ORDER BY WeaponSpecialty.weaponTypeId ASC) AS w
+    FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId
+    ${query} GROUP BY Character.characterId ORDER BY Character.nameEn ASC;`, values)
     .then(res => response.status(200).json(res.rows))
     .catch(() => response.sendStatus(400));
 }
@@ -835,6 +836,29 @@ const searchWeapons = (req, response) => {
   .catch(() => { response.sendStatus(400) });
 }
 
+/**
+ * Spark
+ */
+const getSparkCharacters = (req, response) => {
+  pool.query(
+   `SELECT characterid AS id, nameEn AS n, nameJp AS nj, weapon AS w, rarityId AS r
+    FROM Character
+    WHERE weapon IS NOT NULL AND drawTypeId IS NOT NULL
+    ORDER BY nameen;`)
+  .then(res => response.status(200).json(res.rows))
+  .catch(() => { response.sendStatus(400) });
+}
+
+const getSparkSummons = (req, response) => {
+  pool.query(
+   `SELECT summonid AS id, nameEn AS n, nameJp AS nj
+    FROM Summon
+    WHERE rarityid = 2 AND drawTypeId >= 1000
+    ORDER BY nameen;`)
+  .then(res => response.status(200).json(res.rows))
+  .catch(() => { response.sendStatus(400) });
+}
+
 export default {
   getAllCharacters,
   getCharacter,
@@ -879,4 +903,7 @@ export default {
 
   searchCharacters,
   searchWeapons,
+
+  getSparkCharacters,
+  getSparkSummons,
 }

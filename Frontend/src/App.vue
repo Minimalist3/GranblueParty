@@ -1,46 +1,62 @@
 <template>
   <div id="app" class="text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
     <!-- Menu -->
-    <nav class="bg-secondary shadow-md h-12 flex flex-row flex-wrap justify-between items-center">
+    <nav class="bg-secondary shadow-md flex flex-row justify-between items-center">
       <!-- left -->
       <div class="flex flex-row">
         <router-link to="/" class="flex items-center hover:bg-tertiary px-2">
-          <img title="Home" src="/favicon-32.png" width="32" height="32">
+          <img title="Home" src="/favicon-32.png" max-width="initial" width="32" height="32">
         </router-link>
 
-        <!-- For desktop -->
-        <div class="hidden lg:flex lg:h-12">
+        <!-- For desktop: Compact menu -->
+        <div v-if="menu_compact" class="hidden md:flex">
           <!-- Tools -->
-          <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
+          <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
             <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
-              <router-link class="gbf-menu-hoverable-link" to="/builder">Party Builder</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/collection">My Collection</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/dailygrind">Daily Grind List</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/roomname">Room Name Gen.</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/friendsum">Friend Summons</router-link>
+              <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
+              <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
+              <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
+              <router-link class="gbf-menu-link" to="/roomname">Room Name Generator</router-link>
+              <router-link class="gbf-menu-link" to="/friendsum">Friend Summons</router-link>
+              <router-link class="gbf-menu-link" to="/spark">Spark Maker</router-link>
             </div>
           </div>
           <!-- Data -->
-          <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
+          <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">              
-              <router-link class="gbf-menu-hoverable-link" to="/release">Release Schedule</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/search">Search</router-link>
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
+              <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
+              <router-link class="gbf-menu-link" to="/search">Search</router-link>
             </div>
           </div>
           <!-- Calculators -->
-          <div class="relative px-2 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
+          <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
             <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
-              <router-link class="gbf-menu-hoverable-link" to="/calcevoker">Evokers</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/calcgw">Guild Wars Tokens</router-link>
-              <router-link class="gbf-menu-hoverable-link" to="/calcevent">New Event Tokens</router-link>
+              <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
+              <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
+              <router-link class="gbf-menu-link" to="/calcevent">New Event Tokens</router-link>
             </div>
           </div>
+        </div>
+
+        <!-- For desktop: Expanded menu -->
+        <div v-else class="hidden md:flex md:flex-wrap">
+          <router-link class="flex items-center gbf-menu-link h-12" to="/builder">Party Builder</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/collection">My Collection</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/dailygrind">Daily Grind List</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/roomname">Room Name Gen.</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/friendsum">Friend Summons</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/spark">Spark Maker</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/release">Release Schedule</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/search">Search</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/calcevoker">Evokers Calc.</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/calcgw">Guild Wars Tokens Calc.</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/calcevent">New Event Tokens Calc.</router-link>
         </div>
       </div>
       
@@ -59,22 +75,30 @@
     </nav>
 
     <!-- Menu popup -->
-    <nav class="bg-secondary shadow-md w-full lg:w-1/3 lg:rounded-bl absolute right-0 z-50" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
+    <nav class="bg-secondary shadow-md w-full md:w-1/3 md:rounded-bl absolute right-0 z-50" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
       <!-- For mobile -->
-      <div class="lg:hidden flex flex-col text-primary border-b border-primary">
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/builder">Party Builder</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/collection">My Collection</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/release">Release Schedule</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/search">Search</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/friendsum">Friend Summons</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/dailygrind">Daily Grind List</router-link>
-        <router-link class="p-2 hover:bg-tertiary text-primary hover:text-primary" to="/roomname">Room Name Generator</router-link>
+      <div class="md:hidden flex flex-col text-primary border-b border-primary">
+        <span class="p-2 select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+        <div class="px-2 flex flex-col bg-secondary">
+          <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
+          <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
+          <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
+          <router-link class="gbf-menu-link" to="/roomname">Room Name Generator</router-link>
+          <router-link class="gbf-menu-link" to="/friendsum">Friend Summons</router-link>
+          <router-link class="gbf-menu-link" to="/spark">Spark Maker</router-link>
+        </div>
         
+        <span class="p-2 select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+        <div class="px-2 flex flex-col bg-secondary">
+          <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
+          <router-link class="gbf-menu-link" to="/search">Search</router-link>        
+        </div>
+
         <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
         <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevoker">Evokers</router-link>
-          <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcgw">Guild Wars Tokens</router-link>
-          <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/calcevent">New Events Tokens</router-link>
+          <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
+          <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
+          <router-link class="gbf-menu-link" to="/calcevent">New Events Tokens</router-link>
         </div>
       </div>
 
@@ -82,10 +106,15 @@
       <div v-if="getUserId !== null" class="flex flex-col text-primary border-b border-primary">
         <span class="p-2 select-none">Account: {{ getUsername }} <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
         <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary" to="/account">Properties</router-link>
-          <a class="p-2 pr-8 hover:bg-tertiary text-primary hover:text-primary cursor-pointer" @click="doLogout()">Log out</a>
+          <router-link class="gbf-menu-link" to="/account">Properties</router-link>
+          <a class="gbf-menu-link cursor-pointer" @click="doLogout()">Log out</a>
         </div>
       </div>
+
+      <div class="p-2 hidden md:block"><label class="cursor-pointer select-none hover:text-link-hover">
+        <input type="checkbox" v-model="menu_compact" class="hidden">
+        <span>Main menu: {{ menu_compact ? 'Compact' : 'Expanded' }}</span>
+      </label></div>
 
       <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
         <input type="checkbox" v-model="lang" class="hidden">
@@ -142,7 +171,11 @@
 <script>
 import ModalLogin from '@/components/ModalLogin.vue'
 import ModalSignup from '@/components/ModalSignup.vue'
+
 import { LANGUAGES } from './js/lang'
+import Utils from '@/js/utils.js'
+
+const lsMgt = new Utils.LocalStorageMgt('App');
 
 const getJST_options = {
   timeZone: 'Asia/Tokyo',
@@ -162,6 +195,7 @@ export default {
       menu_popup: false,
       show_modal_signup: false,
       theme_dark: true,
+      menu_compact: true,
     }
   },
   methods: {
@@ -241,10 +275,23 @@ export default {
   watch: {
     '$route.path'(to) {
       this.menu_popup = false;      
-    }
+    },
+    lang() {
+      lsMgt.setValue('lang', this);
+    },
+    theme_dark() {
+      lsMgt.setValue('theme_dark', this);
+    },
+    menu_compact() {
+      lsMgt.setValue('menu_compact', this);
+    },
   },
   mounted() {
     setInterval(() => this.now = new Date(), 1000 * 60);
+
+    lsMgt.getValue(this, 'lang');
+    lsMgt.getValue(this, 'theme_dark');
+    lsMgt.getValue(this, 'menu_compact');
   }
 }
 </script>
@@ -260,14 +307,13 @@ export default {
   @apply flex-col;
 }
 
-.gbf-menu-hoverable-link {
+.gbf-menu-link {
   @apply p-2;
-  @apply pr-8;
   @apply text-primary;
   @apply whitespace-no-wrap;
 }
 
-.gbf-menu-hoverable-link:hover {
+.gbf-menu-link:hover {
   @apply bg-tertiary;
   @apply text-primary;
 }

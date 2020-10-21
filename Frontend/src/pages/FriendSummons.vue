@@ -211,7 +211,7 @@ export default {
     const preserve_state = !! this.$store.state.friends;
     this.$store.registerModule('friends', friendsModule, { preserveState: preserve_state });
   },
-  destroyed () {
+  destroyed() {
     this.$store.unregisterModule('friends');
   },
 }

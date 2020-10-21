@@ -319,27 +319,33 @@ export default {
       return element.nj;
     },
     getCharacters(element) {
-      return this.characters[element].filter(chara => {
-        if ( ! this.chara_show[chara.d]) {
-          return false;
-        }
-        return this.getFilters.every(e => {
-          return this.data_model[e.key].show(chara[e.key])
-        })
-      })
-    },
-    getSummons(element) {
-      return this.summons[element].filter(summ => {
-        return this.getFilters.every(e => {
-          if (summ[e.key] === undefined) {
-            return true;
-          }
-          if ( ! this.summon_show[summ.d]) {
+      if (this.characters) {
+        return this.characters[element].filter(chara => {
+          if ( ! this.chara_show[chara.d]) {
             return false;
           }
-          return this.data_model[e.key].show(summ[e.key])
-        })
-      })
+          return this.getFilters.every(e => {
+            return this.data_model[e.key].show(chara[e.key])
+          })
+        });
+      }
+      return [];
+    },
+    getSummons(element) {
+      if (this.summons) {
+        return this.summons[element].filter(summ => {
+          return this.getFilters.every(e => {
+            if (summ[e.key] === undefined) {
+              return true;
+            }
+            if ( ! this.summon_show[summ.d]) {
+              return false;
+            }
+            return this.data_model[e.key].show(summ[e.key])
+          })
+        });
+      }
+      return [];
     },
     setShowCharacters() {
       this.showCharacters = ! this.showCharacters;
@@ -543,11 +549,12 @@ export default {
       .then(_ => this.loading = false);
   },
   beforeCreate() {
-    const preserve_state = !! this.$store.state.collection
+    const preserve_state = !! this.$store.state.collection;
     this.$store.registerModule('collection', collectionModule, { preserveState: preserve_state });
   },
-  destroyed () {
-    this.$store.unregisterModule('collection')
+  beforeRouteLeave(to, from, next) {
+    this.$store.unregisterModule('collection');
+    next();
   },
   watch: {
     '$store.getters.getUserId'(id) {

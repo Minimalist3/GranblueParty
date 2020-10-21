@@ -65,6 +65,8 @@ app.use('/user', routes.user);
 app.use('/release', routes.release);
 // Search
 app.use('/search', routes.search);
+// Spark
+app.use('/spark', routes.spark);
 
 if (process.env.NODE_ENV === "production") {
 
