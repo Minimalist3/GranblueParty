@@ -361,7 +361,7 @@
 3040019	Arulumaya	アルルメイヤ	4	5	2	2	4	3	1000	2014-09-30	8400	9980	1160	1380	Gargantua
 3040020	Charlotta (Halloween)	シャルロッテ	4	4	2	4	3	3	1040	2014-10-21	6720	\N	1590	\N	Jack-O'-Brand
 3040021	Lennah	レナ	4	5	2	1	3	0	1000	2014-10-31	6560	7790	1570	2370	Far Away
-3040022	Melleau	メルゥ	4	4	2	2	0	2	1000	2014-11-14	8640	\N	1160	\N	Vassago
+3040022	Melleau	メルゥ	4	5	2	2	0	2	1000	2014-11-14	8640	10260	1160	1380	Vassago
 3040023	Lancelot	ランスロット	4	5	2	3	0	0	1000	2014-11-30	9120	10830	1320	1570	Hoarfrost Blade Persius
 3040024	Sophia	ソフィア	4	4	2	4	3	0	1000	2014-11-30	6160	\N	1830	\N	Ocean Harp
 3040025	Siegfried	ジークフリート	4	5	2	2	4	0	1000	2015-01-31	8320	9880	1350	1610	Ascalon
@@ -449,7 +449,7 @@
 3040108	Marquiares	マルキアレス	4	4	2	5	4	3	1000	2017-01-20	9290	\N	1150	\N	Gridarvor
 3040109	Razia	ラスティナ	4	4	2	2	2	1	1000	2017-01-31	7100	\N	2150	\N	Gae Derg
 3040110	Beatrix (Summer)	ベアトリクス	4	4	2	0	4	0	1030	2017-02-13	11000	\N	990	\N	Delta Quartz
-3040111	Orchid	オーキス	4	4	2	5	4	5	1500	2017-02-28	7300	\N	1650	\N	Parazonium
+3040111	Orchid	オーキス	4	5	2	5	4	5	1500	2017-02-28	7300	8850	1650	1950	Parazonium
 3040112	Zeta (Dark)	ゼタ	4	4	2	5	0	0	1000	2017-02-28	10400	\N	1020	\N	Sunspot Spear
 3040113	De La Fille (Earth)	レ・フィーエ	4	4	2	2	3	0	1000	2017-03-20	5800	\N	1910	\N	Thyrsus
 3040115	Sturm (Grand)	スツルム	4	4	2	0	0	1	1500	2017-03-31	11100	\N	1100	\N	Ixaba
@@ -567,7 +567,7 @@
 3040228	Anthuria (Yukata)	アンスリア	4	4	2	5	1	2	1030	2019-08-06	7000	\N	1480	\N	Forbidden Memories
 3040229	Μ's First-Years	星空 凛＆小泉花陽＆西木野真姫	4	4	2	1	3	0	\N	2019-08-12	7211	\N	1641	\N	\N
 3040230	Μ's Second-Years	園田海未＆高坂穂乃果＆南ことり	4	4	2	4	1	0	\N	2019-08-12	8022	\N	1630	\N	\N
-3040231	Μ's Third-Years	絢瀬絵里＆矢澤にこ＆東條 希	4	5	2	5	2	0	\N	2019-08-12	6233	\N	2219	\N	\N
+3040231	Μ's Third-Years	絢瀬絵里＆矢澤にこ＆東條 希	4	5	2	5	2	0	\N	2019-08-12	6233	7580	2219	2580	\N
 3040232	Alexiel (Summer)	ブローディア	4	4	2	2	4	4	1030	2019-08-15	9000	\N	1240	\N	Nibelung Glas
 3040233	Stan and Aliza	勇者と姫君 スタン＆アリーザ	4	4	2	1	0	2	1000	2019-08-31	5020	\N	1290	\N	Golden Dragon
 3040234	Tabina	タヴィーナ	4	4	2	0	0	0	1000	2019-08-31	9550	\N	1300	\N	Hand Axe
@@ -638,3 +638,12 @@
 3040299	Florence	フロレンス	4	4	2	1	4	0	1000	2020-09-30	8200	\N	1400	\N	Disturbance Signum
 3040300	Azazel (Halloween)	アザゼル	4	4	2	0	0	4	1040	2020-10-17	10600	\N	1160	\N	Trick Serpent
 3040301	Rosetta (Halloween)	ロゼッタ	4	4	2	3	2	4	1040	2020-10-17	6300	\N	2200	\N	Midnight Rose
+3040302	Mireille and Risette	ミレイユ＆リゼット	4	4	2	2	0	0	1000	2020-10-31	9625	\N	1275	\N	Innocent Doll
+3040303	Sutera (SSR)	スーテラ	4	4	2	1	0	2	1000	2020-10-31	8660	\N	1148	\N	Aurora Bow
+3040304	Feather (SSR)	フェザー	4	4	2	4	0	0	1000	2020-11-16	9770	\N	1270	\N	Hope-Filled Knuckles
+3040305	Fiorito	フィオリト	4	4	2	2	0	0	1000	2020-11-16	9200	\N	1400	\N	Barbell
+3040306	Nemone (Holiday)	ネモネ	4	4	2	0	1	2	1020	2020-11-30	7100	\N	1460	\N	Tropical Winter
+3040307	Mirin (Holiday)	ミリン	4	4	2	3	1	0	1020	2020-11-30	8000	\N	1600	\N	Snowbane
+3040308	Tanjiro, Nezuko, Zenitsu, and Inosuke	竈門炭治郎＆竈門禰豆子＆我妻善逸＆嘴平伊之助	4	4	2	3	1	0	\N	2020-12-08	8200	\N	1560	\N	\N
+3040309	Kyojuro Rengoku	煉獄杏寿郎	4	4	2	0	0	0	\N	2020-12-08	9750	\N	1250	\N	\N
+3040310	Shinobu Kocho	胡蝶しのぶ	4	4	2	1	3	0	\N	2020-12-13	7200	\N	1550	\N	\N

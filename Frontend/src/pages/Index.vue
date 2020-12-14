@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-10-17:</b> Azazel (Halloween), Rosetta (Halloween)</p>
+        <p><b>2020-11-30:</b> Nemone (Holiday), Mirin (Holiday)</p>
       </div>
 
       <div>

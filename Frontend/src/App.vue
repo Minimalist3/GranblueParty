@@ -30,6 +30,7 @@
             <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
               <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
               <router-link class="gbf-menu-link" to="/search">Search</router-link>
+              <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
             </div>
           </div>
           <!-- Calculators -->
@@ -54,6 +55,7 @@
           <router-link class="flex items-center gbf-menu-link h-12" to="/spark">Spark Maker</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/release">Release Schedule</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/search">Search</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/replicard">Replicard Sandbox</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevoker">Evokers Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcgw">Guild Wars Tokens Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevent">New Event Tokens Calc.</router-link>
@@ -91,7 +93,8 @@
         <span class="p-2 select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
         <div class="px-2 flex flex-col bg-secondary">
           <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
-          <router-link class="gbf-menu-link" to="/search">Search</router-link>        
+          <router-link class="gbf-menu-link" to="/search">Search</router-link>
+          <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
         </div>
 
         <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
@@ -310,7 +313,7 @@ export default {
 .gbf-menu-link {
   @apply p-2;
   @apply text-primary;
-  @apply whitespace-no-wrap;
+  @apply whitespace-nowrap;
 }
 
 .gbf-menu-link:hover {

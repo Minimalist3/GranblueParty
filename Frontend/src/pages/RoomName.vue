@@ -23,7 +23,7 @@
       <h2 class="py-4">{{ content.name }}</h2>
 
       <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
-        <div class="self-center pr-4 whitespace-no-wrap">{{ catVal.name }}</div>
+        <div class="self-center pr-4 whitespace-nowrap">{{ catVal.name }}</div>
 
         <div class="flex flex-row flex-wrap select-none">
           <a v-for="(raidVal, raidKey) in catVal.raids"

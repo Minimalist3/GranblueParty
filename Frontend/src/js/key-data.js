@@ -665,7 +665,7 @@ const data = {
   // Dark Opus 3rd keys Omega
   21: [
     {
-      name: 'Vulcan\'s Stamina II',
+      name: 'Ironflame\'s Stamina II',
       icon: 'ws_skill_whole_m_1_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -673,7 +673,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["fire"] }} ]
     },
     {
-      name: 'Vulcan\'s Enmity II',
+      name: 'Ironflame\'s Enmity III',
       icon: 'ws_skill_backwater_m_1_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -681,14 +681,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["fire"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Vulcan\'s Trium II',
+      name: 'Ironflame\'s Trium II',
       icon: 'ws_skill_ta_m_1_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 21,
     },
     {
-      name: 'Vulcan\'s Progression',
+      name: 'Ironflame\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -697,7 +697,7 @@ const data = {
   ],
   22: [
     {
-      name: 'Ezili\'s Stamina II',
+      name: 'Oceansoul\'s Stamina II',
       icon: 'ws_skill_whole_m_2_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -705,7 +705,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["water"] }} ]
     },
     {
-      name: 'Ezili\'s Enmity II',
+      name: 'Oceansoul\'s Enmity III',
       icon: 'ws_skill_backwater_m_2_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -713,14 +713,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["water"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Ezili\'s Trium II',
+      name: 'Oceansoul\'s Trium II',
       icon: 'ws_skill_ta_m_2_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 22,
     },
     {
-      name: 'Ezili\'s Progression',
+      name: 'Oceansoul\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -729,7 +729,7 @@ const data = {
   ],
   23: [
     {
-      name: 'Gaia\'s Stamina II',
+      name: 'Lifetree\'s Stamina II',
       icon: 'ws_skill_whole_m_3_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -737,7 +737,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["earth"] }} ]
     },
     {
-      name: 'Gaia\'s Enmity II',
+      name: 'Lifetree\'s Enmity III',
       icon: 'ws_skill_backwater_m_3_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -745,14 +745,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["earth"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Gaia\'s Trium II',
+      name: 'Lifetree\'s Trium II',
       icon: 'ws_skill_ta_m_3_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 23,
     },
     {
-      name: 'Gaia\'s Progression',
+      name: 'Lifetree\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -761,7 +761,7 @@ const data = {
   ],
   24: [
     {
-      name: 'Aeolus\'s Stamina II',
+      name: 'Stormwyrm\'s Stamina II',
       icon: 'ws_skill_whole_m_4_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -769,7 +769,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["wind"] }} ]
     },
     {
-      name: 'Aeolus\'s Enmity II',
+      name: 'Stormwyrm\'s Enmity III',
       icon: 'ws_skill_backwater_m_4_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -777,14 +777,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["wind"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Aeolus\'s Trium II',
+      name: 'Stormwyrm\'s Trium II',
       icon: 'ws_skill_ta_m_4_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 24,
     },
     {
-      name: 'Aeolus\'s Progression',
+      name: 'Stormwyrm\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -793,7 +793,7 @@ const data = {
   ],
   25: [
     {
-      name: 'Horus\'s Stamina II',
+      name: 'Knightcode\'s Stamina II',
       icon: 'ws_skill_whole_m_5_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -801,7 +801,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["light"] }} ]
     },
     {
-      name: 'Horus\'s Enmity II',
+      name: 'Knightcode\'s Enmity III',
       icon: 'ws_skill_backwater_m_5_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -809,14 +809,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["light"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Horus\'s Trium II',
+      name: 'Knightcode\'s Trium II',
       icon: 'ws_skill_ta_m_5_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 25,
     },
     {
-      name: 'Horus\'s Progression',
+      name: 'Knightcode\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -825,7 +825,7 @@ const data = {
   ],
   26: [
     {
-      name: 'Shalim\'s Stamina II',
+      name: 'Mistfall\'s Stamina II',
       icon: 'ws_skill_whole_m_6_3.png',
       desc: 'Pendulum of Strength',
       level: 1,
@@ -833,7 +833,7 @@ const data = {
       data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["dark"] }} ]
     },
     {
-      name: 'Shalim\'s Enmity II',
+      name: 'Mistfall\'s Enmity III',
       icon: 'ws_skill_backwater_m_6_3.png',
       desc: 'Pendulum of Zeal',
       level: 1,
@@ -841,14 +841,14 @@ const data = {
       data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["dark"]}, "aura_type": "omega", "stat": "enmity"} ]
     },
     {
-      name: 'Shalim\'s Trium II',
+      name: 'Mistfall\'s Trium II',
       icon: 'ws_skill_ta_m_6_2.png',
       desc: 'Pendulum of Strife',
       level: 1,
       keyid: 26,
     },
     {
-      name: 'Shalim\'s Progression',
+      name: 'Mistfall\'s Progression III',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -881,7 +881,7 @@ const data = {
       keyid: 31,
     },
     {
-      name: 'Inferno\'s skill',
+      name: 'Inferno\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -913,7 +913,7 @@ const data = {
       keyid: 32,
     },
     {
-      name: 'Hoarfrost\'s skill',
+      name: 'Hoarfrost\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -945,7 +945,7 @@ const data = {
       keyid: 33,
     },
     {
-      name: 'Terra\'s skill',
+      name: 'Terra\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -977,7 +977,7 @@ const data = {
       keyid: 34,
     },
     {
-      name: 'Ventosus\'s skill',
+      name: 'Ventosus\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -1009,7 +1009,7 @@ const data = {
       keyid: 35,
     },
     {
-      name: 'Zion\'s skill',
+      name: 'Zion\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -1041,7 +1041,7 @@ const data = {
       keyid: 36,
     },
     {
-      name: 'Oblivion\'s skill',
+      name: 'Oblivion\'s Progression',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Pendulum of Prosperity',
       level: 1,
@@ -1110,7 +1110,7 @@ const data = {
       keyid: 41,
     },
     {
-      name: 'Vulcan\'s Majesty III',
+      name: 'Ironflame\'s Majesty III',
       icon: 'ws_skill_god_m_1_3.png',
       desc: 'Omega Teluma',
       level: 200,
@@ -1126,7 +1126,7 @@ const data = {
       keyid: 42,
     },
     {
-      name: 'Ezili\'s Majesty III',
+      name: 'Oceansoul\'s Majesty III',
       icon: 'ws_skill_god_m_2_3.png',
       desc: 'Omega Teluma',
       level: 200,
@@ -1142,7 +1142,7 @@ const data = {
       keyid: 43,
     },
     {
-      name: 'Gaia\'s Majesty III',
+      name: 'Lifetree\'s Majesty III',
       icon: 'ws_skill_god_m_3_3.png',
       desc: 'Omega Teluma',
       level: 200,
@@ -1158,7 +1158,7 @@ const data = {
       keyid: 44,
     },
     {
-      name: 'Aeolus\'s Majesty III',
+      name: 'Stormwyrm\'s Majesty III',
       icon: 'ws_skill_god_m_4_3.png',
       desc: 'Omega Teluma',
       level: 200,
@@ -1174,7 +1174,7 @@ const data = {
       keyid: 45,
     },
     {
-      name: 'Horus\'s Majesty III',
+      name: 'Knightcode\'s Majesty III',
       icon: 'ws_skill_god_m_5_3.png',
       desc: 'Omega Teluma',
       level: 200,
@@ -1190,7 +1190,7 @@ const data = {
       keyid: 46,
     },
     {
-      name: 'Shalim\'s Majesty III',
+      name: 'Mistfall\'s Majesty III',
       icon: 'ws_skill_god_m_6_3.png',
       desc: 'Omega Teluma',
       level: 200,

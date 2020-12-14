@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row flex-no-wrap justify-around" v-if="! objectIsEmpty">
+  <div class="flex flex-row flex-nowrap justify-around" v-if="! objectIsEmpty">
     <span v-for="(skill, skillIndex) in skills" :key="skillIndex" class="tooltip-parent">
       <img
         :class="skill.keyid !== null ? 'cursor-pointer' : ''"

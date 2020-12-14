@@ -47,15 +47,15 @@
       <span class="flex flex-col">
         <!-- Ougi -->
         <div class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-no-wrap mr-4 italic">Charge attack:</div>
+          <div class="whitespace-nowrap mr-4 italic">Charge attack:</div>
           <div class="divide-y border-secondary">
             <div v-if="item.o1" v-html="highlight(item.o1, search_ca)" />
             <div v-if="item.o2" class="flex flex-row">
-              <div class="whitespace-no-wrap mr-4 italic">FLB effect:</div>
+              <div class="whitespace-nowrap mr-4 italic">FLB effect:</div>
               <div v-html="highlight(item.o2, search_ca)" />
             </div>
             <div v-if="item.o3" class="flex flex-row">
-              <div class="whitespace-no-wrap mr-4 italic">ULB effect:</div>
+              <div class="whitespace-nowrap mr-4 italic">ULB effect:</div>
               <div v-html="highlight(item.o3, search_ca)" />
             </div>
           </div>
@@ -63,10 +63,10 @@
 
         <!-- Skills -->
         <div v-if="item.s" class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-no-wrap mr-2 italic">Skills:</div>
+          <div class="whitespace-nowrap mr-2 italic">Skills:</div>
           <div class="divide-y border-secondary">
             <div v-for="(skill, l) in item.s" :key="l" class="flex flex-row space-x-4">
-              <div class="whitespace-no-wrap italic" v-html="highlight(skill.n, search_skill_names)" />
+              <div class="whitespace-nowrap italic" v-html="highlight(skill.n, search_skill_names)" />
               <div v-html="highlight(skill.d, search_skill_desc)" />
             </div>
           </div>

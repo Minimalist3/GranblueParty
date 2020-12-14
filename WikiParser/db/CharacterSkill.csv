@@ -689,7 +689,7 @@
 3030182	1	Roaring Fire	1	All allies gain ATK Up and Critical Hit Rate Boosted. At level 65: Buffs increased to ATK Up and Critical Hit Rate Boosted. 
 3030182	2	Healing Water	1	Restore all allies' HP (Healing cap: 800). All allies gain Refresh. 
 3030182	3	Enduring Earth	35	All allies gain DEF Up and Debuff Resistance Boosted. 
-3030183	0	Enchanted Foil	1	Gain Extra Superior Element DMG. ''(Uses 25% of charge bar)''
+3030183	0	Enchanted Foil	1	Gain Extra Superior Element DMG. (Consumes 25% of charge bar.)
 3030183	1	Enchanted Foil II	1	Gain Extra Superior Element DMG (Ends upon taking damage).
 3030183	2	Flicker of Tears	35	Gain Dodge Rate Boosted.
 3030184	0	Bagua Blade	1	8-hit Earth damage to random foes.
@@ -899,7 +899,7 @@
 3030262	0	Integrate	1	8-hit Dark damage to random foes. Gain Counters on Dodge.
 3030262	1	Long Stride	1	Dark damage to a foe. Inflict ATK Down. (Boost to damage based on how few foes remain)
 3030262	2	Optimize	35	Gain ATK Up. End cooldown for Integrate and Long Stride.
-3030263	0	Gideon	1	Gain Interceptor. ''(Uses 10% max HP every turn while in effect. Ends on recast.)''
+3030263	0	Gideon	1	Gain Interceptor. (Consumes 10% max HP every turn while in effect. Ends on recast.)
 3030263	1	Chain Fire	1	2-hit, 150% Dark damage to a foe (Damage cap: ~200,000 per hit). Raise Genius lvl by 1. (Boost to specs based on Genius lvl [Max: 3])
 3030263	2	Crazy Blitz II	35	Gain Defiance, ATK Up, and Critical Up. 
 3030264	0	Cat Got Your Heart	1	Inflict Nightsmoke's Victim on a foe. (Steal the foe's heart and land Charmed effect when the foe uses a special attack.)
@@ -965,7 +965,7 @@
 3030320	0	Aqua Heal	1	Restore an ally's HP (Healing cap: 1000). Target ally gains ATK Boosted (Stackable) and DEF Boosted (Stackable). ('When target is below 25% HP:' Activates twice.)
 3030320	1	Run, Swim, Run	1	Switch out with a sub ally. Reset Rescue lvl. (All allies gain Refresh after switching out based on Rescue lvl.)
 3030320	2	CPR	35	Revive a Water ally. (Boost to HP restored based on Rescue lvl.)
-3030321	0	Schutz aus Eisen	1	Gain Substitute and Counters on DMG. Raise Lone Wolf Trick lvl by 1
+3030321	0	Schutz aus Eisen	1	Gain Substitute and Counters on DMG. Raise Lone Wolf Trick lvl by 1.
 3030321	1	Nacht Fang	1	Gain Charge Bar. ('When Lone Wolf Trick lvl is 5:' Also gain Nacht Fang.)
 3030321	2	Wolf Schrei	35	Clear a foe's charge diamonds. (Can only be used when Lone Wolf Trick lvl is 5. Can't be recast.)
 3040000	0	Fracture	1	Wind damage to a foe. Inflict ATK Down. At level 90: Damage increased to 500%. Damage cap increased to ~820,000. Also inflict Earth ATK Lowered. Debuff strength increased to ATK Down. ATK Down base accuracy increased.
@@ -1039,9 +1039,9 @@
 3040021	1	Renaissance	1	 Restore all allies' HP (Healing cap: 1200). All allies gain Refresh. At level 75: Healing cap increased to 1500. At level 95: Healing cap further increased to 2000. Refresh upgraded to Revitalize. Also remove 1 debuff from all allies.
 3040021	2	Espoir	45	Remove 1 debuff from all allies.
 3040021	3	Forget Me Not	100	Revive an ally with 100% HP.
-3040022	0	Raging Flow	1	Gain ATK Up and Immune (No Limit). At level 55: Buff increased to ATK Up .
-3040022	1	Engrave Fang	1	150%-250% Earth damage to a foe (Damage cap: ~420,000). Gain Charge Boost and Hostility Boosted (Stackable/Can't be removed). At level 75: Damage increased to 250%-300%.
-3040022	2	Impelliteri	45	Gain Guaranteed TA.
+3040022	0	Raging Flow	1	Gain ATK Up and Immune (No Limit). At level 100: Buff durations increased to 5 turns. Buff increased to ATK Up. Also gain Critical Hit Rate Boosted, Keen, and Refresh. 
+3040022	1	Engraved Counter	1	Gain Hostility Boosted and Counters on DMG. At level 75: Effect enhanced.
+3040022	2	Impelliteri	45	Gain Guaranteed TA. At level 95: Also gain Bonus Earth DMG and Drain. 
 3040023	0	Blade Impulse	1	350%-450% Water damage to a foe (Damage cap: ~630,000). At level 55: Damage increased to 400%-500%. At level 100: Also inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). Gain ATK Boosted (Stackable/Can't be removed).
 3040023	1	Wogenstrom	1	2-hit, 150% Water damage to all foes (Damage cap: ~320,000 per hit). Gain Dodge Rate Boosted and Hostility Boosted. At level 90: Also gain Guaranteed DA, Triple Attack Rate Boosted, and Bonus Water DMG.
 3040023	2	Southern Cross	45	4-hit, 100% Water damage to a foe (Damage cap: ~180,000 per hit). Gain Other Self 1.
@@ -1329,8 +1329,8 @@
 3040110	1	Nayde Vanaroosa	1	Gain Nayde Vanaroosa. At level 75: Effect enhanced.
 3040110	2	Soaring Star	45	Gain Jammed. (Consumes 40% of max HP.)
 3040111	0	Puppet Strings	1	Gain Puppet Strings and a shield effect worth 40% of caster's max HP (Max: 8000). Switches to Tangled Strings for 2.5 turns when shield effect ends. At level 55: Effect enhanced.
-3040111	1	Ancestral Aegis	1	All allies gain Dark ATK Up and 70% Light Cut.
-3040111	2	Oblivion	45	3 hit, 300% Dark damage to random foes (900% total; Damage cap: ~400,000 per hit). Gain Charge Boost.
+3040111	1	Ancestral Aegis	1	All allies gain Dark ATK Up and 70% Light Cut. At level 100: All allies also gain Veil.
+3040111	2	Oblivion	45	3 hit, 300% Dark damage to random foes (Damage cap: ~400,000 per hit). Gain Charge Boost. At level 90: Number of hits increased to 6. Damage cap decreased to ~220,000 per hit. All allies also gain Violet Calculation and Bonus Dark DMG. 
 3040112	0	Shining Star	1	350-400% Dark damage to a foe (Damage cap: ~500,000). Inflict Debuff Resistance Lowered (Stackable) and Accuracy Lowered 2. At level 55: Effect enhanced.
 3040112	1	Infinite Wonders	1	Inflict Burned, ATK Down and DEF Down on all foes. 
 3040112	2	Signo Nero	45	Gain TA Up. ''(Uses 30% of charge bar)''
@@ -1419,7 +1419,7 @@
 3040141	2	Divine Weapon	45	Gain Guaranteed TA, Charge Bar Sped Up and Light ATK Up. (Affects all allies when Aegis Merge is active.)
 3040142	0	Carpe Diem	1	Restore 4 Blade stacks ''(Uses 30% of charge bar)''.
 3040142	1	Keine Gnade	1	400% Wind damage to a foe (Damage cap: ~630,000) and inflict Blind '' (Uses 1 Blade)''.
-3040142	2	Riesenjagd	45	Gain Riesenjagd, sharply increasing ATK for 1 hit. ''(Uses up all Blade stacks after attack.)''
+3040142	2	Riesenjagd	45	Gain Riesenjagd. ''(Uses up all Blade stacks after attack.)''
 3040143	0	Snowdrop	1	250%-350% Light damage to all foes (Damage cap: ~500,000). Raise Bounty by 3.
 3040143	1	Piece of Cake	1	Grant one ally Charge Boost, Critical Hit Rate Boosted, and Happy Sprinkles. 
 3040143	2	Merry Sparkle	45	All allies gain TA Up.
@@ -1504,7 +1504,7 @@
 3040169	2	Last Love	1	Grant a Dark ally C.A. Reactivation (1 time / Unremovable). (Love's Redemption 13 lowers by 1.)
 3040170	0	Tenacious Will	1	6-hit, 60%-80% Earth damage to a foe (Damage cap: ~80,000 per hit). Restore caster's HP (Healing cap: 5000). (5% boost to healing upon each cast [Max: 25%].) At level 100: Damage increased to 100% per hit. Also gain Double Attack Rate Boosted (Stackable) and Triple Attack Rate Boosted (Stackable). 
 3040170	1	Bravado Bullet	1	6-hit, 60%-80% Earth damage to a foe (Damage cap: ~80,000 per hit). Inflict DEF Down Stack. (Hit number increases upon each cast [Max: 10 hits].)
-3040170	2	Macho Ultimatum	45	End cooldown for Tenacious Will and Bravado Bullet. 'When there are female allies:' Also gain ATK Up, DEF Up, and No Touching My Ladies. (I swear on my fists that you won't lay a finger on these beauties!)
+3040170	2	Macho Ultimatum	45	End cooldown for Tenacious Will and Bravado Bullet. Gain DEF Up and No Touching My Ladies. 'When there are female allies:' Also gain ATK Up. (I swear on my fists that you won't lay a finger on these beauties!)
 3040171	0	Freewheeling Scheme	1	Inflict ATK Down, DEF Down, and Secret Plot on a foe. 
 3040171	1	Soldier's Swiftness	1	All allies gain Instantaneity.
 3040171	2	Bagua Blade Reborn	45	8-hit Earth damage to random foes (Damage cap: ~60,000 per hit). Gain Charge Boost.
@@ -1905,8 +1905,35 @@
 3040299	1	Armonia	1	All allies gain 40% Earth Cut, Earth Switch, and Typhoon Crest 1. ('When Florence's Typhoon Crest is 3 or more:' All allies also gain Refresh.) 
 3040299	2	Speranza	45	Grant a Wind ally Instant Charge and end cooldown for skills. (Consumes 5 Typhoon Crest.)
 3040300	0	Dark Dominator	1	Gain Critical Up, DA Up, TA Up, and Keen. ('If a foe has Petrified:' Instantly perform a normal attack without using up a turn. 'Otherwise:' Affects all allies.)
-3040300	1	Fields of Despair	1	300% Fire damage to a foe. Inflict Delay. ('If a foe has Petrified:' Boost to damage specs. 'Otherwise:' Also inflict Petrified 3.)
+3040300	1	Fields of Despair	1	300% Fire damage to a foe (Damage cap: ~630,000). Inflict Delay. ('If a foe has Petrified:' Damage increased to 700%. Damage cap increased to ~1,160,000. 'Otherwise:' Also inflict Petrified 3.)
 3040300	2	Shadow Cloak	45	Gain Counters on Dodge/DMG and Mirror Image. ('If a foe has Petrified:' Also gain DMG Amplified. 'Otherwise:' Affects all allies.)
 3040301	0	Midnight Rose Barrier	1	Remove all debuffs from caster. Deploy a Midnight Rose Barrier. (Consumes 1 Petals of Sapphire every turn. Ends when there are no Petals of Sapphire or after 3 turns.)
-3040301	1	Funeral Flower	1	Inflict ATK Down and DEF Down on a foe. Set a Flower Bud. ('When a foe uses a special attack the Flower Bud blooms:' Inflict Enthrallment 3 on all foes and remove 1 buff. Restores all allies' HP [Healing cap: 3000].)
-3040301	2	Rose Storm	45	8-hit Water damage to random foes. All allies gain Shield and Veil. 
+3040301	1	Funeral Flower	1	Inflict ATK Down and DEF Down on a foe. Set a Flower Bud. ('When a foe uses a special attack the Flower Bud blooms:' Inflict Enthrallment 3 on all foes and remove 1 buff. Restore 20% of all allies' HP [Healing cap: 3000].)
+3040301	2	Rose Storm	45	8-hit, 75% Water damage to random foes (Damage cap: ~70,000 per hit). All allies gain Shield and Veil. 
+3040302	0	Force de la Sagesse	1	Gain DMG Amplified, Bonus Earth DMG, and Wasteland Crest 1. (Boost to specs upon each cast [Max: 5 / Includes activation by charge attack].)
+3040302	1	Proteger	1	Gain Substitute and Dodge All.
+3040302	2	Liberation	45	Consume 2 Wasteland Crest to gain Liberation. ('When 5 Wasteland Crest are consumed:' Also gain Double Strike.)
+3040303	0	Swift Gale Shot	1	300% Wind damage to all foes (Damage cap: ~440,000). All allies gain DMG Cap Boosted (1 time). 
+3040303	1	Comet Drive	1	Up to 1800% Wind damage to a foe based on caster's charge bar. 1-turn cut to Wind allies' skill cooldowns. (Consumes all of charge bar.) 
+3040303	2	Arcane Bow Flash	45	600% Wind damage to a foe (Damage cap: ~800,000). Gain Instant Charge. End cooldown for other skills
+3040304	0	Lightning Knuckle III	1	500% Light damage to a foe (Damage cap: ~630,000). Gain Bonus Light DMG (1 time). 
+3040304	1	Packing a Punch	1	Instantly perform a normal attack without using up a turn.
+3040304	2	Soulful Finisher	45	Gain Instant Charge. End cooldown for other skills. Can use each damage skill up to 1 extra time this turn. (Requires Azure Fist lvl 5.)
+3040305	0	Trilok Smash	1	Earth damage to a foe based on how many melee weapons are equipped. Inflict DEF Down. 
+3040305	1	Bulk Up	1	Sacrifice 80% of caster's HP to gain Double Strike.
+3040305	2	Anabolic	45	Eat a macho meal and get Rosa blooming! (Gain 4 Rosa Pack [Max: 6] and remove all debuffs from Fiorito.)
+3040306	0	Felices Fiestas	1	My life's in your hands! (MC gains Nemo Defense.) ('While in effect:' MC substitutes for Nemone, 30% Wind damage reduction, and convert damage taken to Wind damage. Can't recast.) At level 55: Effect enhanced.
+3040306	1	Roselle Wreath	1	I do 3-hit, 150% Fire damage (Damage cap: ~200,000 per hit) to random foes! And give random buffs to all allies! ('When Nemo Power is at max:' Hit number increases to 6.)
+3040306	2	Hold the Line	45	That thing where I dodge all attacks from foes! (2 times!) (Gain Dodge All.)
+3040307	0	Snowbound Strike	1	3-hit, 100% Water damage to a foe (Damage cap: ~160,000 per hit). Inflict Water Lowered (Stackable). (Consumes all Mikan Orange. Number of activations increased based on number consumed [Max: 4].)
+3040307	1	Clear the Mind, Clear the Body!	1	Gain Charge Bar. Restore 20% of caster's HP (Healing cap: 2000). 2-turn cut to debuff durations. ('When 1 Mikan Orange is consumed:' Affects all allies.)
+3040307	2	Snow Crane Stance	45	Gain Dodge All, Substituted (All-Ally), and Bonus Effect on Dodge (Mirin). (Unleash a masterful Icy Calm upon dodging! Gozaru!)
+3040308	0	First Form: Water Surface Slash	1	500% Water damage to all foes. Gain Water ATK Boosted (Stackable). Raise Kagura lvl by 1.
+3040308	1	Third Fang: Devour	1	Plain damage to a foe based on 10% of its current HP (Damage cap: 1,000,000) and remove 1 buff. 
+3040308	2	Seventh Form: Drop Ripple Thrust-Curve	45	400% Water damage to a foe (Damage cap: 630,000). Gain Counter on DMG. 
+3040309	0	First Form: Unknowing Fire	1	700% Fire damage to a foe (Damage cap: ~800,000). Gain Guaranteed TA.
+3040309	1	Second Form: Rising Scorching Sun	1	500% Fire damage to a foe (Damage cap: ~630,000). Inflict Delay.
+3040309	2	Fourth Form: Blooming Flame Undulation	45	300% Fire damage to all foes. All allies gain 70% DMG Cut.
+3040310	0	Six Stings	1	6-hit, 150% Wind damage to a foe (Damage cap: ~100,000 per hit). Inflict Poison and Wisteria Poison. (Boost to Poison specs based on Dosage lvl. Also inflict Paralyzed 1 at lvl 5.) 
+3040310	1	Poison Administrator	1	Gain Insect Breathing. Raise Dosage lvl by 1 (Max: 5).
+3040310	2	Pharmacology	45	Restore 20% of all allies' HP (Healing cap: 2000) and remove 1 debuff. ('When Dosage lvl is 5:' All allies also gain Charge Bar.)

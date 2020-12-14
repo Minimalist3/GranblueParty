@@ -304,3 +304,7 @@
 2040383	30% boost to Fire Elemental ATK and 30% boost to Fire allies' C.A. DMG.	50% boost to Fire Elemental ATK and 30% boost to Fire allies' C.A. DMG.	50% boost to Fire Elemental ATK, 30% boost to Fire allies' C.A. DMG, and 10% boost to Fire allies' charge bars at battle start.	\N	\N	\N	\N	\N	f
 2040384	40% boost to Water Elemental ATK. 20% boost to Water allies' C.A. DMG.	50% boost to Water Elemental ATK. 20% boost to Water allies' C.A. DMG.	\N	\N	\N	\N	\N	\N	f
 2040385	40% boost to Dark Elemental ATK. 20% boost to C.A. DMG. 20% boost to Dark allies' charge bars at battle start.	60% boost to Dark Elemental ATK. 30% boost to C.A. DMG. 30% boost to Dark allies' charge bars at battle start.	\N	\N	15% boost to Dark allies' HP.	25% boost to Dark allies' HP.	\N	\N	f
+2040386	50% boost to Earth ATK. 10% boost to Earth allies' DEF.	50% boost to Earth ATK. 20% boost to Earth allies' DEF.	\N	\N	\N	\N	\N	\N	f
+2040387	20% boost to Wind Elemental ATK. 20% boost to Wind allies' HP and DEF.	30% boost to Wind Elemental ATK. 30% boost to Wind allies' HP and DEF.	\N	\N	\N	\N	\N	\N	f
+2040388	80% boost to Dark Elemental ATK.	100% boost to Dark Elemental ATK.	110% boost to Dark Elemental ATK.	\N	\N	\N	\N	\N	f
+2040389	40% boost to all allies' ATK.	40% boost to all allies' ATK. 10% boost to all allies' HP.	40% boost to all allies' ATK. 10% boost to all allies' HP. All allies start battle with Autorevive.	\N	\N	\N	\N	\N	f

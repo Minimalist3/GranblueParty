@@ -49,10 +49,10 @@
       <span class="flex flex-col">
         <!-- Ougi -->
         <div class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-no-wrap mr-2 italic">Charge attack:</div>
+          <div class="whitespace-nowrap mr-2 italic">Charge attack:</div>
           <div class="divide-y border-secondary">
             <div v-for="(ougi, l) in item.o" :key="l" class="flex flex-row space-x-4">
-              <div class="whitespace-no-wrap italic" v-html="highlight(ougi.n, search_ca_names)" />
+              <div class="whitespace-nowrap italic" v-html="highlight(ougi.n, search_ca_names)" />
               <div v-html="highlight(ougi.d, search_ca_desc)" />
             </div>
           </div>
@@ -60,10 +60,10 @@
 
         <!-- Skills -->
         <div v-if="item.s" class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-no-wrap mr-2 italic">Skills:</div>
+          <div class="whitespace-nowrap mr-2 italic">Skills:</div>
           <div class="divide-y border-secondary">
             <div v-for="(skill, l) in item.s" :key="l" class="flex flex-row space-x-4">
-              <div class="whitespace-no-wrap italic" v-html="highlight(skill.n, search_skill_names)" />
+              <div class="whitespace-nowrap italic" v-html="highlight(skill.n, search_skill_names)" />
               <div v-html="highlight(skill.d, search_skill_desc)" />
             </div>
           </div>

@@ -351,7 +351,7 @@
 350	ws_skill_weapon_atk_4.png	Labrys Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["axe"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["axe"]},"aura_type":"normal","stat":"hp"}]}	\N
 351	ws_skill_job_weapon.png	Barbarian's Nature	\N	\N
 352	ws_skill_blank.png	Barbarian's Essence	\N	\N
-353	ws_skill_deadly_5_2.png	Thunder's Sentence	\N	medium
+353	ws_skill_deadly_5_2.png	Thunder's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["light"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["light"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
 354	ws_skill_sp_atk_3_3.png	Terra's Mystery	\N	big
 355	ws_skill_job_weapon.png	Renew Soul	\N	\N
 356	ws_skill_atk_a_4_3.png	Search for Enlightenment	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -435,7 +435,7 @@
 434	ws_skill_atk_a_1_3.png	Blood Rose Thorns	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 435	ws_skill_damage_red_4.png	Blood Rose Barrier	\N	\N
 436	ws_skill_job_weapon.png	Alchemic Regeneration	\N	\N
-437	ws_skill_deadly_2_2.png	Tsunami's Sentence	\N	medium
+437	ws_skill_deadly_2_2.png	Tsunami's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["water"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["water"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
 438	ws_skill_noroi_1.png	Inferno's Insignia	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"aura_type":"optimus","stat":"atk","restriction":{"element":["fire"]}}]}	big
 439	ws_skill_weapon_atk_5.png	Baculum Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["staff"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["staff"]},"aura_type":"normal","stat":"hp"}]}	\N
 440	ws_skill_weapon_atk_5.png	Mysteries of Mysteria	\N	\N
@@ -458,7 +458,7 @@
 457	ws_skill_wa_m_3_1.png	Oceansoul's Sweep	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["water"],"weapon":["staff"]},"aura_type":"omega","stat":"atk"}]}	big
 458	ws_skill_sp_limit_2.png	Aquae Excelsior	\N	\N
 459	ws_skill_god_m_6_2.png	Mistfall's Majesty II	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"hp"}]}	medium
-460	ws_skill_deadly_m_6_2.png	Mistfall's Sentence	\N	medium
+460	ws_skill_deadly_m_6_2.png	Mistfall's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["dark"]},"stat":"ca_dmg","aura_type":"omega"},{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["dark"]},"stat":"ca_cap","aura_type":"omega"}]}	medium
 461	ws_skill_atk_m_5_3.png	Knightcode's Might II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"}]}	big
 462	ws_skill_tec_arcarum_5_4.png	Sephira Light-Tek	\N	massive
 463	ws_skill_atk_a_5_3.png	Divine Gavel	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -542,7 +542,7 @@
 541	ws_skill_job_weapon.png	Cobalt Arts	\N	\N
 542	ws_skill_atk_a_4_3.png	Devicer	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 543	ws_skill_job_weapon.png	Yes, My Lord!	\N	\N
-544	ws_skill_deadly_m_1_2.png	Ironflame's Sentence	\N	medium
+544	ws_skill_deadly_m_1_2.png	Ironflame's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["fire"]},"stat":"ca_dmg","aura_type":"omega"},{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["fire"]},"stat":"ca_cap","aura_type":"omega"}]}	medium
 545	ws_skill_job_weapon.png	Triple Talon Hellion	\N	massive
 546	ws_skill_counter_m_1_3.png	Ironflame's Clarity II	\N	\N
 547	ws_skill_job_weapon.png	Harbinger of Destruction	\N	\N
@@ -654,7 +654,7 @@
 653	ws_skill_job_weapon.png	Three-Sister Rule	\N	\N
 654	ws_skill_job_weapon.png	Voidcast Arrow	\N	\N
 655	ws_skill_weapon_hollowsky_5.png	Deleterious Covenant	\N	\N
-656	ws_skill_deadly_1_3.png	Inferno's Sentence	\N	big
+656	ws_skill_deadly_1_3.png	Inferno's Sentence	{"data":[{"percent":{"1":5.5,"10":10,"15":12.5},"restriction":{"element":["fire"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":1.2,"10":4.8,"15":6.8},"restriction":{"element":["fire"]},"stat":"ca_cap","aura_type":"optimus"}]}	big
 657	ws_skill_seraphic_4_3.png	Raphael's Blessing III	{"data":[{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["wind"]},"aura_type":"seraphic","stat":"atk"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["wind"]},"aura_type":"seraphic","stat":"atk_cap"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["wind"]},"aura_type":"seraphic","stat":"ca_dmg"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["wind"]},"aura_type":"seraphic","stat":"ca_cap"}]}	\N
 658	ws_skill_hp_m_6_3.png	Mistfall's Aegis II	\N	medium
 659	ws_skill_job_weapon.png	Kind World	\N	big
@@ -690,7 +690,7 @@
 689	ws_skill_job_weapon.png	Virtuoso's Nature	\N	\N
 690	ws_skill_blank.png	Virtuoso's Essence	\N	\N
 691	ws_skill_atk_m_2_2.png	Oceansoul's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"}]}	medium
-692	ws_skill_deadly_m_2_2.png	Oceansoul's Sentence	\N	medium
+692	ws_skill_deadly_m_2_2.png	Oceansoul's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["water"]},"stat":"ca_dmg","aura_type":"omega"},{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["water"]},"stat":"ca_cap","aura_type":"omega"}]}	medium
 693	ws_skill_whole_m_4_2.png	Stormwyrm's Stamina	{"data":[{"percent":{"1":60.4},"aura_type":"omega","stat":"stamina","restriction":{"element":["wind"]}}]}	medium
 694	ws_skill_tec_m_4_3.png	Stormwyrm's Verity II	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"crit"}]}	big
 695	ws_skill_hp_arcarum_2_3.png	Sephira Watersoul	\N	big
@@ -702,7 +702,7 @@
 701	ws_skill_job_weapon.png	Gold's Gleam	\N	\N
 702	ws_skill_hp_a_6_3.png	Silverslime's Aegis	\N	big
 703	ws_skill_job_weapon.png	Silver's Sparkle	\N	\N
-704	ws_skill_deadly_6_3.png	Oblivion's Sentence	\N	big
+704	ws_skill_deadly_6_3.png	Oblivion's Sentence	{"data":[{"percent":{"1":5.5,"10":10,"15":12.5},"restriction":{"element":["dark"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":1.2,"10":4.8,"15":6.8},"restriction":{"element":["dark"]},"stat":"ca_cap","aura_type":"optimus"}]}	big
 705	ws_skill_hero_6_3.png	Oblivion's Glory	\N	big
 706	ws_skill_grace_6_2.png	Hatred's Grace	\N	medium
 707	ws_skill_seraphic_5_2.png	Teachers' Guidance II	{"data":[{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"atk"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"atk_cap"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"ca_dmg"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"ca_cap"}]}	\N
@@ -777,7 +777,7 @@
 776	ws_skill_blank.png	Executioner's Essence	\N	\N
 777	ws_skill_atk_a_3_3.png	Dragon Ravager's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 778	ws_skill_job_weapon.png	Reptile Slaughter	\N	\N
-779	ws_skill_deadly_4_3.png	Ventosus's Sentence	\N	big
+779	ws_skill_deadly_4_3.png	Ventosus's Sentence	{"data":[{"percent":{"1":5.5,"10":10,"15":12.5},"restriction":{"element":["wind"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":1.2,"10":4.8,"15":6.8},"restriction":{"element":["wind"]},"stat":"ca_cap","aura_type":"optimus"}]}	big
 780	ws_skill_ranbu_4_1.png	Wind's Fandango	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["wind"]},"stat":"atk","aura_type":"optimus"}]}	small
 781	ws_skill_job_weapon.png	All-Night Party	\N	small
 782	ws_skill_atk_a_6_3.png	Armed Shadow	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -831,7 +831,7 @@
 830	ws_skill_cosmos_9_2.png	Cosmic Harp II	\N	\N
 831	ws_skill_cosmos_10_2.png	Cosmic Blade II	\N	\N
 832	ws_skill_moment_5_3_2.png	Zion's Celere II	\N	big
-833	ws_skill_deadly_3_2.png	Mountain's Sentence	\N	medium
+833	ws_skill_deadly_3_2.png	Mountain's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["earth"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["earth"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
 834	ws_skill_backwater_5_3.png	Zion's Enmity	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"enmity"}]}	big
 835	ws_skill_tec_5_1.png	Light's Verity	{"data":[{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"crit"}]}	small
 836	ws_skill_ta_4_2.png	Whirlwind's Trium	\N	medium
@@ -990,3 +990,27 @@
 989	ws_skill_atk_a_6_3.png	Sovereign Defender's Might	\N	big
 990	ws_skill_job_weapon.png	Bitter Perseverance	\N	\N
 991	ws_skill_job_weapon.png	Trick or Trick	\N	\N
+992	ws_skill_atk_a_5_3.png	Armed Shine	\N	big
+993	ws_skill_atk_a_3_3.png	Transmutation's Might	\N	big
+994	ws_skill_job_weapon.png	Perforating Stake	\N	\N
+995	ws_skill_sp_atk_2_2.png	Tsunami's Mystery	\N	medium
+996	ws_skill_atk_a_4_3.png	Warrioress's Might	\N	big
+997	ws_skill_job_weapon.png	War-Beast Bond	\N	\N
+998	ws_skill_evoker_2.png	Empress-Justice's Virtue	\N	\N
+999	ws_skill_limit_arcarum_2.png	Sephira Maxi-Water	\N	\N
+1000	ws_skill_evoker_6.png	Lovers-Death's Demise	\N	\N
+1001	ws_skill_limit_arcarum_6.png	Sephira Maxi-Dark	\N	\N
+1002	ws_skill_evoker_3.png	Fool-Hanged Man's Perseverance	\N	\N
+1003	ws_skill_limit_arcarum_3.png	Sephira Maxi-Earth	\N	\N
+1004	ws_skill_evoker_3.png	Magician-Tower's Calamity	\N	\N
+1005	ws_skill_evoker_4.png	Hermit-Temperance's Accord	\N	\N
+1006	ws_skill_limit_arcarum_4.png	Sephira Maxi-Wind	\N	\N
+1007	ws_skill_evoker_5.png	Chariot-Star's Wish	\N	\N
+1008	ws_skill_limit_arcarum_5.png	Sephira Maxi-Light	\N	\N
+1009	ws_skill_evoker_1.png	Strength-Devil's Seduction	\N	\N
+1010	ws_skill_limit_arcarum_1.png	Sephira Maxi-Fire	\N	\N
+1011	ws_skill_evoker_2.png	High Priestess-Moon's Bewitching	\N	\N
+1012	ws_skill_evoker_4.png	Emperor-Judgement's Awakening	\N	\N
+1013	ws_skill_evoker_1.png	Hierophant-Sun's Blessing	\N	\N
+1014	ws_skill_atk_a_2_3.png	Ebony Blade	\N	big
+1015	ws_skill_weapon_hp_10.png	Member of the Corps	\N	\N

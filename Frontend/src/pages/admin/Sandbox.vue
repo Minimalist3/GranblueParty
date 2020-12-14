@@ -1,7 +1,6 @@
 <template>
   <div class="flex flex-col">
 
-
   </div>
 </template>
 
@@ -9,7 +8,13 @@
 
 export default {
   components: {
-
+    
+  },
+  head: {
+    title: 'Granblue.Party - Admin - Sandbox',
+    desc: '',
+    image: '',
+    keywords: ''
   },
   data() {
     return {
@@ -24,3 +29,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>

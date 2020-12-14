@@ -91,6 +91,11 @@ export function createRouter(store) {
         component: () => import(/* webpackChunkName: "spark" */ '@/pages/Spark.vue'),
         pathToRegexpOptions: { strict: true },
       },
+      {
+        path: '/replicard',
+        component: () => import(/* webpackChunkName: "replicard" */ '@/pages/Replicard.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
   /// #if DEBUG
       {
         path: '/admin',

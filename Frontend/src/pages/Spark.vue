@@ -167,8 +167,8 @@ export default {
     SparkUnit
   },
   head: {
-    title: 'Granblue.Party - Spark Generator',
-    desc: 'Granblue Fantasy Spark Generator',
+    title: 'Granblue.Party - Spark Maker',
+    desc: 'Granblue Fantasy Spark Maker',
     image: 'https://www.granblue.party/img/preview_spark.png',
     keywords: 'spark, gacha, draws, characters, summons, weapons'
   },
@@ -216,7 +216,7 @@ export default {
         if (this.drawn_characters.some(c => c.id == element.id) || this.drawn_GM.some(c => c.id == element.id)) {
           this.drawn_GM.push(element);
         }
-        else if (this.ownedCharactersMap !== null && this.ownedCharactersMap[element.id].owned === true) {
+        else if (this.ownedCharactersMap[element.id] && this.ownedCharactersMap[element.id].owned === true) {
           this.drawn_GM.push(element);
         }
         else {
@@ -283,7 +283,7 @@ export default {
             }
             else {
               let stars = summon_owned.sc;
-              if (summon_owned.owned === false) {
+              if (summon_owned.owned == null || summon_owned.owned === false) {
                 stars = 0;
               }
               else if (stars < summon_owned.sm) {

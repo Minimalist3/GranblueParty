@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Utils from '@/js/utils.js'
 
 const DEFAULT_VALUES = {
-  summons: [{}, {}, {}, {}, {}, {}, {}, {}],
+  summons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
 }
 // Helper to match categories with proper default values
 const getDefaultValues = (data, category) => {
@@ -22,7 +22,7 @@ export default {
   state() {
     return {
       id: 1,
-      summons: [{}, {}, {}, {}, {}, {}, {}, {}],
+      summons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
     }
   },
   mutations: {
@@ -35,6 +35,11 @@ export default {
       return this.axios.post('/party/load', { summons: data.s })
         .then(response => {
           state.summons = getDefaultValues(response.data, 'summons');
+
+          while (state.summons.length < DEFAULT_VALUES.summons.length) {
+            state.summons.push({});
+          }
+
           if (data.ss) {
             for (let i=0; i<state.summons.length; i++) {
               if ( ! Utils.isEmpty(state.summons[i])) {

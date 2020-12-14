@@ -81,7 +81,7 @@
         <span v-if="content.show === true">
           <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
 
-            <div class="flex md:flex-col self-center pr-2 whitespace-no-wrap">
+            <div class="flex md:flex-col self-center pr-2 whitespace-nowrap">
               <span class="pr-2">{{ catVal.name }}</span>
               <span class="flex flex-row">
                 <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>

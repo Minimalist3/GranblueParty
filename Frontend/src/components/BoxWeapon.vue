@@ -20,7 +20,7 @@
     ></portrait>
 
     <!-- Stats -->
-    <div class="flex flex-row flex-no-wrap justify-around text-xs" v-if="! objectIsEmpty && showLevel">
+    <div class="flex flex-row flex-nowrap justify-around text-xs" v-if="! objectIsEmpty && showLevel">
       <stat-input shortName="lvl" longName="Weapon level" :prop.sync="object.level" :length="3"></stat-input>
       <stat-input shortName="sl" longName="Skill level" :prop.sync="object.sklevel" :length="2"></stat-input>
       <stat-input shortName="+" longName="Plus bonuses" :prop.sync="object.pluses" :length="3"></stat-input>

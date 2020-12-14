@@ -4,7 +4,7 @@
   @apply text-xs;
   @apply py-1;
   @apply px-2;
-  @apply whitespace-no-wrap;
+  @apply whitespace-nowrap;
 }
 
 /* Buttons */
@@ -135,7 +135,7 @@
 .tooltip {
   @apply absolute;
   @apply left-0;
-  @apply whitespace-no-wrap;
+  @apply whitespace-nowrap;
   @apply text-sm;
   @apply bg-tertiary;
   @apply rounded-lg;

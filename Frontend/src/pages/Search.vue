@@ -1,11 +1,6 @@
 <template>
   <div>
-    <h1>Search</h1>
-
-    <div class="py-4">
-      <span class="tag bg-red-600">Experimental</span>
-      The Summons tab is not implemented yet.
-    </div>
+    <h1 class="pb-4">Search</h1>
 
     <!-- Tabs -->
     <span class="flex flex-col w-full">

@@ -33,25 +33,37 @@
       <div class="flex flex-row flex-wrap self-center mb-4">
         <div class="flex flex-col items-center mr-4">
           <span class="px-3 py-1 my-1 rounded-full text-white bg-red-600">Fire</span>
-          <box-summon class="mb-4" :object="summons[0]" :showLevel="false" @click-portrait="showModal(0)"></box-summon>
-          <box-summon :object="summons[1]" :showLevel="false" @click-portrait="showModal(1)"></box-summon>
-          <span class="px-3 py-1 my-1 rounded-full text-white bg-green-600">Wind</span>
+          <box-summon :object="summons[0]" :showLevel="false" @click-portrait="showModal(0)"></box-summon>
+          <box-summon :object="summons[8]" :showLevel="false" @click-portrait="showModal(8)"></box-summon>
         </div>
         <div class="flex flex-col items-center mr-4">
           <span class="px-3 py-1 my-1 rounded-full text-white bg-blue-600">Water</span>
-          <box-summon class="mb-4" :object="summons[3]" :showLevel="false" @click-portrait="showModal(3)"></box-summon>
-          <box-summon :object="summons[4]" :showLevel="false" @click-portrait="showModal(4)"></box-summon>
-          <span class="px-3 py-1 my-1 rounded-full text-black bg-yellow-400">Light</span>
+          <box-summon :object="summons[3]" :showLevel="false" @click-portrait="showModal(3)"></box-summon>
+          <box-summon :object="summons[11]" :showLevel="false" @click-portrait="showModal(11)"></box-summon>
         </div>
         <div class="flex flex-col items-center mr-4">
           <span class="px-3 py-1 my-1 rounded-full text-white bg-yellow-800">Earth</span>
-          <box-summon class="mb-4" :object="summons[2]" :showLevel="false" @click-portrait="showModal(2)"></box-summon>
-          <box-summon :object="summons[5]" :showLevel="false" @click-portrait="showModal(5)"></box-summon>
-          <span class="px-3 py-1 my-1 rounded-full text-white bg-purple-600">Dark</span>
+          <box-summon :object="summons[2]" :showLevel="false" @click-portrait="showModal(2)"></box-summon>
+          <box-summon :object="summons[10]" :showLevel="false" @click-portrait="showModal(10)"></box-summon>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center mr-4">
+          <span class="px-3 py-1 my-1 rounded-full text-white bg-green-600">Wind</span>
+          <box-summon :object="summons[1]" :showLevel="false" @click-portrait="showModal(1)"></box-summon>
+          <box-summon :object="summons[9]" :showLevel="false" @click-portrait="showModal(9)"></box-summon>
+        </div>
+        <div class="flex flex-col items-center mr-4">
+          <span class="px-3 py-1 my-1 rounded-full text-black bg-yellow-400">Light</span>
+          <box-summon :object="summons[4]" :showLevel="false" @click-portrait="showModal(4)"></box-summon>
+          <box-summon :object="summons[12]" :showLevel="false" @click-portrait="showModal(12)"></box-summon>
+        </div>
+        <div class="flex flex-col items-center mr-4">
+          <span class="px-3 py-1 my-1 rounded-full text-white bg-purple-600">Dark</span>
+          <box-summon :object="summons[5]" :showLevel="false" @click-portrait="showModal(5)"></box-summon>
+          <box-summon :object="summons[13]" :showLevel="false" @click-portrait="showModal(13)"></box-summon>
+        </div>
+        <div class="flex flex-col items-center mr-4">
           <span class="px-3 py-1 my-1 rounded-full text-black bg-white">Misc</span>
-          <box-summon class="mb-4" :object="summons[6]" :showLevel="false" @click-portrait="showModal(6)"></box-summon>
+          <box-summon :object="summons[6]" :showLevel="false" @click-portrait="showModal(6)"></box-summon>
           <box-summon :object="summons[7]" :showLevel="false" @click-portrait="showModal(7)"></box-summon>
         </div>
       </div>
@@ -131,6 +143,12 @@ export default {
   },
   methods: {
     showModal(index) {
+      this.selected_box_index = index;
+
+      if (index > 7) {
+        index -= 8;
+      }
+
       if (index < 6) {
         this.data_model.e.data.forEach(d => d.checked = false);
         this.data_model.e.data[index].checked = true;
@@ -139,7 +157,6 @@ export default {
         this.data_model.e.data.forEach(d => d.checked = true);
       }
 
-      this.selected_box_index = index;
       this.show_modal = true;
     },
     changeObject(id) {

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="base !== undefined" class="flex flex-row flex-no-wrap" title="Uncap level">
+  <div v-if="base !== undefined" class="flex flex-row flex-nowrap" title="Uncap level">
     <img
       v-for="i in getYellowStarsCount"
       :key="'y' + i"

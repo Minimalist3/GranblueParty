@@ -124,8 +124,9 @@ else {
         crossOrigin: 'anonymous',
         sri: true,
       }),
-      new SitemapWebpackPlugin('https://www.granblue.party/',
-        [
+      new SitemapWebpackPlugin({
+        base: 'https://www.granblue.party/',
+        paths: [
           '/',
           '/builder',
           '/collection',
@@ -134,13 +135,16 @@ else {
           '/release',
           '/friendsum',
           '/dailygrind',
-          '/roomname'
+          '/replicard',
+          '/roomname',
+          '/search',
+          '/spark'
         ],
-        {
-          changeFreq: 'weekly',
-          lastMod: true,
+        options: {
+          changefreq: 'weekly',
+          lastmod: true,
         }
-      )
+      })      
     ]
   })
 }

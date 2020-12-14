@@ -273,7 +273,7 @@
 3030180	1	Phantom Howl	 Big Dark damage to a foe.
 3030181	1	Pure Paragon	 Big Wind damage to a foe. Gain DEF Up.
 3030182	1	Primeval Dragon	 600% elemental damage to a foe (Damage cap: ~2,150,000). Inflict DEF Down.
-3030183	1	Rising Rapier	 Big Light damage to a foe and inflict Blind.
+3030183	1	Rising Rapier	 Big Light damage to a foe. Inflict Blind.
 3030184	1	Heaven's Favor	 Big Earth damage to a foe. Gain DEF Up.
 3030185	1	Oops! Misfire!	 Let's have some FUN-gus!
 3030186	1	Everything Goes Boom!	 Big Water damage to a foe. Gain ATK Up.
@@ -406,7 +406,8 @@
 3040020	1	Judgement Rush	 Massive Light damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Pumpkin effect.) Restore Charlotta's HP (Healing cap: 2000).
 3040021	1	Le Jardin de Fleurs	 Massive Wind damage to a foe.
 3040021	2	L'Enfer des Fleurs	After 5★: Massive Wind damage to a foe. Inflict Spirit Blossom (Max lvl: 2).
-3040022	1	Areus Assault	 Massive Earth damage to a foe. Gain DEF Boosted (Stackable).
+3040022	1	Areus Prosbole	 450% Earth damage to a foe. Gain Guaranteed TA.
+3040022	2	Akua Lanakila	After 5★: 500% Earth damage to a foe. Activate Impelliteri. Gain Recovery Cap Boosted.
 3040023	1	Weissfluegel	 500% Water damage to a foe. After 5★: Gain Double Impulse. (Next use of Blade Impulse activates twice.)
 3040024	1	Lebensstrahl	 Restore 10% of all allies' HP (Healing cap: 2500). All allies gain Light ATK Up, Dark DMG Lowered, and Uplifted.
 3040025	1	Schwarze Faenge	 450% Earth damage to a foe. Bonus Earth damage to foe in Break mode. After 5★: 500% Earth damage to a foe. 400% Bonus Earth damage; no longer requires foe in Break mode (Damage cap: ~635,000).
@@ -433,8 +434,8 @@
 3040035	2	Three Thousand and One Talons	After 5★: Massive Dark damage to a foe. Gain Mirror Image and Other Self 1.
 3040036	1	Diez Mil Espadas	 Massive Wind damage to a foe. All allies gain ATK Up.
 3040036	2	Cien Mil Espadas	After 5★: Massive Wind damage to a foe. All allies gain ATK Up. Seofon gains Unchallenged.
-3040037	1	Almighty Flurry	 Massive Earth damage to a foe. Inflict Lethal Hit. Eahta gains TA Up.
-3040037	2	Almighty Passage	After 5★: Massive Earth damage to a foe. Inflict Lethal Hit. Eahta gains DA Up and TA Up. All allies gain Earth ATK Up.
+3040037	1	Almighty Flurry	 450% Earth damage to a foe. Inflict Lethal Hit. Eahta gains TA Up.
+3040037	2	Almighty Passage	After 5★: 500% Earth damage to a foe. Inflict Lethal Hit. Eahta gains DA Up and TA Up. All allies gain Earth ATK Up.
 3040038	1	Nebulosa Frojd	 450% Wind damage to a foe. 100% bonus Wind damage to all foes (Damage cap: ~200,000). Inflict Charm on all foes.
 3040038	2	Vintergatan Svala	After 5★: 500% Wind damage to a foe. 100% bonus Wind damage to all foes (Damage cap: ~200,000). Inflict Charm on all foes. Extend the duration of Harmonics and Sharping on all allies by 3 turns.
 3040039	1	Dance of Death	 Massive Fire damage to a foe. Inflict Blind.
@@ -535,7 +536,8 @@
 3040108	1	Earth, Wind, and Fire	 Massive Dark damage to a foe. Gain Charge Boost.
 3040109	1	Seismische Welle	 Massive Earth damage to a foe. Gain 3 Flash Point stacks.
 3040110	1	Immortal Assault	 Massive Fire damage to a foe. Gain Fire ATK Up.
-3040111	1	Endbringer	 Massive Dark damage to a foe. Fully recover Puppet Strings' shield endurance.
+3040111	1	Endbringer	 450% Dark damage to a foe. Fully recover Puppet Strings' shield endurance.
+3040111	2	Verdict Bringer	 500% Dark damage to a foe. Fully recover Puppet Strings' shield endurance. End cooldown for Oblivion.
 3040112	1	Solar Spike	 Massive Dark damage to a foe. All allies gain Critical Hit Rate Boosted.
 3040113	1	Seventh Blight	 Massive Earth damage to a foe. Gain DEF Up.
 3040115	1	Hell's Angel	 Massive Fire damage to a foe. Gain Double Blitz. (Next Blitzkrieg activates twice.)
@@ -673,7 +675,7 @@
 3040237	1	Gewaltfaenge	 Massive Fire damage to a foe. Activate Verdrangen. Restore 20% of Siegfried's HP (Healing cap: 1500).
 3040238	1	Archon Squallchain	 Massive Wind damage to a foe. Activate Violetshock Flicker.
 3040239	1	Abyssal Wall	 Massive Earth damage to a foe. Gain Counters on Dodge/DMG.
-3040240	1	Night of Crazy Insanity	 Massive Light damage to a foe. (Deal Bonus Light DMG based on Party All Night lvl [Max: 5].) Crazy boo-tiful! (Gain High Tension. Ends upon taking damage.)
+3040240	1	Night of Crazy Insanity	 Massive Light damage to a foe. (Deal Bonus Light DMG based on Party All Night lvl [Max: 5].) Crazy boo-tiful! (Gain High Tension. Ends upon taking non-plain damage.)
 3040241	1	Purification Dance: Jouka	 Massive Wind damage to a foe. Inflict Foxflame 3. (Restores 20% HP of allies with Nasori Rite [Healing cap: 2500].)
 3040242	1	Ebon Dance: Kage-Zakura	 Massive Dark damage to a foe. Inflict Special Attack DMG Lowered 2. Gain Ake-Zakura: Next Ninth Dance: Akezome affects all allies.
 3040243	1	Blades of Ardor	 Massive Fire damage to a foe. 1-turn cut to Vira's skill cooldown.
@@ -735,5 +737,14 @@
 3040297	1	Starless Twilight Slash	 450% Earth damage to a foe. 1-turn cut to Golden Knight's skill cooldowns.
 3040298	1	Spontaneous Indiscretion	 450% Light damage to a foe. (50% boost to C.A. damage and 30% boost to C.A. damage cap when below 25% HP.) Activate Puncture.
 3040299	1	Nature's Retribution	 450% Wind damage to a foe and remove 1 buff. Gain Typhoon Crest 1.
-3040300	1	Grigori's Inferno	 450% Fire damage to a foe. Inflict Blinded 2. (Boost to specs against foes with Petrified.)
+3040300	1	Grigori's Inferno	 450% Fire damage to a foe. (30% boost to C.A. damage and 10% boost to C.A. damage cap against foes with Petrified.) Inflict Blinded 2.
 3040301	1	Phantom Rose	 450% Water damage to a foe. Restore 5 Petals of Sapphire.
+3040302	1	Expiation	 450% Earth damage to a foe. Activate Force de la Sagesse.
+3040303	1	Piercing Wind Shear	 450% Wind damage to a foe. All allies gain DMG Cap Boosted (1 time).
+3040304	1	Raging Blast Knuckle	 Massive Light damage to a foe. 100% Bonus Light damage based on Azure Fist lvl (Max: 5 hits; Damage cap: ~100,000 per hit).
+3040305	1	Muscolo Fioritura	 Massive Earth damage to a foe and remove 1 buff.
+3040306	1	Gaia Dora	 Massive Fire damage to a foe. Special buffs to all allies based on my Nemo Power! (All allies gain Gilded by Gaia. Boost to effect based on Nemo Power.)
+3040307	1	Winter Winds, Rimy Conquest	 450% Water damage to a foe. Gain Counters on Dodge and 1 Mikan Orange.
+3040308	1	Hinokami Kagura Dance	 450% Water damage to a foe. Raise Tanjiro's Kagura lvl by 1 (Max: 5). ('When consuming 5 Kagura lvls:' Bonus 999,999 plain damage to foe.)
+3040309	1	Ninth Form: Rengoku	 1250% Fire damage to a foe. End cooldown for First Form: Unknowing Fire. (Consumes Resolve to activate.)
+3040310	1	Butterfly Dance: Caprice	 450% Wind damage to a foe. (30% boost to C.A. damage and 10% boost to C.A. damage cap against foes with Poison.) Slight chance to inflict Lethal Hit.

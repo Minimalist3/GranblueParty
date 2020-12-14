@@ -631,6 +631,9 @@ export default {
     evoker_index() {
       lsMgt.setValue('evoker_index', this);
     },
+    from_index() {
+      lsMgt.setValue('from_index', this);
+    },
     to_index() {
       // Used as stop index of steps array
       lsMgt.setValue('to_index', this);

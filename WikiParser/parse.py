@@ -576,6 +576,8 @@ def updateSummons():
             obtain = defines.OBTAIN['Summer Premium Draw']
           elif obtainValue == 'premium,non-ticketable':
             obtain = defines.OBTAIN['Premium Gala']
+          elif obtainValue == 'premium,holiday':
+            obtain = defines.OBTAIN['Holiday Premium Draw']
           else:
             print('Unknown premium value for summon ' + getTemplateValue(template, 'name') + ': ' + obtainValue)
         elif summon_id in defines.SUMMON_EVOKERS:
