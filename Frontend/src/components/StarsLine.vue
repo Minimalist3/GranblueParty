@@ -1,5 +1,5 @@
 <template>
-  <div v-if="base !== undefined" class="flex flex-row flex-nowrap" title="Uncap level">
+  <div v-if="base !== undefined" class="flex flex-row flex-nowrap" :title="title">
     <img
       v-for="i in getYellowStarsCount"
       :key="'y' + i"
@@ -48,6 +48,10 @@ export default {
     readOnly: {
       type: Boolean,
       default: false
+    },
+    title: {
+      type: String,
+      default: 'Uncap level'
     }
   },
   methods: {

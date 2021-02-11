@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2020-11-30:</b> Nemone (Holiday), Mirin (Holiday)</p>
+        <p><b>2021-01-31:</b> Lamretta, Nectar, Cagliostro (Grand)</p>
       </div>
 
       <div>

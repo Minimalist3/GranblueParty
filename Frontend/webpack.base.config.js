@@ -68,7 +68,7 @@ let config = {
         }
        ]
       },
-      { test: /\.(png|jpg|gif|ico|txt)$/,
+      { test: /\.(png|jpg|gif|ico|txt|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -79,6 +79,12 @@ let config = {
           },
         ],
       },
+/*      {
+        test: /\.(png|jpg|gif|ico|txt|webp)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'src/[path][name].[ext]',
+        }*/
     ]
   },
   plugins: [

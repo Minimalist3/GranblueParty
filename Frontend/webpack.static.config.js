@@ -32,6 +32,12 @@ module.exports = merge(baseConfig, {
           },
         ],
       },
+/*      {
+        test: /\.(png|jpg|gif|ico|txt|webp)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'src/[path][name].[ext]',
+        }*/
     ]
   },
   plugins: [

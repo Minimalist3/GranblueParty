@@ -417,20 +417,22 @@ def updateCharacters():
             if recruit in defines.OBTAIN:
               recruit_id = defines.OBTAIN[recruit]
 
+          # Don't deal with 6* eternals for now
+          max_evo = min(int(getTemplateValue(template, 'max_evo')), 5)
           # Check missing Atk and HP values
-          if int(getTemplateValue(template, 'max_evo')) == 5:
+          if max_evo == 5:
             if getTemplateValueOrNone(template, 'flb_atk') == None:
               print('[WARN] flb_atk missing for', name, page_id)
             if getTemplateValueOrNone(template, 'flb_hp') == None:
               print('[WARN] flb_hp missing for', name, page_id)
-          if int(getTemplateValue(template, 'max_evo')) >= 4:
+          if max_evo >= 4:
             if getTemplateValueOrNone(template, 'max_atk') == None:
               print('[WARN] max_atk missing for', name, page_id)
             if getTemplateValueOrNone(template, 'max_hp') == None:
               print('[WARN] max_hp missing for', name, page_id)
     
           values += [(character_id, name, getTemplateValueOrDefault(template, 'jpname', ''),
-            getTemplateValue(template, 'base_evo'), getTemplateValue(template, 'max_evo'),
+            getTemplateValue(template, 'base_evo'), max_evo,
             rarity, element, chara_type, race, recruit_id, getTemplateValue(template, 'release_date'),
             getTemplateValueOrNone(template, 'max_atk'), getTemplateValueOrNone(template, 'flb_atk'),
             getTemplateValueOrNone(template, 'max_hp'), getTemplateValueOrNone(template, 'flb_hp'),

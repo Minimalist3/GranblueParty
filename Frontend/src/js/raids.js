@@ -419,8 +419,8 @@ const CAT_IMPOSSIBLE = {
     name: 'Impossible Omega II',
     tier: 'impossible',
     stars: 3,
-    cost: 90,
-    magfes: 45,
+    cost: 60,
+    magfes: 30,
     times: 2,
     raids: {
       '303151/1/0/522': {
@@ -453,8 +453,8 @@ const CAT_IMPOSSIBLE = {
     name: 'Impossible Beasts',
     tier: 'impossible',
     stars: 3,
-    cost: 90,
-    magfes: 90,
+    cost: 80,
+    magfes: 80,
     times: 1,
     raids: {
       '303231/1/0/6005': {
@@ -467,8 +467,8 @@ const CAT_IMPOSSIBLE = {
     name: 'Impossible Tier 3 Summon',
     tier: 'impossible',
     stars: 4,
-    cost: 80,
-    magfes: 40,
+    cost: 50,
+    magfes: 25,
     times: 1,
     raids: {
       '302751/1/0/41': {
@@ -501,58 +501,44 @@ const CAT_IMPOSSIBLE = {
     name: 'Impossible Malice',
     tier: 'impossible',
     stars: 5,
+    cost: 80,
+    magfes: 40,
     times: 1,
     raids: {
       '303241/1/0/104': {
         name: 'Tiamat Malice',
         namejp: 'ティアマト・マリス',
         icon: 'galbinuscentrum',
-        cost: 80,
-        magfes: 40,
       },
       '303241/1/0/106': {
         name: 'Tiamat Malice',
         icon: 'atercentrum',
-        cost: 80,
-        magfes: 40,
       },
       '305151/1/0/101': {
         name: 'Leviathan Malice',
         namejp: 'リヴァイアサン・マリス',
         icon: 'rubeuscentrum',
-        cost: 80,
-        magfes: 40,
       },
       '305151/1/0/102': {
         name: 'Leviathan Malice',
         icon: 'indicuscentrum',
-        cost: 80,
-        magfes: 40,
       },
       '305251/1/0/103': {
         name: 'Phronesis',
         namejp: 'フロネシス',
         icon: 'luteuscentrum',
-        cost: 80,
-        magfes: 40,
       },
       '305251/1/0/102': {
         name: 'Phronesis',
         icon: 'indicuscentrum',
-        cost: 80,
-        magfes: 40,
       },
       '303271/1/0/506': {
         name: 'Lucilius',
         namejp: 'ルシファー',
-        cost: 80,
-        magfes: 40,
       },
       '305171/1/0/535': {
         name: 'Lindwurm',
         namejp: 'リンドヴルム',
-        cost: 90,
-        magfes: 45,
         times: 2
       }
     }
@@ -604,38 +590,38 @@ const CAT_IMPOSSIBLE = {
       '305191/1/0/41': {
         name: 'Wilnas (Fire)',
         namejp: '火竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
       '305201/1/0/42': {
         name: 'Wamdus (Water)',
         namejp: '水竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
       '305211/1/0/43': {
         name: 'Galleon (Earth)',
         namejp: '土竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
       '305221/1/0/44': {
         name: 'Ewiyar (Wind)',
         namejp: '風竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
       '305231/1/0/45': {
         name: 'Lu Woh (Light)',
         namejp: '光竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
       '305241/1/0/46': {
         name: 'Fediel (Dark)',
         namejp: '闇竜',
-        cost: 80,
-        magfes: 40,
+        cost: 50,
+        magfes: 25,
       },
     }
   },

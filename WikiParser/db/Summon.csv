@@ -219,7 +219,7 @@
 2040269	Demi Agni	アグニス・ディヴィジョン	3	4	2	0	\N	2018-02-28	270	1630	2310	\N	103	647	919	\N	{"0":[{"percent":70,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"fire","aura_type":"optimus","stat":"atk"}]}
 2040270	Demi Varuna	ヴァルナ・ディヴィジョン	3	4	2	3	\N	2018-02-28	250	1610	2290	\N	107	653	926	\N	{"0":[{"percent":70,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"water","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"water","aura_type":"optimus","stat":"atk"}]}
 2040271	Demi Titan	ティターン・ディヴィジョン	3	4	2	2	\N	2018-02-28	255	1615	2295	\N	106	650	922	\N	{"0":[{"percent":70,"element":"earth","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"earth","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"earth","aura_type":"optimus","stat":"atk"}]}
-2040272	Demi Zephyrus	ゼピュロス・ディヴィジョン	3	4	2	1	\N	2018-02-28	265	1625	\N	\N	104	648	\N	\N	{"0":[{"percent":70,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"wind","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"wind","aura_type":"optimus","stat":"atk"}]}
+2040272	Demi Zephyrus	ゼピュロス・ディヴィジョン	3	4	2	1	\N	2018-02-28	265	1625	2305	\N	104	648	920	\N	{"0":[{"percent":70,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"wind","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"wind","aura_type":"optimus","stat":"atk"}]}
 2040273	Demi Zeus	ゼウス・ディヴィジョン	3	4	2	4	\N	2018-02-28	260	1620	2300	\N	105	651	924	\N	{"0":[{"percent":70,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"light","aura_type":"optimus","stat":"atk"}]}
 2040274	Demi Hades	ハデス・ディヴィジョン	3	4	2	5	\N	2018-02-28	280	1640	2320	\N	101	645	917	\N	{"0":[{"percent":70,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"dark","aura_type":"optimus","stat":"atk"}]}
 2040275	Halluel and Malluel	ハールート・マールート	3	3	2	4	1600	2018-02-28	350	2075	\N	\N	135	808	\N	\N	\N
@@ -308,3 +308,7 @@
 2040387	Guardian Ku-Keoloewa	護りし者 クー・ケオロエワ	3	3	2	1	\N	2020-11-29	230	1442	\N	\N	93	576	\N	\N	\N
 2040388	Sariel	サリエル	3	4	2	5	1020	2020-11-30	382	2077	2501	\N	127	805	975	\N	\N
 2040389	Giyu Tomioka	冨岡義勇	3	4	2	3	\N	2020-12-08	210	1300	1573	\N	98	615	744	\N	\N
+2040390	Xeno Corow	ゼノ・コロゥ	3	4	2	4	\N	2020-12-19	260	1622	2303	\N	105	648	920	\N	\N
+2040391	Ultra Robo Grand God Kaiser	極鋼巨帝グランゴッドカイザー	3	3	2	4	\N	2020-12-28	250	1497	\N	\N	89	565	\N	\N	\N
+2040392	Tsuchinoko	ツチノコ	3	4	2	2	1600	2020-12-31	310	2080	2965	\N	153	875	1236	\N	\N
+2040393	Idle Sparkle	ぼんやりピカピカの魔法	3	3	2	2	\N	2021-01-29	215	1407	\N	\N	96	583	\N	\N	\N

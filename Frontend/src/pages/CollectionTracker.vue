@@ -89,6 +89,8 @@
               <ul>
                 <li><label><input type="checkbox" v-model="summon_show[1000]"> Premium Draw</label>
                     <span class="tag bg-primary">{{ summon_count[1000] }}/{{ summon_total[1000] }}</span></li>
+                <li><label><input type="checkbox" v-model="summon_show[1020]"> Holiday</label>
+                    <span class="tag bg-primary">{{ summon_count[1020] }}/{{ summon_total[1020] }}</span></li>
                 <li><label><input type="checkbox" v-model="summon_show[1030]"> Summer</label>
                     <span class="tag bg-primary">{{ summon_count[1030] }}/{{ summon_total[1030] }}</span></li>
                 <li><label><input type="checkbox" v-model="summon_show[1600]"> Non-ticketable</label>
@@ -267,6 +269,7 @@ function getDataModel() {
 
 const INITIAL_DATA = () => {
   return {
+    // Add the corresponding values in the store
     chara_show: {
       null: true, 10: true, 20: true,
       1000: true, 1010: true, 1020: true, 1030: true, 1040: true, 1050: true,
@@ -274,9 +277,9 @@ const INITIAL_DATA = () => {
     },
     summon_show: {
       null: true, 20: true,
-      1000: true, 1030: true,
+      1000: true, 1020: true, 1030: true,
       1600: true,
-    },    
+    },
     data_model: getDataModel(),
     modification: false,
     showNames: true,
@@ -321,6 +324,10 @@ export default {
     getCharacters(element) {
       if (this.characters) {
         return this.characters[element].filter(chara => {
+          if ( ! this.chara_show.hasOwnProperty(chara.d)) {
+            console.log('Unknown Character category ' + chara.d + '. Please report this error to the administrator.');
+            return true;
+          }
           if ( ! this.chara_show[chara.d]) {
             return false;
           }
@@ -336,6 +343,10 @@ export default {
         return this.summons[element].filter(summ => {
           return this.getFilters.every(e => {
             if (summ[e.key] === undefined) {
+              return true;
+            }
+            if ( ! this.summon_show.hasOwnProperty(summ.d)) {
+              console.log('Unknown Summon category ' + summ.d + '. Please report this error to the administrator.');
               return true;
             }
             if ( ! this.summon_show[summ.d]) {
@@ -542,8 +553,23 @@ export default {
     lsMgt.getValue(this, 'showAwakening');    
     lsMgt.getValue(this, 'showCharacters');
     lsMgt.getValue(this, 'showSummons');
-    lsMgt.getValue(this, 'chara_show');
-    lsMgt.getValue(this, 'summon_show');
+
+    const chara_show = lsMgt.fetchValue('chara_show');
+    if (chara_show !== undefined) {
+      for (const [key, value] of Object.entries(chara_show)) {
+        if (this.chara_show.hasOwnProperty(key)) {
+          this.chara_show[key] = value;
+        }
+      }
+    }
+    const summon_show = lsMgt.fetchValue('summon_show');
+    if (summon_show !== undefined) {
+      for (const [key, value] of Object.entries(summon_show)) {
+        if (this.summon_show.hasOwnProperty(key)) {
+          this.summon_show[key] = value;
+        }
+      }
+    }
 
     await this.loadCollection()
       .then(_ => this.loading = false);

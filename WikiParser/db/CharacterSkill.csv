@@ -1,24 +1,24 @@
-3020000	0	Heat Blitz	1	Gain ATK Up and self-inflict DEF Down.
+3020000	0	Heat Blitz	1	Gain ATK Up. Self-inflict DEF Down.
 3020000	1	Brute Force	25	100%-150% Fire damage to all foes.
 3020000	2	Physical Strike	1	200%-300% Fire damage to a foe.
 3020001	0	Inspire	1	All allies gain ATK Up. At level 45: Effect enhanced.
 3020001	1	Powderize	25	Earth damage to a foe and inflict DEF Down.
 3020002	0	Hexor	1	200%-250% Wind damage to a foe. At level 45: Damage increased to 250%-350%
 3020002	1	Strong Arm	25	Gain DA Up and TA Up.
-3020004	0	Defender	1	Gain DEF Up and self-inflict ATK Down.
+3020004	0	Defender	1	Gain DEF Up. Self-inflict ATK Down.
 3020004	1	Svel	25	All allies gain 25% DMG Cut.
-3020005	0	Shield Defense	1	Gain DEF Up and self-inflict ATK Down.
+3020005	0	Shield Defense	1	Gain DEF Up. Self-inflict ATK Down.
 3020005	1	Overlance	25	400% Water damage to a foe in Overdrive.
 3020006	0	Shield Bash	1	Gain Repel. At level 45: Effect enhanced.
 3020006	1	Showtime!	25	400% Earth damage to a foe in Overdrive.
-3020007	0	Shield Smite	1	Gain Repel. At level 45: Buff increased to Repel.
+3020007	0	Shield Smite	1	Gain Repel. At level 45: Buff increased to Repel. 
 3020007	1	Substitute	25	Gain Substitute.
 3020008	0	Fire	1	Fire damage to a foe (Damage cap: ~210,000). At level 45: Damage increased to 250%.
 3020008	1	Nightmare Wish	25	Gain Other Self.
 3020008	2	Roast	1	3-hit 100% Fire damage to random foes (Damage cap: ~85,000 per hit).
 3020009	0	Heal Self	1	Restore HP (Healing cap: 1000). Gain DEF Up. At level 45: Effect enhanced.
 3020009	1	Protective Wind	25	All allies gain DEF Up
-3020010	0	Jinx	1	Dark damage to a foe and inflict Poison.
+3020010	0	Jinx	1	Dark damage to a foe. Inflict Poison.
 3020010	1	Atonement	25	Inflict Mode Bar Cut on a foe in Overdrive.
 3020011	0	Wind's Solace	1	Restore all allies' HP. At level 45: Healing cap increased.
 3020011	1	Gust	25	Small Wind damage to a foe.
@@ -49,7 +49,7 @@
 3020023	1	Threat	25	Fire damage to a foe. Inflict Delay.
 3020024	0	Iron Gram	1	300%-350% Light damage to a foe. At level 45: Damage increased to 350%-450%.
 3020024	1	Full Break	25	 Inflict ATK Down and DEF Down, and Mode Bar Cut on a foe.
-3020025	0	Specially-Made Lunch	1	Restore all allies' HP (Healing cap: 600) and grant DEF Up.
+3020025	0	Specially-Made Lunch	1	Restore all allies' HP (Healing cap: 600). All allies gain DEF Up.
 3020025	1	Huge Knife	25	250%-350% Fire damage to a foe.
 3020026	0	Shake It	1	5-hit Wind damage to a foe. At level 45: Effect enhanced.
 3020026	1	Finisher: Kamaitachi	25	Gain DA Up and Skill DMG Boosted.
@@ -60,13 +60,13 @@
 3020029	0	Heal	1	Restore all allies' HP. At level 45: Healing cap increased to 1000.
 3020029	1	Freeze	25	Small Water damage to a foe.
 3020029	2	Heal Lesson	1	Restore an ally's HP (Healing cap: 750).
-3020030	0	Sea Sage	1	Water damage to a foe and inflict ATK Down. At level 45: Effect enhanced.
+3020030	0	Sea Sage	1	Water damage to a foe. Inflict ATK Down. At level 45: Effect enhanced.
 3020030	1	Empty Myst	25	Inflict Mode Bar Cut on a foe in Overdrive.
 3020031	0	Time to Paaar-tay	1	Boost to ATK based on number of female party members.
 3020031	1	Tribute	25	Dark damage to a foe. Restore Katalina's HP (Healing cap: 1000 HP).
 3020032	0	Fret	1	All allies gain Mode Bar Cut Boosted.
 3020032	1	Discharger	25	Plain damage to a foe.
-3020033	0	Wowzers	1	Earth damage to a foe and inflict ATK Down.
+3020033	0	Wowzers	1	Earth damage to a foe. Inflict ATK Down.
 3020033	1	Indefinite Book	25	1-turn cut to skill cooldowns for Earth allies. (Does not include the Main Character and the caster).
 3020034	0	Deduce	1	Gain C.A. DMG Boosted (Stackable). At level 45: Effect enhanced
 3020034	1	Bluff	25	Random Fire damage to a foe (Max: 100,000% [Damage cap: 10,000,000]).
@@ -74,10 +74,10 @@
 3020035	1	Weakness Dice	25	Use ??? at random
 3020036	0	Brave Shot	1	Big damage to a foe as total party's HP is lowered.
 3020036	1	Adversity	25	Gain Jammed (Party).
-3020037	0	Berzerk Strike	1	Gain ATK Up. Self-inflict DEF Lowered (Can't be removed).
-3020037	1	Blounder Breaking Shockwave	25	250%-350% Earth damage to a foe.
-3020037	2	Tonfa Kick	1	Earth damage to all foes.
-3020038	0	Soy Flavored Soft-Boiled Egg	1	Restore all allies' HP (Healing amount dependent on quality of soup stock)
+3020037	0	Berzerk Strike	1	Gain ATK Up. Self-inflict DEF Lowered (Can't be removed). 
+3020037	1	Blounder Breaking Shockwave	25	250%-350% Earth damage to a foe (Damage cap: ~200,000). 
+3020037	2	Tonfa Kick	1	Earth damage to all foes (Damage cap: ~180,000). 
+3020038	0	Soy Flavored Soft-Boiled Egg	1	Restore all allies' HP (Healing amount dependent on quality of soup stock).
 3020038	1	Ultracalifragilistic Ramen	25	Random boost to all allies' ATK, DEF, multiattack rate, and charge bar.
 3020039	0	Atrashia	1	Restore an ally's HP (Healing cap: 750).
 3020039	1	Precollage	25	Restore an ally's HP (Healing cap: 750).
@@ -88,7 +88,7 @@
 3020043	0	Flattery	1	Inflict Debuff Resistance Lowered on a foe. All allies gain Wind ATK Boosted.
 3020043	1	The Punchline	25	Plain damage to a foe and inflict Partnered Up.
 3020044	0	Ether Cast	1	Fire damage to a foe. 'If Frozen Blade is active:' Also deal 100%-1000% bonus Water damage. At level 45: Effect enhanced.
-3020044	1	Unleash	25	Gain Frozen Blade. (Effect is removed when skill is reused)
+3020044	1	Unleash	25	Gain Frozen Blade. (Effect is removed when skill is reused.)
 3020045	0	Hide	1	Gain Other Self.
 3020045	1	Go Away!	25	They'll watch my back! (Self-inflict DEF Down. Gain Counters on Dodge.)
 3020046	0	Weapon Adjustment	1	Grant one ally ATK Up Stack.
@@ -113,8 +113,8 @@
 3020055	1	Savage Strike	25	Gain Defiance and ATK Up
 3020056	0	Thelonim's Magic	1	Mighty hero magic! (Random effect.)
 3020056	1	Harvest's Judgment	25	5-hit Wind damage to random foes.
-3020057	0	Snacktime	1	Give crackers to an ally (Uses 1 Cracker 1 to restore an ally's HP [Healing cap: 250]). At level 45: Healing cap increased to 300.
-3020057	1	Snacktime	25	Give crackers to a foe (Inflict Charm on a foe. Uses all Cracker stacks).
+3020057	0	Snacktime	1	Give crackers to an ally. (Uses 1 Cracker 1 to restore an ally's HP [Healing cap: 250]). At level 45: Healing cap increased to 300.
+3020057	1	Snacktime	25	Give crackers to a foe. (Inflict Charm on a foe. Uses all Cracker).
 3020058	0	Touch Up	1	Restore an ally's HP (Healing cap: 500) and grant Shield.
 3020058	1	Highlights	25	All allies gain Immune (No Limit).
 3020059	0	Rockin' the Look	1	Gain Hyped.
@@ -123,20 +123,22 @@
 3020060	1	Bowl of the Heavens	25	Random effect. (Effect changes based on ramen deliciousness.)
 3020061	0	Facsimile	1	Copy the last skill used by an ally. (Chance to fail. Higher Body Heat Boosted (Lunalu) stacks boost success rate. Uses all Body Heat Boosted (Lunalu) stacks.)
 3020061	1	Whiteburn	25	Is it just me, or is it getting hot in here? (Gain 1 Body Heat Boosted (Lunalu) stack and Hyped. Self-inflict 30% Charge Bar Slowed and Burn.)
-3020062	0	Hang Ten	1	Gain Bonus Water Damage.
-3020062	1	Off the Lip	25	Water damage to a foe and inflict 10%.
+3020062	0	Hang Ten	1	Gain Bonus Water Damage..
+3020062	1	Off the Lip	25	Water damage to a foe. Inflict 10%.
 3020063	0	I'm Getting Ready!	1	I'll be ready in just a minute! (Gain Getting Ready.)
 3020063	1	I'm a VIP!	25	Let's go someplace extravagant! (Gain VIP, making it more likely to buy expensive items with Shopping Spree.)
 3020064	0	Shield Stance	1	Gain Substitute. At level 45: Also gain DEF Up. 
 3020064	1	Heroic Oath	25	Gain DEF Up and Hostility Boosted. 
 3020066	0	Oblivion	1	Dark damage to a foe (Damage cap: 420,000). Boost to damage with each cast. Damage resets to normal after 7 casts. ''(Consumes 10% of charge bar)''
 3020066	1	Deliverance	25	Restore an ally's HP (Healing cap: 300). Boost healing cap by 100 HP with each cast. Healing resets to normal after 7 casts. ''(Consumes 10% of charge bar)''
-3020070	0	Kick It Up	1	Time to charge it up and knock 'em out! (Gain C.A. DMG Boosted (Stackable) and C.A. DMG Cap Boosted (Stackable))
+3020070	0	Kick It Up	1	Time to charge it up and knock 'em out! (Gain C.A. DMG Boosted (Stackable) and C.A. DMG Cap Boosted (Stackable).)
 3020070	1	High Kick	25	Water damage to a foe. Gain Charge Boost.
 3020071	0	Spin Up	1	Gain Spinning High.
 3020071	1	Switch Up	25	Gain DA Up and TA Up. Self-inflict Max HP Lowered (Stackable).
 3020072	0	Meeyow!	1	All other allies gain Charge Boost (Boost increases when in a better mood).
 3020072	1	Reow?	25	Inflict ATK Down 3, DEF Down 3, and Charmed 3 on a foe. 
+3020073	0	Yincapacitated	1	D-don't mind me... (Nothing happens.)
+3020073	1	Imagine Talking	25	Ahh... There's just no way... (Nothing happens.)
 3030000	0	High Guard	1	Gain DEF Up.
 3030000	1	Knight Stand	1	Gain Substitute. At level 65: Also gain 20% DMG Cut.
 3030000	2	Ritter Shield	35	All allies gain 40% DMG Cut.
@@ -547,7 +549,7 @@
 3030133	1	Omar's Wisdom	1	All allies gain ATK Up, DEF Up, Debuff Success Boosted and Debuff Resistance Boosted. Boost to effects based on number of Omar's Odyssey 1 stacks consumed.
 3030133	2	Indiqi Gain	35	Inflict Delay (Special) on a foe. If successful, gain Charged.
 3030134	0	Objective	1	Inflict Hitmark on a foe.
-3030134	1	Pinpoint Assassination	1	Gain ATK Up and Salted Wound (Hitmark), sharply boosting ATK against a foe with Hitmark for 1 hit. At level 65: Effect enhanced.
+3030134	1	Pinpoint Assassination	1	Gain ATK Up and Salted Wound (Hitmark). At level 65: Effect enhanced.
 3030134	2	Hide	35	Grant an ally Hostility Boosted. Jamil gains Hostility Lowered.
 3030135	0	Good Morning	1	Restore HP to allies with Sleep (Healing cap: 1260). Remove Sleep from all allies.
 3030135	1	Light Sleeper	1	All allies with Sleep gain Bonus Superior Elemental DMG. Remove Sleep from all allies.
@@ -673,7 +675,7 @@
 3030177	0	Spark Raid	1	Gain ATK Up and Critical Up.
 3030177	1	Sky High Blast	1	5-hit Light damage to random foes. At level 65: Damage increased to 100%.
 3030177	2	Electron Blade	35	75%-100% Light damage to all foes. Inflict Delay.
-3030178	0	Cast Away the Dew	1	Earth damage to a foe. Inflict Water ATK Lowered.
+3030178	0	Cast Away the Dew	1	250-300% Earth damage to a foe (DMG Cap: ~180,000). Inflict Water ATK Lowered .
 3030178	1	Towel Dry	1	Grant Towel Dry to an ally.
 3030178	2	Blind Blade	35	Gain Blind Blade, sharply boosting ATK. (Chance that Jin won't attack.)
 3030179	0	Fairy Circle	1	Gain 1 Fairy 1 stack.
@@ -751,7 +753,7 @@
 3030202	2	Makeup on Fleek	45	Grant an ally ATK Up and DEF Up. ('When Turned Up is consumed:' Also grant DA Up and TA Up.)
 3030203	0	Char	1	Fire damage to all foes. All allies gain Scorch Mark 1.
 3030203	1	Brand	1	All allies gain Scorch Mark 1.
-3030203	2	Sear	35	Fire damage to a foe. Extend duration of Scorch Mark 1 by 3 turns for all allies
+3030203	2	Sear	35	Fire damage to a foe. Extend the duration of Scorch Mark 1 on all allies by 3 turns.
 3030204	0	Blaze Reader	1	Fire damage to a foe. Inflict Dracoforce 2. At level 45: Damage increased to 250%-350%. 
 3030204	1	Ashen Break	1	Gain ATK Boosted (Dracoforce), boosting ATK against foes with Dracoforce. 
 3030204	2	Mana Dracoflame	35	Fire damage to all foes. Inflict Fire DEF Lowered.
@@ -893,7 +895,7 @@
 3030259	0	Charley Horse	1	Charley Horse will protect us! (Gain Other Self). ('When HP is full:' Also gain Substitute.) At level 45: Also gain DA Up.
 3030259	1	Rice Puddin'	1	Look what I made! (Restore 10% of all allies' HP [Healing cap: 1000]. All allies gain Debuff Resistance Boosted.) 
 3030259	2	Present from Yaia	35	I got you something! (Grant an ally Revitalize and Strength.) 
-3030261	0	Solid Splatter	1	5-hit Earth damage to random foes (Damage cap: ~80,000 per hit). Inflict ATK Lowered (Stackable) on all foes.
+3030261	0	Solid Splatter	1	5-hit Earth damage to random foes (Damage cap: ~80,000 per hit). Inflict ATK Lowered (Stackable) on all foes. 
 3030261	1	Recurrent Drive	1	{{InfoDes|num=0|des=Earth damage to a foe (Damage cap: ~290,000).
 3030261	2	Exaltation	35	1-turn cut to an Earth ally's skill cooldown. Ally gains DMG Boosted, Hostility Boosted, and Charge Boost. 
 3030262	0	Integrate	1	8-hit Dark damage to random foes. Gain Counters on Dodge.
@@ -968,6 +970,9 @@
 3030321	0	Schutz aus Eisen	1	Gain Substitute and Counters on DMG. Raise Lone Wolf Trick lvl by 1.
 3030321	1	Nacht Fang	1	Gain Charge Bar. ('When Lone Wolf Trick lvl is 5:' Also gain Nacht Fang.)
 3030321	2	Wolf Schrei	35	Clear a foe's charge diamonds. (Can only be used when Lone Wolf Trick lvl is 5. Can't be recast.)
+3030322	0	Spin Up	1	Gain Spinning High (Holiday).
+3030322	1	Rev Up	1	Gain Guaranteed TA and Bonus Wind DMG. (Can't be used when Spin Blader lvl is 10.)
+3030322	2	Blade Potential	35	Fully restore caster's HP. (Can only be used when Spin Blader lvl is 10. Resets lvl.)
 3040000	0	Fracture	1	Wind damage to a foe. Inflict ATK Down. At level 90: Damage increased to 500%. Damage cap increased to ~820,000. Also inflict Earth ATK Lowered. Debuff strength increased to ATK Down. ATK Down base accuracy increased.
 3040000	1	Rebellion	1	1000% Wind damage to all foes (Damage cap: ~1,160,000). Gain Jammed. (Consumes 30% of max HP.)
 3040000	2	Noblesse Oblige	45	All allies gain 60% DMG Cut. At level 100: All allies also gain Debuff Resistance Boosted. Buff increased to 70% DMG Cut.
@@ -977,8 +982,8 @@
 3040002	0	Order	1	350%-400% Earth damage to a foe (Damage cap: ~630,000). At level 55: Damage increased to 400%-500%.
 3040002	1	Discord	1	150%-250% Earth damage to all foes (Damage cap: ~630,000). At level 75: Damage increased to 250%-350%.
 3040002	2	Speed	45	Gain C.A. Instant Standby.
-3040003	0	Adamant Solace	1	Gain ATK Up. Self-inflict DEF Down. At level 55: Buff increased to ATK Up. At level 100: ATK Up is upgraded to Adamant Solace. No longer self-inflict DEF Down. Also gain Immune (No Limit). 
-3040003	1	Strike Solace	1	Gain ATK Up and Salted Wound (Flight), sharply boosting ATK against a foe with Sharp Eye. At level 75: Buffs increased to Salted Wound (Flight) and ATK Up. 
+3040003	0	Adamant Solace	1	Gain ATK Up. Self-inflict DEF Down. At level 55: Buff increased to ATK Up. At level 100: ATK Up upgraded to Adamant Solace. No longer self-inflict DEF Down. Also gain Immune (No Limit). 
+3040003	1	Strike Solace	1	Gain Salted Wound (Flight) and ATK Up. 
 3040003	2	Stormwind's Solace	45	Gain Guaranteed TA. At level 90: Instantly perform a normal attack without using up a turn.
 3040004	0	Jewel Mirror / Pluvius	1	Gain a Shield worth 70% of caster's max HP (Max: 4000) and Bonus Light DMG (Ends upon taking DMG). (Bonus Light DMG effect ends upon taking damage.) At level 100: Also gain Fulgence.
 3040004	1	Glorious Flame	1	400% Light damage to all foes (Damage cap: ~420,000). Inflict Light DEF Lowered and Dark ATK Lowered. 
@@ -986,12 +991,12 @@
 3040005	0	Dark Energy	1	250%-300% Dark damage to a foe (Damage cap: ~700,000). Inflict Dark DEF Lowered. At level 75: Damage increased to 350%-450%.
 3040005	1	Deep Down	1	Inflict DEF Down on a foe. At level 100: Also inflict Delay. Debuff increased to DEF Down.
 3040005	2	Bane	45	400% Dark damage to a foe (Damage cap: ~620,000). Inflict Poison on a foe. At level 90: Debuff increased to Poison.
-3040006	0	Eye of the Sparrow	1	250% Fire damage to a foe (Damage cap: ~630,000). Gain DA Up. At level 90: Damage increased to 400%-500%. Buff effect increased to DA Up.
-3040006	1	Gurren	1	150%-250% Fire damage to all foes (Damage cap: ~260,000). At level 75: Damage increased to 250%-350%. At level 95: All allies gain Bonus Fire Damage.
-3040006	2	Rite of Dawn	45	Restore 150 + 20% of all allies' HP (Healing cap: 1500) and remove 1 debuff.
-3040006	3	Third Dance: Jinka	100	All allies gain Fire ATK Boosted. Yuel gains Healing Boosted and Healing Cap Boosted.
+3040006	0	Guren	1	250%-350% Fire damage to all foes (Damage cap: ~630,000). Inflict Foxflame 3. At level 90: All allies gain DA Up, TA Up, and Bonus Fire DMG. 
+3040006	1	Eye of the Sparrow	1	4-hit, 100% Fire damage to a foe (Damage cap: ~150,000 per hit). Gain Double Attack Rate Boosted (Stackable) and Triple Attack Rate Boosted (Stackable). At level 95: Also gain ATK Boosted (Stackable) and Dodge Rate Boosted (Stackable). (Activates twice against foes with Foxflame.)
+3040006	2	Rite of Dawn	45	Restore 150 + 20% of all allies' HP (Healing cap: 1500) and remove 1 debuff. 
+3040006	3	Third Dance: Jinka	100	Gain Guaranteed TA and Double Strike.
 3040007	0	Silverfrost Barrier	1	All allies gain 70% Fire Res. At level 90: All allies also gain Deluge Crest 1. Lily also gains Spring Breeze 3.
-3040007	1	Frozen Gale	1	150%-200% Water damage to all foes (Damage cap: ~420,000). Inflict Glaciate 3. At level 75: Damage increased to 250%-350%. At level 100: Damage increased to 400%. Damage cap increased to ~500,000. Glaciate 3 success rate increased to 100%. Also inflict ATK Down Stack and DEF Down Stack. 'When 2 or more races among main allies:' Damage cap increased to ~600,000. 'When 3 or more races among main allies:' Activates twice.
+3040007	1	Frozen Gale	1	150%-200% Water damage to all foes (Damage cap: ~420,000). Inflict Glaciate 3. At level 75: Damage increased to 250%-350%. At level 100: Damage increased to 400%. Damage cap increased to ~500,000. Glaciate 3 success rate increased to 100%. Also inflict ATK Down Stack and DEF Down Stack. 'When exactly 2 races among main allies:' Damage cap increased to ~600,000. 'When 3 or more races among main allies:' Activates twice.
 3040007	2	White Heal	45	Restore 20% of all allies' HP (Healing cap: 1500) and remove 1 debuff.
 3040008	0	Mad Veil	1	All allies gain 70% Dark Cut and Aurora Crest 1. At level 95: All allies also gain Light ATK Up.
 3040008	1	Hitch Force	1	250%-300% Light damage to a foe (Damage cap: ~400,000). Inflict Holy Spike. At level 90: Also inflict Delay (Special). If successful, gain Charged. Damage cap increased to ~550,000. 
@@ -1040,17 +1045,17 @@
 3040021	2	Espoir	45	Remove 1 debuff from all allies.
 3040021	3	Forget Me Not	100	Revive an ally with 100% HP.
 3040022	0	Raging Flow	1	Gain ATK Up and Immune (No Limit). At level 100: Buff durations increased to 5 turns. Buff increased to ATK Up. Also gain Critical Hit Rate Boosted, Keen, and Refresh. 
-3040022	1	Engraved Counter	1	Gain Hostility Boosted and Counters on DMG. At level 75: Effect enhanced.
+3040022	1	Engraved Counter	1	Gain Full Hostility and Counters on DMG. At level 75: Effect enhanced.
 3040022	2	Impelliteri	45	Gain Guaranteed TA. At level 95: Also gain Bonus Earth DMG and Drain. 
 3040023	0	Blade Impulse	1	350%-450% Water damage to a foe (Damage cap: ~630,000). At level 55: Damage increased to 400%-500%. At level 100: Also inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). Gain ATK Boosted (Stackable/Can't be removed).
-3040023	1	Wogenstrom	1	2-hit, 150% Water damage to all foes (Damage cap: ~320,000 per hit). Gain Dodge Rate Boosted and Hostility Boosted. At level 90: Also gain Guaranteed DA, Triple Attack Rate Boosted, and Bonus Water DMG.
+3040023	1	Wogenstrom	1	2-hit, 150% Water damage to all foes (Damage cap: ~320,000 per hit). Gain Dodge Rate Boosted and Hostility Boosted. At level 90: Also gain Guaranteed DA, Triple Attack Rate Boosted, and Bonus Water DMG. 
 3040023	2	Southern Cross	45	4-hit, 100% Water damage to a foe (Damage cap: ~180,000 per hit). Gain Other Self 1.
 3040024	0	Medicament	1	Restore an ally's HP (Healing cap: 3000). Fully restore target's HP if target is below 25% HP.
 3040024	1	Clear	1	Remove 1 debuff from all allies.
 3040024	2	Metanoia	45	Revive an ally with 50% HP.
-3040025	0	Uwe	1	250%-350% Earth damage to a foe (Damage cap: ~600,000). Gain 20% Water Cut. At level 55: Damage increased to 300%-400%. At level 90: 20% Water Cut now affects all allies.
-3040025	1	Manigance	1	Self-inflict Manigance, boosting ATK by 35% and lowering DEF by 35%. At level 75: Manigance now boosts ATK by 50% and lowers DEF by 50%. At level 100: Manigance++ is now a buff that boosts ATK by 60% and boosts DEF by 30%. No longer lowers DEF.
-3040025	2	Delirium	45	Drain a foe's mode bar and gain up to Charged. At level 95: Also gain DA Up.
+3040025	0	Uwe	1	250%-350% Earth damage to a foe (Damage cap: ~600,000). Gain 20% Water Cut. At level 55: Damage increased to 300%-400%. At level 90: 20% Water Cut now affects all allies. All allies also gain Water Switch.
+3040025	1	Manigance	1	Sacrifice 50% of caster's current HP to gain Jammed. At level 100: No longer gain Jammed. Gain Manigance and Undying (Can't be removed).
+3040025	2	Delirium	45	Clear a foe's charge diamonds. Gain Charge Bar. (Can't recast.)
 3040026	0	Rosa Alba	1	500% Dark damage to all foes (Damage cap: ~660,000) and remove 1 buff. Inflict Poisoned. 
 3040026	1	Snowthorn Barrier	1	All allies gain Repel. Rosetta gains Rose Wish 2.
 3040026	2	Illuminati Flow	45	Restore all allies' HP (Healing cap: 1500) and remove 1 debuff. 
@@ -1065,16 +1070,16 @@
 3040029	0	Great Scythe Grynoth	1	400% Dark damage to all foes (Damage cap: ~450,000). Gain Charge Boost.
 3040029	1	Instinction	1	500% Dark damage to a foe (Damage cap: ~800,000). At level 75: Damage increased to 550%. At level 90: Damage increased to 800%. Now hits all foes. Also gain Jammed. ('When Aubade Grynoth is in effect:' Auto-activates upon being targeted by a foe.)
 3040029	2	Forgotten Tales	45	Gain ATK Up, DEF Up and Hostility Boosted. (Consumes 25% of max HP.) At level 100: ATK Up, DEF Up and Hostility Boosted duration increased to 5 turns. Also gain DMG Cap Boosted and Attack All.
-3040030	0	Spiral Spear	1	1000% Water damage to a foe in Overdrive (Damage cap: ~1,160,000) and inflict Mode Bar Cut. At level 55: Damage increased to 1100% At level 85: Damage cap increased to ~1,430,000.
+3040030	0	Spiral Spear	1	1000% Water damage to a foe in Overdrive (Damage cap: ~1,160,000). Inflict Mode Bar Cut. At level 55: Damage increased to 1100% At level 85: Damage cap increased to ~1,430,000. 
 3040030	1	Fleeting Spark	1	Gain Substitute and Counters on Dodge. At level 95: Also gain Fleeting Spark.
-3040030	2	Arm the Bastion	45	All allies gain 100% DMG Cut.
-3040030	3	One-Rift's Benediction	100	All allies gain Rift's Benediction, Fire DMG Lowered, Water DMG Lowered, Earth DMG Lowered, Wind DMG Lowered, Light DMG Lowered, and Dark DMG Lowered. (Can't recast)
-3040031	0	Merculight	1	Gain Other Self and ATK Up. At level 55: Buff increased to ATK Up. At level 85: Also gain Skill DMG Cap Boosted.
+3040030	2	Arm the Bastion	45	All allies gain 100% DMG Cut and 100% Fire Cut.
+3040030	3	One-Rift's Benediction	100	All allies gain Rift's Benediction, Fire DMG Lowered, Water DMG Lowered, Earth DMG Lowered, Wind DMG Lowered, Light DMG Lowered, and Dark DMG Lowered. (Can't recast.)
+3040031	0	Merculight	1	Gain Other Self 1 and ATK Up. At level 55: Buff increased to ATK Up. At level 85: Also gain Skill DMG Cap Boosted.
 3040031	1	Depravity	1	Inflict various debuffs on all foes.
-3040031	2	Clincher	45	Big Light damage to a foe based on the number of its debuffs. 'When Tweyen has Bring the Thunder:' Also inflict Paralyzed. At level 95: Now targets all foes. Boost to damage as number of foes decrease. (Damage cap: ~1,200,000 vs. one foe.)
-3040031	3	Two-Crown's Strife	100	Extend time-based debuff effects on all foes by 90 seconds. Damage to all foes based on foes' number of debuffs (Max: 10 hits / Can't recast)
+3040031	2	Clincher	45	Big Light damage to a foe based on number of foe's debuffs (Damage cap: ~700,000). At level 95: Now hits all foes. Damage cap increased to ~1,200,000. 
+3040031	3	Two-Crown's Strife	100	Extend time-based debuff effects on all foes by 90 seconds. Multi-hit, 200% Light damage to all foes based on foes' number of debuffs (Damage cap: ~160,000 per hit). (Max: 10 hits. Can't recast.)
 3040032	0	Vorpal Rage	1	Earth damage to a foe (Damage cap: ~630,000). Gain Jammed and Drain. 
-3040032	1	Berserk Forge	1	Gain Counters on Dodge. At level 85: Counter buff upgraded to Counters on Dodge/DMG. Also gain Guaranteed TA and Hostility Boosted (Can't be removed). 
+3040032	1	Berserk Forge	1	Gain Counters on Dodge. At level 85: Counter buff upgraded to Counters on Dodge/DMG. Also gain Guaranteed TA and Full Hostility (Can't be removed). 
 3040032	2	Ground Zero	45	Consumes 99% of caster's current HP to deal plain damage to all foes (Damage cap: ~820,000). Damage dealt is based on HP consumed. Gain Shield. At level 95: Also inflict Earth DEF Lowered. Damage cap increased to ~1,230,000. 
 3040032	3	Three-Tiger's Blessing	100	Gain C.A. Instant Standby, Autoignition, and Tiger's Blessing. (Can't recast.)
 3040033	0	Gammadion Cross	1	2-hit, 300% Water damage to a foe (Damage cap: ~313,000 per hit). Inflict one random debuff. At level 55: Effect enhanced. At level 85: Now inflicts two random debuffs.
@@ -1086,7 +1091,7 @@
 3040034	2	Reincarnation	45	Grant an ally Magic Torrent. 
 3040034	3	Five-Soul's Charity	100	Revive all allies with full HP. All non-revived allies gain Lethal Attack Dodged. (Can't recast)
 3040035	0	Gate of Sin	1	Gain Adversity. At level 95: Buff increased to Adversity. Also gain Bonus Dark DMG.
-3040035	1	Thunderflash	1	Gain Hostility Up and Counter on Dodge. At level 85: Counter upgraded to Counters on Dodge/DMG. 
+3040035	1	Thunderflash	1	Gain Full Hostility and Counter on Dodge. At level 85: Counter upgraded to Counters on Dodge/DMG. 
 3040035	2	Gate of Demons	45	600% Dark damage to all foes (Damage cap: ~700,000). Inflict Petrified 3. At level 90: Also inflict Accuracy Lowered 3.
 3040035	3	Six-Ruin's Enlightenment	100	 Gain Other Self and Double Strike. (Can't recast)
 3040036	0	Emblema	1	Gain Instant Charge. Raise Swordshine lvl by 1 (Max: 3). At level 90: Now raises Swordshine 1 lvl by 2 (Max: 5). Also gain C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time). 
@@ -1128,9 +1133,9 @@
 3040046	0	Nano Analyze	1	Inflict DEF Down and Fire DEF Lowered on a foe.
 3040046	1	Eclipse	1	20%-25% Plain damage to a foe. Inflict Mode Bar Cut. At level 75: Effect increased to Mode Bar Cut.
 3040046	2	Atomic Resolution	45	Plain damage to a foe based on 1%-5% of its current HP and remove 1 buff (Damage cap: ~710,000).
-3040047	0	Illusion	1	Grant an ally 2-hit Mirror Image.
-3040047	1	Celestial Phenomenon	1	100%-150% Wind, Fire, Earth and Water damage to all foes (Damage cap: ~200,000). Inflict Wind DEF Lowered. At level 75: Damage increased to 150%-200%.
-3040047	2	Elemental Breath	45	All allies gain Wind Attack UP, Fire Attack UP, Earth Attack UP and Water Attack UP.
+3040047	0	Illusion	1	Grant an ally Mirror Image.
+3040047	1	Celestial Phenomenon	1	100%-150% Wind, Fire, Earth, and Water damage to all foes (Damage cap: ~200,000). Inflict Wind DEF Lowered. At level 75: Damage increased to 150%-200%.
+3040047	2	Elemental Breath	45	All allies gain Wind Attack UP, Fire Attack UP, Earth Attack UP, and Water Attack UP.
 3040048	0	Sleepless Dream	1	200% Dark damage to a foe. All allies gain Refresh. Sarunan self-inflicts Spell Sacrifice (Debuff) debuff, dealing 1000 damage to himself for each stack of Spell Sacrifice (Buff) buff (Max: 7000 damage). At level 55: Damage increased to 300%
 3040048	1	Unia	1	Remove all buffs from all foes. Remove all buffs and debuffs from all allies (but not other parties).
 3040048	2	Forbidden Curse	45	Gain Spell Sacrifice (Buff) buff. Can stack up to 7 times. Each stack increases the damage for Sleepless Dream by +100% additively and the healing cap by 50 HP.
@@ -1140,7 +1145,7 @@
 3040049	3	A Shot in the Dark	100	Switch out with a sub ally. Ally gains Smoking Gun.
 3040050	0	Zerreissen	1	350%-450% Fire damage to a foe (Damage cap ~630,000). Gain Hellfire Crest 1. At level 55: Damage increased to 400%-500%. At level 90: Also restore caster's HP based on 50% of damage dealt (Healing cap: 2000).
 3040050	1	X-Seele	1	Inflict Petrified and Delay on a foe. 
-3040050	2	Traeumerei	45	Gain Strength and Bonus Fire DMG. At level 100: Also gain additional buffs based on Percival's number of Hellfire Crest.
+3040050	2	Traeumerei	45	Gain Strength. At level 100: Also gain Bonus Fire DMG and additional buffs based on Percival's number of Hellfire Crest. 
 3040051	0	Bal-Sagoth	1	All allies gain DA Up, TA Up, and Charge Bar Sped Up. At level 55: Buff increased to Charge Bar Sped Up.
 3040051	1	Power Within	1	Absorb 15% of a foe's mode bar and 10% of all allies' charge bars. At level 75: Foe mode bar absorption increased to 20%. At level 100: Foe mode bar absorption increased to 40%. Allies' charge bars absorption reduced to 5% (Amira gains 20% charge bar for each ally absorbed). Also gain C.A. DMG Boosted (1 time). 
 3040051	2	Half-God Half-Demon	45	Activate Half-God Half-Demon mode. Gain Dark element qualities and reduce Light damage taken by 25%. Normal attacks and charge attacks deal bonus Dark damage. ''(Uses 100% of charge bar)''
@@ -1179,9 +1184,9 @@
 3040062	0	Collapse	1	300% Dark damage to all foes (Damage cap: ~420,000). Inflict DEF Down Stack. 'From 8th turn onward:' Activates twice.
 3040062	1	Paranormal Phantasm	1	All allies gain Reversed Ouroboros and Oblivion Crest. 'From 8th turn onward:' All allies also gain Light Switch. 
 3040062	2	Reinforce	45	Restore 200 + 25% of all allies' HP (Healing cap: 2000) and remove 1 debuff. 'From 8th turn onward:' Activates twice.
-3040063	0	Butterfly Effect	1	Switch between Dawnfly stance and Freeflutter stance. Gain Butterfly Effect, adding 70% bonus superior elemental damage to normal attacks for 4 turns. Gain ATK Boosted (Narmaya). Self-inflict DEF Lowered (Narmaya) and Skill Sealed (Narmaya). At level 55: Skill Sealed (Narmaya) duration reduced to 1 turn.
-3040063	1	Transient	1	300%-350% Dark damage to a foe (Damage cap: 430,000). 'Dawnfly stance:' Gain DA Up and TA Up. 'Freeflutter stance:' Inflict DEF Down on a foe. Debuff effect increases with more filled charge diamonds. At level 75: Effect enhanced. At level 95: Damage increased to 400%-450% (Damage cap: 480,000). 'Dawnfly stance:' Buffs increased to Guaranteed DA and TA Up. 'Freeflutter stance:' Inflict DEF Down regardless of foe's charge diamonds. Increased debuff success rate. 
-3040063	2	Kyokasuigetsu	45	'Dawnfly stance:' Increase a foe's mode bar by 5% and inflict Delay. 'Freeflutter stance:' Gain Defiance and ATK Up. 
+3040063	0	Butterfly Effect	1	Switch to Freeflutter stance. Gain Butterfly Effect and ATK Boosted (Narmaya). Self-inflict DEF Lowered (Can't be removed). At level 55: Effect enhanced.
+3040063	1	Transient	1	300%-350% Dark damage to a foe. Inflict Kaleidoscope 4. Gain Guaranteed DA and TA Up. At level 75: Effect enhanced. At level 95: Damage increased to 400%-450%. No longer gain Guaranteed DA. TA Up changed to Guaranteed TA.
+3040063	2	Kyokasuigetsu	45	Remove 1 buff from a foe. Inflict Delay. 
 3040063	3	Glasswing Waltz	100	Gain Glasswing Waltz, Uplifted, C.A. DMG Boosted (1 time), and C.A. DMG Cap Boosted (1 time). 
 3040064	0	Awakening	1	400%-500% Water damage to a foe (Damage cap: ~620,000). 'Consume 1 Triple Shrouded:' Activates twice.
 3040064	1	Hymn of the Hundreds	1	Gain Other Self. 'Consume 1 Triple Shrouded:' Also gain Substitute.
@@ -1207,7 +1212,7 @@
 3040070	1	Unification	1	Inflict ATK Down and Light ATK Lowered on a foe. 
 3040070	2	Soaring Star	45	Gain Jammed. ''(Uses 40% of max HP)''
 3040071	0	Unborn, Undying	1	Fully restore all allies' HP. Restore all parties' HP (Healing cap: 1000). Inflict DEF Down and Debuff Resistance Lowered on all allies. At level 55: Debuffs reduced to DEF Down and Debuff Resistance Lowered for 2 turns. 
-3040071	1	Sage of Eternity	1	Grant an ally Shield for 3 turns and Hostility Boosted (Can't be removed) for 1 turn. At level 75: Shield endurance increased to Shield. At level 90: Shield endurance further increased to Shield and now has indefinite duration. Also grants Bonus Wind DMG (Ends upon taking DMG) (Ends upon taking damage).
+3040071	1	Sage of Eternity	1	Grant an ally Shield for 3 turns and Full Hostility (Can't be removed) for 1 turn. At level 75: Shield endurance increased to Shield. At level 90: Shield endurance further increased to Shield and now has indefinite duration. Also grants Bonus Wind DMG (Ends upon taking DMG) (Ends upon taking damage).
 3040071	2	Tricumulo	1	All allies gain Loop, increasing in effect for 3 turns, then decaying until it ends. At level 100: Loop now has maximum effectiveness for all 6 turns and can't be removed. 'From 2nd cast onward:' Loop also boosts critical hit rate. 'From 3rd cast onward:' Loop also boosts damage cap by 10%. 
 3040071	3	Multi-Decree	95	500% Wind damage to all foes (Damage cap: ~630,000). Inflict Mizaru, Iwazaru, Kikazaru. (Debuff effect specs increase upon each cast [Max: 3])
 3040072	0	Starry Sky	1	5-hit Fire damage to random foes (Damage cap: ~400,000). Gain Aetherial Seal 5. At level 55: Damage increased to 90% per hit.
@@ -1316,7 +1321,7 @@
 3040106	1	Out of the Ashes	1	800% Light damage to a foe (Damage cap: ~1,000,000). Raise Wings of Justice lvl by 1. At level 75: Damage increased to 900%.
 3040106	2	Awakenings	45	Gain Bonus Light Damage, Guaranteed TA, 100% Dark Cut, and Debuff Resistance Boosted. 
 3040107	0	Spirit Drums	1	All allies gain Zeal of the Feather. (Consumes all Drum Beat. Effect varies based on number of Drum Beat consumed.) At level 95: Zeal of the Feather now always has maximum effectiveness. Drum Beat is no longer consumed upon cast.
-3040107	1	Finding Flight	1	200%-250% Earth damage to a foe (Damage cap: ~380,000). Inflict DEF Down and Earth DEF Lowered. At level 75: Debuff strength increased to DEF Down and Earth DEF Lowered. At level 90: Damage increased to 500%. Damage cap increased to ~700,000. Also inflict DA Down, TA Down. Earth DEF Lowered debuff success rate increased. 
+3040107	1	Finding Flight	1	200%-250% Earth damage to a foe (Damage cap: ~380,000). Inflict DEF Down and Earth DEF Lowered. At level 75: Debuff strength increased to DEF Down and Earth DEF Lowered. At level 90: Damage increased to 500%. Damage cap increased to ~700,000. Also inflict DA Down and TA Down. Earth DEF Lowered debuff success rate increased. 
 3040107	2	Feather the Nest	45	All allies gain ATK Up and Bonus Earth DMG. 
 3040107	3	On the Shoulders of Giants	100	Gain On the Shoulders of Giants. ('When main allies' Drum Beat is at max:' Creates 1 blue potion. Consumes all Drum Beats.)
 3040108	0	Unholy Warcry	1	Gain Supernal Sync, preventing attacks or skill use this turn. Next turn, gain Supernal Explosion, 10 MP 1, and Hostility Boosted. 
@@ -1384,7 +1389,7 @@
 3040129	2	Standing Ovation	45	All allies gain Hyped.
 3040130	0	Mana Agni	1	Fire damage to a foe (Damage cap: ~340,000). Inflict Dracoforce 4. At level 55: Damage increased to 400%-500%.
 3040130	1	Cleansing Burst	1	Fire damage to a foe and remove 1 buff (Damage cap: ~420,000). (10% boost to damage cap against foes with Dracoforce.) At level 75: Damage increased to 400%-500%.
-3040130	2	Dragonheart	45	Gain Guaranteed TA and Critical Hit Rate Boosted. ''(Uses 30% of charge bar)''
+3040130	2	Dragonheart	45	Gain Guaranteed TA and Critical Hit Rate Boosted. (Consumes 30% of charge bar.)
 3040131	0	Goami Flash	1	325%-520% Light damage to all foes (Damage cap: ~480,000 / ~500,000). (Boost to damage as number of enemies decreases.)
 3040131	1	Tempered Shine	1	Restore 25% of all allies' HP (Healing cap: 800) and remove 1 debuff. At level 75: Healing cap increased to 1000 HP.
 3040131	2	Touken Barrier	45	All allies gain 25% DMG Cut.
@@ -1420,8 +1425,8 @@
 3040142	0	Carpe Diem	1	Restore 4 Blade stacks ''(Uses 30% of charge bar)''.
 3040142	1	Keine Gnade	1	400% Wind damage to a foe (Damage cap: ~630,000) and inflict Blind '' (Uses 1 Blade)''.
 3040142	2	Riesenjagd	45	Gain Riesenjagd. ''(Uses up all Blade stacks after attack.)''
-3040143	0	Snowdrop	1	250%-350% Light damage to all foes (Damage cap: ~500,000). Raise Bounty by 3.
-3040143	1	Piece of Cake	1	Grant one ally Charge Boost, Critical Hit Rate Boosted, and Happy Sprinkles. 
+3040143	0	Snowdrop	1	400% Light damage to all foes (Damage cap: ~500,000). Inflict Light DEF Lowered. Raise Bounty by 3.
+3040143	1	Piece of Cake	1	Grant an ally Charge Boost, Critical Hit Rate Boosted, Bonus Light DMG (1 time), and Happy Sprinkles. 
 3040143	2	Merry Sparkle	45	All allies gain TA Up.
 3040144	0	Boost Morale	1	Restore 30% of an ally's HP (Healing cap: 2000) and grant Revitalize and DMG Boosted.
 3040144	1	Fire Command	1	All allies gain Fire ATK Up. ''(Consumes 30% of charge bar)''
@@ -1432,9 +1437,10 @@
 3040146	0	Soul Forge	1	Gain Soul Forge, sharply boosting stats. ''(Uses up 100% of charge bar)''
 3040146	1	Battalions of Fear	1	200%-900% damage to a foe based on how low Vaseraga's HP is (Damage cap: ~730,000). Gain Charge Boost. 
 3040146	2	Welcome to Death	45	All allies gain Charge Boost.
-3040147	0	Okami	1	300% Water damage to all foes (Damage cap: ~440,000). Inflict Debuff Resistance Lowered (Stackable). 
-3040147	1	Canid Growl	1	Inflict Petrified on a foe. 
-3040147	2	Hound of the Hunt	45	Gain Double Strike and Summon Garjana. ''(Uses 30% of charge bar)'' 
+3040147	0	Okami	1	300% Water damage to all foes (Damage cap: ~440,000). Inflict Debuff Resistance Lowered (Stackable). At level 100: Damage increased to 500%. Damage cap increased to ~700,000. Also inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). 
+3040147	1	Canid Growl	1	Inflict Petrified and Delay on a foe. 
+3040147	2	Hound of the Hunt	45	Gain Double Strike and Summon Garjana. (Consumes 30% of charge bar.) At level 95: No longer consumes 30% charge bar. Also gain Guaranteed TA. Consumes 100% of charge bar to extend buff durations to 4 turns.
+3040147	3	Pupper Squad, Go!	90	Eka, Dvi, Tri! Let's fight together! (Gain Pupper Squad, Go!)
 3040148	0	Sacred Hell	1	Plain damage to a foe based on 5% of its current HP (Damage cap: ~1,160,000). Inflict Petrified 3. Reload all Bullets (Ilsa) 9 (Can only use when Bullets (Ilsa) are at 0).
 3040148	1	Evensong	1	Earth damage to a foe (Damage cap: ~420,000). Inflict DEF Down. (Uses up 1 Bullets (Ilsa))
 3040148	2	Ear Ringer	45	Use up all Bullets (Ilsa) to deal Earth damage to a foe. (Boost to damage and damage cap based on number of Bullets (Ilsa) used.)
@@ -1453,12 +1459,12 @@
 3040153	0	Alone in Heaven	1	Gain DA Up, TA Up, DEF Up, and Counters on DMG. At level 55: Effect enhanced. At level 100: Buff increased to DEF Up. Also gain Hostility Up.
 3040153	1	Ecliptica	1	Light damage to a foe (Damage cap: ~690,000). Restore caster's HP based on 50% of damage dealt (Healing cap: 800). At level 75: Damage cap increased to ~800,000. Healing cap increased to 900. At level 90: Damage cap increased to ~900,000. Healing cap increased to 1000.
 3040153	2	The Power of One	45	All allies gain Critical Hit Rate Boosted and DMG Boosted.
-3040154	0	Reversal Tide	1	Inflict DEF Down and Wind DEF Lowered on a foe. 
-3040154	1	Salvation	1	Restore an ally's HP (Healing cap: 2500). Target ally gains Armored and Strength. 
-3040154	2	Banner of the Brave	45	All allies gain ATK Up and Charge Boost. 
-3040155	0	Repulsor Storm	1	Light damage to a foe (Damage cap: ~400,000). Inflict 10% DEF Lowered (Stackable) (Max: 20%). Gain Maximum Output ''(Uses 1 Ammo / Can't be used once Ammo runs out)'' At level 55: Maximum Output's bonus Light damage effect increased to 80%.
-3040155	1	Iris Arc	1	1000% Light damage to all foes (Damage cap: ~1,160,000). ''(Uses 2 Power Cells (Robomi))''
-3040155	2	Blaster Array	45	Gain Booster Activated. ''(Uses 1 Power Cells (Robomi))''
+3040154	0	Reversal Tide	1	Remove 1 buff from a foe. Inflict DEF Down and Wind DEF Lowered. 
+3040154	1	Salvation	1	Grant a Wind ally Salvation.
+3040154	2	Banner of the Brave	45	All allies gain Charge Boost and Revitalize. Restore 10% of all allies' HP (Healing cap: 1500). 
+3040155	0	Repulsor Storm	1	Light damage to a foe (Damage cap: ~400,000). Inflict DEF Lowered (Stackable). Gain Maximum Output. (Uses 1 Ammo. Can't be used once Ammo runs out.) At level 55: Maximum Output's bonus Light damage effect increased to 80%.
+3040155	1	Iris Arc	1	1000% Light damage to all foes (Damage cap: ~1,160,000). (Uses 2 Power Cells (Robomi).)
+3040155	2	Blaster Array	45	Gain Booster Activated. (Uses 1 Power Cells (Robomi).)
 3040156	0	Bio Blade	1	4-hit Dark damage to random foes (Damage cap: ~540,000). Inflict ATK Lowered (Stackable) on all foes. At level 55: Effect enhanced.
 3040156	1	Willow Counter	1	Gain Counter Strike and Charge Boost (Dodge all foes' attacks and debuffs / Substitute effect / Can't attack on that turn). (Blast a wicked counter smash upon dodging!)
 3040156	2	Giga Shield	45	All allies gain 60% DMG Cut.
@@ -1625,7 +1631,7 @@
 3040208	0	Mirage Raid	1	700%-800% Wind damage to a foe (Damage cap: ~730,000). Gain Mirror Image.
 3040208	1	Reckoning Day	1	Gain Reckoning Day. (Guaranteed triple attacks and 15% Bonus Wind DMG effect. Ends upon taking damage.) 
 3040208	2	Royal Litany	45	All allies gain ATK Boosted, Defiance, and Mode Bar Cut Boosted. 
-3040209	0	Blau Gespenst	1	Remove 1 buff from a foe. Inflict ATK Down, DEF Down, and Ghost Cage. (When the foe uses a special attack: Ghost Cage is removed and deals 999,999 Plain damage to all foes.)
+3040209	0	Blau Gespenst	1	Remove 1 buff from a foe. Inflict ATK Down, DEF Down, and Ghost Cage. ('When the foe uses a special attack:' Ghost Cage is removed and deals 999,999 Plain damage to all foes.)
 3040209	1	Benediction II	1	 Restore 15% of all allies' HP (Healing cap: 1500). All allies gain Charge Boost and Revitalize.
 3040209	2	Die Umkehrung	45	 Grant Freigeist to another Dark ally. ('When cast from 10th turn onward:' Target also gains Tri-Slash for 1 turn.)
 3040210	0	Shiranui	1	300%-400% Wind damage to all foes (Damage cap: ~630,000). Inflict Foxflame 3 and Earth ATK Lowered. (Consumes 10% of charge bar.)
@@ -1678,7 +1684,7 @@
 3040225	2	Disruption	45	2-hit, 300% Water damage to a foe (Damage cap: ~320,000 per hit) and remove 1 buff. ('When Cagliostro's Deluge Crest is 3 or more:' Consume 1 Deluge Crest to end cooldown.) 
 3040226	0	House of Thebes	1	200% Water damage to a foe (Damage cap: ~145,000 per hit). Inflict Water DEF Lowered. (Hit number increases based on number of Starry Waters / Max: 6 hits.)
 3040226	1	Starry Fate	1	Grant another Water ally Celestial Guidance. ('When Starry Waters is at 5:' Target ally also gains C.A. Reactivation (1 time).)
-3040226	2	Tyros Benedictus	45	Grant an ally Bonus Water DMG and Critical Hit Rate Boosted. ('Consume 2 Starry Waters:' Affects all allies.)
+3040226	2	Tyros Benedictus	45	Gain Guaranteed TA and DMG Cap Boosted. ('When Starry Waters is at 5:' Affects all allies.)
 3040227	0	Pflegeschuss	1	Earth damage to all foes (Damage cap: ~480,000). Restore 20% of all allies' HP (Healing cap: 800). Jessica gains Godsend Trigger.
 3040227	1	Feuerwerk	1	All allies gain Feuerwerk and Debuff Success Boosted. 'When Fire Support lvl is 1 or higher:' All allies also gain DMG Boosted.
 3040227	2	Aussenseiter	45	Grant an Earth ally a Shield worth 70% of caster's max HP (Max: 4000) and Bonus Earth DMG. (Bonus Earth DMG effect ends upon taking damage.) 
@@ -1930,10 +1936,40 @@
 3040307	2	Snow Crane Stance	45	Gain Dodge All, Substituted (All-Ally), and Bonus Effect on Dodge (Mirin). (Unleash a masterful Icy Calm upon dodging! Gozaru!)
 3040308	0	First Form: Water Surface Slash	1	500% Water damage to all foes. Gain Water ATK Boosted (Stackable). Raise Kagura lvl by 1.
 3040308	1	Third Fang: Devour	1	Plain damage to a foe based on 10% of its current HP (Damage cap: 1,000,000) and remove 1 buff. 
-3040308	2	Seventh Form: Drop Ripple Thrust-Curve	45	400% Water damage to a foe (Damage cap: 630,000). Gain Counter on DMG. 
+3040308	2	Seventh Form: Drop Ripple Thrust-Curve	45	400% Water damage to a foe (Damage cap: ~630,000). Gain Counter on DMG. 
 3040309	0	First Form: Unknowing Fire	1	700% Fire damage to a foe (Damage cap: ~800,000). Gain Guaranteed TA.
 3040309	1	Second Form: Rising Scorching Sun	1	500% Fire damage to a foe (Damage cap: ~630,000). Inflict Delay.
 3040309	2	Fourth Form: Blooming Flame Undulation	45	300% Fire damage to all foes. All allies gain 70% DMG Cut.
 3040310	0	Six Stings	1	6-hit, 150% Wind damage to a foe (Damage cap: ~100,000 per hit). Inflict Poison and Wisteria Poison. (Boost to Poison specs based on Dosage lvl. Also inflict Paralyzed 1 at lvl 5.) 
 3040310	1	Poison Administrator	1	Gain Insect Breathing. Raise Dosage lvl by 1 (Max: 5).
 3040310	2	Pharmacology	45	Restore 20% of all allies' HP (Healing cap: 2000) and remove 1 debuff. ('When Dosage lvl is 5:' All allies also gain Charge Bar.)
+3040311	0	Holiday Illumination	1	All allies gain Light ATK Up and Charge Bar Gain Boosted. Restore 20% of all allies' HP (Healing cap: 2000). 
+3040311	1	Crystalline Barrier	1	All allies gain Shield and Veil. ('When 2 or more races among main allies:' All allies also gain Mirror Image. 'When 3 or more races among main allies:' All allies also gain Armored.) 
+3040311	2	Icy Carol	45	Inflict ATK Down, Gravity, and Glaciate 3 on all foes. 
+3040312	0	Ethereal Prison	1	500% Earth damage to all foes (Damage cap: ~630,000). Inflict Elemental Friction 5 and Prison of War 2.
+3040312	1	Ecliptica	1	600% Earth damage to a foe (Damage cap: ~630,000). Steal one of the tetra-elements. (Inflict Fire ATK Lowered, Water ATK Lowered, Earth ATK Lowered, or Wind ATK Lowered on a foe. Gain Fire ATK Boosted (Can't be removed), Water ATK Boosted (Can't be removed), Earth ATK Boosted (Can't be removed), or Wind ATK Boosted (Can't be removed) based on the stolen element.) 
+3040312	2	The Vice	45	Remove all buffs from all other allies and foes. Gain Instant Charge, C.A. DMG Boosted (Can't be removed), and C.A. DMG Cap Boosted (Can't be removed). 
+3040313	0	Cowlick Lift	1	Caster and MC gain Charge Boost. Restore caster and MC's HP (Healing cap: 12021). ('From 2nd cast onward:' Also remove all debuffs from caster and MC. 'From 3rd cast onward:' Caster and MC also gain C.A. Reactivation (1 time).)
+3040313	1	Blamboo Shots	1	12-hit, 100% Wind damage to random foes (Damage cap: ~80,000 per hit). Inflict Blamboozled 4 on all foes. (Number of hits and Blamboozled effect specs increased upon each cast [Max: 5 times].)
+3040313	2	Bovine Buddy	45	Consume 60% of charge bar to shift into High Gear. (Consumes 60% of charge bar every turn. Ends if not enough charge bar or upon recast.)
+3040314	0	Whitefrost Whisper	1	400% Water damage to a foe (Damage cap: ~630,000). Inflict ATK Lowered (Stackable), DEF Lowered (Stackable), and Whitefrost Whisper 4. 
+3040314	1	Silvery Snow	1	All Water allies gain Silvery Snow.
+3040314	2	Frigid Embrace	45	6-hit, 100% Water damage to a foe (Damage cap: ~120,000 per hit). Inflict Glaciate 3 and Delay. 
+3040315	0	Hyper Gigante Blade	1	400% Light damage to a foe (Damage cap: ~630,000). Inflict DEF Lowered (Stackable). ('When Breaking the Limit lvl is 5:' Also gain Double Strike.)
+3040315	1	Doomslice	1	4-hit, 100% Light damage to a foe (Damage cap: ~150,000 per hit). Gain Dodge All, Full Hostility, and Counter Blade. (Give them a taste of Hyper Gigante Blade upon dodging!)
+3040315	2	Gigante Order!	45	All aboard Grand God Kaiser! (Can only be used when Breaking the Limit lvl is 5. Ends cooldown for all skills. Can't be recast.)
+3040316	0	Blade of Evil's Seal	1	4-hit, 100% Dark damage to a foe (Damage cap: ~80,000 per hit). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). Self-inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). ('When Magic Pulse lvl is 5:' Damage increased to 150% and damage cap increased to ~140,000 per hit.) 
+3040316	1	Demonsbane	1	Remove 2 buffs from a foe. 'Self-inflict debuffs in order based on number of buffs removed:' Blind, Shorted.
+3040316	2	Connotation Bestial	45	Inflict Gravity on a foe. All allies gain Bestial. 
+3040317	0	Incursion Rune	1	Grant Incursion Rune to a Light ally. 
+3040317	1	Fortification Rune	1	Grant Fortification Rune to a Light ally. 
+3040317	2	Recovery Rune	45	Fully restore a Light ally's HP and remove all debuffs.
+3040318	0	Demon Slayer	1	700% wind DMG to a foe (Damge cap: ~730,000). Inflict DEF Lowered 4. 'If Mana Flow is in effect:' Also inflict Onslaught 3.
+3040318	1	Grasping Pounce	1	Gain Counters on Dodge/DMG and Adversity. 'If Mana Flow is in effect:' Also gain Salted Wound.
+3040318	2	Demon Purification	45	Gain Mana Flow. End cooldown for other skills. (Consumes 100% of charge bar.)
+3040319	0	Saint Halo	1	6-hit, 125% Earth damage to a foe (Damage cap: ~100,000 per hit). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). (Consumes 1 Bon Vivant.)
+3040319	1	Asylum	1	Gain Substitute, Counter on Dodge/DMG, and Adversity. (Consumes 1 Bon Vivant.)
+3040319	2	Anthem	45	Restore 20% of all allies' HP (Healing cap: 1500) and remove 1 debuff. (Consumes 1 Bon Vivant.)
+3040320	0	Ars Gloria	1	All Light allies gain Eternal Ouroboros. (Can't recast.)
+3040320	1	Endymion	1	All Light allies gain Instant Charge and Autorevived (Can't be removed). End cooldown for all Light allies' skills. (Can't recast.)
+3040320	2	Pinnacle of Geometry	45	Inflict Can't Act 1, DA Down 6, TA Down 6, and Accuracy Lowered 6 on a foe.

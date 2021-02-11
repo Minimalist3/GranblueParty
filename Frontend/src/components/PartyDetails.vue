@@ -14,7 +14,7 @@
           <option value="none">None</option>
         </dropdown>
       </label>
-      
+      <!--
       <label class="mr-2">
         Enemy Defense
         <input
@@ -24,7 +24,7 @@
           @keydown.arrow-up="enemy_defense++"
           @keydown.arrow-down="enemy_defense--"
         >
-      </label>
+      </label>-->
 
       <label>
         %HP
@@ -37,20 +37,14 @@
       </label>
     </div>
 
-    <div>
-      <span class="tag bg-red-600">Experimental</span>
-      A lot is still missing to get accurate results.
-      Mouse over the skills and summons to see what's already implemented.
-    </div>
-
     <!-- Table -->
     <div class="overflow-y-auto" v-if="getStatsForCharacters.length > 0">
       <table class="table">
         <thead>
           <tr>
             <th></th>
-            <th>Atk</th>
-            <th>HP</th>
+            <!--<th>Atk</th>
+            <th>HP</th>-->
             <th>Elem</th>
             <th><abbr title="Normal and Optimus modifiers ratio">Norm</abbr></th>
             <th>Omega</th>
@@ -59,15 +53,15 @@
             <th><abbr title="Optimus Critical ratio">Crit N</abbr></th>
             <th><abbr title="Omega Critical ratio">Crit &Omega;</abbr></th>
             <th>Atk cap</th>
-            <th>Total</th>
-            <th><abbr title="Capped attack with crit ratio (probability %)">Capped w/crit</abbr></th>
+            <!--<th>Total</th>
+            <th><abbr title="Capped attack with crit ratio (probability %)">Capped w/crit</abbr></th>-->
           </tr>
         </thead>
         <tbody>
           <tr v-for="(chara, index) in getStatsForCharacters" :key="index">
-            <td>{{ chara.name }}</td>
-            <td>{{ chara.atk }}</td>
-            <td>{{ chara.hp }}</td>
+            <td class="truncate" style="max-width: 4rem;">{{ chara.name }}</td>
+            <!--<td>{{ chara.atk }}</td>
+            <td>{{ chara.hp }}</td>-->
             <td>{{ (chara.elem_atk * 100).toFixed(0) }}%</td>
             <td>{{ (chara.normal_atk * 100).toFixed(0) }}%</td>
             <td>{{ (chara.omega_atk * 100).toFixed(0) }}%</td>
@@ -76,15 +70,21 @@
             <td>{{ Math.floor(chara.optimus_crit * 100) }}%</td>
             <td>{{ Math.floor(chara.omega_crit * 100) }}%</td>
             <td>{{ ((chara.atk_cap-1) * 100).toFixed(0) }}%</td>                  
-            <td>{{ chara.total_atk }}</td>
+            <!--<td>{{ chara.total_atk }}</td>
             <td>
               <span v-for="v in chara.total_atk_crit" :key="v.value">
                 {{ v.atk_capped }} ({{ v.proba }}%) [capped: {{ v.capped }}]<br>
               </span>
-            </td>
+            </td>-->
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="mt-4">
+      <span class="tag bg-red-600">Beware</span>
+      Some things might still be missing.
+      Mouse over the skills and summons to see what's already implemented.
     </div>
   </div>
 </template>

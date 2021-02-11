@@ -435,6 +435,12 @@ all_tables = [
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
+  Table('Arcarum',
+        [ Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
+          Col('replicardData', 'JSON NOT NULL')
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
 ]
 
 dico_tables = {}

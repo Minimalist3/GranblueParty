@@ -65,6 +65,7 @@
 3020070	Randall	ランドル	3	3	0	3	0	0	1000	2016-11-30	4800	\N	640	\N	Tattoo Fist
 3020071	Spinnah	スピナー	3	3	0	1	0	0	1000	2018-05-31	4200	\N	600	\N	Spin Blade
 3020072	Young Cat (Event)	猫	3	3	0	6	4	5	\N	2019-01-31	3990	\N	570	\N	\N
+3020073	Vikala (Event)	ビカラ	3	3	0	5	1	0	\N	2020-12-25	3950	\N	810	\N	\N
 3030000	Naoise (Promo)	ノイシュ	4	4	1	4	2	0	\N	2014-03-13	5400	\N	1320	\N	Longinus
 3030001	Therese (Event)	テレーズ	4	4	1	3	4	0	\N	2014-03-31	5500	\N	1100	\N	Tanzanite Sword
 3030002	Mishra	マイシェラ	4	4	1	3	4	2	1000	2014-03-31	5400	\N	1300	\N	Spritewood Staff
@@ -339,6 +340,7 @@
 3030310	Ferry (Summer)	フェリ	4	4	1	0	4	2	1030	2020-08-09	6200	\N	920	\N	Flame Lit Curl
 3030320	Joel (SR)	ジョエル	4	4	1	3	3	0	1000	2020-08-31	4900	\N	1395	\N	Lifeguard Glove
 3030321	Wulf and Renie (Halloween)	ウーフとレニー	4	4	1	5	2	5	1040	2020-10-17	4990	\N	1800	\N	Little Master Key
+3030322	Spinnah (Holiday)	スピナー	4	4	1	1	0	0	1020	2020-12-16	8250	\N	850	\N	Gorgeous Spin Blade
 3040000	Gawain	ガウェイン	4	5	2	1	2	0	1000	2014-04-24	7200	8550	1760	2110	Windflash
 3040001	Altair	アルタイル	4	5	2	3	1	0	1000	2014-05-08	8000	9500	1600	1900	Dainsleif
 3040002	Aletheia	アレーティア	4	4	2	2	0	0	1000	2014-04-16	9200	\N	1360	\N	Greatsword Andalius
@@ -397,7 +399,7 @@
 3040055	Danua (Summer)	ダヌア	4	4	2	5	4	1	1030	2015-08-07	8350	\N	1590	\N	Mikazuki
 3040056	Zeta (Summer)	ゼタ	4	4	2	4	0	0	1030	2015-08-14	9600	\N	1280	\N	Cletine
 3040057	Vania	ヴァンピィ	4	5	2	5	4	5	1000	2015-08-31	9160	10880	1170	1390	Azoth
-3040058	Arriet	アンリエット	4	4	2	1	4	0	1000	2015-09-22	8750	\N	1300	\N	Cords of Heaven Lillah
+3040058	Arriet	アンリエット	4	4	2	1	4	0	1000	2015-09-22	8750	\N	1300	\N	Cords of Heaven Lyre
 3040059	Rackam (Grand)	ラカム	4	5	2	0	4	0	1600	2015-09-28	8000	9500	1600	1900	Benedia
 3040060	Heles	ヘルエス	4	4	2	0	0	2	1000	2015-09-30	8640	\N	1150	\N	Luin
 3040061	Feena	フィーナ	4	4	2	1	0	0	1000	2015-10-14	9400	\N	1320	\N	Heroic Bow
@@ -483,7 +485,7 @@
 3040144	Charioce XVII	シャリオス17世	4	4	2	0	4	0	\N	2017-12-28	7400	\N	1700	\N	\N
 3040145	Olivia	オリヴィエ	4	4	2	5	4	4	1500	2017-12-29	7800	\N	1480	\N	Fallen Sword
 3040146	Vaseraga (Earth)	バザラガ	4	4	2	2	0	1	1000	2017-12-31	10130	\N	1340	\N	Wurtzite Scythe
-3040147	Vajra	ヴァジラ	4	4	2	3	0	2	1050	2017-12-31	8720	\N	1140	\N	Canisius
+3040147	Vajra	ヴァジラ	4	5	2	3	0	2	1050	2017-12-31	8720	10420	1140	1340	Canisius
 3040148	Ilsa	イルザ	4	4	2	2	0	2	1000	2017-12-31	8500	\N	1200	\N	Gandiva
 3040149	Therese (SSR)	テレーズ	4	4	2	0	0	0	1000	2018-01-16	9800	\N	1240	\N	Tanzanite Blade
 3040150	Zooey	ゾーイ	4	4	2	4	1	4	1000	2018-01-31	8700	\N	1460	\N	Ruler of Fate
@@ -647,3 +649,13 @@
 3040308	Tanjiro, Nezuko, Zenitsu, and Inosuke	竈門炭治郎＆竈門禰豆子＆我妻善逸＆嘴平伊之助	4	4	2	3	1	0	\N	2020-12-08	8200	\N	1560	\N	\N
 3040309	Kyojuro Rengoku	煉獄杏寿郎	4	4	2	0	0	0	\N	2020-12-08	9750	\N	1250	\N	\N
 3040310	Shinobu Kocho	胡蝶しのぶ	4	4	2	1	3	0	\N	2020-12-13	7200	\N	1550	\N	\N
+3040311	Lily (Holiday)	リリィ	4	4	2	4	3	5	1020	2020-12-16	6250	\N	1810	\N	Saintly Crystal
+3040312	Sandalphon	サンダルフォン	4	4	2	2	4	4	1500	2020-12-28	9800	\N	1080	\N	World Ender
+3040313	Catura	シャトラ	4	4	2	1	0	1	1050	2020-12-31	11043	\N	1147	\N	Bovinius
+3040314	Filene	フィルレイン	4	4	2	3	4	5	1000	2020-12-31	9500	\N	1140	\N	Whitefrost Glacier
+3040315	Nicholas (Light)	シロウ	4	4	2	4	0	0	1000	2020-12-31	11000	\N	1000	\N	Gigante Bisector
+3040316	Zehek (SSR)	ゼヘク	4	4	2	5	4	0	1000	2021-01-17	10200	\N	1000	\N	Miming's Baselard
+3040317	Mishra (SSR)	マイシェラ	4	4	2	4	4	2	1000	2021-01-17	7595	\N	1217	\N	Woodland Prayer
+3040318	Nectar	ネクタル	4	4	2	1	0	5	1000	2021-01-31	10000	\N	1200	\N	Raijodo
+3040319	Lamretta (SSR)	ラムレッダ	4	4	2	2	4	1	1000	2021-01-31	9300	\N	1350	\N	Heart of a Songbird
+3040320	Cagliostro (Grand)	カリオストロ	4	4	2	4	4	0	1600	2021-01-31	8880	\N	1280	\N	Ouroboros Prime

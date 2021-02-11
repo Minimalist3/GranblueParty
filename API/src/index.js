@@ -63,6 +63,8 @@ app.use('/tracker', routes.tracker);
 app.use('/user', routes.user);
 // Release schedule
 app.use('/release', routes.release);
+// Replicard progress
+app.use('/replicard', routes.replicard);
 // Search
 app.use('/search', routes.search);
 // Spark
