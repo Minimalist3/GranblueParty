@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2021-01-31:</b> Lamretta, Nectar, Cagliostro (Grand)</p>
+        <p><b>2021-02-28:</b> Vaseraga (Fire), Zeta (Water), Farrah and Juri</p>
       </div>
 
       <div>

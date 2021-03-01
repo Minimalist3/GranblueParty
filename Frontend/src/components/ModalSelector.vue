@@ -26,6 +26,9 @@
           </tr>
         </thead>
         <tbody>
+          <tr @click="selectItem(null)">
+            <td v-for="index in getColumns.length" :key="index">-</td>
+          </tr>
           <tr v-for="item in getData" :key="item.id" @click="selectItem(item.id)">
             <td v-for="(val, index) in getColumn(item)" :key="index">{{ val }}</td>
           </tr>

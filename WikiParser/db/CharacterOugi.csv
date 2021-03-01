@@ -15,7 +15,7 @@
 3020015	1	Imminent Shadow	 Big Dark damage to a foe.
 3020016	1	Illuminate Star	 Big Fire damage to a foe.
 3020017	1	Dark Blade	 Big Dark damage to a foe.
-3020018	1	Imperial Card Dash	 Big Light damage to a foe.
+3020018	1	Imperial Talismancy: Strike	 Big Light damage to a foe.
 3020019	1	Virtus Veritas	 Big Wind damage to a foe.
 3020020	1	Belief Blow	 Big Light damage to a foe.
 3020021	1	Cursed Blaze	 Big Fire damage to a foe.
@@ -129,7 +129,7 @@
 3030046	1	Blaze Bloom	 Big Fire damage to a foe. Inflict Fire DEF Lowered.
 3030047	1	Loewenbein	 Big Water damage to a foe.
 3030048	1	Piercing Punishment	 Big Earth damage to a foe.
-3030049	1	Card Ambush	 Big Light damage to a foe.
+3030049	1	Talismancy: Piercing Strike	 Big Light damage to a foe.
 3030050	1	Klesa Nirodha	 Big Light damage to a foe.
 3030051	1	Pounding Heart	 Big Dark damage to a foe. Bonus Fire damage to Burned foes.
 3030051	2	Glorious Heart	After 5★: Massive Dark damage to a foe. Inflict Charm. Bonus Fire damage to Burned foes.
@@ -429,12 +429,13 @@
 3040030	3	True Spear: Righteous Annihilation	After Stage 1 Transcendence: 550% Water damage to a foe. Inflict Mode Bar Cut. All allies gain Strength, Shield, and Drain.
 3040031	1	Astral Howser	 450% Light damage to a foe. Gain Bring the Thunder. (Next use of Clincher inflicts Paralyzed.)
 3040031	2	Asteroid Jaeger	After 5★: 500% Light damage to a foe. Gain Bring the Thunder. (Next use of Clincher inflicts Paralyzed.) All allies gain Critical Hit Rate Boosted.
-3040032	1	Astro Divergence	Axe form: Massive Earth damage to a foe. Swap to Sword form.
-3040032	2	Meteor Thrust	Sword form: Massive Earth damage to a foe. Deal 999,999 bonus plain damage. Swap to Axe form.
-3040032	3	Astro Destruction	After 5★ - Axe form: Massive Earth damage to a foe. Gain Earth ATK Up. Swap to Sword form.
-3040032	4	Annihilation Nova	After 5★ - Sword form: Massive Earth damage to a foe. Deal 1,999,998 bonus plain damage. Swap to Axe form.
-3040033	1	Memento Mori	 Massive Water damage to a foe. Inflict Delay.
-3040033	2	Memento Vita	After 5★: Massive Water damage to a foe. Inflict Delay. All allies gain DA Up and TA Up.
+3040032	1	Astro Divergence	Axe form: 450% Earth damage to a foe. Swap to Sword form.
+3040032	2	Meteor Thrust	Sword form: 450% Earth damage to a foe. Deal 999,999 bonus plain damage. Swap to Axe form.
+3040032	3	Astro Destruction	After 5★ - Axe form: 500% Earth damage to a foe. Gain Earth ATK Up. Swap to Sword form.
+3040032	4	Annihilation Nova	After 5★ - Sword form: 500% Earth damage to a foe. Deal 1,999,998 bonus plain damage. Swap to Axe form.
+3040033	1	Memento Mori	 450% Water damage to a foe. Inflict Delay.
+3040033	2	Memento Vita	After 5★: 500% Water damage to a foe. Inflict Delay. All allies gain DA Up and TA Up.
+3040033	3	Mors Certa	After Stage 1 Transcendence: 550% Water damage to a foe. Inflict Delay. All allies gain DA Up, TA Up, and Bonus Water DMG.
 3040034	1	Big Bang	 Massive Light damage to a foe and remove 1 buff.
 3040034	2	True Big Bang	After 5★: Massive Light damage to a foe and remove 1 buff. Inflict Dark ATK Lowered, DA Down, and TA Down.
 3040035	1	Void Claws: Terminus	 Massive Dark damage to a foe. Gain Mirror Image.
@@ -514,7 +515,7 @@
 3040084	2	Beat the Wall	After 5★: Massive Earth damage to a foe. Gain Bonus Earth Damage and Guaranteed TA.
 3040085	1	Gaia Zimos	 Massive Earth damage to a foe. Gain DA Up.
 3040086	1	Dragonbrood Demonspear	 Massive Dark damage to a foe. Gain Double Lashwave. (Next use of Blackwyrm Lash activates twice.)
-3040087	1	Talismaster	 450% Light damage to a foe. 400% Bonus Light damage to enemy if Curse of the Mask is active (Damage cap: ~1,160,000). Self-inflict Curse of the Mask for 4 turns.
+3040087	1	Talismancy: Void Strike	 450% Light damage to a foe. 400% Bonus Light damage to enemy if Curse of the Mask is active (Damage cap: ~1,160,000). Self-inflict Curse of the Mask for 4 turns.
 3040088	1	Red Hot Guardian	Normal mode: 450% Water damage to a foe. Gain Charge Boost. Switch into Tough Guy mode.
 3040088	2	Red Hot Guardian ++	After 5★ - Normal mode: 500% Water damage to a foe. Gain Charge Boost, DA Up, and TA Up. Switch into Tough Guy mode.
 3040088	3	Full Metal Sights	Tough Guy mode: 500% Water damage to a foe. End Tough Guy mode.
@@ -768,3 +769,8 @@
 3040318	1	Heavenly Piercer	 1000% Wind damage to a foe (Damage cap: ~2,900,000). Extend Mana Flow's duration by 2 turns. (Can only be used during Mana Flow.)
 3040319	1	Lam Goes Wham	 450% Earth damage to a foe. Gain Bonus Earth DMG.
 3040320	1	Ars Magna	 Massive Light damage to a foe Consume all Truth lvls to boost C.A. specs.
+3040321	1	Lovely Sky Hurricane	 450% Earth damage to a foe. End cooldown for Monika's skills. Activate Violetshock Flicker.
+3040322	1	Gefrorene Welt	 450% Light damage to a foe. 1-turn cut to Aglovale's skill cooldowns. 100% Bonus Light damage to a foe for each Aurora Crest (Damage cap: ~120,000 per hit / Max: 5 hits).
+3040323	1	Sirius Nova: Last Dive	 1250% Water damage to a foe (Damage cap: ~2,420,000). Gain Charge Bar. Activate Spear of Arvess. (Consumes 15% of max HP.)
+3040324	1	Destroy Moon	 1250% Fire damage to a foe. End cooldown for No Pain. Restore 30% of Vaseraga's HP. (Can only be used when below 25% HP.)
+3040325	1	Rending Twin Blades	 Massive Light damage to a foe. (Bonus Light damage based on Deft Sword lvl and Deft Shield lvl [Max: 10 hits].)

@@ -59,7 +59,7 @@ const CAT_STANDARD = {
     stars: 3,
     cost: 45,
     magfes: 0,
-    times: 1,    
+    times: 1,
     raids: {
       '305011/1': {
         name: 'Tiamat',       
@@ -78,6 +78,18 @@ const CAT_STANDARD = {
       },
       '305061/1': {
         name: 'Celeste',       
+      },
+    },
+  },
+  32: {
+    name: 'Hard + Pro',
+    stars: 3,
+    cost: 270,
+    magfes: 0,
+    times: 1,
+    raids: {
+      '305261/28': {
+        name: 'All Hard +',       
       },
     },
   },

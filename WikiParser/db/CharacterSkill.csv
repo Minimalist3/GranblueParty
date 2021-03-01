@@ -1075,7 +1075,7 @@
 3040030	2	Arm the Bastion	45	All allies gain 100% DMG Cut and 100% Fire Cut.
 3040030	3	One-Rift's Benediction	100	All allies gain Rift's Benediction, Fire DMG Lowered, Water DMG Lowered, Earth DMG Lowered, Wind DMG Lowered, Light DMG Lowered, and Dark DMG Lowered. (Can't recast.)
 3040031	0	Merculight	1	Gain Other Self 1 and ATK Up. At level 55: Buff increased to ATK Up. At level 85: Also gain Skill DMG Cap Boosted.
-3040031	1	Depravity	1	Inflict various debuffs on all foes.
+3040031	1	Depravity	1	Inflict Debuff Resistance Lowered, Poisoned, Burned, Putrefied, Blinded, Charmed, Zombified, Sleep 3, Paralyzed 3, ATK Down, DEF Down, DA Down, TA Down, and Lethal Hit on all foes.
 3040031	2	Clincher	45	Big Light damage to a foe based on number of foe's debuffs (Damage cap: ~700,000). At level 95: Now hits all foes. Damage cap increased to ~1,200,000. 
 3040031	3	Two-Crown's Strife	100	Extend time-based debuff effects on all foes by 90 seconds. Multi-hit, 200% Light damage to all foes based on foes' number of debuffs (Damage cap: ~160,000 per hit). (Max: 10 hits. Can't recast.)
 3040032	0	Vorpal Rage	1	Earth damage to a foe (Damage cap: ~630,000). Gain Jammed and Drain. 
@@ -1085,27 +1085,27 @@
 3040033	0	Gammadion Cross	1	2-hit, 300% Water damage to a foe (Damage cap: ~313,000 per hit). Inflict one random debuff. At level 55: Effect enhanced. At level 85: Now inflicts two random debuffs.
 3040033	1	Carnage	1	4-hit Water damage to random foes (Damage cap: ~155,000 per hit). Inflict Gravity on all foes. At level 75: Damage increased. At level 95: Number of hits increased to 6. Also removes 1 buff on all foes.
 3040033	2	Avirati	45	Extend the duration of all allies' buffs by 1 turn. (Excludes 1-turn buffs.)
-3040033	3	Four-Sky's Sorrow	100	Gain Holy Haste 4, boosting debuff success rate by 100% and instantly resetting the cooldown of a damaging skill upon use up to 4 times. (Can't recast)
+3040033	3	Four-Sky's Sorrow	100	Gain Holy Haste 4, boosting debuff success rate by 100% and instantly end the cooldown of a damaging skill upon use up to 4 times. (Can't recast.)
 3040034	0	Sunshine	1	Restore 200 + 20% of all allies' HP (Healing cap: 3000). All allies gain Refresh. At level 55: Effect enhanced. At level 95: Healing cap increased to 4000. Refresh upgraded to Revitalize. All allies also gain Strength .
 3040034	1	Blessing of Light	1	Remove all debuffs from all allies. At level 85: All allies also gain Debuff Resistance Boosted.
 3040034	2	Reincarnation	45	Grant an ally Magic Torrent. 
-3040034	3	Five-Soul's Charity	100	Revive all allies with full HP. All non-revived allies gain Lethal Attack Dodged. (Can't recast)
+3040034	3	Five-Soul's Charity	100	Revive all allies with full HP. All non-revived allies gain Lethal Attack Dodged. (Can't recast.)
 3040035	0	Gate of Sin	1	Gain Adversity. At level 95: Buff increased to Adversity. Also gain Bonus Dark DMG.
 3040035	1	Thunderflash	1	Gain Full Hostility and Counter on Dodge. At level 85: Counter upgraded to Counters on Dodge/DMG. 
 3040035	2	Gate of Demons	45	600% Dark damage to all foes (Damage cap: ~700,000). Inflict Petrified 3. At level 90: Also inflict Accuracy Lowered 3.
-3040035	3	Six-Ruin's Enlightenment	100	 Gain Other Self and Double Strike. (Can't recast)
+3040035	3	Six-Ruin's Enlightenment	100	 Gain Other Self and Double Strike. (Can't recast.)
 3040036	0	Emblema	1	Gain Instant Charge. Raise Swordshine lvl by 1 (Max: 3). At level 90: Now raises Swordshine 1 lvl by 2 (Max: 5). Also gain C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time). 
 3040036	1	Infinito Creare	1	10-hit, 100%-150% Wind damage to random foes (Damage cap: ~70,000 per hit). At level 75: Effect enhanced. At level 95: Seofon also gains Charge Boost.
 3040036	2	Cuore di Leone	80	All allies gain C.A. Instant Standby. Lower Swordshine lvl by 3. (Requires Swordshine lvl 3 or higher.)
-3040036	3	Seven-Star's Brilliance	100	All allies gain C.A. Instant Standby, C.A. DMG Boosted, and C.A. DMG Cap Boosted. (Can't recast)
-3040037	0	Open Spirit	1	Gain ATK Up and Critical Up. ''(Uses 10% of charge bar)'' At level 85: Buff increased to Critical Up. Charge bar cost removed. Also gain Arda Frava.
-3040037	1	Purgatory	1	Transfer charge bar evenly to all other allies. ''(Uses 30% of charge bar)''
-3040037	2	Dance of the Gods	45	Drain a foe's mode bar and gain up to Charge Boost At level 95: Also gain 1 Aiki stack (Max: 3).
-3040037	3	Eight-Life's Pilgrimage	100	Gain Charge Boost and Eight-Life's Pilgrimage (Can't recast)
+3040036	3	Seven-Star's Brilliance	100	All allies gain C.A. Instant Standby, C.A. DMG Boosted, and C.A. DMG Cap Boosted. (Can't recast.)
+3040037	0	Open Spirit	1	Gain ATK Up and Critical Up. ''(Uses 10% of charge bar.)'' At level 85: Buff increased to Critical Up. Charge bar cost removed. Also gain Arda Frava.
+3040037	1	Purgatory	1	Transfer charge bar evenly to all other allies. ''(Uses 30% of charge bar.)''
+3040037	2	Dance of the Gods	45	Drain a foe's mode bar and gain up to Charge Boost. At level 95: Also gain 1 Aiki stack (Max: 3).
+3040037	3	Eight-Life's Pilgrimage	100	Gain Charge Boost and Eight-Life's Pilgrimage. (Can't recast.)
 3040038	0	Ninna Nanna	1	Inflict Comatose 6 on all foes for 4-6 turns.
 3040038	1	Qualia	1	All allies gain DA Up, ATK Up, and DEF Up. At level 75: Buffs increased to DA Up, ATK Up, and DEF Up At level 95: All Wind allies also gain Harmonics and Sharping. 
 3040038	2	Defendu	45	Inflict Tuning on all foes. All allies gain Critical Up. At level 85: All allies also gain Shield.
-3040038	3	Nine-Realm's Security	100	All allies gain TA Up and Bonus Wind DMG. (Can't recast)
+3040038	3	Nine-Realm's Security	100	All allies gain TA Up and Bonus Wind DMG. (Can't recast.)
 3040039	0	Intense Bullet	1	450% Fire damage to a foe (Damage cap: ~630,000). Raise Bounty by 2. At level 55: Now raises Bounty by 3.
 3040039	1	The Final Order	1	Gain Salted Wound and ATK Up. At level 75: Effect enhanced. At level 85: Also inflict Onslaught 3, Break Boosted (Time), and Break Boosted (DMG) on a foe.
 3040039	2	Stardust	45	10-hit, 80% Fire damage to a foe (Damage cap: ~82,000 per hit). At level 95: Also gain Bonus Fire Damage and Guaranteed TA. 
@@ -1830,7 +1830,7 @@
 3040272	2	Rainfall	45	300% Water damage to a foe (Damage cap: ~360,000). Gain Charge Bar. (Number of activations increased based on number of bow- and gun-specialty allies in party [Max: 6 times].)
 3040273	0	Battleplan: Canon of Bao / Battleplan: Canon of Shun	1	'Battleplan: Canon of Bao:' All allies gain ATK Up and Water ATK Up. (Changes to Battleplan: Canon of Shun when charge bar is 120% or above.) 'Battleplan: Canon of Shun:' All allies gain ATK Up, Water ATK Up, and ATK Boosted (1 time). (Consumes all of charge bar.)
 3040273	1	Cerulean Blossom Stance	1	Gain Flourishing Prowess.
-3040273	2	Flowering Blade	45	500% Water damage to all foes (Damage cap: ~700,000). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). Consume half of current charge bar. (Number of hits increased based on charge bar consumed.)
+3040273	2	Flowering Blade	45	1 to 5-hit, 500% Water damage to all foes (Damage cap: ~700,000). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable) per hit. Consume half of current charge bar. (Number of hits increased based on charge bar consumed.)
 3040274	0	Prominence Palm	1	Fire damage to all foes. Inflict ATK Lowered 5 and DEF Lowered 5. (Boost to specs based on number of melee-specialty main allies.)
 3040274	1	Cloak of Flame	1	Gain Counters on Dodge/DMG and Drain. 
 3040274	2	Rekki Unleashed	45	Gain Rekki. ('After 3 turns:' Fire damage to random foes based on number of hits taken [Max: 10 hits].)
@@ -1964,7 +1964,7 @@
 3040317	0	Incursion Rune	1	Grant Incursion Rune to a Light ally. 
 3040317	1	Fortification Rune	1	Grant Fortification Rune to a Light ally. 
 3040317	2	Recovery Rune	45	Fully restore a Light ally's HP and remove all debuffs.
-3040318	0	Demon Slayer	1	700% wind DMG to a foe (Damge cap: ~730,000). Inflict DEF Lowered 4. 'If Mana Flow is in effect:' Also inflict Onslaught 3.
+3040318	0	Demon Slayer	1	700% Wind damage to a foe (Damge cap: ~730,000). Inflict DEF Lowered 4. 'If Mana Flow is in effect:' Also inflict Onslaught 3.
 3040318	1	Grasping Pounce	1	Gain Counters on Dodge/DMG and Adversity. 'If Mana Flow is in effect:' Also gain Salted Wound.
 3040318	2	Demon Purification	45	Gain Mana Flow. End cooldown for other skills. (Consumes 100% of charge bar.)
 3040319	0	Saint Halo	1	6-hit, 125% Earth damage to a foe (Damage cap: ~100,000 per hit). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). (Consumes 1 Bon Vivant.)
@@ -1973,3 +1973,18 @@
 3040320	0	Ars Gloria	1	All Light allies gain Eternal Ouroboros. (Can't recast.)
 3040320	1	Endymion	1	All Light allies gain Instant Charge and Autorevived (Can't be removed). End cooldown for all Light allies' skills. (Can't recast.)
 3040320	2	Pinnacle of Geometry	45	Inflict Can't Act 1, DA Down 6, TA Down 6, and Accuracy Lowered 6 on a foe.
+3040321	0	Wind of Love's Spark	1	All allies gain Charge Bar and Charge Bar Gain Boosted. ('When Monika has 12 or more buffs:' All allies also gain C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time).) 
+3040321	1	Magical Sword	1	Gain Guaranteed TA and Extra Superior Element DMG. ('When Monika has 12 or more buffs:' Also gain DMG Cap Boosted.) 
+3040321	2	Lovely Dressing	45	All allies gain Refresh and Veil. ('When Monika has 12 or more buffs:' All allies also gain Dispel Cancel.)
+3040322	0	Gestober	1	500% Light damage to a foe (Damage cap: ~635,000). All allies gain Aurora Crest and a random buff. (Gain additional buffs based on Aglovale's number of Aurora Crest.)
+3040322	1	Zweimal	1	300% Light damage to all foes (Damage cap: ~340,000). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). (Number of activations increased based on Aglovale's number of Aurora Crest [Max: 6 times].)
+3040322	2	Funkelnde Kalte	45	600% Light damage to a foe (Damage cap: ~800,000). Gain Instant Charge. End cooldown for other skills.
+3040323	0	Spear of Arvess	1	300% Water damage to a foe (Damage cap: ~280,000). Inflict DEF Down 4 and Arvess Fermare 4. ('When any foe has Arvess Fermare 1:' Also gain Bonus Water DMG.) 
+3040323	1	Rhapsody	1	Gain Salted Wound (Arvess Fermare), Salted Wound, and ATK Up. 
+3040323	2	Erythron Unleashed	45	Consume all of caster's charge bar to gain Double Strike. ('When below 25% HP:' Also restore caster's HP based on charge bar consumed.)
+3040324	0	Great Scythe Grynoth	1	400% Fire damage to all foes (Damage cap: ~630,000). Gain Charge Bar. Restore caster's HP (Healing cap: 2000). 
+3040324	1	No Pain	1	Gain Jammed, DEF Up, Substituted (All-Ally), and Lethal Attack Dodged (Can't be removed). (Consumes 25% of max HP.)
+3040324	2	Melas Unleashed	45	Gain Melas Unleashed. (Consumes 100% of charge bar.)
+3040325	0	Here to Assist!	1	Gain Guaranteed TA. Raise Deft Sword lvl by 1. ('When Deft Sword lvl is 5:' Also gain Bonus Light DMG.)
+3040325	1	Leave It to Me!	1	Gain Substituted and Armored. Raise Deft Shield lvl by 1. ('When Deft Shield lvl is 5:' Also gain Lethal Attack Dodged.)
+3040325	2	Preuve de Lien	45	Restore caster's HP and remove 1 debuff. ('When Deft Sword lvl and Deft Shield lvl are both 5:' Fully restore HP and remove all debuffs.)

@@ -70,18 +70,24 @@ export default {
       }
     },
     changeObject(id) {
-      if (Utils.isEmpty(id)) return;
-
-      this.axios.get('/party/classes/' + id)
-        .then(response => this.$store.commit('setClasse', response.data))
-        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      if (Utils.isEmpty(id)) {
+        this.$store.commit('setClasse', {});
+      }
+      else {
+        this.axios.get('/party/classes/' + id)
+          .then(response => this.$store.commit('setClasse', response.data))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      }
     },
     changeSkill(id) {
-      if (Utils.isEmpty(id)) return;
-
-      this.axios.get('/party/skills/' + id)
-        .then(response => this.$store.commit('setClasseSkill', {slot: this.selected_skill_index, data: response.data}))
-        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      if (Utils.isEmpty(id)) {
+        this.$store.commit('setClasseSkill', {slot: this.selected_skill_index, data: null})
+      }
+      else {
+        this.axios.get('/party/skills/' + id)
+          .then(response => this.$store.commit('setClasseSkill', {slot: this.selected_skill_index, data: response.data}))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      }
     },
   },
   computed: {

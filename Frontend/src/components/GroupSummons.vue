@@ -119,12 +119,14 @@ export default {
       }
     },
     changeObject(id) {
-      if (Utils.isEmpty(id)) return;
-
       const slot = this.selected_box_index;
-      this.axios.get('/party/summons/' + id)
-        .then(response => this.$store.commit('setSummon', { index: slot, data: response.data }))
-        .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      if (Utils.isEmpty(id)) {
+        this.$store.commit('setSummon', { index: slot, data: {} });
+      } else {
+        this.axios.get('/party/summons/' + id)
+          .then(response => this.$store.commit('setSummon', { index: slot, data: response.data }))
+          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
+      }
     },
     swap(from, to) {
       let tmp = this.objects[from];
