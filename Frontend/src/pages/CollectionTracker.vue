@@ -132,14 +132,15 @@
               :src="'/img/unit_small/' + chara.id + '000.jpg'"
               @click="selectChara(chara)"
             >
-            <span @click="starsModified()" style="height: 21px;" v-if="showStars">
+            <span @click="starsModified()" style="min-height: 21px;" v-if="showStars">
               <stars-line
                 v-if="chara.owned"
                 :base="chara.sb"
                 :extra="chara.sm"
                 :current.sync="chara.sc"
                 :max="5"
-                :readOnly=" ! isOwnCollection"                
+                :readOnly=" ! isOwnCollection"
+                :transcendance="true"
               ></stars-line>
             </span>
             <span @click="starsModified()" v-if="showAwakening && chara.owned" class="text-sm pb-2 pl-1">

@@ -128,20 +128,20 @@
 2040072	Avaritia	アワリティア	3	3	2	2	\N	2015-04-30	215	1300	\N	\N	97	610	\N	\N	{"0":[{"percent":30,"element":"earth","aura_type":"normal","stat":"atk"}],"3":[{"percent":40,"element":"earth","aura_type":"normal","stat":"atk"}]}
 2040073	Kirari	[ラブリーナイト]きらり	3	3	2	2	\N	2015-05-03	150	1150	\N	\N	110	700	\N	\N	\N
 2040076	Oxymoron	オクシモロン	3	3	2	0	\N	2015-05-31	200	1270	\N	\N	100	634	\N	\N	\N
-2040080	Zeus	ゼウス	3	4	2	4	1600	2015-06-30	370	2220	3145	\N	130	790	1120	\N	{"0":[{"percent":80,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"light","aura_type":"optimus","stat":"atk"}]}
+2040080	Zeus	ゼウス	3	5	2	4	1600	2015-06-30	370	2220	3145	3608	130	790	1120	1285	{"0":[{"percent":80,"element":"light","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"light","aura_type":"optimus","stat":"atk"}],"5":[{"element":"light","aura_type":"optimus","stat":"atk","percent":150}]}
 2040081	Robomi Rocket	ロボミ発進指令	3	3	2	4	\N	2015-06-30	200	1270	\N	\N	100	634	\N	\N	\N
-2040084	Titan	ティターン	3	4	2	2	1600	2015-07-31	310	1940	2755	\N	140	920	1310	\N	{"0":[{"percent":80,"element":"earth","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"earth","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"earth","aura_type":"optimus","stat":"atk"}]}
+2040084	Titan	ティターン	3	5	2	2	1600	2015-07-31	310	1940	2755	3163	140	920	1310	1505	{"0":[{"percent":80,"element":"earth","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"earth","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"earth","aura_type":"optimus","stat":"atk"}],"5":[{"percent":150,"aura_type":"optimus","element":"earth","stat":"atk"}]}
 2040085	Ebisu	ヱビス	3	3	2	3	\N	2015-07-31	225	1390	\N	\N	97	600	\N	\N	\N
 2040086	Inchoate World	胎動する世界	3	3	2	5	\N	2015-09-17	245	1420	\N	\N	85	555	\N	\N	\N
-2040090	Hades	ハデス	3	4	2	5	1600	2015-08-31	420	2350	3315	\N	123	755	1071	\N	{"0":[{"percent":80,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"dark","aura_type":"optimus","stat":"atk"}]}
+2040090	Hades	ハデス	3	5	2	5	1600	2015-08-31	420	2350	3315	3798	123	755	1071	1229	{"0":[{"percent":80,"element":"dark","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"dark","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"dark","aura_type":"optimus","stat":"atk"}],"5":[{"percent":150,"element":"dark","aura_type":"optimus","stat":"atk"}]}
 2040091	Veselago	ヴェセラゴ	3	3	2	4	\N	2015-08-31	225	1325	\N	\N	94	610	\N	\N	\N
-2040094	Agni	アグニス	3	4	2	0	1600	2015-09-30	385	2270	3213	\N	127	770	1092	\N	{"0":[{"percent":80,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"fire","aura_type":"optimus","stat":"atk"}]}
+2040094	Agni	アグニス	3	5	2	0	1600	2015-09-30	385	2270	3213	3685	127	770	1092	1253	{"0":[{"percent":80,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"fire","aura_type":"optimus","stat":"atk"}],"5":[{"percent":150,"element":"fire","aura_type":"optimus","stat":"atk"}]}
 2040095	Deirdre	ディアドラ	3	3	2	1	\N	2015-09-30	240	1520	\N	\N	92	572	\N	\N	\N
 2040096	Pierre	ピエール	3	3	2	4	\N	2015-10-07	235	1450	\N	\N	92	575	\N	\N	\N
 2040097	Harvest Myconid	オータム・マイコニド	3	3	2	2	\N	2015-10-31	200	1295	\N	\N	99	608	\N	\N	\N
-2040098	Zephyrus	ゼピュロス	3	4	2	1	1600	2015-10-31	380	2250	3185	\N	128	774	1097	\N	{"0":[{"percent":80,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"wind","aura_type":"optimus","stat":"atk"}]}
+2040098	Zephyrus	ゼピュロス	3	5	2	1	1600	2015-10-31	380	2250	3185	3653	128	774	1097	1259	{"0":[{"percent":80,"element":"wind","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"wind","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"wind","aura_type":"optimus","stat":"atk"}],"5":[{"percent":150,"element":"wind","aura_type":"optimus","stat":"atk"}]}
 2040099	Fafnir	ファフニール	3	3	2	0	\N	2015-11-30	250	1520	\N	\N	91	575	\N	\N	\N
-2040100	Varuna	ヴァルナ	3	4	2	3	1600	2015-12-02	370	2150	3040	\N	130	800	1135	\N	{"0":[{"percent":80,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"light","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"water","aura_type":"optimus","stat":"atk"}]}
+2040100	Varuna	ヴァルナ	3	5	2	3	1600	2015-12-02	370	2150	3040	3485	130	800	1135	1303	{"0":[{"percent":80,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":120,"element":"water","aura_type":"optimus","stat":"atk"}],"4":[{"percent":140,"element":"water","aura_type":"optimus","stat":"atk"}],"5":[{"percent":150,"element":"water","aura_type":"optimus","stat":"atk"}]}
 2040105	Rose Queen	ローズクイーン	3	4	2	1	1000	2017-02-28	304	1870	2260	\N	140	780	940	\N	\N
 2040109	Illuyanka	イルルヤンカシュ	3	3	2	3	\N	2016-06-09	265	1695	\N	\N	107	650	\N	\N	\N
 2040113	Odajumoki Gang	オダヅモッキー・ギャングスタ	3	3	2	3	\N	2015-12-31	250	1580	\N	\N	90	551	\N	\N	\N
@@ -229,7 +229,7 @@
 2040285	Gorilla	ゴリラ	3	4	2	2	1000	2018-05-31	397	2132	2570	\N	100	650	790	\N	{"0":[{"percent":50,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"}],"4":[{"percent":110,"element":"earth","aura_type":"elemental","stat":"atk"}]}
 2040286	Lunalu	ルナール	3	3	2	5	\N	2018-05-31	240	1452	\N	\N	91	578	\N	\N	\N
 2040288	Morgana Car	モルガナカー	3	4	2	5	\N	2018-06-18	270	1492	1800	\N	85	570	690	\N	\N
-2040290	Nobiyo	ノビヨ	3	4	2	4	\N	2018-06-30	192	1214	1406	\N	98	622	720	\N	{"3":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}]}
+2040290	Nobiyo	ノビヨ	3	4	2	4	\N	2018-06-30	192	1214	1406	\N	98	622	720	\N	{"3":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}],"4":[{"percent":20,"element":"any","aura_type":"normal","stat":"atk"},{"percent":20,"element":"any","aura_type":"normal","stat":"hp"}]}
 2040291	Narita	ナリタ	3	4	2	5	\N	2018-06-30	300	1761	2061	\N	79	512	591	\N	\N
 2040292	Electric Eal	デンキンナギ	3	3	2	4	\N	2018-07-31	250	1580	\N	\N	90	550	\N	\N	\N
 2040293	Macula Marius	マキュラ・マリウス	3	4	2	3	1030	2018-07-31	345	2090	2530	\N	125	755	910	\N	{"0":[{"percent":60,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":80,"element":"water","aura_type":"elemental","stat":"atk"}],"4":[{"percent":90,"element":"water","aura_type":"elemental","stat":"atk"}]}
@@ -313,3 +313,5 @@
 2040392	Tsuchinoko	ツチノコ	3	4	2	2	1600	2020-12-31	310	2080	2965	\N	153	875	1236	\N	\N
 2040393	Idle Sparkle	ぼんやりピカピカの魔法	3	3	2	2	\N	2021-01-29	215	1407	\N	\N	96	583	\N	\N	\N
 2040394	Automagod Triumvirate	月に降り立ちし三機神	3	3	2	5	\N	2021-02-26	255	1255	\N	\N	88	613	\N	\N	\N
+2040395	Xeno Cocytus	ゼノ・コキュートス	3	4	2	3	\N	2021-03-16	250	1612	2293	\N	107	650	922	\N	\N
+2040396	Snapshot of Divinity	十二神将水浴衣図	3	3	2	3	\N	2021-03-29	155	1782	\N	\N	108	508	\N	\N	\N

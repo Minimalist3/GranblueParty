@@ -535,6 +535,15 @@ const CAT_IMPOSSIBLE = {
         name: 'Leviathan Malice',
         icon: 'indicuscentrum',
       },
+      '305271/1/0/105': {
+        name: 'Luminiera Malice',
+        namejp: 'シュヴァ・マリス',
+        icon: 'niveuscentrum',
+      },
+      '305271/1/0/102': {
+        name: 'Luminiera Malice',
+        icon: 'indicuscentrum',
+      },
       '305251/1/0/103': {
         name: 'Phronesis',
         namejp: 'フロネシス',

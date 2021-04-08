@@ -15,6 +15,18 @@ function getCharacterLevel(character) {
           return 70;
         case 4:
           return 80;
+        case 5:
+          return 100;
+        case 6:
+          return 110;
+        case 7:
+          return 120;
+        case 8:
+          return 130;
+        case 9:
+          return 140;
+        case 10:
+          return 150;
       }
       return 100;
     // SR

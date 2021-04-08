@@ -94,8 +94,8 @@
 10400061	1	1	\N	48	Medium boost to light allies' ATK
 10400061	1	120	\N	49	Medium boost to light allies' ATK and double attack rate
 10400061	2	1	\N	50	Medium boost to light allies' max HP
-10400062	1	1	\N	51	Boost to energy cap (Effect is halved when sub-equipped)
-10400062	2	1	\N	52	Reduce DMG taken from wind when Awakening Blade is active (Effect is halved when sub-equipped)
+10400062	1	1	\N	51	Boost to energy cap (Effect is halved when sub-equipped).
+10400062	2	1	\N	52	Reduce Wind damage taken when Awakening Blade is active (Effect is halved when sub-equipped).
 10400063	1	1	\N	51	Boost to energy cap (Effect is halved when sub-equipped)
 10400063	2	1	\N	52	Reduce DMG taken from wind when Awakening Blade is active (Effect is halved when sub-equipped)
 10400064	1	1	\N	51	Boost to energy cap (Effect is halved when sub-equipped)
@@ -357,8 +357,22 @@
 10400210	1	1	\N	5	Big boost to earth allies' ATK
 10400210	2	1	\N	606	Small boost to earth allies' C.A. DMG
 10400210	3	120	\N	200	Boost to earth charge attack DMG cap
+10400211	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400211	2	1	\N	1036	When main weapon (MC only): Bonus Fire DMG effect based on number of Machine Cell s.
+10400212	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400212	2	1	\N	1036	When main weapon (MC only): Bonus Water DMG effect based on number of Machine Cell s.
+10400213	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400213	2	1	\N	1036	When main weapon (MC only): Bonus Earth DMG effect based on number of Machine Cell s.
+10400214	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400214	2	1	\N	1036	When main weapon (MC only): Bonus Wind DMG effect based on number of Machine Cell s.
+10400215	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400215	2	1	\N	1036	When main weapon (MC only): Bonus Light DMG effect based on number of Machine Cell s.
+10400216	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
+10400216	2	1	\N	1036	When main weapon (MC only): Bonus Dark DMG effect based on number of Machine Cell s.
 10400217	1	1	\N	49	Medium boost to light allies' ATK and double attack rate
 10400217	2	1	\N	327	Small boost to light allies' max HP
+10400218	1	1	\N	41	Medium boost to earth allies' ATK
+10400218	2	1	\N	1037	Small boost to earth allies' C.A. DMG and C.A. DMG cap
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -389,8 +403,8 @@
 10401026	1	1	\N	5	Big boost to earth allies' ATK
 10401027	1	1	\N	7	Big boost to light allies' ATK
 10401028	1	1	\N	26	Big boost to dark allies' ATK
-10401029	1	1	\N	160	Boost to skill hit rate
-10401029	2	1	\N	161	Boost to DMG for stall
+10401029	1	1	\N	160	When main weapon (MC only): Boost to debuff accuracy.
+10401029	2	1	\N	161	When main weapon (MC only): Boost to Stall series' damage.
 10401030	1	1	\N	162	Boost to A Little Pick-Me-Up .
 10401030	2	1	\N	163	Boost honors gained by all allies' skills.
 10401031	1	1	\N	0	Big boost to fire allies' ATK
@@ -603,6 +617,34 @@
 10401132	2	1	\N	1001	20% boost to Dark allies' DMG cap in Arcarum.
 10401133	1	1	\N	276	Medium boost to dark allies' ATK and critical hit rate
 10401133	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
+10401134	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401134	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401135	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401135	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401136	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401136	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401137	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401137	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401138	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401138	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401139	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401139	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401140	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401140	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401141	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
+10401141	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401142	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401142	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401143	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401143	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401144	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401144	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401145	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401145	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401146	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401146	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401147	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
+10401147	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
 10402000	1	1	\N	222	Medium boost to light allies' critical hit rate
 10402000	2	1	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10402002	1	1	\N	0	Big boost to fire allies' ATK
@@ -806,7 +848,7 @@
 10402114	2	120	\N	290	When main weapon (MC only): Gain 8% ATK Up (Stackable / Max: 40%) upon triple attack
 10402115	1	1	\N	291	Big boost to Earth allies' ATK
 10402115	2	100	\N	292	When main weapon (MC only): Gain 5% ATK Up (Stackable / Max: 20%) upon one-foe attack
-10402116	1	1	\N	293	Big boost to ATK as water allies' HP increases
+10402116	1	1	\N	1042	Big boost to ATK as water allies' HP increases
 10402116	2	150	\N	294	Medium boost to water allies' double attack rate and critical hit rate
 10402117	1	1	\N	295	Medium boost to fire allies' ATK and double attack rate
 10402117	2	1	\N	243	Small boost to fire allies' max HP
@@ -896,6 +938,8 @@
 10402158	2	100	\N	1023	When main weapon (MC only): Boost to multiattack rate based on number of foe's debuffs
 10402159	1	1	\N	232	Small boost to water allies' ATK
 10402159	2	1	\N	219	Medium boost to water allies' multiattack rate
+10402160	1	1	\N	1048	Big boost to fire allies' skill DMG cap / Big supplemental boost to skill DMG
+10402160	2	120	\N	428	Small boost to fire allies' ATK
 10403000	1	1	\N	7	Big boost to light allies' ATK
 10403000	2	120	\N	312	When main weapon, boost to debuff resistance
 10403001	1	1	\N	892	\N
@@ -933,8 +977,8 @@
 10403020	1	1	\N	5	Big boost to earth allies' ATK
 10403021	1	1	\N	7	Big boost to light allies' ATK
 10403022	1	1	\N	26	Big boost to dark allies' ATK
-10403023	1	1	\N	322	Extend Rage buff duration for MC.
-10403023	2	1	\N	323	Cut to Rage cooldown.
+10403023	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403023	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403024	1	1	\N	0	Big boost to fire allies' ATK
 10403025	1	1	\N	2	Big boost to water allies' ATK
 10403026	1	1	\N	13	Big boost to wind allies' ATK
@@ -949,20 +993,20 @@
 10403033	1	1	\N	2	Big boost to water allies' ATK
 10403033	1	101	\N	328	Big boost to water allies' ATK
 10403034	1	1	\N	5	Big boost to earth allies' ATK
-10403035	1	1	\N	322	Extend rage for caster
-10403035	2	1	\N	323	Cut to rage cooldown
-10403036	1	1	\N	322	Extend rage for caster
-10403036	2	1	\N	323	Cut to rage cooldown
+10403035	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403035	2	1	\N	323	1-turn cut to Rage series' cooldown.
+10403036	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403036	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403037	1	1	\N	322	Extend rage for caster
 10403037	2	1	\N	323	Cut to rage cooldown
-10403038	1	1	\N	322	Extend rage for caster
-10403038	2	1	\N	323	Cut to rage cooldown
-10403039	1	1	\N	322	Extend rage for caster
-10403039	2	1	\N	323	Cut to rage cooldown
-10403040	1	1	\N	322	Extend rage for caster
-10403040	2	1	\N	323	Cut to rage cooldown
-10403041	1	1	\N	322	Extend rage for caster
-10403041	2	1	\N	323	Cut to rage cooldown
+10403038	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403038	2	1	\N	323	1-turn cut to Rage series' cooldown.
+10403039	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403039	2	1	\N	323	1-turn cut to Rage series' cooldown.
+10403040	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403040	2	1	\N	323	1-turn cut to Rage series' cooldown.
+10403041	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403041	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403042	1	1	\N	0	Big boost to fire allies' ATK
 10403042	2	1	\N	329	Cut to overdrive gauge is boosted
 10403043	1	1	\N	330	Boost to Draphs and Harvin ATK and HP
@@ -1124,8 +1168,8 @@
 10403117	2	1	\N	836	Medium boost to wind allies' multiattack rate
 10403117	3	120	\N	919	Bonus Wind DMG effect to third hit of Wind allies' triple attacks.
 10403118	1	1	\N	851	Unworldly boost to fire allies' ATK
-10403118	2	120	\N	852	When main weapon: 10% Bonus Fire DMG effect to Fire allies upon triple attacks.
-10403118	2	200	\N	935	10% Bonus Fire DMG effect to Fire allies upon triple attacks.
+10403118	2	120	\N	852	When main weapon: 10% Bonus Fire DMG effect to Fire allies' triple attacks.
+10403118	2	200	\N	935	10% Bonus Fire DMG effect to Fire allies' triple attacks.
 10403119	1	1	\N	859	Boost to Water allies' ATK based on number of turns passed
 10403119	2	150	40	860	Emblem of the four orbs bent on destroying the singular pigment. Empowered by a chosen teluma.
 10403119	3	200	42	865	Emblem of the six colors in which the world is rendered. Empowered by a chosen teluma.
@@ -1167,6 +1211,13 @@
 10403138	2	100	\N	1019	When main weapon (MC only): Gain 5% ATK Up (Stackable / Max: 30%) and 5% DEF Up (Stackable / Max: 30%) when dealing multiattacks.
 10403139	1	1	\N	0	Big boost to fire allies' ATK
 10403139	2	1	\N	1032	Small boost to fire allies' DEF based on how low HP is
+10403140	1	1	\N	835	Small boost to light allies' critical hit rate
+10403140	2	1	\N	521	Boost to light charge attack DMG cap
+10403140	3	120	\N	1028	Supplement light allies' critical hit DMG
+10403141	1	1	\N	1049	Big boost to fire allies' ATK
+10403141	2	100	\N	1050	When main weapon (MC only): 5% boost to charge bar upon multiattacks
+10403142	1	1	\N	947	Medium boost to water allies' ATK and max HP
+10403142	2	120	\N	789	Medium boost to water allies' water ATK based on number of turns passed
 10404002	1	1	\N	13	Big boost to wind allies' ATK
 10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Counters on Dodge (1 time) (Boost to counter damage based on skill lvl).
 10404003	1	1	\N	386	Small boost to healing for healing type allies.
@@ -1197,8 +1248,8 @@
 10404025	1	1	\N	7	Big boost to light allies' ATK
 10404026	1	1	\N	26	Big boost to dark allies' ATK
 10404027	1	1	\N	26	Big boost to dark allies' ATK
-10404028	1	1	\N	395	Boost to Panacea
-10404028	2	1	\N	396	Autorevive upon using Panacea
+10404028	1	1	\N	395	When main weapon: Boost to Panacea series' specs.
+10404028	2	1	\N	396	When main weapon (MC only): Gain Autorevived when casting Panacea series.
 10404029	1	1	\N	397	Boost to Aether Blast
 10404029	2	1	\N	398	Boost to Focus
 10404030	1	1	\N	7	Big boost to light allies' ATK
@@ -1395,8 +1446,9 @@
 10404129	1	1	\N	26	Big boost to dark allies' ATK
 10404129	2	1	\N	448	Chance to get candy
 10404130	1	1	\N	449	Massive boost to Water allies' ATK
-10404131	1	1	\N	449	Massive boost to Water allies' ATK
-10404131	2	120	\N	450	When main weapon (MC Only): Boost to charge attack damage based on how high HP is
+10404131	1	1	\N	449	Massive boost to water allies' ATK
+10404131	1	200	\N	1043	Massive boost to water allies' ATK / Small boost to max HP
+10404131	2	120	\N	450	When main weapon (MC Only): Boost to charge attack damage based on how high HP is.
 10404132	1	1	\N	451	Boost to item drop rate.
 10404133	1	1	\N	452	When main weapon (MC only): Chance to gain a random buff with every one-foe attack
 10404133	2	1	\N	453	Big boost to dark allies' ATK
@@ -1632,7 +1684,7 @@
 10405062	2	120	\N	349	Medium boost to dark allies' ATK and max HP
 10405063	1	1	\N	5	Big boost to earth allies' ATK
 10405063	2	1	\N	513	Small boost to double attack rate for earth allies
-10405064	1	1	\N	514	When main weapon and foe is in break: Medium boost to your double attack rate.
+10405064	1	1	\N	514	When main weapon and foe is in Break: Medium boost to your double attack rate.
 10405064	2	1	\N	13	Big boost to wind allies' ATK
 10405065	1	1	\N	94	This masterless weapon slumbers through eternal night.
 10405066	1	1	\N	95	A soul from eons past lingers within.
@@ -1775,6 +1827,21 @@
 10405136	2	1	\N	200	Boost to earth charge attack DMG cap
 10405137	1	1	\N	1007	When main weapon: Massive boost to Light allies' ATK . 20% Bonus Light Damage effect to Light allies with Divinity .
 10405137	2	1	\N	1008	20% boost to Light allies' DMG cap in Arcarum.
+10405138	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405138	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405139	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405139	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405140	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405140	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405141	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405141	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405142	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405142	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405143	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405143	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
+10405144	1	1	\N	149	Big boost to water allies' C.A. DMG
+10405144	2	1	\N	541	Boost to water allies' skill DMG cap
+10405144	3	120	\N	458	Boost to water charge attack DMG cap
 10406000	1	1	\N	7	Big boost to light allies' ATK
 10406000	1	101	\N	257	Big boost to light allies' ATK
 10406000	2	120	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
@@ -1839,39 +1906,39 @@
 10406041	1	1	\N	417	Small boost to water allies' ATK and max HP
 10406041	2	1	\N	294	Medium boost to water allies' double attack rate and critical hit rate
 10406042	1	1	\N	411	\N
-10406042	1	60	\N	411	Big boost to ATK as Fire allies' ATK based on how low HP is
+10406042	1	60	\N	411	Big boost to Fire allies' ATK based on how low HP is
 10406042	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406042	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406042	3	200	\N	915	Bonus Fire DMG effect to third hit of Fire allies' triple attacks.
+10406042	3	200	\N	915	20% Bonus Fire DMG effect to third hit of Fire allies' triple attacks.
 10406043	1	1	\N	522	Medium boost to dark allies' ATK
 10406043	2	1	\N	359	Small boost to ATK as dark allies' HP decreases
 10406044	1	1	\N	549	Boost to humans HP
 10406044	2	1	\N	561	Boost to Human multiattack rate
 10406045	1	1	\N	916	\N
-10406045	1	60	\N	916	Big boost to ATK as Water allies' ATK based on how low HP is
+10406045	1	60	\N	916	Big boost to Water allies' ATK based on how low HP is
 10406045	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406045	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406045	3	200	\N	917	Bonus Water DMG effect to third hit of Water allies' triple attacks.
+10406045	3	200	\N	917	20% Bonus Water DMG effect to third hit of Water allies' triple attacks.
 10406046	1	1	\N	492	\N
-10406046	1	60	\N	492	Big boost to ATK as Earth allies' ATK based on how low HP is
+10406046	1	60	\N	492	Big boost to Earth allies' ATK based on how low HP is
 10406046	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406046	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406046	3	200	\N	918	Bonus Earth DMG effect to third hit of Earth allies' triple attacks.
+10406046	3	200	\N	918	20% Bonus Earth DMG effect to third hit of Earth allies' triple attacks.
 10406047	1	1	\N	213	\N
-10406047	1	60	\N	213	Big boost to ATK as Wind allies' ATK based on how low HP is
+10406047	1	60	\N	213	Big boost to Wind allies' ATK based on how low HP is
 10406047	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406047	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406047	3	200	\N	919	Bonus Wind DMG effect to third hit of Wind allies' triple attacks.
+10406047	3	200	\N	919	20% Bonus Wind DMG effect to third hit of Wind allies' triple attacks.
 10406048	1	1	\N	834	\N
-10406048	1	60	\N	834	Big boost to ATK as Light allies' ATK based on how low HP is
+10406048	1	60	\N	834	Big boost to Light allies' ATK based on how low HP is
 10406048	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406048	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406048	3	200	\N	920	Bonus Light DMG effect to third hit of Light allies' triple attacks.
+10406048	3	200	\N	920	20% Bonus Light DMG effect to third hit of Light allies' triple attacks.
 10406049	1	1	\N	43	\N
-10406049	1	60	\N	43	Big boost to ATK as Dark allies' ATK based on how low HP is
+10406049	1	60	\N	43	Big boost to Dark allies' ATK based on how low HP is
 10406049	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
 10406049	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
-10406049	3	200	\N	783	Bonus Dark DMG effect to third hit of Dark allies' triple attacks.
+10406049	3	200	\N	783	20% Bonus Dark DMG effect to third hit of Dark allies' triple attacks.
 10406055	1	1	\N	563	Big boost to earth allies' ATK
 10406056	1	1	\N	0	Big boost to fire allies' ATK
 10406056	2	1	\N	564	Slight chance to dodge and counter (small DMG) for fire allies
@@ -2204,11 +2271,11 @@
 10407085	2	1	\N	652	Big boost to wind allies' max HP in Arcarum
 10407086	1	1	\N	490	Medium boost to fire allies' double attack rate and critical hit rate
 10407086	2	1	\N	368	Small boost to fire allies' C.A. DMG
-10407087	1	1	\N	3	Big boost to water allies' ATK
-10407087	1	120	\N	36	Massive boost to water allies' ATK
-10407087	2	150	\N	580	Big boost to water allies' critical hit rate
+10407087	1	1	\N	1044	Big boost to water allies' ATK
+10407087	1	120	\N	1045	Big boost to water allies' ATK and critical hit rate
+10407087	2	150	\N	232	Small boost to water allies' ATK
 10407088	1	1	\N	253	Big boost to light allies' multiattack rate
-10407088	2	120	\N	653	When main weapon (MC only): Supplemental damage effect upon dealing a triple attack (Stackable / Max: 3 times)
+10407088	2	120	\N	653	When main weapon (MC only): Gain Three-Sister Rule upon dealing a triple attack (Stackable / Max: 3 times)
 10407089	1	1	\N	654	20% boost to bow- and gun-specialty allies' ATK. Big boost to bow- and gun-specialty allies' critical hit rate.
 10407089	2	120	\N	655	Supplemental damage to bow- and gun-specialty allies' critical hits (Damage cap: 30,000).
 10407090	1	1	\N	656	Big boost to Fire allies' C.A. damage and C.A. damage cap
@@ -2252,6 +2319,8 @@
 10407108	2	1	\N	708	Small boost to wind allies' C.A. DMG
 10407109	1	1	\N	1025	Medium boost to wind allies' C.A. DMG
 10407109	2	1	\N	263	Medium boost to wind allies' critical hit rate
+10407110	1	1	\N	1046	Supplement water allies' C.A. DMG
+10407110	2	120	\N	1047	Boost to ATK based on how many bows are equipped.
 10408000	1	1	\N	461	Big boost to light allies' ATK
 10408000	2	1	\N	10	Big boost to fire allies' max HP
 10408001	1	1	\N	658	Medium boost to dark allies' max HP

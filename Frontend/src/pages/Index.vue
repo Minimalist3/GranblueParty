@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2021-02-28:</b> Vaseraga (Fire), Zeta (Water), Farrah and Juri</p>
+        <p><b>2021-03-31:</b> Kumbhira (Summer), Andira (Summer)</p>
       </div>
 
       <div>

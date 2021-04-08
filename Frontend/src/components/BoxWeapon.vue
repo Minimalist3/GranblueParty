@@ -13,6 +13,7 @@
     <!-- Portrait -->
     <portrait
       :object="object"
+      :isArcarum="isArcarum"
       @click-portrait="$emit('click-portrait')"
       @drag-portrait="$emit('drag-portrait', $event)"
       @drop-portrait="drop"
@@ -60,6 +61,10 @@ export default {
       required: true
     },
     showLevel: {
+      type: Boolean,
+      default: false,
+    },
+    isArcarum: {
       type: Boolean,
       default: false,
     }

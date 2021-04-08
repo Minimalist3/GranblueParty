@@ -24,3 +24,7 @@
 .grayscale-80 {
   filter: grayscale(80%);
 }
+
+.opacity-07 {
+  opacity: 0.7;
+}

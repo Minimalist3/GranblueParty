@@ -949,7 +949,7 @@
 948	ws_skill_tec_3_3.png	Terra's Verity	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	big
 949	ws_skill_whole_6_4.png	Eclipse's Stamina	{"data":[{"percent":{"1":50.4},"restriction":{"element":["dark"]},"stat":"stamina","aura_type":"normal"}]}	massive
 950	ws_skill_job_weapon.png	Black Covenant	\N	\N
-951	ws_skill_tec_2_4.png	Flood's Verity	\N	massive
+951	ws_skill_tec_2_4.png	Flood's Verity	{"data":[{"percent":{"1":20,"10":20,"15":20},"aura_type":"normal","stat":"crit","restriction":{"element":["water"]}}]}	massive
 952	ws_skill_job_weapon.png	Azure Covenant	\N	\N
 953	ws_skill_ta_5_4.png	Authority's Trium	\N	massive
 954	ws_skill_job_weapon.png	White Covenant	\N	\N
@@ -987,14 +987,14 @@
 986	ws_skill_tec_3_3_2.png	Terra's Verity II	{"data":[{"percent":{"1":5,"10":10,"15":12},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	big
 987	ws_skill_job_weapon.png	Longstrider's Nature	\N	\N
 988	ws_skill_job_weapon.png	Longstrider's Apex	\N	\N
-989	ws_skill_atk_a_6_3.png	Sovereign Defender's Might	\N	big
+989	ws_skill_atk_a_6_3.png	Sovereign Defender's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 990	ws_skill_job_weapon.png	Bitter Perseverance	\N	\N
 991	ws_skill_job_weapon.png	Trick or Trick	\N	\N
-992	ws_skill_atk_a_5_3.png	Armed Shine	\N	big
-993	ws_skill_atk_a_3_3.png	Transmutation's Might	\N	big
+992	ws_skill_atk_a_5_3.png	Armed Shine	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
+993	ws_skill_atk_a_3_3.png	Transmutation's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 994	ws_skill_job_weapon.png	Perforating Stake	\N	\N
 995	ws_skill_sp_atk_2_2.png	Tsunami's Mystery	\N	medium
-996	ws_skill_atk_a_4_3.png	Warrioress's Might	\N	big
+996	ws_skill_atk_a_4_3.png	Warrioress's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 997	ws_skill_job_weapon.png	War-Beast Bond	\N	\N
 998	ws_skill_evoker_2.png	Empress-Justice's Virtue	\N	\N
 999	ws_skill_limit_arcarum_2.png	Sephira Maxi-Water	\N	\N
@@ -1012,15 +1012,15 @@
 1011	ws_skill_evoker_2.png	High Priestess-Moon's Bewitching	\N	\N
 1012	ws_skill_evoker_4.png	Emperor-Judgement's Awakening	\N	\N
 1013	ws_skill_evoker_1.png	Hierophant-Sun's Blessing	\N	\N
-1014	ws_skill_atk_a_2_3.png	Ebony Blade	\N	big
+1014	ws_skill_atk_a_2_3.png	Ebony Blade	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
 1015	ws_skill_weapon_hp_10.png	Member of the Corps	\N	\N
 1016	ws_skill_xeno_5_4.png	True Solaris's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	massive
 1017	ws_skill_train_3_3.png	Terra's Tempering	\N	big
-1018	ws_skill_atk_a_5_3.png	Layman's Saw of Death	\N	big
+1018	ws_skill_atk_a_5_3.png	Layman's Saw of Death	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 1019	ws_skill_job_weapon.png	Drive Sprocket	\N	\N
 1020	ws_skill_guard_5_1.png	Light's Garrison	\N	small
 1021	ws_skill_counter_6_2.png	Hatred's Clarity	\N	\N
-1022	ws_skill_atk_a_3_3.png	Bamboo's Might	\N	big
+1022	ws_skill_atk_a_3_3.png	Bamboo's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 1023	ws_skill_job_weapon.png	Splitting Bamboo	\N	\N
 1024	ws_skill_secret_5_3.png	Zion's Crux	\N	\N
 1025	ws_skill_sp_atk_4_2.png	Whirlwind's Mystery	\N	medium
@@ -1029,7 +1029,23 @@
 1028	ws_skill_job_weapon.png	Golden Craft	\N	\N
 1029	ws_skill_job_weapon.png	Balmy Healing Breeze	\N	\N
 1030	ws_skill_heal_limit_2_2.png	Tsunami's Healing	\N	medium
-1031	ws_skill_tyrant_1.png	Inferno's Bloodshed	\N	big
+1031	ws_skill_tyrant_1.png	Inferno's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"}]}	big
 1032	ws_skill_guard_1_1.png	Fire's Garrison	\N	small
-1033	ws_skill_atk_a_6_3.png	Natural Satellite's Might	\N	big
+1033	ws_skill_atk_a_6_3.png	Natural Satellite's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 1034	ws_skill_job_weapon.png	Lunatic Effect	\N	\N
+1035	ws_skill_job_weapon.png	Contractor's Nature	\N	\N
+1036	ws_skill_job_weapon.png	Contractor's Apex	\N	\N
+1037	ws_skill_deadly_3_1.png	Earth's Sentence	\N	small
+1038	ws_skill_job_weapon.png	Impavid Impetus	\N	\N
+1039	ws_skill_job_weapon.png	Reverberating Rhythm	\N	\N
+1040	ws_skill_job_weapon.png	Dancer's Nature	\N	\N
+1041	ws_skill_blank.png	Dancer's Essence	\N	\N
+1042	ws_skill_whole_2_3_2.png	Hoarfrost's Stamina II	{"data":[{"percent":{"1":53.7},"aura_type":"optimus","stat":"stamina","restriction":{"element":["water"]}}]}	big
+1043	ws_skill_xeno_2_4.png	True Glacial Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	massive
+1044	ws_skill_atk_2_3.png	Hoarfrost's Might I	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"}]}	big
+1045	ws_skill_moment_2_3.png	Hoarfrost's Celere	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"stat":"atk","aura_type":"optimus","restriction":{"element":["water"]}},{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"crit"}]}	big
+1046	ws_skill_secret_2_3.png	Snowfall's Crux	\N	\N
+1047	ws_skill_job_weapon.png	Bow Voltage	\N	\N
+1048	ws_skill_train_1_3.png	Inferno's Tempering	\N	big
+1049	ws_skill_atk_a_1_3.png	Blossom's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
+1050	ws_skill_job_weapon.png	Party's Peak	\N	\N

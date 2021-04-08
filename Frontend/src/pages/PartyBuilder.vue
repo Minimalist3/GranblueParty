@@ -28,7 +28,9 @@
 
       <checkbox class="mr-4" v-model="edit_mode">Edit</checkbox>
 
-      <checkbox v-model="show_level">Show level</checkbox>
+      <checkbox class="mr-4" v-model="show_level">Show level</checkbox>
+
+      <checkbox v-model="arcarum_weapons">Arcarum weapon slots</checkbox>
     </div>
 
     <!-- Bookmarklet -->
@@ -105,7 +107,7 @@
 
       <hr v-if="layout === 'square'" class="w-full invisible mb-2">
 
-      <group-weapons :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-weapons>
+      <group-weapons :editMode="edit_mode" :showLevel="show_level" :showArcarum="arcarum_weapons" class="pr-2"></group-weapons>
 
       <hr v-if="layout === 'wide'" class="w-full invisible">
 
@@ -167,6 +169,7 @@ export default {
       show_help: false,
       edit_mode: true,
       show_level: true,
+      arcarum_weapons: false,
       show_tab: 0,
       layout: 'square',
     };
@@ -194,6 +197,9 @@ export default {
     show_level() {
       lsMgt.setValue('show_level', this);
     },
+    arcarum_weapons() {
+      lsMgt.setValue('arcarum_weapons', this);
+    },
     layout() {
       lsMgt.setValue('layout', this);
     },
@@ -201,6 +207,7 @@ export default {
   mounted() {
     lsMgt.getValue(this, 'show_tab');
     lsMgt.getValue(this, 'show_level');
+    lsMgt.getValue(this, 'arcarum_weapons');
     lsMgt.getValue(this, 'layout');
   }
 }

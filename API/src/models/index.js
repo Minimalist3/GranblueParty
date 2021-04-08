@@ -123,11 +123,38 @@ const getAllSummons = (req, response) => {
     .catch(() => response.sendStatus(400));
 }
 
+// ULB summons have a different id, for some reason
+function convertArcarumSummon(id) {
+  switch(id) {
+    case 2040313:
+      return 2040236; // Justice
+    case 2040314:
+      return 2040237;	// The Hanged Man
+    case 2040315:
+      return 2040238;	// Death
+    case 2040316:
+      return 2040239;	// Temperance
+    case 2040317:
+      return 2040240;	// The Devil
+    case 2040318:
+      return 2040241;	// The Tower
+    case 2040319:
+      return 2040242;	// The Star
+    case 2040320:
+      return 2040243;	// The Moon
+    case 2040321:
+      return 2040244;	// The Sun	
+    case 2040322:
+      return 2040245;	// Judgement
+  }
+  return id;
+}
+
 const getSummonById = (id) => {
   if (id == null) return Promise.resolve(null);
 
   const {query, values} = buildWhereClause({
-    'summonId': id
+    'summonId': convertArcarumSummon(id)
   });
 
   return pool.query('SELECT *, starsmax AS stars FROM Summon ' + query + ';', values);

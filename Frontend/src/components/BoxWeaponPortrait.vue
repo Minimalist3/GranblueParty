@@ -36,11 +36,21 @@ export default {
     objectIsEmpty
   ],
   props: {
-    object: Object,
+    object: {
+      type: Object,
+      required: true
+    },
+    isArcarum: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     getImage() {
       if (this.objectIsEmpty) {
+        if (this.isArcarum) {
+          return '/img/empty_weapon_arcarum.jpg';
+        }
         return '/img/empty_weapon.jpg';
       }
       return '/img/weapon/' +  this.object.weaponid + '00.jpg';

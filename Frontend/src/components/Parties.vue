@@ -65,7 +65,7 @@ const DEFAULT_VALUES = {
   classe: {},
   characters: [{}, {}, {}, {}, {}],
   summons: [{}, {}, {}, {}, {}, {}],
-  weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {},],
+  weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
 }
 // Helper to match categories with proper default values
 const getDefaultValues = (data, category) => {

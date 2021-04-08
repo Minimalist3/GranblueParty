@@ -19,12 +19,13 @@
       :current="object.stars"
       @update:current="$emit('stars-changed', object, $event)"
       :max="5"
+      :transcendance="true"
     ></stars-line>
 
     <img
       v-if="! objectIsEmpty"
       class="cursor-pointer absolute bottom-0 right-0"
-      :class="object.haspring ? '' : 'ring-disabled'"
+      :class="object.haspring ? '' : 'grayscale-80 opacity-07'"
       src="/img/icon_pring.png"
       title="Perpetuity Ring"
       @click="$emit('click-pring')"
@@ -57,12 +58,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-.ring-disabled {
-  filter: grayscale(80%);
-  opacity: 0.7;
-}
-
-</style>

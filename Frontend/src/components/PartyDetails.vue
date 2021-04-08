@@ -411,7 +411,7 @@ export default {
           data.optimus_crit = 0;
           data.omega_crit = 0;
           if (elem_sup > 0 || this.enemy_element === "none") {
-            data.optimus_crit = data.ratio.optimus.crit * (1 + chara_auras.optimus.atk);
+            data.optimus_crit = data.ratio.optimus.crit * (1 + chara_auras.optimus.atk) + data.ratio.normal.crit;
             data.omega_crit = data.ratio.omega.crit * (1 + chara_auras.omega.atk);
 
             crit_array = addToProbabilityTree(crit_array, Math.min(data.optimus_crit, 1), 0.5);

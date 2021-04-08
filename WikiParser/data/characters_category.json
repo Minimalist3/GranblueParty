@@ -17,12 +17,12 @@
   {
     "pageid": 64141,
     "title": "Aglovale",
-    "lastrevid": 382801
+    "lastrevid": 410506
   },
   {
     "pageid": 142514,
     "title": "Aglovale (Valentine)",
-    "lastrevid": 406926
+    "lastrevid": 410505
   },
   {
     "pageid": 3327,
@@ -32,7 +32,7 @@
   {
     "pageid": 87273,
     "title": "Alanaan",
-    "lastrevid": 398119
+    "lastrevid": 412746
   },
   {
     "pageid": 3329,
@@ -52,12 +52,12 @@
   {
     "pageid": 3332,
     "title": "Alec",
-    "lastrevid": 361334
+    "lastrevid": 410244
   },
   {
     "pageid": 3333,
     "title": "Aletheia",
-    "lastrevid": 361335
+    "lastrevid": 411981
   },
   {
     "pageid": 50992,
@@ -112,7 +112,7 @@
   {
     "pageid": 3342,
     "title": "Amira (Promo)",
-    "lastrevid": 361346
+    "lastrevid": 410246
   },
   {
     "pageid": 127029,
@@ -127,12 +127,17 @@
   {
     "pageid": 3352,
     "title": "Andira",
-    "lastrevid": 400888
+    "lastrevid": 410228
   },
   {
     "pageid": 15415,
     "title": "Andira (Event)",
     "lastrevid": 397623
+  },
+  {
+    "pageid": 146051,
+    "title": "Andira (Summer)",
+    "lastrevid": 415363
   },
   {
     "pageid": 3353,
@@ -147,7 +152,7 @@
   {
     "pageid": 3356,
     "title": "Anila",
-    "lastrevid": 397625
+    "lastrevid": 410229
   },
   {
     "pageid": 3357,
@@ -197,7 +202,7 @@
   {
     "pageid": 3364,
     "title": "Anzu Futaba",
-    "lastrevid": 397849
+    "lastrevid": 410248
   },
   {
     "pageid": 3365,
@@ -212,7 +217,7 @@
   {
     "pageid": 56561,
     "title": "Aqours Second-Years",
-    "lastrevid": 396626
+    "lastrevid": 410249
   },
   {
     "pageid": 56563,
@@ -287,7 +292,7 @@
   {
     "pageid": 28322,
     "title": "Ayer (Summer)",
-    "lastrevid": 396777
+    "lastrevid": 413387
   },
   {
     "pageid": 31783,
@@ -345,6 +350,11 @@
     "lastrevid": 361389
   },
   {
+    "pageid": 143973,
+    "title": "Beatrix (Earth)",
+    "lastrevid": 412831
+  },
+  {
     "pageid": 3405,
     "title": "Beatrix (Halloween)",
     "lastrevid": 396730
@@ -357,7 +367,7 @@
   {
     "pageid": 16630,
     "title": "Beatrix (Summer)",
-    "lastrevid": 396778
+    "lastrevid": 411743
   },
   {
     "pageid": 3413,
@@ -402,7 +412,7 @@
   {
     "pageid": 141979,
     "title": "Cagliostro (Grand)",
-    "lastrevid": 406676
+    "lastrevid": 410407
   },
   {
     "pageid": 3440,
@@ -427,7 +437,7 @@
   {
     "pageid": 87263,
     "title": "Caim",
-    "lastrevid": 399216
+    "lastrevid": 412750
   },
   {
     "pageid": 21386,
@@ -475,9 +485,14 @@
     "lastrevid": 396887
   },
   {
+    "pageid": 144032,
+    "title": "Cassius (Event SSR)",
+    "lastrevid": 413032
+  },
+  {
     "pageid": 83117,
     "title": "Cassius (Event)",
-    "lastrevid": 402532
+    "lastrevid": 411663
   },
   {
     "pageid": 100467,
@@ -522,7 +537,7 @@
   {
     "pageid": 3475,
     "title": "Charlotta",
-    "lastrevid": 383778
+    "lastrevid": 410250
   },
   {
     "pageid": 21591,
@@ -572,7 +587,7 @@
   {
     "pageid": 3489,
     "title": "Clarisse",
-    "lastrevid": 387528
+    "lastrevid": 409870
   },
   {
     "pageid": 3490,
@@ -582,7 +597,7 @@
   {
     "pageid": 21086,
     "title": "Clarisse (Light)",
-    "lastrevid": 361435
+    "lastrevid": 410232
   },
   {
     "pageid": 86202,
@@ -592,12 +607,12 @@
   {
     "pageid": 3497,
     "title": "Claudia",
-    "lastrevid": 389186
+    "lastrevid": 408613
   },
   {
     "pageid": 103815,
     "title": "Colossus",
-    "lastrevid": 365423
+    "lastrevid": 411943
   },
   {
     "pageid": 50762,
@@ -722,7 +737,7 @@
   {
     "pageid": 115578,
     "title": "Drang",
-    "lastrevid": 380837
+    "lastrevid": 408699
   },
   {
     "pageid": 20224,
@@ -737,7 +752,7 @@
   {
     "pageid": 3580,
     "title": "Eahta",
-    "lastrevid": 408322
+    "lastrevid": 410413
   },
   {
     "pageid": 3585,
@@ -797,17 +812,17 @@
   {
     "pageid": 87264,
     "title": "Estarriola",
-    "lastrevid": 403010
+    "lastrevid": 414747
   },
   {
     "pageid": 3601,
     "title": "Eugen",
-    "lastrevid": 365300
+    "lastrevid": 410260
   },
   {
     "pageid": 3602,
     "title": "Eugen (Grand)",
-    "lastrevid": 399342
+    "lastrevid": 415216
   },
   {
     "pageid": 3603,
@@ -827,12 +842,12 @@
   {
     "pageid": 3605,
     "title": "Eustace",
-    "lastrevid": 368457
+    "lastrevid": 412895
   },
   {
     "pageid": 83054,
     "title": "Eustace (Dark)",
-    "lastrevid": 367939
+    "lastrevid": 414733
   },
   {
     "pageid": 3606,
@@ -872,7 +887,7 @@
   {
     "pageid": 143139,
     "title": "Farrah and Juri",
-    "lastrevid": 408569
+    "lastrevid": 412855
   },
   {
     "pageid": 3621,
@@ -927,7 +942,7 @@
   {
     "pageid": 3631,
     "title": "Ferry (Halloween)",
-    "lastrevid": 396736
+    "lastrevid": 408618
   },
   {
     "pageid": 3632,
@@ -972,7 +987,7 @@
   {
     "pageid": 87261,
     "title": "Fraux",
-    "lastrevid": 398122
+    "lastrevid": 412752
   },
   {
     "pageid": 58837,
@@ -1022,7 +1037,7 @@
   {
     "pageid": 87262,
     "title": "Geisenborger",
-    "lastrevid": 401279
+    "lastrevid": 413772
   },
   {
     "pageid": 3677,
@@ -1062,7 +1077,7 @@
   {
     "pageid": 57028,
     "title": "Grea (Summer)",
-    "lastrevid": 400773
+    "lastrevid": 411919
   },
   {
     "pageid": 87046,
@@ -1072,22 +1087,22 @@
   {
     "pageid": 112321,
     "title": "Grimnir (Valentine)",
-    "lastrevid": 396745
+    "lastrevid": 410975
   },
   {
     "pageid": 87270,
     "title": "Haaselia",
-    "lastrevid": 398124
+    "lastrevid": 412757
   },
   {
     "pageid": 3716,
     "title": "Hallessena",
-    "lastrevid": 361526
+    "lastrevid": 410357
   },
   {
     "pageid": 105186,
     "title": "Hallessena (Halloween)",
-    "lastrevid": 401282
+    "lastrevid": 410283
   },
   {
     "pageid": 98423,
@@ -1112,7 +1127,7 @@
   {
     "pageid": 109371,
     "title": "Helel ben Shalem",
-    "lastrevid": 406431
+    "lastrevid": 410293
   },
   {
     "pageid": 3726,
@@ -1172,7 +1187,7 @@
   {
     "pageid": 111272,
     "title": "Ilsa (Light)",
-    "lastrevid": 408212
+    "lastrevid": 408700
   },
   {
     "pageid": 56149,
@@ -1182,7 +1197,7 @@
   {
     "pageid": 3756,
     "title": "Io",
-    "lastrevid": 361545
+    "lastrevid": 410261
   },
   {
     "pageid": 3757,
@@ -1210,14 +1225,19 @@
     "lastrevid": 396803
   },
   {
+    "pageid": 144074,
+    "title": "Isaac",
+    "lastrevid": 412029
+  },
+  {
     "pageid": 3762,
     "title": "Izmir",
-    "lastrevid": 385448
+    "lastrevid": 409286
   },
   {
     "pageid": 28323,
     "title": "Izmir (Summer)",
-    "lastrevid": 396804
+    "lastrevid": 413393
   },
   {
     "pageid": 30533,
@@ -1257,27 +1277,27 @@
   {
     "pageid": 3775,
     "title": "Jeanne d'Arc",
-    "lastrevid": 388465
+    "lastrevid": 410299
   },
   {
     "pageid": 3776,
     "title": "Jeanne d'Arc (Dark)",
-    "lastrevid": 361562
+    "lastrevid": 410300
   },
   {
     "pageid": 106623,
     "title": "Jeanne d'Arc (Grand)",
-    "lastrevid": 401181
+    "lastrevid": 410294
   },
   {
     "pageid": 23513,
     "title": "Jeanne d'Arc (SR)",
-    "lastrevid": 361564
+    "lastrevid": 410298
   },
   {
     "pageid": 48856,
     "title": "Jeanne d'Arc (Summer)",
-    "lastrevid": 397009
+    "lastrevid": 410295
   },
   {
     "pageid": 3779,
@@ -1427,7 +1447,7 @@
   {
     "pageid": 3805,
     "title": "Katalina",
-    "lastrevid": 383779
+    "lastrevid": 410259
   },
   {
     "pageid": 3806,
@@ -1447,7 +1467,7 @@
   {
     "pageid": 87265,
     "title": "Katzelia",
-    "lastrevid": 398125
+    "lastrevid": 412759
   },
   {
     "pageid": 3810,
@@ -1472,7 +1492,7 @@
   {
     "pageid": 3813,
     "title": "Korwa",
-    "lastrevid": 361602
+    "lastrevid": 410161
   },
   {
     "pageid": 89300,
@@ -1482,12 +1502,12 @@
   {
     "pageid": 27384,
     "title": "Korwa (Summer)",
-    "lastrevid": 396812
+    "lastrevid": 413320
   },
   {
     "pageid": 32321,
     "title": "Kou",
-    "lastrevid": 382908
+    "lastrevid": 410319
   },
   {
     "pageid": 3814,
@@ -1497,12 +1517,12 @@
   {
     "pageid": 3815,
     "title": "Krugne",
-    "lastrevid": 361608
+    "lastrevid": 410279
   },
   {
     "pageid": 106697,
     "title": "Krugne (SR)",
-    "lastrevid": 361609
+    "lastrevid": 410276
   },
   {
     "pageid": 82981,
@@ -1515,6 +1535,11 @@
     "lastrevid": 397629
   },
   {
+    "pageid": 146052,
+    "title": "Kumbhira (Summer)",
+    "lastrevid": 415366
+  },
+  {
     "pageid": 138406,
     "title": "Kyojuro Rengoku",
     "lastrevid": 397990
@@ -1522,12 +1547,12 @@
   {
     "pageid": 3818,
     "title": "La Coiffe",
-    "lastrevid": 361612
+    "lastrevid": 410278
   },
   {
     "pageid": 104477,
     "title": "La Coiffe (SR)",
-    "lastrevid": 362068
+    "lastrevid": 410277
   },
   {
     "pageid": 3821,
@@ -1547,7 +1572,7 @@
   {
     "pageid": 3823,
     "title": "Lady Grey",
-    "lastrevid": 370018
+    "lastrevid": 410237
   },
   {
     "pageid": 60004,
@@ -1577,7 +1602,7 @@
   {
     "pageid": 142005,
     "title": "Lamretta (SSR)",
-    "lastrevid": 406680
+    "lastrevid": 410405
   },
   {
     "pageid": 19570,
@@ -1627,12 +1652,12 @@
   {
     "pageid": 113126,
     "title": "Lecia (Water)",
-    "lastrevid": 406044
+    "lastrevid": 411983
   },
   {
     "pageid": 97066,
     "title": "Lelouch Lamperouge",
-    "lastrevid": 396637
+    "lastrevid": 408673
   },
   {
     "pageid": 3837,
@@ -1702,7 +1727,7 @@
   {
     "pageid": 87271,
     "title": "Lobelia",
-    "lastrevid": 403996
+    "lastrevid": 412761
   },
   {
     "pageid": 3859,
@@ -1732,17 +1757,17 @@
   {
     "pageid": 3863,
     "title": "Lucius",
-    "lastrevid": 404591
+    "lastrevid": 410328
   },
   {
     "pageid": 15626,
     "title": "Lucius (Fire)",
-    "lastrevid": 404593
+    "lastrevid": 410327
   },
   {
     "pageid": 109626,
     "title": "Lucius (SSR)",
-    "lastrevid": 404589
+    "lastrevid": 410325
   },
   {
     "pageid": 18294,
@@ -1787,7 +1812,7 @@
   {
     "pageid": 107423,
     "title": "Magisa (Holiday)",
-    "lastrevid": 396715
+    "lastrevid": 412293
   },
   {
     "pageid": 15609,
@@ -1807,7 +1832,7 @@
   {
     "pageid": 87274,
     "title": "Maria Theresa",
-    "lastrevid": 400781
+    "lastrevid": 412763
   },
   {
     "pageid": 3895,
@@ -1827,7 +1852,7 @@
   {
     "pageid": 35085,
     "title": "Mary (Holiday)",
-    "lastrevid": 402632
+    "lastrevid": 415207
   },
   {
     "pageid": 3897,
@@ -1877,12 +1902,12 @@
   {
     "pageid": 15600,
     "title": "Meteon (Event)",
-    "lastrevid": 361679
+    "lastrevid": 410336
   },
   {
     "pageid": 107393,
     "title": "Meteon (Holiday)",
-    "lastrevid": 396717
+    "lastrevid": 410334
   },
   {
     "pageid": 3904,
@@ -2007,7 +2032,7 @@
   {
     "pageid": 141328,
     "title": "Mishra (SSR)",
-    "lastrevid": 404221
+    "lastrevid": 412841
   },
   {
     "pageid": 3922,
@@ -2017,17 +2042,17 @@
   {
     "pageid": 20937,
     "title": "Monika",
-    "lastrevid": 379517
+    "lastrevid": 410341
   },
   {
     "pageid": 104419,
     "title": "Monika (Grand)",
-    "lastrevid": 396667
+    "lastrevid": 410359
   },
   {
     "pageid": 142512,
     "title": "Monika (Valentine)",
-    "lastrevid": 406940
+    "lastrevid": 410401
   },
   {
     "pageid": 3928,
@@ -2082,7 +2107,7 @@
   {
     "pageid": 108416,
     "title": "Narmaya (Holiday)",
-    "lastrevid": 406370
+    "lastrevid": 411951
   },
   {
     "pageid": 3942,
@@ -2097,7 +2122,7 @@
   {
     "pageid": 141985,
     "title": "Nectar",
-    "lastrevid": 406687
+    "lastrevid": 410403
   },
   {
     "pageid": 3944,
@@ -2107,7 +2132,7 @@
   {
     "pageid": 137238,
     "title": "Nemone (Holiday)",
-    "lastrevid": 403640
+    "lastrevid": 414745
   },
   {
     "pageid": 3945,
@@ -2147,7 +2172,7 @@
   {
     "pageid": 87272,
     "title": "Nier",
-    "lastrevid": 400788
+    "lastrevid": 412765
   },
   {
     "pageid": 30870,
@@ -2157,7 +2182,7 @@
   {
     "pageid": 3956,
     "title": "Niyon",
-    "lastrevid": 407389
+    "lastrevid": 410159
   },
   {
     "pageid": 3957,
@@ -2167,7 +2192,7 @@
   {
     "pageid": 109689,
     "title": "Noa (Grand)",
-    "lastrevid": 400440
+    "lastrevid": 410365
   },
   {
     "pageid": 3958,
@@ -2192,7 +2217,7 @@
   {
     "pageid": 17271,
     "title": "Orchid",
-    "lastrevid": 401278
+    "lastrevid": 412801
   },
   {
     "pageid": 30759,
@@ -2247,7 +2272,7 @@
   {
     "pageid": 120535,
     "title": "Percival (Light)",
-    "lastrevid": 390676
+    "lastrevid": 409662
   },
   {
     "pageid": 3981,
@@ -2292,7 +2317,7 @@
   {
     "pageid": 4011,
     "title": "Rackam",
-    "lastrevid": 361755
+    "lastrevid": 410262
   },
   {
     "pageid": 4013,
@@ -2342,7 +2367,7 @@
   {
     "pageid": 113125,
     "title": "Rei",
-    "lastrevid": 400771
+    "lastrevid": 409081
   },
   {
     "pageid": 33161,
@@ -2427,7 +2452,7 @@
   {
     "pageid": 4060,
     "title": "Rosetta",
-    "lastrevid": 361781
+    "lastrevid": 410263
   },
   {
     "pageid": 4062,
@@ -2497,7 +2522,7 @@
   {
     "pageid": 46762,
     "title": "Sandalphon",
-    "lastrevid": 402088
+    "lastrevid": 412039
   },
   {
     "pageid": 47445,
@@ -2512,22 +2537,22 @@
   {
     "pageid": 4106,
     "title": "Sara",
-    "lastrevid": 390598
+    "lastrevid": 410390
   },
   {
     "pageid": 4105,
     "title": "Sara (Event)",
-    "lastrevid": 361797
+    "lastrevid": 410389
   },
   {
     "pageid": 103819,
     "title": "Sara (Light)",
-    "lastrevid": 400491
+    "lastrevid": 410366
   },
   {
     "pageid": 4107,
     "title": "Sara (Summer)",
-    "lastrevid": 396829
+    "lastrevid": 410388
   },
   {
     "pageid": 4110,
@@ -2572,7 +2597,7 @@
   {
     "pageid": 4124,
     "title": "Selfira (Event)",
-    "lastrevid": 361808
+    "lastrevid": 410268
   },
   {
     "pageid": 4125,
@@ -2612,7 +2637,7 @@
   {
     "pageid": 108415,
     "title": "Seruel (Holiday)",
-    "lastrevid": 396723
+    "lastrevid": 410367
   },
   {
     "pageid": 21533,
@@ -2642,12 +2667,12 @@
   {
     "pageid": 138884,
     "title": "Shinobu Kocho",
-    "lastrevid": 400780
+    "lastrevid": 408696
   },
   {
     "pageid": 58929,
     "title": "Shitori",
-    "lastrevid": 391493
+    "lastrevid": 410368
   },
   {
     "pageid": 82322,
@@ -2662,12 +2687,12 @@
   {
     "pageid": 4142,
     "title": "Siegfried",
-    "lastrevid": 403496
+    "lastrevid": 409871
   },
   {
     "pageid": 104449,
     "title": "Siegfried (Fire)",
-    "lastrevid": 397021
+    "lastrevid": 411944
   },
   {
     "pageid": 28571,
@@ -2722,7 +2747,7 @@
   {
     "pageid": 105832,
     "title": "Societte (Wind)",
-    "lastrevid": 403488
+    "lastrevid": 410370
   },
   {
     "pageid": 4172,
@@ -2742,7 +2767,7 @@
   {
     "pageid": 4175,
     "title": "Soriz",
-    "lastrevid": 362938
+    "lastrevid": 410269
   },
   {
     "pageid": 4176,
@@ -2762,7 +2787,7 @@
   {
     "pageid": 139083,
     "title": "Spinnah (Holiday)",
-    "lastrevid": 408314
+    "lastrevid": 408697
   },
   {
     "pageid": 4188,
@@ -2782,7 +2807,7 @@
   {
     "pageid": 103038,
     "title": "Stan and Aliza",
-    "lastrevid": 398148
+    "lastrevid": 410371
   },
   {
     "pageid": 115563,
@@ -2807,7 +2832,7 @@
   {
     "pageid": 4209,
     "title": "Sutera",
-    "lastrevid": 361852
+    "lastrevid": 410270
   },
   {
     "pageid": 18430,
@@ -2837,7 +2862,7 @@
   {
     "pageid": 103070,
     "title": "Tabina",
-    "lastrevid": 382859
+    "lastrevid": 411942
   },
   {
     "pageid": 138379,
@@ -2852,7 +2877,7 @@
   {
     "pageid": 14336,
     "title": "Tanya (SR)",
-    "lastrevid": 394668
+    "lastrevid": 408614
   },
   {
     "pageid": 83851,
@@ -2862,7 +2887,7 @@
   {
     "pageid": 4222,
     "title": "Tanya (Summer)",
-    "lastrevid": 396832
+    "lastrevid": 408612
   },
   {
     "pageid": 4224,
@@ -2897,7 +2922,7 @@
   {
     "pageid": 4241,
     "title": "Thelonim",
-    "lastrevid": 380902
+    "lastrevid": 408693
   },
   {
     "pageid": 4243,
@@ -2927,7 +2952,7 @@
   {
     "pageid": 4259,
     "title": "Tien",
-    "lastrevid": 407396
+    "lastrevid": 408611
   },
   {
     "pageid": 58426,
@@ -2987,7 +3012,7 @@
   {
     "pageid": 19569,
     "title": "Vane (SSR)",
-    "lastrevid": 373833
+    "lastrevid": 411457
   },
   {
     "pageid": 4301,
@@ -3017,17 +3042,17 @@
   {
     "pageid": 4303,
     "title": "Vaseraga",
-    "lastrevid": 361891
+    "lastrevid": 410411
   },
   {
     "pageid": 36425,
     "title": "Vaseraga (Earth)",
-    "lastrevid": 381097
+    "lastrevid": 410384
   },
   {
     "pageid": 143138,
     "title": "Vaseraga (Fire)",
-    "lastrevid": 408585
+    "lastrevid": 410412
   },
   {
     "pageid": 4305,
@@ -3072,7 +3097,7 @@
   {
     "pageid": 108318,
     "title": "Vira (Promo)",
-    "lastrevid": 374296
+    "lastrevid": 415151
   },
   {
     "pageid": 4313,
@@ -3127,7 +3152,7 @@
   {
     "pageid": 4345,
     "title": "Will (SR)",
-    "lastrevid": 361911
+    "lastrevid": 410271
   },
   {
     "pageid": 54688,
@@ -3162,7 +3187,7 @@
   {
     "pageid": 4364,
     "title": "Yngwie",
-    "lastrevid": 402227
+    "lastrevid": 410272
   },
   {
     "pageid": 4365,
@@ -3187,12 +3212,12 @@
   {
     "pageid": 84267,
     "title": "Young Cat (Event)",
-    "lastrevid": 361922
+    "lastrevid": 410372
   },
   {
     "pageid": 4368,
     "title": "Yuel",
-    "lastrevid": 402994
+    "lastrevid": 412015
   },
   {
     "pageid": 32242,
@@ -3212,17 +3237,17 @@
   {
     "pageid": 15616,
     "title": "Yuisis",
-    "lastrevid": 402361
+    "lastrevid": 410051
   },
   {
     "pageid": 109718,
     "title": "Yuisis (Fire)",
-    "lastrevid": 407188
+    "lastrevid": 411980
   },
   {
     "pageid": 55702,
     "title": "Yuisis (Yukata)",
-    "lastrevid": 396756
+    "lastrevid": 410375
   },
   {
     "pageid": 4369,
@@ -3232,22 +3257,22 @@
   {
     "pageid": 20928,
     "title": "Yurius",
-    "lastrevid": 378692
+    "lastrevid": 410050
   },
   {
     "pageid": 4370,
     "title": "Zahlhamelina",
-    "lastrevid": 361932
+    "lastrevid": 409287
   },
   {
     "pageid": 4371,
     "title": "Zaja",
-    "lastrevid": 399072
+    "lastrevid": 410281
   },
   {
     "pageid": 105190,
     "title": "Zaja (Halloween)",
-    "lastrevid": 396742
+    "lastrevid": 410280
   },
   {
     "pageid": 4372,
@@ -3262,7 +3287,7 @@
   {
     "pageid": 141333,
     "title": "Zehek (SSR)",
-    "lastrevid": 403404
+    "lastrevid": 412879
   },
   {
     "pageid": 4375,
@@ -3272,27 +3297,27 @@
   {
     "pageid": 17247,
     "title": "Zeta (Dark)",
-    "lastrevid": 361938
+    "lastrevid": 410379
   },
   {
     "pageid": 36424,
     "title": "Zeta (Event)",
-    "lastrevid": 402414
+    "lastrevid": 410376
   },
   {
     "pageid": 4376,
     "title": "Zeta (Summer)",
-    "lastrevid": 396837
+    "lastrevid": 410377
   },
   {
     "pageid": 143137,
     "title": "Zeta (Water)",
-    "lastrevid": 408586
+    "lastrevid": 410396
   },
   {
     "pageid": 105182,
     "title": "Zeta and Vaseraga (Halloween)",
-    "lastrevid": 396743
+    "lastrevid": 411946
   },
   {
     "pageid": 37610,

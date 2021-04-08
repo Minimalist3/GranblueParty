@@ -25,6 +25,19 @@
           ></box-weapon>
         </span>
       </div>
+      <div v-if="showArcarum" class="flex flex-row flex-shrink">
+        <span v-for="index in [10, 11, 12]" :key="index">
+          <box-weapon
+            :object="objects[index]"
+            :skills="skills[index]"
+            :showLevel="showLevel"
+            :isArcarum="true"
+            @click-portrait="showModal(index)"
+            @drag-portrait="drag($event, index)"
+            @swap="swap($event, index)"
+          ></box-weapon>
+        </span>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -88,6 +101,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    showArcarum: {
+      type: Boolean,
+      default: false,
+    }
   },
   data() {
     return {

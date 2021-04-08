@@ -418,7 +418,7 @@ def updateCharacters():
               recruit_id = defines.OBTAIN[recruit]
 
           # Don't deal with 6* eternals for now
-          max_evo = min(int(getTemplateValue(template, 'max_evo')), 5)
+          max_evo = int(getTemplateValue(template, 'max_evo'))
           # Check missing Atk and HP values
           if max_evo == 5:
             if getTemplateValueOrNone(template, 'flb_atk') == None:
@@ -489,21 +489,25 @@ def updateCharacters():
           # Ougi
           ougi_name = getTemplateValue(template, 'ougi_name')
           if len(ougi_name) > 0:
+            ougi_name = parseDescription(ougi_name)
             ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi_label', ''))
             ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi_desc', ''))
             ougi_values += [(character_id, 1, ougi_name, ougi_label + ' ' + ougi_desc)]
           ougi_name = getTemplateValueOrDefault(template, 'ougi2_name', '')
           if len(ougi_name) > 0:
+            ougi_name = parseDescription(ougi_name)
             ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi2_label', ''))
             ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi2_desc', ''))
             ougi_values += [(character_id, 2, ougi_name, ougi_label + ' ' + ougi_desc)]
           ougi_name = getTemplateValueOrDefault(template, 'ougi3_name', '')
           if len(ougi_name) > 0:
+            ougi_name = parseDescription(ougi_name)
             ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi3_label', ''))
             ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi3_desc', ''))
             ougi_values += [(character_id, 3, ougi_name, ougi_label + ' ' + ougi_desc)]
           ougi_name = getTemplateValueOrDefault(template, 'ougi4_name', '')
           if len(ougi_name) > 0:
+            ougi_name = parseDescription(ougi_name)
             ougi_label = parseDescription(getTemplateValueOrDefault(template, 'ougi4_label', ''))
             ougi_desc = parseDescription(getTemplateValueOrDefault(template, 'ougi4_desc', ''))
             ougi_values += [(character_id, 4, ougi_name, ougi_label + ' ' + ougi_desc)]
@@ -704,99 +708,108 @@ def updateWeapons():
       weapon_id = weapon['id'][:-2]
       weapon_ids.add(int(weapon_id))
 
-      name = defines.unescape(weapon['name'])
-      if name in add_element:
-        name += ' (' + weapon['element'][0].upper() + weapon['element'][1:] + ')'
+      try:
+        name = defines.unescape(weapon['name'])
+        if name in add_element:
+          name += ' (' + weapon['element'][0].upper() + weapon['element'][1:] + ')'
 
-      # Check missing Atk and HP values
-      if int(weapon['evo max']) == 5:
-        if int(weapon['atk4']) == 0:
-          print('[ERR] atk4 missing for', name, weapon_id)
-        if int(weapon['hp4']) == 0:
-          print('[ERR] hp4 missing for', name, weapon_id)
-      if int(weapon['evo max']) >= 4:
-        if int(weapon['atk3']) == 0:
-          if weapon_id not in defines.IGNORE_MISSING_WEAPON_STATS:
-            print('[WARN] atk3 missing for', name, weapon_id)
-          weapon['atk3'] = int(weapon['atk1']) + int(weapon['atk2'])
-        if int(weapon['hp3']) == 0:
-          if weapon_id not in defines.IGNORE_MISSING_WEAPON_STATS:
-            print('[WARN] hp3 missing for', name, weapon_id)
-          weapon['hp3'] = int(weapon['hp1']) + int(weapon['hp2'])
-      if int(weapon['evo max']) >= 3:
-        if int(weapon['atk2']) == 0:
-          if int(weapon['atk3']) > 0 and int(weapon['atk1']) > 0:
-            weapon['atk2'] = int(weapon['atk3']) - int(weapon['atk1'])
-          else:
-            print('[ERR] atk2 missing for', name, weapon_id)          
-        if int(weapon['hp2']) == 0:
-          if int(weapon['hp3']) > 0 and int(weapon['hp1']) > 0:
-            weapon['hp2'] = int(weapon['hp3']) - int(weapon['hp1'])
-          else:
-            print('[ERR] hp2 missing for', name, weapon_id)
-        if int(weapon['atk1']) == 0:
-          print('[ERR] atk1 missing for', name, weapon_id)
-        if int(weapon['hp1']) == 0:
-          print('[ERR] hp1 missing for', name, weapon_id)
+        # Check missing Atk and HP values
+        if int(weapon['evo max']) == 5:
+          if int(weapon['atk4']) == 0:
+            print('[ERR] atk4 missing for', name, weapon_id)
+          if int(weapon['hp4']) == 0:
+            print('[ERR] hp4 missing for', name, weapon_id)
+        if int(weapon['evo max']) >= 4:
+          if int(weapon['atk3']) == 0:
+            if weapon_id not in defines.IGNORE_MISSING_WEAPON_STATS:
+              print('[WARN] atk3 missing for', name, weapon_id)
+            weapon['atk3'] = int(weapon['atk1']) + int(weapon['atk2'])
+          if int(weapon['hp3']) == 0:
+            if weapon_id not in defines.IGNORE_MISSING_WEAPON_STATS:
+              print('[WARN] hp3 missing for', name, weapon_id)
+            weapon['hp3'] = int(weapon['hp1']) + int(weapon['hp2'])
+        if int(weapon['evo max']) >= 3:
+          if int(weapon['atk2']) == 0:
+            if int(weapon['atk3']) > 0 and int(weapon['atk1']) > 0:
+              weapon['atk2'] = int(weapon['atk3']) - int(weapon['atk1'])
+            else:
+              print('[ERR] atk2 missing for', name, weapon_id)          
+          if int(weapon['hp2']) == 0:
+            if int(weapon['hp3']) > 0 and int(weapon['hp1']) > 0:
+              weapon['hp2'] = int(weapon['hp3']) - int(weapon['hp1'])
+            else:
+              print('[ERR] hp2 missing for', name, weapon_id)
+          if int(weapon['atk1']) == 0:
+            print('[ERR] atk1 missing for', name, weapon_id)
+          if int(weapon['hp1']) == 0:
+            print('[ERR] hp1 missing for', name, weapon_id)
 
-      # Base infos
-      values += [(weapon_id, name, weapon['jpname'], weapon['evo base'], weapon['evo max'],
-        defines.getValue(weapon['rarity'], defines.RARITIES), defines.getValue(weapon['element'], defines.ELEMENTS),
-        defines.getValue(weapon['type'], defines.WEAPONTYPES),
-        int(weapon['atk1']), int(weapon['atk2']), int(weapon['atk3']), int(weapon['atk4']),
-        int(weapon['hp1']), int(weapon['hp2']), int(weapon['hp3']), int(weapon['hp4']) )]
-      
-      # Ougi
-      ougis += [(weapon_id, parseDescription(weapon['ca1 desc']), parseDescription(weapon['ca2 desc']), parseDescription(weapon['ca3 desc']))]
+        # Base infos
+        values += [(weapon_id, name, weapon.get('jpname', ''), weapon['evo base'], weapon['evo max'],
+          defines.getValue(weapon['rarity'], defines.RARITIES), defines.getValue(weapon['element'], defines.ELEMENTS),
+          defines.getValue(weapon['type'], defines.WEAPONTYPES),
+          int(weapon['atk1']), int(weapon['atk2']), int(weapon['atk3']), int(weapon['atk4']),
+          int(weapon['hp1']), int(weapon['hp2']), int(weapon['hp3']), int(weapon['hp4']) )]
+        
+        # Ougi
+        ougis += [(weapon_id, parseDescription(weapon.get('ca1 desc', '')),
+          parseDescription(weapon.get('ca2 desc', '')),
+          parseDescription(weapon.get('ca3 desc', '')))]
 
-      # Icons
-      for (s, i) in [('s1 ', 1), ('s1u1 ', 1), ('s2 ', 2), ('s2u1 ', 2), ('s3 ', 3), ('s3u1 ', 3)]:
-        skillname = weapon[s + 'name'].strip().replace('  ', ' ')
+        # Icons
+        for (s, i) in [('s1 ', 1), ('s1u1 ', 1), ('s2 ', 2), ('s2u1 ', 2), ('s3 ', 3), ('s3u1 ', 3)]:
+          skillname = weapon.get(s + 'name')
+          if skillname is None:
+            continue
+          skillname = skillname.strip().replace('  ', ' ')
 
-        # Ignore skills with no names. Sometimes, they have non-existing icons...
-        if len(skillname) > 0 and len(weapon[s + 'icon']) > 0:
-          icon = weapon[s + 'icon'].lower().replace(' ', '_')
-          downloadSkillIcon(images_dir, icon)
+          # Ignore skills with no names. Sometimes, they have non-existing icons...
+          if len(skillname) > 0 and len(weapon.get(s + 'icon')) > 0:
+            icon = weapon.get(s + 'icon').lower().replace(' ', '_')
+            downloadSkillIcon(images_dir, icon)
 
-          skill_key = defines.getWeaponSkillKey(int(weapon_id), i)
-          if skill_key != None:
-            for key_image in defines.WEAPONS_KEYS_ICONS[skill_key]:              
-              downloadSkillIcon(images_dir, key_image)
+            skill_key = defines.getWeaponSkillKey(int(weapon_id), i)
+            if skill_key != None:
+              for key_image in defines.WEAPONS_KEYS_ICONS[skill_key]:              
+                downloadSkillIcon(images_dir, key_image)
 
-          skill_lvl = defines.toInt(weapon[s + 'lvl'])
-          if s == 's1u1 ' and skill_lvl == 1:
-            skill_lvl = 101
+            skill_lvl = defines.toInt(weapon.get(s + 'lvl'))
+            if s == 's1u1 ' and skill_lvl == 1:
+              skill_lvl = 101
 
-          # Description
-          skill_desc = parseDescription(weapon[s + 'desc'])
+            # Description
+            skill_desc = parseDescription(weapon.get(s + 'desc'))
 
-          # Test boost type in descriptions
-          regex_result = skills_desc_regex.match(skill_desc.lower())
-          boost = None
-          if regex_result:
-            boost = regex_result.group(1)
-            boost_key = skillname + icon
-            if not boost_key in skills_desc:
-              skills_desc[boost_key] = boost
-              if boost not in defines.BOOST_TYPES:
-                print('[WARN] Unknown boost type', boost, 'for skill', skillname)
-            elif skills_desc[boost_key] != boost:
-              print('[ERR] Multiple descriptions for a skill:', skillname, skills_desc[boost_key], boost)
+            # Test boost type in descriptions
+            regex_result = skills_desc_regex.match(skill_desc.lower())
+            boost = None
+            if regex_result:
+              boost = regex_result.group(1)
+              boost_key = skillname + icon
+              if not boost_key in skills_desc:
+                skills_desc[boost_key] = boost
+                if boost not in defines.BOOST_TYPES:
+                  print('[WARN] Unknown boost type', boost, 'for skill', skillname)
+              elif skills_desc[boost_key] != boost:
+                print('[ERR] Multiple descriptions for a skill:', skillname, skills_desc[boost_key], boost)
 
-          # To clear orphaned skills:
-          # DELETE FROM Weapon_Skilldata
-          #  WHERE Weapon_Skilldata.skilldataid IN (SELECT Weapon_Skilldata.skilldataid
-          #  FROM Weapon_Skilldata
-          #  FULL JOIN Weapon_Skill
-          #  ON Weapon_Skilldata.skilldataid = Weapon_Skill.skilldataid
-          #  WHERE Weapon_Skilldata.skilldataid IS NULL OR Weapon_Skill.skilldataid IS NULL)
+            # To clear orphaned skills:
+            # DELETE FROM Weapon_Skilldata
+            #  WHERE Weapon_Skilldata.skilldataid IN (SELECT Weapon_Skilldata.skilldataid
+            #  FROM Weapon_Skilldata
+            #  FULL JOIN Weapon_Skill
+            #  ON Weapon_Skilldata.skilldataid = Weapon_Skill.skilldataid
+            #  WHERE Weapon_Skilldata.skilldataid IS NULL OR Weapon_Skill.skilldataid IS NULL)
 
-          # Get skilldata id
-          skilldataId = database.dico_tables.get('Weapon_SkillData').getCount()
-          skilldata = [(skilldataId, icon, skillname, None, boost)]
-          skilldataId = database.dico_tables.get('Weapon_SkillData').insert(skilldata, returning="skilldataId")
+            # Get skilldata id
+            skilldataId = database.dico_tables.get('Weapon_SkillData').getCount()
+            skilldata = [(skilldataId, icon, skillname, None, boost)]
+            skilldataId = database.dico_tables.get('Weapon_SkillData').insert(skilldata, returning="skilldataId")
 
-          skills += [(weapon_id, i, skill_lvl, skill_key, skilldataId, skill_desc)]
+            skills += [(weapon_id, i, skill_lvl, skill_key, skilldataId, skill_desc)]
+
+      except Exception as e:
+        raise type(e)(str(e) + ' happens for %s (%s)' % (name, weapon_id)).with_traceback(sys.exc_info()[2])
 
   if addToDB:
     print('Updating Database...')

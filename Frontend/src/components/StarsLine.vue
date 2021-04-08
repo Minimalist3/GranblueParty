@@ -1,28 +1,40 @@
 <template>
-  <div v-if="base !== undefined" class="flex flex-row flex-nowrap" :title="title">
-    <img
-      v-for="i in getYellowStarsCount"
-      :key="'y' + i"
-      :class="readOnly ? '' : 'cursor-pointer'"
-      :src="getImage('y', i)"
-      :style="'width: ' + 100/max + '%;'"
-      @click="click(i)"
-    >
-    <img
-      v-for="i in getBlueStarsCount"
-      :key="'b' + i"
-      :class="readOnly ? '' : 'cursor-pointer'"
-      :src="getImage('b', i+base)"
-      :style="'width: ' + 100/max + '%;'"
-      @click="click(i+base)"
-    >
-    <img
-      v-for="i in getInvisibleStarsCount"
-      :key="'i' + i"
-      class="hidden"
-      src="/img/star_b1.png"
-      :style="'width: ' + 100/max + '%;'"
-    >
+  <div v-if="base !== undefined" class="flex flex-col flex-nowrap" :title="title">
+    <div class="flex flex-row flex-nowrap">
+      <img
+        v-for="i in getYellowStarsCount"
+        :key="'y' + i"
+        :class="readOnly ? '' : 'cursor-pointer'"
+        :src="getImage('y', i)"
+        :style="'width: ' + 100/max + '%;'"
+        @click="click(i)"
+      >
+      <img
+        v-for="i in getBlueStarsCount"
+        :key="'b' + i"
+        :class="readOnly ? '' : 'cursor-pointer'"
+        :src="getImage('b', i+base)"
+        :style="'width: ' + 100/max + '%;'"
+        @click="click(i+base)"
+      >
+      <img
+        v-for="i in getInvisibleStarsCount"
+        :key="'i' + i"
+        class="hidden"
+        src="/img/star_b1.png"
+        :style="'width: ' + 100/max + '%;'"
+      >
+    </div>
+    <div v-if="transcendance && extra > 5" class="flex flex-row flex-nowrap">
+      <img
+        v-for="i in 5"
+        :key="'v' + i"
+        :class="getTranscendanceClass(5+i)"
+        :src="getTranscendanceImage(i)"
+        :style="'width: 20%;'"
+        @click="click(5+i)"
+      >
+    </div>
   </div>
 </template>
 
@@ -45,6 +57,10 @@ export default {
       type: Number,
       required: true
     },
+    transcendance: {
+      type: Boolean,
+      default: false
+    },
     readOnly: {
       type: Boolean,
       default: false
@@ -55,8 +71,24 @@ export default {
     }
   },
   methods: {
+    isStarEnabled(index) {
+      return index <= this.current;
+    },
     getImage(type, index) {
-      return '/img/star_' + type + (index <= this.current ? "1" : "0") + '.png';
+      return '/img/star_' + type + (this.isStarEnabled(index) ? "1" : "0") + '.png';
+    },
+    getTranscendanceImage(index) {
+      if ( ! this.isStarEnabled(index + 5)) {
+        return '/img/star_v0.png';
+      }
+      return '/img/star_v1.png';
+      //return '/img/star_v' + index + '.png';
+    },
+    getTranscendanceClass(index) {
+      let result = '';
+      if (this.readOnly) result += 'cursor-pointer ';
+      if ( ! this.isStarEnabled(index)) result += 'grayscale-80 opacity-07';
+      return result;
     },
     click(index) {
       if (this.readOnly) {
@@ -83,6 +115,9 @@ export default {
     getBlueStarsCount() {
       if (this.base > this.extra) {
         return 0;
+      }
+      if (this.transcendance && this.extra > 5) {
+        return Math.min(this.extra, 5) - this.base;
       }
       return this.extra - this.base;
     },
