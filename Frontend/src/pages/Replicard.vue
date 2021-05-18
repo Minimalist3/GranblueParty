@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <h1 class="pb-4">Replicard Sandbox Maps</h1>
+    <h1 class="self-center mb-8">Replicard Sandbox Maps</h1>
 
     <div class="flex flex-row flex-wrap mb-4 items-center space-x-4">
       <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Usage -->
-    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+    <div class="bg-secondary self-center rounded p-4 mb-2" v-if="show_help">
       <h2>Number of fights</h2>
       <p class="pb-4">
         The number above each circle represents the number of fights needed to guarantee the appearance of a Defender.

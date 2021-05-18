@@ -357,22 +357,30 @@
 10400210	1	1	\N	5	Big boost to earth allies' ATK
 10400210	2	1	\N	606	Small boost to earth allies' C.A. DMG
 10400210	3	120	\N	200	Boost to earth charge attack DMG cap
-10400211	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400211	2	1	\N	1036	When main weapon (MC only): Bonus Fire DMG effect based on number of Machine Cell s.
-10400212	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400212	2	1	\N	1036	When main weapon (MC only): Bonus Water DMG effect based on number of Machine Cell s.
-10400213	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400213	2	1	\N	1036	When main weapon (MC only): Bonus Earth DMG effect based on number of Machine Cell s.
-10400214	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400214	2	1	\N	1036	When main weapon (MC only): Bonus Wind DMG effect based on number of Machine Cell s.
-10400215	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400215	2	1	\N	1036	When main weapon (MC only): Bonus Light DMG effect based on number of Machine Cell s.
-10400216	1	1	\N	1035	When main weapon: Boost to Tactical Shield 's specs.
-10400216	2	1	\N	1036	When main weapon (MC only): Bonus Dark DMG effect based on number of Machine Cell s.
+10400211	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400211	2	1	\N	1036	When main weapon (MC only): Bonus Fire DMG effect based on number of Machine Cell .
+10400212	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400212	2	1	\N	1036	When main weapon (MC only): Bonus Water DMG effect based on number of Machine Cell .
+10400213	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400213	2	1	\N	1036	When main weapon (MC only): Bonus Earth DMG effect based on number of Machine Cell .
+10400214	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400214	2	1	\N	1036	When main weapon (MC only): Bonus Wind DMG effect based on number of Machine Cell .
+10400215	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400215	2	1	\N	1036	When main weapon (MC only): Bonus Light DMG effect based on number of Machine Cell .
+10400216	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
+10400216	2	1	\N	1036	When main weapon (MC only): Bonus Dark DMG effect based on number of Machine Cell .
 10400217	1	1	\N	49	Medium boost to light allies' ATK and double attack rate
 10400217	2	1	\N	327	Small boost to light allies' max HP
 10400218	1	1	\N	41	Medium boost to earth allies' ATK
 10400218	2	1	\N	1037	Small boost to earth allies' C.A. DMG and C.A. DMG cap
+10400219	1	1	\N	7	Big boost to Light allies' ATK
+10400219	2	1	\N	1051	15% boost to Light allies' ATK (Only on Mondays [JST]).
+10400220	1	1	\N	86	Big boost to wind allies' critical hit rate
+10400220	1	150	\N	1052	Big boost to wind allies' critical hit rate
+10400220	2	1	\N	63	Medium boost to wind allies' ATK
+10400220	3	120	\N	1053	Supplement wind allies' critical hit DMG
+10400221	1	1	\N	1054	Medium boost to dark allies' ATK and double attack rate
+10400221	2	1	\N	332	Small boost to dark allies' critical hit rate
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -451,20 +459,20 @@
 10401054	2	150	\N	168	Medium boost to wind allies' ATK / Medium boost to double attack rate for wind allies
 10401055	1	1	\N	169	~14.2% chance to not use up Secret Gear.
 10401055	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
-10401056	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401056	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401057	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401057	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401058	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401058	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401059	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401059	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401060	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401060	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401061	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401061	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
-10401062	1	1	\N	169	Slight chance to not use up Secret Gear.
-10401062	2	1	\N	170	Decrease DEF Down strength from Retaliation Reprise .
+10401056	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401056	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401057	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401057	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401058	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401058	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401059	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401059	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401060	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401060	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401061	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401061	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
+10401062	1	1	\N	169	~14.2% chance to not use up Secret Gear.
+10401062	2	1	\N	170	 Retaliation Reprise self-inflicts 20% DEF Down instead.
 10401063	1	1	\N	5	Big boost to earth allies' ATK
 10401063	2	1	\N	171	Small boost to earth allies' critical hit rate
 10401063	2	120	\N	172	Medium boost to earth allies' critical hit rate
@@ -613,7 +621,7 @@
 10401130	2	120	\N	967	Medium boost to earth allies' earth ATK based on number of turns passed
 10401131	1	1	\N	2	Big boost to water allies' ATK
 10401131	2	1	\N	85	Small boost to water allies' critical hit rate
-10401132	1	1	\N	1000	When main weapon: Massive boost to Dark allies' ATK . All Dark allies gain 15% ATK Up (Stackable / Max: 45%) and 15% DEF Up (Stackable / Max: 45%) when an ally is knocked out (Can't be removed).
+10401132	1	1	\N	1000	When main weapon: Massive boost to Dark allies' ATK . All Dark allies gain 15% ATK Up (Stackable / Max: 45%) and 15% DEF Up (Stackable / Max: 45%) when an ally is knocked out.
 10401132	2	1	\N	1001	20% boost to Dark allies' DMG cap in Arcarum.
 10401133	1	1	\N	276	Medium boost to dark allies' ATK and critical hit rate
 10401133	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
@@ -621,18 +629,18 @@
 10401134	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
 10401135	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
 10401135	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
-10401136	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401136	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
-10401137	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401137	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
-10401138	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401138	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
-10401139	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401139	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
-10401140	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401140	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
-10401141	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP
-10401141	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango's effect duration
+10401136	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401136	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401137	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401137	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401138	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401138	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401139	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401139	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401140	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401140	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401141	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
+10401141	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
 10401142	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
 10401142	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
 10401143	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
@@ -645,6 +653,10 @@
 10401146	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
 10401147	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
 10401147	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
+10401148	1	1	\N	580	Big boost to water allies' critical hit rate
+10401148	2	120	\N	1026	Supplement water allies' critical hit DMG
+10401149	1	1	\N	1057	Big boost to light allies' healing cap
+10401149	2	1	\N	1058	Medium boost to light allies' ATK and max HP
 10402000	1	1	\N	222	Medium boost to light allies' critical hit rate
 10402000	2	1	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10402002	1	1	\N	0	Big boost to fire allies' ATK
@@ -704,7 +716,7 @@
 10402041	1	1	\N	225	Medium boost to fire allies' ATK
 10402041	2	1	\N	243	Small boost to fire allies' max HP
 10402042	1	1	\N	237	Restore HP upon using Drive It In , Drive It In II , and Thunder on the Water .
-10402042	2	1	\N	238	 Resonating Surge also inflicts Gravity .
+10402042	2	1	\N	238	Inflict Gravity upon casting Resonating Surge .
 10402043	1	1	\N	237	Restore HP upon using lead drive
 10402043	2	1	\N	238	Add 1 to a foe's charge attack counter upon casting Resonating Surge
 10402044	1	1	\N	237	Restore HP upon using lead drive
@@ -843,7 +855,7 @@
 10402112	1	1	\N	11	Big boost to light allies' max HP
 10402112	2	1	\N	222	Medium boost to light allies' critical hit rate
 10402113	1	1	\N	288	Big boost to Light allies' ATK
-10402113	2	100	\N	289	When main weapon: Light damage to all foes at end of turn if MC takes damage during that turn
+10402113	2	100	\N	289	When main weapon: Light damage to all foes at end of turn if MC takes damage during that turn.
 10402114	1	1	\N	2	Big boost to water allies' ATK
 10402114	2	120	\N	290	When main weapon (MC only): Gain 8% ATK Up (Stackable / Max: 40%) upon triple attack
 10402115	1	1	\N	291	Big boost to Earth allies' ATK
@@ -940,6 +952,8 @@
 10402159	2	1	\N	219	Medium boost to water allies' multiattack rate
 10402160	1	1	\N	1048	Big boost to fire allies' skill DMG cap / Big supplemental boost to skill DMG
 10402160	2	120	\N	428	Small boost to fire allies' ATK
+10402161	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
+10402161	2	1	\N	914	Boost to fire charge attack DMG cap
 10403000	1	1	\N	7	Big boost to light allies' ATK
 10403000	2	120	\N	312	When main weapon, boost to debuff resistance
 10403001	1	1	\N	892	\N
@@ -997,8 +1011,8 @@
 10403035	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403036	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
 10403036	2	1	\N	323	1-turn cut to Rage series' cooldown.
-10403037	1	1	\N	322	Extend rage for caster
-10403037	2	1	\N	323	Cut to rage cooldown
+10403037	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
+10403037	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403038	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
 10403038	2	1	\N	323	1-turn cut to Rage series' cooldown.
 10403039	1	1	\N	322	Extend effect duration of Rage series by 1 turn for the caster.
@@ -1215,7 +1229,7 @@
 10403140	2	1	\N	521	Boost to light charge attack DMG cap
 10403140	3	120	\N	1028	Supplement light allies' critical hit DMG
 10403141	1	1	\N	1049	Big boost to fire allies' ATK
-10403141	2	100	\N	1050	When main weapon (MC only): 5% boost to charge bar upon multiattacks
+10403141	2	100	\N	1050	When main weapon (MC only): Gain Charge Bar +5% upon multiattacks.
 10403142	1	1	\N	947	Medium boost to water allies' ATK and max HP
 10403142	2	120	\N	789	Medium boost to water allies' water ATK based on number of turns passed
 10404002	1	1	\N	13	Big boost to wind allies' ATK
@@ -1564,6 +1578,8 @@
 10404186	2	150	\N	369	Medium boost to light allies' ATK and critical hit rate
 10404187	1	1	\N	1033	Big boost to dark allies' ATK
 10404187	2	100	\N	1034	When main weapon (MC only): 30% chance to gain a random buff with every normal attack.
+10404188	1	1	\N	1055	Big boost to light allies' ATK
+10404188	2	100	\N	1056	When main weapon (MC only): 10% Bonus Light DMG effect to critical hits.
 10405000	1	1	\N	5	Big boost to earth allies' ATK
 10405000	1	101	\N	269	Big boost to earth allies' ATK
 10405000	2	120	\N	481	Slight chance to dodge and counter (medium DMG) for earth allies
@@ -1804,17 +1820,17 @@
 10405125	2	1	\N	103	Small boost to water allies' C.A. DMG
 10405125	3	120	\N	458	Boost to water charge attack DMG cap
 10405126	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405126	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405126	2	1	\N	926	When main weapon (MC only): Bonus Fire DMG effect based on Equestrian Affinity lvl.
 10405127	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405127	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405127	2	1	\N	926	When main weapon (MC only): Bonus Water DMG effect based on Equestrian Affinity lvl.
 10405128	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405128	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405128	2	1	\N	926	When main weapon (MC only): Bonus Earth DMG effect based on Equestrian Affinity lvl.
 10405129	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405129	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405129	2	1	\N	926	When main weapon (MC only): Bonus Wind DMG effect based on Equestrian Affinity lvl.
 10405130	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405130	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405130	2	1	\N	926	When main weapon (MC only): Bonus Light DMG effect based on Equestrian Affinity lvl.
 10405131	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
-10405131	2	1	\N	926	When main weapon (MC only): Bonus Elemental DMG effect based on Equestrian Affinity lvl.
+10405131	2	1	\N	926	When main weapon (MC only): Bonus Dark DMG effect based on Equestrian Affinity lvl.
 10405132	1	1	\N	0	Big boost to fire allies' ATK
 10405132	2	1	\N	368	Small boost to fire allies' C.A. DMG
 10405132	3	120	\N	914	Boost to fire charge attack DMG cap
@@ -1825,23 +1841,25 @@
 10405136	1	1	\N	41	Medium boost to earth allies' ATK
 10405136	1	120	\N	597	Medium boost to earth allies' ATK and critical hit rate
 10405136	2	1	\N	200	Boost to earth charge attack DMG cap
-10405137	1	1	\N	1007	When main weapon: Massive boost to Light allies' ATK . 20% Bonus Light Damage effect to Light allies with Divinity .
+10405137	1	1	\N	1007	When main weapon: Massive boost to Light allies' ATK . 20% Bonus Light DMG effect to Light allies with Divinity .
 10405137	2	1	\N	1008	20% boost to Light allies' DMG cap in Arcarum.
-10405138	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405138	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405138	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
-10405139	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405139	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405139	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
-10405140	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405140	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405140	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
-10405141	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405141	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405141	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
-10405142	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405142	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405142	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
-10405143	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell s.
+10405143	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405143	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
 10405144	1	1	\N	149	Big boost to water allies' C.A. DMG
 10405144	2	1	\N	541	Boost to water allies' skill DMG cap
 10405144	3	120	\N	458	Boost to water charge attack DMG cap
+10405145	1	1	\N	782	Big boost to dark allies' ATK
+10405145	2	120	\N	309	Boost to Dark allies' skill damage cap.
 10406000	1	1	\N	7	Big boost to light allies' ATK
 10406000	1	101	\N	257	Big boost to light allies' ATK
 10406000	2	120	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
@@ -2301,16 +2319,16 @@
 10407099	3	120	\N	841	Boost to Wind allies' skill damage cap.
 10407100	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
 10407100	2	1	\N	988	When main weapon (MC only): Bonus Fire DMG effect based on number of foe's debuffs.
-10407101	1	1	\N	987	When main weapon: Dodge all attacks from foes upon using Opening Shot (1 time).
-10407101	2	1	\N	988	When main weapon: When main weapon (MC only): Bonus Elemental DMG effect based on number of foe's debuffs.
-10407102	1	1	\N	987	When main weapon: Dodge all attacks from foes upon using Opening Shot (1 time).
-10407102	2	1	\N	988	When main weapon: When main weapon (MC only): Bonus Elemental DMG effect based on number of foe's debuffs.
-10407103	1	1	\N	987	When main weapon: Dodge all attacks from foes upon using Opening Shot (1 time).
-10407103	2	1	\N	988	When main weapon: When main weapon (MC only): Bonus Elemental DMG effect based on number of foe's debuffs.
-10407104	1	1	\N	987	When main weapon: Dodge all attacks from foes upon using Opening Shot (1 time).
-10407104	2	1	\N	988	When main weapon: When main weapon (MC only): Bonus Elemental DMG effect based on number of foe's debuffs.
-10407105	1	1	\N	987	When main weapon: Dodge all attacks from foes upon using Opening Shot (1 time).
-10407105	2	1	\N	988	When main weapon: When main weapon (MC only): Bonus Elemental DMG effect based on number of foe's debuffs.
+10407101	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
+10407101	2	1	\N	988	When main weapon (MC only): Bonus Water DMG effect based on number of foe's debuffs.
+10407102	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
+10407102	2	1	\N	988	When main weapon (MC only): Bonus Earth DMG effect based on number of foe's debuffs.
+10407103	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
+10407103	2	1	\N	988	When main weapon (MC only): Bonus Wind DMG effect based on number of foe's debuffs.
+10407104	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
+10407104	2	1	\N	988	When main weapon (MC only): Bonus Light DMG effect based on number of foe's debuffs.
+10407105	1	1	\N	987	When main weapon (MC only): Gain Dodge All (1 time) upon using Opening Shot .
+10407105	2	1	\N	988	When main weapon (MC only): Bonus Dark DMG effect based on number of foe's debuffs.
 10407106	1	1	\N	993	Big boost to earth allies' ATK
 10407106	2	100	\N	994	When main weapon (MC only): Boost to multiattack rate and DEF when there is only 1 foe remaining.
 10407107	1	1	\N	1011	When main weapon: Massive boost to Water allies' ATK . Boost to attack specs of Water allies with Full Moon .
@@ -2661,35 +2679,35 @@
 10409042	2	1	\N	581	Small boost to double attack rate for light allies
 10409043	1	1	\N	60	\N
 10409043	1	60	\N	60	Medium boost to Fire allies' ATK and critical hit rate
-10409043	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409043	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409043	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409043	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409043	3	200	\N	910	Medium boost to Fire allies' multiattack rate
 10409044	1	1	\N	720	Boost to Draphs HP
 10409044	2	1	\N	727	Boost to Draph multiattack rate
 10409045	1	1	\N	476	\N
 10409045	1	60	\N	476	Medium boost to Water allies' ATK and critical hit rate
-10409045	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409045	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409045	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409045	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409045	3	200	\N	219	Medium boost to Water allies' multiattack rate
 10409046	1	1	\N	597	\N
 10409046	1	60	\N	597	Medium boost to Earth allies' ATK and critical hit rate
-10409046	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409046	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409046	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409046	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409046	3	200	\N	911	Medium boost to Earth allies' multiattack rate
 10409047	1	1	\N	632	\N
 10409047	1	60	\N	632	Medium boost to Wind allies' ATK and critical hit rate
-10409047	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409047	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409047	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409047	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409047	3	200	\N	836	Medium boost to Wind allies' multiattack rate
 10409048	1	1	\N	369	\N
 10409048	1	60	\N	369	Medium boost to Light allies' ATK and critical hit rate
-10409048	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409048	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409048	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409048	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409048	3	200	\N	912	Medium boost to Light allies' multiattack rate
 10409049	1	1	\N	276	\N
 10409049	1	60	\N	276	Medium boost to Dark allies' ATK and critical hit rate
-10409049	2	100	\N	725	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable)
-10409049	2	150	\N	726	When main weapon (MC only): Boost to ATK upon dealing multiattacks (Stackable) / Boost to DMG cap (Stackable)
+10409049	2	100	\N	725	When main weapon (MC only): Gain ATK Up (Stackable) upon dealing multiattacks.
+10409049	2	150	\N	726	When main weapon (MC only): Gain ATK Up (Stackable) and DMG Cap Up (Stackable) upon dealing multiattacks.
 10409049	3	200	\N	913	Medium boost to Dark allies' multiattack rate
 10409055	1	1	\N	948	Big boost to earth allies' critical hit rate
 10409055	2	1	\N	493	Small boost to earth allies' ATK
@@ -2748,8 +2766,9 @@
 10409085	1	1	\N	748	When main weapon (MC only): 10% bonus Fire DMG to one-foe attacks against burned foes.
 10409085	2	100	\N	749	Big boost to fire allies' ATK
 10409086	1	1	\N	750	Massive boost to Dark allies' ATK
-10409087	1	1	\N	750	Massive boost to Dark allies' ATK
-10409087	2	120	\N	751	When main weapon (MC only): 70% boost to DA, 25% boost to TA, and 20% boost to dodge rate when you have Mirror Image.
+10409087	1	1	\N	750	Massive boost to dark allies' ATK
+10409087	1	200	\N	1059	Massive boost to dark allies' ATK / Small boost to max HP
+10409087	2	120	\N	751	When main weapon (MC only): 70% boost to double attack rate, 25% boost to triple attack rate, and 20% boost to dodge rate when MC has Mirror Image .
 10409088	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
 10409088	2	120	\N	752	When main weapon (MC Only): Boost to charge attack DMG based on how high HP is
 10409089	1	1	\N	24	Big boost to earth allies' ATK
@@ -2835,3 +2854,6 @@
 10409127	2	1	\N	1015	15% boost to katana-specialty allies' max HP.
 10409128	1	1	\N	7	Big boost to light allies' ATK
 10409128	2	1	\N	1020	Small boost to light allies' DEF based on how low HP is
+10409129	1	1	\N	240	Big boost to fire allies' critical hit rate
+10409129	2	1	\N	428	Small boost to fire allies' ATK
+10409129	3	120	\N	131	Boost to fire allies' skill DMG cap

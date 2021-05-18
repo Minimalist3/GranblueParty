@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
+  <div id="app" class="flex flex-col text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
     <!-- Menu -->
     <nav class="bg-secondary shadow-md flex flex-row justify-between items-center">
       <!-- left -->
@@ -134,18 +134,21 @@
     </nav>
 
     <!-- Main page -->
-    <main class="p-4">
+    <main class="p-4 flex-shrink-0">
       <router-view></router-view>
     </main>
 
     <!-- Footer -->
-    <footer class="pt-12 text-xs text-center">
+    <footer class="pt-12 pb-2 text-xs text-center mt-auto">
       <p>
         <a href="https://twitter.com/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'twitter']" class="text-primary text-lg"></fa-icon> @GranblueParty
         </a>
         <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
           <fa-icon :icon="['fab', 'github']" class="text-primary text-lg"></fa-icon> Minimalist3/GranblueParty
+        </a>
+        <a href="https://www.minimalist.codes" target="_blank">
+          <fa-icon :icon="['fas', 'external-link-alt']" class="text-primary text-lg"></fa-icon> minimalist.codes
         </a>
       </p>
       <p>

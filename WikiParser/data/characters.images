@@ -14,6 +14,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040167000_01.jpg -O ./unit_small/3040167000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040045000_01.jpg -O ./unit/3040045000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040045000_01.jpg -O ./unit_small/3040045000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040334000_01.jpg -O ./unit/3040334000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040334000_01.jpg -O ./unit_small/3040334000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030177000_01.jpg -O ./unit/3030177000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3030177000_01.jpg -O ./unit_small/3030177000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040290000_01.jpg -O ./unit/3040290000.jpg
@@ -152,6 +154,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040270000_01.jpg -O ./unit_small/3040270000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030203000_01.jpg -O ./unit/3030203000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3030203000_01.jpg -O ./unit_small/3030203000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040331000_01.jpg -O ./unit/3040331000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040331000_01.jpg -O ./unit_small/3040331000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3020048000_01.jpg -O ./unit/3020048000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3020048000_01.jpg -O ./unit_small/3020048000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030269000_01.jpg -O ./unit/3030269000.jpg
@@ -840,6 +844,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040178000_01.jpg -O ./unit_small/3040178000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040063000_01.jpg -O ./unit/3040063000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040063000_01.jpg -O ./unit_small/3040063000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040335000_01.jpg -O ./unit/3040335000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040335000_01.jpg -O ./unit_small/3040335000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040249000_01.jpg -O ./unit/3040249000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040249000_01.jpg -O ./unit_small/3040249000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040089000_01.jpg -O ./unit/3040089000.jpg
@@ -860,6 +866,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040003000_01.jpg -O ./unit_small/3040003000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030237000_01.jpg -O ./unit/3030237000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3030237000_01.jpg -O ./unit_small/3030237000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040332000_01.jpg -O ./unit/3040332000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040332000_01.jpg -O ./unit_small/3040332000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040156000_01.jpg -O ./unit/3040156000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040156000_01.jpg -O ./unit_small/3040156000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030141000_01.jpg -O ./unit/3030141000.jpg
@@ -1066,6 +1074,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3030194000_01.jpg -O ./unit_small/3030194000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040310000_01.jpg -O ./unit/3040310000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040310000_01.jpg -O ./unit_small/3040310000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040333000_01.jpg -O ./unit/3040333000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040333000_01.jpg -O ./unit_small/3040333000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040244000_01.jpg -O ./unit/3040244000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040244000_01.jpg -O ./unit_small/3040244000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040196000_01.jpg -O ./unit/3040196000.jpg
@@ -1180,6 +1190,10 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040152000_01.jpg -O ./unit_small/3040152000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040039000_01.jpg -O ./unit/3040039000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040039000_01.jpg -O ./unit_small/3040039000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040337000_01.jpg -O ./unit/3040337000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040337000_01.jpg -O ./unit_small/3040337000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040336000_01.jpg -O ./unit/3040336000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040336000_01.jpg -O ./unit_small/3040336000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3040180000_01.jpg -O ./unit/3040180000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/3040180000_01.jpg -O ./unit_small/3040180000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/3030099000_01.jpg -O ./unit/3030099000.jpg

@@ -27,7 +27,7 @@
   {
     "pageid": 18537,
     "title": "Agni",
-    "lastrevid": 412540
+    "lastrevid": 422655
   },
   {
     "pageid": 16133,
@@ -110,6 +110,11 @@
     "lastrevid": 393899
   },
   {
+    "pageid": 148356,
+    "title": "Arbiter of Lies",
+    "lastrevid": 422857
+  },
+  {
     "pageid": 16084,
     "title": "Archangel Queen",
     "lastrevid": 402672
@@ -122,7 +127,7 @@
   {
     "pageid": 125491,
     "title": "Athena (Summer)",
-    "lastrevid": 391378
+    "lastrevid": 420071
   },
   {
     "pageid": 15665,
@@ -152,7 +157,7 @@
   {
     "pageid": 15669,
     "title": "Bahamut",
-    "lastrevid": 397691
+    "lastrevid": 423431
   },
   {
     "pageid": 17228,
@@ -207,7 +212,7 @@
   {
     "pageid": 15573,
     "title": "Blue Orbit",
-    "lastrevid": 318805
+    "lastrevid": 423042
   },
   {
     "pageid": 25803,
@@ -217,7 +222,7 @@
   {
     "pageid": 17204,
     "title": "Bonito",
-    "lastrevid": 362199
+    "lastrevid": 417300
   },
   {
     "pageid": 21186,
@@ -352,7 +357,7 @@
   {
     "pageid": 17198,
     "title": "Cybele",
-    "lastrevid": 370768
+    "lastrevid": 423038
   },
   {
     "pageid": 102964,
@@ -372,12 +377,12 @@
   {
     "pageid": 33307,
     "title": "Death (SR)",
-    "lastrevid": 400751
+    "lastrevid": 422963
   },
   {
     "pageid": 33368,
     "title": "Death (SSR)",
-    "lastrevid": 400753
+    "lastrevid": 422964
   },
   {
     "pageid": 125370,
@@ -462,7 +467,7 @@
   {
     "pageid": 86611,
     "title": "Dragon's Rage",
-    "lastrevid": 395152
+    "lastrevid": 421021
   },
   {
     "pageid": 16149,
@@ -607,7 +612,7 @@
   {
     "pageid": 138420,
     "title": "Giyu Tomioka",
-    "lastrevid": 394670
+    "lastrevid": 415518
   },
   {
     "pageid": 16135,
@@ -657,7 +662,7 @@
   {
     "pageid": 20043,
     "title": "Grani",
-    "lastrevid": 370765
+    "lastrevid": 423043
   },
   {
     "pageid": 17207,
@@ -702,7 +707,7 @@
   {
     "pageid": 15667,
     "title": "Hades",
-    "lastrevid": 412610
+    "lastrevid": 422039
   },
   {
     "pageid": 47452,
@@ -732,7 +737,7 @@
   {
     "pageid": 111343,
     "title": "Heimdallr",
-    "lastrevid": 376674
+    "lastrevid": 421642
   },
   {
     "pageid": 20636,
@@ -827,22 +832,22 @@
   {
     "pageid": 33335,
     "title": "Judgement (SR)",
-    "lastrevid": 400755
+    "lastrevid": 422949
   },
   {
     "pageid": 33375,
     "title": "Judgement (SSR)",
-    "lastrevid": 409915
+    "lastrevid": 422950
   },
   {
     "pageid": 33304,
     "title": "Justice (SR)",
-    "lastrevid": 391382
+    "lastrevid": 422959
   },
   {
     "pageid": 33366,
     "title": "Justice (SSR)",
-    "lastrevid": 362926
+    "lastrevid": 422960
   },
   {
     "pageid": 17202,
@@ -852,7 +857,7 @@
   {
     "pageid": 129998,
     "title": "Kaguya (Summer)",
-    "lastrevid": 391404
+    "lastrevid": 416465
   },
   {
     "pageid": 31630,
@@ -937,7 +942,7 @@
   {
     "pageid": 15689,
     "title": "Lucifer",
-    "lastrevid": 397690
+    "lastrevid": 423430
   },
   {
     "pageid": 25797,
@@ -977,7 +982,7 @@
   {
     "pageid": 56144,
     "title": "Macula Marius (Summer)",
-    "lastrevid": 391405
+    "lastrevid": 423433
   },
   {
     "pageid": 16080,
@@ -1126,8 +1131,8 @@
   },
   {
     "pageid": 16081,
-    "title": "Nezha",
-    "lastrevid": 315091
+    "title": "Nezha (Summon)",
+    "lastrevid": 419266
   },
   {
     "pageid": 55173,
@@ -1177,7 +1182,7 @@
   {
     "pageid": 120582,
     "title": "Owlcat",
-    "lastrevid": 408899
+    "lastrevid": 418595
   },
   {
     "pageid": 17216,
@@ -1252,7 +1257,7 @@
   {
     "pageid": 16625,
     "title": "Qilin",
-    "lastrevid": 393960
+    "lastrevid": 418772
   },
   {
     "pageid": 131411,
@@ -1282,7 +1287,7 @@
   {
     "pageid": 55225,
     "title": "Raphael",
-    "lastrevid": 367868
+    "lastrevid": 416604
   },
   {
     "pageid": 115502,
@@ -1367,7 +1372,7 @@
   {
     "pageid": 100031,
     "title": "Satyr (Summer)",
-    "lastrevid": 391402
+    "lastrevid": 423436
   },
   {
     "pageid": 17199,
@@ -1442,7 +1447,7 @@
   {
     "pageid": 145782,
     "title": "Snapshot of Divinity",
-    "lastrevid": 414844
+    "lastrevid": 417595
   },
   {
     "pageid": 32208,
@@ -1507,12 +1512,12 @@
   {
     "pageid": 33308,
     "title": "Temperance (SR)",
-    "lastrevid": 362943
+    "lastrevid": 422929
   },
   {
     "pageid": 33369,
     "title": "Temperance (SSR)",
-    "lastrevid": 391372
+    "lastrevid": 423295
   },
   {
     "pageid": 17205,
@@ -1522,12 +1527,12 @@
   {
     "pageid": 33330,
     "title": "The Devil (SR)",
-    "lastrevid": 319400
+    "lastrevid": 422936
   },
   {
     "pageid": 33370,
     "title": "The Devil (SSR)",
-    "lastrevid": 391365
+    "lastrevid": 422937
   },
   {
     "pageid": 112662,
@@ -1537,52 +1542,52 @@
   {
     "pageid": 33306,
     "title": "The Hanged Man (SR)",
-    "lastrevid": 400757
+    "lastrevid": 422924
   },
   {
     "pageid": 33367,
     "title": "The Hanged Man (SSR)",
-    "lastrevid": 400749
+    "lastrevid": 422925
   },
   {
     "pageid": 33333,
     "title": "The Moon (SR)",
-    "lastrevid": 400750
+    "lastrevid": 422945
   },
   {
     "pageid": 33373,
     "title": "The Moon (SSR)",
-    "lastrevid": 400752
+    "lastrevid": 422946
   },
   {
     "pageid": 33332,
     "title": "The Star (SR)",
-    "lastrevid": 400756
+    "lastrevid": 422940
   },
   {
     "pageid": 33372,
     "title": "The Star (SSR)",
-    "lastrevid": 400748
+    "lastrevid": 422941
   },
   {
     "pageid": 33334,
     "title": "The Sun (SR)",
-    "lastrevid": 400744
+    "lastrevid": 422920
   },
   {
     "pageid": 33374,
     "title": "The Sun (SSR)",
-    "lastrevid": 400747
+    "lastrevid": 422921
   },
   {
     "pageid": 33331,
     "title": "The Tower (SR)",
-    "lastrevid": 325775
+    "lastrevid": 422954
   },
   {
     "pageid": 33371,
     "title": "The Tower (SSR)",
-    "lastrevid": 391376
+    "lastrevid": 422955
   },
   {
     "pageid": 16413,
@@ -1617,7 +1622,7 @@
   {
     "pageid": 17239,
     "title": "Titan",
-    "lastrevid": 412545
+    "lastrevid": 422036
   },
   {
     "pageid": 13364,
@@ -1627,7 +1632,7 @@
   {
     "pageid": 139991,
     "title": "Tsuchinoko",
-    "lastrevid": 400919
+    "lastrevid": 417444
   },
   {
     "pageid": 37721,
@@ -1672,12 +1677,12 @@
   {
     "pageid": 64244,
     "title": "Vane's Cooking",
-    "lastrevid": 405859
+    "lastrevid": 418771
   },
   {
     "pageid": 17200,
     "title": "Varuna",
-    "lastrevid": 412544
+    "lastrevid": 422034
   },
   {
     "pageid": 25798,
@@ -1730,6 +1735,11 @@
     "lastrevid": 325741
   },
   {
+    "pageid": 114191,
+    "title": "Wilnas",
+    "lastrevid": 423039
+  },
+  {
     "pageid": 16147,
     "title": "Wind Elemental",
     "lastrevid": 325796
@@ -1752,27 +1762,32 @@
   {
     "pageid": 143924,
     "title": "Xeno Cocytus",
-    "lastrevid": 412305
+    "lastrevid": 423315
   },
   {
     "pageid": 139253,
     "title": "Xeno Corow",
-    "lastrevid": 396240
+    "lastrevid": 423312
+  },
+  {
+    "pageid": 148709,
+    "title": "Xeno Diablo",
+    "lastrevid": 423313
   },
   {
     "pageid": 124444,
     "title": "Xeno Ifrit",
-    "lastrevid": 395930
+    "lastrevid": 423314
   },
   {
     "pageid": 133426,
     "title": "Xeno Sagittarius",
-    "lastrevid": 395933
+    "lastrevid": 423317
   },
   {
     "pageid": 52500,
     "title": "Xeno Vohu Manah",
-    "lastrevid": 395931
+    "lastrevid": 423316
   },
   {
     "pageid": 131409,
@@ -1782,7 +1797,7 @@
   {
     "pageid": 98512,
     "title": "Yggdrasil (Summer)",
-    "lastrevid": 392605
+    "lastrevid": 423437
   },
   {
     "pageid": 13196,
@@ -1807,12 +1822,12 @@
   {
     "pageid": 18536,
     "title": "Zephyrus",
-    "lastrevid": 412547
+    "lastrevid": 422037
   },
   {
     "pageid": 17201,
     "title": "Zeus",
-    "lastrevid": 412550
+    "lastrevid": 422038
   },
   {
     "pageid": 131408,

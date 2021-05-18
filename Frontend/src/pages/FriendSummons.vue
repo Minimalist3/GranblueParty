@@ -1,36 +1,38 @@
 <template>
   <div class="flex flex-col">
 
-    <h1>Friend Summons</h1>
+    <h1 class="self-center mb-8">Friend Summons</h1>
 
     <div v-if="loading === true">
       Loading...
     </div>
-    <div class="flex flex-col" v-else>
-      <div class="flex flex-row flex-wrap items-center mb-4">
-        <button class="btn mr-2" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
+    <div class="flex flex-col items-center" v-else>
+      <!-- Toolbar -->
+      <div class="flex flex-row flex-wrap space-x-2">
+        <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
           <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
         </button>
 
-        <button class="btn btn-white mr-2" @click="clickCopyURL">
+        <button class="btn btn-white" @click="clickCopyURL">
           <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
         </button>
 
         <label>My ID <input class="input is-small" type="number" min="1" style="width: 15ch;" v-model="id"></label>
       </div>
 
-      <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+      <!-- Help -->
+      <div class="bg-secondary rounded p-4 mt-4 flex-shrink " v-if="show_help">
         <h2>Click on the stars</h2>
         <p class="pb-4">
           You can set the uncap level of the summons by clicking on the stars.
         </p>
         <h2>Share your summons</h2>
-        <p class="pb-4">
+        <p>
           You can share your friend summons by clicking the "Share" button and copying the URL of the page.
         </p>
       </div>
 
-      <div class="flex flex-row flex-wrap self-center mb-4">
+      <div class="flex flex-row flex-wrap self-center my-8">
         <div class="flex flex-col items-center mr-4">
           <span class="px-3 py-1 my-1 rounded-full text-white bg-red-600">Fire</span>
           <box-summon :object="summons[0]" :showLevel="false" @click-portrait="showModal(0)"></box-summon>

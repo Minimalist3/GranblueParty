@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>Spark Maker</h1>
+  <div class="flex flex-col">
+    <h1 class="self-center mb-8">Spark Maker</h1>
 
-    <div class="flex flex-row flex-wrap items-center space-x-2 mb-4">
+    <div class="flex flex-row flex-wrap self-center items-center space-x-2 space-y-2 mb-4">
       <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
@@ -18,7 +18,7 @@
       </button>
     </div>
 
-    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+    <div class="self-center bg-secondary rounded p-4 mb-2" v-if="show_help">
       <h2>Search</h2>
       <p class="pb-4">
         You can search units by English, Japanese or Weapon name.<br>
@@ -42,17 +42,17 @@
     <div v-if="loading === true">
       Loading...
     </div>
-    <div v-else class="flex flex-row flex-wrap">
+    <div v-else class="flex flex-row ">
       <!-- Search -->
-      <div class="flex flex-col md:w-1/4 pb-4">
-        <div class="mb-4 flex flex-row flex-wrap space-x-2">
-          <input class="input" type="text" v-model="search_text" placeholder="Search" ref="searchfield" autofocus>
+      <div class="flex flex-col flex-shrink pb-4 mr-2 w-96">
+        <div class="flex flex-row flex-wrap space-x-2 mb-4">
+          <input class="input" type="text" size="12" v-model="search_text" placeholder="Search" ref="searchfield" autofocus>
           <button class="btn btn-blue" @click="clearText()">
             <fa-icon :icon="['fas', 'times']" class="text-xl"></fa-icon> Clear
           </button>
         </div>
 
-        <span class="flex flex-col overflow-y-auto mr-2" :class="screenshot ? '' : 'h-128'">
+        <span class="flex flex-col overflow-y-auto bg-secondary p-4" :class="screenshot ? '' : 'h-full'">
           <h2 v-if="searchCharacters.length > 0">Characters</h2>
           <span class="flex flex-row flex-wrap">
             <spark-unit
@@ -76,9 +76,9 @@
       </div>
 
       <!-- Display -->
-      <div id="spark" class="flex flex-col bg-primary md:w-3/4">
+      <div id="spark" class="flex flex-col bg-primary flex-grow">
         <div class="flex flex-row flex-wrap">
-          <div class="flex pb-2" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
+          <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 mr-2 px-2 w-full">
               <img class="pb-2" src="/img/item/crystal.jpg" width="65" height="65">
               <div class="flex flex-row flex-wrap">
@@ -92,7 +92,8 @@
               </div>
             </div>
           </div>
-          <div class="flex pb-2" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
+
+          <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 mr-2 px-2 w-full">
               <img class="pb-2" src="/img/item/goldmoon.jpg" width="65" height="65">
               <div class="flex flex-row flex-wrap">
@@ -106,7 +107,8 @@
               </div>
             </div>
           </div>
-          <div class="flex pb-2" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
+
+          <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 px-2 w-full" :class="include_sr ? 'mr-2' : ''">
               <img class="pb-2" src="/img/item/sunlightstone.jpg" width="65" height="65">
               <div class="flex flex-row flex-wrap">
@@ -120,7 +122,8 @@
               </div>
             </div>
           </div>
-          <div class="flex pb-2" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'" v-if="include_sr">
+
+          <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'" v-if="include_sr">
             <div class="flex flex-col items-center bg-secondary rounded py-4 px-2 w-full">
               <img class="pb-2" src="/img/item/silvermoon.jpg" width="65" height="65">
               <div class="flex flex-row flex-wrap">
@@ -136,12 +139,12 @@
           </div>          
         </div>
 
-        <div class="flex flex-row justify-between">
+        <div class="flex flex-row flex-wrap justify-between">
           <span>
-            <label v-if="! screenshot">Draws <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model="draws"></label>
+            <label v-if="! screenshot" class="ml-2">Draws <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model="draws"></label>
             <span class="ml-2">SSR ratio: {{ ssrRatio }}%</span>
           </span>
-          <span v-if="screenshot" class="pr-2">https://www.granblue.party/spark</span>
+          <span v-if="screenshot" class="pr-2 ml-2">https://www.granblue.party/spark</span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Room Name Generator</h1>
+  <div class="flex flex-col">
+    <h1 class="self-center mb-8">Room Name Generator</h1>
 
     <div class="sticky top-0 bg-secondary shadow-md">
       <button class="btn btn-white mr-2" @click="clickCopyURL">

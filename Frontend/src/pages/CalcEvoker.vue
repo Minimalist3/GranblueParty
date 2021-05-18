@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Arcarum Summon and Evoker Materials Calculator</h1>
+  <div class="flex flex-col items-center">
+    <h1 class="self-center mb-8">Arcarum Summon and Evoker Materials Calculator</h1>
 
     <!-- Form -->
     <div class="flex flex-row flex-wrap items-center mb-8">
@@ -48,18 +48,20 @@
     </div>
 
     <!-- Show materials -->
-    <div v-for="step in getMaterials" :key="step.name" class="mb-4">
-      <h2>{{ step.name }}</h2>
+    <div>
+      <div v-for="step in getMaterials" :key="step.name" class="mb-4">
+        <h2>{{ step.name }}</h2>
 
-      <ul>
-        <li v-for="item in getItems(step.items)" :key="item.icon">
-          <img :src="'/img/item/' + item.icon" style="max-height: 25px; max-width: 25px;">
-          {{ item.name }} x {{ item.q }}
-          <a :href="'https://gbf.wiki/' + item.name" target="_blank" ref="external" class="ml-2">
-            Wiki <fa-icon :icon="['fas', 'external-link-alt']" class="text-sm"></fa-icon>
-          </a>
-        </li>
-      </ul>
+        <ul>
+          <li v-for="item in getItems(step.items)" :key="item.icon">
+            <img :src="'/img/item/' + item.icon" style="max-height: 25px; max-width: 25px;">
+            {{ item.name }} x {{ item.q }}
+            <a :href="'https://gbf.wiki/' + item.name" target="_blank" ref="external" class="ml-2">
+              Wiki <fa-icon :icon="['fas', 'external-link-alt']" class="text-sm"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

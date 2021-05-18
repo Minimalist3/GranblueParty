@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <h1>New Event tokens Calculator</h1>
+  <div class="flex flex-col items-center">
+    <h1 class="mb-8">New Event tokens Calculator</h1>
 
     <!-- Stats -->
     <div class="flex flex-col mb-8">
@@ -51,8 +51,8 @@
     </div>
 
     <!-- Table -->
-    <div class="overflow-y-auto">
-      <table class="table table-striped table-px w-auto">
+    <div class="overflow-y-auto w-full">
+      <table class="table table-striped table-px w-auto ml-auto mr-auto">
         <thead>
           <tr>
             <th>Name</th>

@@ -204,7 +204,7 @@
 203	ws_skill_atk_m_1_3.png	Ironflame's Might II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"}]}	big
 204	ws_skill_tec_arcarum_1_4.png	Sephira Fire-Tek	\N	massive
 205	ws_skill_musou_3_3_2.png	Terra's Primacy II	{"data":[{"percent":{"1":7,"10":16,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":1.5,"10":7,"15":9},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}}]}	big
-206	ws_skill_jinkai_3_1.png	Earth's Bladeshield	\N	small
+206	ws_skill_jinkai_3_1.png	Earth's Bladeshield	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"aura_type":"optimus","stat":"hp","restriction":{"element":["earth"]}},{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	small
 207	ws_skill_job_weapon.png	Rose's Refuge	\N	\N
 208	ws_skill_atk_a_2_3.png	Sunshiner	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
 209	ws_skill_job_weapon.png	Shining Beacon	\N	\N
@@ -1049,3 +1049,12 @@
 1048	ws_skill_train_1_3.png	Inferno's Tempering	\N	big
 1049	ws_skill_atk_a_1_3.png	Blossom's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 1050	ws_skill_job_weapon.png	Party's Peak	\N	\N
+1051	ws_skill_job_weapon.png	With This, I'm Invincible!	\N	\N
+1052	ws_skill_tec_4_3_2.png	Ventosus's Verity II	{"data":[{"percent":{"1":5,"10":10,"15":12},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"crit"}]}	big
+1053	ws_skill_job_weapon.png	Jade Craft	\N	\N
+1054	ws_skill_musou_6_2.png	Hatred's Primacy	\N	medium
+1055	ws_skill_atk_a_5_3.png	Lightbeam's Might	\N	big
+1056	ws_skill_job_weapon.png	Ever-Watching Eye	\N	\N
+1057	ws_skill_heal_limit_5_3.png	Zion's Healing	\N	big
+1058	ws_skill_god_5_2.png	Thunder's Majesty	\N	medium
+1059	ws_skill_xeno_6_4.png	True Phantom's Supremacy	\N	massive

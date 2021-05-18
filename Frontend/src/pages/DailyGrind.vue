@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Daily Grind Lists</h1>
+  <div class="flex flex-col">
+    <h1 class="self-center">Daily Grind Lists</h1>
 
     <!-- Top bar -->
     <div class="flex flex-row flex-wrap py-2">
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Usage -->
-    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+    <div class="bg-secondary self-center rounded p-4 mb-2" v-if="show_help">
       <h2>Launch Raids</h2>
       <p class="pb-4">
         From the "All Content" tab, you can click on any raid to launch it directly in the Granblue Fantasy Tab.

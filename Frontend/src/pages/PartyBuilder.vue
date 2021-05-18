@@ -34,7 +34,7 @@
     </div>
 
     <!-- Bookmarklet -->
-    <div class="bg-secondary rounded p-4 mb-2" v-if="show_bookmarklet">
+    <div class="bg-secondary self-center rounded p-4 mb-2" v-if="show_bookmarklet">
       <div v-if="show_update_bookmarklet">
         <h2>A new version of the Bookmarklet is available</h2>
         <p class="pb-4">
@@ -64,7 +64,7 @@
     <div v-else></div>
 
     <!-- Usage -->
-    <div class="bg-secondary rounded p-4 mb-2" v-if="show_help">
+    <div class="bg-secondary self-center rounded p-4 mb-2" v-if="show_help">
       <h2>My Parties</h2>
       <p class="pb-4">
         By logging into your account, you can save and load as many parties as you want, then share the link to each one with your friends.<br>
@@ -98,7 +98,7 @@
     <my-parties @update-bookmarklet="updateBookmarklet()"></my-parties>
 
     <!-- Main layout -->
-    <div class="flex flex-row flex-wrap">
+    <div class="flex flex-row flex-wrap justify-center">
       <group-class :editMode="edit_mode" class="pr-2"></group-class>
 
       <group-characters :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-characters>

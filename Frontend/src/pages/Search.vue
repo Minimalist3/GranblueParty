@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="pb-4">Search</h1>
+  <div class="flex flex-col">
+    <h1 class="self-center mb-8">Search</h1>
 
     <!-- Tabs -->
     <span class="flex flex-col w-full">

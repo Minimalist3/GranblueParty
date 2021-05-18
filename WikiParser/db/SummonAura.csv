@@ -239,7 +239,7 @@
 2040297	120% boost to Wind Elemental ATK.	140% boost to Wind Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040298	25% boost to Earth Elemental ATK (Boost rises based on turns passed [Up to 50%]).	30% boost to Earth Elemental ATK (Boost rises based on turns passed [Up to 60%]).	\N	\N	\N	\N	\N	\N	f
 2040299	40% boost to Light Elemental ATK	50% boost to Light Elemental ATK / 10% boost to Light allies' HP	50% boost to Light Elemental ATK / 20% boost to Light allies' HP / 25% boost to Debuff Resistance	\N	\N	\N	\N	\N	f
-2040300	10% boost to all allies' DEF	20% boost to all allies' DEF	\N	\N	\N	\N	\N	\N	f
+2040300	10% boost to all allies' DEF.	20% boost to all allies' DEF.	\N	\N	\N	\N	\N	\N	f
 2040301	50% boost to Dark Elemental ATK, but reduces DEF.	50% boost to Dark Elemental ATK. Boost to critical hit rate for Dark attacks.	\N	\N	\N	\N	\N	\N	f
 2040302	120% boost to Water Elemental ATK.	140% boost to Water Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040303	30% boost to Light and Wind ATK. / 10% boost to Light and Wind allies' C.A. DMG.	50% boost to Light and Wind ATK. / 20% boost to Light and Wind allies' C.A. DMG.	\N	\N	\N	\N	\N	\N	f
@@ -315,3 +315,6 @@
 2040394	40% boost to Dark allies' ATK. 20% boost to Dark allies' C.A. DMG.	50% boost to Dark allies' ATK. 20% boost to Dark allies' C.A. DMG.	\N	\N	\N	\N	\N	\N	f
 2040395	Boost to Water Elemental ATK based on number of Water weapons equipped (Up to 80%).	Boost to Water Elemental ATK based on number of Water weapons equipped (Up to 100%).	Boost to Water Elemental ATK based on number of Water weapons equipped (Up to 120%).	\N	\N	\N	\N	\N	f
 2040396	40% boost to Water Elemental ATK. 20% boost to Water allies' C.A. DMG. 10% boost to Divine Generals' charge bars at battle start.	50% boost to Water Elemental ATK. 20% boost to Water allies' C.A. DMG. 10% boost to Divine Generals' charge bars at battle start.	\N	\N	\N	\N	\N	\N	f
+2040397	40% boost to Light ATK. {{crit|boost to Light attack critical hit rate|20|30}}.	50% boost to Light ATK. {{crit|boost to Light attack critical hit rate|20|30}}.	\N	\N	\N	\N	\N	\N	f
+2040398	100% boost to Fire ATK.	120% boost to Fire ATK.	\N	\N	10% boost to Fire's, Hellfire's, and Inferno's weapon skills.	20% boost to Fire's, Hellfire's, and Inferno's weapon skills.	\N	\N	f
+2040399	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 80%).	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 100%).	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 120%).	\N	\N	\N	\N	\N	f

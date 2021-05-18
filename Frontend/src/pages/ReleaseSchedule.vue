@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Release Schedule</h1>
+  <div class="flex flex-col">
+    <h1 class="self-center mb-8">Release Schedule</h1>
     
     <div v-if="loading === true">
       Loading...
     </div>
-    <div v-else>
+    <div class="flex flex-col items-center" v-else>
       <!-- Data filters -->
       <div class="flex flex-row flex-wrap items-center">
         <data-filter
@@ -74,10 +74,9 @@
       </div>
 
       <!-- List -->
-      <div v-for="days in getRelease" :key="days[0]">
-        <div class="mt-4">
-          <span class="text-xl font-bold">{{ days[1][0].rd.toLocaleDateString("default", { month: 'long', day: 'numeric' }) }}</span>
-          <br>
+      <div class="flex flex-row flex-wrap">
+        <div class="flex flex-col m-2 p-2 bg-secondary rounded" v-for="days in getRelease" :key="days[0]">
+          <span class="text-xl font-bold self-center">{{ days[1][0].rd.toLocaleDateString("default", { month: 'long', day: 'numeric' }) }}</span>
           <div class="flex flex-row flex-wrap">
             <span
               class="flex flex-col"
