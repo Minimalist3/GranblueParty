@@ -18,7 +18,7 @@ let config = merge(baseConfig, {
     chunkFilename: devMode ? '[name].js' : '[name]-[contenthash].js',
     path: path.resolve(__dirname, dist_path),
     publicPath: '/',
-    crossOriginLoading: 'anonymous',
+    crossOriginLoading: 'anonymous'
   },
   optimization: {
     splitChunks: {
@@ -73,14 +73,14 @@ if (devMode) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       // Ignore node_modules to lower CPU usage with dev server
-      new webpack.WatchIgnorePlugin([
+      new webpack.WatchIgnorePlugin({paths: [
         path.join(__dirname, '.git'),
         path.join(__dirname, 'nginx'),
         path.join(__dirname, 'node_modules'),
         path.join(__dirname, 'src', 'img'),
         path.join(__dirname, 'dist_new'),
         path.join(__dirname, 'dist'),
-      ]),
+      ]}),
     ],
     devtool: 'source-map',
   })

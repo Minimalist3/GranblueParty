@@ -144,7 +144,7 @@
         <a href="https://twitter.com/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'twitter']" class="text-primary text-lg"></fa-icon> @GranblueParty
         </a>
-        <a href="https://github.com/Minimalist3/GranblueParty" target="_blank">
+        <a href="https://github.com/Minimalist3/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'github']" class="text-primary text-lg"></fa-icon> Minimalist3/GranblueParty
         </a>
         <a href="https://www.minimalist.codes" target="_blank">

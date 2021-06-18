@@ -318,3 +318,4 @@
 2040397	Arbiter of Lies	偽りを裁く雷光	3	3	2	4	\N	2021-04-29	220	1287	\N	\N	95	607	\N	\N	\N
 2040398	Wilnas	ウィルナス	3	3	2	0	1000	2021-04-30	399	2349	\N	\N	127	771	\N	\N	{"0":[{"percent":100,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"fire","aura_type":"optimus","stat":"atk","slot":"sub"}],"3":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"fire","aura_type":"optimus","stat":"atk","slot":"sub"}]}
 2040399	Xeno Diablo	ゼノ・ディアボロス	3	4	2	5	\N	2021-05-08	280	1642	2323	\N	101	644	916	\N	\N
+2040400	Destiny Nocturnes	宿命夜想曲･特攻隊	3	3	2	2	\N	2021-05-28	255	1582	\N	\N	88	548	\N	\N	\N

@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2021-05-18:</b> Troue, Tikoh</p>
+        <p><b>2021-06-18:</b> Lennah (Earth), Nehan</p>
       </div>
 
       <div>

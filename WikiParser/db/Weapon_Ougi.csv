@@ -1,6 +1,6 @@
 10400000	Massive Fire damage to a foe. Restore MC's HP (Healing cap: 1500).	Healing cap increased to 2000.	
 10400001	Massive Water damage to a foe. Gain Charge Bar +20% .	Effect increased to Charge Bar +30% .	
-10400003	Massive earth DMG to a foe / Bonus DMG to foe in break		
+10400003	Massive Earth damage to a foe. Bonus DMG to foe in Break.		
 10400005	Massive Light damage to a foe. Gain ATK Up .	All allies gain Light ATK Up .	
 10400006	Massive Fire damage to a foe. / Boost to skill DMG.		
 10400010	Massive Light damage to a foe. 5% Bonus Plain damage.		
@@ -132,7 +132,7 @@
 10400156	Massive Dark damage to a foe. Gain Dark ATK Up .		
 10400157	Massive Earth damage to a foe. Gain 20% Earth ATK Up .		
 10400158	Massive Earth damage to a foe. Gain 20% Earth ATK Up . All allies gain Water Switch .		
-10400159	Massive Wind damage to a foe. Slight chance to hit an out-of-the-park homer. (Slight chance to inflict Lethal Hit .)		
+10400159	Massive Wind damage to a foe. Slight chance to hit an out-of-the-park homer. (Inflict Lethal Hit .)		
 10400160	Massive Water damage to a foe. All allies gain Charge Bar +10% .	All allies also gain 30% C.A. DMG Up and 10% C.A. DMG Cap Up for 0.5 turns.	
 10400161	Massive Fire damage to a foe. 300% Bonus Fire damage (Damage cap: ~630,000).	Also inflict 15% Fire DEF Down .	
 10400162	Massive Water damage to a foe. / Inflict Glaciate .	Gain ??% / 30% Critical Hit Rate Up .	
@@ -189,6 +189,7 @@
 10400219	400% Light damage to a foe. Inflict a random debuff.		
 10400220	Massive Wind damage to a foe. All allies gain 20% Bonus DMG .	All allies also gain Charge Bar +15% .	
 10400221	Massive Dark damage to a foe. Raise foe's Thunderstruck lvl by 1 (Max: 10). Inflict Light ATK Down .		
+10400222	Massive Earth damage to a foe. Gain 10% Uplifted .		
 10401000	Massive Dark damage to a foe. Gain Drain .		
 10401003	Massive Dark damage to a foe. Gain Boost to ATK during break .	Also gain ATK Up .	
 10401008	Massive Fire damage to a foe. Gain DEF Up .		
@@ -220,7 +221,7 @@
 10401035	Massive light DMG to a foe All allies gain 35% DA Up and 35% TA Up . 		
 10401036	Massive dark DMG to a foe All allies gain 35% DA Up and 35% TA Up . 		
 10401037	Massive dark DMG to a foe / Boost to double attack rate		
-10401038	Massive Wind damage to a foe. Bonus light and water DMG.	Gain Mirror Image (2 times) .	
+10401038	Massive Wind damage to a foe. Bonus Light and Water damage.	Gain Mirror Image (2 times) .	
 10401039	Massive water damage to a foe. Gain random Charge Bar Gain Up .		
 10401040	Massive Dark damage to a foe. Gain Charge Bar +20% .		
 10401041	Massive Fire damage to a foe. Gain Charge Bar +20% and Debuff Success Boosted .		
@@ -325,13 +326,13 @@
 10401145	Massive Wind damage to a foe. Raise all allies' Promenade by 1. All allies gain 20% TA Up .		
 10401146	Massive Light damage to a foe. Raise all allies' Promenade by 1. All allies gain 20% TA Up .		
 10401147	Massive Dark damage to a foe. Raise all allies' Promenade by 1. All allies gain 20% TA Up .		
-10401148	Massive water DMG to a foe / Boost to all allies' critical hit rate		
-10401149	Massive light DMG to a foe / Revitalize effect to all allies		
+10401148	Massive Water damage to a foe. Boost to all allies' critical hit rate.		
+10401149	Massive Light damage to a foe. All allies gain Revitalize .		
 10402000	Massive Light damage to a foe. / Gain Critical Hit Rate Up .		
 10402002	Massive Fire damage to a foe. Infict Poisoned .	Additional damage during Break.	
 10402003	Massive Fire damage to a foe. Bonus Plain damage.	Cut to overdrive.	
 10402007	Massive Dark damage to a foe. Inflict Blinded .		
-10402008	Massive Wind damage to a foe. Boost to DEF.		
+10402008	Massive Wind damage to a foe. Gain DEF Up .		
 10402009	Massive Fire damage to a foe. Gain Keen .	Keen now affects all allies.	
 10402012	Massive water DMG to a foe / Boost to ATK		
 10402013	Massive Wind damage to a foe. Gain TA Up .		
@@ -360,7 +361,7 @@
 10402036	Massive Dark damage to a foe. All allies gain 20% Repel for up to 3 hits.		
 10402037	Massive dark DMG to a foe / Boost to DEF		
 10402038	Massive earth DMG to a foe / Hit to DEF		
-10402039	Massive Fire damage to a foe. Inflict 10% ATK Down and 10% DEF Down . 	All allies gain Charge Bar +10% .	
+10402039	Massive Fire damage to a foe. Inflict 10% ATK Down and 10% DEF Down .	All allies gain Charge Bar +10% .	
 10402040	Massive Wind damage to a foe. Gain DA Up .		
 10402041	Massive Fire damage to a foe. Gain 7% DEF Up .		
 10402042	Massive Light damage to a foe. Gain Charge Bar +20% .		
@@ -446,7 +447,7 @@
 10402128	Massive Earth damage to a foe. / Inflict 15% Earth DEF Down .	Also deals bonus Earth damage.	
 10402129	Massive Dark damage to a foe. Light DMG reduction to all allies.	Supplemental DMG effect to MC.	
 10402130	Massive Earth damage to a foe. / All allies gain 80% / 20% Armored .	Buff increased to 80% / 30% Armored .	
-10402131	Massive Wind damage to a foe. All allies gain Recovery Cap Boosted .		
+10402131	Massive Wind damage to a foe. All allies gain Recovery Cap Boosted (500) .		
 10402132	Massive Dark damage to a foe. All allies gain Supplemental DMG .		
 10402133	Massive Dark damage to a foe. All allies gain Supplemental DMG and 10% Uplifted .		
 10402134	Massive Light damage to a foe. All Light allies gain 70%-75% / 30% Critical Hit Rate Up .	All Light allies also gain Charge Bar +15% .	
@@ -792,6 +793,7 @@
 10404186	Unworldly Light damage to a foe. Self-inflict C.A. Sealed .	Damage increased to 1050% (Damage cap: ~2,550,000). Create 1 green potion.	
 10404187	Massive Dark damage to a foe. Inflict Blinded . Gain 10% Uplifted .		
 10404188	Massive Light damage to a foe. All Light allies gain 60% / 30% Critical Hit Rate Up .		
+10404189	Massive Fire damage to a foe. All allies gain Shield .		
 10405000	Massive earth DMG to a foe / Boost to double attack rate		
 10405002	Massive Fire damage to a foe. Inflict Mode Bar Cut on a foe in Overdrive.	Additional damage during Break.	
 10405003	Massive Earth damage to a foe. / Gain DEF Up .		
@@ -1064,6 +1066,8 @@
 10406145	Massive Light damage to a foe. All allies gain Supplemental DMG .	All allies also gain Mirror Image (1 time) .	
 10406146	Massive Light damage to a foe. All allies gain Critical Hit Rate Up .	Buff increased to 40% / 20% Critical Hit Rate Up . All allies also gain 10% DMG Amplified .	
 10406147	Massive Light damage to a foe. All allies gain Shield (1500) .		
+10406148	Massive Wind damage to a foe. Gain Bonus Wind DMG .		
+10406149	Massive Earth damage to a foe. Gain Drain .		
 10407000	Massive fire DMG to a foe / Blind		
 10407001	Massive Wind damage to a foe. Inflict Poisoned .		
 10407002	Massive Water damage to a foe. Gain Skill DMG Up .		
@@ -1089,7 +1093,7 @@
 10407022	Massive Light damage to a foe. All allies gain Attack All .		
 10407023	Massive Dark damage to a foe. All allies gain Attack All .		
 10407024	Massive dark DMG to a foe / Boost to ATK		
-10407025	Massive light DMG to a foe. Inflict 20% DEF Down .		
+10407025	Massive Light damage to a foe. Inflict 20% DEF Down .		
 10407026	Massive Wind damage to a foe. Gain Charge Bar +20% .		
 10407027	Massive Fire damage to a foe. Gain Charge Bar +20% .		
 10407028	Massive Water damage to a foe. Gain Charge Bar +20% .		
@@ -1180,7 +1184,7 @@
 10408008	Massive Earth damage to a foe. Restore 11% of all allies' HP (Healing cap: 2000). All allies gain Debuff Success Boosted .		
 10408009	Massive Light damage to a foe. Restore 11% of all allies' HP (Healing cap: 2000). All allies gain Debuff Success Boosted .		
 10408010	Massive Dark damage to a foe. Restore 11% of all allies' HP (Healing cap: 2000). All allies gain Debuff Success Boosted .		
-10408011	Massive earth DMG to a foe / Gain Repel (3 times) .	All allies gain Refresh .	
+10408011	Massive Earth damage to a foe. Gain Repel (3 times) .	All allies gain Refresh .	
 10408012	Massive Water damage to a foe. Inflict Poisoned (1000) .		
 10408013	Massive water DMG to a foe / Boost to charge bar		
 10408014	Massive Fire damage to a foe. Restore 16% of all allies' HP (Healing cap: 2000). All allies gain Debuff Success Boosted .		
@@ -1195,7 +1199,7 @@
 10408023	Massive Wind damage to a foe. Boost to ATK.		
 10408024	Massive Wind damage to a foe. Gain Mirror Image (1 time) .	Gain DA Up and TA Up .	
 10408025	Massive Wind damage to a foe. Gain a random Charge Bar Gain Up boost.		
-10408026	Massive water DMG to a foe / Charm	Massive water DMG to a foe / Charm effect / Remove 1 debuff from all allies	
+10408026	Massive Water damage to a foe. Inflict Charmed .	Massive Water damage to a foe. Inflict Charmed . Remove 1 debuff from all allies.	
 10408027	Massive light DMG to a foe / Refresh		
 10408028	Massive water DMG to a foe / Boost to charge bar		
 10408029	Massive fire DMG to a foe / Boost to charge bar / Triple Attack UP		
@@ -1300,8 +1304,9 @@
 10408134	Massive Earth damage to a foe. Putrefy effect. Boost to all allies' DEF (Stackable).		
 10408135	Massive Wind damage to a foe. Restore all allies' HP (Healing cap: 2021). Gain Armored .		
 10408136	Unworldly Earth damage to a foe (Damage cap: ~2,370,000). Plain damage to MC based on 30% of current HP.		
+10408137	Massive Light damage to a foe. Boost to light allies' DMG cap.		
 10409000	Massive Fire damage to a foe. Gain ATK Up .		
-10409001	Massive Earth damage to a foe. Bonus damage to foe in overdrive.	40% bonus Earth damage (Damage cap: ~200,000). Gain Charge Bar +10% .	
+10409001	Massive Earth damage to a foe. Bonus damage to foe in Overdrive.	40% bonus Earth damage (Damage cap: ~200,000). Gain Charge Bar +10% .	
 10409002	Massive Water damage to a foe. Gain Skill DMG Up .		
 10409003	Massive Light damage to a foe. Gain Charge Bar +20% .		
 10409004	Massive Dark damage to a foe. Gain Charge Bar +20% .		
@@ -1326,7 +1331,7 @@
 10409023	Massive Water damage to a foe. Gain TA Up .		
 10409024	Massive Dark damage to a foe. Gain TA Up .		
 10409025	Massive Fire damage to a foe. Gain Skill DMG Up .		
-10409026	Massive Dark damage to a foe. Inflict Blinded .	Boost to all allies' DEF.	
+10409026	Massive Dark damage to a foe. Inflict Blinded .	All allies gain DEF Up .	
 10409027	Massive Fire damage to a foe. Inflict 10% DEF Down .	Increased to 15% DEF Down .	
 10409028	Massive Light damage to a foe. Gain Charge Bar +20% .		
 10409029	Massive Fire damage to a foe. Gain Charge Bar +20% and 10% Charge Bar Gain Up .		

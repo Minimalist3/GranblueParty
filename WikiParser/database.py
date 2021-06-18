@@ -320,15 +320,6 @@ all_tables = [
         constraint="UNIQUE(icon, skillName)",
         conflictCondition="icon, skillName")
         .setUpdateOnConflict(),
-  Table('Weapon_Skill',
-        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
-          Col('slot', 'INT NOT NULL', primary=True),
-          Col('level', 'INT NOT NULL', primary=True),
-          Col('keyId', 'INT'),
-          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)'),
-          Col('description', 'TEXT')
-        ])
-        .setUpdateOnConflict(),
   Table('Weapon_Ougi',
         [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
           Col('ougiMLB', 'TEXT'),
@@ -355,6 +346,15 @@ all_tables = [
           Col('nameEn', 'TEXT NOT NULL'),
           Col('row', 'INT NOT NULL'),
           Col('family', 'INT NOT NULL')
+        ])
+        .setDropBeforeUpdate(),
+  Table('Weapon_Skill',
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('slot', 'INT NOT NULL', primary=True),
+          Col('level', 'INT NOT NULL', primary=True),
+          Col('keyId', 'INT'),
+          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)'),
+          Col('description', 'TEXT')
         ])
         .setDropBeforeUpdate(),
   Table('WeaponSpecialty',

@@ -14,7 +14,7 @@ export default {
   },
   actions: {
     addMessage({ state, commit }, value) {
-      if (process.env.VUE_ENV !== 'server' && value.timer !== false) {
+      if (VUE_ENV !== 'server' && value.timer !== false) {
         const index = state.last_message_index;
         setTimeout(() => commit('removeMessage', index), 1000 * 4);
         value.timer = true;

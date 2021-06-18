@@ -188,7 +188,7 @@
 3030092	1	Spatter	 Big Dark damage to a foe.
 3030092	2	Spatter ++	After 5★: Massive Dark damage to a foe. Inflict ATK Down and DEF Down.
 3030093	1	Mini Dragon Breath	Fledgling form: Big elemental damage to a foe.
-3030093	2	Full Dragon Breath	Adult form: Big elemental damage to a foe. 'Balanced and Attack type:' Damage greatly enhanced. 'Defense type:' Also gain Shield.
+3030093	2	Full Dragon Breath	Adult form: Big elemental damage to a foe. Reverts to fledgling form. Consumes buffs granted by Growing Pains. 'Defense type:' Also gain Shield.
 3030094	1	Brutal Smash	 Big Earth damage to a foe.
 3030095	1	Raging Blaze	 Big Fire damage to a foe.
 3030096	1	Ibur Athibar	 Big Fire damage to a foe.
@@ -516,7 +516,8 @@
 3040075	1	Alexander Plasma	 Massive Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap when the field effect Flare is active.) All allies gain Critical Up.
 3040076	1	Heavens On Fire	 450% Fire damage to a foe. Extend the duration of Hype on Aoidos by 2 turns.
 3040076	2	Heavens o' Misery	After 5★: 500% Fire damage to a foe. Extend the duration of Hype on all Fire allies by 2 turns.
-3040077	1	Die Jaegerkanone	 Massive Earth damage to a foe. All allies gain Earth ATK Up and DA Up.
+3040077	1	Die Jaegerkanone	 450% Earth damage to a foe. All allies gain Earth ATK Up and DA Up.
+3040077	2	Die Bandekanone	After 5★: 500% Earth damage to a foe. Inflict Earth Lowered (Stackable). All allies gain Earth ATK Up and DA Up.
 3040078	1	Gamma Ray	 Massive Light damage to a foe. Remove Hostility Boosted (Stackable) caused by Spinning Slash.
 3040079	1	Insane Style	 Massive Earth damage to a foe. (Boost to C.A. specs based on Divine Death Saw of Death lvl.)
 3040079	2	Psycho's Path	After 5★: Massive Earth damage to a foe. (Boost to C.A. specs based on Divine Death Saw of Death lvl.) Crazy is as crazy does! (Gain High Tension. Ends upon taking damage.)
@@ -618,7 +619,7 @@
 3040160	1	Nobile Convinzione	 450% Water damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Unrighteousness 1.)
 3040161	1	Power Conflagration	 450% Fire damage to a foe. Inflict Red Heat 3.
 3040162	1	Howitzer Fist	 450% Light damage to a foe. Gain Divinity (Summon).
-3040163	1	Eternal Reverie	 Unworldly Wind damage to a foe. All Wind allies gain ATK Boosted (1 time). (Consumes Hermit's Awakening to activate.)
+3040163	1	Eternal Reverie	 1250% Wind damage to a foe (Damage cap: ~2,420,000). All Wind allies gain ATK Boosted (1 time). (Consumes Hermit's Awakening to activate.)
 3040164	1	Golden Dawn	 Massive Earth damage to a foe. Caim's third skill resets to Blank Face.
 3040165	1	L'Ouverture de la Douleur	 450% Earth damage to a foe. 500% Bonus Earth damage (Damage cap: ~630,000).
 3040166	1	Orbital Breeze	 450% Wind damage to a foe. All allies gain Earth DMG Lowered and Earth Switch.
@@ -801,5 +802,9 @@
 3040333	1	Sakura Shadowfall	 450% Fire damage to a foe. 2-turn cut to Shion's skill cooldowns. (Bonus Fire damage based on number of katana-specialty allies in party [Max: 6 hits].)
 3040334	1	Levin Nouvelle Vague	 450% Dark damage to a foe. Gain Bonus Dark DMG. End cooldown for Electron Storm.
 3040335	1	Butterfly Effect: Dragonsbane	 1250% Wind damage to a foe (Damage cap: ~2,900,000). 2-turn cut to Narmaya's skill cooldowns. Gain Double Strike.
-3040336	1	Conte de la Memoire	 Massive Water damage to a foe. All allies gain Keen.
-3040337	1	Operazione Purgatorio	 Massive Light damage to a foe. All allies gain Vaccine.
+3040336	1	Conte de la Memoire	 450% Water damage to a foe. All allies gain Keen.
+3040337	1	Operazione Purgatorio	 450% Light damage to a foe. All Light allies gain Vaccine.
+3040338	1	Wheelie Nocturne	 450% Wind damage to a foe. Gain Dodge All 1. ('When below 25% HP:' Also remove 1 buff from a foe.)
+3040339	1	Charming Lesson	 450% Fire damage to a foe. Remove 1 debuff from all allies.
+3040340	1	Le Jardin De Joie	 Massive earth DMG to a foe / Spirit Blossom effect / 2-turn cut to Lennah's skill cooldowns
+3040341	1	Blazing Purification	 Restore light allies' HP / Remove 1 debuff / 15% boost to charge bars / 3-turn cut to Nehan's skill cooldowns

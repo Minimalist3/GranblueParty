@@ -68,6 +68,7 @@ let config = {
         }
        ]
       },
+      /*
       { test: /\.(png|jpg|gif|ico|txt|webp)$/,
         use: [
           {
@@ -78,20 +79,22 @@ let config = {
             },
           },
         ],
-      },
-/*      {
+      },*/
+      {
         test: /\.(png|jpg|gif|ico|txt|webp)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'src/[path][name].[ext]',
-        }*/
+          filename: '[name][ext]',
+        }
+      },
     ]
   },
   plugins: [
     new VueLoaderPlugin(),
+    /*
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
+    }),*/
     new ExtractCssPlugin({
       filename: devMode ? '[name].css' : '[name]-[contenthash].css',
       chunkFilename: devMode ? '[name].css' : '[name]-[contenthash].css',

@@ -68,6 +68,6 @@ const clientTitleMixin = {
 }
 
 // `VUE_ENV` can be injected with `webpack.DefinePlugin`
-export default process.env.VUE_ENV === 'server'
+export default VUE_ENV === 'server'
   ? serverTitleMixin
   : clientTitleMixin

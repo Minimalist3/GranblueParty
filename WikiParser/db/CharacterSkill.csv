@@ -424,8 +424,8 @@
 3030092	0	Console	1	Restore 100 + 15% of all allies' HP (Healing cap: 800). At level 45: Healing increased to 200 + 20% HP. Healing cap increased to 1200. At level 80: Healing cap further increased to 1500. All allies also gain Debuff Resistance Boosted and Charge Boost. 
 3030092	1	Guilt and Remorse	1	Dark damage to a foe (Damage cap ~240,000). Gain DA Up. At level 65: Effect enhanced. At level 90: Damage increased to 400% (Damage cap ~500,000). All allies also gain DA Up. 
 3030092	2	Mortal Sin	35	Inflict Break Boosted (Time) and Mode Bar Cut on a foe. 
-3030093	0	Whiplash	1	200%-250% Dark damage to a foe
-3030093	1	Growing Pains	1	Forms into adult for boost to ATK & DEF ''(Uses 50% of charge bar)'' At level 65: Effect enhanced
+3030093	0	Whiplash	1	200%-250% Dark damage to a foe.
+3030093	1	Growing Pains	1	Forms into adult. Gain ATK Boosted (Malinda) and DEF Boosted (Malinda). (Consumes 50% of charge bar.)
 3030094	0	Foresight	1	Gain DEF Up and Hostility Boosted.
 3030094	1	Iron Guardian	1	Gain Substitute. At level 65: Also gain 20% DMG Cut.
 3030094	2	Svel II	35	All allies gain 40% DMG Cut.
@@ -1125,7 +1125,7 @@
 3040043	3	Luminiera Merge	90	Gain Light-element qualities. (Consumes 50% of charge bar.)
 3040044	0	First Dance: Kagura	1	Restore 30% of all allies' HP (Healing cap: 2000). All allies gain Revitalize and Bonus Water DMG. ('When a foe uses a special attack:' Consumes Yonagi Rite to auto-activate.)
 3040044	1	Sixth Dance: Bizen	1	Inflict ATK Down and DEF Down on all foes. At level 100: Also inflict Debuff Resistance Lowered. ('From 2nd cast onward:' Also inflict ATK Lowered (Stackable) and DEF Lowered (Stackable).) 
-3040044	2	Closing Dance: Tokiyomi	45	300% Water damage to a foe (Damage cap: ~420,000). Inflict Delay. At level 90: Also inflict Foxflame 4. ('From 2nd cast onward:' Also inflict Special Attack DMG Lowered 4.) 
+3040044	2	Closing Dance: Tokiyomi	45	300% Water damage to a foe (Damage cap: ~420,000). Inflict Delay. At level 90: Now hits all foes. Also inflict Foxflame 4. ('From 2nd cast onward:' Also inflict Special Attack DMG Lowered 4.) 
 3040045	0	Impulse Slash	1	100% Light and Fire damage to a foe (Damage cap: Light ~700,000; Fire ~250,000). Inflict Light DEF Lowered. At level 55: Damage increased to 125%.
 3040045	1	Electron Blade	1	90% Light damage to all foes (Damage cap: ~600,000). Inflict Delay. At level 75: Damage increased to 100%. At level 90: Damage further increased to 150%. 'Consume Lightning's Judgment:' Also gain Guaranteed TA.
 3040045	2	Lightning Burst	45	Gain Skill DMG Boosted (Stackable) and Electrified. At level 100: Also gain Skill DMG Cap Boosted (1 time) and Readying Skill (Double Strike). 
@@ -1230,9 +1230,10 @@
 3040076	0	Judgment Night	1	Gain Hyped. At level 100: Also gain DMG Cap Boosted based on Hype lvl. 'When Aoidos's Hype is at 4:' All other allies also gain Hype.
 3040076	1	Bloody Garden	1	Gain DA Up, TA Up, and Hostility Boosted. At level 90: No longer gain Hostility Boosted. Boost to TA Up's strength based on Hype lvl.
 3040076	2	Legendary Warriors	45	All allies gain Hyped.
-3040077	0	Intercept II	1	Gain Counters on Dodge and Hostility Boosted. (Consumes 30% of charge bar.)
+3040077	0	Intercept II / Aim and Detonate	1	Gain Counters on Dodge and Hostility Boosted. (Consumes 30% of charge bar.) At level 90: Charge bar cost removed. Counter buff upgraded to Counters on Dodge. Also gain Critical Up and Keen. 
 3040077	1	Sudden Attack	1	Grant an Earth ally Armed and Uplifted. At level 75: .
-3040077	2	Autoignition	45	Gain C.A. Instant Standby and Autoignition. Remove 1 debuff from caster.
+3040077	2	Autoignition	45	Gain C.A. Instant Standby and Autoignition. Remove 1 debuff from caster. At level 100: Now removes all debuffs from caster. Autoignition upgraded to Autoignition+. (Gain C.A. Reactivation (1 time) when Autoignition+ ends.)
+3040077	3	Gun of Ties	95	1000% Earth damage to a foe (Damage cap: ~1,300,000). Gain 5 Bluesky Bullet.
 3040078	0	Spinning Slash	1	450% Light damage to a foe (Damage cap: 630,000). Gain Hostility Boosted (Stackable). (Consumes 20% of charge bar.) 'Hidden Effect:' +10 to Stun for 180 seconds. (When Stun reaches 100, inflict Stunned on foe.) At level 55: Damage increased to 500%.
 3040078	1	Prism Halo	1	Gain Mirror Image.
 3040078	2	Thunder	45	300%-350% Light damage to all foes (Damage cap: ~470,000). Randomly inflict one of three debuffs: ATK Down Stack, DEF Down Stack, or Debuff Resistance Lowered (Stackable).
@@ -1941,7 +1942,7 @@
 3040308	2	Seventh Form: Drop Ripple Thrust-Curve	45	400% Water damage to a foe (Damage cap: ~630,000). Gain Counter on DMG. 
 3040309	0	First Form: Unknowing Fire	1	700% Fire damage to a foe (Damage cap: ~800,000). Gain Guaranteed TA.
 3040309	1	Second Form: Rising Scorching Sun	1	500% Fire damage to a foe (Damage cap: ~630,000). Inflict Delay.
-3040309	2	Fourth Form: Blooming Flame Undulation	45	300% Fire damage to all foes. All allies gain 70% DMG Cut.
+3040309	2	Fourth Form: Blooming Flame Undulation	45	300% Fire damage to all foes (Damage cap: ~420,000). All allies gain 70% DMG Cut.
 3040310	0	Six Stings	1	6-hit, 150% Wind damage to a foe (Damage cap: ~100,000 per hit). Inflict Poison and Wisteria Poison. (Boost to Poison specs based on Dosage lvl. Also inflict Paralyzed 1 at lvl 5.) 
 3040310	1	Poison Administrator	1	Gain Insect Breathing. Raise Dosage lvl by 1 (Max: 5).
 3040310	2	Pharmacology	45	Restore 20% of all allies' HP (Healing cap: 2000) and remove 1 debuff. ('When Dosage lvl is 5:' All allies also gain Charge Bar.)
@@ -2021,9 +2022,21 @@
 3040335	0	Effervescent Hibiscus	1	Gain Butterfly Effect and Piercing Sight. 
 3040335	1	Isolated Idling	1	Gain Substituted (All-Ally), Counters on Dodge/DMG, and Repel. 
 3040335	2	Dance of Pink Petals	45	Gain Falling Mist, Critical Up, and Keen. 
-3040336	0	Souvenance	1	Use the Gift of Visions to replicate caster's or an ally's skill. Gain Critical Hit Rate Boosted.
-3040336	1	Reprise	1	5-hit Water damage to random foes. Inflict Water Lowered (Stackable).
-3040336	2	Roncevaux	45	Inflict Blinded 3, Petrified 3, and Accuracy Lowered 3 to a foe.
-3040337	0	Anestesia	1	Special buffs to light allies (Boost to ATK and DEF) / Reduce turn-based DMG taken
-3040337	1	Iniezione	1	Light damage to all foes. Gain Healing Boosted and Healing Cap Boosted. Gain Instant Charge.
-3040337	2	Assistenza	45	Switch to Intensive Care mode (At end of turn: Restore light allies' HP / Remove 1 debuff) (Can't normal attack / Ends upon recast)
+3040336	0	Souvenance	1	Use the Gift of Visions to replicate caster's or an ally's skill. Gain Critical Hit Rate Boosted. 
+3040336	1	Reprise	1	5-hit, 100% Water damage to random foes (Damage cap: ~95,000 per hit). Inflict Water Lowered (Stackable). 
+3040336	2	Roncevaux	45	Inflict Blinded 3, Petrified 3, and Accuracy Lowered 3 on a foe.
+3040337	0	Anestesia	1	All Light allies gain Anestesia.
+3040337	1	Iniezione	1	450% Light damage to all foes (Damage cap: ~730,000). Gain Healing Boosted, Healing Cap Boosted, and Instant Charge. 
+3040337	2	Assistenza	45	Switch to Intensive Care mode. ('At end of turn:' Restore 20% of Light allies' HP [Healing cap: 1000] and remove 1 debuff. Can't normal attack. Ends upon recast.) 
+3040338	0	Full Throttle	1	Sacrifice 80% of caster's current HP to gain Unchallenged and Jammed. ('When below 25% HP:' Also gain Undying (Can't be removed).)
+3040338	1	King's March	1	Gain DMG Amplified and Bonus Wind DMG. ('When below 25% HP:' Affects all allies.)
+3040338	2	It's Showtime!	45	Fill 1 charge diamond on a foe. If successful, all allies gain Charge Bar, C.A. DMG Boosted (1 time), and C.A. DMG Cap Boosted (1 time). 
+3040339	0	Lucent Charm	1	All allies gain Fire ATK Up and Charge Bar Gain Boosted. Restore 20% of all allies' HP (Healing cap: 2000). 
+3040339	1	Enchanting Mirage	1	All allies gain Veil, Unchallenged, and Dispel Cancel.
+3040339	2	Enchanting Fantasy	45	Fill 1 charge diamond on a foe. If successful, all allies gain Shield and Wind DMG Lowered. 
+3040340	0	Ville Fleurie	1	6-hit earth DMG to random foes / Hit to all foes' earth DEF (Stackable) (Activates twice when a foe has Spirit Blossom effect)
+3040340	1	Priere	1	Restore all allies' HP / Remove 1 debuff
+3040340	2	La Main Vert	45	Absorb all allies' charge bars and boost caster's charge bar / Reduce all allies' DMG taken / Boost to healing cap 
+3040341	0	Enlightenment	1	Zen effect to all other light allies (While in effect: Boost to ATK / Bonus Light DMG effect / Supplemental DMG / Sharp hit to debuff resistance)
+3040341	1	Six-Wolf Tonic	1	Wolf Tonic effect to all other light allies (While in effect: Deals triple attacks / Boost to charge bar gain and dodge rate / Sharp hit to DEF)
+3040341	2	Nirvana	45	All other light allies attack twice each turn (30% hit to target allies' max HP [Max: 90%])
