@@ -57,13 +57,13 @@ if (devMode) {
       publicPath: 'http://localhost:8081/dist_dev/',
     },
     devServer: {
-      writeToDisk: true,
-      publicPath: "http://localhost:8081/",
       port: 8081,
       hot: true,
-      watchOptions: {
-        aggregateTimeout: 300,
-        poll: true,
+      devMiddleware: {
+        writeToDisk: true,
+      },
+      static: {
+        publicPath: "http://localhost:8081/",
       },
       historyApiFallback: true,
       headers: {
@@ -71,7 +71,6 @@ if (devMode) {
       },
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       // Ignore node_modules to lower CPU usage with dev server
       new webpack.WatchIgnorePlugin({paths: [
         path.join(__dirname, '.git'),

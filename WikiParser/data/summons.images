@@ -178,6 +178,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/par
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040255000.jpg -O ./unit_small/2040255000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040225000.jpg -O ./unit/2040225000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040225000.jpg -O ./unit_small/2040225000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040406000.jpg -O ./unit/2040406000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040406000.jpg -O ./unit_small/2040406000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040099000.jpg -O ./unit/2040099000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040099000.jpg -O ./unit_small/2040099000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040049000.jpg -O ./unit/2040049000.jpg
@@ -196,6 +198,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/par
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040384000.jpg -O ./unit_small/2040384000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040311000.jpg -O ./unit/2040311000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040311000.jpg -O ./unit_small/2040311000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040401000.jpg -O ./unit/2040401000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040401000.jpg -O ./unit_small/2040401000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2030031000.jpg -O ./unit/2030031000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2030031000.jpg -O ./unit_small/2030031000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040071000.jpg -O ./unit/2040071000.jpg
@@ -310,6 +314,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/par
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040058000.jpg -O ./unit_small/2040058000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040252000.jpg -O ./unit/2040252000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040252000.jpg -O ./unit_small/2040252000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040405000.jpg -O ./unit/2040405000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040405000.jpg -O ./unit_small/2040405000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040301000.jpg -O ./unit/2040301000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040301000.jpg -O ./unit_small/2040301000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040129000.jpg -O ./unit/2040129000.jpg
@@ -358,6 +364,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/par
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040368000.jpg -O ./unit_small/2040368000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040015000.jpg -O ./unit/2040015000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040015000.jpg -O ./unit_small/2040015000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040403000.jpg -O ./unit/2040403000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040403000.jpg -O ./unit_small/2040403000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040043000.jpg -O ./unit/2040043000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040043000.jpg -O ./unit_small/2040043000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040323000.jpg -O ./unit/2040323000.jpg
@@ -556,6 +564,8 @@ wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/par
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040188000.jpg -O ./unit_small/2040188000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040124000.jpg -O ./unit/2040124000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040124000.jpg -O ./unit_small/2040124000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2040402000.jpg -O ./unit/2040402000.jpg
+wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2040402000.jpg -O ./unit_small/2040402000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2030000000.jpg -O ./unit/2030000000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/2030000000.jpg -O ./unit_small/2030000000.jpg
 wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/2030062000.jpg -O ./unit/2030062000.jpg

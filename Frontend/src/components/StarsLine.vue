@@ -81,7 +81,7 @@ export default {
       if ( ! this.isStarEnabled(index + 5)) {
         return '/img/star_v0.png';
       }
-      return '/img/star_v1.png';
+      return '/img/star_v' + index + '.png';
       //return '/img/star_v' + index + '.png';
     },
     getTranscendanceClass(index) {

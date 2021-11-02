@@ -314,7 +314,7 @@ export default {
   },
   methods: {
     MAX_AWAKENING() {
-      return 7;
+      return 8;
     },
     getName(element) {
       if (this.isLangEnglish) {

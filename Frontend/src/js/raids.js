@@ -544,6 +544,15 @@ const CAT_IMPOSSIBLE = {
         name: 'Luminiera Malice',
         icon: 'indicuscentrum',
       },
+      '305291/1/0/106': {
+        name: 'Anima-Animus Core',
+        namejp: 'アニマ・アニムス・コア',
+        icon: 'atercentrum',
+      },
+      '305291/1/0/103': {
+        name: 'Anima-Animus Core',
+        icon: 'luteuscentrum',
+      },
       '305251/1/0/103': {
         name: 'Phronesis',
         namejp: 'フロネシス',
@@ -658,9 +667,13 @@ const CAT_IMPOSSIBLE = {
         name: 'Lucilius (Hard)',
         namejp: 'ルシファーＨＬ',
       },
-      'ht305181/1/0/533': {
+      '305181/1/0/533': {
         name: 'Beelzebub',
         namejp: 'ベルゼバブ',
+      },
+      '305281/1/0/533': {
+        name: 'Belial',
+        namejp: 'ベリアル',
       },
     }
   },

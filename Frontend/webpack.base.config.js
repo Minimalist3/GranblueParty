@@ -68,18 +68,6 @@ let config = {
         }
        ]
       },
-      /*
-      { test: /\.(png|jpg|gif|ico|txt|webp)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: 'src',
-            },
-          },
-        ],
-      },*/
       {
         test: /\.(png|jpg|gif|ico|txt|webp)$/,
         type: 'asset/resource',

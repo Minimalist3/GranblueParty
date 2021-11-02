@@ -2,7 +2,6 @@
   <div class="flex flex-row flex-wrap">
     <!-- Main weapon -->
     <box-weapon
-      class="mr-2"
       :object="objects[0]"
       :skills="skills[0]"
       :showLevel="showLevel"
@@ -13,7 +12,7 @@
 
     <!-- Grid -->
     <div class="flex flex-col flex-wrap">
-      <div class="flex flex-row flex-shrink" v-for="(line, lineIndex) in getIndexes" :key="lineIndex">
+      <div class="flex flex-row flex-shrink px-2" v-for="(line, lineIndex) in getIndexes" :key="lineIndex">
         <span v-for="index in line" :key="index">
           <box-weapon
             :object="objects[index]"
@@ -25,7 +24,7 @@
           ></box-weapon>
         </span>
       </div>
-      <div v-if="showArcarum" class="flex flex-row flex-shrink">
+      <div v-if="showArcarum" class="flex flex-row flex-shrink bg-secondary rounded px-2">
         <span v-for="index in [10, 11, 12]" :key="index">
           <box-weapon
             :object="objects[index]"

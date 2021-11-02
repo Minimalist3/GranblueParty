@@ -61,10 +61,11 @@ import partiesModule from '@/store/modules/parties'
 
 import Dropdown from '@/components/common/Dropdown.vue';
 
+// Duplicated in store/modules/party-builder.js
 const DEFAULT_VALUES = {
   classe: {},
   characters: [{}, {}, {}, {}, {}],
-  summons: [{}, {}, {}, {}, {}, {}],
+  summons: [{}, {}, {}, {}, {}, {}, {}, {}],
   weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
 }
 // Helper to match categories with proper default values

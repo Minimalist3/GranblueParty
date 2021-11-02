@@ -73,7 +73,7 @@
 2040009	Quetzalcoatl	ケツァルカトル	3	3	2	1	1000	2014-04-16	320	1895	\N	\N	125	755	\N	\N	\N
 2040010	Cocytus	コキュートス	3	4	2	3	\N	2014-04-24	220	1430	1670	\N	100	606	710	\N	\N
 2040011	Nephthys	ネフティス	3	3	2	1	\N	2014-04-30	240	1450	\N	\N	94	577	\N	\N	\N
-2040012	Lich	リッチ	3	4	2	5	1000	2014-05-14	390	2240	2700	\N	111	700	850	\N	\N
+2040012	Lich (Summon)	リッチ	3	4	2	5	1000	2014-05-14	390	2240	2700	\N	111	700	850	\N	\N
 2040013	Baal (Summon)	バアル	3	4	2	2	1000	2014-05-31	310	1900	2300	\N	127	755	910	\N	{"0":[{"percent":40,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":40,"element":"light","aura_type":"elemental","stat":"atk"}],"3":[{"percent":60,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":60,"element":"light","aura_type":"elemental","stat":"atk"}],"4":[{"percent":70,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":70,"element":"light","aura_type":"elemental","stat":"atk"},{"percent":25,"element":"earth","aura_type":"elemental","stat":"hp"},{"percent":25,"element":"light","aura_type":"elemental","stat":"hp"}]}
 2040014	Vohu Manah	ウォフマナフ	3	4	2	2	\N	2014-05-15	230	1440	1680	\N	94	579	680	\N	\N
 2040015	Manawydan	マナウィダン	3	3	2	3	\N	2014-05-31	225	1435	\N	\N	95	580	\N	\N	\N
@@ -319,3 +319,8 @@
 2040398	Wilnas	ウィルナス	3	3	2	0	1000	2021-04-30	399	2349	\N	\N	127	771	\N	\N	{"0":[{"percent":100,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"fire","aura_type":"optimus","stat":"atk","slot":"sub"}],"3":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"},{"percent":20,"element":"fire","aura_type":"optimus","stat":"atk","slot":"sub"}]}
 2040399	Xeno Diablo	ゼノ・ディアボロス	3	4	2	5	\N	2021-05-08	280	1642	2323	\N	101	644	916	\N	\N
 2040400	Destiny Nocturnes	宿命夜想曲･特攻隊	3	3	2	2	\N	2021-05-28	255	1582	\N	\N	88	548	\N	\N	\N
+2040401	Galleon	ガレヲン	3	3	2	2	1000	2021-06-30	324	2049	\N	\N	142	831	\N	\N	\N
+2040402	Tiamat	ティアマト	3	4	2	1	1030	2021-07-16	315	1850	2230	\N	140	850	1030	\N	\N
+2040403	Mandrake	マンドラゴラ	3	4	2	2	1030	2021-08-16	220	1620	1970	\N	162	905	1090	\N	\N
+2040405	Kotaro Katsura and Elizabeth	桂小太郎&エリザベス	3	4	2	1	\N	2021-10-20	200	1374	1668	\N	95	600	726	\N	\N
+2040406	Ewiyar	イーウィヤ	3	3	2	1	1000	2021-10-31	365	2145	\N	\N	134	812	\N	\N	\N

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row flex-wrap">
-    <span class="flex flex-col mr-2">
-      <span class="bg-tertiary rounded-lg text-center">Main</span>        
+    <span class="flex flex-col px-2">
+      <span class="bg-tertiary rounded-lg text-center mb-1">Main</span>        
 
       <box-summon
         :object="objects[0]"
@@ -12,8 +12,8 @@
       ></box-summon>
     </span>
 
-    <div class="flex flex-col flex-wrap pr-2">
-      <div class="flex flex-row justify-around">
+    <span class="flex flex-col flex-wrap px-2">
+      <div class="flex flex-row justify-around mb-1">
         <span>Atk {{ getStats.atk }}</span>
         <span>HP {{ getStats.hp }}</span>
       </div>
@@ -29,10 +29,10 @@
           ></box-summon>
         </span>
       </div>
-    </div>
+    </span>
 
-    <span class="flex flex-col">
-      <span class="bg-tertiary rounded-lg text-center">Friend</span>        
+    <span class="flex flex-col px-2">
+      <span class="bg-tertiary rounded-lg text-center mb-1">Friend</span>        
 
       <box-summon
         :object="objects[5]"
@@ -40,6 +40,26 @@
         @click-portrait="showModal(5)"
         @drag-portrait="drag($event, 5)"
         @swap="swap($event, 5)"
+      ></box-summon>
+    </span>
+
+    <!-- Sub Aura -->
+    <span class="flex flex-col bg-secondary rounded-lg px-2 pb-2">
+      <span class="bg-tertiary rounded-lg text-center mb-1">Sub Aura</span>        
+
+      <box-summon
+        :object="objects[6]"
+        :showLevel="showLevel"
+        @click-portrait="showModal(6)"
+        @drag-portrait="drag($event, 6)"
+        @swap="swap($event, 6)"
+      ></box-summon>
+      <box-summon
+        :object="objects[7]"
+        :showLevel="showLevel"
+        @click-portrait="showModal(7)"
+        @drag-portrait="drag($event, 7)"
+        @swap="swap($event, 7)"
       ></box-summon>
     </span>
 

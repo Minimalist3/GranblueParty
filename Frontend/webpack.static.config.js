@@ -5,8 +5,7 @@ const path = require("path");
 const baseConfig = require('./webpack.base.config.js')
 
 const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozjpeg = require('imagemin-mozjpeg');
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -21,35 +20,26 @@ module.exports = merge(baseConfig, {
   },
   module: {
     rules: [
-      { test: /\.(png|jpg|gif|ico|txt|webp)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: 'src',
-            },
-          },
-        ],
-      },
-/*      {
+      {
         test: /\.(png|jpg|gif|ico|txt|webp)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'src/[path][name].[ext]',
-        }*/
+          filename: '[name][ext]',
+        }
+      },
     ]
   },
   plugins: [
     new CopyPlugin( { patterns: [
       { from: path.resolve(__dirname, 'src', 'img'), to: 'img' }
     ]} ),
-    new ImageminPlugin({
-      cacheFolder: path.resolve(__dirname, 'cache'),
-      minFileSize: 1024,
-      plugins: [
-        imageminMozjpeg({quality: 85}),
-      ],
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+        ],
+      },
     }),
     new RemovePlugin({
       after: {

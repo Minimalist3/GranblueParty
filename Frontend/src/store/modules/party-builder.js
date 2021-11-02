@@ -13,9 +13,10 @@ export default {
   state() {
     return {
       percent_HP: 100,
+      // Duplicated in components/Parties.vue
       classe: {},
       characters: [{}, {}, {}, {}, {}],
-      summons: [{}, {}, {}, {}, {}, {}],
+      summons: [{}, {}, {}, {}, {}, {}, {}, {}],
       weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
       weapons_skills: [[], [], [], [], [], [], [], [], [], [], [], [], []],
       actions: [],

@@ -50,8 +50,7 @@
             <th>Omega</th>
             <th>Ex</th>
             <th><abbr title="Character-specific unique attack ratio">Chara</abbr></th>
-            <th><abbr title="Optimus Critical ratio">Crit N</abbr></th>
-            <th><abbr title="Omega Critical ratio">Crit &Omega;</abbr></th>
+            <th><abbr title="Critical damage ratio">Crit</abbr></th>
             <th>Atk cap</th>
             <!--<th>Total</th>
             <th><abbr title="Capped attack with crit ratio (probability %)">Capped w/crit</abbr></th>-->
@@ -67,8 +66,7 @@
             <td>{{ (chara.omega_atk * 100).toFixed(0) }}%</td>
             <td>{{ (chara.ex_atk * 100).toFixed(0) }}%</td>
             <td>{{ (chara.chara_atk * 100).toFixed(0) }}%</td>
-            <td>{{ Math.floor(chara.optimus_crit * 100) }}%</td>
-            <td>{{ Math.floor(chara.omega_crit * 100) }}%</td>
+            <td>{{ Math.floor(chara.crit * 100) }}%</td>
             <td>{{ ((chara.atk_cap-1) * 100).toFixed(0) }}%</td>                  
             <!--<td>{{ chara.total_atk }}</td>
             <td>
@@ -211,6 +209,17 @@ export default {
       })
 
       this.summons.slice(1, 5).forEach(summon => {
+        if ( ! Utils.isEmpty(summon) && summon.current_data !== undefined) {
+          for (let aura of summon.data[summon.current_data]) {
+            if (aura.slot === 'sub' && (chara_element === aura.element || aura.element === "any")) {
+              // TODO formula
+              auras[aura.aura_type][aura.stat] += aura.percent / 100;
+            }
+          }
+        }
+      })
+
+      this.summons.slice(6, 8).forEach(summon => {
         if ( ! Utils.isEmpty(summon) && summon.current_data !== undefined) {
           for (let aura of summon.data[summon.current_data]) {
             if (aura.slot === 'sub' && (chara_element === aura.element || aura.element === "any")) {
@@ -407,17 +416,15 @@ export default {
           }
 
           // Crit proba
-          let crit_array = [ { proba: 1, value: 0 } ];
-          data.optimus_crit = 0;
-          data.omega_crit = 0;
+          //let crit_array = [ { proba: 1, value: 0 } ];
+          data.crit = 0;
           if (elem_sup > 0 || this.enemy_element === "none") {
-            data.optimus_crit = data.ratio.optimus.crit * (1 + chara_auras.optimus.atk) + data.ratio.normal.crit;
-            data.omega_crit = data.ratio.omega.crit * (1 + chara_auras.omega.atk);
-
-            crit_array = addToProbabilityTree(crit_array, Math.min(data.optimus_crit, 1), 0.5);
-            crit_array = addToProbabilityTree(crit_array, Math.min(data.omega_crit, 1), 0.5);
+            data.crit = data.ratio.omega.crit * (1 + chara_auras.omega.atk)
+                      + data.ratio.optimus.crit * (1 + chara_auras.optimus.atk)
+                      + data.ratio.normal.crit;
+            //crit_array = addToProbabilityTree(crit_array, Math.min(data.crit, 1), 0.5);
           }
-
+/*
           // Add proba of duplicate values
           let crit_map = {};
           crit_array.forEach(v => {
@@ -438,7 +445,7 @@ export default {
           data.total_atk_crit = crit_array;
 
           // Supplemental damage
-          data.supplemental_dmg = Object.values(data.ratio).reduce((acc, cur) => acc + cur.supplemental_dmg, 0);
+          supplemental_dmg = Object.values(data.ratio).reduce((acc, cur) => acc + cur.supplemental_dmg, 0);
 
           // Attack damage cap
           const cap_array = [
@@ -451,23 +458,23 @@ export default {
             v.capped = false;
 
             if (v.atk > cap_array[3]) {
-              v.atk_capped = Math.floor(cap_array[3] + (v.atk - cap_array[3]) * 0.01) + data.supplemental_dmg;
+              v.atk_capped = Math.floor(cap_array[3] + (v.atk - cap_array[3]) * 0.01) + supplemental_dmg;
               v.capped = true;
             }
             else if (v.atk > cap_array[2]) {
-              v.atk_capped = Math.floor(cap_array[2] + (v.atk - cap_array[2]) * 0.05) + data.supplemental_dmg;
+              v.atk_capped = Math.floor(cap_array[2] + (v.atk - cap_array[2]) * 0.05) + supplemental_dmg;
             }
             else if (v.atk > cap_array[1]) {
-              v.atk_capped = Math.floor(cap_array[1] + (v.atk - cap_array[1]) * 0.60) + data.supplemental_dmg;
+              v.atk_capped = Math.floor(cap_array[1] + (v.atk - cap_array[1]) * 0.60) + supplemental_dmg;
             }
             else if (v.atk > cap_array[0]) {
-              v.atk_capped = Math.floor(cap_array[0] + (v.atk - cap_array[0]) * 0.80) + data.supplemental_dmg;
+              v.atk_capped = Math.floor(cap_array[0] + (v.atk - cap_array[0]) * 0.80) + supplemental_dmg;
             }
             else {
-              v.atk_capped = Math.floor(v.atk) + data.supplemental_dmg;
+              v.atk_capped = Math.floor(v.atk) + supplemental_dmg;
             }
           });
-
+*/
           stats.push(data);
         }
       }

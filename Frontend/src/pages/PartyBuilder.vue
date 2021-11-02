@@ -98,7 +98,7 @@
     <my-parties @update-bookmarklet="updateBookmarklet()"></my-parties>
 
     <!-- Main layout -->
-    <div class="flex flex-row flex-wrap justify-center">
+    <div class="flex flex-row flex-wrap justify-center items-start">
       <group-class :editMode="edit_mode" class="pr-2"></group-class>
 
       <group-characters :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-characters>
