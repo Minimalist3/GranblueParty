@@ -811,9 +811,9 @@
 3030231	0	Spear of Arvess	1	Inflict Arvess Fermare 3 and Burn on a foe.
 3030231	1	Rhapsody	1	Gain Salted Wound (Arvess Fermare) and ATK Up.
 3030231	2	Signo Drive	35	Gain TA Up.
-3030232	0	Ramen Mania	1	All allies gain Raaamen. Inflict Addiction and remove all non-permanent buffs on all allies.
+3030232	0	Ramen Mania	1	All allies gain Raaamen. ('When Raaamen ends:' Ally self-inflicts Addiction.)
 3030232	1	Extra Spicy Tanmen	1	All allies gain Charge Boost.
-3030232	2	To the Last Drop	35	Remove Addiction from all allies.
+3030232	2	To the Last Drop	35	Gain Instant Charge. End cooldown for other skills.
 3030233	0	Bringer of Blessings	1	All allies gain DEF Boosted and Fire ATK Boosted. 
 3030233	1	Force Novus	1	Inflict Wind ATK Lowered and Fire DEF Lowered on all foes. 
 3030233	2	Thunder	35	Fire damage to all foes (Damage cap: ~480,000). Randomly inflict one of three debuffs: ATK Down Stack, DEF Down Stack, or Debuff Resistance Lowered (Stackable).
@@ -1203,9 +1203,10 @@
 3040067	1	Alpha Decay	1	Inflict DEF Down Stack on a foe. Raise foe's Alpha Decay by 4 stacks and lower Beta Decay by 1 stack.
 3040067	2	Beta Decay	1	Inflict ATK Down Stack on a foe. Raise foe's Beta Decay by 4 stacks and lower Alpha Decay by 1 stack.
 3040067	3	Amorphous	45	Gain Radioactive Mode. Ends on recast.
-3040068	0	Elegant Rose Barrier	1	Activate Rose Barrier. Rose Barrier gains 1 stack when Rosetta is damaged (Max: 5 stacks). Drains charge bar based on stack level for each turn Rose Barrier is active. Recast skill to release Rose Barrier. When released, all allies gain buffs based on the number of stacks. ''(costs 5% charge bar)''. At level 55: Charge bar cost removed.
-3040068	1	Iron Maiden	1	150%-200% Wind damage to all foes (Damage cap: ~450,000). All allies gain DMG Boosted. At level 75: Damage increased to 200%-250%.
-3040068	2	Imrryr	45	Drain up to 15% charge bar from all allies and convert to caster's charge bar (Max: 45%).
+3040068	0	Elegant Rose Barrier	1	Deploy a Rose Barrier. (Consumes 30% of charge bar every turn. 'When recast, charge bar is below 30%, or Rose Barrier's lvl is 5:' Releases Rose Barrier and grants buffs to all allies.)
+3040068	1	Iron Maiden	1	150%-200% Wind damage to all foes (Damage cap: ~450,000). All allies gain DMG Boosted. At level 90: Damage increased to 500% and damage cap increased to ~730,000. All allies no longer gain DMG Boosted. All allies gain Rose's Affection instead. 
+3040068	2	Imrryr	45	Gain Substituted (All-Ally) and Armored. At level 100: Also gain Boost to Charge Bar upon Taking DMG (Max: 50%).
+3040068	3	Timeless Reign	95	8-hit, 75% Wind damage to random foes (Damage cap: ~75,000 per hit). Inflict Everlasting Rose on all foes. 
 3040069	0	Flamek Thunder	1	Earth damage to all foes (Damage cap: ~480,000). Inflict Paralyzed 2. At level 55: Damage increased to 250-350% .
 3040069	1	Anti-Social	1	 All allies gain Critical Hit Rate Boosted. (Consumes 20% of charge bar.)
 3040069	2	Slow Death	45	8-hit, 30%-35% Earth damage to random foes (Damage cap: ~60,000 per hit) . Gain Charge Boost.
@@ -1398,9 +1399,9 @@
 3040132	0	Anti-Collision Spell	1	All allies gain DEF Up. 'Consume 1 Spirit (Anne) 1:' All allies also gain Armored. 
 3040132	1	Follow the Princess	1	Gain Counters on DMG and Hostility Boosted. 'Consume 1 Spirit (Anne) 1:' Also gain DEF Boosted (Stackable / Unremovable). At level 75: Effect enhanced.
 3040132	2	Radiant Calling	45	Restore 30% of max HP (Healing cap: 1500). 'Consume 1 Spirit (Anne) 1:' Healing increased to 40%. Healing cap increased to 3000. Also remove all debuffs from Anne.
-3040133	0	Sledge Strike / Cry Thunder	1	'Nina:' 1000% Fire damage to a foe if skill is successful (Damage cap: ~700,000). 'Dragon:' 1600% Fire damage to a foe if skill is successful (Damage cap: ~1,400,000). 
-3040133	1	Half Dragon / Fury of the Storm	1	'Nina:' Gain 20% Skill Precision Boosted and DMG Cap Boosted. 'Dragon:' 10-hit, 100% Fire damage to random foes (Damage cap: ~110,000 per hit). Inflict Fire DEF Lowered on all foes. 
-3040133	2	Full Acceleration / Gloria	45	'Nina:' Gain DA Up and Debuff Resistance Boosted. 'Dragon:' Restore 55% of caster's HP (Healing cap: 3000). End cooldown for other skills. 
+3040133	0	Sledge Strike	1	1000% Fire damage to a foe if skill is successful (Damage cap: ~700,000). 
+3040133	1	Half Dragon	1	Gain 20% Skill Precision Boosted and DMG Cap Boosted. 
+3040133	2	Full Acceleration	45	Gain DA Up and Debuff Resistance Boosted. 
 3040134	0	The Maid Variable	1	350% Light damage to a foe (Damage cap: ~410,000). Switch to Claudia. Gain Servant's Oath.
 3040134	1	Maximum Service	1	Grant the Main Character ATK Up, DA Up, and Bonus Light DMG. At level 75: Effect enhanced.
 3040134	2	Keeping It Clean	1	250% Light damage to all foes (Damage cap: ~470,000) and remove 1 buff. 
@@ -1634,7 +1635,7 @@
 3040207	1	Get Over Hair	1	500% Light damage to a foe (Damage cap: ~800,000) and remove 1 buff. Gain 1 Chokoleit.
 3040207	2	Decorate	45	Gain Substituted (All-Ally), Armored, and Skill DMG Boosted. 
 3040208	0	Mirage Raid	1	700%-800% Wind damage to a foe (Damage cap: ~730,000). Gain Mirror Image.
-3040208	1	Reckoning Day	1	Gain Reckoning Day. (Guaranteed triple attacks and 15% Bonus Wind DMG effect. Ends upon taking damage.) 
+3040208	1	Reckoning Day	1	Gain Reckoning Day. (Ends upon taking damage.)
 3040208	2	Royal Litany	45	All allies gain ATK Boosted, Defiance, and Mode Bar Cut Boosted. 
 3040209	0	Blau Gespenst	1	Remove 1 buff from a foe. Inflict ATK Down, DEF Down, and Ghost Cage. ('When the foe uses a special attack:' Ghost Cage is removed and deals 999,999 Plain damage to all foes.)
 3040209	1	Benediction II	1	 Restore 15% of all allies' HP (Healing cap: 1500). All allies gain Charge Boost and Revitalize.
@@ -2113,3 +2114,19 @@
 3040365	0	Ajax	1	Gain DMG Cap Boosted. ('Additional effects upon each cast in this order:' Guaranteed TA, Drain, Bonus Wind DMG, C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time).) 
 3040365	1	Klastos Polis	1	5-hit, 100% Wind damage to random foes (Damage cap: ~120,000 per hit). Inflict DEF Lowered (Stackable) and Debuff Resistance Lowered (Stackable) on all foes. 
 3040365	2	Proskaleo Kydoimos	45	Remove 1 buff from a foe. Inflict Wind DEF Lowered and Petrified 3. 
+3040366	0	Voice of Curse	1	All allies gain Hyped and Charge Bar. (Increase amount of charge bar gained based on caster's Hyped.)
+3040366	1	Bloody Rain	1	500% Earth damage to a foe (Damage cap: 635,000). Inflict Delay. ('When Benjamin's Hype is 4:' Activates twice.)
+3040366	2	Grudge Feedback	45	Gain Guaranteed TA and Strength. ('When Benjamin's Hype is 4:' Affects all allies.)
+3040367	0	Prescience	1	All allies gain 40% Dark Cut, Dark Switch, and Refresh.
+3040367	1	Wheel of Fate	1	Grant an ally Shield and Dodge All 1.
+3040367	2	Flash of Revelation	45	All Light allies gain Veil and 1 random buff. (Number of buffs gained increases upon each cast [Max: 5 times].)
+3040368	0	Aerial High Kick	1	500% Wind damage to a foe (Damage cap: ~635,000). Gain Charge Bar. Raise Storm Heel lvl by 1 (Max: 5).
+3040368	1	Coup de Joye	1	6-hit, 150% Wind damage to a foe (Damage cap: ~165,000 per hit). Gain Full Hostility and Dodge All.
+3040368	2	Swift Boot	45	Gain Instant Charge and C.A. Reactivation (Can't be removed). End cooldown for other skills. (Requires Storm Heel lvl 5.)
+3040369	0	Saintly Veil	1	All Earth allies gain Saintly Veil. (Ends upon taking damage 2 times.)
+3040369	1	Encore Step	1	MC and Anthuria gain Double Strike.
+3040369	2	Heavenly Dance	45	MC and Anthuria gain Heavenly Dance. (Can't recast.)
+3040370	0	The Tripinator	1	3-hit, 150% Water damage to a foe (Damage cap: 140,000 per hit). Inflict Delay and Accuracy Lowered 3. 
+3040370	1	Cupid's Arrow	1	Inflict Charmed 3, ATK Down 5, and DEF Down 5 to a foe. 
+3040370	2	The Legendary Blade "Denkomaru"	1	500% Water damage to a foe (Damage cap: 635,000). Raise foe's Thunderstruck lvl by 1 (Max: 10). 
+3040370	3	Timeout Watch	45	Stop all foe's time. Gain Double Strike.

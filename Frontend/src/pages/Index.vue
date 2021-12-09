@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2021-10-31:</b> Enyo, Lunalu (Light)</p>
+        <p><b>2021-11-30:</b> Randall, Anthuria (Holiday)</p>
       </div>
 
       <div>

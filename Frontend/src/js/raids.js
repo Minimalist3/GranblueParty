@@ -675,6 +675,10 @@ const CAT_IMPOSSIBLE = {
         name: 'Belial',
         namejp: 'ベリアル',
       },
+      '305311/1/0/138': {
+        name: 'Rage of Super Ultimate Bahamut',
+        namejp: 'スーパーアルティメットバハムート',
+      },
     }
   },
 };
@@ -708,6 +712,18 @@ const CAT_SOLO = {
       },
     }
   },
+  2600: {
+    name: 'Miscellaneous',
+    stars: 1,
+    cost: 200,
+    magfes: 100,
+    times: 1,
+    raids: {
+      '305301/28': {
+        name: 'Angel Halo Pro'
+      },
+    }
+  }
 };
 
 export default {

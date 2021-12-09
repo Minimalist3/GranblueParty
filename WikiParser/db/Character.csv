@@ -409,7 +409,7 @@
 3040065	Io (Grand)	イオ	4	5	2	4	1	0	1600	2015-11-30	7700	9140	1770	2100	Gambanteinn
 3040066	Lilele	リルル	4	4	2	3	4	3	1000	2015-12-02	8200	\N	1500	\N	Melodic Sphere
 3040067	Clarisse (Holiday)	クラリス	4	4	2	2	4	0	1020	2015-12-19	8800	\N	1280	\N	Snowy Mobius Strip
-3040068	Rosetta (Grand)	ロゼッタ	4	4	2	1	4	4	1600	2015-12-29	7500	\N	2000	\N	Love Eternal
+3040068	Rosetta (Grand)	ロゼッタ	4	5	2	1	4	4	1600	2015-12-29	7500	8900	2000	2375	Love Eternal
 3040069	Eustace	ユーステス	4	4	2	2	0	2	1000	2015-12-31	8900	\N	1100	\N	Stratomizer
 3040070	Beatrix	ベアトリクス	4	4	2	5	4	0	1000	2015-12-31	9250	\N	1300	\N	Gram
 3040071	Andira	アンチラ	4	5	2	1	1	2	1050	2015-12-31	7560	8940	1400	1660	Dormius
@@ -703,3 +703,8 @@
 3040363	Yorozuya	万事屋銀ちゃん 坂田銀時&志村新八&神楽	4	4	2	4	1	0	\N	2021-10-20	7700	\N	1367	\N	\N
 3040364	Lunalu (Light)	ルナール	4	4	2	4	0	3	1000	2021-10-31	10090	\N	1150	\N	Into the Sunset
 3040365	Enyo	エニュオ	4	4	2	1	0	4	1000	2021-10-31	11000	\N	1000	\N	Galvanic Lance
+3040366	Benjamin	ベンジャミン	4	4	2	2	0	0	1000	2021-11-16	10500	\N	1100	\N	Atrocious Blood
+3040367	Arulumaya (Light)	アルルメイヤ	4	4	2	4	2	3	1000	2021-11-16	7400	\N	1760	\N	Pantagruel
+3040368	Randall (SSR)	ランドル	4	4	2	1	0	0	1000	2021-11-30	9600	\N	1280	\N	Bon Joie
+3040369	Anthuria (Holiday)	アンスリア	4	4	2	2	3	2	1020	2021-11-30	5460	\N	1624	\N	Forbidden Silence
+3040370	Doraemon	ドラえもん	4	4	2	3	4	5	\N	2021-12-08	9030	\N	1293	\N	\N

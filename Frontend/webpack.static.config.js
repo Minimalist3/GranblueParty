@@ -34,11 +34,14 @@ module.exports = merge(baseConfig, {
       { from: path.resolve(__dirname, 'src', 'img'), to: 'img' }
     ]} ),
     new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-        ],
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminMinify,
+        options: {
+          plugins: [
+            ['jpegtran', { progressive: true }],
+            ['optipng', { optimizationLevel: 5 }],
+          ],
+        }
       },
     }),
     new RemovePlugin({

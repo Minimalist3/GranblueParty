@@ -60,7 +60,7 @@
 3020060	1	Bamboo Burst	 Big Fire damage to a foe.
 3020061	1	Cataclysmic Illustration	 Big dark damage to a foe. Gain 1 Body Heat Boosted (Lunalu) stack.
 3020062	1	Rodeo Flip	 Big Water damage to a foe.
-3020063	1	Shopping Spree	 Use 1-10,000 rupies at random to shop.
+3020063	1	Shopping Spree	 One rupie shopping spree coming right up! (Use 1-10,000 rupies at random to shop. Chance for all allies to gain Hype.)
 3020064	1	Piercing Lighting	 Big Light damage to a foe.
 3020066	1	Song of Silence	 Big Dark damage to a foe. Gain Charge Boost.
 3020070	1	Fierce Kick	 Big Water damage to a foe. Gain DA Up.
@@ -511,7 +511,10 @@
 3040066	1	Sparkling Performance	 Massive Water damage to a foe. Inflict Charm.
 3040067	1	Alchemic Flare	Normal mode: Massive Earth damage to a foe. Raise Alpha Decay and Beta Decay stacks by 3.
 3040067	2	Neutron Star	Radioactive mode: Massive Earth damage to a foe. Deploy the Atomic Collapse field effect based on Alpha Decay and Beta Decay stacks. (Max lvl: 5)
-3040068	1	Endless Rose	 Massive Wind damage to a foe. 'If Rose Barrier is released:' All allies gain Debuff Success Boosted. 'If Rose Barrier is active:' Gain DEF Up.
+3040068	1	Endless Rose	 450% Wind damage to a foe. All allies gain Debuff Success Boosted.
+3040068	2	Endless Rose	Rose Barrier is deployed: 450% Wind damage to a foe. Gain DEF Up.
+3040068	3	Eternal Rose	After 5★: 500% Wind damage to a foe. All allies gain Debuff Success Boosted, DA Up and TA Up.
+3040068	4	Eternal Rose	After 5★ and Rose Barrier is deployed: 500% Wind damage to a foe. Gain DEF Up and Charge Boost.
 3040069	1	Dead-End Shot	 Massive Earth damage to a foe. Inflict ATK Down. Reset Loaded lvl.
 3040070	1	Immortal Assault	 Massive Dark damage to a foe. Gain 1-hit Unchallenged.
 3040071	1	Gilded Heaven Strike	 500% Wind damage to a foe.
@@ -591,8 +594,8 @@
 3040130	1	Cleaving Madness	 Massive Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Dracoforce.)
 3040131	1	Mikazuki Munechika	 Massive Light damage to a foe. Gain DA Up.
 3040132	1	Deterrent Thrust	 Massive Water damage to a foe. Restore 2 Spirit (Anne) 1 stacks.
-3040133	1	Bounty Bind	Normal form: Massive Fire damage to a foe.
-3040133	2	Line of Fire	Dragon form: Massive Fire damage to a foe. Gain Guaranteed TA.
+3040133	1	Bounty Bind	Normal form: 450% Fire damage to a foe.
+3040133	2	Line of Fire	Dragon form: 900% Fire damage to a foe (Damage cap: ~1,840,000). Gain Guaranteed TA.
 3040134	1	Grim Flame	Dorothy: 450% Light damage to a foe. Inflict DA Down.
 3040134	2	Fullmetal Impact	Claudia: 450% Light damage to a foe. Inflict DEF Down.
 3040134	3	Checkmaid	200% Charge Bar and Servant's Oath: 1250% Light damage to a foe (Damage cap: ~2,900,000). Inflict DA Down and DEF Down. All allies gain Chain Burst DMG Cap Boosted.
@@ -680,7 +683,7 @@
 3040205	1	Capricieux Avalanche	 Massive Earth damage to a foe (Boost to damage based on how high HP is). 'Additional effect when 1 Black Cat Fancy is consumed:' 500% Bonus Earth damage (Damage cap: ~630,000).
 3040206	1	Alkahest Sphere	 450% Dark damage to a foe. Inflict Delay. 'From 10th turn onward:' Also deal 999,999 plain damage.
 3040207	1	Capillus Ataxia	 Massive Light damage to a foe. Activate Get Over Hair.
-3040208	1	Adedo Dualuca	 Massive Wind damage to a foe. (20% boost C.A. specs when Heles is affected by Wind ATK Up.) Gain Wind ATK Up.
+3040208	1	Adedo Dualuca	 450% Wind damage to a foe. (20% boost C.A. specs when Heles is affected by Wind ATK Up.) Gain Wind ATK Up.
 3040209	1	Aetheryte Requiescat	 450% Dark damage to a foe. All allies gain Dark ATK Up and DA Up.
 3040210	1	Crimson Dance: Hanaarashi	 Massive Wind damage to a foe. All allies gain Bonus Wind DMG. Deal 999,999 bonus Plain damage to a foe with Foxflame.
 3040211	1	Ancillary Destruction	 Massive Wind damage to a foe. Activate Nitro Force.
@@ -734,7 +737,7 @@
 3040258	1	Burst Removal	 450% Light damage to a foe. End cooldown for Ilsa's linked skills. Gain 1 War Funds.
 3040259	1	Swift Judgment	 450% Wind damage to a foe. Gain Bonus Wind DMG based on number of Triple Shroud (Wind).
 3040260	1	Tathlum Flambe	 Massive Fire damage to a foe. Gain 1 Sprinkles. All allies gain Jammed.
-3040261	1	Grace of the Radiant	 All allies gain a 4000-damage Shield. All Wind allies gain Critical Hit Rate Boosted (Wind) and Keen. Raise Grimnir's Cyclone lvl by 2.
+3040261	1	Grace of the Radiant	 All allies gain Shield. All Wind allies gain Critical Hit Rate Boosted (Wind) and Keen. Raise Grimnir's Cyclone lvl by 2.
 3040262	1	Empty Hand, Enlightened Fist	 450% Dark damage to a foe. Gain Other Self 1. ('When Seox has Savage Claw or Feral Intuition:' 30% boost to C.A. damage and 10% boost to C.A. damage cap.)
 3040263	1	Daybreak Sword	 450% Water damage to a foe. Replenish Enforcer's Zeal by 2. Gain Skill DMG Cap Boosted (Stackable).
 3040263	2	Radiant Order	Ready... Aim...: 1250% Water damage to a foe (Damage cap: ~2,900,000) and remove 3 buffs. (Consumes Ready... Aim...)
@@ -841,3 +844,8 @@
 3040363	1	Blade of a Samurai	 450% Light damage to a foe. Remove 1 buff.
 3040364	1	Cataclysmic Darkness	 450% Light damage to a foe. Inflict DEF Lowered (Stackable / Can't be removed / Local).
 3040365	1	Ruthless Tyrant	 450% Wind damage to a foe. Activate Ajax.
+3040366	1	Grudge of the Scapedog	 450% Earth damage to a foe. End cooldown for Voice of Curse.
+3040367	1	Selene Kanonas	 450% Light damage to a foe. End cooldown for Flash of Revelation.
+3040368	1	Cyclone Kick	 450% Wind damage to a foe. 100% Bonus Wind damage based on Storm Heel lvl (Damage cap: ~70,000 per hit [Max: 5 hits]).
+3040369	1	Eterno Tesoro	 450% Earth damage to a foe. All allies gain Bonus Earth DMG and Hyped.
+3040370	1	Sonic Solidifier	 450% Water damage to a foe. 1-turn cut to gadgets' cooldowns.
