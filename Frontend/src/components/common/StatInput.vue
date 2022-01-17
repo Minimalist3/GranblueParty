@@ -3,6 +3,7 @@
     {{ shortName }}
     <input
       class="appearance-none text-primary bg-secondary"
+      :class="alignRight ? 'text-right' : ''"
       type="tel"
       :style="'width: ' + length + 'ch;'"
       v-model.number.lazy="localProp"
@@ -19,7 +20,8 @@ export default {
     shortName: String,
     longName: String,
     length: Number,
-    max: Number
+    max: Number,
+    alignRight: Boolean,
   },
   methods: {
     incrementProp() {

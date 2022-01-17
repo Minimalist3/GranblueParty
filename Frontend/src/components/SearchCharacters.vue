@@ -89,7 +89,7 @@ import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
 
 import Checkbox from '@/components/common/Checkbox.vue'
-import DataFilter from '@/components/DataFilter.vue'
+import DataFilter from '@/components/common/DataFilter.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('SearchCharacters');
 

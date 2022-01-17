@@ -52,7 +52,7 @@
 
       <div class="mb-4">
         <h2 class="text-center">Last update</h2>
-        <p><b>2021-11-30:</b> Randall, Anthuria (Holiday)</p>
+        <p><b>2022-01-17:</b> Cupitan, Yggdrasil (Wind)</p>
       </div>
 
       <div>
@@ -99,7 +99,8 @@ You can share your collection by clicking the "Share" button and giving the uniq
   {
     title: 'Calculators',
     link: '/calcevoker',
-    image: '/img/preview_calc.png',
+    image: '/img/preview_calcevoker.png',
+    webp: '/img/preview_calcevoker.webp',
     text:
 `Choose what you want to unlock and get the complete list of materials needed to do it.
 Each material has a link to the english wiki.
@@ -109,6 +110,7 @@ Your selection is memorized for when you want to come back.`
     title: 'Release Schedule',
     link: '/release',
     image: '/img/preview_release.png',
+    webp: '/img/preview_release.webp',
     text: 
 `Browse previous releases of characters and summons, with custom filters.`
   },

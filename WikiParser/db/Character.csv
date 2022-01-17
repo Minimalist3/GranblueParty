@@ -66,6 +66,7 @@
 3020071	Spinnah	スピナー	3	3	0	1	0	0	1000	2018-05-31	4200	\N	600	\N	Spin Blade
 3020072	Young Cat (Event)	猫	3	3	0	6	4	5	\N	2019-01-31	3990	\N	570	\N	\N
 3020073	Vikala (Event)	ビカラ	3	3	0	5	1	0	\N	2020-12-25	3950	\N	810	\N	\N
+3020074	Catura (Event)	シャトラ	3	3	0	2	4	1	\N	2021-12-22	4000	\N	800	\N	\N
 3030000	Naoise (Promo)	ノイシュ	4	4	1	4	2	0	\N	2014-03-13	5400	\N	1320	\N	Longinus
 3030001	Therese (Event)	テレーズ	4	4	1	3	4	0	\N	2014-03-31	5500	\N	1100	\N	Tanzanite Sword
 3030002	Mishra	マイシェラ	4	4	1	3	4	2	1000	2014-03-31	5400	\N	1300	\N	Spritewood Staff
@@ -510,7 +511,7 @@
 3040169	Nier	ニーア	4	4	2	5	4	2	20	2019-03-10	8906	\N	1313	\N	\N
 3040170	Soriz (SSR)	ソリッズ	4	5	2	2	0	0	1000	2018-05-21	10200	12060	1300	1550	Wyrmtiger Claw
 3040171	Cain (Grand)	カイン	4	4	2	2	4	0	1600	2018-05-31	8950	\N	1250	\N	Ichigo Hitofuri
-3040172	Lunalu (SSR)	ルナール	4	5	2	5	4	3	1000	2018-05-31	9240	\N	1160	\N	Ruling Pen
+3040172	Lunalu (SSR)	ルナール	4	5	2	5	4	3	1000	2018-05-31	9240	10980	1160	1380	Ruling Pen
 3040173	Joker	ジョーカー	4	4	2	5	4	0	\N	2018-06-18	8700	\N	1300	\N	\N
 3040174	Wulf and Renie	ウーフとレニー	4	4	2	5	0	5	1000	2018-06-18	8600	\N	1480	\N	Master Key
 3040175	Selfira	セレフィラ	4	4	2	1	4	2	1000	2018-06-30	7880	\N	1160	\N	Cythara Anglica
@@ -708,3 +709,13 @@
 3040368	Randall (SSR)	ランドル	4	4	2	1	0	0	1000	2021-11-30	9600	\N	1280	\N	Bon Joie
 3040369	Anthuria (Holiday)	アンスリア	4	4	2	2	3	2	1020	2021-11-30	5460	\N	1624	\N	Forbidden Silence
 3040370	Doraemon	ドラえもん	4	4	2	3	4	5	\N	2021-12-08	9030	\N	1293	\N	\N
+3040371	Nobita	のび太	4	4	2	4	0	0	\N	2021-12-13	8700	\N	1303	\N	\N
+3040372	Mahira (Holiday)	マキラ	4	4	2	4	4	3	1020	2021-12-14	9540	\N	1100	\N	Tenth Crest of the Clutch
+3040373	Altair (Holiday)	アルタイル	4	4	2	0	1	0	1020	2021-12-14	7750	\N	1650	\N	War Fan of Secret Teachings
+3040374	Lancelot (Grand)	ランスロット	4	4	2	3	4	0	1500	2021-12-28	9000	\N	1240	\N	Knight of Ice
+3040375	Satyr (Earth)	サテュロス	4	4	2	2	3	4	1000	2021-12-28	6375	\N	1765	\N	Seilenos
+3040376	Fediel	フェディエル	4	4	2	5	4	1	1600	2021-12-31	10720	\N	1200	\N	Skeletal Eclipse
+3040377	Cidala	シンダラ	4	4	2	2	0	2	1050	2021-12-31	10140	\N	852	\N	Tigrisius
+3040378	Ewiyar	イーウィヤ	4	4	2	1	4	5	1000	2021-12-31	8200	\N	1400	\N	Evyg Em Noytnetta
+3040379	Cupitan	クピタン	4	4	2	3	0	0	1000	2022-01-17	11000	\N	1000	\N	Rainbow Lyre
+3040380	Yggdrasil (Wind)	ユグドラシル	4	4	2	1	4	4	1000	2022-01-17	6300	\N	1900	\N	Petit Bouquet de Fleurs

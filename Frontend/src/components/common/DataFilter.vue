@@ -4,6 +4,7 @@
 
     <span class="inline-flex flex-row flex-wrap btn-group">
       <button
+        v-if="hasAll"
         class="btn btn-sm"
         :class="all ? 'btn-blue' : 'btn-white'"
         @click="clickAll()"
@@ -37,6 +38,10 @@ export default {
       type: String,
       required: true,
     },
+    hasAll: {
+      type: Boolean,
+      default: true,
+    }
   },
   data() {
     return {
@@ -56,7 +61,7 @@ export default {
     clickItem(index) {
       this.data_view[index].checked = ! this.data_view[index].checked;
 
-      if (this.all) {
+      if (this.all === true) {
         this.all = false;
         // Propagate change
         for (let i=0; i<this.data.length; i++) {
@@ -69,16 +74,25 @@ export default {
     }
   },
   created() {
-    // Copy data locally to deal with the All button
-    this.data_view = Utils.copy(this.data);
+    if (this.hasAll === true) {
+      // Copy data locally to deal with the All button
+      this.data_view = Utils.copy(this.data);
 
-    if (this.data_view.some(e => { return ! e.checked })) {
-      this.all = false;
+      if (this.data_view.some(e => ! e.checked)) {
+        this.all = false;
+      }
+      else {
+        this.data_view.forEach(e => e.checked = false);
+        this.all = true;        
+      }
     }
     else {
-      this.data_view.forEach(e => e.checked = false);
-      this.all = true;        
-    }    
+      // Data view is the same as the data
+      this.data_view = this.data;
+
+      // Disable All button
+      this.all = false;
+    }
   },
 }
 </script>

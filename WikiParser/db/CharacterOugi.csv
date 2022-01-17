@@ -67,6 +67,7 @@
 3020071	1	Twist and Cut	 Big Wind damage to a foe. Extend the duration of Spinning High by 3.5 turns.
 3020072	1	Haymaker Cat Punch	 200% elemental damage to a foe. Restore all allies' HP. (Boost to healing specs when in a better mood.)
 3020073	1	Everyone's Favorite Rat	 Where... are my rat ears? (Nothing happens.)
+3020074	1	Ox in Dreamland	 Thinking... of you... (Nothing happens.)
 3030000	1	Skewer	 Big Light damage to a foe.
 3030001	1	Tempest Blades	 Big Water damage to a foe.
 3030002	1	Rune Portal	 Big Water damage to a foe.
@@ -505,18 +506,18 @@
 3040063	2	Freeflutter Dance	Freeflutter stance: 450% Dark damage to a foe. Remove DEF Lowered (Can't be removed) from Narmaya.
 3040063	3	Dawnfly Dance II	After 5★ - Dawnfly stance: 500% Dark damage to a foe. Gain ATK Boosted (Narmaya) and Dark ATK Up.
 3040063	4	Freeflutter Dance II	After 5★ - Freeflutter stance: 500% Dark damage to a foe. Remove DEF Lowered (Can't be removed) from Narmaya. Gain Mirror Imaged.
-3040064	1	Ultimate Flash	 Massive Water damage to a foe. Consumes all remaining Triple Shrouded and deals 333,333 plain damage for each Triple Shroud consumed (Max: 999,999).
+3040064	1	Ultimate Flash	 Massive Water damage to a foe. Consumes all Triple Shrouded. Deals 333,333 plain damage for each Triple Shroud consumed (Max: 999,999).
 3040065	1	Crystal Gust	 450% Light damage to a foe. (Boost to C.A. damage and C.A. damage cap based on Mystic Vortex lvl.) All allies gain buff effects based on Mystic Vortex lvl. Consumes all Mystic Vortex lvl.
 3040065	2	Elemental Evolution	After 5★: 500% Light damage to a foe. (Boost to C.A. damage and C.A. damage cap based on Mystic Vortex lvl.) All allies gain buff effects based on Mystic Vortex lvl. Consumes 1 Mystic Vortex lvl.
 3040066	1	Sparkling Performance	 Massive Water damage to a foe. Inflict Charm.
-3040067	1	Alchemic Flare	Normal mode: Massive Earth damage to a foe. Raise Alpha Decay and Beta Decay stacks by 3.
-3040067	2	Neutron Star	Radioactive mode: Massive Earth damage to a foe. Deploy the Atomic Collapse field effect based on Alpha Decay and Beta Decay stacks. (Max lvl: 5)
+3040067	1	Alchemic Flare	 450% Earth damage to a foe. Raise foe's Alpha Decay and Beta Decay lvls by 3 (Max lvl: 9).
+3040067	2	Neutron Star	Radioactive Mode: 450% Earth damage to a foe. Consume foe's Alpha Decay and Beta Decay lvls to deploy the Atomic Collapse field effect. (Boost to field effect specs based on α Decay and β Decay lvls consumed [Max lvl: 5].)
 3040068	1	Endless Rose	 450% Wind damage to a foe. All allies gain Debuff Success Boosted.
 3040068	2	Endless Rose	Rose Barrier is deployed: 450% Wind damage to a foe. Gain DEF Up.
 3040068	3	Eternal Rose	After 5★: 500% Wind damage to a foe. All allies gain Debuff Success Boosted, DA Up and TA Up.
 3040068	4	Eternal Rose	After 5★ and Rose Barrier is deployed: 500% Wind damage to a foe. Gain DEF Up and Charge Boost.
 3040069	1	Dead-End Shot	 Massive Earth damage to a foe. Inflict ATK Down. Reset Loaded lvl.
-3040070	1	Immortal Assault	 Massive Dark damage to a foe. Gain 1-hit Unchallenged.
+3040070	1	Immortal Assault	 450% Dark damage to a foe. Gain Unchallenged.
 3040071	1	Gilded Heaven Strike	 500% Wind damage to a foe.
 3040071	2	Infinite Monkey Hands: Baboon Blast	After 5★: 550% Wind damage to a foe and remove 1 buff.
 3040072	1	Dense Caress	 450% Fire damage to a foe. 'Consume 1 Aetherial Seal:' 200% Bonus Fire damage (Damage cap: ~700,000).
@@ -549,7 +550,7 @@
 3040091	1	Eidel Siege	 Massive Light damage to a foe. Inflict Charm 2. All allies gain Charge Boost.
 3040092	1	Gamma Ray	 450% Dark damage to a foe.
 3040093	1	Phantom Thief	 Massive Water damage to a foe. (Forewarning or Riddle gives 'em a show they'll never forget!)
-3040094	1	Bleeding Edge	 Massive Dark damage to a foe. Gain Dodge Rate Boosted.
+3040094	1	Bleeding Edge	 Massive Dark damage to a foe. Gain Dodge All 1.
 3040095	1	Alabaster Dance: Zuika	 Massive Fire damage to a foe. All allies gain Bonus Fire DMG.
 3040096	1	Luce della Salvezza	 450% Light damage to a foe. 'When 1 Spirit Shroud is consumed:' Also deal 300% Bonus Light damage (Damage cap: ~635,000).
 3040098	1	Alba di Verona	 450% Water damage to a foe. ('When 1 Spirit 1 is consumed:' Also deal 300% Bonus Water damage [Damage cap: ~630,000].)
@@ -579,7 +580,7 @@
 3040117	2	Loewenbein: Jagd ++	After 5★: 500% Water damage to a foe. Inflict ATK Lowered (Stackable) and Fire ATK Lowered . Gain Double Beat. (Next Heroic Beat activates twice.)
 3040118	1	Blades of Peril	 Massive Dark damage to a foe.
 3040119	1	Unhappy Hour	 Massive Water damage to a foe. Inflict Fire ATK Lowered and Water DEF Lowered.
-3040120	1	Opus Magna	 Massive Dark damage to a foe. 1-turn cut to Cagliostro's skill cooldown.
+3040120	1	Opus Magna	 450% Dark damage to a foe. 1-turn cut to Cagliostro's skill cooldowns.
 3040121	1	Juggernaut Sphere	 450% Light damage to a foe. Gain 2 Dissolution. All allies gain Uplifted.
 3040122	1	Cloich Tabaill	 Massive Wind damage to a foe. Gain Dragon's Fury.
 3040122	2	Lia Talma	After 5★: Massive Wind damage to a foe. Gain Dragon's Fury. End Power Seeker's cooldown.
@@ -646,12 +647,12 @@
 3040174	1	Hollow Blast	 Massive Dark damage to a foe. Restore 20% of caster's HP (Healing cap: 2000). Remove 3 Lone Wolf Scar 1 stacks.
 3040175	1	Symphonie Reveuse	 Massive Wind damage to a foe. All allies gain Revitalize.
 3040176	1	Seaside Rose	 Massive Earth damage to a foe. Inflict Poison and Charmed.
-3040177	1	Burst Erasure	 Massive Fire damage to a foe. Inflict Mode Bar Cut.
+3040177	1	Burst Erasure	 450% Fire damage to a foe. Inflict Mode Bar Cut.
 3040178	1	Areadbhar	 Massive Light damage to a foe. Gain Lumen Lance.
 3040179	1	Cleaving Madness	 450% Water damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Dracoforce.) Gain Charge Boost.
 3040180	1	Red Heat Crash	 Massive Fire damage to a foe. All allies gain Fire ATK Up.
 3040181	1	Elegant Ruby	 450% Water damage to a foe. All allies gain Shield. Fully recover White Veil's endurance.
-3040182	1	Binding Kill Shot	Normal mode: Massive Dark damage to a foe. Gain DA Up.
+3040182	1	Binding Kill Shot	Normal mode: Massive Dark damage to a foe. Inflict Gravity.
 3040182	2	Touchdown	Dark Mutation mode: 1200% Dark damage to a foe (Damage cap: ~6,000,000).
 3040183	1	Daisuki Dattara Daijoubu!	 Massive Water damage to a foe. All allies gain Water ATK Up. Restore 20% of all allies' HP (Healing cap: 500).
 3040183	2	Daisuki Dattara Daijoubu! ++	After 5★: Massive Water damage to a foe. All allies gain Water ATK Up and Fire DMG Lowered. Restore 20% of all allies' HP (Healing cap: 500).
@@ -849,3 +850,13 @@
 3040368	1	Cyclone Kick	 450% Wind damage to a foe. 100% Bonus Wind damage based on Storm Heel lvl (Damage cap: ~70,000 per hit [Max: 5 hits]).
 3040369	1	Eterno Tesoro	 450% Earth damage to a foe. All allies gain Bonus Earth DMG and Hyped.
 3040370	1	Sonic Solidifier	 450% Water damage to a foe. 1-turn cut to gadgets' cooldowns.
+3040371	1	Nobita's All-Out Attack	 450% Light damage to a foe. 1-turn cut to gadgets' cooldowns.
+3040372	1	Come Home to Roost	 450% Light damage to a foe. All allies gain Strength and Shield. (400% Bonus Light damage to a foe with Henpecked [Damage cap: ~635,000].)
+3040373	1	Weihnachten Rune	 450% Fire damage to a foe. All allies gain Critical Hit Rate Boosted. Altair gains Hellfire Crest 1.
+3040374	1	Beweise Flugal	 1250% Water damage to a foe (Damage cap: ~2,900,000). Raise foe's Glaciate lvl by 2 (Max: 10). Gain Bonus Water DMG.
+3040375	1	Pheltronan	 450% Earth damage to a foe. Gain Charge Bar and 1 Twinkle Star (Earth).
+3040376	1	Flame of Reversal	 450% Dark damage to a foe. ('When Malice of Despair is in effect:' Activates twice.)
+3040377	1	Gilded Heaven Strike	 500% Earth damage to a foe. Gain Twin Tiger Fury. (Next use of either linked skill activates both.) End cooldowns for linked skills.
+3040378	1	Easy Collapse	 450% Wind damage to a foe. 1-turn cut to Ewiyar's skill cooldowns.
+3040379	1	Prism Arrow	 Massive water DMG to a foe / End Aspect Trajection's cooldown
+3040380	1	Erde Urteil	 Massive Wind damage to a foe. Gain Typhoon Crest 1. Activate Terra Therapia.

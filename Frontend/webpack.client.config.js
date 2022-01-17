@@ -129,6 +129,7 @@ else {
           '/',
           '/builder',
           '/collection',
+          '/calceternal',
           '/calcevoker',
           '/calcgw',
           '/release',

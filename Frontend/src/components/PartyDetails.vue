@@ -145,7 +145,7 @@ const ELEM_SUPERIORITY = {
     weak: ''
   },
 };
-
+/*
 const addToProbabilityTree = (array, proba, value) => {
   if (proba > 0) {
     if (proba === 1) {
@@ -160,7 +160,7 @@ const addToProbabilityTree = (array, proba, value) => {
   }
 
   return array;
-};
+};*/
 
 export default {
   components: {

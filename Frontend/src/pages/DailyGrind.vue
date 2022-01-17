@@ -79,40 +79,74 @@
         </h2>
 
         <span v-if="content.show === true">
-          <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
-
-            <div class="flex md:flex-col self-center pr-2 whitespace-nowrap">
-              <span class="pr-2">{{ catVal.name }}</span>
-              <span class="flex flex-row">
-                <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
-                <span v-if="catVal.cost" class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
-              </span>
-            </div>
-
-            <div class="flex flex-row flex-wrap select-none py-1">
-              <a v-for="(raidVal, raidKey) in catVal.raids"
-                :key="raidKey"
-                @click="clickRaid(raidKey)"
-                class="p-1 cursor-pointer"
-              >
-                <div class="p-4 rounded flex flex-col items-center bg-secondary text-primary hover:bg-tertiary">
-                  <span>
-                    <span
-                      v-if="editMode"
-                      class="tag inline-block text-inverse" style="min-width: 1.5rem"
-                      :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
-                    >{{ getIndexString(raidKey) }}</span>
-                    <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 25px; max-width: 25px;">
-                    {{ raidVal.name }}
-                  </span>
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="md:w-full"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:table-row md:flex-none">
+                <!-- Category -->
+                <td class="pr-2 whitespace-nowrap">
+                  <span class="pr-2">{{ catVal.name }}</span>
                   <span class="flex flex-row">
-                    <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
-                    <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                    <span v-if="catVal.times" class="tag bg-tertiary mr-1">x{{ catVal.times }}</span>
+                    <span v-if="catVal.cost" class="tag bg-tertiary">{{ isMagfes ? catVal.magfes : catVal.cost }} AP</span>
                   </span>
-                </div>
-              </a>
-            </div>
-          </div>
+                </td>
+
+                <!-- Raids list -->
+                <td class="flex flex-row flex-wrap select-none py-1 border-b border-secondary">
+                  <a v-for="(raidVal, raidKey) in catVal.raids"
+                    :key="raidKey"
+                    @click="clickRaid(raidKey)"
+                    class="p-1 cursor-pointer"
+                  >
+                    <div class="rounded flex flex-col items-center bg-secondary text-primary hover:bg-tertiary">
+                      <div class="flex flex-row">
+                        <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 50px; max-width: 50px;">
+                        <div class="flex flex-col py-3 px-4">
+                          <span class="flex flex-row justify-around">
+                            <span
+                              v-if="editMode"
+                              class="tag inline-block text-inverse" style="min-width: 2rem"
+                              :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
+                            >{{ getIndexString(raidKey) }}</span>
+                            <span>{{ raidVal.name }}</span>
+                          </span>
+
+                          <span class="flex flex-row justify-around">
+                            <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
+                            <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                          </span>
+                        </div>
+                      </div>
+
+
+                      <!--
+                      <span class="flex flex-row">
+                        <span
+                          v-if="editMode"
+                          class="tag inline-block text-inverse" style="min-width: 1.5rem"
+                          :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
+                        >{{ getIndexString(raidKey) }}</span>
+                        <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 50px; max-width: 50px;">
+                        <div class="pl-4">{{ raidVal.name }}</div>
+                      </span>
+                      <span class="flex flex-row">
+                        <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
+                        <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                      </span>
+                      -->
+                    </div>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
         </span>
       </div>
     </div>
@@ -127,7 +161,7 @@
         <button class="btn btn-white" @click="skipRaid()">Skip</button>
       </div>
 
-      <span v-for="raid in currentList.slice(raid_index)" :key="raid.id" class="mb-1">
+      <span v-for="raid in remainingList" :key="raid.id" class="mb-1">
         <span class="tag bg-inverse text-inverse">x{{ raid.remaining }}</span>
         <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
         {{ raid.name }}
@@ -354,6 +388,9 @@ export default {
     },
     currentListIds() {
       return this.currentList.flatMap(r => [{id: r.id}]);
+    },
+    remainingList() {
+      return this.currentList.slice(this.raid_index);
     },
     currentListName: {
       get() {

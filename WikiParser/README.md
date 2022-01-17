@@ -3,13 +3,13 @@ Get data from [gbf.wiki](https://gbf.wiki/) \
 **Please use these scripts responsibly.** Be mindful of the Wiki bandwidth.
 
 ## Requirements
-- PostgreSQL 11
-- Python 3
+- PostgreSQL 14
+- Python 3.8
 
 ## Installation
 To restore Python modules:
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 :exclamation: Your distribution might use pip3 instead. Make sure you don't install Python 2 modules by mistake.
 

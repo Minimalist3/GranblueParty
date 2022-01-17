@@ -111,7 +111,7 @@ import Utils from '@/js/utils.js'
 import { LANGUAGES } from '@/js/lang'
 import releaseModule from '@/store/modules/release-schedule'
 
-import DataFilter from '@/components/DataFilter.vue'
+import DataFilter from '@/components/common/DataFilter.vue'
 
 const categories = [
   {

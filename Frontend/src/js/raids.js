@@ -154,7 +154,7 @@ const CAT_STANDARD = {
     }
   },
   50: {
-    name: 'Tier 1 Summon',
+    name: 'Tier 1 Summons',
     stars: 5,
     cost: 40,
     magfes: 20,
@@ -163,7 +163,7 @@ const CAT_STANDARD = {
       '300411/1/0/1313': {
           name: 'Twin Elem.',
           namejp: 'フラム',
-          icon: 'infernalwhorl',
+          icon: 'whorlfire',
       },
       '300411/1/0/1111': {
           name: 'Twin Elem.',
@@ -172,7 +172,7 @@ const CAT_STANDARD = {
       '300381/1/0/1323': {
           name: 'Macula M.',
           namejp: 'マキュラ',
-          icon: 'tidalwhorl',
+          icon: 'whorlwater',
       },
       '300381/1/0/1121': {
           name: 'Macula M.',
@@ -181,7 +181,7 @@ const CAT_STANDARD = {
       '300391/1/0/1333': {
           name: 'Medusa',
           namejp: 'メドゥーサ',
-          icon: 'seismicwhorl',
+          icon: 'whorlearth',
       },
       '300391/1/0/1131': {
           name: 'Medusa',
@@ -190,7 +190,7 @@ const CAT_STANDARD = {
       '300421/1/0/1343': {
           name: 'Nezha',
           namejp: 'ナタク',
-          icon: 'tempestwhorl',
+          icon: 'whorlwind',
       },
       '300421/1/0/1141': {
           name: 'Nezha',
@@ -199,7 +199,7 @@ const CAT_STANDARD = {
       '300431/1/0/1353': {
           name: 'Apollo',
           namejp: 'アポロ',
-          icon: 'radiantwhorl',
+          icon: 'whorllight',
       },
       '300431/1/0/1151': {
           name: 'Apollo',
@@ -208,7 +208,7 @@ const CAT_STANDARD = {
       '300401/1/0/1363': {
           name: 'D.A.Olivia',
           namejp: 'オリヴィエ',
-          icon: 'umbralwhorl',
+          icon: 'whorldark',
       },
       '300401/1/0/1161': {
           name: 'D.A.Olivia',
@@ -217,7 +217,7 @@ const CAT_STANDARD = {
     }
   },
   60: {
-    name: 'Tier 2 Summon',
+    name: 'Tier 2 Summons',
     stars: 6,
     cost: 40,
     magfes: 20,
@@ -226,7 +226,7 @@ const CAT_STANDARD = {
       '301071/1/0/1313': {
           name: 'Athena',
           namejp: 'アテナ',
-          icon: 'infernalwhorl',
+          icon: 'whorlfire',
       },
       '301071/1/0/1111': {
           name: 'Athena',
@@ -235,7 +235,7 @@ const CAT_STANDARD = {
       '300481/1/0/1323': {
           name: 'Grani',
           namejp: 'グラニ',
-          icon: 'tidalwhorl',
+          icon: 'whorlwater',
       },
       '300481/1/0/1121': {
           name: 'Grani',
@@ -244,7 +244,7 @@ const CAT_STANDARD = {
       '301371/1/0/1333': {
           name: 'Baal',
           namejp: 'バアル',
-          icon: 'seismicwhorl',
+          icon: 'whorlearth',
       },
       '301371/1/0/1131': {
           name: 'Baal',
@@ -253,7 +253,7 @@ const CAT_STANDARD = {
       '301381/1/0/1343': {
           name: 'Garuda',
           namejp: 'ガルダ',
-          icon: 'tempestwhorl',
+          icon: 'whorlwind',
       },
       '301381/1/0/1141': {
           name: 'Garuda',
@@ -262,7 +262,7 @@ const CAT_STANDARD = {
       '300461/1/0/1353': {
           name: 'Odin',
           namejp: 'オーディン',
-          icon: 'radiantwhorl',
+          icon: 'whorllight',
       },
       '300461/1/0/1151': {
           name: 'Odin',
@@ -271,7 +271,7 @@ const CAT_STANDARD = {
       '300551/1/0/1363': {
           name: 'Lich',
           namejp: 'リッチ',
-          icon: 'umbralwhorl',
+          icon: 'whorldark',
       },
       '300551/1/0/1161': {
           name: 'Lich',
@@ -280,7 +280,7 @@ const CAT_STANDARD = {
     }
   },
   70: {
-    name: 'Nightmare',
+    name: '',
     stars: 7,
     raids: {
       '300291/1/0/58': {
@@ -314,7 +314,7 @@ const CAT_STANDARD = {
     }
   },
   80: {
-    name: 'Primarch',
+    name: 'Primarchs',
     stars: 8,
     cost: 50,
     magfes: 25,
@@ -356,7 +356,7 @@ const CAT_STANDARD = {
 // Impossible raids
 const CAT_IMPOSSIBLE = {
   1010: {
-    name: 'Impossible Omega',
+    name: 'Omega HL',
     tier: 'impossible',
     stars: 1,
     cost: 50,
@@ -390,7 +390,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1020: {
-    name: 'Impossible Tier 1 Summon',
+    name: 'Tier 1 Summons',
     tier: 'impossible',
     stars: 2,
     cost: 50,
@@ -428,7 +428,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1030: {
-    name: 'Impossible Omega II',
+    name: 'Regalia',
     tier: 'impossible',
     stars: 3,
     cost: 60,
@@ -462,21 +462,21 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1031: {
-    name: 'Impossible Beasts',
+    name: 'Ennead',
     tier: 'impossible',
     stars: 3,
-    cost: 80,
-    magfes: 80,
-    times: 1,
+    cost: 60,
+    magfes: 60,
+    times: 2,
     raids: {
-      '303231/1/0/6005': {
-        name: 'Huanglong & Qilin',
-        namejp: '黄龍・黒麒麟ＨＬ'
-      }
+      '305371/1/0/46': {
+        name: 'Osiris',
+        namejp: 'オシリス'
+      },
     }
   },
   1040: {
-    name: 'Impossible Tier 3 Summon',
+    name: 'Epic Summons',
     tier: 'impossible',
     stars: 4,
     cost: 50,
@@ -510,7 +510,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1041: {
-    name: 'Impossible Malice',
+    name: 'Malice',
     tier: 'impossible',
     stars: 5,
     cost: 80,
@@ -562,21 +562,81 @@ const CAT_IMPOSSIBLE = {
         name: 'Phronesis',
         icon: 'indicuscentrum',
       },
+    }
+  },
+  1050: {
+    name: '',
+    tier: 'impossible',
+    stars: 6,
+    raids: {
+      '303231/1/0/6005': {
+        name: 'Huanglong & Qilin',
+        namejp: '黄龍・黒麒麟ＨＬ',
+        cost: 80,
+        magfes: 80,
+        times: 1,
+      },
       '303271/1/0/506': {
         name: 'Lucilius',
         namejp: 'ルシファー',
+        cost: 80,
+        magfes: 40,
+        times: 1,
+      },
+      '303291/1/0/5311': {
+        name: 'The Four Primarchs',
+        namejp: '四大天司ＨＬ',
+        cost: 80,
+        magfes: 40,
+        times: 1,
       },
       '305171/1/0/535': {
         name: 'Lindwurm',
         namejp: 'リンドヴルム',
+        cost: 80,
+        magfes: 40,
         times: 2
       }
     }
   },
-  1050: {
-    name: 'Impossible Nightmare',
+  1060: {
+    name: 'Six-Dragons',
     tier: 'impossible',
-    stars: 6,
+    stars: 7,    
+    cost: 50,
+    magfes: 25,
+    times: 1,
+    raids: {
+      '305191/1/0/41': {
+        name: 'Wilnas (Fire)',
+        namejp: '火竜',
+      },
+      '305201/1/0/42': {
+        name: 'Wamdus (Water)',
+        namejp: '水竜',
+      },
+      '305211/1/0/43': {
+        name: 'Galleon (Earth)',
+        namejp: '土竜',
+      },
+      '305221/1/0/44': {
+        name: 'Ewiyar (Wind)',
+        namejp: '風竜',
+      },
+      '305231/1/0/45': {
+        name: 'Lu Woh (Light)',
+        namejp: '光竜',
+      },
+      '305241/1/0/46': {
+        name: 'Fediel (Dark)',
+        namejp: '闇竜',
+      },
+    }
+  },
+  1070: {
+    name: '',
+    tier: 'impossible',
+    stars: 7,    
     times: 1,
     raids: {
       '301061/1/0/59': {
@@ -591,74 +651,24 @@ const CAT_IMPOSSIBLE = {
         cost: 90,
         magfes: 45,
       },
-      '303291/1/0/5311': {
-        name: 'The Four Primarchs',
-        namejp: '四大天司ＨＬ',
-        cost: 80,
-        magfes: 40,
-      },
       '305161/1/0/83': {
         name: 'Grand Order',
         namejp: 'グランデＨＬ',
         cost: 90,
         magfes: 45,
       },
-    }
-  },
-  1060: {
-    name: 'Impossible Ultimate',
-    tier: 'impossible',
-    stars: 7,    
-    times: 1,
-    raids: {
       '303141/1/0/136': {
         name: 'Ultimate Bahamut',
         namejp: 'アルバハＨＬ',
         cost: 100,
         magfes: 50,
       },
-      '305191/1/0/41': {
-        name: 'Wilnas (Fire)',
-        namejp: '火竜',
-        cost: 50,
-        magfes: 25,
-      },
-      '305201/1/0/42': {
-        name: 'Wamdus (Water)',
-        namejp: '水竜',
-        cost: 50,
-        magfes: 25,
-      },
-      '305211/1/0/43': {
-        name: 'Galleon (Earth)',
-        namejp: '土竜',
-        cost: 50,
-        magfes: 25,
-      },
-      '305221/1/0/44': {
-        name: 'Ewiyar (Wind)',
-        namejp: '風竜',
-        cost: 50,
-        magfes: 25,
-      },
-      '305231/1/0/45': {
-        name: 'Lu Woh (Light)',
-        namejp: '光竜',
-        cost: 50,
-        magfes: 25,
-      },
-      '305241/1/0/46': {
-        name: 'Fediel (Dark)',
-        namejp: '闇竜',
-        cost: 50,
-        magfes: 25,
-      },
     }
   },
-  1070: {
-    name: 'Impossible Rapture',
+  1080: {
+    name: '',
     tier: 'impossible',
-    stars: 8,
+    stars: 9,
     cost: 100,
     magfes: 50,
     times: 1,
@@ -675,6 +685,16 @@ const CAT_IMPOSSIBLE = {
         name: 'Belial',
         namejp: 'ベリアル',
       },
+    }
+  },
+  1090: {
+    name: '',
+    tier: 'impossible',
+    stars: 10,
+    cost: 100,
+    magfes: 50,
+    times: 1,
+    raids: {
       '305311/1/0/138': {
         name: 'Rage of Super Ultimate Bahamut',
         namejp: 'スーパーアルティメットバハムート',

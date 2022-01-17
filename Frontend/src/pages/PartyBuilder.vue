@@ -185,6 +185,7 @@ export default {
       get() { return this.$store.state.party_builder.show_bookmarklet },
       set(value) { this.$store.commit('setShowBookmarklet', value) }
     },
+    // Edit BOOKMARKLET_VERSION to update required version
     show_update_bookmarklet: {
       get() { return this.$store.state.party_builder.show_update_bookmarklet },
       set(value) { this.$store.commit('setShowUpdateBookmarklet', value) }

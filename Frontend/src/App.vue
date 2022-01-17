@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col text-primary bg-primary min-h-screen" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
+  <div id="app" class="flex flex-col text-primary bg-primary min-h-screen relative" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
     <!-- Menu -->
     <nav class="bg-secondary shadow-md flex flex-row justify-between items-center">
       <!-- left -->
@@ -14,7 +14,7 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
               <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
               <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
               <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
@@ -27,7 +27,7 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
               <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
               <router-link class="gbf-menu-link" to="/search">Search</router-link>
               <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
@@ -37,7 +37,8 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-40">
+            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
+              <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
               <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
               <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
               <router-link class="gbf-menu-link" to="/calcevent">New Event Tokens</router-link>
@@ -56,6 +57,7 @@
           <router-link class="flex items-center gbf-menu-link h-12" to="/release">Release Schedule</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/search">Search</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/replicard">Replicard Sandbox</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/calceternal">Eternals Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevoker">Evokers Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcgw">Guild Wars Tokens Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevent">New Event Tokens Calc.</router-link>
@@ -76,70 +78,71 @@
       </div>
     </nav>
 
-    <!-- Menu popup -->
-    <nav class="bg-secondary shadow-md w-full md:w-1/3 md:rounded-bl absolute right-0 z-50" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
-      <!-- For mobile -->
-      <div class="md:hidden flex flex-col text-primary border-b border-primary">
-        <span class="p-2 select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-        <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
-          <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
-          <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
-          <router-link class="gbf-menu-link" to="/roomname">Room Name Generator</router-link>
-          <router-link class="gbf-menu-link" to="/friendsum">Friend Summons</router-link>
-          <router-link class="gbf-menu-link" to="/spark">Spark Maker</router-link>
-        </div>
-        
-        <span class="p-2 select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-        <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
-          <router-link class="gbf-menu-link" to="/search">Search</router-link>
-          <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
-        </div>
-
-        <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-        <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
-          <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
-          <router-link class="gbf-menu-link" to="/calcevent">New Events Tokens</router-link>
-        </div>
-      </div>
-
-      <!-- Common -->
-      <div v-if="getUserId !== null" class="flex flex-col text-primary border-b border-primary">
-        <span class="p-2 select-none">Account: {{ getUsername }} <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-        <div class="px-2 flex flex-col bg-secondary">
-          <router-link class="gbf-menu-link" to="/account">Properties</router-link>
-          <a class="gbf-menu-link cursor-pointer" @click="doLogout()">Log out</a>
-        </div>
-      </div>
-
-      <div class="p-2 hidden md:block"><label class="cursor-pointer select-none hover:text-link-hover">
-        <input type="checkbox" v-model="menu_compact" class="hidden">
-        <span>Main menu: {{ menu_compact ? 'Compact' : 'Expanded' }}</span>
-      </label></div>
-
-      <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
-        <input type="checkbox" v-model="lang" class="hidden">
-        <span>{{ getLangLabel }}</span>
-      </label></div>
-
-      <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
-        <input type="checkbox" v-model="theme_dark" class="hidden">
-        <span v-if="theme_dark"><fa-icon :icon="['fas', 'moon']"></fa-icon> Dark theme</span>
-        <span v-else><fa-icon :icon="['fas', 'sun']"></fa-icon> Light theme</span>
-      </label></div>
-
-      <div class="p-2 select-none">{{ getJST }} JST</div>
-    </nav>
-
     <!-- Main page -->
-    <main class="p-4 flex-shrink-0">
+    <main class="p-4 mb-16 flex-shrink-0 relative">
+      <!-- Menu popup -->
+      <div class="bg-secondary shadow-md w-full md:w-1/3 md:rounded-bl absolute right-0 top-0 z-40" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
+        <!-- For mobile -->
+        <div class="md:hidden flex flex-col text-primary border-b border-primary">
+          <span class="p-2 select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+          <div class="px-2 flex flex-col bg-secondary">
+            <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
+            <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
+            <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
+            <router-link class="gbf-menu-link" to="/roomname">Room Name Generator</router-link>
+            <router-link class="gbf-menu-link" to="/friendsum">Friend Summons</router-link>
+            <router-link class="gbf-menu-link" to="/spark">Spark Maker</router-link>
+          </div>
+          
+          <span class="p-2 select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+          <div class="px-2 flex flex-col bg-secondary">
+            <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
+            <router-link class="gbf-menu-link" to="/search">Search</router-link>
+            <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
+          </div>
+
+          <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+          <div class="px-2 flex flex-col bg-secondary">
+            <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
+            <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
+            <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
+            <router-link class="gbf-menu-link" to="/calcevent">New Events Tokens</router-link>
+          </div>
+        </div>
+
+        <!-- Common -->
+        <div v-if="getUserId !== null" class="flex flex-col text-primary border-b border-primary">
+          <span class="p-2 select-none">Account: {{ getUsername }} <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
+          <div class="px-2 flex flex-col bg-secondary">
+            <router-link class="gbf-menu-link" to="/account">Properties</router-link>
+            <a class="gbf-menu-link cursor-pointer" @click="doLogout()">Log out</a>
+          </div>
+        </div>
+
+        <div class="p-2 hidden md:block"><label class="cursor-pointer select-none hover:text-link-hover">
+          <input type="checkbox" v-model="menu_compact" class="hidden">
+          <span>Main menu: {{ menu_compact ? 'Compact' : 'Expanded' }}</span>
+        </label></div>
+
+        <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
+          <input type="checkbox" v-model="lang" class="hidden">
+          <span>{{ getLangLabel }}</span>
+        </label></div>
+
+        <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
+          <input type="checkbox" v-model="theme_dark" class="hidden">
+          <span v-if="theme_dark"><fa-icon :icon="['fas', 'moon']"></fa-icon> Dark theme</span>
+          <span v-else><fa-icon :icon="['fas', 'sun']"></fa-icon> Light theme</span>
+        </label></div>
+
+        <div class="p-2 select-none">{{ getJST }} JST</div>
+      </div>
+      
       <router-view></router-view>
     </main>
 
     <!-- Footer -->
-    <footer class="pt-12 pb-2 text-xs text-center mt-auto">
+    <footer class="bg-secondary shadow-md absolute bottom-0 w-full py-4 text-xs text-center">
       <p>
         <a href="https://twitter.com/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'twitter']" class="text-primary text-lg"></fa-icon> @GranblueParty
@@ -157,7 +160,7 @@
     </footer>
 
     <!-- Popups -->
-    <div class="fixed bottom-0 right-0" data-nosnippet>
+    <div class="fixed bottom-0 right-0 z-50" data-nosnippet>
       <div @click="killPopup(key)" class="w-48 bg-tertiary rounded m-4 p-2 flex flex-col break-words" v-for="(msg, key) in getPopups" :key="key">
         <div class="flex justify-between">
           <span>{{ msg.title }}</span>

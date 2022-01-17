@@ -61,6 +61,8 @@ import partiesModule from '@/store/modules/parties'
 
 import Dropdown from '@/components/common/Dropdown.vue';
 
+const BOOKMARKLET_VERSION = 6;
+
 // Duplicated in store/modules/party-builder.js
 const DEFAULT_VALUES = {
   classe: {},
@@ -435,7 +437,7 @@ export default {
         weapons: data.w,
       }
 
-      if ( ! data.v || data.v < 5) {
+      if ( ! data.v || data.v < BOOKMARKLET_VERSION) {
         this.$emit('update-bookmarklet');
       }
 

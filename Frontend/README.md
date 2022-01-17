@@ -2,10 +2,10 @@
 Vue.js Frontend for [granblue.party](https://www.granblue.party) website with Server Side Rendering.
 
 ## Requirements
-- NodeJS 12
+- NodeJS 14
 
 ## Installation
-To install the necessary modules, run `npm install` in the current folder.
+To install the necessary modules, run `yarn install` in the current folder.
 
 Copy `./src/js/config.js.template` to `./src/js/config.js` and edit relevant values. \
 Copy `./src/js/config-server.js.template` to `./src/js/config-server.js` and edit relevant values.

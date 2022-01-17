@@ -4,6 +4,9 @@ const isEmpty = (obj) => {
   return ! obj || (obj instanceof Object && Object.keys(obj).length === 0);
 }
 
+// Usage: filterObject(obj, ([key, value]) => value > 1); 
+const filterObject = (obj, predicate) => Object.fromEntries(Object.entries(obj).filter(predicate));
+
 const copy = (o) => {
   if (o === null) return null;
 
@@ -40,6 +43,13 @@ class LocalStorageMgt {
     localStorage.setItem(this.page + '-' + name, JSON.stringify(obj[name]));
   }
 
+  setNamedValue(name, value) {
+    if (typeof name !== "string") {
+      throw "name is not a String!"
+    }
+    localStorage.setItem(this.page + '-' + name, JSON.stringify(value));
+  }
+
   // Only set the value if it exists
   getValue(obj, name) {
     if (typeof name !== "string") {
@@ -66,6 +76,7 @@ class LocalStorageMgt {
 
 export default {
   isEmpty,
+  filterObject,
   copy,
   unescapeBase64,
   escapeBase64,

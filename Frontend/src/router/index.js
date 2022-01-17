@@ -47,6 +47,11 @@ export function createRouter(store) {
         },
       },
       {
+        path: '/calceternal',
+        component: () => import(/* webpackChunkName: "eternal" */ '@/pages/CalcEternal.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
         path: '/calcevoker',
         component: () => import(/* webpackChunkName: "evoker" */ '@/pages/CalcEvoker.vue'),
         pathToRegexpOptions: { strict: true },
@@ -110,6 +115,11 @@ export function createRouter(store) {
       {
         path: '/admin/summons',
         component: () => import('@/pages/admin/Summons.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
+        path: '/admin/calc',
+        component: () => import('@/pages/admin/Calculator.vue'),
         pathToRegexpOptions: { strict: true },
       },
       {

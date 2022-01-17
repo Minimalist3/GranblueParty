@@ -17,6 +17,7 @@ let config = {
       '@': path.resolve(__dirname, 'src'),
       '#': path.resolve(__dirname, 'node_modules'),
     },
+    fallback: { "url": require.resolve("url/") },
   },
   module: {
     rules: [

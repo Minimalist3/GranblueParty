@@ -379,7 +379,11 @@ def updateCharacters():
               skins.append(getTemplateValue(t, 'id')[:-3])
           
           # Images
-          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+          npc_quest_id = getTemplateValue(template, 'id')
+          if npc_quest_id == "3030182000" or npc_quest_id == "3020072000":
+            npc_quest_id += "_01"
+
+          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + npc_quest_id + '_01.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
           images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
         
           character_id = getTemplateValue(template, 'id')[:-3]
@@ -746,8 +750,17 @@ def updateWeapons():
           if int(weapon['hp1']) == 0:
             print('[ERR] hp1 missing for', name, weapon_id)
 
+        evo_max = weapon['evo max']
+        # Force all Ultima weapons to 5 stars and add a 3rd skill
+        if int(weapon_id) in defines.WEAPONS_ULTIMA:
+          evo_max = 5
+          weapon['s3 name'] = "Gate of Omnipotence"
+          weapon['s3 icon'] = "ws_skill_blank.png"
+          weapon['s3 desc'] = "A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys."
+          weapon['s3 lvl'] = 200
+
         # Base infos
-        values += [(weapon_id, name, weapon.get('jpname', ''), weapon['evo base'], weapon['evo max'],
+        values += [(weapon_id, name, weapon.get('jpname', ''), weapon['evo base'], evo_max,
           defines.getValue(weapon['rarity'], defines.RARITIES), defines.getValue(weapon['element'], defines.ELEMENTS),
           defines.getValue(weapon['type'], defines.WEAPONTYPES),
           int(weapon['atk1']), int(weapon['atk2']), int(weapon['atk3']), int(weapon['atk4']),

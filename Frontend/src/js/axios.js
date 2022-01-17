@@ -14,7 +14,6 @@ export default function getAxiosInstance(store, user) {
         if (VUE_ENV === 'client') {
           store.commit('logout', false);
           store.commit('show_modal_login', true);
-          return new Promise(() => {});
         }
       }
       return Promise.reject(error);

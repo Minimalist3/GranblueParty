@@ -5,10 +5,13 @@
       <button class="btn btn-white mr-4" @click="show_modal_url = true">
         <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load Wiki collection
       </button>
-      <button class="btn btn-white mr-4" @click="shareCollection">
+      <button class="btn btn-white mr-4" @click="openInWiki()">
+        <fa-icon :icon="['fas', 'external-link-alt']" class="text-xl"></fa-icon> Open in Wiki
+      </button>
+      <button class="btn btn-white mr-4" @click="shareCollection()">
        <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
       </button>    
-      <button class="btn btn-blue" @click="saveCollection" :disabled="! modification">
+      <button class="btn btn-blue" @click="saveCollection()" :disabled="! modification">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save changes
       </button>
     </div>
@@ -20,7 +23,8 @@
         v-for="category in getFilters"
         :key="category.name"
         :category="category.name"
-        :data="data_model[category.key].data"        
+        :data="data_model[category.key].data"
+        :hasAll="category.hasAll"
       ></data-filter>
 
       <div class="flex flex-row flex-wrap items-center btn-group my-2 mr-2">
@@ -212,7 +216,7 @@ import collectionModule from '@/store/modules/collection-tracker'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import StatInput from '@/components/common/StatInput.vue'
-import DataFilter from '@/components/DataFilter.vue'
+import DataFilter from '@/components/common/DataFilter.vue'
 import ModalUrl from '@/components/ModalWikiURL.vue'
 import StarsLine from '@/components/StarsLine.vue'
 
@@ -223,42 +227,49 @@ const categories = [
     name: "Name",
     isColumn: true,
     isFilter: false,
+    hasAll: true,
     key: "n",
   },
   {
     name: "Rarity",
     isColumn: false,
     isFilter: true,
+    hasAll: true,
     key: "ri",
   },
   {
     name: "Element",
     isColumn: true,
     isFilter: true,
+    hasAll: true,
     key: "e",
   },
   {
     name: "Type",
     isColumn: true,
     isFilter: true,
+    hasAll: true,
     key: "t",
   },
   {
     name: "Race",
     isColumn: true,
     isFilter: true,
+    hasAll: true,
     key: "ra",        
   },
   {
     name: "Weapon",
     isColumn: true,
     isFilter: true,
+    hasAll: true,
     key: "w",
   },
   {
     name: "Owned",
     isColumn: false,
     isFilter: true,
+    hasAll: false,
     key: "owned",
   },
 ];
@@ -293,7 +304,7 @@ const INITIAL_DATA = () => {
     clipboard_text: '',
     loading: true,
   }
-}
+};
 
 export default {
   components: {
@@ -422,6 +433,77 @@ export default {
           .then(response => this.$store.dispatch('addMessage', {message: 'Collection saved successfully'}))
           .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
       }
+    },
+    openInWiki() {
+      let strings = {
+        'c': ["","",""], // [R, SR, SSR]
+        's': ["","",""],
+      };
+      let selected = {
+        'c': [{},{},{}],
+        's': [{},{},{}],
+      };
+
+      this.characters.flat().forEach(unit => {
+        if (unit.owned === true) {
+          const unit_id = unit.id.toString();
+          const short_id = unit_id.slice(2, 3) + unit_id.slice(4);
+          if (short_id.length === 4) {
+            const rarity = unit.ri;
+            const index = parseInt(short_id.slice(1), 10);
+            // Wiki evo count doesn't go higher than 6 for transcendance
+            selected.c[rarity][index] = parseInt(Math.min(unit.sc, 6), 10) + 1;
+          }
+        }
+      });
+      this.summons.flat().forEach(unit => {
+        if (unit.owned === true) {
+          const unit_id = unit.id.toString();
+          const short_id = unit_id.slice(2, 3) + unit_id.slice(4);
+          if (short_id.length === 4) {
+            const rarity = unit.ri;
+            const index = parseInt(short_id.slice(1), 10);
+            // Wiki evo count doesn't go higher than 6 for transcendance
+            selected.s[rarity][index] = parseInt(unit.sc, 10) + 1;
+          }
+        }
+      });
+
+      // convert to a bit array
+      ['c', 's'].forEach(type => {
+        [0, 1, 2].forEach(rarity => {
+          let high_id = 0;
+          const obj = selected[type][rarity];
+          for (let index in obj)
+            high_id = Math.max(high_id, index);
+
+          // Group 8 items with 3 bits each
+          const parts = Math.floor(high_id / 8) + 1;
+          const size = parts * 3;
+          let buffer = new Uint8Array(size);
+
+          for (let i = 0; i <= Math.floor(high_id / 8); i++) {
+            let evos = 0x000000;
+            for (let j = 0; j < 8; j++) {
+              let evo = obj[i*8+j];
+              if (evo == undefined)
+                evo = 0;
+              evos |= (evo << (j*3));
+            }
+            buffer[i*3]   = (evos >>  0) & 0xFF;
+            buffer[i*3+1] = (evos >>  8) & 0xFF;
+            buffer[i*3+2] = (evos >> 16) & 0xFF;
+          }
+          const base64 = base64js.fromByteArray(buffer)
+          if (base64 != 'AAAA') {
+            strings[type][rarity] += base64;
+          }
+        });
+      });
+
+      const wiki_url = "https://gbf.wiki/Collection_Tracker#o3." + strings.c[2] + "." + strings.c[1] + "." + strings.c[0]
+        + "." + strings.s[2] + "." + strings.s[1] + "." + strings.s[0];
+      window.open(wiki_url);
     },
     shareCollection() {
       const text = window.location.href  + '/' + this.$store.getters.getUserId;
@@ -572,6 +654,13 @@ export default {
       }
     }
 
+    [0, 1].forEach(index => {
+      const owned = lsMgt.fetchValue('owned-' + index);
+      if (owned !== undefined) {
+        this.$set(this.data_model.owned.data[index], 'checked', owned);
+      }
+    });
+
     await this.loadCollection()
       .then(_ => this.loading = false);
   },
@@ -586,7 +675,7 @@ export default {
   watch: {
     '$store.getters.getUserId'(id) {
       if (id === null) {
-        this.$router.push({name: "collection401"});
+        this.$router.push({name: "collection401"}).catch(() => {});
       }
       else {
         Object.assign(this.$data, INITIAL_DATA());
@@ -609,6 +698,13 @@ export default {
     summon_show: {
       handler() {
         lsMgt.setValue('summon_show', this);
+      },
+      deep: true
+    },
+    'data_model.owned.data': {
+      handler() {
+        lsMgt.setNamedValue('owned-0', this.data_model.owned.data[0].checked);
+        lsMgt.setNamedValue('owned-1', this.data_model.owned.data[1].checked);
       },
       deep: true
     },

@@ -115,7 +115,7 @@ const FIGHT_DATA = [
     cost_ap: 30,
     cost_meat: 0,
     cost_ep: 1,
-    honor: 50000,
+    honor: 51000,
     token_host: 22,
     token_join: 20,
     token_1: 14,
@@ -127,7 +127,7 @@ const FIGHT_DATA = [
     cost_ap: 30,
     cost_meat: 0,
     cost_ep: 1,
-    honor: 77000,
+    honor: 80800,
     token_host: 26,
     token_join: 20,
     token_1: 20,
@@ -335,19 +335,22 @@ export default {
       }
       let add_plus = false;
 
+      // Box 1 (1 box): 800 tickets * 2 per draw
       if (this.getBoxesOpened === 0 && boxes > 0) {
         tokens += 1600;
         boxes--;
         this.tokens_explained += '1600';
         add_plus = true;
-      }      
+      }
+      // Box 2 to 4 (3 boxes): 1200 tickets * 2 per draw
       if (this.getBoxesOpened < 4 && boxes > 0) {
         const sum = Math.min(3, boxes, 4-this.getBoxesOpened);
         tokens += 2400 * sum;
         boxes -= sum;
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2400';
         add_plus = true;
-      }      
+      }
+      // Box 5 to 45 (41 boxes): 2000 tickets * 2 per draw
       if (this.getBoxesOpened < 45 && boxes > 0) {
         const sum = Math.min(41, boxes, 45-this.getBoxesOpened);
         tokens += 2000 * sum;
@@ -355,6 +358,7 @@ export default {
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2000';
         add_plus = true;
       }
+      // Box 46 to 80 (35 boxes): 2500 tickets * 4 per draw
       if (this.getBoxesOpened < 80 && boxes > 0) {
         const sum = Math.min(35, boxes, 80-this.getBoxesOpened);
         tokens += 10000 * sum;
@@ -362,6 +366,7 @@ export default {
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x10000';
         add_plus = true;
       }
+      // Box 81+: 2500 tickets * 6 per draw
       if (boxes > 0) {
         tokens += 15000 * boxes;
         this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x15000';

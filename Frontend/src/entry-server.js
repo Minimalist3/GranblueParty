@@ -20,7 +20,9 @@ export default context => {
 
     const { app, router, store } = createApp(user);
 
-    router.push(context.url);
+    // Catch the "useless" exception (this is by design)
+    // https://stackoverflow.com/a/65326844
+    router.push(context.url).catch(() => {});
 
     router.onReady(() => {
       // This `rendered` hook is called when the app has finished rendering

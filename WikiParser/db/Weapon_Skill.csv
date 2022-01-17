@@ -183,17 +183,22 @@
 10400118	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400119	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400119	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
-10400119	3	1	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
+10400119	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400120	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400120	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10400120	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400121	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400121	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10400121	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400122	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400122	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10400122	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400123	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400123	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10400123	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400124	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
 10400124	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10400124	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400125	1	1	\N	2	Big boost to water allies' ATK
 10400125	2	1	\N	103	Small boost to water allies' C.A. DMG
 10400126	1	1	\N	104	When main weapon: MC gains Lethal Attack Dodged (1 time) . MC gains a 30% chance to gain a Substitute effect, which grants a 50% cut to damage.
@@ -386,6 +391,8 @@
 10400224	2	1	\N	1063	Small boost to wind allies' ATK based on how low HP is
 10400225	1	1	\N	20	Big boost to light allies' DEF based on how low HP is
 10400225	2	1	\N	370	Small boost to light allies' C.A. DMG
+10400227	1	1	\N	68	Big boost to earth allies' DEF based on how low HP is
+10400227	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -548,16 +555,22 @@
 10401096	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401097	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401097	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401097	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401098	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401098	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401098	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401099	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401099	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401099	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401100	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401100	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401100	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401101	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401101	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401101	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401102	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
 10401102	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10401102	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401103	1	1	\N	199	Small boost to ATK as earth allies' HP decreases
 10401103	2	1	\N	200	Boost to earth charge attack DMG cap
 10401104	1	1	\N	201	Small boost to light allies' ATK and critical hit rate
@@ -661,6 +674,13 @@
 10401151	2	120	\N	1079	Medium boost to water allies' ATK
 10401152	1	1	\N	1092	Big boost to wind allies' C.A. DMG
 10401152	2	1	\N	841	Boost to wind allies' skill DMG cap
+10401153	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
+10401153	2	1	\N	914	Boost to fire allies' C.A. DMG cap
+10401153	3	120	\N	1070	Supplement fire allies' critical hit DMG
+10401155	1	1	\N	1108	Supplement Dark allies' damage based on how high their HP is.
+10401155	2	1	\N	1109	Medium boost to dark allies' dark ATK based on number of turns passed
+10401156	1	1	\N	1112	Big boost to water allies' skill DMG cap / Big supplemental boost to skill DMG
+10401156	2	150	\N	417	Small boost to water allies' ATK and max HP
 10402000	1	1	\N	222	Medium boost to light allies' critical hit rate
 10402000	2	1	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10402002	1	1	\N	0	Big boost to fire allies' ATK
@@ -807,16 +827,22 @@
 10402087	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402088	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402088	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402088	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402089	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402089	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402089	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402090	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402090	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402090	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402091	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402091	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402091	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402092	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402092	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402092	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402093	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
 10402093	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10402093	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402094	1	1	\N	271	Massive boost to Wind allies' ATK
 10402095	1	1	\N	271	Massive boost to wind allies' ATK
 10402095	1	200	\N	983	Massive boost to wind allies' ATK / Small boost to max HP
@@ -864,7 +890,7 @@
 10402117	1	1	\N	295	Medium boost to fire allies' ATK and double attack rate
 10402117	2	1	\N	243	Small boost to fire allies' max HP
 10402118	1	1	\N	7	Big boost to light allies' ATK
-10402118	2	1	\N	296	When main weapon (MC only): Bonus Light damage effect when foe is under Charmed
+10402118	2	1	\N	296	When main weapon (MC only): ~10% bonus Light damage effect when foe has Charmed effect.
 10402119	1	1	\N	297	20% boost to spear- and katana-specialty allies' ATK 10% boost to spear- and katana-specialty allies' HP
 10402119	2	120	\N	298	Supplemental damage to spear- and katana-specialty allies' attacks when HP is above 80% (Damage cap: 30,000)
 10402120	1	1	\N	10	Big boost to fire allies' max HP
@@ -895,7 +921,8 @@
 10402131	2	1	\N	182	Small boost to wind allies' healing cap
 10402132	1	1	\N	750	Massive boost to dark allies' ATK
 10402133	1	1	\N	750	Massive boost to dark allies' ATK
-10402133	2	120	\N	788	When main weapon: Big boost to all allies' ATK based on how low MC's HP is
+10402133	1	200	\N	1059	Massive boost to dark allies' ATK / Small boost to max HP
+10402133	2	120	\N	788	When main weapon: Big boost to all allies' ATK based on how low MC's HP is.
 10402134	1	1	\N	253	Big boost to light allies' multiattack rate
 10402134	2	150	\N	791	Medium boost to light allies' light ATK based on number of turns passed
 10402135	1	1	\N	251	30% boost to ATK and HP of equipped spears
@@ -965,6 +992,8 @@
 10402165	2	1	\N	1090	Medium boost to wind primal allies' ATK
 10402167	1	1	\N	20	Big boost to light allies' DEF based on how low HP is
 10402167	2	120	\N	419	Small boost to light allies' ATK and max HP
+10402169	1	1	\N	1113	Big boost to dark allies' skill DMG cap / Big supplemental boost to skill DMG
+10402169	2	150	\N	480	Small boost to dark allies' ATK / Small boost to triple attack rate
 10403000	1	1	\N	7	Big boost to light allies' ATK
 10403000	2	120	\N	312	When main weapon, boost to debuff resistance
 10403001	1	60	\N	892	Medium boost to Light allies' ATK / Medium boost to triple attack rate.
@@ -988,7 +1017,7 @@
 10403011	1	1	\N	318	Medium boost to light allies' max HP
 10403011	2	1	\N	2	Big boost to water allies' ATK
 10403012	1	1	\N	23	Big boost to dark allies' max HP
-10403012	2	120	\N	319	Massive boost to your triple attack rate.
+10403012	2	120	\N	1110	Massive boost to your triple attack rate.
 10403013	1	1	\N	7	Big boost to light allies' ATK
 10403014	1	1	\N	236	Big boost to dark allies' ATK
 10403014	2	1	\N	320	Slight chance to dodge and counter (big DMG) for water allies
@@ -1100,16 +1129,22 @@
 10403077	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403078	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403079	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403080	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403080	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403080	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403081	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403081	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403081	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403082	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403082	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403082	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403083	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
 10403083	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10403083	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403084	1	1	\N	351	When main weapon: Also gain 10% C.A. DMG Up and 10% C.A. DMG Cap Up upon using Full Arsenal III 
 10403084	2	1	\N	352	This is the essence of greatness. Gain its power by using emblems.
 10403085	1	1	\N	351	When main weapon: Also gain 10% C.A. DMG Up and 10% C.A. DMG Cap Up upon using Full Arsenal III 
@@ -1186,7 +1221,7 @@
 10403116	2	150	\N	349	Medium boost to dark allies' ATK and max HP
 10403117	1	1	\N	615	Small boost to wind allies' ATK
 10403117	2	1	\N	836	Medium boost to wind allies' multiattack rate
-10403117	3	120	\N	919	Bonus Wind DMG effect to third hit of Wind allies' triple attacks.
+10403117	3	120	\N	919	20% Bonus Wind DMG effect to the third hit of Wind allies' triple attacks.
 10403118	1	1	\N	851	Unworldly boost to fire allies' ATK
 10403118	2	120	\N	852	When main weapon: 10% Bonus Fire DMG effect to Fire allies' triple attacks.
 10403118	2	200	\N	935	10% Bonus Fire DMG effect to Fire allies' triple attacks.
@@ -1246,6 +1281,8 @@
 10403144	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
 10403145	1	1	\N	900	Medium boost to earth allies' ATK / Medium boost to triple attack rate
 10403145	2	1	\N	606	Small boost to earth allies' C.A. DMG
+10403148	1	1	\N	817	Big boost to earth allies' ATK
+10403148	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.
 10404002	1	1	\N	13	Big boost to wind allies' ATK
 10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Counters on Dodge (1 time) (Boost to counter damage based on skill lvl).
 10404003	1	1	\N	386	Small boost to healing for healing type allies.
@@ -1427,16 +1464,22 @@
 10404107	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404108	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404108	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404108	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404109	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404109	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404109	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404110	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404110	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404110	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404111	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404111	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404111	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404112	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404112	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404112	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404113	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
 10404113	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10404113	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404114	1	1	\N	440	15% boost to staff-specialty allies' charge attack damage.
 10404114	2	100	\N	441	Big boost to wind allies' ATK
 10404115	1	1	\N	0	Big boost to fire allies' ATK
@@ -1604,6 +1647,13 @@
 10404194	1	1	\N	948	Big boost to earth allies' critical hit rate
 10404194	2	1	\N	1093	Small boost to earth allies' healing cap
 10404194	3	120	\N	759	Medium boost to earth allies' ATK based on how high HP is
+10404195	1	1	\N	7	Big boost to light allies' ATK
+10404195	2	1	\N	138	Boost to light allies' skill DMG cap
+10404195	3	120	\N	1107	When main weapon (MC only): 4-hit, 80% Light damage (Damage cap: ~85,000) to random foes at end of turn if no damage has been taken.
+10404197	1	1	\N	1111	Supplement Dark allies' C.A. DMG based on how low their HP is.
+10404197	2	1	\N	227	Medium boost to dark allies' ATK based on how low HP is
+10404198	1	1	\N	1115	Big boost to wind allies' healing cap
+10404198	2	1	\N	1116	Medium boost to wind allies' ATK and max HP
 10405000	1	1	\N	5	Big boost to earth allies' ATK
 10405000	1	101	\N	269	Big boost to earth allies' ATK
 10405000	2	120	\N	481	Slight chance to dodge and counter (medium DMG) for earth allies
@@ -1733,16 +1783,22 @@
 10405073	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405074	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405075	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405076	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405076	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405076	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405077	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405077	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405077	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405078	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405079	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
 10405079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10405079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405080	1	1	\N	518	When main weapon: Increase all Bounty Hunters' effect with 1 stack. 5% boost to item-drop rate.
 10405080	2	1	\N	519	This is the essence of greatness. Gain its power by using emblems.
 10405081	1	1	\N	518	When main weapon: Increase all Bounty Hunters' effect with 1 stack. 5% boost to item-drop rate.
@@ -2026,16 +2082,22 @@
 10406080	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406081	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406081	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406081	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406082	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406082	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406082	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406083	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406083	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406083	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406084	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406084	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406084	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406085	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406085	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406085	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406086	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
 10406086	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10406086	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406087	1	1	\N	578	When main weapon: Boost to all allies' DEF
 10406087	2	100	\N	579	Big boost to Fire allies' ATK
 10406088	1	1	\N	580	Big boost to water allies' critical hit rate
@@ -2167,7 +2229,10 @@
 10406155	1	1	\N	213	Big boost to wind allies' ATK based on how low HP is
 10406155	2	120	\N	1087	Supplement wind allies' DMG based on how low HP is
 10406156	1	1	\N	1105	Big boost to water allies' ATK
-10406156	2	1	\N	1106	When main weapon (MC only): Massive boost to critical hit rate
+10406156	2	1	\N	1106	When main weapon (MC only): Massive boost to critical hit rate.
+10406158	1	1	\N	597	Medium boost to earth allies' ATK and critical hit rate
+10406158	2	1	\N	383	Boost to earth allies' skill DMG cap
+10406158	3	120	\N	1114	Supplement earth allies' critical hit DMG
 10407000	1	1	\N	0	Big boost to fire allies' ATK
 10407000	1	101	\N	482	Big boost to fire allies' ATK
 10407000	2	120	\N	299	Medium boost to double attack rate for fire allies
@@ -2291,16 +2356,22 @@
 10407068	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407069	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407069	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407069	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407070	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407070	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407070	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407071	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407071	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407071	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407072	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407072	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407072	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407073	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407073	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407073	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407074	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
 10407074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10407074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407075	1	1	\N	645	When main weapon: Also grants Charge Bar Gain Up for 3 turns and Substitute for 1 turn upon using Evasive Maneuvers .
 10407075	2	1	\N	646	This is the essence of greatness. Gain its power by using emblems.
 10407076	1	1	\N	645	When main weapon: Also grants Charge Bar Gain Up for 3 turns and Substitute for 1 turn upon using Evasive Maneuvers .
@@ -2502,16 +2573,22 @@
 10408069	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408070	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408070	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408070	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408071	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408071	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408071	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408072	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408072	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408072	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408073	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408073	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408073	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408074	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408075	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
 10408075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10408075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408076	1	1	\N	689	When main weapon: All allies also gain Refresh for 3 turns and Immune for 1 turn upon using Concludere .
 10408076	2	1	\N	690	This is the essence of greatness. Gain its power by using emblems.
 10408077	1	1	\N	689	When main weapon: All allies also gain Refresh for 3 turns and Immune for 1 turn upon using Concludere .
@@ -2646,6 +2723,10 @@
 10408138	2	1	\N	929	Medium boost to light allies' healing cap
 10408139	1	1	\N	137	Big boost to wind allies' ATK
 10408139	2	120	\N	841	Boost to wind allies' skill DMG cap
+10408141	1	1	\N	632	Medium boost to wind allies' ATK and critical hit rate
+10408141	2	1	\N	301	Slight chance to dodge and counter (medium DMG) for wind allies
+10408142	1	1	\N	580	Big boost to water allies' critical hit rate
+10408142	2	1	\N	232	Small boost to water allies' ATK
 10409000	1	1	\N	0	Big boost to fire allies' ATK
 10409000	1	101	\N	482	Big boost to fire allies' ATK
 10409000	2	120	\N	2	Big boost to water allies' ATK
@@ -2689,7 +2770,7 @@
 10409025	1	101	\N	482	Big boost to fire allies' ATK
 10409026	1	1	\N	26	Big boost to dark allies' ATK
 10409026	2	1	\N	2	Big boost to water allies' ATK
-10409026	3	120	\N	723	When main weapon: Boost to Dark allies' Skill DMG and Skill DMG cap.
+10409026	3	120	\N	723	When main weapon: 20% boost to skill DMG and 10% boost to skill DMG cap for Dark allies.
 10409027	1	1	\N	971	Big boost to fire allies' ATK based on how low HP is
 10409028	1	1	\N	716	When main weapon (MC only): Charge bar fills up 20% faster.
 10409028	2	1	\N	717	10% cut to amount of charge bar used when casting Self Reflection .
@@ -2784,16 +2865,22 @@
 10409074	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409075	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409076	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409076	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409076	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409077	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409077	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409077	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409078	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409079	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409080	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
 10409080	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
+10409080	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409081	1	1	\N	13	Big boost to wind allies' ATK
 10409081	2	1	\N	743	When main weapon (MC only): Gain Refresh.
 10409082	1	1	\N	744	Big boost to light allies' ATK
@@ -2863,7 +2950,7 @@
 10409113	2	120	\N	774	Boost to Fire allies' damage cap.
 10409114	1	1	\N	0	Big boost to fire allies' ATK
 10409114	2	1	\N	368	Small boost to fire allies' C.A. DMG
-10409114	3	120	\N	1031	Big boost to Fire allies' ATK. / Take 20% of max HP as Plain Damage at battle start.
+10409114	3	120	\N	1031	Big boost to fire allies' ATK / Take DMG worth 20% of max HP at battle start
 10409115	1	1	\N	779	Big boost to wind allies' C.A. DMG and C.A. DMG cap
 10409115	2	150	\N	780	Small boost to wind allies' ATK / Small boost to triple attack rate
 10409116	1	1	\N	786	Big boost to dark allies' C.A. DMG

@@ -24,7 +24,7 @@ export default {
     goToCollection() {
       // When a user logs in, go back to collection
       if (this.getUserId !== null) {
-        this.$router.push({name: "collection"});
+        this.$router.push({name: "collection"}).catch(() => {});
       }
     }
   },

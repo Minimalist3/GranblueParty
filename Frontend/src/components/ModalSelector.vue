@@ -47,7 +47,7 @@ import DataModel from '@/js/data-model'
 import Utils from '@/js/utils'
 
 import Modal from './common/Modal.vue'
-import DataFilter from './DataFilter.vue'
+import DataFilter from './common/DataFilter.vue'
 
 export default {
   model: {
