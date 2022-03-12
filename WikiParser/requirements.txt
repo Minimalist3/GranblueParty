@@ -1,5 +1,5 @@
 charset-normalizer==2.0.9
 mwparserfromhell==0.6.3
-Pillow==8.4.0
+Pillow==9.0.1
 psycopg2-binary==2.9.2
 requests==2.26.0
