@@ -1,46 +1,56 @@
+// Always loaded
+
 export default {
   state () {
     return {
-      username: null,
       userId: null,
+      username: null,
+      email: null,
       show_modal_login: false,
     }
   },
   getters: {
+    getUserId: state => {
+      return state.userId;
+    },
     getUsername: state => {
       return state.username;
     },
-    getUserId: state => {
-      return state.userId;
+    getEmail: state => {
+      return state.email;
     },
     showModalLogin: state => {
       return state.show_modal_login;
     },
   },
   mutations: {
-    login(state, object) {
-      state.username = object.username;
-      localStorage.setItem('username', object.username);
-      state.userId = object.userId;
-      localStorage.setItem('userId', object.userId);
+    setUserId(state, userId) {
+      state.userId = userId;
     },
-    login_client(state, object) {
-      state.username = object.username;
-    },
-    login_server(state, object) {
-      state.username = object.username;
-      state.userId = object.userId;
+    setEmail(state, email) {
+      state.email = email;
     },
     logout(state, full = true) {
       if (full === true) {
         state.username = null;
-        localStorage.removeItem('username');
       }
       state.userId = null;
-      localStorage.removeItem('userId');
+      state.email = null;
     },
     show_modal_login(state, value) {
       state.show_modal_login = value;
     }
   },
+  actions: {
+    fetchUserInfos({ state, dispatch }) {
+      if (state.userId !== null && state.username === null) {
+        return this.axios.post("/user/infos")
+          .then(response => {
+            state.username = response.data.username;
+            state.email = response.data.email;
+          })
+          .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}))
+      }
+    },
+  }
 }

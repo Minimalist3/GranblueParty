@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row flex-grow items-center text-sm">
+  <div class="flex flex-row grow items-center text-sm">
     <span class="flex flex-col items-center">
       1
       <input class="input mr-1" style="width: 6ch" v-model.number="object.percent['1']">
@@ -73,7 +73,7 @@
     </select>
 
     <textarea
-      class="text-primary bg-tertiary font-mono flex-grow"
+      class="text-primary bg-tertiary font-mono grow"
       rows="7"
       spellcheck="false"
       v-model.lazy="getObjectJSON"

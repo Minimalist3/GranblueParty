@@ -1,10 +1,10 @@
 <template>
   <div class="inline-block relative">
-    <select :value="value" @change="changeValue" class="block select select-sm w-full" ref="select">
+    <select :value="value" @change="changeValue" class="block select select-sm w-full" ref="select" :disabled="disabled">
       <slot></slot>
     </select>
 
-    <div class="pointer-events-none absolute inset-y-0 right-0 rounded flex items-center px-2 text-gray-700">
+    <div v-if="! disabled" class="pointer-events-none absolute inset-y-0 right-0 rounded flex items-center px-2 text-gray-700">
       <fa-icon :icon="['fas', 'angle-down']" class="text-xl"></fa-icon>
     </div>
   </div>
@@ -19,7 +19,11 @@ export default {
     index: {
       type: Number,
       required: false,      
-    }
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     changeValue(e) {

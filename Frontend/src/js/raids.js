@@ -280,7 +280,7 @@ const CAT_STANDARD = {
     }
   },
   70: {
-    name: '',
+    name: 'Nightmare',
     stars: 7,
     raids: {
       '300291/1/0/58': {
@@ -469,6 +469,10 @@ const CAT_IMPOSSIBLE = {
     magfes: 60,
     times: 2,
     raids: {
+      '305361/1/0/45': {
+        name: 'Horus',
+        namejp: 'ホルス'
+      },
       '305371/1/0/46': {
         name: 'Osiris',
         namejp: 'オシリス'
@@ -565,7 +569,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1050: {
-    name: '',
+    name: '6 Stars',
     tier: 'impossible',
     stars: 6,
     raids: {
@@ -634,13 +638,13 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1070: {
-    name: '',
+    name: 'Nightmare',
     tier: 'impossible',
     stars: 7,    
     times: 1,
     raids: {
       '301061/1/0/59': {
-        name: 'Proto Bahamut',
+        name: 'Proto Bahamut (Hard)',
         namejp: '強いバハ',
         cost: 90,
         magfes: 45,
@@ -666,7 +670,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1080: {
-    name: '',
+    name: 'Astral',
     tier: 'impossible',
     stars: 9,
     cost: 100,
@@ -688,7 +692,7 @@ const CAT_IMPOSSIBLE = {
     }
   },
   1090: {
-    name: '',
+    name: 'Super Ultimate',
     tier: 'impossible',
     stars: 10,
     cost: 100,

@@ -21,6 +21,16 @@ h2 {
   @apply font-bold;
 }
 
+h3 {
+  @apply text-xl;
+  @apply font-bold;
+}
+
+h4 {
+  @apply text-lg;
+  @apply font-bold;
+}
+
 img {
   @apply inline-block;
 }

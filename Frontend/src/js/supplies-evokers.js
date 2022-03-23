@@ -75,6 +75,9 @@ const EVOKERS_DATA = Object.freeze({
     new MaterialStep('4th Domain Bonus and Support Skill',
       [{"group":"sixdragon","q":30},{"group":"luster","q":20},{"group":"veritas","q":50},{"group":"astra","q":40},{"group":"idean","q":70},{"group":"arcarumfragment","q":20},{"item":"sephirastone","q":20}],
     ),
+    new MaterialStep('Uncap Weapon 4*',
+      [{"item":"newworldquartz","q":20},{"group":"veritas","q":150},{"group":"verum","q":250},{"group":"idean","q":100},{"group":"luster","q":60},{"group":"sixdragonjewel","q":30},{"group":"astra","q":120}]
+    ),
   ]
 });
 

@@ -5,20 +5,18 @@ import { createApp } from './app';
 
 export default context => {
   return new Promise((resolve, reject) => {
-    let user = null;
+    let jwt_string = null;
+    let userId = null;
     if (context.jwt) {
       try {
         const decoded = jwt.verify(context.jwt, Config.server.jwt);
-        user = {
-          username: decoded.username ? decoded.username : '',
-          userId: decoded.userid,
-          jwt: context.jwt
-        };
+        jwt_string = context.jwt;
+        userId = decoded.userid;
       }
       catch {}
     }
 
-    const { app, router, store } = createApp(user);
+    const { app, router, store } = createApp(userId, jwt_string);
 
     // Catch the "useless" exception (this is by design)
     // https://stackoverflow.com/a/65326844

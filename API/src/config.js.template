@@ -27,6 +27,11 @@ const config = {
     BCRYPT_SALT_ROUNDS: 12,
     secureCookie: true, // Marks the cookie to be used with HTTPS only
   },
+  // https://github.com/mailjet/mailjet-apiv3-nodejs
+  mailinjet: {
+    public_key: '',
+    private_key: '',
+  }
 };
 
 module.exports = config;

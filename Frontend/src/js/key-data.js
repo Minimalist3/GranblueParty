@@ -12,588 +12,300 @@ const getSkillByName = (name) => {
   return null;
 }
 
-const data = {
-  // Atma keys
-  1: [ // sabre
+// Atma builder
+
+function getBaseData(weapon) {
+  return [
+    {"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":[weapon]},"aura_type":"ex","stat":"atk"},
+    {"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":[weapon]},"aura_type":"normal","stat":"hp"},
+  ];
+}
+function getAtmaWeapon(name, keyid, weapon) {
+  return [
     {
-      name: 'Gladius Dominion',
-      icon: 'ws_skill_weapon_atk_1.png',
+      name: name + ' Dominion',
+      icon: 'ws_skill_weapon_atk_' + keyid + '.png',
       desc: 'Gauph Key of Will',
       level: 1,
-      keyid: 1,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "hp" },
+        {"percent":{"1":10,"10":25,"15":30,"20":35},"restriction":{"weapon":[weapon]},"aura_type":"ex","stat":"atk"},
+        {"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":[weapon]},"aura_type":"normal","stat":"hp"},
       ],
     },
     {
-      name: 'Gladius Parity',
-      icon: 'ws_skill_weapon_da_1.png',
+      name: name + ' Parity',
+      icon: 'ws_skill_weapon_da_' + keyid + '.png',
       desc: 'Gauph Key of Strife',
       level: 1,
-      keyid: 1,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "ta" },
+        ... getBaseData(weapon),
+        {"percent":{"1":2,"10":20,"15":22.5,"20":25},"restriction": {"weapon":[weapon]},"aura_type":"normal","stat":"da"},
+        {"percent":{"1":2,"10":20,"15":22.5,"20":25},"restriction": {"weapon":[weapon]},"aura_type":"normal","stat":"ta"},
       ],
     },
     {
-      name: 'Gladius Utopia',
-      icon: 'ws_skill_weapon_hp_1.png',
+      name: name + ' Utopia',
+      icon: 'ws_skill_weapon_hp_' + keyid + '.png',
       desc: 'Gauph Key of Vitality',
       level: 1,
-      keyid: 1,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["sabre"]}, "aura_type": "normal", "stat": "hp" },
+        {"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":[weapon]},"aura_type":"ex","stat":"atk"},
+        {"percent":{"1":2,"10":20,"15":25,"20":30},"restriction":{"weapon":[weapon]},"aura_type":"normal","stat":"hp"},
       ],
     },
     {
-      name: 'Gladius Plenum',
-      icon: 'ws_skill_weapon_whole_1.png',
+      name: name + ' Plenum',
+      icon: 'ws_skill_weapon_whole_' + keyid + '.png',
       desc: 'Gauph Key of Strength',
       level: 1,
-      keyid: 1,
+      keyid: keyid,
+      data: [
+        ... getBaseData(weapon),
+        {"percent":{"1":53.7},"restriction": {"weapon":[weapon]},"aura_type":"normal","stat":"stamina"},
+      ],
     },
     {
-      name: 'Gladius Ultio',
-      icon: 'ws_skill_weapon_backwater_1.png',
+      name: name + ' Ultio',
+      icon: 'ws_skill_weapon_backwater_' + keyid + '.png',
       desc: 'Gauph Key of Zeal',
       level: 1,
-      keyid: 1,
+      keyid: keyid,
+      data: [
+        ... getBaseData(weapon),
+        {"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction": {"weapon":[weapon]},"aura_type":"normal","stat":"enmity"},
+      ],
     },
     {
-      name: 'Gladius Ars',
-      icon: 'ws_skill_weapon_tech_1.png',
+      name: name + ' Ars',
+      icon: 'ws_skill_weapon_tech_' + keyid + '.png',
       desc: 'Gauph Key of Courage',
       level: 1,
-      keyid: 1,
-    },
-  ],
-  2: [ // dagger
-    {
-      name: 'Sica Dominion',
-      icon: 'ws_skill_weapon_atk_2.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 2,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "hp" },
+        ... getBaseData(weapon),
+        {"percent":{"1":1,"10":15,"15":17.5,"20":20},"restriction": {"weapon":[weapon]},"aura_type":"normal","stat":"crit"},
       ],
-    },
+    }
+  ];
+}
+
+// Opus 3rd builder
+
+function getOpusThirdOmega(name, keyid, element) {
+  const elemid = keyid - 20;
+  return [
     {
-      name: 'Sica Parity',
-      icon: 'ws_skill_weapon_da_2.png',
-      desc: 'Gauph Key of Strife',
+      name: name + '\'s Stamina II',
+      icon: 'ws_skill_whole_m_' + elemid + '_3.png',
+      desc: 'Pendulum of Strength',
       level: 1,
-      keyid: 2,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Sica Utopia',
-      icon: 'ws_skill_weapon_hp_2.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 2,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["dagger"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Sica Plenum',
-      icon: 'ws_skill_weapon_whole_2.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 2,
-    },
-    {
-      name: 'Sica Ultio',
-      icon: 'ws_skill_weapon_backwater_2.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 2,
-    },
-    {
-      name: 'Sica Ars',
-      icon: 'ws_skill_weapon_tech_2.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 2,
-    },
-  ],
-  3: [ // spear
-    {
-      name: 'Lancea Dominion',
-      icon: 'ws_skill_weapon_atk_3.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 3,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Lancea Parity',
-      icon: 'ws_skill_weapon_da_3.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 3,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Lancea Utopia',
-      icon: 'ws_skill_weapon_hp_3.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 3,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["spear"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Lancea Plenum',
-      icon: 'ws_skill_weapon_whole_3.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 3,
-    },
-    {
-      name: 'Lancea Ultio',
-      icon: 'ws_skill_weapon_backwater_3.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 3,
-    },
-    {
-      name: 'Lancea Ars',
-      icon: 'ws_skill_weapon_tech_3.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 3,
-    },
-  ],
-  4: [ // axe
-    {
-      name: 'Labrys Dominion',
-      icon: 'ws_skill_weapon_atk_4.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 4,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Labrys Parity',
-      icon: 'ws_skill_weapon_da_4.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 4,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Labrys Utopia',
-      icon: 'ws_skill_weapon_hp_4.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 4,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["axe"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Labrys Plenum',
-      icon: 'ws_skill_weapon_whole_4.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 4,
-    },
-    {
-      name: 'Labrys Ultio',
-      icon: 'ws_skill_weapon_backwater_4.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 4,
-    },
-    {
-      name: 'Labrys Ars',
-      icon: 'ws_skill_weapon_tech_4.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 4,
-    },
-  ],
-  5: [ // staff
-    {
-      name: 'Baculum Dominion',
-      icon: 'ws_skill_weapon_atk_5.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 5,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Baculum Parity',
-      icon: 'ws_skill_weapon_da_5.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 5,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Baculum Utopia',
-      icon: 'ws_skill_weapon_hp_5.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 5,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["staff"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Baculum Plenum',
-      icon: 'ws_skill_weapon_whole_5.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 5,
-    },
-    {
-      name: 'Baculum Ultio',
-      icon: 'ws_skill_weapon_backwater_5.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 5,
-    },
-    {
-      name: 'Baculum Ars',
-      icon: 'ws_skill_weapon_tech_5.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 5,
-    },
-  ],
-  6: [ // gun
-    {
-      name: 'Arma Dominion',
-      icon: 'ws_skill_weapon_atk_6.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 6,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Arma Parity',
-      icon: 'ws_skill_weapon_da_6.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 6,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Arma Utopia',
-      icon: 'ws_skill_weapon_hp_6.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 6,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["gun"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Arma Plenum',
-      icon: 'ws_skill_weapon_whole_6.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 6,
-    },
-    {
-      name: 'Arma Ultio',
-      icon: 'ws_skill_weapon_backwater_6.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 6,
-    },
-    {
-      name: 'Arma Ars',
-      icon: 'ws_skill_weapon_tech_6.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 6,
-    },
-  ],
-  7: [ // melee
-    {
-      name: 'Luctor Dominion',
-      icon: 'ws_skill_weapon_atk_7.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 7,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Luctor Parity',
-      icon: 'ws_skill_weapon_da_7.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 7,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Luctor Utopia',
-      icon: 'ws_skill_weapon_hp_7.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 7,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["melee"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Luctor Plenum',
-      icon: 'ws_skill_weapon_whole_7.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 7,
-    },
-    {
-      name: 'Luctor Ultio',
-      icon: 'ws_skill_weapon_backwater_7.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 7,
-    },
-    {
-      name: 'Luctor Ars',
-      icon: 'ws_skill_weapon_tech_7.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 7,
-    },
-  ],
-  8: [ // bow
-    {
-      name: 'Arcus Dominion',
-      icon: 'ws_skill_weapon_atk_8.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 8,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Arcus Parity',
-      icon: 'ws_skill_weapon_da_8.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 8,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Arcus Utopia',
-      icon: 'ws_skill_weapon_hp_8.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 8,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["bow"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Arcus Plenum',
-      icon: 'ws_skill_weapon_whole_8.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 8,
-    },
-    {
-      name: 'Arcus Ultio',
-      icon: 'ws_skill_weapon_backwater_8.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 8,
-    },
-    {
-      name: 'Arcus Ars',
-      icon: 'ws_skill_weapon_tech_8.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 8,
-    },
-  ],
-  9: [ // harp
-    {
-      name: 'Musica Dominion',
-      icon: 'ws_skill_weapon_atk_9.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 9,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Musica Parity',
-      icon: 'ws_skill_weapon_da_9.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 9,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "ta" },
-      ],
-    },
-    {
-      name: 'Musica Utopia',
-      icon: 'ws_skill_weapon_hp_9.png',
-      desc: 'Gauph Key of Vitality',
-      level: 1,
-      keyid: 9,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["harp"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Musica Plenum',
-      icon: 'ws_skill_weapon_whole_9.png',
-      desc: 'Gauph Key of Strength',
-      level: 1,
-      keyid: 9,
-    },
-    {
-      name: 'Musica Ultio',
-      icon: 'ws_skill_weapon_backwater_9.png',
-      desc: 'Gauph Key of Zeal',
-      level: 1,
-      keyid: 9,
-    },
-    {
-      name: 'Musica Ars',
-      icon: 'ws_skill_weapon_tech_9.png',
-      desc: 'Gauph Key of Courage',
-      level: 1,
-      keyid: 9,
-    },
-  ],
-  10: [ // katana
-    {
-      name: 'Makhaira Dominion',
-      icon: 'ws_skill_weapon_atk_10.png',
-      desc: 'Gauph Key of Will',
-      level: 1,
-      keyid: 10,
-      data: [
-        { "percent": {"1": 3, "10": 30}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "hp" },
-      ],
-    },
-    {
-      name: 'Makhaira Parity',
-      icon: 'ws_skill_weapon_da_10.png',
-      desc: 'Gauph Key of Strife',
-      level: 1,
-      keyid: 10,
-      data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 1, "10": 10}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "hp" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "da" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "ta" },
+        {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": [element] }}
       ]
     },
     {
-      name: 'Makhaira Utopia',
-      icon: 'ws_skill_weapon_hp_10.png',
-      desc: 'Gauph Key of Vitality',
+      name: name + '\'s Enmity III',
+      icon: 'ws_skill_backwater_m_' + elemid + '_3.png',
+      desc: 'Pendulum of Zeal',
       level: 1,
-      keyid: 10,
+      keyid: keyid,
       data: [
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "atk" },
-        { "percent": {"1": 2, "10": 20}, "restriction": {"weapon": ["katana"]}, "aura_type": "normal", "stat": "hp" },
-      ],
+        {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": [element]}, "aura_type": "omega", "stat": "enmity"}
+      ]
     },
     {
-      name: 'Makhaira Plenum',
-      icon: 'ws_skill_weapon_whole_10.png',
-      desc: 'Gauph Key of Strength',
+      name: name + '\'s Trium II',
+      icon: 'ws_skill_ta_m_' + elemid + '_2.png',
+      desc: 'Pendulum of Strife',
       level: 1,
-      keyid: 10,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction": {"element": [element]},"aura_type":"omega","stat":"da"},
+        {"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction": {"element": [element]},"aura_type":"omega","stat":"ta"},
+      ]
     },
     {
-      name: 'Makhaira Ultio',
-      icon: 'ws_skill_weapon_backwater_10.png',
-      desc: 'Gauph Key of Zeal',
+      name: name + '\'s Progression III',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Pendulum of Prosperity',
       level: 1,
-      keyid: 10,
+      keyid: keyid,
     },
     {
-      name: 'Makhaira Ars',
-      icon: 'ws_skill_weapon_tech_10.png',
-      desc: 'Gauph Key of Courage',
+      name: name + '\'s Celere II',
+      icon: 'ws_skill_moment_m_' + elemid + '.png',
+      desc: 'Chain of Temperament',
       level: 1,
-      keyid: 10,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":[element]},"aura_type":"omega","stat":"atk"},
+        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":[element]},"aura_type":"omega","stat":"crit"}
+      ]
     },
-  ],
+    {
+      name: name + '\'s Majesty II',
+      icon: 'ws_skill_god_m_' + elemid + '_2.png',
+      desc: 'Chain of Restoration',
+      level: 1,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":3,"10":12,"15":14.5,"20":15.5},"restriction":{"element":[element]},"aura_type":"omega","stat":"atk"},
+        {"percent":{"1":3,"10":12,"15":14.5,"20":15.5},"restriction":{"element":[element]},"aura_type":"omega","stat":"hp"}
+      ]
+    },
+    {
+      name: name + '\'s Glory III',
+      icon: 'ws_skill_hero_m_' + elemid + '_3.png',
+      desc: 'Chain of Glorification',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Cunning Temptation',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Temptation',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Forbidden Fruit',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Forbiddance',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Wicked Conduct',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Depravity',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Deceitful Fallacy',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Falsehood',
+      level: 1,
+      keyid: keyid,
+    },
+  ]
+}
+
+function getOpusThirdOptimus(name1, name2, keyid, element) {
+  const elemid = keyid - 30;
+  return [
+    {
+      name: name1 + '\'s Stamina',
+      icon: 'ws_skill_whole_' + elemid + '_3.png',
+      desc: 'Pendulum of Strength',
+      level: 1,
+      keyid: keyid,
+      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": [element] }} ]
+    },
+    {
+      name: name1 + '\'s Enmity',
+      icon: 'ws_skill_backwater_' + elemid + '_3.png',
+      desc: 'Pendulum of Zeal',
+      level: 1,
+      keyid: keyid,
+      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": [element]}, "aura_type": "optimus", "stat": "enmity"} ]
+    },
+    {
+      name: name2 + '\'s Trium',
+      icon: 'ws_skill_ta_' + elemid + '_2.png',
+      desc: 'Pendulum of Strife',
+      level: 1,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction": {"element": [element]},"aura_type":"optimus","stat":"da"},
+        {"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction": {"element": [element]},"aura_type":"optimus","stat":"ta"},
+      ]
+    },
+    {
+      name: name1 + '\'s Progression',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Pendulum of Prosperity',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: name2 + '\'s Celere',
+      icon: 'ws_skill_moment_' + elemid + '.png',
+      desc: 'Chain of Temperament',
+      level: 1,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":[element]},"aura_type":"optimus","stat":"atk"},
+        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":[element]},"aura_type":"optimus","stat":"crit"}
+      ]
+    },
+    {
+      name: name2 + '\'s Majesty',
+      icon: 'ws_skill_god_' + elemid + '_2.png',
+      desc: 'Chain of Restoration',
+      level: 1,
+      keyid: keyid,
+      data: [
+        {"percent":{"1":3,"10":12,"15":14.5,"20":15.5},"restriction":{"element":[element]},"aura_type":"optimus","stat":"atk"},
+        {"percent":{"1":3,"10":12,"15":14.5,"20":15.5},"restriction":{"element":[element]},"aura_type":"optimus","stat":"hp"}
+      ]
+    },
+    {
+      name: name1 + '\'s Glory',
+      icon: 'ws_skill_hero_' + elemid + '_3.png',
+      desc: 'Chain of Glorification',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Cunning Temptation',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Temptation',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Forbidden Fruit',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Forbiddance',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Wicked Conduct',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Depravity',
+      level: 1,
+      keyid: keyid,
+    },
+    {
+      name: 'Deceitful Fallacy',
+      icon: 'ws_skill_job_weapon.png',
+      desc: 'Chain of Falsehood',
+      level: 1,
+      keyid: keyid,
+    },
+  ];
+}
+
+// Data
+
+const data = {
+  // Atma keys
+  1: getAtmaWeapon('Gladius', 1, 'sabre'),
+  2: getAtmaWeapon('Sica', 2, 'dagger'),
+  3: getAtmaWeapon('Lancea', 3, 'spear'),
+  4: getAtmaWeapon('Labrys', 4, 'axe'),
+  5: getAtmaWeapon('Baculum', 5, 'staff'),
+  6: getAtmaWeapon('Arma', 6, 'gun'),
+  7: getAtmaWeapon('Luctor', 7, 'melee'),
+  8: getAtmaWeapon('Arcus', 8, 'bow'),
+  9: getAtmaWeapon('Musica', 9, 'harp'),
+  10: getAtmaWeapon('Makhaira', 10, 'katana'),
   // Ultima keys
   11: [
     {
@@ -663,1027 +375,19 @@ const data = {
     },
   ],
   // Dark Opus 3rd keys Omega
-  21: [
-    {
-      name: 'Ironflame\'s Stamina II',
-      icon: 'ws_skill_whole_m_1_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 21,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["fire"] }} ]
-    },
-    {
-      name: 'Ironflame\'s Enmity III',
-      icon: 'ws_skill_backwater_m_1_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 21,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["fire"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Ironflame\'s Trium II',
-      icon: 'ws_skill_ta_m_1_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Ironflame\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Ironflame\'s Celere II',
-      icon: 'ws_skill_moment_m_1.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 21,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Ironflame\'s Majesty II',
-      icon: 'ws_skill_god_m_1_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 21,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Ironflame\'s Glory III',
-      icon: 'ws_skill_hero_m_1_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 21,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 21,
-    },
-  ],
-  22: [
-    {
-      name: 'Oceansoul\'s Stamina II',
-      icon: 'ws_skill_whole_m_2_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 22,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["water"] }} ]
-    },
-    {
-      name: 'Oceansoul\'s Enmity III',
-      icon: 'ws_skill_backwater_m_2_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 22,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["water"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Oceansoul\'s Trium II',
-      icon: 'ws_skill_ta_m_2_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Oceansoul\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Oceansoul\'s Celere II',
-      icon: 'ws_skill_moment_m_2.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 22,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Oceansoul\'s Majesty II',
-      icon: 'ws_skill_god_m_2_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 22,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["water"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Oceansoul\'s Glory III',
-      icon: 'ws_skill_hero_m_2_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 22,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 22,
-    },
-  ],
-  23: [
-    {
-      name: 'Lifetree\'s Stamina II',
-      icon: 'ws_skill_whole_m_3_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 23,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["earth"] }} ]
-    },
-    {
-      name: 'Lifetree\'s Enmity III',
-      icon: 'ws_skill_backwater_m_3_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 23,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["earth"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Lifetree\'s Trium II',
-      icon: 'ws_skill_ta_m_3_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Lifetree\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Lifetree\'s Celere II',
-      icon: 'ws_skill_moment_m_3.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 23,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Lifetree\'s Majesty II',
-      icon: 'ws_skill_god_m_3_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 23,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Lifetree\'s Glory III',
-      icon: 'ws_skill_hero_m_3_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 23,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 23,
-    },
-  ],
-  24: [
-    {
-      name: 'Stormwyrm\'s Stamina II',
-      icon: 'ws_skill_whole_m_4_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 24,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["wind"] }} ]
-    },
-    {
-      name: 'Stormwyrm\'s Enmity III',
-      icon: 'ws_skill_backwater_m_4_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 24,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["wind"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Stormwyrm\'s Trium II',
-      icon: 'ws_skill_ta_m_4_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Stormwyrm\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Stormwyrm\'s Celere II',
-      icon: 'ws_skill_moment_m_4.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 24,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Stormwyrm\'s Majesty II',
-      icon: 'ws_skill_god_m_4_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 24,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Stormwyrm\'s Glory III',
-      icon: 'ws_skill_hero_m_4_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 24,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 24,
-    },
-  ],
-  25: [
-    {
-      name: 'Knightcode\'s Stamina II',
-      icon: 'ws_skill_whole_m_5_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 25,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["light"] }} ]
-    },
-    {
-      name: 'Knightcode\'s Enmity III',
-      icon: 'ws_skill_backwater_m_5_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 25,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["light"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Knightcode\'s Trium II',
-      icon: 'ws_skill_ta_m_5_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Knightcode\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Knightcode\'s Celere II',
-      icon: 'ws_skill_moment_m_5.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 25,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Knightcode\'s Majesty II',
-      icon: 'ws_skill_god_m_5_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 25,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["light"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Knightcode\'s Glory III',
-      icon: 'ws_skill_hero_m_5_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 25,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 25,
-    },
-  ],
-  26: [
-    {
-      name: 'Mistfall\'s Stamina II',
-      icon: 'ws_skill_whole_m_6_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 26,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "omega", "stat": "stamina", "restriction": {"element": ["dark"] }} ]
-    },
-    {
-      name: 'Mistfall\'s Enmity III',
-      icon: 'ws_skill_backwater_m_6_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 26,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["dark"]}, "aura_type": "omega", "stat": "enmity"} ]
-    },
-    {
-      name: 'Mistfall\'s Trium II',
-      icon: 'ws_skill_ta_m_6_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Mistfall\'s Progression III',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Mistfall\'s Celere II',
-      icon: 'ws_skill_moment_m_6.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 26,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"},
-        {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Mistfall\'s Majesty II',
-      icon: 'ws_skill_god_m_6_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 26,
-      data: [ {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"},
-      {"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"hp"} ]
-    },
-    {
-      name: 'Mistfall\'s Glory III',
-      icon: 'ws_skill_hero_m_6_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 26,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 26,
-    },
-  ],
+  21: getOpusThirdOmega('Ironflame', 21, 'fire'),
+  22: getOpusThirdOmega('Oceansoul', 22, 'water'),
+  23: getOpusThirdOmega('Lifetree', 23, 'earth'),
+  24: getOpusThirdOmega('Stormwyrm', 24, 'wind'),
+  25: getOpusThirdOmega('Knightcode', 25, 'light'),
+  26: getOpusThirdOmega('Mistfall', 26, 'dark'),
   // Dark Opus 3rd keys Normal
-  31: [
-    {
-      name: 'Inferno\'s Stamina',
-      icon: 'ws_skill_whole_1_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 31,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["fire"] }} ]
-    },
-    {
-      name: 'Inferno\'s Enmity',
-      icon: 'ws_skill_backwater_1_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 31,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["fire"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Hellfire\'s Trium',
-      icon: 'ws_skill_ta_1_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Inferno\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Hellfire\'s Celere',
-      icon: 'ws_skill_moment_1.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 31,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Hellfire\'s Majesty',
-      icon: 'ws_skill_god_1_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 31,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Inferno\'s Glory',
-      icon: 'ws_skill_hero_1_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 31,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 31,
-    },
-  ],
-  32: [
-    {
-      name: 'Hoarfrost\'s Stamina',
-      icon: 'ws_skill_whole_2_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 32,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["water"] }} ]
-    },
-    {
-      name: 'Hoarfrost\'s Enmity',
-      icon: 'ws_skill_backwater_2_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 32,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["water"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Tsunami\'s Trium',
-      icon: 'ws_skill_ta_2_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Hoarfrost\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Tsunami\'s Celere',
-      icon: 'ws_skill_moment_2.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 32,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Tsunami\'s Majesty',
-      icon: 'ws_skill_god_2_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 32,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Hoarfrost\'s Glory',
-      icon: 'ws_skill_hero_2_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 32,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 32,
-    },
-  ],
-  33: [
-    {
-      name: 'Terra\'s Stamina',
-      icon: 'ws_skill_whole_3_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 33,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["earth"] }} ]
-    },
-    {
-      name: 'Terra\'s Enmity',
-      icon: 'ws_skill_backwater_3_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 33,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["earth"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Mountain\'s Trium',
-      icon: 'ws_skill_ta_3_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Terra\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Mountain\'s Celere',
-      icon: 'ws_skill_moment_3.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 33,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Mountain\'s Majesty',
-      icon: 'ws_skill_god_3_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 33,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Terra\'s Glory',
-      icon: 'ws_skill_hero_3_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 33,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 33,
-    },
-  ],
-  34: [
-    {
-      name: 'Ventosus\'s Stamina',
-      icon: 'ws_skill_whole_4_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 34,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["wind"] }} ]
-    },
-    {
-      name: 'Ventosus\'s Enmity',
-      icon: 'ws_skill_backwater_4_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 34,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["wind"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Whirlwind\'s Trium',
-      icon: 'ws_skill_ta_4_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Ventosus\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Whirlwind\'s Celere',
-      icon: 'ws_skill_moment_4.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 34,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Whirlwind\'s Majesty',
-      icon: 'ws_skill_god_4_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 34,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Ventosus\'s Glory',
-      icon: 'ws_skill_hero_4_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 34,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 34,
-    },
-  ],
-  35: [
-    {
-      name: 'Zion\'s Stamina',
-      icon: 'ws_skill_whole_5_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 35,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["light"] }} ]
-    },
-    {
-      name: 'Zion\'s Enmity',
-      icon: 'ws_skill_backwater_5_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 35,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["light"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Thunder\'s Trium',
-      icon: 'ws_skill_ta_5_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Zion\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Thunder\'s Celere',
-      icon: 'ws_skill_moment_5.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 35,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Thunder\'s Majesty',
-      icon: 'ws_skill_god_5_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 35,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Zion\'s Glory',
-      icon: 'ws_skill_hero_5_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 35,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 35,
-    },
-  ],
-  36: [
-    {
-      name: 'Oblivion\'s Stamina',
-      icon: 'ws_skill_whole_6_3.png',
-      desc: 'Pendulum of Strength',
-      level: 1,
-      keyid: 36,
-      data: [ {"percent": {"1": 56.4}, "aura_type": "optimus", "stat": "stamina", "restriction": {"element": ["dark"] }} ]
-    },
-    {
-      name: 'Oblivion\'s Enmity',
-      icon: 'ws_skill_backwater_6_3.png',
-      desc: 'Pendulum of Zeal',
-      level: 1,
-      keyid: 36,
-      data: [ {"percent": {"1":0.83,"10":10,"15":12.5,"20":13.5}, "restriction": {"element": ["dark"]}, "aura_type": "optimus", "stat": "enmity"} ]
-    },
-    {
-      name: 'Hatred\'s Trium',
-      icon: 'ws_skill_ta_6_2.png',
-      desc: 'Pendulum of Strife',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Oblivion\'s Progression',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Pendulum of Prosperity',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Hatred\'s Celere',
-      icon: 'ws_skill_moment_6.png',
-      desc: 'Chain of Temperament',
-      level: 1,
-      keyid: 36,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"crit"} ]
-    },
-    {
-      name: 'Hatred\'s Majesty',
-      icon: 'ws_skill_god_6_2.png',
-      desc: 'Chain of Restoration',
-      level: 1,
-      keyid: 36,
-      data: [ {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"},
-      {"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"hp"} ]
-    },
-    {
-      name: 'Oblivion\'s Glory',
-      icon: 'ws_skill_hero_6_3.png',
-      desc: 'Chain of Glorification',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Cunning Temptation',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Temptation',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Forbidden Fruit',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Forbiddance',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Wicked Conduct',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Depravity',
-      level: 1,
-      keyid: 36,
-    },
-    {
-      name: 'Deceitful Fallacy',
-      icon: 'ws_skill_job_weapon.png',
-      desc: 'Chain of Falsehood',
-      level: 1,
-      keyid: 36,
-    },
-  ],
+  31: getOpusThirdOptimus('Inferno', 'Hellfire', 31, 'fire'),
+  32: getOpusThirdOptimus('Hoarfrost', 'Tsunami', 32, 'water'),
+  33: getOpusThirdOptimus('Terra', 'Mountain', 33, 'earth'),
+  34: getOpusThirdOptimus('Ventosus', 'Whirlwind', 34, 'wind'),
+  35: getOpusThirdOptimus('Zion', 'Thunder', 35, 'light'),
+  36: getOpusThirdOptimus('Oblivion', 'Hatred', 36, 'dark'),
   // Draconic 2nd skill
   40: [
     {
@@ -1836,28 +540,28 @@ const data = {
   // Ultima 3rd skill
   50: [
     {
-      name: 'Boost to all allies\' DMG cap',
+      name: 'Fulgor Fortis',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Gauph Key Ena',
       level: 200,
       keyid: 50,
     },
     {
-      name: 'Boost to all allies\' healing cap',
+      name: 'Fulgor Sanatio',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Gauph Key Dio',
       level: 200,
       keyid: 50,
     },
     {
-      name: 'Amplify all allies\' superior elemental DMG',
+      name: 'Fulgor Impetus',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Gauph Key Tria',
       level: 200,
       keyid: 50,
     },
     {
-      name: 'Boost to all allies\' charge bar gain',
+      name: 'Fulgor Elatio',
       icon: 'ws_skill_job_weapon.png',
       desc: 'Gauph Key Tessera',
       level: 200,

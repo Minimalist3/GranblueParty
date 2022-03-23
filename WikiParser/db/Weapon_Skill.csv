@@ -25,8 +25,8 @@
 10400019	1	1	\N	11	Big boost to light allies' max HP
 10400019	2	120	\N	19	Light allies gain Veil at start of the first attack phase.
 10400020	1	60	\N	20	Big boost to DEF as Light allies' HP decreases
-10400020	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400020	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400020	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400020	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400020	3	200	\N	259	Medium boost to ATK as Light allies' HP increases
 10400021	1	1	\N	23	Big boost to dark allies' max HP
 10400022	1	1	\N	24	Big boost to earth allies' ATK
@@ -120,24 +120,24 @@
 10400074	1	1	\N	65	Boost to Humans' and Draphs' ATK and HP.
 10400074	2	200	\N	1094	Boost to all allies' ATK and max HP based on number of Humans and Draphs in party.
 10400075	1	60	\N	66	Big boost to DEF as Fire allies' HP decreases
-10400075	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400075	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400075	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400075	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400075	3	200	\N	737	Medium boost to ATK as Fire allies' HP increases
 10400076	1	60	\N	67	Big boost to DEF as Water allies' HP decreases
-10400076	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400076	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400076	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400076	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400076	3	200	\N	880	Medium boost to ATK as Water allies' HP increases
 10400077	1	60	\N	68	Big boost to DEF as Earth allies' HP decreases
-10400077	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400077	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400077	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400077	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400077	3	200	\N	759	Medium boost to ATK as Earth allies' HP increases
 10400078	1	60	\N	69	Big boost to DEF as Wind allies' HP decreases
-10400078	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400078	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400078	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400078	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400078	3	200	\N	881	Medium boost to ATK as Wind allies' HP increases
 10400079	1	60	\N	70	Big boost to DEF as Dark allies' HP decreases
-10400079	2	100	\N	21	When main weapon (MC only): Boost to C.A. DMG based on how high HP is.
-10400079	2	150	\N	22	When main weapon (MC only): Boost to C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
+10400079	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
+10400079	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
 10400079	3	200	\N	112	Medium boost to ATK as Dark allies' HP increases
 10400085	1	1	\N	0	Big boost to fire allies' ATK
 10400086	1	1	\N	26	Big boost to dark allies' ATK
@@ -175,28 +175,28 @@
 10400111	2	1	\N	99	5% Boost to EXP earnings.
 10400112	1	1	\N	3	Big boost to water allies' ATK
 10400112	2	1	\N	100	Boost to chain burst DMG and chain burst DMG cap
-10400113	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400114	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400115	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400116	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400117	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400118	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
-10400119	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400113	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400114	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400115	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400116	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400117	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400118	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
+10400119	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400119	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400119	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10400120	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400120	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400120	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400120	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10400121	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400121	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400121	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400121	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10400122	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400122	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400122	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400122	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10400123	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400123	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400123	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400123	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10400124	1	1	1	101	20% boost to sabre-specialty allies' ATK 10% boost to sabre-specialty allies' HP
+10400124	1	1	1	101	Big boost to sabre-specialty allies' ATK and max HP
 10400124	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10400124	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10400125	1	1	\N	2	Big boost to water allies' ATK
@@ -353,7 +353,9 @@
 10400207	1	1	\N	973	Big boost to fire allies' ATK
 10400207	2	100	\N	974	When main weapon (MC only): Gain Guaranteed DA upon single attacks.
 10400208	1	1	\N	998	When main weapon: Massive boost to Water allies' ATK . Water allies restore 10% HP upon casting buff-removing skills (Healing cap: 3000).
-10400208	2	1	\N	999	20% boost to Water allies' DMG cap in Arcarum.
+10400208	1	150	\N	998	Massive boost to Water allies' ATK . Water allies restore 10% HP upon casting buff-removing skills (Healing cap: 3000).
+10400208	2	1	\N	999	20% boost to Water allies' DMG cap in Arcarum
+10400208	3	120	\N	417	Small boost to Water allies' ATK and max HP
 10400209	1	1	\N	1017	Big boost to earth allies' skill DMG cap / Big supplemental boost to skill DMG
 10400209	2	150	\N	498	Small boost to earth allies' ATK / Small boost to triple attack rate
 10400210	1	1	\N	5	Big boost to earth allies' ATK
@@ -375,6 +377,7 @@
 10400217	2	1	\N	327	Small boost to light allies' max HP
 10400218	1	1	\N	41	Medium boost to earth allies' ATK
 10400218	2	1	\N	1037	Small boost to earth allies' C.A. DMG and C.A. DMG cap
+10400218	3	120	\N	1117	Boost to ATK based on how many sabres are equipped
 10400219	1	1	\N	7	Big boost to Light allies' ATK
 10400219	2	1	\N	1051	15% boost to Light allies' ATK (Only on Mondays [JST]).
 10400220	1	1	\N	86	Big boost to wind allies' critical hit rate
@@ -383,16 +386,24 @@
 10400220	3	120	\N	1053	Supplement wind allies' critical hit DMG
 10400221	1	1	\N	1054	Medium boost to dark allies' ATK and double attack rate
 10400221	2	1	\N	332	Small boost to dark allies' critical hit rate
+10400221	2	120	\N	627	Medium boost to dark allies' double attack rate and critical hit rate
 10400222	1	1	\N	1060	Big boost to earth allies' ATK
 10400222	2	100	\N	1061	When main weapon (MC only): 20% Boost to C.A. DMG.
 10400223	1	1	\N	1068	Big boost to wind allies' ATK
-10400223	2	100	\N	1069	When main weapon (MC only): ~30% chance to restore MC's HP (Healing cap: 1000) and remove 1 debuff upon normal attacks.
+10400223	2	100	\N	1069	When main weapon (MC only): ~30% chance to restore HP (Healing cap: 1000) and remove 1 debuff upon normal attacks.
 10400224	1	1	\N	69	Big boost to wind allies' DEF based on how low HP is
 10400224	2	1	\N	1063	Small boost to wind allies' ATK based on how low HP is
 10400225	1	1	\N	20	Big boost to light allies' DEF based on how low HP is
 10400225	2	1	\N	370	Small boost to light allies' C.A. DMG
+10400225	2	120	\N	1118	Small boost to light allies' C.A. DMG and C.A. DMG cap
+10400225	3	120	\N	1119	Small boost to light allies' ATK based on how high HP is
+10400226	1	1	\N	1127	Boost to ATK based on how many sabres are equipped
+10400226	2	1	\N	1128	Boost to fire allies' multiattack rate based on how high their HP is
 10400227	1	1	\N	68	Big boost to earth allies' DEF based on how low HP is
 10400227	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
+10400228	1	1	\N	0	Big boost to fire allies' ATK
+10400228	2	1	\N	368	Small boost to fire allies' C.A. DMG
+10400228	3	120	\N	914	Boost to fire allies' C.A. DMG cap
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -493,29 +504,29 @@
 10401065	1	1	\N	175	Big boost to dark allies' ATK / 10% cut to dark allies' max HP
 10401065	2	1	\N	176	Big boost to dark allies' multiattack rate
 10401066	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401066	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401066	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401066	2	100	\N	131	Boost to Fire allies' skill DMG cap.
 10401066	3	200	\N	882	10% bonus Fire DMG to Fire allies against foes with Bounty .
 10401067	1	1	\N	180	Boost to Humans' and Erunes' ATK and HP.
 10401067	2	200	\N	1096	Boost to all allies' ATK based on number of Humans and Erunes in party.
 10401068	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401068	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401068	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401068	2	100	\N	541	Boost to Water allies' skill DMG cap.
 10401068	3	200	\N	883	10% bonus Water DMG to Water allies against foes with Bounty .
 10401069	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401069	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401069	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401069	2	100	\N	383	Boost to Earth allies' skill DMG cap.
 10401069	3	200	\N	884	10% bonus Earth DMG to Earth allies against foes with Bounty .
 10401070	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401070	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401070	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401070	2	100	\N	841	Boost to Wind allies' skill DMG cap.
 10401070	3	200	\N	885	10% bonus Wind DMG to Wind allies against foes with Bounty .
 10401071	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401071	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401071	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401071	2	100	\N	138	Boost to Light allies' skill DMG cap.
 10401071	3	200	\N	886	10% bonus Light DMG to Light allies against foes with Bounty .
 10401072	1	60	\N	177	When main weapon: 10% boost to item drop rate
-10401072	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the limit of Bounty lvl to Bounty lvl 10 
+10401072	1	150	\N	178	When main weapon: 10% boost to item drop rate / Boost Bounty Hunter success rate / Increase the Bounty lvl cap to Bounty lvl 10 
 10401072	2	100	\N	309	Boost to Dark allies' skill DMG cap.
 10401072	3	200	\N	887	10% bonus Dark DMG to Dark allies against foes with Bounty .
 10401078	1	1	\N	7	Big boost to light allies' ATK
@@ -547,28 +558,28 @@
 10401089	2	100	\N	195	Big boost to Earth allies' ATK
 10401090	1	1	\N	196	Big boost to wind allies' ATK / 10% cut to wind allies' max HP
 10401090	2	1	\N	197	Big boost to wind allies' multiattack rate
-10401091	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401092	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401093	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401094	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401095	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401096	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
-10401097	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401091	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401092	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401093	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401094	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401095	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401096	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
+10401097	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401097	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401097	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401098	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401098	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401098	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401098	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401099	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401099	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401099	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401099	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401100	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401100	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401100	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401100	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401101	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401101	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401101	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401101	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401102	1	1	2	198	20% boost to dagger-specialty allies' ATK 10% boost to dagger-specialty allies' HP
+10401102	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401102	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401102	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10401103	1	1	\N	199	Small boost to ATK as earth allies' HP decreases
@@ -635,25 +646,28 @@
 10401131	1	1	\N	2	Big boost to water allies' ATK
 10401131	2	1	\N	85	Small boost to water allies' critical hit rate
 10401132	1	1	\N	1000	When main weapon: Massive boost to Dark allies' ATK . All Dark allies gain 15% ATK Up (Stackable / Max: 45%) and 15% DEF Up (Stackable / Max: 45%) when an ally is knocked out.
-10401132	2	1	\N	1001	20% boost to Dark allies' DMG cap in Arcarum.
+10401132	1	150	\N	1000	Massive boost to Dark allies' ATK . All Dark allies gain 15% ATK Up (Stackable / Max: 45%) and 15% DEF Up (Stackable / Max: 45%) when an ally is knocked out.
+10401132	2	1	\N	1001	20% boost to Dark allies' DMG cap in Arcarum
+10401132	3	120	\N	375	Small boost to Dark allies' ATK and max HP
 10401133	1	1	\N	276	Medium boost to dark allies' ATK and critical hit rate
 10401133	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
+10401133	3	120	\N	191	Small boost to dark allies' multiattack rate
 10401134	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401134	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401134	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401135	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401135	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401135	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401136	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401136	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401136	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401137	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401137	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401137	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401138	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401138	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401138	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401139	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401139	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401139	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401140	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401140	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401140	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401141	1	1	\N	1038	When main weapon (MC only): Spellbound Salsa no longer lowers max HP.
-10401141	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration.
+10401141	2	1	\N	1039	When main weapon (MC only): Extend Two to Tango 's effect duration by 1 turn.
 10401142	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
 10401142	2	1	\N	1041	This is the essence of greatness. Gain its power by using emblems.
 10401143	1	1	\N	1040	When main weapon (MC only): Increase 'boost to dodge rate' effect.
@@ -677,6 +691,8 @@
 10401153	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
 10401153	2	1	\N	914	Boost to fire allies' C.A. DMG cap
 10401153	3	120	\N	1070	Supplement fire allies' critical hit DMG
+10401154	1	1	\N	1129	Boost to ATK based on how many daggers are equipped
+10401154	2	1	\N	1130	Boost to wind allies' multiattack rate based on how high their HP is
 10401155	1	1	\N	1108	Supplement Dark allies' damage based on how high their HP is.
 10401155	2	1	\N	1109	Medium boost to dark allies' dark ATK based on number of turns passed
 10401156	1	1	\N	1112	Big boost to water allies' skill DMG cap / Big supplemental boost to skill DMG
@@ -696,7 +712,7 @@
 10402008	3	120	\N	228	Boost to Wind allies' debuff success rate.
 10402009	1	60	\N	868	Big boost to Fire allies' Fire ATK based on number of turns passed
 10402009	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402009	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402009	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402009	3	200	\N	771	Medium boost to Fire allies' critical hit rate
 10402012	1	1	\N	17	Big boost to water allies' max HP
 10402012	2	120	\N	232	Small boost to water allies' ATK
@@ -765,23 +781,23 @@
 10402054	2	200	\N	1097	Boost to all allies' ATK based on number of Erunes and Draphs in party.
 10402055	1	60	\N	888	Big boost to Water allies' Water ATK based on number of turns passed
 10402055	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402055	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402055	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402055	3	200	\N	4	Medium boost to Water allies' critical hit rate
 10402056	1	60	\N	889	Big boost to Earth allies' Earth ATK based on number of turns passed
 10402056	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402056	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402056	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402056	3	200	\N	172	Medium boost to Earth allies' critical hit rate
 10402057	1	60	\N	890	Big boost to Wind allies' Wind ATK based on number of turns passed
 10402057	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402057	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402057	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402057	3	200	\N	263	Medium boost to Wind allies' critical hit rate
 10402058	1	60	\N	891	Big boost to Light allies' Light ATK based on number of turns passed
 10402058	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402058	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402058	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402058	3	200	\N	222	Medium boost to Light allies' critical hit rate
 10402059	1	60	\N	846	Big boost to Dark allies' Dark ATK based on number of turns passed
 10402059	2	100	\N	230	When main weapon (MC only): Every superior elemental attack will be a critical hit.
-10402059	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 30% boost to critical hit DMG cap.
+10402059	2	150	\N	231	When main weapon (MC only): Every superior elemental attack will be a critical hit. 20% boost to all allies' critical hit DMG Cap.
 10402059	3	200	\N	333	Medium boost to Dark allies' critical hit rate
 10402065	1	1	\N	26	Big boost to dark allies' ATK
 10402065	2	1	\N	252	Dark allies gain boost to ATK upon taking DMG (Stackable)
@@ -819,28 +835,28 @@
 10402080	2	100	\N	268	Big boost to light allies' ATK
 10402081	1	1	\N	269	Big boost to earth allies' ATK
 10402081	2	1	\N	200	Boost to earth charge attack DMG cap
-10402082	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402083	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402084	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402085	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402086	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402087	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
-10402088	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402082	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402083	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402084	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402085	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402086	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402087	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
+10402088	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402088	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402088	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10402089	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402089	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402089	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402089	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10402090	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402090	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402090	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402090	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10402091	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402091	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402091	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402091	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10402092	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402092	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402092	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402092	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10402093	1	1	3	270	20% boost to spear-specialty allies' ATK 10% boost to spear-specialty allies' HP
+10402093	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402093	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10402093	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10402094	1	1	\N	271	Massive boost to Wind allies' ATK
@@ -967,7 +983,9 @@
 10402154	1	1	\N	0	Big boost to fire allies' ATK
 10402154	2	120	\N	991	When main weapon (MC only): Deal 2-hit DMG to random foes for every normal attack.
 10402155	1	1	\N	1002	When main weapon: Massive boost to Earth allies' ATK . Restore 12% HP to Earth allies with 12 or more buffs at end of turn (Healing cap: 1200).
-10402155	2	1	\N	1003	20% boost to Earth allies' DMG cap in Arcarum.
+10402155	1	150	\N	1002	Massive boost to Earth allies' ATK . Restore 12% HP to Earth allies with 12 or more buffs at end of turn (Healing cap: 1200).
+10402155	2	1	\N	1003	20% boost to Earth allies' DMG cap in Arcarum
+10402155	3	120	\N	418	Small boost to Earth allies' ATK and max HP
 10402156	1	1	\N	995	Medium boost to water allies' C.A. DMG
 10402156	2	1	\N	4	Medium boost to water allies' critical hit rate
 10402157	1	1	\N	2	Big boost to water allies' ATK
@@ -988,17 +1006,26 @@
 10402163	3	150	\N	1074	Boost to water allies' DMG cap
 10402164	1	1	\N	411	Big boost to fire allies' ATK based on how low HP is
 10402164	2	1	\N	1032	Small boost to fire allies' DEF based on how low HP is
+10402164	2	120	\N	66	Big boost to fire allies' DEF based on how low HP is
 10402165	1	1	\N	13	Big boost to wind allies' ATK
 10402165	2	1	\N	1090	Medium boost to wind primal allies' ATK
 10402167	1	1	\N	20	Big boost to light allies' DEF based on how low HP is
 10402167	2	120	\N	419	Small boost to light allies' ATK and max HP
+10402168	1	1	\N	1131	Boost to ATK based on how many spears are equipped
+10402168	2	1	\N	1132	Supplement fire allies' C.A. DMG based on how low their HP is
 10402169	1	1	\N	1113	Big boost to dark allies' skill DMG cap / Big supplemental boost to skill DMG
 10402169	2	150	\N	480	Small boost to dark allies' ATK / Small boost to triple attack rate
+10402170	1	1	\N	540	Big boost to water allies' ATK
+10402170	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
+10402171	1	1	\N	276	Medium boost to dark allies' ATK and critical hit rate
+10402171	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
+10402172	1	1	\N	1123	Big boost to earth allies' ATK
+10402172	2	1	\N	1124	When main weapon: Big boost to all allies' ATK based on how low MC's HP is.
 10403000	1	1	\N	7	Big boost to light allies' ATK
 10403000	2	120	\N	312	When main weapon, boost to debuff resistance
 10403001	1	60	\N	892	Medium boost to Light allies' ATK / Medium boost to triple attack rate.
-10403001	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403001	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403001	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403001	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403001	3	200	\N	895	Small boost to Light allies' ATK and critical hit rate
 10403002	1	1	\N	2	Big boost to water allies' ATK
 10403002	1	101	\N	3	Big boost to water allies' ATK
@@ -1065,24 +1092,24 @@
 10403043	1	1	\N	330	Boost to Draphs' and Harvins' ATK and HP.
 10403043	2	200	\N	1098	Boost to all allies' ATK based on number of Draphs and Harvins in party.
 10403044	1	60	\N	896	Medium boost to Fire allies' ATK / Medium boost to triple attack rate.
-10403044	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403044	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403044	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403044	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403044	3	200	\N	897	Small boost to Fire allies' ATK and critical hit rate
 10403045	1	60	\N	898	Medium boost to Water allies' ATK / Medium boost to triple attack rate.
-10403045	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403045	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403045	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403045	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403045	3	200	\N	899	Small boost to Water allies' ATK and critical hit rate
 10403046	1	60	\N	900	Medium boost to Earth allies' ATK / Medium boost to triple attack rate.
-10403046	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403046	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403046	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403046	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403046	3	200	\N	901	Small boost to Earth allies' ATK and critical hit rate
 10403047	1	60	\N	902	Medium boost to Wind allies' ATK / Medium boost to triple attack rate.
-10403047	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403047	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403047	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403047	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403047	3	200	\N	903	Small boost to Wind allies' ATK and critical hit rate
 10403048	1	60	\N	904	Medium boost to Dark allies' ATK / Medium boost to triple attack rate.
-10403048	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit .
-10403048	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful normal attack will be a 100% / 700% critical hit . 30% boost to critical hit DMG Cap.
+10403048	2	100	\N	893	When main weapon (MC only): 50% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit .
+10403048	2	150	\N	894	When main weapon (MC only): 80% normal attack accuracy. Every successful attack will be a 100% / 700% critical hit . 20% boost to all allies' critical hit DMG Cap.
 10403048	3	200	\N	80	Small boost to Dark allies' ATK and critical hit rate
 10403054	1	1	\N	28	Big boost to fire allies' ATK
 10403055	1	1	\N	26	Big boost to dark allies' ATK
@@ -1117,32 +1144,33 @@
 10403068	2	1	\N	345	Boost to Water allies' damage cap.
 10403069	1	1	\N	2	Big boost to water allies' ATK
 10403069	2	1	\N	346	Boost to DEF for water allies for first 8 turns of battle
+10403069	3	120	\N	1120	Big boost to water allies' ATK / Take DMG worth 20% of max HP at battle start
 10403070	1	1	\N	347	Medium boost to wind allies' ATK and max HP
 10403070	2	1	\N	348	Lessen fire DMG taken for wind allies
 10403071	1	1	\N	349	Medium boost to dark allies' ATK and max HP
 10403071	2	1	\N	214	Boost to dark charge attack DMG cap
-10403072	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403073	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403074	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403075	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403076	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403077	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
-10403078	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403072	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403073	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403074	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403075	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403076	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403077	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
+10403078	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10403079	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403079	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10403080	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403080	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403080	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403080	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10403081	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403081	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403081	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403081	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10403082	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403082	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403082	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403082	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10403083	1	1	4	350	20% boost to axe-specialty allies' ATK 10% boost to axe-specialty allies' HP
+10403083	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403083	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10403083	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10403084	1	1	\N	351	When main weapon: Also gain 10% C.A. DMG Up and 10% C.A. DMG Cap Up upon using Full Arsenal III 
@@ -1258,8 +1286,11 @@
 10403134	1	1	\N	895	Small boost to light allies' ATK and critical hit rate
 10403134	2	1	\N	327	Small boost to light allies' max HP
 10403135	1	1	\N	1004	When main weapon: Massive boost to Earth allies' ATK . MC deals 300% Earth damage to all foes every 3 turns (Damage cap: ~400,000).
-10403135	2	1	\N	1003	20% boost to Earth allies' DMG cap in Arcarum.
+10403135	1	150	\N	1004	Massive boost to Earth allies' ATK . MC deals 300% Earth damage to all foes every 3 turns (Damage cap: ~400,000).
+10403135	2	1	\N	1003	20% boost to Earth allies' DMG cap in Arcarum
+10403135	3	120	\N	418	Small boost to Earth allies' ATK and max HP
 10403136	1	1	\N	41	Medium boost to earth allies' ATK
+10403136	1	120	\N	941	Medium boost to earth allies' ATK and max HP
 10403136	2	1	\N	604	Medium boost to earth allies' max HP
 10403137	1	1	\N	996	Big boost to wind allies' ATK
 10403137	2	100	\N	997	When main weapon: 10% boost to female Wind allies' ATK
@@ -1281,10 +1312,18 @@
 10403144	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
 10403145	1	1	\N	900	Medium boost to earth allies' ATK / Medium boost to triple attack rate
 10403145	2	1	\N	606	Small boost to earth allies' C.A. DMG
+10403146	1	1	\N	1084	Boost to ATK based on how many axes are equipped
+10403146	2	1	\N	1133	Supplement earth allies' DMG based on how high their HP is
+10403147	1	1	\N	1084	Boost to ATK based on how many axes are equipped
+10403147	2	1	\N	1134	Boost to dark allies' multiattack rate based on how high their HP is
 10403148	1	1	\N	817	Big boost to earth allies' ATK
 10403148	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.
+10403149	1	1	\N	1121	Big supplemental boost to fire allies' C.A. DMG
+10403149	2	150	\N	869	Medium boost to fire allies' ATK and max HP
+10403150	1	1	\N	881	Medium boost to wind allies' ATK based on how high HP is
+10403150	2	1	\N	615	Small boost to wind allies' ATK
 10404002	1	1	\N	13	Big boost to wind allies' ATK
-10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Counters on Dodge (1 time) (Boost to counter damage based on skill lvl).
+10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Dodge-and-Counter (1 time) (Boost to counter damage based on skill lvl).
 10404003	1	1	\N	386	Small boost to healing for healing type allies.
 10404003	1	101	\N	387	Big boost to healing for all allies.
 10404003	2	120	\N	388	Big boost to healing cap for Light allies.
@@ -1456,28 +1495,28 @@
 10404100	2	150	\N	437	Medium boost to water allies' C.A. DMG and C.A. DMG cap
 10404101	1	1	\N	438	Big boost to fire allies' ATK / Take 5% damage every turn.
 10404101	2	1	\N	295	Medium boost to fire allies' ATK / Medium boost to double attack rate for fire allies
-10404102	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404103	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404104	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404105	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404106	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404107	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
-10404108	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404102	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404103	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404104	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404105	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404106	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404107	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
+10404108	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404108	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404108	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10404109	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404109	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404109	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404109	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10404110	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404110	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404110	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404110	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10404111	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404111	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404111	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404111	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10404112	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404112	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404112	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404112	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10404113	1	1	5	439	20% boost to staff-specialty allies' ATK 10% boost to staff-specialty allies' HP
+10404113	1	1	5	439	Big boost to staff-specialty allies' ATK and max HP
 10404113	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10404113	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10404114	1	1	\N	440	15% boost to staff-specialty allies' charge attack damage.
@@ -1598,17 +1637,17 @@
 10404169	3	120	\N	808	Medium boost to fire allies' fire ATK based on number of turns passed
 10404170	1	1	\N	908	Big boost to dark allies' ATK
 10404170	2	120	\N	909	Boost to dark allies' ATK for the first 10 turns of battle
-10404172	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404172	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404172	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
-10404173	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404173	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404173	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
-10404174	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404174	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404174	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
-10404175	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404175	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404175	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
-10404176	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404176	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404176	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
-10404177	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Counters on Dodge/DMG (5 times) and duration increased to 3 turns.)
+10404177	1	1	\N	942	When main weapon: Boost to Ascetic Stance 's specs. (Counter upgraded to Dodge/Tank-and-Counter (5 times) and duration increased to 3 turns.)
 10404177	2	1	\N	943	When main weapon: Boost number of hits dealt by Mantra from 4 to 6.
 10404178	1	1	\N	962	Big boost to light allies' ATK
 10404178	2	100	\N	963	When main weapon (MC only): Recover HP each turn (Healing cap: 150). Gain 10% Charge Boost if HP is full.
@@ -1619,7 +1658,9 @@
 10404181	1	1	\N	186	Small boost to wind allies' ATK and max HP
 10404181	2	1	\N	403	Small boost to wind allies' max HP
 10404182	1	1	\N	1005	When main weapon: Massive boost to Wind allies' ATK . At end of turn: Wind allies who didn't attack gain 100% Sharp ATK Up (1 time) .
-10404182	2	1	\N	1006	20% boost to Wind allies' DMG cap in Arcarum.
+10404182	1	150	\N	1005	Massive boost to Wind allies' ATK . At end of turn: Wind allies who didn't attack gain 100% Sharp ATK Up (1 time) .
+10404182	2	1	\N	1006	20% boost to Wind allies' DMG cap in Arcarum
+10404182	3	120	\N	186	Small boost to Wind allies' ATK and max HP
 10404183	1	1	\N	225	Medium boost to fire allies' ATK
 10404183	2	1	\N	84	Medium boost to fire allies' max HP
 10404184	1	1	\N	7	Big boost to light allies' ATK
@@ -1634,6 +1675,7 @@
 10404188	1	1	\N	1055	Big boost to light allies' ATK
 10404188	2	100	\N	1056	When main weapon (MC only): 10% Bonus Light DMG effect to critical hits.
 10404189	1	1	\N	0	Big boost to fire allies' ATK
+10404189	1	120	\N	376	Big boost to fire allies' ATK and max HP
 10404189	2	1	\N	243	Small boost to fire allies' max HP
 10404190	1	1	\N	1080	Big boost to light allies' C.A. DMG and C.A. DMG cap
 10404191	1	1	\N	0	Big boost to fire allies' ATK
@@ -1644,16 +1686,21 @@
 10404192	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.
 10404193	1	1	\N	1091	Medium boost to light allies' max HP and debuff resistance
 10404193	2	1	\N	327	Small boost to light allies' max HP
+10404193	2	120	\N	419	Small boost to light allies' ATK and max HP
+10404193	3	120	\N	1020	Small boost to light allies' DEF based on how low HP is
 10404194	1	1	\N	948	Big boost to earth allies' critical hit rate
 10404194	2	1	\N	1093	Small boost to earth allies' healing cap
 10404194	3	120	\N	759	Medium boost to earth allies' ATK based on how high HP is
 10404195	1	1	\N	7	Big boost to light allies' ATK
 10404195	2	1	\N	138	Boost to light allies' skill DMG cap
 10404195	3	120	\N	1107	When main weapon (MC only): 4-hit, 80% Light damage (Damage cap: ~85,000) to random foes at end of turn if no damage has been taken.
+10404196	1	1	\N	1135	Boost to ATK based on how many staffs are equipped
+10404196	2	1	\N	1136	Supplement dark allies' DMG based on how low HP is
 10404197	1	1	\N	1111	Supplement Dark allies' C.A. DMG based on how low their HP is.
 10404197	2	1	\N	227	Medium boost to dark allies' ATK based on how low HP is
 10404198	1	1	\N	1115	Big boost to wind allies' healing cap
 10404198	2	1	\N	1116	Medium boost to wind allies' ATK and max HP
+10404199	1	1	\N	1122	Big boost to fire allies' ATK based on how high HP is
 10405000	1	1	\N	5	Big boost to earth allies' ATK
 10405000	1	101	\N	269	Big boost to earth allies' ATK
 10405000	2	120	\N	481	Slight chance to dodge and counter (medium DMG) for earth allies
@@ -1730,30 +1777,30 @@
 10405043	1	120	\N	497	Massive boost to earth allies' ATK
 10405043	2	150	\N	498	Small boost to earth allies' ATK / Small boost to triple attack rate
 10405044	1	60	\N	255	Big boost to Fire allies' ATK / 10% cut to Fire allies' max HP
-10405044	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405044	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405044	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405044	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405044	3	200	\N	910	Medium boost to Fire allies' multiattack rate
 10405045	1	1	\N	501	Boost to Humans' and Harvins' ATK and HP.
 10405045	2	200	\N	1100	Boost to all allies' ATK based on number of Humans and Harvins in party.
 10405046	1	60	\N	502	Big boost to Water allies' ATK / 10% cut to Water allies' max HP
-10405046	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405046	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405046	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405046	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405046	3	200	\N	219	Medium boost to Water allies' multiattack rate
 10405047	1	60	\N	503	Big boost to Earth allies' ATK / 10% cut to Earth allies' max HP
-10405047	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405047	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405047	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405047	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405047	3	200	\N	911	Medium boost to Earth allies' multiattack rate
 10405048	1	60	\N	196	Big boost to Wind allies' ATK / 10% cut to Wind allies' max HP
-10405048	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405048	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405048	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405048	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405048	3	200	\N	836	Medium boost to Wind allies' multiattack rate
 10405049	1	60	\N	504	Big boost to Light allies' ATK / 10% cut to Light allies' max HP
-10405049	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405049	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405049	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405049	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405049	3	200	\N	912	Medium boost to Light allies' multiattack rate
 10405050	1	60	\N	175	Big boost to Dark allies' ATK / 10% cut to Dark allies' max HP
-10405050	2	100	\N	499	When main weapon (MC only): Big boost to double attack rate against foes in break
-10405050	2	150	\N	500	When main weapon (MC only): Deals triple attacks against foes in break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in break. 
+10405050	2	100	\N	499	When main weapon (MC only): 75% boost to double attack and 30% boost to triple attack against foes in Break
+10405050	2	150	\N	500	When main weapon (MC only): Guaranteed triple attacks against foes in Break. Supplemental damage dealt equal to 2% of the foe's Max HP (Damage cap: 100,000) to foes in Break. 
 10405050	3	200	\N	913	Medium boost to Dark allies' multiattack rate
 10405057	1	1	\N	506	Big boost to light allies' ATK
 10405058	1	1	\N	26	Big boost to dark allies' ATK
@@ -1775,28 +1822,28 @@
 10405066	1	1	\N	95	A soul from eons past lingers within.
 10405067	1	1	\N	515	When main weapon (MC Only): Slight chance to blind with every one-foe attack
 10405067	2	100	\N	516	Big boost to water allies' ATK
-10405068	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405069	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405070	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405071	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405072	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405073	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
-10405074	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405068	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405069	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405070	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405071	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405072	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405073	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
+10405074	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10405075	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405075	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10405076	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405076	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405076	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405076	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10405077	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405077	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405077	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405077	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10405078	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405078	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10405079	1	1	6	517	20% boost to gun-specialty allies' ATK 10% boost to gun-specialty allies' HP
+10405079	1	1	6	517	Big boost to gun-specialty allies' ATK and max HP
 10405079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10405079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10405080	1	1	\N	518	When main weapon: Increase all Bounty Hunters' effect with 1 stack. 5% boost to item-drop rate.
@@ -1916,7 +1963,9 @@
 10405136	1	120	\N	597	Medium boost to earth allies' ATK and critical hit rate
 10405136	2	1	\N	200	Boost to earth charge attack DMG cap
 10405137	1	1	\N	1007	When main weapon: Massive boost to Light allies' ATK . 20% Bonus Light DMG effect to Light allies with Divinity .
-10405137	2	1	\N	1008	20% boost to Light allies' DMG cap in Arcarum.
+10405137	1	150	\N	1007	Massive boost to Light allies' ATK . 20% Bonus Light DMG effect to Light allies with Divinity .
+10405137	2	1	\N	1008	20% boost to Light allies' DMG cap in Arcarum
+10405137	3	120	\N	419	Small boost to Light allies' ATK and max HP
 10405138	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
 10405138	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
 10405139	1	1	\N	1035	When main weapon: Limit Burst will not consume Machine Cell .
@@ -1943,6 +1992,10 @@
 10405148	2	1	\N	493	Small boost to earth allies' ATK
 10405149	1	1	\N	130	Big boost to fire allies' ATK
 10405149	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
+10405150	1	1	\N	1137	Boost to ATK based on how many guns are equipped
+10405150	2	1	\N	1138	Boost to earth allies' multiattack rate based on how low their HP is
+10405151	1	1	\N	1137	Boost to ATK based on how many guns are equipped
+10405151	2	1	\N	1139	Supplement light allies' DMG based on how low HP is
 10406000	1	1	\N	7	Big boost to light allies' ATK
 10406000	1	101	\N	257	Big boost to light allies' ATK
 10406000	2	120	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
@@ -2007,8 +2060,8 @@
 10406041	1	1	\N	417	Small boost to water allies' ATK and max HP
 10406041	2	1	\N	294	Medium boost to water allies' double attack rate and critical hit rate
 10406042	1	60	\N	411	Big boost to Fire allies' ATK based on how low HP is
-10406042	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406042	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406042	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406042	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406042	3	200	\N	915	20% Bonus Fire DMG effect to third hit of Fire allies' triple attacks.
 10406043	1	1	\N	522	Medium boost to dark allies' ATK
 10406043	2	1	\N	359	Small boost to ATK as dark allies' HP decreases
@@ -2016,24 +2069,24 @@
 10406044	2	1	\N	561	Boost to Humans' multiattack rate.
 10406044	3	200	\N	1101	Boost to all allies' multiattack rate based on number of Humans in party.
 10406045	1	60	\N	916	Big boost to Water allies' ATK based on how low HP is
-10406045	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406045	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406045	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406045	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406045	3	200	\N	917	20% Bonus Water DMG effect to third hit of Water allies' triple attacks.
 10406046	1	60	\N	492	Big boost to Earth allies' ATK based on how low HP is
-10406046	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406046	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406046	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406046	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406046	3	200	\N	918	20% Bonus Earth DMG effect to third hit of Earth allies' triple attacks.
 10406047	1	60	\N	213	Big boost to Wind allies' ATK based on how low HP is
-10406047	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406047	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406047	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406047	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406047	3	200	\N	919	20% Bonus Wind DMG effect to third hit of Wind allies' triple attacks.
 10406048	1	60	\N	834	Big boost to Light allies' ATK based on how low HP is
-10406048	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406048	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406048	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406048	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406048	3	200	\N	920	20% Bonus Light DMG effect to third hit of Light allies' triple attacks.
 10406049	1	60	\N	43	Big boost to Dark allies' ATK based on how low HP is
-10406049	2	100	\N	559	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn.
-10406049	2	150	\N	560	When main weapon (MC only): Deal triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
+10406049	2	100	\N	559	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn.
+10406049	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406049	3	200	\N	783	20% Bonus Dark DMG effect to third hit of Dark allies' triple attacks.
 10406055	1	1	\N	563	Big boost to earth allies' ATK
 10406056	1	1	\N	0	Big boost to fire allies' ATK
@@ -2074,28 +2127,28 @@
 10406073	1	1	\N	574	Big boost to wind allies' ATK
 10406074	1	1	\N	575	Medium boost to Earth allies' ATK and max HP
 10406074	2	1	\N	576	Lessen Wind DMG taken for Earth allies
-10406075	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406076	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406077	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406078	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406079	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406080	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
-10406081	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406075	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406076	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406077	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406078	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406079	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406080	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
+10406081	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406081	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406081	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10406082	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406082	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406082	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406082	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10406083	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406083	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406083	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406083	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10406084	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406084	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406084	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406084	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10406085	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406085	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406085	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406085	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10406086	1	1	7	577	20% boost to melee-specialty allies' ATK 10% boost to melee-specialty allies' HP
+10406086	1	1	7	577	Big boost to melee-specialty allies' ATK and max HP
 10406086	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10406086	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10406087	1	1	\N	578	When main weapon: Boost to all allies' DEF
@@ -2205,7 +2258,9 @@
 10406142	1	1	\N	984	Big boost to fire allies' ATK
 10406142	2	120	\N	985	When main weapon (MC only): Gain Instant Charge , 50% C.A. DMG Up (1 time), and 30% C.A. DMG Cap Up (1 time) when almost knocked out at end of turn (1 time).
 10406143	1	1	\N	1009	When main weapon: Massive boost to Fire allies' ATK . Supplement DMG to Fire allies against foes with Red Heat (Damage cap: 50,000).
-10406143	2	1	\N	1010	20% boost to Fire allies' DMG cap in Arcarum.
+10406143	1	150	\N	1009	Massive boost to Fire allies' ATK . Supplement DMG to Fire allies against foes with Red Heat (Damage cap: 50,000).
+10406143	2	1	\N	1010	20% boost to Fire allies' DMG cap in Arcarum
+10406143	3	120	\N	91	Small boost to Fire allies' ATK and max HP
 10406145	1	1	\N	992	Big boost to light allies' ATK
 10406145	2	120	\N	138	Boost to Light allies' skill damage cap.
 10406146	1	1	\N	7	Big boost to light allies' ATK
@@ -2214,6 +2269,7 @@
 10406147	2	1	\N	50	Medium boost to light allies' max HP
 10406148	1	1	\N	1062	Big boost to wind allies' ATK / Take DMG worth 20% of max HP at battle start
 10406148	2	1	\N	1063	Small boost to wind allies' ATK based on how low HP is
+10406148	3	120	\N	615	Small boost to wind allies' ATK
 10406149	1	1	\N	41	Medium boost to earth allies' ATK
 10406149	2	1	\N	1065	Medium boost to earth allies' max HP and debuff resistance
 10406149	3	120	\N	383	Boost to earth allies' skill DMG cap
@@ -2230,9 +2286,17 @@
 10406155	2	120	\N	1087	Supplement wind allies' DMG based on how low HP is
 10406156	1	1	\N	1105	Big boost to water allies' ATK
 10406156	2	1	\N	1106	When main weapon (MC only): Massive boost to critical hit rate.
+10406157	1	1	\N	1140	Boost to ATK based on how many melee weapons are equipped
+10406157	2	1	\N	1141	Supplement water allies' skill DMG based on how low their HP is
 10406158	1	1	\N	597	Medium boost to earth allies' ATK and critical hit rate
 10406158	2	1	\N	383	Boost to earth allies' skill DMG cap
 10406158	3	120	\N	1114	Supplement earth allies' critical hit DMG
+10406161	1	1	\N	916	Big boost to water allies' ATK based on how low HP is
+10406161	2	1	\N	508	Small boost to water allies' DEF based on how low HP is
+10406162	1	1	\N	1057	Big boost to light allies' healing cap
+10406162	2	1	\N	907	Medium boost to light allies' DEF based on how low HP is
+10406164	1	1	\N	130	Big boost to fire allies' ATK
+10406164	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
 10407000	1	1	\N	0	Big boost to fire allies' ATK
 10407000	1	101	\N	482	Big boost to fire allies' ATK
 10407000	2	120	\N	299	Medium boost to double attack rate for fire allies
@@ -2246,7 +2310,7 @@
 10407003	1	101	\N	269	Big boost to earth allies' ATK
 10407003	2	120	\N	172	Medium boost to earth allies' critical hit rate
 10407004	1	1	\N	13	Big boost to wind allies' ATK
-10407004	2	120	\N	612	Boost to your debuff success rate.
+10407004	2	120	\N	612	10% boost to MC's debuff success rate.
 10407005	1	1	\N	7	Big boost to light allies' ATK
 10407006	1	1	\N	970	Big boost to earth allies' ATK based on how low HP is
 10407007	1	1	\N	614	Medium boost to water allies' max HP
@@ -2348,28 +2412,28 @@
 10407061	2	1	\N	641	Lessen Water DMG taken for Fire allies
 10407062	1	1	\N	642	Big boost to light allies' ATK based on how high HP is
 10407062	2	1	\N	643	Medium boost to double attack rate for light allies
-10407063	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407064	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407065	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407066	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407067	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407068	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
-10407069	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407063	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407064	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407065	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407066	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407067	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407068	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
+10407069	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407069	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407069	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10407070	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407070	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407070	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407070	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10407071	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407071	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407071	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407071	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10407072	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407072	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407072	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407072	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10407073	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407073	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407073	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407073	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10407074	1	1	8	644	20% boost to bow-specialty allies' ATK 10% boost to bow-specialty allies' HP
+10407074	1	1	8	644	Big boost to bow-specialty allies' ATK and max HP
 10407074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10407074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10407075	1	1	\N	645	When main weapon: Also grants Charge Bar Gain Up for 3 turns and Substitute for 1 turn upon using Evasive Maneuvers .
@@ -2384,7 +2448,7 @@
 10407079	2	1	\N	646	This is the essence of greatness. Gain its power by using emblems.
 10407080	1	1	\N	645	When main weapon: Also grants Charge Bar Gain Up for 3 turns and Substitute for 1 turn upon using Evasive Maneuvers .
 10407080	2	1	\N	646	This is the essence of greatness. Gain its power by using emblems.
-10407081	1	1	\N	647	2.5% boost to dark allies' debuff success rate 
+10407081	1	1	\N	647	2.5% boost to Dark allies' debuff success rate.
 10407081	2	100	\N	648	Big boost to dark allies' ATK
 10407082	1	1	\N	593	Medium boost to earth allies' ATK / Medium boost to double attack rate for earth allies
 10407082	2	1	\N	606	Small boost to earth allies' C.A. DMG
@@ -2439,7 +2503,9 @@
 10407106	1	1	\N	993	Big boost to earth allies' ATK
 10407106	2	100	\N	994	When main weapon (MC only): Boost to multiattack rate and DEF when there is only 1 foe remaining.
 10407107	1	1	\N	1011	When main weapon: Massive boost to Water allies' ATK . Boost to attack specs of Water allies with Full Moon .
-10407107	2	1	\N	999	20% boost to Water allies' DMG cap in Arcarum.
+10407107	1	150	\N	1011	Massive boost to Water allies' ATK . Boost to attack specs of Water allies with Full Moon .
+10407107	2	1	\N	999	20% boost to Water allies' DMG cap in Arcarum
+10407107	3	120	\N	417	Small boost to Water allies' ATK and max HP
 10407108	1	1	\N	632	Medium boost to wind allies' ATK and critical hit rate
 10407108	2	1	\N	708	Small boost to wind allies' C.A. DMG
 10407109	1	1	\N	1025	Medium boost to wind allies' C.A. DMG
@@ -2452,6 +2518,15 @@
 10407112	2	1	\N	1037	Small boost to earth allies' C.A. DMG and C.A. DMG cap
 10407113	1	1	\N	1081	Big boost to wind allies' max HP
 10407113	2	100	\N	1082	When main weapon (MC only): 20% boost to skill damage.
+10407114	1	1	\N	1142	Boost to ATK based on how many bows are equipped
+10407114	2	1	\N	1143	Boost to water allies' multiattack rate based on how high their HP is
+10407115	1	1	\N	1142	Boost to ATK based on how many bows are equipped
+10407115	2	1	\N	1087	Supplement wind allies' DMG based on how low HP is
+10407116	1	1	\N	1125	Supplement light allies' DMG based on how high their HP is
+10407116	2	1	\N	791	Medium boost to light allies' light ATK based on number of turns passed
+10407118	1	1	\N	737	Medium boost to fire allies' ATK based on how high HP is
+10407118	2	1	\N	1147	Medium boost to fire primal allies' ATK
+10407118	3	120	\N	131	Boost to fire allies' skill DMG cap
 10408000	1	1	\N	461	Big boost to light allies' ATK
 10408000	2	1	\N	10	Big boost to fire allies' max HP
 10408001	1	1	\N	658	Medium boost to dark allies' max HP
@@ -2565,28 +2640,28 @@
 10408062	2	1	\N	339	Boost to DEF for wind allies for first 8 turns of battle
 10408063	1	1	\N	686	Medium boost to Water allies' ATK and max HP
 10408063	2	1	\N	687	Lessen Earth DMG taken for Water allies
-10408064	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408065	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408066	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408067	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408068	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408069	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
-10408070	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408064	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408065	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408066	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408067	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408068	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408069	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
+10408070	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408070	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408070	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10408071	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408071	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408071	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408071	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10408072	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408072	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408072	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408072	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10408073	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408073	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408073	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408073	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10408074	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408074	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408074	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408074	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10408075	1	1	9	688	20% boost to harp-specialty allies' ATK 10% boost to harp-specialty allies' HP
+10408075	1	1	9	688	Big boost to harp-specialty allies' ATK and max HP
 10408075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10408075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10408076	1	1	\N	689	When main weapon: All allies also gain Refresh for 3 turns and Immune for 1 turn upon using Concludere .
@@ -2642,22 +2717,22 @@
 10408099	2	120	\N	713	Medium boost to wind allies' max HP and double attack rate
 10408100	1	1	\N	784	Big boost to light allies' ATK
 10408100	2	100	\N	785	When main weapon (MC only): 10% Bonus Light DMG effect against foes with Burned .
-10408101	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408101	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408102	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408102	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408103	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408103	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408104	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408104	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408105	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408105	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408106	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408106	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408107	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408107	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
-10408108	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll
-10408108	2	1	\N	798	When main weapon (MC only): Boost to chain burst specs
+10408101	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408101	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408102	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408102	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408103	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408103	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408104	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408104	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408105	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408105	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408106	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408106	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408107	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408107	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
+10408108	1	1	\N	797	When main weapon (MC only): 20% boost to charge bar upon using Drum Roll .
+10408108	2	1	\N	798	When main weapon (MC only): 20% boost to chain burst DMG and 10% boost to chain burst DMG cap.
 10408109	1	1	\N	799	When main weapon: 1 Feedback to all allies at battle start.
 10408109	2	1	\N	800	This is the essence of greatness. Gain its power by using emblems.
 10408110	1	1	\N	799	When main weapon: 1 Feedback to all allies at battle start.
@@ -2678,6 +2753,7 @@
 10408116	2	200	\N	938	Boost to Wind allies' one-foe attack damage cap based on their number of buffs.
 10408117	1	1	\N	789	Medium boost to water allies' water ATK based on number of turns passed
 10408117	2	1	\N	845	Small boost to water allies' max HP and debuff resistance
+10408117	3	120	\N	417	Small boost to water allies' ATK and max HP
 10408118	1	1	\N	846	Big boost to dark allies' dark ATK based on number of turns passed
 10408118	2	150	\N	227	Medium boost to dark allies' ATK based on how low HP is
 10408119	1	1	\N	864	Boost to Fire allies' ATK based on number of turns passed
@@ -2709,7 +2785,9 @@
 10408132	1	1	\N	5	Big boost to earth allies' ATK
 10408132	2	1	\N	685	Medium boost to earth allies' healing cap
 10408133	1	1	\N	1012	When main weapon: Massive boost to Wind allies' ATK . Wind allies take 1% DMG every turn. 30% Earth DMG reduction.
-10408133	2	1	\N	1006	20% boost to Wind allies' DMG cap in Arcarum.
+10408133	1	150	\N	1012	Massive boost to Wind allies' ATK . Wind allies take 1% DMG every turn. 30% Earth DMG reduction.
+10408133	2	1	\N	1006	20% boost to Wind allies' DMG cap in Arcarum
+10408133	3	120	\N	186	Small boost to Wind allies' ATK and max HP
 10408134	1	1	\N	604	Medium boost to earth allies' max HP
 10408134	2	1	\N	605	Small boost to earth allies' ATK based on how high HP is
 10408135	1	1	\N	307	Medium boost to wind allies' max HP and debuff resistance
@@ -2723,10 +2801,17 @@
 10408138	2	1	\N	929	Medium boost to light allies' healing cap
 10408139	1	1	\N	137	Big boost to wind allies' ATK
 10408139	2	120	\N	841	Boost to wind allies' skill DMG cap
+10408140	1	1	\N	1144	Boost to ATK based on how many harps are equipped
+10408140	2	1	\N	1145	Supplement light allies' C.A. DMG based on how high their HP is
 10408141	1	1	\N	632	Medium boost to wind allies' ATK and critical hit rate
 10408141	2	1	\N	301	Slight chance to dodge and counter (medium DMG) for wind allies
 10408142	1	1	\N	580	Big boost to water allies' critical hit rate
 10408142	2	1	\N	232	Small boost to water allies' ATK
+10408143	1	1	\N	225	Medium boost to fire allies' ATK
+10408143	2	1	\N	1146	Small boost to fire allies' C.A. DMG and C.A. DMG cap
+10408145	1	1	\N	1148	Supplement light allies' DMG
+10408145	2	1	\N	1144	Boost to ATK based on how many harps are equipped
+10408145	3	150	\N	1149	Boost to light allies' DMG cap
 10409000	1	1	\N	0	Big boost to fire allies' ATK
 10409000	1	101	\N	482	Big boost to fire allies' ATK
 10409000	2	120	\N	2	Big boost to water allies' ATK
@@ -2857,28 +2942,28 @@
 10409067	2	1	\N	739	Boost to Fire allies' damage cap.
 10409068	1	1	\N	740	Massive boost to light allies' ATK / 10% cut to light allies' max HP
 10409068	2	1	\N	741	All allies gain 10% Light ATK Up (Stackable / Max: 50%) upon using healing skills.
-10409069	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409070	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409071	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409072	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409073	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409074	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
-10409075	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409069	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409070	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409071	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409072	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409073	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409074	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
+10409075	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409075	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409075	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10409076	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409076	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409076	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409076	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10409077	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409077	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409077	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409077	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10409078	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409078	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409078	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409078	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10409079	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409079	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409079	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409079	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10409080	1	1	10	742	20% boost to katana-specialty allies' ATK 10% boost to katana-specialty allies' HP
+10409080	1	1	10	742	Big boost to katana-specialty allies' ATK and max HP
 10409080	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10409080	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
 10409081	1	1	\N	13	Big boost to wind allies' ATK
@@ -2976,7 +3061,9 @@
 10409125	1	1	\N	197	Big boost to wind allies' multiattack rate
 10409125	2	1	\N	64	Small boost to wind allies' critical hit rate
 10409126	1	1	\N	1013	When main weapon: Massive boost to Fire allies' ATK . Drain effect to Fire allies with Double Strike .
-10409126	2	1	\N	1010	20% boost to Fire allies' DMG cap in Arcarum.
+10409126	1	150	\N	1013	Massive boost to Fire allies' ATK . Drain effect to Fire allies with Double Strike .
+10409126	2	1	\N	1010	20% boost to Fire allies' DMG cap in Arcarum
+10409126	3	120	\N	91	Small boost to Fire allies' ATK and max HP
 10409127	1	1	\N	1014	Big boost to water allies' ATK
 10409127	2	1	\N	1015	15% boost to katana-specialty allies' max HP.
 10409128	1	1	\N	7	Big boost to light allies' ATK
@@ -2988,5 +3075,8 @@
 10409130	2	1	\N	370	Small boost to light allies' C.A. DMG
 10409131	1	1	\N	902	Medium boost to wind allies' ATK / Medium boost to triple attack rate
 10409131	2	1	\N	64	Small boost to wind allies' critical hit rate
+10409131	3	120	\N	1053	Supplement wind allies' critical hit DMG
 10409132	1	1	\N	1088	Big boost to light allies' ATK
 10409132	2	1	\N	1089	Boost to ATK based on how low HP is (MC only).
+10409133	1	1	\N	1126	Supplement light allies' C.A. DMG
+10409133	2	1	\N	521	Boost to light allies' C.A. DMG cap

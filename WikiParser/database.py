@@ -247,9 +247,14 @@ all_tables = [
         [ Col('drawTypeId', 'INT NOT NULL', primary=True),
           Col('drawTypeName', 'TEXT UNIQUE NOT NULL')
         ])
+        .setConstDict(defines.OBTAIN),
+  Table('NewsType',
+        [ Col('newsTypeId', 'INT NOT NULL', primary=True),
+          Col('newsTypeName', 'TEXT UNIQUE NOT NULL')
+        ])
         .setDoNotCopy()
         .setDoNotUpdate()
-        .setConstDict(defines.OBTAIN),
+        .setConstArray(defines.NEWSTYPES),
   # Stable, update
   Table('Character',
         [ Col('characterId', 'INT NOT NULL', primary=True),
@@ -320,13 +325,6 @@ all_tables = [
         constraint="UNIQUE(icon, skillName)",
         conflictCondition="icon, skillName")
         .setUpdateOnConflict(),
-  Table('Weapon_Ougi',
-        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
-          Col('ougiMLB', 'TEXT'),
-          Col('ougiFLB', 'TEXT'),
-          Col('ougiULB', 'TEXT')
-        ])
-        .setUpdateOnConflict(),
   Table('SummonAura',
         [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
           Col('aura', 'TEXT'),
@@ -362,6 +360,13 @@ all_tables = [
           Col('weaponTypeId', 'INT REFERENCES WeaponType(weaponTypeId)', primary=True)
         ])
         .setDropBeforeUpdate(),
+  Table('Weapon_Ougi',
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('ougiMLB', 'TEXT'),
+          Col('ougiFLB', 'TEXT'),
+          Col('ougiULB', 'TEXT')
+        ])
+        .setDropBeforeUpdate(),
   Table('CharacterSkill',
         [ Col('characterId', 'INT REFERENCES Character(characterId)', primary=True),
           Col('characterSkillOrder', 'INT NOT NULL', primary=True),
@@ -395,11 +400,23 @@ all_tables = [
           Col('ougiDescription', 'TEXT'),
         ])
         .setDropBeforeUpdate(),
+  Table('SummonCall',
+        [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
+          Col('callName', 'TEXT'),
+          Col('call', 'TEXT'),
+          Col('callMLB', 'TEXT'),
+          Col('callFLB', 'TEXT'),
+          Col('callULB', 'TEXT'),
+        ])
+        .setDropBeforeUpdate(),
   # Protected
   Table('UserAccount',
         [ Col('userid', 'SERIAL', primary=True), # This column should be ignored by the iterators of class Table, but since the functions are not used for this table, it's Ok
           Col('username', 'TEXT UNIQUE NOT NULL'),
-          Col('password', 'TEXT NOT NULL')
+          Col('password', 'TEXT NOT NULL'),
+          Col('email', 'TEXT UNIQUE'),
+          Col('resetToken', 'TEXT'),
+          Col('resetTimestamp', 'TIMESTAMP'),
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
@@ -425,7 +442,11 @@ all_tables = [
           Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)'),
           Col('partyName', 'TEXT'),
           Col('partyData', 'JSON NOT NULL'),
-          Col('updated', 'TIMESTAMP')
+          Col('updated', 'TIMESTAMP'),
+          Col('contentId', 'INT'),
+          Col('elementId', 'INT REFERENCES Element(elementId)'),
+          Col('public', 'BOOLEAN DEFAULT FALSE'),
+          Col('description', 'TEXT'),
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),
@@ -438,6 +459,34 @@ all_tables = [
   Table('Arcarum',
         [ Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
           Col('replicardData', 'JSON NOT NULL')
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
+  Table('NewsArticle',
+        [ Col('newsArticleId', 'INT NOT NULL', primary=True),
+          Col('title', 'TEXT NOT NULL')
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
+  Table('NewsSection',
+        [ Col('newsSectionId', 'INT NOT NULL', primary=True),
+          Col('newsArticleId', 'INT NOT NULL REFERENCES NewsArticle(newsArticleId)'),
+          Col('newsTypeId', 'INT NOT NULL REFERENCES NewsType(newsTypeId)'),
+          Col('text', 'TEXT')
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
+  Table('FriendSummons',
+        [ Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True),
+          Col('gbfId', 'INT NOT NULL'),
+          Col('friendSummonsData', 'JSON NOT NULL'),
+          Col('updated', 'TIMESTAMP')
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
+  Table('Settings',
+        [ Col('Key', 'TEXT', primary=True),
+          Col('Value', 'TEXT')
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),

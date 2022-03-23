@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- Top bar -->
-    <div v-if="isOwnCollection" class="flex flex-row flex-wrap items-center mb-4">
-      <button class="btn btn-white mr-4" @click="show_modal_url = true">
+    <div v-if="isOwnCollection" class="flex flex-row flex-wrap gap-2 items-center mb-4">
+      <button class="btn btn-blue" @click="show_modal_url = true">
         <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load Wiki collection
       </button>
-      <button class="btn btn-white mr-4" @click="openInWiki()">
+      <button class="btn btn-blue" @click="openInWiki()">
         <fa-icon :icon="['fas', 'external-link-alt']" class="text-xl"></fa-icon> Open in Wiki
       </button>
-      <button class="btn btn-white mr-4" @click="shareCollection()">
+      <button class="btn btn-blue" @click="shareCollection()">
        <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
       </button>    
       <button class="btn btn-blue" @click="saveCollection()" :disabled="! modification">
@@ -17,25 +17,25 @@
     </div>
     
     <!-- Data filters -->
-    <div class="flex flex-row flex-wrap items-center mb-4">
+    <div class="flex flex-row flex-wrap items-center gap-2 mb-4">
       <data-filter
-        class="my-2 mr-2"
         v-for="category in getFilters"
         :key="category.name"
         :category="category.name"
+        :count="data_count[0][category.key].map((val, idx) => val + data_count[1][category.key][idx])"
         :data="data_model[category.key].data"
         :hasAll="category.hasAll"
       ></data-filter>
 
-      <div class="flex flex-row flex-wrap items-center btn-group my-2 mr-2">
+      <div class="flex flex-row flex-wrap items-center btn-group">
         <span class="mr-2">Show</span>
         <button class="btn btn-sm" :class="showCharacters ? 'btn-blue' : 'btn-white'" @click="setShowCharacters()">Characters</button>
         <button class="btn btn-sm" :class="showSummons ? 'btn-blue' : 'btn-white'" @click="setShowSummons()">Summons</button>
       </div>
 
-      <checkbox class="mr-2 my-2" v-model="showNames">Show names</checkbox>
-      <checkbox class="mr-2 my-2" v-model="showStars">Show stars</checkbox>
-      <checkbox class="my-2" v-model="showAwakening">Show awakening</checkbox>      
+      <checkbox v-model="showNames">Show names</checkbox>
+      <checkbox v-model="showStars">Show stars</checkbox>
+      <checkbox v-model="showAwakening">Show awakening</checkbox>      
     </div>
 
     <!-- Draw stats -->
@@ -58,6 +58,8 @@
               <ul>
                 <li><label><input type="checkbox" v-model="chara_show[1000]"> Premium Draw</label>
                     <span class="tag bg-primary">{{ chara_count[1000] }}/{{ chara_total[1000] }}</span></li>
+                <li><label><input type="checkbox" v-model="chara_show[500]"> Classic Draw</label>
+                    <span class="tag bg-primary">{{ chara_count[500] }}/{{ chara_total[500] }}</span></li>
                 <li><label><input type="checkbox" v-model="chara_show[1010]"> Valentine</label>
                     <span class="tag bg-primary">{{ chara_count[1010] }}/{{ chara_total[1010] }}</span></li>
                 <li><label><input type="checkbox" v-model="chara_show[1020]"> Holiday</label>
@@ -93,6 +95,8 @@
               <ul>
                 <li><label><input type="checkbox" v-model="summon_show[1000]"> Premium Draw</label>
                     <span class="tag bg-primary">{{ summon_count[1000] }}/{{ summon_total[1000] }}</span></li>
+                <li><label><input type="checkbox" v-model="summon_show[500]"> Classic Draw</label>
+                    <span class="tag bg-primary">{{ summon_count[500] }}/{{ summon_total[500] }}</span></li>
                 <li><label><input type="checkbox" v-model="summon_show[1020]"> Holiday</label>
                     <span class="tag bg-primary">{{ summon_count[1020] }}/{{ summon_total[1020] }}</span></li>
                 <li><label><input type="checkbox" v-model="summon_show[1030]"> Summer</label>
@@ -119,9 +123,9 @@
       Loading...
     </div>
     <div v-else>
-      <div v-for="i in 7" :key="i" class="mb-4">
+      <div v-for="i in 7" :key="i" :class="getUnits[0][i-1].length > 0 || getUnits[1][i-1].length > 0 ? 'mb-4' : ''">
         <div class="flex flex-row flex-wrap" v-if="showCharacters">
-          <span class="flex flex-col" style="width: 105px;" v-for="chara in getCharacters(i-1)" :key="chara.id">
+          <span class="flex flex-col" style="width: 105px;" v-for="chara in getUnits[0][i-1]" :key="chara.id">
             <a
               class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
@@ -151,14 +155,14 @@
               <stat-input
                 shortName="Awake"
                 longName="Awakening"
-                :class="chara.aw == MAX_AWAKENING() ? 'text-link-primary' : ''"
+                :class="chara.aw == MAX_AWAKENING ? 'text-link-primary' : ''"
                 :prop.sync="chara.aw"
                 :length="1"
-                :max="MAX_AWAKENING()"
+                :max="MAX_AWAKENING"
               ></stat-input>
               <fa-icon
-                v-if="chara.aw < MAX_AWAKENING()"
-                @click="chara.aw = MAX_AWAKENING()"
+                v-if="chara.aw < MAX_AWAKENING"
+                @click="chara.aw = MAX_AWAKENING"
                 :icon="['fas', 'check']"
                 class="ml-1 cursor-pointer"
                 title="Maximize awakening"
@@ -167,7 +171,7 @@
           </span>
         </div>
         <div class="flex flex-row flex-wrap" v-if="showSummons">
-          <span class="flex flex-col" style="width: 105px;" v-for="summon in getSummons(i-1)" :key="summon.id">
+          <span class="flex flex-col" style="width: 105px;" v-for="summon in getUnits[1][i-1]" :key="summon.id">
             <a
               class="text-xs text-primary h-5 px-1 text-center truncate"
               target="_blank"
@@ -175,7 +179,7 @@
               :title="getName(summon)"
               v-if="showNames"
             >{{ getName(summon) }}</a>
-            <img            
+            <img
               :class="summon.owned ? '' : 'grayscale-80'"
               style="height: 60px;"
               :title="getName(summon)"
@@ -212,7 +216,7 @@ import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
 import DataModel from '@/js/data-model.js'
 import { LANGUAGES } from '@/js/lang'
-import collectionModule from '@/store/modules/collection-tracker'
+import collectionStoreMixin from '@/store/modules/collection-tracker'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import StatInput from '@/components/common/StatInput.vue'
@@ -279,20 +283,31 @@ function getDataModel() {
   return Object.fromEntries(categories.map(c => [c.key, Utils.copy(DataModel[c.key])]));
 }
 
+function getDataCount() {
+  return Object.fromEntries(categories.map(c => {
+    if (DataModel[c.key].data) {
+      return [c.key, DataModel[c.key].data.map(d => 0)];
+    }
+    return [c.key, []];
+  }));
+}
+
 const INITIAL_DATA = () => {
   return {
-    // Add the corresponding values in the store
+    // Add the corresponding values in the store (collection-tracker.js)
     chara_show: {
-      null: true, 10: true, 20: true,
+      null: true, 10: true, 20: true, 500: true,
       1000: true, 1010: true, 1020: true, 1030: true, 1040: true, 1050: true,
       1500: true, 1600: true,
     },
     summon_show: {
-      null: true, 20: true,
+      null: true, 20: true, 500: true,
       1000: true, 1020: true, 1030: true,
       1600: true,
     },
     data_model: getDataModel(),
+    // 0: characters, 1: summons
+    data_count: [getDataCount(), getDataCount()],
     modification: false,
     showNames: true,
     showStars: true,
@@ -314,61 +329,24 @@ export default {
     ModalUrl,
     StarsLine,
   },
+  mixins: [
+    collectionStoreMixin
+  ],
   head: {
     title: 'Granblue.Party - Collection Tracker',
     desc: 'Track the characters and summons you unlocked, and share your collection with your friends',
-    image: 'https://www.granblue.party/img/preview_collection.png',
+    image: 'https://www.granblue.party/img/card_collection.jpg',
     keywords: 'collection, tracker, characters, summons, share'
   },
   data() {
     return INITIAL_DATA();
   },
   methods: {
-    MAX_AWAKENING() {
-      return 8;
-    },
     getName(element) {
       if (this.isLangEnglish) {
         return element.n;
       }
       return element.nj;
-    },
-    getCharacters(element) {
-      if (this.characters) {
-        return this.characters[element].filter(chara => {
-          if ( ! this.chara_show.hasOwnProperty(chara.d)) {
-            console.log('Unknown Character category ' + chara.d + '. Please report this error to the administrator.');
-            return true;
-          }
-          if ( ! this.chara_show[chara.d]) {
-            return false;
-          }
-          return this.getFilters.every(e => {
-            return this.data_model[e.key].show(chara[e.key])
-          })
-        });
-      }
-      return [];
-    },
-    getSummons(element) {
-      if (this.summons) {
-        return this.summons[element].filter(summ => {
-          return this.getFilters.every(e => {
-            if (summ[e.key] === undefined) {
-              return true;
-            }
-            if ( ! this.summon_show.hasOwnProperty(summ.d)) {
-              console.log('Unknown Summon category ' + summ.d + '. Please report this error to the administrator.');
-              return true;
-            }
-            if ( ! this.summon_show[summ.d]) {
-              return false;
-            }
-            return this.data_model[e.key].show(summ[e.key])
-          })
-        });
-      }
-      return [];
     },
     setShowCharacters() {
       this.showCharacters = ! this.showCharacters;
@@ -603,7 +581,7 @@ export default {
       });
 
       this.modification = true;
-    }
+    },
   },
   computed: {
     ...mapState('collection', [
@@ -614,6 +592,9 @@ export default {
       'summon_count',
       'summon_total'
     ]),
+    MAX_AWAKENING() {
+      return 8;
+    },
     getFilters() {
       return categories.filter(c => { return c.isFilter });
     },
@@ -625,6 +606,76 @@ export default {
     },
     isLangEnglish() {
       return this.$store.getters.getLang === LANGUAGES.EN;
+    },
+    getCharacters() {
+      if (this.characters) {
+        const newDataCount = getDataCount();
+        const characters = this.characters.map(element =>
+          element.filter(chara => {
+            if ( ! this.chara_show.hasOwnProperty(chara.d)) {
+              console.log('Unknown Character category ' + chara.d + '. Please report this error to the administrator.');
+              return true;
+            }
+            if ( ! this.chara_show[chara.d]) {
+              return false;
+            }
+            const show = this.getFilters.every(e => {
+              return this.data_model[e.key].show(chara[e.key])
+            });
+            // Increment filter counts
+            if (show && this.showCharacters) {
+              this.getFilters.forEach(e => {
+                this.data_model[e.key].add(chara[e.key], newDataCount[e.key]);
+              });
+            }
+            return show;
+          })
+        );
+        this.$set(this.data_count, 0, newDataCount);
+        return characters;
+      }
+      return [[],[],[],[],[],[],[]];
+    },
+    getSummons() {
+      if (this.summons) {
+        const newDataCount = getDataCount();
+        const summons = this.summons.map(element =>
+          element.filter(summ => {
+            const show = this.getFilters.every(e => {
+              // Summons have less filters than characters
+              if (summ[e.key] === undefined) {
+                return true;
+              }
+              if ( ! this.summon_show.hasOwnProperty(summ.d)) {
+                console.log('Unknown Summon category ' + summ.d + '. Please report this error to the administrator.');
+                return true;
+              }
+              if ( ! this.summon_show[summ.d]) {
+                return false;
+              }
+              return this.data_model[e.key].show(summ[e.key]);
+            });
+
+            if (show && this.showSummons) {
+              this.getFilters.forEach(e => {
+                if (summ[e.key] !== undefined) {
+                  this.data_model[e.key].add(summ[e.key], newDataCount[e.key]);
+                }                
+              });
+            }
+            return show;
+          })
+        );
+        this.$set(this.data_count, 1, newDataCount);
+        return summons;
+      }
+      return [[],[],[],[],[],[],[]];
+    },
+    getUnits() {
+      return [
+        this.getCharacters,
+        this.getSummons
+      ];
     }
   },
   serverPrefetch() {
@@ -663,14 +714,6 @@ export default {
 
     await this.loadCollection()
       .then(_ => this.loading = false);
-  },
-  beforeCreate() {
-    const preserve_state = !! this.$store.state.collection;
-    this.$store.registerModule('collection', collectionModule, { preserveState: preserve_state });
-  },
-  beforeRouteLeave(to, from, next) {
-    this.$store.unregisterModule('collection');
-    next();
   },
   watch: {
     '$store.getters.getUserId'(id) {

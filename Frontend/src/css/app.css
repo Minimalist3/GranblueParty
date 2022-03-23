@@ -9,22 +9,3 @@
 @import "tailwindcss/utilities";
 
 @import "theme.css";
-
-.top-full {
-  top: 100%
-}
-
-.bg-alpha-50 {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.bg-alpha-80 {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.grayscale-80 {
-  filter: grayscale(80%);
-}
-
-.opacity-07 {
-  opacity: 0.7;
-}

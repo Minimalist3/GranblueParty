@@ -1,5 +1,7 @@
 import Vue from 'vue'
 
+import { provideModule } from '@/js/mixins'
+
 const INITIAL_DATA = () => {
   return {
     progression: {
@@ -12,7 +14,7 @@ const INITIAL_DATA = () => {
   }
 }
 
-export default {
+const myStoreModule = {
   namespaced: true,
   state() {
     return INITIAL_DATA();
@@ -28,4 +30,8 @@ export default {
       Object.assign(state, INITIAL_DATA());
     }
   },
-}
+};
+
+const provideMyStoreModule = provideModule('replicard', myStoreModule);
+
+export default provideMyStoreModule;

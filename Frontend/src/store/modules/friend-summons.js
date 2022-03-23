@@ -1,29 +1,23 @@
 
 import Vue from 'vue'
 
+import { provideModule } from '@/js/mixins'
 import Utils from '@/js/utils.js'
 
-const DEFAULT_VALUES = {
-  summons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
-}
-// Helper to match categories with proper default values
-const getDefaultValues = (data, category) => {
-  if (Utils.isEmpty(data[category])) {
-    return Utils.copy(DEFAULT_VALUES[category]);
+const INITIAL_DATA = () => {
+  return {
+    id: 0,
+    userId: null,
+    summons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+    updated: 0,
+    found: true,
   }
-  if (data[category] instanceof Array) {          
-    return data[category].map(e => Utils.isEmpty(e) ? {} : e);
-  }
-  return data[category];
 };
 
-export default {
+const myStoreModule = {
   namespaced: true,
   state() {
-    return {
-      id: 1,
-      summons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
-    }
+    return INITIAL_DATA();
   },
   mutations: {
     setId(state, value) {
@@ -31,24 +25,34 @@ export default {
     },
   },
   actions: {
-    fetchSummons({ state, dispatch }, data) {
-      return this.axios.post('/party/load', { summons: data.s })
+    loadSummons({ state }, userId) {
+      if ( ! userId) {
+        Object.assign(state, INITIAL_DATA());
+      }
+      else if (userId !== state.userId) {
+        Object.assign(state, INITIAL_DATA());
+
+        return this.axios.get('/friendsum/load/' + userId)
         .then(response => {
-          state.summons = getDefaultValues(response.data, 'summons');
-
-          while (state.summons.length < DEFAULT_VALUES.summons.length) {
-            state.summons.push({});
+          while (response.data.data.length < state.summons.length) {
+            response.data.data.push({});
           }
 
-          if (data.ss) {
-            for (let i=0; i<state.summons.length; i++) {
-              if ( ! Utils.isEmpty(state.summons[i])) {
-                Vue.set(state.summons[i], 'stars', data.ss[i]);
-              }
-            }
-          }
+          state.summons = response.data.data;
+          state.id = response.data.gbfid;
+          state.updated = response.data.updated;
+          state.found = true;
+          state.userId = userId;
         })
-        .catch(error => dispatch('addAxiosErrorMessage', error, {root: true}))
-    }
+        .catch(_ => {
+          state.found = false;
+          state.userId = userId;
+        });
+      }
+    },
   }
 }
+
+const provideMyStoreModule = provideModule('friends', myStoreModule);
+
+export default provideMyStoreModule;

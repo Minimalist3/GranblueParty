@@ -6,8 +6,8 @@
       Create a free account to gain access to "My Collection".
     </p>
     <p class="pt-4">
-      Choose the characters and summons you own, then hit the "Save changes" button.<br>
-      You can share your collection by clicking the "Share" button and giving the unique URL of the page to your friends.
+      Keep a list of your characters and summons and share it with your friends.<br>
+      You can track the uncap and awakening level of each unit.
     </p>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   head: {
     title: 'Granblue.Party - Collection Tracker',
     desc: 'Track the characters and summons you unlocked, and share your collection with your friends',
-    image: 'https://www.granblue.party/img/preview_collection.png',
+    image: 'https://www.granblue.party/img/card_collection.jpg',
     keywords: 'collection, tracker, characters, summons, share'
   },
   methods: {

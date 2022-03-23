@@ -353,7 +353,8 @@ def getTemplateValueOrNone(template, value):
 
 def updateCharacters():
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
-  images_file = os.path.join('data', 'characters.images')
+  chara_file = os.path.join('data', 'chara.images')
+  chara_small_file = os.path.join('data', 'chara_small.images')
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'chara_skills')
   values = []
   weaponspec_values = []
@@ -361,7 +362,7 @@ def updateCharacters():
   skin_values = []
   ougi_values = []
 
-  with open(os.path.join('data', 'characters_category.json'), 'r', encoding='utf8') as fd, open(images_file, 'w', encoding='utf8') as images_file:
+  with open(os.path.join('data', 'characters_category.json'), 'r', encoding='utf8') as fd, open(chara_file, 'w', encoding='utf8') as chara_file, open(chara_small_file, 'w', encoding='utf8') as chara_small_file:
     data = json.load(fd)
 
     for unit in data:
@@ -383,8 +384,8 @@ def updateCharacters():
           if npc_quest_id == "3030182000" or npc_quest_id == "3020072000":
             npc_quest_id += "_01"
 
-          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + npc_quest_id + '_01.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
-          images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg -O ./unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
+          chara_file.write('http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + npc_quest_id + '_01.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+          chara_small_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
         
           character_id = getTemplateValue(template, 'id')[:-3]
           name = defines.unescape(unit['title'])
@@ -541,11 +542,14 @@ def updateCharacters():
 def updateSummons():
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
   working_file = os.path.join('data', 'summons_category.json')
-  images_file = os.path.join('data', 'summons.images')
+  summon_file = os.path.join('data', 'summon.images')
+  summon_small_file = os.path.join('data', 'summon_small.images')
+  summon_battle_file = os.path.join('data', 'summon_battle.preview')
   values = []
   auras = []
+  calls = []
 
-  with open(working_file, "r", encoding='utf8') as read_file, open(images_file, 'w', encoding='utf8') as images_file:
+  with open(working_file, "r", encoding='utf8') as read_file, open(summon_file, 'w', encoding='utf8') as summon_file, open(summon_small_file, 'w', encoding='utf8') as summon_small_file, open(summon_battle_file, 'w', encoding='utf8') as summon_battle_file:
     data = json.load(read_file)
 
     for summon in data:
@@ -573,25 +577,28 @@ def updateSummons():
           continue
 
         # Images
-        images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/' + getTemplateValue(template, 'id') + '.jpg -O ./unit/' + getTemplateValue(template, 'id') + '.jpg\n')
-        images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/' + getTemplateValue(template, 'id') + '.jpg -O ./unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_small_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_battle_file.write('http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/summon/raid_normal/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_battle/' + getTemplateValue(template, 'id') + '.jpg\n')
         
         # How to obtain
         obtain = None
         obtainValue = getTemplateValue(template, 'obtain')
         if obtainValue.startswith("premium"):
-          if obtainValue == 'premium,normal':
+          if obtainValue == 'premium,normal' or obtainValue == 'premium,classic,normal':
             obtain = defines.OBTAIN['[[Premium Draw]]']
           elif obtainValue == 'premium,summer' or obtainValue == 'premium,swimsuit':
             obtain = defines.OBTAIN['Summer Premium Draw']
-          elif obtainValue == 'premium,non-ticketable':
+          elif obtainValue == 'premium,non-ticketable' or obtainValue == 'premium,classic,non-ticketable' or obtainValue == 'premium,premium,non-ticketable':
             obtain = defines.OBTAIN['Premium Gala']
           elif obtainValue == 'premium,holiday':
             obtain = defines.OBTAIN['Holiday Premium Draw']
           elif obtainValue == 'premium,collab':
             obtain = None
           else:
-            print('Unknown premium value for summon ' + getTemplateValue(template, 'name') + ': ' + obtainValue)
+            print('Unknown premium value for summon ' + page_title + ': ' + obtainValue)
+        elif obtainValue.startswith("classic"):
+          obtain = defines.OBTAIN['[[Classic Draw]]']
         elif summon_id in defines.SUMMON_EVOKERS:
           obtain = defines.OBTAIN['Evoker']
 
@@ -663,12 +670,21 @@ def updateSummons():
           parseDescription(getTemplateValueOrNone(template, 'subaura4')),
           False )]
 
+        calls += [(summon_id, 
+          parseDescription(getTemplateValueOrNone(template, 'call_name')),
+          parseDescription(getTemplateValueOrNone(template, 'call_base')),
+          parseDescription(getTemplateValueOrNone(template, 'call_mlb')),
+          parseDescription(getTemplateValueOrNone(template, 'call_flb')),
+          parseDescription(getTemplateValueOrNone(template, 'call_5s')) )]
+
   if addToDB:
     print('Updating Summon table...')
+    database.dico_tables.get('SummonCall').drop()
     database.dico_tables.get('SummonAura').drop()
     database.dico_tables.get('Summon').drop()
     database.dico_tables.get('Summon').insert(values)
     database.dico_tables.get('SummonAura').insert(auras)
+    database.dico_tables.get('SummonCall').insert(calls)
   if verbose:
     print(values)
 
@@ -686,7 +702,7 @@ def downloadSkillIcon(images_dir, icon):
 
 def updateWeapons():
   working_file = os.path.join('data', 'weapons.json')
-  images_file = os.path.join('data', 'weapons.images')
+  weapons_file = os.path.join('data', 'weapons.images')
   images_dir = os.path.join('..', FRONTEND_DIR, 'src', 'img', 'weapon_skills')
   values = []
   ougis = []
@@ -695,7 +711,7 @@ def updateWeapons():
   skills_desc_regex = re.compile('([a-z]+) boost ')
   weapon_ids = set()
   
-  with open(working_file, "r", encoding='utf8') as read_file, open(images_file, 'w', encoding='utf8') as images_file:
+  with open(working_file, "r", encoding='utf8') as read_file, open(weapons_file, 'w', encoding='utf8') as weapons_file:
     data = json.load(read_file)
     add_element = set()
     
@@ -709,7 +725,7 @@ def updateWeapons():
         continue
 
       # Image	
-      images_file.write('wget -nc http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/' + weapon['id'] + '.jpg -O ./weapon/' + weapon['id'] + '.jpg\n')
+      weapons_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/' + weapon['id'] + '.jpg' + '\t' + './weapon/' + weapon['id'] + '.jpg\n')
 
       weapon_id = weapon['id'][:-2]
       weapon_ids.add(int(weapon_id))
@@ -767,9 +783,11 @@ def updateWeapons():
           int(weapon['hp1']), int(weapon['hp2']), int(weapon['hp3']), int(weapon['hp4']) )]
         
         # Ougi
-        ougis += [(weapon_id, parseDescription(weapon.get('ca1 desc', '')),
-          parseDescription(weapon.get('ca2 desc', '')),
-          parseDescription(weapon.get('ca3 desc', '')))]
+        ougis += [(weapon_id,
+          parseDescription(weapon.get('ca1 desc', None)),
+          parseDescription(weapon.get('ca2 desc', None)),
+          parseDescription(weapon.get('ca3 desc', None)))
+        ]
 
         # Icons
         for (s, i) in [('s1 ', 1), ('s1u1 ', 1), ('s2 ', 2), ('s2u1 ', 2), ('s3 ', 3), ('s3u1 ', 3)]:

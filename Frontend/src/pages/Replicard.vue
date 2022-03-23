@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <h1 class="self-center mb-8">Replicard Sandbox Maps</h1>
 
-    <div class="flex flex-row flex-wrap mb-4 items-center space-x-4">
+    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
       <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
@@ -21,12 +21,13 @@
       </p>
       <h2>To fight the Boss</h2>
       <p class="pb-4">
-        To fight the Boss of each zone, you need 3 components dropped by the Defenders.
+        To fight the Boss of each zone, you need components dropped by Defenders.<br>
+        Chain fights of a node until the Defender appears.<br>
         Each component is indicated in parentheses after the color of its Defender.
       </p>
       <h2>Track your progression</h2>
       <p class="pb-4">
-        Click on the stars to track your progression.
+        Click on the stars to track your progression.<br>
         Each node has 3 quests. Add a star when you complete the corresponding quest.<br>
         Mouseover the stars to see the name of the monster.
       </p>
@@ -35,37 +36,45 @@
     <!-- Tabs -->
     <span class="flex flex-col w-full">
       <div class="self-start flex flex-row flex-wrap border-primary border-b font-bold w-full">
-        <a @click="show_tab = 'E'" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 'E' ? 'bg-secondary' : ''">Eletio</a>
-        <a @click="show_tab = 'F'" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 'F' ? 'bg-secondary' : ''">Faym</a>
-        <a @click="show_tab = 'G'" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 'G' ? 'bg-secondary' : ''">Goliath</a>
-        <a @click="show_tab = 'H'" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 'H' ? 'bg-secondary' : ''">Harbinger</a>
+        <a
+          v-for="(zone, letter) in getZones"
+          :key="letter"
+          @click="show_tab = letter"
+          class="px-4 py-2 text-primary cursor-pointer rounded-t"
+          :class="show_tab === letter ? 'bg-secondary' : ''"
+        >
+          {{ zone.name }}
+        </a>
       </div>
 
-      <div>
-        <div><span class="text-pink-500">Pink:</span> {{ zone[show_tab].boss1 }} (Organ)</div>
-        <div><span class="text-green-500">Green:</span> {{ zone[show_tab].boss2 }} (Rib)</div>
-        <div><span class="text-yellow-500">Yellow:</span> {{ zone[show_tab].boss3 }} (Core)</div>
+      <div v-if="currentZone.boss3">
+        <div><span class="text-pink-500">Pink:</span> {{ currentZone.boss1 }} (Organ)</div>
+        <div><span class="text-emerald-500">Green:</span> {{ currentZone.boss2 }} (Rib)</div>
+        <div><span class="text-amber-500">Yellow:</span> {{ currentZone.boss3 }} (Core)</div>
+      </div>
+      <div v-else>
+        <div><span class="text-pink-500">Pink:</span> {{ currentZone.boss1 }} (Invocation)</div>
+        <div><span class="text-emerald-500">Green:</span> {{ currentZone.boss2 }} (Masquerade)</div>
       </div>
 
       <div class="relative bg-primary overflow-x-auto">
 
-        <img
-          v-if="show_loot" :src="'/img/arcarum/replicard_' + show_tab + '_loot.png'"
-          style="min-width: 1377px;"
-        >
-        <img
-          :src="'/img/arcarum/replicard_' + show_tab + '.png'"
-          :class="show_loot ? 'absolute top-0 left-0' : ''"
-          style="min-width: 1377px;"
-        >
+        <picture v-if="show_loot" class="block" :style="currentZoneWidth">
+          <source type="image/webp" :srcset="'/img/arcarum/replicard_' + show_tab + '_loot.webp'">
+          <img :src="'/img/arcarum/replicard_' + show_tab + '_loot.png'">
+        </picture>
+        <picture :class="show_loot ? 'absolute top-0 left-0' : ''" :style="currentZoneWidth">
+          <source type="image/webp" :srcset="'/img/arcarum/replicard_' + show_tab + '.webp'">
+          <img :src="'/img/arcarum/replicard_' + show_tab + '.png'">
+        </picture>
         <span
           v-if="show_progression"
           class="absolute top-0 left-0"
-          style="min-width: 1377px;"
+          :style="currentZoneWidth"
         >
           <div class="relative">
             <stars-line
-              v-for="(star, index) in zone[show_tab].stars"
+              v-for="(star, index) in currentZone.stars"
               :key="index"
               class="absolute bg-black"
               :style="'top: ' + star.top + 'px; left: ' + star.left + 'px;'"
@@ -89,15 +98,17 @@ import Utils from '@/js/utils.js'
 import Checkbox from '@/components/common/Checkbox.vue'
 import StarsLine from '@/components/StarsLine.vue'
 
-import replicardModule from '@/store/modules/replicard'
+import replicardMixin from '@/store/modules/replicard'
 
 const lsMgt = new Utils.LocalStorageMgt('Replicard');
 
 const ZONES = {
   'E': {
+    name: 'Eletio',
     boss1: 'The Devil',
     boss2: 'The Sun',
     boss3: 'The Star',
+    width: '1377',
     stars: [
       {top: 140, left:   45, name: 'Slithering Seductress'},
       {top: 135, left:  322, name: 'Living Lightning Rod'},
@@ -112,9 +123,11 @@ const ZONES = {
     ]
   },
   'F': {
+    name: 'Faym',
     boss1: 'Justice',
     boss2: 'The Moon',
     boss3: 'Death',
+    width: '1377',
     stars: [
       {top: 146, left:   30, name: 'Trident Grandmaster'},
       {top: 206, left:  167, name: 'Hoarfrost Icequeen'},
@@ -129,9 +142,11 @@ const ZONES = {
     ]
   },
   'G': {
+    name: 'Goliath',
     boss1: 'The Hanged Man',
     boss2: 'The Tower',
     boss3: 'Death',
+    width: '1377',
     stars: [
       {top: 257, left:  164, name: 'Avatar of Avarice'},
       {top:  29, left:  237, name: 'Temptation\'s Guide'},
@@ -146,9 +161,11 @@ const ZONES = {
     ]
   },
   'H': {
+    name: 'Harbinger',
     boss1: 'Temperance',
     boss2: 'Judgement',
     boss3: 'The Star',
+    width: '1377',
     stars: [
       {top: 174, left:   29, name: 'Dirgesinger'},
       {top:  34, left:  208, name: 'Vengeful Demigod'},
@@ -162,6 +179,38 @@ const ZONES = {
       {top:  48, left:  670, name: 'Harbinger Stormer'}
     ]
   },
+  'I': {
+    name: 'Invidia',
+    boss1: 'The Sun / The Devil',
+    boss2: 'The Star',
+    width: '884',
+    stars: [
+    ]
+  },
+  'J': {
+    name: 'Joculator',
+    boss1: 'The Moon / Justice',
+    boss2: 'Death',
+    width: '884',
+    stars: [
+    ]
+  },
+  'K': {
+    name: 'Kalendae',
+    boss1: 'Death',
+    boss2: 'The Hanged Man / The Tower',
+    width: '884',
+    stars: [
+    ]
+  },
+  'L': {
+    name: 'Liber',
+    boss1: 'Temperance / Judgment',
+    boss2: 'The Star',
+    width: '884',
+    stars: [
+    ]
+  },
 }
 
 export default {
@@ -169,11 +218,14 @@ export default {
     Checkbox,
     StarsLine
   },
+  mixins: [
+    replicardMixin
+  ],
   head: {
     title: 'Granblue.Party - Replicard Sandbox Maps',
     desc: 'View Replicard Sandbox Maps with loots, colors, and progression for each node',
-    image: 'https://www.granblue.party/img/preview_replicard.png',
-    keywords: 'Replicard, Sandbox, Maps, Arcarum'
+    image: 'https://www.granblue.party/img/card_replicard.jpg',
+    keywords: 'Replicard, Sandbox, Maps, Arcarum, Evoker, Eletio, Faym, Goliath, Harbinger, Invidia, Joculator, Kalendae, Liber'
   },
   data() {
     return {
@@ -220,8 +272,14 @@ export default {
     isUserLogged() {
       return this.$store.getters.getUserId !== null;
     },
-    zone() {
+    getZones() {
       return ZONES;
+    },
+    currentZone() {
+      return this.getZones[this.show_tab];
+    },
+    currentZoneWidth() {
+      return "min-width: " + this.currentZone.width + "px;";
     },
     progression: {
       get() { return this.$store.state.replicard.progression },
@@ -262,13 +320,6 @@ export default {
     lsMgt.getValue(this, 'show_tab');
 
     this.loadData();
-  },
-  beforeCreate() {
-    const preserve_state = !! this.$store.state.replicard;
-    this.$store.registerModule('replicard', replicardModule, { preserveState: preserve_state });
-  },
-  destroyed() {
-    this.$store.unregisterModule('replicard');
   },
 };
 </script>

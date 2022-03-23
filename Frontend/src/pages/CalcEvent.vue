@@ -3,15 +3,15 @@
     <h1 class="mb-8">New Event tokens Calculator</h1>
 
     <!-- Stats -->
-    <div class="flex flex-col mb-8">
-      <span class="flex flex-row flex-wrap items-center">
-        <label class="mr-4">Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
-        <label class="mr-4">Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
+    <div class="flex flex-col mb-8 gap-x-4">
+      <span class="flex flex-row flex-wrap items-center gap-4">
+        <label>Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
+        <label>Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
         <span>Progress: {{ getProgress }}%</span>
       </span>
 
       <span class="flex flex-row flex-wrap items-center">
-        <label class="mr-4">Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
+        <label>Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
       </span>
 
       <span>
@@ -23,8 +23,8 @@
     </div>
 
     <!-- Select fights -->
-    <div class="flex flex-row flex-wrap mb-4 items-center">
-      <span class="mr-4 inline-flex flex-row btn-group">
+    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+      <span class="flex flex-row flex-wrap btn-group items-center">
         <span class="mr-2">Fight</span>
         <button
           v-for="(fight, index) in getFightNames"
@@ -37,7 +37,7 @@
         </button>
       </span>
       
-      <span class="inline-flex flex-row mr-4 btn-group">
+      <span class="flex flex-row flex-wrap btn-group items-center">
         <span class="mr-2">Type</span>
         <button class="btn btn-sm" :class="show_host ? 'btn-blue' : 'btn-white'" @click="show_host = ! show_host">
           Host
@@ -52,7 +52,7 @@
 
     <!-- Table -->
     <div class="overflow-y-auto w-full">
-      <table class="table table-striped table-px w-auto ml-auto mr-auto">
+      <table class="table table-striped bg-secondary table-px w-auto ml-auto mr-auto">
         <thead>
           <tr>
             <th>Name</th>
@@ -141,7 +141,7 @@ export default {
   head: {
     title: 'Granblue.Party - New Event Calculator',
     desc: 'Calculator for new Event tokens and boxes',
-    image: 'https://www.granblue.party/img/preview_calcevent.png',
+    image: 'https://www.granblue.party/img/card_calcevent.jpg',
     keywords: 'Event, boxes, tokens, Token Draw, calculator, crystals'
   },
   data() {

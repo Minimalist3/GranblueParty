@@ -5,6 +5,7 @@
       :key="index"
       :object="object"
       :showLevel="showLevel"
+      :showRing="showRing"
       @click-portrait="showModal(index)"
       @click-skill="clickSkill(index, $event)"
       @drag-portrait="drag($event, index)"
@@ -79,6 +80,10 @@ export default {
       default: true
     },
     showLevel: {
+      type: Boolean,
+      default: false,
+    },
+    showRing: {
       type: Boolean,
       default: false,
     },

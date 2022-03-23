@@ -8,7 +8,7 @@
 3020008	1	Cursed Blaze	 Big Fire damage to a foe.
 3020009	1	Fist of Punishment	 Big Wind damage to a foe.
 3020010	1	Spatter	 Big Dark damage to a foe.
-3020011	1	Wind Cross	 Big Wind damage to a single enemy.
+3020011	1	Wind Cross	 Big Wind damage to a foe.
 3020012	1	Earth Crash	 Big Earth damage to a foe.
 3020013	1	Steelshot	 Big Earth damage to a foe.
 3020014	1	Joker Blast	 Big Water damage to a foe.
@@ -47,7 +47,7 @@
 3020047	1	Exploding Shot	 Big Earth damage to a foe.
 3020048	1	Bold Slash	 Big Water damage to a foe.
 3020049	1	Canine Fang	 Big Fire damage to a foe.
-3020050	1	Calamity Picture	 Big Dark damage to a foe.
+3020050	1	Cataclysmic Illustration	 Big Dark damage to a foe.
 3020051	1	Sale Savvy	 Big Earth damage to a foe.
 3020052	1	Everything Goes Boom!	 Big Fire damage to a foe.
 3020053	1	The Final Word	 Big Water damage to a foe.
@@ -58,7 +58,7 @@
 3020058	1	Blooming Scissorwaltz	 Big Earth damage to a foe.
 3020059	1	Makeover	 Put on makeup (Random effect)
 3020060	1	Bamboo Burst	 Big Fire damage to a foe.
-3020061	1	Cataclysmic Illustration	 Big dark damage to a foe. Gain 1 Body Heat Boosted (Lunalu) stack.
+3020061	1	Cataclysmic Illustration	 Big Dark damage to a foe. Raise Body Heat Boosted (Lunalu) lvl by 1 (Max: 3).
 3020062	1	Rodeo Flip	 Big Water damage to a foe.
 3020063	1	Shopping Spree	 One rupie shopping spree coming right up! (Use 1-10,000 rupies at random to shop. Chance for all allies to gain Hype.)
 3020064	1	Piercing Lighting	 Big Light damage to a foe.
@@ -89,7 +89,7 @@
 3030011	1	Axe Slash	 Big Fire damage to a foe.
 3030012	1	Fleur Tourbillon	 Big Water damage to a foe.
 3030012	2	Bourgeon Flueri	After 5★: {{InfoOugi|desc=Massive Water damage to a foe. Gain Critical Up.}}
-3030013	1	Out of Control	 Big earth damage to a foe.
+3030013	1	Out of Control	 Big Earth damage to a foe.
 3030014	1	Illusion Dance	 Big Water damage to a foe.
 3030014	2	Theater of Illusion	After 5★: Massive Water damage to a foe. Gain Mirror Image.
 3030015	1	Talons of the Phoenix	 Big Fire damage to a foe.
@@ -127,7 +127,7 @@
 3030040	1	Pink Lively	 Big Light damage to a foe. Bonus Water damage to Blind foes.
 3030040	2	Fullbloom Starsmile	After 5★: Massive Light damage to a foe. Bonus Water damage to Blind foes. Bonus Fire damage to Burned foes.
 3030041	1	Iolite Blue	 Big Water damage to a foe. Bonus Light damage to Charm foes.
-3030041	2	Heaven on Earth	After 5★: Massive Water damage to a foe. Bonus Light damage to Charm foes. Bonus Fire damage if enemy has Burn.
+3030041	2	Heaven on Earth	After 5★: Massive Water damage to a foe. Bonus Light damage to Charm foes. Bonus Fire damage to Burn foes.
 3030042	1	Fleur Tourbillon	 Big Dark damage to a foe
 3030043	1	Whirlwind	 Big Wind damage to a foe.
 3030044	1	Blasts of Ennead	 Big Wind damage to a foe.
@@ -138,17 +138,17 @@
 3030049	1	Talismancy: Piercing Strike	 Big Light damage to a foe.
 3030050	1	Klesa Nirodha	 Big Light damage to a foe.
 3030051	1	Pounding Heart	 Big Dark damage to a foe. Bonus Fire damage to Burned foes.
-3030051	2	Glorious Heart	After 5★: Massive Dark damage to a foe. Inflict Charm. Bonus Fire damage to Burned foes.
+3030051	2	Glorious Heart	After 5★: Massive Dark damage to a foe. Bonus Fire damage to Burned foes. Inflict Charm.
 3030052	1	Triple Star	 Big Fire damage to a foe. Bonus Dark damage to Blind foes.
 3030052	2	Six Star	After 5★: Massive Fire damage to a foe. Bonus Dark damage to Blind foes. Bonus Light damage to Charm foes.
 3030053	1	Heavenly Vengeance	 Big Light damage to a foe.
 3030054	1	Familial Insanity	 Big Dark damage to a foe
-3030054	2	Schrecken Fist	After 5★: Massive Dark damage to a foe. 300,000 bonus plain damage for each ally and foe with Zombie (Max: 6).
+3030054	2	Schrecken Fist	After 5★: Massive Dark damage to a foe. Deal 300,000 bonus plain damage for each ally and foe with Zombie (Max: 6).
 3030055	1	Maximum Love Bomb	 Big Earth damage to a foe.
 3030056	1	Conviction Strike	 Big Earth damage to a foe.
 3030057	1	Fullmetal Impact	 Big Earth damage to a foe. Inflict Earth DEF Lowered.
 3030058	1	Grim Flame	 Big Fire damage to a foe. Inflict Fire DEF Lowered.
-3030059	1	Hel Klinge	 Big dark damage to a foe.
+3030059	1	Hel Klinge	 Big Dark damage to a foe.
 3030060	1	Chaos Arcania	 Big Dark damage to a foe.
 3030061	1	Mahle Fantasia	 Big Water damage to a foe.
 3030061	2	Oratorio Azzurro	After 5★: Massive Water damage to a foe. Gain Oratorio (ATK boost gradually decreases starting after 2 turns).
@@ -219,8 +219,8 @@
 3030118	1	Graceful in Death	 Big Wind damage to a foe.
 3030119	1	Bruiser Axe	 Big Fire damage to a foe.
 3030120	1	Angel Alight	 Big Light damage to a foe. 1-turn cut to all skill cooldowns. (I'm so good that sometimes I scare myself!)
-3030121	1	Airi Slash	 Big Earth damage to a foe. Boost to damage based on how high Body Heat Boosted is (Resets Body Heat Boosted).
-3030122	1	Belly Battle Life	 Big earth damage to a foe. Restore caster's HP (Healing cap: 3000).
+3030121	1	Airi Slash	 Big Earth damage to a foe. (Boost to damage based on how high Body Heat Boosted is.) Reset Body Heat Boosted.
+3030122	1	Belly Battle Life	 Big Earth damage to a foe. Restore caster's HP (Healing cap: 3000).
 3030123	1	Totally Rad Strat-Meet	 Totally radical strategy meeting! While fighting. Cuz that’s how awesome we are. Totally. (Deal no damage and produce a random effect)
 3030124	1	Undead Murk	 Big Dark damage to a foe. Inflict Poison.
 3030124	2	Beguiling Indigo	After 5★: Massive Dark damage to a foe. Inflict Poison. All allies gain Strength.
@@ -228,7 +228,7 @@
 3030126	1	Altair	 Big Wind damage to a foe. (Use all EX-Gauge stacks: Boost to charge attack damage.)
 3030127	1	Hundred Claw Storm Strike	 Big Fire damage to a foe.
 3030128	1	Mystic Hurricane	 Big Wind damage to a foe.
-3030129	1	Verite Courage	 Big Dark damage to a foe. (Boost to damage based on Courage level.)
+3030129	1	Verite Courage	 Big Dark damage to a foe. (Boost to damage based on Courage lvl.)
 3030130	1	Rising Sakura	 Big Wind damage to a foe. 2-turn cut to all skill cooldowns.
 3030131	1	Evangel	 Restore all allies' HP (Healing cap: 1000) and grant Refresh.
 3030132	1	Rumbling Wheel	 Big Fire damage to a foe. 2-turn cut to skill cooldown.
@@ -237,7 +237,7 @@
 3030135	1	Eternal Lullaby	Morphe: Big Water damage to a foe. Inflict Sleep 3 on all foes and Sleep on all allies. Switch out with Phoebe.
 3030135	2	Eternal Lullaby	Phoebe: Big Water damage to a foe. Inflict Sleep 3 on all foes and Sleep on all allies. Switch out with Morphe.
 3030136	1	Phoenix	 Big Fire damage to a foe.
-3030137	1	Innocent Shine	 Big light damage to a foe. All allies gain 20% cut to dark DMG.
+3030137	1	Innocent Shine	 Big Light damage to a foe. All allies gain 20% cut to dark DMG.
 3030138	1	Scary-Go-Round	 Big Dark damage to a foe.
 3030139	1	Mine Your Manners	 Big Earth damage to a foe.
 3030140	1	Salva Virama	 Big Light damage to a foe.
@@ -284,6 +284,7 @@
 3030180	1	Phantom Howl	 Big Dark damage to a foe.
 3030181	1	Pure Paragon	 Big Wind damage to a foe. Gain DEF Up.
 3030182	1	Primeval Dragon	 600% elemental damage to a foe (Damage cap: ~2,150,000). Inflict DEF Down.
+3030182	2	Thy Name Is Bahamut	After 5★: 700% elemental damage to a foe (Damage cap: ~2,150,000). Inflict ATK Down and DEF Down.
 3030183	1	Rising Rapier	 Big Light damage to a foe. Inflict Blind.
 3030184	1	Heaven's Favor	 Big Earth damage to a foe. Gain DEF Up.
 3030185	1	Oops! Misfire!	 Let's have some FUN-gus!
@@ -321,20 +322,20 @@
 3030224	2	Crosscut	200% Charge Bar 700% Wind damage to a foe (Damage cap: ~3,264,000). 10-hit, 100% Bonus Wind damage (Damage cap: ~16,000 per hit). Inflict Wind DEF Lowered.
 3030224	3	Moonlight Blossoms	After 5★: 100% Charge Bar 400% Wind damage to a foe. Inflict Wind DEF Lowered. Gain Charge Bar.
 3030224	4	Moonlight Blossoms	After 5★: 200% Charge Bar 800% Wind damage to a foe. 10-hit, 100% Bonus Wind damage (Damage cap: ~16,000 per hit). Inflict Wind DEF Lowered. Gain Charge Bar.
-3030225	1	Segen Lied	 All allies gain Light ATK Up, Debuff Resistance Boosted, and Dark DMG Lowered. Sophia gains Light of Life: Next Heilung affects all allies.
+3030225	1	Segen Lied	 All allies gain Light ATK Up, Debuff Resistance Boosted, and Dark DMG Lowered. Sophia gains Light of Life. (Next Heilung affects all allies.)
 3030226	1	Loewenbein: Licht	 Big Wind damage to a foe. Inflict Earth ATK Lowered.
 3030227	1	Kraft für 100	 Big Wind damage to a foe. (Boost to damage based on number of Blade stacks.)
-3030228	1	Holly Launcher	 Big Light damage to a foe. (Buff all allies based on number of Gift stacks for 3 turns)
+3030228	1	Holly Launcher	 Big Light damage to a foe. Buff all allies based on number of Gifts.
 3030229	1	Proud as a Peacock	 Big Earth damage to a foe.
 3030230	1	Raider's Perfection	 Big Fire damage to a foe. Raise Bounty lvl by 2.
 3030231	1	Resolute Raid	 Big Light damage to a foe. Gain TA Up.
 3030232	1	Spicy-Hot Impact	 Big Fire damage to a foe. Restore all allies' HP (Random amount)
 3030233	1	Gamma Ray	 Big Fire damage to a foe. All allies gain Critical Hit Rate Boosted.
-3030234	1	Aerial Assault Kick	 Big Dark damage to a foe. (Boost to damage and damage cap based on Kickfighter's Creed lvl). Reset Kickfighter's Creed
-3030235	1	In Love and War	 Big Dark damage to a foe. Gain Together Forever: Next Butter Flutter also affects Narmaya.
+3030234	1	Aerial Assault Kick	 350% Dark damage to a foe. (Boost to damage and damage cap based on Kickfighter's Creed lvl). Reset Kickfighter's Creed lvl.
+3030235	1	In Love and War	 Big Dark damage to a foe. Gain Together Forever. (Next Butter Flutter also affects Narmaya.)
 3030236	1	Dazzling Flame	 Big Fire damage to a foe. (30% boost to C.A. damage and 10% boost to C.A. damage cap against Burned foes.)
 3030237	1	Falcon Tempesta	 Big Earth damage to a foe. Gain Bonus Earth DMG
-3030238	1	Combination Blow	 Big Wind damage to a foe. Gain One More: Next One-Two Punch effect is enhanced.
+3030238	1	Combination Blow	 Big Wind damage to a foe. Gain One More. (Next One-Two Punch effect is enhanced.)
 3030239	1	No More Thinking	 Big Light damage to a foe. Gain Charge Boost.
 3030240	1	Lebhafte Buehne	 All allies gain Critical Hit Rate Boosted, ATK Up, DEF Up, and Uplifted. (Can only be used when Applause is as loud as it can be [Loudest: 5])
 3030241	1	Lion's Claw	 Big Earth damage to a foe. Gain Charge Boost.
@@ -349,7 +350,7 @@
 3030250	1	Mine Your Manners	 Big Earth damage to a foe. Inflict Earth DEF Down.
 3030251	1	Crescent Tube Ride	 Big Water damage to a foe. Gain Surfer's Intuition (Increase chance of getting higher lvl of High-Tide).
 3030252	1	Gigantic Beefcake	 1000% Earth damage to a foe (Damage cap: ~2,527,500). (Can only be used when Super Robo Elsam is active.)
-3030253	1	Assault Wave	 Big Wind damage to a foe. Boost to damage based on number of Imperial Soldiers.
+3030253	1	Assault Wave	 Big Wind damage to a foe. (Boost to damage based on number of Imperial Soldiers.)
 3030254	1	Animus Strike	 Big Dark damage to a foe. Raise Spirit Fist lvl by 2.
 3030255	1	Drachen Kreuz	 Big Wind damage to a foe. Gain Bonus Wind DMG.
 3030256	1	Biscuit Brulee	 Big Fire damage to a foe. End cooldown for Get Baking.
@@ -373,7 +374,7 @@
 3030274	1	Lion's Claw	 Big Water damage to a foe. Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable).
 3030275	1	Nature-Loving Scissors	 Big Earth damage to a foe. Remove 1 debuff from all allies.
 3030276	1	Bandagen Klinge	 Big Earth damage to a foe. Gain Bandagen.
-3030277	1	Void Dance: Soshaku	 Big Dark damage to a foe. Raise You's Indigo Flame lvl by 2.
+3030277	1	Void Dance: Soshaku	 Big Dark damage to a foe. Raise Indigo Flame lvl by 2.
 3030278	1	Doomful Dice	 Big Wind damage to a foe. (Specs change based on dice numbers rolled.) Gain Charge Bar.
 3030279	1	Brute Boar Bash	 Big Light damage to a foe. Gain Razorback Lance.
 3030280	1	Ring In the New	 Big Wind damage to all foes. Remove 108 debuffs from Joy.
@@ -406,11 +407,11 @@
 3040010	2	Noble Execution ++	After 5★: 500% Water damage to a foe. 400% Bonus Water damage (Damage cap: ~635,000).
 3040011	1	Meteor Storm	 Massive Fire damage to a foe. After 5★: Inflict Fire DEF Lowered on all foes.
 3040011	2	Massive Meteor Storm	Morax Summoned:  Massive Fire damage to a foe. Deal 300% bonus Fire damage to all foes (Damage cap: ~300,000). Inflict Fire DEF Lowered on all foes.
-3040012	1	Rapid Pulverize	 Massive Wind damage to a foe. Gain 1 Aetherial Shaft 1 stack. (Next skill activates twice upon use.)
-3040012	2	Gleaming Pulverize	After 5★: Massive Wind damage to a foe. Gain 2 Aetherial Shaft 1 stacks. (Next skill activates twice upon use.)
+3040012	1	Rapid Pulverize	 Massive Wind damage to a foe. Gain 1 Aetherial Shaft 1. (Next skill activates twice upon use.)
+3040012	2	Gleaming Pulverize	After 5★: Massive Wind damage to a foe. Gain 2 Aetherial Shaft 1. (Next skill activates twice upon use.)
 3040013	1	Redbranch Cycle	 450% Light damage to a foe.
 3040013	2	Redbranch Cycle ++	After 5★: 500% Light damage to a foe. All Light allies gain Critical Hit Rate Boosted (Light).
-3040014	1	Seventh Agony	 Massive Light damage to a foe. All allies gain Armored.
+3040014	1	Seventh Agony	 450% Light damage to a foe. All allies gain Armored.
 3040015	1	Elemental Cascade	 Massive Fire damage to a foe. All Fire allies gain Critical Hit Rate Boosted (Fire).
 3040016	1	Triple Damnation	 450% Dark damage to a foe. Gain TA Up.
 3040016	2	Trinity Disaster	After 5★: 500% Dark damage to a foe. Gain Pandemoniac Roar. 3-turn cut to a random skill cooldown.
@@ -466,9 +467,9 @@
 3040039	1	Danza Macabra	 450% Fire damage to a foe. Inflict Blind.
 3040039	2	Danza Cremazione	After 5★: 500% Fire damage to a foe. Inflict Red Spider Lily. All allies gain Skill DMG Cap Boosted.
 3040039	3	Trionfo della Morte	After Stage 1 Transcendence: 550% Fire damage to a foe. Inflict Red Spider Lily. All allies gain Skill DMG Cap Boosted. End Intense Bullet's cooldown.
-3040040	1	Holy Spear Marte	 Massive Light damage to a foe.
-3040040	2	Holy Spear Marte ++	After 5★: Massive Light damage to a foe. All allies gain Light ATK Up and 20% Dark Cut.
-3040041	1	Post-Trauma	 Massive Earth damage to a foe. All allies except Sara gain Shield.
+3040040	1	Holy Spear Marte	 450% Light damage to a foe.
+3040040	2	Holy Spear Marte ++	After 5★: 500% Light damage to a foe. All allies gain Light ATK Up and 20% Dark Cut.
+3040041	1	Post-Trauma	 500% Earth damage to a foe. All other allies gain Shield.
 3040042	1	Dreadbringer	 450% Wind damage to a foe. All allies gain Mirror Image.
 3040043	1	Overpower	 450% Dark damage to a foe.
 3040043	2	Overpower ++	After 5★: 500% Dark damage to a foe.
@@ -477,8 +478,8 @@
 3040044	2	Alabaster Dance: Houjou	After 5★: 500% Water damage to a foe. Gain Yonagi Rite. All allies gain Mirror Image.
 3040045	1	Lord of Blitz	 Massive Light damage to a foe. Gain Bonus Light Damage.
 3040045	2	Levin Annihilation	After 5★: Massive Light damage to a foe. Gain Bonus Light Damage and Lightning's Judgment (Next use of Electron Blade activates twice).
-3040046	1	Alchemic Flare	 Massive Fire damage to a foe. Inflict Debuff Resistance Lowered.
-3040047	1	Oblivion of the Winds	 Massive Wind damage to a foe. All Wind allies gain Critical Hit Rate Boosted (Wind).
+3040046	1	Alchemic Flare	 450% Fire damage to a foe. Inflict Debuff Resistance Lowered.
+3040047	1	Oblivion of the Winds	 450% Wind damage to a foe. All Wind allies gain Critical Hit Rate Boosted (Wind).
 3040048	1	Dissonant Desire	 Massive Dark damage to a foe. Gain Jammed.
 3040049	1	Funeral Bullet	 Massive Water damage to a foe.
 3040049	2	Burying Bullet	After 5★: Massive Water damage to a foe. Gain Dodge Up. 2-turn cut to Silva's skill cooldowns.
@@ -492,16 +493,16 @@
 3040054	1	Blades of Diamond	 Massive Water damage to a foe. All allies gain Water ATK Boosted and DA Up.
 3040054	2	Blades of Frost II	After 5★: Massive Water damage to a foe. All allies gain Water ATK Boosted, DA Up, and TA Up.
 3040055	1	Grand Guignol	 Massive Dark damage to a foe. Inflict Petrified 3.
-3040056	1	Resolute Strike	 Massive Light damage to a foe. Gain Charge Bar Sped Up.
+3040056	1	Resolute Strike	 1250% Light damage to a foe (Damage cap: ~2,420,000). End cooldown for Rhapsody and Arvess Swing.
 3040057	1	Purification by Blood	 Massive Dark damage to a foe. (50% boost to C.A. damage against foes with Charm.)
-3040057	2	Bloody Absorption	After 5★:  Massive Dark damage to a foe. (50% boost to C.A. damage and 30% boost to C.A. damage cap against foes with Charm.) Gain 2 Vampyr Drop (SSR) (Max: 2).
+3040057	2	Bloody Absorption	After 5★:  Massive Dark damage to a foe. (50% boost to C.A. damage and 30% boost to C.A. damage cap against foes with Charm.) Gain 2 Vampyr Drop (SSR).
 3040058	1	Alluring Melody	 Massive Wind damage to a foe. Inflict Sleep 3.
 3040059	1	Demolishing Drive	 Massive Fire damage to a foe. All allies gain Fire ATK Up and DA Up.
 3040059	2	Naval Strike	After 5★: Massive Fire damage to a foe. All allies gain Fire ATK Up, DA Up, and Critical Hit Rate Boosted.
 3040060	1	Eidel Siege	 450% Fire damage to a foe. Gain Second Brew. (Next use of Autumnal activates twice.)
 3040060	2	Togail Ceannrodai	After 5★: 500% Fire damage to a foe. Gain Second Brew (5★) and Enchanted Spear.
 3040061	1	Invincible Crusher	 450% Wind damage to a foe. All allies gain Critical Hit Rate Boosted.
-3040062	1	Ars Magna	 Massive Dark damage to a foe. Boost to C.A. specs based on number of Oblivion Crest. 'From 8th turn onward:' All allies also gain Charge Boost.
+3040062	1	Ars Magna	 Massive Dark damage to a foe. (Boost to C.A. specs based on number of Oblivion Crest). 'From 8th turn onward:' All allies also gain Charge Boost.
 3040063	1	Dawnfly Dance	Dawnfly stance: 450% Dark damage to a foe. Gain ATK Boosted (Narmaya).
 3040063	2	Freeflutter Dance	Freeflutter stance: 450% Dark damage to a foe. Remove DEF Lowered (Can't be removed) from Narmaya.
 3040063	3	Dawnfly Dance II	After 5★ - Dawnfly stance: 500% Dark damage to a foe. Gain ATK Boosted (Narmaya) and Dark ATK Up.
@@ -521,9 +522,9 @@
 3040071	1	Gilded Heaven Strike	 500% Wind damage to a foe.
 3040071	2	Infinite Monkey Hands: Baboon Blast	After 5★: 550% Wind damage to a foe and remove 1 buff.
 3040072	1	Dense Caress	 450% Fire damage to a foe. 'Consume 1 Aetherial Seal:' 200% Bonus Fire damage (Damage cap: ~700,000).
-3040073	1	Aetheryte Onslaught	 Massive Light damage to a foe.
+3040073	1	Aetheryte Onslaught	 450% Light damage to a foe. 1-turn cut to Ferry's skill cooldowns.
 3040074	1	Kiss of Death	 Massive Earth damage to a foe. Gain Guaranteed TA .
-3040075	1	Alexander Plasma	 Massive Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap when the field effect Flare is active.) All allies gain Critical Up.
+3040075	1	Alexander Plasma	 450% Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap when the field effect Flare is active.) All allies gain Critical Up.
 3040076	1	Heavens On Fire	 450% Fire damage to a foe. Extend the duration of Hype on Aoidos by 2 turns.
 3040076	2	Heavens o' Misery	After 5★: 500% Fire damage to a foe. Extend the duration of Hype on all Fire allies by 2 turns.
 3040077	1	Die Jaegerkanone	 450% Earth damage to a foe. All allies gain Earth ATK Up and DA Up.
@@ -538,9 +539,9 @@
 3040083	1	Fangs of the Dragon	 Massive Fire damage to a foe. Gain Critical Up.
 3040084	1	Deadly Sin	 Massive Earth damage to a foe. Gain Bonus Earth Damage.
 3040084	2	Beat the Wall	After 5★: Massive Earth damage to a foe. Gain Bonus Earth Damage and Guaranteed TA.
-3040085	1	Gaia Zimos	 Massive Earth damage to a foe. Gain DA Up.
+3040085	1	Gaia Zimos	 450% Earth damage to a foe. Gain DA Up.
 3040086	1	Dragonbrood Demonspear	 Massive Dark damage to a foe. Gain Double Lashwave. (Next use of Blackwyrm Lash activates twice.)
-3040087	1	Talismancy: Void Strike	 450% Light damage to a foe. 400% Bonus Light damage while under Curse of the Mask (Damage cap: ~1,160,000). Self-inflict Curse of the Mask for 3.5 turns.
+3040087	1	Talismancy: Void Strike	 450% Light damage to a foe. 400% Bonus Light damage while under Curse of the Mask (Damage cap: ~1,160,000). Self-inflict Curse of the Mask.
 3040088	1	Red Hot Guardian	Normal mode: 450% Water damage to a foe. Gain Charge Boost. Switch into Tough Guy mode.
 3040088	2	Red Hot Guardian ++	After 5★ - Normal mode: 500% Water damage to a foe. Gain Charge Boost and Guaranteed TA. Switch into Tough Guy mode.
 3040088	3	Full Metal Sights	Tough Guy mode: 500% Water damage to a foe. End Tough Guy mode.
@@ -552,11 +553,11 @@
 3040093	1	Phantom Thief	 Massive Water damage to a foe. (Forewarning or Riddle gives 'em a show they'll never forget!)
 3040094	1	Bleeding Edge	 Massive Dark damage to a foe. Gain Dodge All 1.
 3040095	1	Alabaster Dance: Zuika	 Massive Fire damage to a foe. All allies gain Bonus Fire DMG.
-3040096	1	Luce della Salvezza	 450% Light damage to a foe. 'When 1 Spirit Shroud is consumed:' Also deal 300% Bonus Light damage (Damage cap: ~635,000).
+3040096	1	Luce della Salvezza	 450% Light damage to a foe. Gain 1 Aurora Crest 1. ('When 1 Spirit (Juliet) is consumed:' Also deal 300% Bonus Light damage [Damage cap: ~635,000].)
 3040098	1	Alba di Verona	 450% Water damage to a foe. ('When 1 Spirit 1 is consumed:' Also deal 300% Bonus Water damage [Damage cap: ~630,000].)
 3040098	2	Sole di Verona	After 5★: 500% Water damage to a foe. Gain Skill DMG Cap Boosted (Stackable). Activate Lama Acuta.
 3040099	1	Dead-End Shot	 Massive Earth damage to a foe. Inflict Blinded. Reset Loaded lvl.
-3040100	1	Lyod Blast	 450% Water damage to a foe. Consumes all Icy Blade.
+3040100	1	Lyod Blast	 450% Water damage to a foe. Consumes all Icy Blade to boost C.A. specs.
 3040100	2	Metel' Blast	After 5★: 500% Water damage to a foe. 'When 5 Icy Blade is consumed:' All other Water allies gain 1 Dream Blade 1 (Max: 2).
 3040101	1	Twilight Blade	 450% Wind damage to a foe. Remove 1 buff from all foes.
 3040102	1	Capillus Ataxia	 Massive Wind damage to a foe. 2-turn cut to skill cooldown.
@@ -567,7 +568,7 @@
 3040106	1	Paradise Lost	 Massive Light damage to a foe. Gain Light ATK Up and Crown of Ashes (Next use of Out of the Ashes activates twice).
 3040107	1	Gilded Heaven Strike	 500% Earth damage to a foe. All allies gain 5 Drum Beat.
 3040107	2	Infowlible Insight	After 5★: 550% Earth damage to a foe. All allies gain 5 Drum Beat. Extend Zeal of the Feather's duration on all allies by 2 turns.
-3040108	1	Earth, Wind, and Fire	 Massive Dark damage to a foe. Gain Charge Boost.
+3040108	1	Earth, Wind, and Fire	 450% Dark damage to a foe. Gain Charge Boost.
 3040109	1	Seismische Welle	 Massive Earth damage to a foe. Gain 3 Flash Point stacks.
 3040110	1	Immortal Assault	 450% Fire damage to a foe. Gain Other Self 1.
 3040111	1	Endbringer	 450% Dark damage to a foe. Fully recover Puppet Strings' shield endurance.
@@ -575,7 +576,7 @@
 3040112	1	Solar Spike	 450% Dark damage to a foe. All allies gain Critical Hit Rate Boosted.
 3040113	1	Seventh Blight	 Massive Earth damage to a foe. Gain DEF Up.
 3040115	1	Hell's Angel	 450% Fire damage to a foe. Gain Double Blitz. (Next Blitzkrieg activates twice.)
-3040116	1	Rocket Punch	 Massive Water damage to a foe. Inflict DA Down. Gain Uplifted for 3 turns.
+3040116	1	Rocket Punch	 Massive Water damage to a foe. Inflict DA Down. Gain Uplifted.
 3040117	1	Loewenbein: Jagd	 450% Water damage to a foe. Inflict ATK Lowered (Stackable) and Fire ATK Lowered .
 3040117	2	Loewenbein: Jagd ++	After 5★: 500% Water damage to a foe. Inflict ATK Lowered (Stackable) and Fire ATK Lowered . Gain Double Beat. (Next Heroic Beat activates twice.)
 3040118	1	Blades of Peril	 Massive Dark damage to a foe.
@@ -585,16 +586,16 @@
 3040122	1	Cloich Tabaill	 Massive Wind damage to a foe. Gain Dragon's Fury.
 3040122	2	Lia Talma	After 5★: Massive Wind damage to a foe. Gain Dragon's Fury. End Power Seeker's cooldown.
 3040123	1	Petrifying Stare	 Massive Earth damage to a foe. Inflict Stared Stiff for 1.5 to 2.5 turns.
-3040124	1	Heavenly Retribution	 450% Light damage to a foe. 300% Bonus Light damage (Damage cap: ~295,000).
+3040124	1	Heavenly Retribution	 450% Light damage to a foe. ('When Baotorda has Bulwark:' Also deal 4-hit, 100% Bonus Light damage [Damage cap: ~170,000 per hit].)
 3040125	1	Axis Mundi	 450% Earth damage to a foe. Gain Charge Boost.
 3040125	2	Luminox Genesi	After 5★: 500% Earth damage to a foe. Gain Charge Boost and Wasteland Crest 1. Restore 30% of Yggdrasil's HP (Healing cap: 4000).
-3040126	1	Lyod Blast	 Massive Water damage to a foe. Consume all Icy Blade (Summer).
-3040127	1	Blanche Fil	 Restore 10% of Wind allies' HP (Healing cap: 2500). All Wind allies gain Bonus Wind DMG. Gain 3 Fil and 1 Idea.
+3040126	1	Lyod Blast	 450% Water damage to a foe. Consume all Icy Blade (Summer) to boost C.A. specs.
+3040127	1	Blanche Fil	 Restore 10% of Wind allies' HP (Healing cap: 2500). All Wind allies gain Bonus Wind DMG. Gain 3 Fil (Summer) and 1 Idea.
 3040128	1	Schwarze Faenge	 Massive Wind damage to a foe. Gain Black Dragon Claw.
 3040129	1	Idol on the Beach	 Restore 10% of all allies' HP (Healing cap: 2500). All allies gain Bonus Water DMG and Tlepilli Glow.
 3040130	1	Cleaving Madness	 Massive Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Dracoforce.)
 3040131	1	Mikazuki Munechika	 Massive Light damage to a foe. Gain DA Up.
-3040132	1	Deterrent Thrust	 Massive Water damage to a foe. Restore 2 Spirit (Anne) 1 stacks.
+3040132	1	Deterrent Thrust	 450% Water damage to a foe. Gain 2 Spirit (Anne) 1.
 3040133	1	Bounty Bind	Normal form: 450% Fire damage to a foe.
 3040133	2	Line of Fire	Dragon form: 900% Fire damage to a foe (Damage cap: ~1,840,000). Gain Guaranteed TA.
 3040134	1	Grim Flame	Dorothy: 450% Light damage to a foe. Inflict DA Down.
@@ -603,31 +604,32 @@
 3040135	1	Grand Guignol	 450% Fire damage to a foe. Inflict Debuff Resistance Lowered (Stackable).
 3040136	1	Windy	 Inflict Chains of Binding and DA Down on a foe. All other allies gain Charge Boost.
 3040137	1	Scapegoat	 450% Dark damage to a foe. Gain Mirror Image.
-3040138	1	Crimson Dance: Rinnen-aratame	 Massive Water damage to a foe. Inflict DEF Down and Mode Bar Cut.
-3040140	1	Eidesfluegel	 Massive Wind damage to a foe. Gain Bonus Wind DMG.
+3040138	1	Crimson Dance: Rinnen-aratame	 450% Water damage to a foe. Inflict DEF Down and Mode Bar Cut.
+3040140	1	Eidesfluegel	 450% Wind damage to a foe. Inflict DA Down. Gain Bonus Wind DMG.
 3040141	1	Iliad Vision	 450% Light damage to a foe. Restore all Bits.
-3040142	1	Klingenwirbel	 Massive Wind damage to a foe. Boost to damage based on number of Blade stacks.
+3040142	1	Klingenwirbel	 Massive Wind damage to a foe. (Boost to damage based on number of Blade stacks.)
 3040143	1	Holy Star	 450% Light damage to a foe. Activate Snowdrop.
 3040144	1	A Farewell to Arms	 Unworldly Fire damage to a foe and remove 3 buffs. Charioce XVII self-inflicts Forbidden Price. (Can only be used when Dromos is active)
 3040145	1	Dark Fallen Sword	 450% Dark damage to a foe. Gain Dark ATK Up and Soul Blades. (Next use of Peccatum Mortale activates twice.)
 3040146	1	Savage Rampage	 Massive Earth damage to a foe. Gain To the Bone (Next use of Batallions of Fear deals 300%-1400% damage [Damage cap: ~1,500,000]).
 3040147	1	Gilded Heaven Strike	 500% Water damage to a foe. All allies gain 1 Loyalty Eternal 1 stack. (Effect enhanced for each stack.)
-3040147	2	Dogged Innocence	After 5★:  550% Water damage to a foe and remove 1 buff. All allies gain 1 Loyalty Eternal 1 stack. (Effect enhanced for each stack.)
-3040148	1	Burst Erasure	 Massive Earth damage to a foe. Inflict DA Down 2. Reload all Bullets (Ilsa) 9.
+3040147	2	Dogged Innocence	After 5★: 550% Water damage to a foe and remove 1 buff. All allies gain 1 Loyalty Eternal 1 stack. (Effect enhanced for each stack.)
+3040148	1	Burst Erasure	 450% Earth damage to a foe. Inflict DA Down 2. Reload all Bullets (Ilsa) 9.
 3040149	1	Maelstrom Blaze	 Massive Fire damage to a foe. Gain Charge Boost.
 3040150	1	Gamma Ray	 450% Light damage to a foe. Gain Shield.
+3040150	2	Cosmic Ray	After 5★: 500% Light damage to a foe. All allies gain Shield. Gain Dodge All 1.
 3040151	1	Magically Delicious Medusa	 450% Earth damage to a foe. Activate Magical Medusiana.
 3040152	1	Aerial Blitz	 450% Wind damage to a foe. Gain TA Up.
-3040152	2	Tempest	After 5★: 500% Wind damage to a foe. Gain TA Up and Typhoon Crest 1.
+3040152	2	Tempest	After 5★: 500% Wind damage to a foe. Gain Guaranteed TA and Typhoon Crest 1.
 3040153	1	Ain Soph Aur	 Massive Light damage to a foe. Inflict Bell of War.
 3040153	2	Ain Soph Aur ++	After 5★: Massive Light damage to a foe. Inflict Bell of War. Gain White Wing.
 3040153	3	Paradise Lost	If White Wing is active: Massive Light damage to a foe. Inflict Bell of War. Consumes White Wing. Gain Light ATK Boosted, Bonus Light Damage, and Eden's Exile.
 3040154	1	Fierte Jolie	 Massive Wind damage to a foe. All allies gain Wind ATK Up and 20% Earth Cut.
 3040155	1	Hyper Sonic Smasher	 1250% Light damage to a foe (Damage cap: ~2,150,000). Uses 3 Power Cells (Robomi). (Can only be used when Power Cells (Robomi) are at 3 or above.)
-3040156	1	Infinistrike	 Massive Dark damage to a foe. Gain Octoblade: Next Bio Blade deals damage twice.
+3040156	1	Infinistrike	 Massive Dark damage to a foe. Gain Octoblade. (Next Bio Blade deals damage twice.)
 3040157	1	Kicking Enhancement Shoes	 Massive Light damage to a foe. Gain Charge Boost.
 3040158	1	Mirror-Blade Helix	 450% Earth damage to a foe and remove 1 buff. Deploy 1 Mirror-Blade.
-3040159	1	Bombard Blitz	 Massive Water damage to a foe and inflict Inert for 0.5-1.5 turn.
+3040159	1	Bombard Blitz	 450% Water damage to a foe. Inflict Inert.
 3040160	1	Nobile Convinzione	 450% Water damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Unrighteousness 1.)
 3040161	1	Power Conflagration	 450% Fire damage to a foe. Inflict Red Heat 3.
 3040162	1	Howitzer Fist	 450% Light damage to a foe. Gain Divinity (Summon).
@@ -637,14 +639,14 @@
 3040166	1	Orbital Breeze	 450% Wind damage to a foe. All allies gain Earth DMG Lowered and Earth Switch.
 3040167	1	Benedictio Solis	 Massive Fire damage to a foe. (50% boost to C.A. damage and 20% boost to C.A. damage cap when the field effect Sun-Touched Paradise is active.)
 3040168	1	Mondlicht	 450% Water damage to a foe. All Water allies gain Crescent Moon (Summon).
-3040169	1	Klagen Totentanz	 450% Dark damage to a foe. Boost to C.A. specs based on how low Love's Redemption 13 is.
+3040169	1	Klagen Totentanz	 450% Dark damage to a foe. (Boost to C.A. specs based on how low Love's Redemption 13 is.)
 3040170	1	Tectonic Rush	 450% Earth damage to a foe. Gain Strength.
 3040170	2	Way of the Fundoshi Fist: Pulverize	After 5★: 500% Earth damage to a foe. Gain Strength and Fundoshi Fist.
 3040171	1	Taiji Takedown	 Massive Earth damage to a foe. Extend the duration of Instantaneity on all allies by 2 turns.
-3040172	1	Cataclysmic Storybook	 Gain 1 Page stack. All allies gain Charge Boost, C.A. DMG Boosted (Stackable / Can't be removed), and C.A. DMG Cap Boosted (Stackable / Can't be removed).
-3040172	2	Disastrous Storybook	After 5★: 500% Dark damage to a foe. Gain 1 Page stack. All allies gain Charge Boost, C.A. DMG Boosted (Stackable / Can't be removed), and C.A. DMG Cap Boosted (Stackable / Can't be removed).
+3040172	1	Cataclysmic Storybook	 Gain 1 Page. All allies gain Charge Boost, C.A. DMG Boosted (Stackable / Can't be removed), and C.A. DMG Cap Boosted (Stackable / Can't be removed).
+3040172	2	Disastrous Storybook	After 5★: 500% Dark damage to a foe. Gain 1 Page. All allies gain Charge Boost, C.A. DMG Boosted (Stackable / Can't be removed), and C.A. DMG Cap Boosted (Stackable / Can't be removed).
 3040173	1	All-Out Attack	 Massive Dark damage to a foe (Boost to C.A. DMG based on how low foe's HP is). Random bonus effect.
-3040174	1	Hollow Blast	 Massive Dark damage to a foe. Restore 20% of caster's HP (Healing cap: 2000). Remove 3 Lone Wolf Scar 1 stacks.
+3040174	1	Hollow Blast	 Massive Dark damage to a foe. Restore 20% of caster's HP (Healing cap: 2000). Remove 3 Lone Wolf Scar 1s.
 3040175	1	Symphonie Reveuse	 Massive Wind damage to a foe. All allies gain Revitalize.
 3040176	1	Seaside Rose	 Massive Earth damage to a foe. Inflict Poison and Charmed.
 3040177	1	Burst Erasure	 450% Fire damage to a foe. Inflict Mode Bar Cut.
@@ -666,11 +668,12 @@
 3040191	1	Zwei Fluegel	 Massive Fire damage to a foe. Activate Weiss Drachen.
 3040192	1	Silberne Welt	 450% Water damage to a foe. (20% boost to C.A. specs when affected by Water ATK Up.) Restore 20% of Aglovale's HP (Healing cap: 2000).
 3040193	1	Lightning Strikes Thrice	 Massive Light damage to a foe. Gain Guaranteed TA.
-3040194	1	Brilliant Moon	 Massive Light damage to a foe. Gain Counters on Dodge. (Gain Bonus Light DMG when Holy Knight lvl is 5)
+3040194	1	Brilliant Moon	 450% Light damage to a foe. Gain Counters on Dodge. ('When Holy Knight lvl is 5:' Also gain Bonus Light DMG.)
 3040195	1	Dense Caress	 450% Light damage to a foe. 'Consume 1 Aetherial Seal (Holiday):' 200% Bonus Light damage (Damage cap: ~580,000).
 3040196	1	Awaken Inner Eye	 450% Fire damage to a foe. Gain ATK Boosted (1 time) and Inner Eye.
 3040196	2	Mahakala	If Inner Eye is active: 450% Fire damage to a foe. (Consumes Inner Eye.)
-3040197	1	Gilded Heaven Strike	 500% Light damage to a foe. Restore 20% of Kumbhira's HP (Healing cap: 4000). Gain Razorback Lance.
+3040197	1	Gilded Heaven Strike	 500% Light damage to a foe. Restore 20% of Kumbhira's HP (Healing cap: 4000). Gain 3 Razorback Lance.
+3040197	2	Full-Boar Drive	After 5★: 550% Light damage to a foe. Restore 20% of Kumbhira's HP (Healing cap: 4000). Gain 3 Razorback Lance. Activate Reckless Abandon.
 3040198	1	Acidrage Howl	 450% Dark damage to a foe. Inflict ATK Down and Blind. Reset Loaded lvl. 'When Aubade du Flamek is consumed:' 300% Bonus Dark damage (Damage cap: ~630,000).
 3040198	2	After 5★: Dead-End Fall	 500% Dark damage to a foe. Inflict ATK Down and Blind. 2-turn cut to Eustace's skill cooldowns. Reset Loaded lvl. 'When Aubade du Flamek is consumed:' Bonus Dark damage based on Loaded lvl.
 3040199	1	Duke Lamina	 450% Wind damage to a foe. Gain Charge Boost.
@@ -683,7 +686,7 @@
 3040204	1	Kitty-Cat Hurricane Slash	 Massive Wind damage to a foe. (Boost to C.A. specs based on Cat's-Paw Wind lvl.) 'When Cat's-Paw Wind lvl is 5:' Also gain Bonus Wind DMG.
 3040205	1	Capricieux Avalanche	 Massive Earth damage to a foe (Boost to damage based on how high HP is). 'Additional effect when 1 Black Cat Fancy is consumed:' 500% Bonus Earth damage (Damage cap: ~630,000).
 3040206	1	Alkahest Sphere	 450% Dark damage to a foe. Inflict Delay. 'From 10th turn onward:' Also deal 999,999 plain damage.
-3040207	1	Capillus Ataxia	 Massive Light damage to a foe. Activate Get Over Hair.
+3040207	1	Capillus Ataxia	 450% Light damage to a foe. Activate Get Over Hair.
 3040208	1	Adedo Dualuca	 450% Wind damage to a foe. (20% boost C.A. specs when Heles is affected by Wind ATK Up.) Gain Wind ATK Up.
 3040209	1	Aetheryte Requiescat	 450% Dark damage to a foe. All allies gain Dark ATK Up and DA Up.
 3040210	1	Crimson Dance: Hanaarashi	 Massive Wind damage to a foe. All allies gain Bonus Wind DMG. Deal 999,999 bonus Plain damage to a foe with Foxflame.
@@ -699,11 +702,11 @@
 3040220	1	Curse of Geass	 Massive Wind damage to a foe. (50% boost to C.A. damage and 40% boost to C.A. damage cap when Geass of Absolute Obedience (Active) is in effect.) End MVS's cooldown.
 3040221	1	Radiant Wave Surger	 Massive Fire damage to a foe. (Boost to C.A. specs based on Radiant Wave lvl.) Self-inflict DEF Lowered (Can't be removed). Reset Radiant Wave lvl.
 3040222	1	Stone Breaker	 Massive Dark damage to a foe. (30% boost to C.A. damage and 10% boost to C.A. damage cap against foes with Blinded effect.) Activate Tallyho.
-3040223	1	Pain Eternal	 Massive Light damage to a foe. Gain Aurora Crest 1. ('When Limiter Break is in effect:' All allies also gain Shield.)
+3040223	1	Pain Eternal	 450% Light damage to a foe. Gain Aurora Crest 1. ('When Limiter Break is in effect:' All allies also gain Shield.)
 3040224	1	Ain Soph Aur	 Massive Water damage to a foe. Inflict Bell of War. 'Consume 1 Coffee Break:' All allies also gain Bonus Water DMG.
 3040225	1	Aqua Magna	 450% Water damage to a foe. Cagliostro gains Deluge Crest 1. All allies gain Keen.
 3040226	1	Taurus Blight	 450% Water damage to a foe. 100% Bonus Water damage based on number of Starry Waters (Damage cap: ~110,000 per hit / Max: 5 hits). Gain Guaranteed TA.
-3040227	1	Bluehendes Licht	 Massive Earth damage to a foe. Inflict Blinded. Remove 1 debuff from all allies.
+3040227	1	Bluehendes Licht	 450% Earth damage to a foe. Inflict Blinded. Remove 1 debuff from all allies.
 3040228	1	Passione Perpetua	 450% Dark damage to a foe. Extend Ardent Dance's duration by 3 turns.
 3040229	1	Kitto Seishun ga Kikoeru	 Massive Wind damage to a foe. All allies gain Wind ATK Up. Restore 20% of all allies' HP (Healing cap: 500).
 3040230	1	Bokura wa Ima no Naka de	 Massive Light damage to a foe. All allies gain Light ATK Up. Restore 20% of all allies' HP (Healing cap: 500).
@@ -713,11 +716,11 @@
 3040233	1	Flaming Tempest	 Massive Wind damage to a foe. Gain Bonus Wind DMG. Steel & Dust lvl rises by 1. ('When Steel & Dust is at 5:' Buff increased to Bonus Wind DMG.)
 3040234	1	Raqsat Al-Habi	 Massive Fire damage to a foe. (40% boost to C.A. damage and 20% boost to C.A. damage cap against foes with Eayan Al-Ramal.) Extend Eayan Al-Ramal's duration by 2 turns.
 3040235	1	Ground Shatter	 1250% Fire damage to a foe (Damage cap: ~3,350,000) and remove 2 buffs. (Can only be used when charge bar is at 200%.)
-3040236	1	Cor Fidelis	 450% Light damage to a foe. Remove all debuffs from Sara. (Tonitrua activates when not debuffed.)
+3040236	1	Cor Fidelis	 450% Light damage to a foe. Remove all debuffs from Sara. ('When Sara is not debuffed:' Activate Tonitrua.)
 3040237	1	Gewaltfaenge	 Massive Fire damage to a foe. Activate Verdrangen. Restore 20% of Siegfried's HP (Healing cap: 1500).
 3040238	1	Archon Squallchain	 450% Wind damage to a foe. Activate Violetshock Flicker.
 3040239	1	Abyssal Wall	 Massive Earth damage to a foe. Gain Counters on Dodge/DMG.
-3040240	1	Night of Crazy Insanity	 Massive Light damage to a foe. (Deal Bonus Light DMG based on Party All Night lvl [Max: 5].) Crazy boo-tiful! (Gain High Tension. Ends upon taking non-Plain damage.)
+3040240	1	Night of Crazy Insanity	 450% Light damage to a foe. (Bonus Light DMG based on Party All Night lvl [Max: 5].) Crazy boo-tiful! (Gain High Tension. Ends upon taking non-Plain damage.)
 3040241	1	Purification Dance: Jouka	 Massive Wind damage to a foe. Inflict Foxflame 3. (Restores 20% HP of allies with Nasori Rite [Healing cap: 2500].)
 3040242	1	Ebon Dance: Kage-Zakura	 Massive Dark damage to a foe. Inflict Special Attack DMG Lowered 2. Gain Ake-Zakura: Next Ninth Dance: Akezome affects all allies.
 3040243	1	Blades of Ardor	 Massive Fire damage to a foe. 1-turn cut to Vira's skill cooldown.
@@ -730,7 +733,7 @@
 3040250	1	Ibormeith Solas	 Massive Wind damage to a foe. All allies gain Shield. Seruel gains Typhoon Crest 1.
 3040251	1	Chaos Legion	 450% Dark damage to a foe. (700% Bonus Dark damage to a foe with Dusky Verdict [Damage cap: ~1,160,000].) All allies gain Dark ATK Up.
 3040252	1	Gilded Heaven Strike	 500% Dark damage to a foe. Gain Other Self 1.
-3040253	1	Skyblade Shadowstitch	 450% Fire damage to a foe. Gain Jammed. 'When below 25% HP:' Also gain Shield.
+3040253	1	Skyblade Shadowstitch	 450% Fire damage to a foe. Gain Jammed. ('When below 25% HP:' Also gain Shield.)
 3040254	1	Severing Swordsweep	 450% Dark damage to a foe. Inflict Burn. Gain Immolating Incision and Rushing Riposte (Next Whitefire Blade and Demon-Crush activate twice).
 3040255	1	Sacred Globe	 450% Light damage to a foe. All allies gain DA Up and Charge Bar Gain Boosted.
 3040256	1	Puppet Sheol	 450% Light damage to a foe. Inflict Petrified 3.
@@ -741,7 +744,7 @@
 3040261	1	Grace of the Radiant	 All allies gain Shield. All Wind allies gain Critical Hit Rate Boosted (Wind) and Keen. Raise Grimnir's Cyclone lvl by 2.
 3040262	1	Empty Hand, Enlightened Fist	 450% Dark damage to a foe. Gain Other Self 1. ('When Seox has Savage Claw or Feral Intuition:' 30% boost to C.A. damage and 10% boost to C.A. damage cap.)
 3040263	1	Daybreak Sword	 450% Water damage to a foe. Replenish Enforcer's Zeal by 2. Gain Skill DMG Cap Boosted (Stackable).
-3040263	2	Radiant Order	Ready... Aim...: 1250% Water damage to a foe (Damage cap: ~2,900,000) and remove 3 buffs. (Consumes Ready... Aim...)
+3040263	2	Radiant Order	Ready... Aim...: 1250% Water damage to a foe (Damage cap: ~2,900,000) and remove 3 buffs. (Consumes Ready... Aim....)
 3040264	1	Drakenadem	 1250% Water damage to a foe (Damage cap: ~2,160,000). Restore 20% of Vania and Malinda's HP (Healing cap: 1500). Consume 2 Dragon Fruit. (Can only be used with 2 or more Dragon Fruit)
 3040265	1	Clairvoyant Bliss	 Remove 1 buff from a foe. Inflict Celestial Vision, Debuff Resistance Lowered, Light ATK Lowered, DA Down, and TA Down.
 3040266	1	Lambent Flame	 450% Fire damage to a foe. Gain Hellfire Crest 1, Healing Boosted (Stackable / Can't be removed), and Healing Cap Boosted (Stackable / Can't be removed).
@@ -785,7 +788,7 @@
 3040303	1	Piercing Wind Shear	 450% Wind damage to a foe. All allies gain DMG Cap Boosted (1 time).
 3040304	1	Raging Blast Knuckle	 Massive Light damage to a foe. 100% Bonus Light damage based on Azure Fist lvl (Max: 5 hits; Damage cap: ~100,000 per hit).
 3040305	1	Muscolo Fioritura	 Massive Earth damage to a foe and remove 1 buff.
-3040306	1	Gaia Dora	 450% Fire damage to a foe. Special buffs to all allies based on my Nemo Power! (All allies gain Gilded by Gaia. Boost to effect based on Nemo Power.)
+3040306	1	Gaia Dora	 450% Fire damage to a foe. Special buffs to all allies based on my Nemo Power! (All allies gain Gilded by Gaia. Boost to buff specs based on Nemo Power.)
 3040307	1	Winter Winds, Rimy Conquest	 450% Water damage to a foe. Gain Counters on Dodge and 1 Mikan Orange.
 3040308	1	Hinokami Kagura Dance	 450% Water damage to a foe. Raise Tanjiro's Kagura lvl by 1 (Max: 5). ('When consuming 5 Kagura lvls:' Bonus 999,999 plain damage to foe.)
 3040309	1	Ninth Form: Rengoku	 1250% Fire damage to a foe. End cooldown for First Form: Unknowing Fire. (Consumes Resolve to activate.)
@@ -833,7 +836,8 @@
 3040350	1	Sa'ada Barq	 450% Dark damage to a foe. Activate Shams Al-Saif.
 3040351	1	Chaos Impact	 450% Water damage to a foe and remove 1 buff. Inflict Delay.
 3040352	1	Gangadhara	 1250% Light damage to a foe (Damage cap: ~2,900,000). Gain ATK Sharply Boosted.
-3040354	1	Lansai Tairngire	 450% Fire damage to a foe. 100% Bonus Fire damage based on Dragonian lvl (Damage cap: ~120,000 / Max: 5 hits).
+3040353	1	Beyond the Goal	 450% Earth damage to a foe. Gain ATK Boosted (Stackable) and DEF Boosted (Stackable). Remove 1 debuff.
+3040354	1	Lansai Tairngire	 450% Fire damage to a foe. 100% Bonus Fire damage based on Dragonian lvl (Damage cap: ~120,000 per hit / Max: 5 hits).
 3040355	1	Dragonpride	 450% Light damage to a foe and remove 1 buff.
 3040356	1	Hellish Blazing Prison	 450% Fire damage to a foe. All allies gain ATK Boosted (Stackable), C.A. DMG Boosted (Stackable), and C.A. DMG Cap Boosted (Stackable).
 3040357	1	Bad End	 450% Dark damage to a foe. Inflict Delay. 1-turn cut to Lich's skill cooldowns.
@@ -858,5 +862,15 @@
 3040376	1	Flame of Reversal	 450% Dark damage to a foe. ('When Malice of Despair is in effect:' Activates twice.)
 3040377	1	Gilded Heaven Strike	 500% Earth damage to a foe. Gain Twin Tiger Fury. (Next use of either linked skill activates both.) End cooldowns for linked skills.
 3040378	1	Easy Collapse	 450% Wind damage to a foe. 1-turn cut to Ewiyar's skill cooldowns.
-3040379	1	Prism Arrow	 Massive water DMG to a foe / End Aspect Trajection's cooldown
-3040380	1	Erde Urteil	 Massive Wind damage to a foe. Gain Typhoon Crest 1. Activate Terra Therapia.
+3040379	1	Prism Arrow	 450% Water damage to a foe. End cooldown for Aspect Trajection.
+3040380	1	Erde Urteil	 450% Wind damage to a foe. Gain Typhoon Crest 1. Activate Terra Therapia.
+3040381	1	Magma Chamber	 1250% Fire damage to a foe (Damage cap: ~2,900,000). Gain Guaranteed TA (Wilnas).
+3040382	1	I Always Order This	 450% Dark damage to a foe. Lower Ippatsu's Craving intensity by 5. 1-turn cut to skill cooldowns.
+3040383	1	Kimi to Boku no Concert of Miracles	 450% Fire damage to a foe. Inflict Charmed 2. All allies gain 20% Wind Cut.
+3040384	1	Lunar Decoration	 450% Water damage to a foe. 1-turn cut to Cassius's skill cooldowns. Gain Supplemental DMG.
+3040385	1	Affection Flambe	 450% Fire damage to a foe. End Cage of Light's cooldown.
+3040386	1	Gift of Looove!	 450% Light damage to a foe. Activate Magnanimous Heart 150%.
+3040387	1	Slidrugtanni	 450% Wind damage to a foe. Gain 3 Sacred Blade.
+3040388	1	Falter Tanz	 450% Fire damage to a foe. Inflict Delay. (Restore HP to allies with Flutterspirit's Blessing [Healing cap: 1500].)
+3040389	1	Medusiana Slider	 450% Fire damage to a foe. All allies gain Mirror Image. Gain Dodge All 1.
+3040390	1	Ignotum Universe	 450% Light damage to a foe. Activate Revitalise.

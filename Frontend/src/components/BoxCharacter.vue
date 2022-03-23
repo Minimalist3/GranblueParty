@@ -13,6 +13,7 @@
     <!-- Portrait -->
     <portrait
       :object="object"
+      :showRing="showRing"
       @drag-portrait="$emit('drag-portrait', $event)"
       @drop-portrait="drop"
       @click-portrait="$emit('click-portrait')"
@@ -36,7 +37,6 @@
 
 <script>
 import { objectIsEmpty, getName } from "@/js/mixins"
-import Utils from '@/js/utils'
 import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxCharacterPortrait.vue'
@@ -61,6 +61,10 @@ export default {
     showLevel: {
       type: Boolean,
       required: true
+    },
+    showRing: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

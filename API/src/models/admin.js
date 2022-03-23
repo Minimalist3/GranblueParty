@@ -29,7 +29,7 @@ export function saveAdminWeapons (req, response) {
       await client.query('BEGIN');
 
       for (let i of req.body.data) {
-        await pool.query("UPDATE Weapon_Skilldata SET data = $2 WHERE skilldataid = $1;", i)
+        await client.query("UPDATE Weapon_Skilldata SET data = $2 WHERE skilldataid = $1;", i)
       }
 
       await client.query('COMMIT');

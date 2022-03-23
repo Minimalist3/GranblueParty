@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col items-center md:w-3/4">
+  <div class="flex flex-col items-center lg:w-3/4">
     <!-- Toolbar -->
-    <div class="flex flex-row flex-wrap space-x-4 items-center">
+    <div class="flex flex-row flex-wrap gap-4 items-center">
       <span>
         <dropdown v-model.number="unit_index" v-if="Object.keys(getUnitToAdd).length > 0" >
           <option :value="-1" disabled hidden>--- Select {{ unitsLabel }} ---</option>
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Unit box -->
-    <div v-for="(_, unitKey) in progress" :key="unitKey" class="flex flex-col mt-8 border-4 p-4 border-secondary rounded bg-tertiary w-full">
+    <div v-for="(_, unitKey) in progress" :key="unitKey" class="flex flex-col mt-8 border-4 border-secondary rounded p-1 lg:p-4 bg-tertiary w-full">
 
       <span class="text-3xl font-bold self-center">
         <a class="cursor-pointer" @click="toggleFolded(progress[unitKey])">
@@ -41,7 +41,7 @@
 
       <span v-if=" ! progress[unitKey].fold" class="flex flex-col mt-6">
         <!-- Options -->
-        <div class="flex flex-row flex-wrap self-center items-center space-x-2">
+        <div class="flex flex-row flex-wrap self-center items-center gap-2">
           <span>Completed step</span>
           <dropdown v-model.number="progress[unitKey].from" @change="selectFromStep(unitKey)">
             <option :value="-1">-- Nothing --</option>
@@ -71,7 +71,7 @@
         <div v-for="(material, matKey) in getMaterialsFor(unitKey)" :key="matKey">
           <h2 class="my-4">{{ material.name }}</h2>
 
-          <div v-if="displayList == 0" class="flex flex-row flex-wrap">
+          <div v-if="displayList == 0" class="flex flex-row flex-wrap gap-1">
             <calc-preview-item v-for="(item, keyItem) in filterCompletedItems(unitKey, matKey, material.items)" :key="keyItem"
               :tag="item.item"
               :name="item.name"
@@ -79,7 +79,7 @@
               @update:quantity="val => setQuantityForItem(unitKey, matKey, item, val)"
               :max="item.max"
               :animated="item.animated"
-              class="border-secondary border-2 rounded mr-2 mb-2"
+              class="border-secondary border rounded"
             ></calc-preview-item>
           </div>
           <div v-else class="flex flex-col">
@@ -240,6 +240,11 @@ export default {
     },
     getMaterialsFor(unitKey) {
       const result = [];
+
+      // In case steps are added later
+      while (this.unitsData.materials.length > this.progress[unitKey].materials.length) {
+        this.progress[unitKey].materials.push({});
+      }
 
       if (this.splitMats) {
         this.unitsData.materials

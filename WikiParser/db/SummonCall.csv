@@ -1,0 +1,329 @@
+2030000	Aerial Blitz	Big Wind damage to all enemies. Inflict ATK Down.	\N	\N	\N
+2030001	Ground Shatter	Big Fire damage to all foes. Inflict DEF Down.	\N	\N	\N
+2030002	Catastrophe	Big Dark damage to all foes.	\N	\N	\N
+2030003	Griffin's Call	Big Wind damage to all foes. Inflict Blinded.	\N	\N	\N
+2030005	Golem's Call	Big Earth damage to all foes.	\N	\N	\N
+2030006	Hydra's Call	Big fire damage to all foes.	\N	\N	\N
+2030007	Wyvern's Call	Big Wind damage to all foes.	\N	\N	\N
+2030008	Myconid's Call	Big Earth damage to all foes.	\N	\N	\N
+2030009	Hellhound's Call	Big fire damage to all foes.	\N	\N	\N
+2030010	Doomworm's Call	Big earth damage to all enemies.	\N	\N	\N
+2030011	Cascade	Big Water damage to all foes. All allies gain ATK Up for 3 turns.	\N	\N	\N
+2030012	Basilisk's Call	Big Dark damage to all foes. Inflict Poison.	Big Dark damage to all foes. Inflict Poison.	\N	\N
+2030013	Machina Soldier MK II's Call	Big Fire damage to all foes.	\N	\N	\N
+2030015	Axis Mundi	Big earth DMG to all foes / Small boost to all allies' DEF.	\N	\N	\N
+2030016	Breeze Blast	All allies gain Wind ATK Boosted and 25% Wind Res.	All allies gain Wind ATK Boosted and 50% Wind Res.	\N	\N
+2030018	Hitodama's Call	Big Fire damage to all foes.	\N	\N	\N
+2030019	Wilinus Icewyrm's Call	Big Water damage to all foes.	\N	\N	\N
+2030020	Elmenhilde Windsprite's Call	Big wind damage to all enemies.	\N	\N	\N
+2030021	Aqua Blight	All allies gain Water ATK Boosted and 25% Water Res.	All allies gain Water ATK Boosted and 50% Water Res.	\N	\N
+2030022	Vrazarek Firewyrm's Call	Big Fire damage to all foes.	\N	\N	\N
+2030023	Stone Golem's Call	Big Earth damage to all foes.	\N	\N	\N
+2030024	Zirconia Blight	All allies gain Earth ATK Boosted and 25% Earth Res.	All allies gain Earth ATK Boosted and 50% Earth Res.	\N	\N
+2030025	Ruination Gargoyle's Call	Big Earth damage to all foes.	\N	\N	\N
+2030026	Good-Luck Hop	Big Light damage to all foes. Inflict Bounty 1.	\N	\N	\N
+2030028	Pixie's Call	Big light damage to all foes.	\N	\N	\N
+2030029	Anneliefe's Call	Big Fire damage to all foes.	\N	\N	\N
+2030031	Garnet Blast	All allies gain Fire ATK Boosted and 25% Fire Res.	All allies gain Fire ATK Boosted and 50% Fire Res.	\N	\N
+2030032	Oath of Restraint	Big light DMG to all foes. All allies gain 20% Dark Cut.	\N	\N	\N
+2030033	Elusious Windwyrm's Call	Big Wind damage to all foes.	\N	\N	\N
+2030034	Angelie Cascade's Call	Big Water damage to all enemies.	\N	\N	\N
+2030039	Onyx Blight	All allies gain Dark ATK Boosted and 25% Dark Res.	All allies gain Dark ATK Boosted and 50% Dark Res.	\N	\N
+2030040	Nopal's Call	Big water damage to all enemies.	\N	\N	\N
+2030041	Null Void	Big dark DMG to all foes. All allies gain 20% Light Cut.	\N	\N	\N
+2030042	Holy Blight	All allies gain Light ATK Boosted and 25% Light Res.	All allies gain Light ATK Boosted and 50% Light Res.	\N	\N
+2030051	Belle Sylphid's Call	Big wind DMG to all foes.	\N	\N	\N
+2030062	Aerial Blitz	\N	Big Wind damage to all foes. Inflict ATK Down.	\N	\N
+2030063	Ground Shatter	\N	Big Fire damage to all foes. Inflict DEF Down.	\N	\N
+2030064	Cascade	\N	Big Water damage to all foes. All allies gain ATK Up.	\N	\N
+2030065	Axis Mundi	\N	Big Earth damage to all foes. All allies gain DEF Up.	\N	\N
+2030066	Oath of Restraint	\N	Big Light damage to all foes. All allies gain 20% Dark Cut.	\N	\N
+2030067	Null Void	\N	Big Dark damage to all foes. All allies gain 20% Light Cut.	\N	\N
+2030068	Diantha's Song	All allies gain Mode Bar Curbed.	\N	\N	\N
+2030069	Linaria's Song	All allies gain Mode Bar Curbed.	\N	\N	\N
+2030070	Harie's Song	All allies gain Mode Bar Curbed.	\N	\N	\N
+2030071	Canna's Song	All allies gain Mode Bar Curbed.	\N	\N	\N
+2030072	Diola's Song	All allies gain Mode Bar Curbed.	\N	\N	\N
+2030073	Ruby Glow	All allies gain Fire ATK Up and 20% Fire Cut.	All allies gain Fire ATK Up and 30% Fire Cut.	\N	\N
+2030074	Sapphire Glow	All allies gain Water ATK Up and 20% Water Cut.	All allies gain Water ATK Up and 30% Water Cut.	\N	\N
+2030075	Amber Glow	All allies gain Earth ATK Up and 20% Earth Cut.	All allies gain Earth ATK Up and 30% Earth Cut.	\N	\N
+2030076	Jade Glow	All allies gain Wind ATK Up and 20% Wind Cut.	All allies gain Wind ATK Up and 30% Wind Cut.	\N	\N
+2030077	Moonlight Glow	All allies gain Light ATK Up and 20% Light Cut.	All allies gain Light ATK Up and 30% Light Cut.	\N	\N
+2030078	Obsidian Glow	All allies gain Dark ATK Up and 20% Dark Cut.	All allies gain Dark ATK Up and 30% Dark Cut.	\N	\N
+2030079	Black Rabbit	Big Dark damage to all enemies and inflict Bounty.	\N	\N	\N
+2030080	Groundbreaker	Massive Earth damage to all foes. All allies gain Revitalize	\N	\N	\N
+2030081	Jurist Scales	300% Water damage to all foes. Balance all allies' HP. Restore Water allies' HP (Healing cap: 1000).	\N	\N	\N
+2030085	Golden Dawn	300% Earth damage to all foes. Remove 1 debuff from all allies. Earth allies gain a random buff effect.	\N	\N	\N
+2030089	Deathly Thirteen	300% Dark damage to all foes. Knock out a dark ally in fourth position (MC or Lyria won't be knocked out). Dark allies gain massive TA Up for 2 turns.	300% Dark damage to all foes. Knock out a dark ally in fourth position (MC or Lyria won't be knocked out). Dark allies gain massive TA Up for 2 turns.	\N	\N
+2030093	Yin Yang	300% Wind damage to all foes. Inflict Restrained (Enemy) on Earth foes. Inflict Restrained (Ally) on all allies.	\N	\N	\N
+2030097	Power Plant	300% Fire damage to all foes and inflict Red Heat 3. Inflict ATK Down and DEF Down on all Wind foes.	\N	\N	\N
+2030101	Callous Fist	Summoner gains Towering	\N	\N	\N
+2030105	Stardeath	300% Light damage to all foes. Light allies gain Divinity (Summon).	\N	\N	\N
+2030109	Koph	300% Water damage to all foes. Water allies gain Crescent Moon (Summon), gradually boosting ATK and DEF over 5 turns	\N	\N	\N
+2030113	Coronal Ejection	300% Fire damage to all foes (Damage cap: ~400,000). Fire ally in first position gains Double Strike.	\N	\N	\N
+2030117	Verdict Sphere	400% Wind damage to all foes. Revive one Wind ally at random. Revived ally is Sentenced 2 for 2 turns.	\N	\N	\N
+2040001	Apocalypse	Massive Dark damage to all foes. Inflict Blind.	\N	\N	\N
+2040002	Froststar Staff	Massive Water damage to all foes. Inflict Break Boosted (DMG) and Break Boosted (Time).	\N	Massive Water damage to all foes. Inflict Break Boosted (DMG) and Break Boosted (Time). All allies gain Charge Bar Sped Up.	\N
+2040003	Catastrophe Nova	Massive Dark damage to all foes. All allies gain ATK Up.	\N	Massive Dark damage to all foes. All allies gain ATK Up and C.A. DMG Boosted (Bahamut).	Massive Dark damage to all foes. All allies gain ATK Up, C.A. DMG Boosted (Bahamut), and C.A. DMG Cap Boosted (Bahamut).
+2040004	Otherworldly Catastorm	Massive Light damage to all foes. All allies gain DEF Up.	\N	Massive Light damage to all foes. Inflict Fire DEF Lowered and Light DEF Lowered. All allies gain DEF Up.	\N
+2040005	Fallen Sword	Massive Dark damage to all foes. Inflict Delay.	\N	Massive Dark damage to all foes. Inflict Delay. Reduce skill cooldown for Dark allies by 1 turn.	\N
+2040006	Sword of Fury	Massive Wind damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040007	Nohl Sarav Valge	Massive Water damage to all foes. Inflict ATK Down.	Massive Water damage to all foes. Inflict ATK Down.	Massive Water damage to all foes. Inflict ATK Down. All allies gain C.A. DMG Boosted.	\N
+2040008	Promethean Blaze	Massive Fire damage to all foes. Restore all allies' HP (Healing cap: 500).	\N	\N	\N
+2040009	Ce Acatl	Massive Wind damage to all foes. All allies gain DEF Up.	\N	\N	\N
+2040010	Judecca - The 4th Circle	Massive Water damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040011	Soulreap	Massive Wind damage to all foes. All allies gain TA Up.	\N	\N	\N
+2040012	Phantom Pain	Massive Dark damage to all foes. Inflict Poison.	\N	Massive Dark damage to all foes. Inflict Poison. All allies gain Death's Grace for 3 turns.	\N
+2040013	Song of Solomon	Massive Earth damage to all foes. Remove 1 debuff from all allies.	\N	Massive Earth damage to all foes. Remove 1 debuff from all allies. All allies gain Debuff Resistance Boosted.	\N
+2040014	Divine Immortality	Massive Earth damage to all foes. Inflict Blind.	\N	\N	\N
+2040015	Melgno Imbel	Massive Water damage to all foes. Inflict ATK Down.	\N	\N	\N
+2040016	Inferno	Massive Fire damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040017	Mesmerizing Voice	Massive Wind damage to all foes. Inflict Charm.	\N	\N	\N
+2040018	Constrict	Massive Earth damage to all foes. Inflict ATK Down.	\N	\N	\N
+2040019	Chaos Beam	Massive Dark damage to all foes. All allies gain Dark ATK Up.	\N	\N	\N
+2040020	Cyclonic Destruction	Massive Wind damage to all foes. Inflict ATK Down.	\N	Massive Wind damage to all foes. Inflict ATK Down. All allies gain Mirror Image.	Massive Wind damage to all foes. Inflict ATK Down. All allies gain Mirror Image.
+2040021	Shield of the Gods: Aigis	Massive Fire damage to all foes. All allies gain 30% DMG Cut.	\N	Massive Fire damage to all foes. All allies gain 30% DMG Cut and Refresh.	\N
+2040022	Fire Beam	Massive Fire damage to all foes. All allies gain Fire ATK Boosted.	\N	\N	\N
+2040023	Helios Drive	Massive Light damage to all foes. All allies gain ATK Up.	\N	Massive Light damage to all foes. All allies gain ATK Up and Veil.	\N
+2040024	Tungnus Blitz	Massive Dark damage to all foes. Inflict DA Down.	\N	\N	\N
+2040025	Vessel of God	Inflict 1 Bounty stack on a foe.	Inflict 2 Bounty stacks on a foe.	\N	\N
+2040026	Windbeam	Massive Wind damage to all foes. All allies gain Wind ATK Up.	\N	\N	\N
+2040027	Luminox Genesi	Massive Earth damage to all foes. All allies gain Healing Boosted and Healing Cap Boosted.	\N	Massive Earth damage to all foes. All allies gain Healing Boosted, Healing Cap Boosted, and 1 random buff effect.	Massive Earth damage to all foes. All allies gain Healing Boosted, Healing Cap Boosted, and 2 random buff effects.
+2040028	Perilous Tidefall	Massive Water damage to all foes. Inflict DEF Down.	\N	Massive Water damage to all foes. Inflict DEF Down. All allies gain Water ATK Boosted.	Massive Water damage to all foes. Inflict DEF Down. All allies gain Water ATK Boosted.
+2040029	Gungnir	Massive Light damage to all foes. Inflict DEF Down.	\N	Massive Light damage to all foes. Inflict DEF Down. All allies gain Critical Hit Rate Boosted for 3 turns.	\N
+2040030	Glory of the Heavens	Massive Light damage to all foes. All allies gain 30% Dark Cut.	\N	\N	\N
+2040031	Astra Horizon	Massive Wind damage to all foes. All allies gain DEF Up for 4 turns.	\N	\N	\N
+2040032	Hellward Damnation	Massive Dark damage to all foes. All allies gain small TA Up.	\N	\N	\N
+2040033	Deep Calls to Deep	Massive Water damage to all foes. Chance to revive an ally with 25% HP.	\N	Massive Water damage to all foes. Revive an ally with 25% HP.	\N
+2040034	Resolute Reactor	Massive Fire damage to all foes. Inflict DEF Down.	\N	Massive Fire damage to all foes. Inflict DEF Down. All allies gain Shield.	Massive Fire damage to all foes. Inflict DEF Down. All allies gain Shield.
+2040035	Earth Beam	Massive Earth damage to all foes. All allies gain Earth ATK Boosted.	\N	\N	\N
+2040036	Bountiful Harvest	Massive Earth damage to all foes. All allies gain Skill DMG Boosted.	\N	Massive Earth damage to all foes. All allies gain Skill DMG Boosted and Skill DMG Cap Boosted. 1-turn cut to skill cooldown for Earth allies.	\N
+2040037	Triaina	Massive Water damage to all foes. All allies gain ATK Up and DEF Up .	\N	Massive Water damage to all foes. Inflict ATK Down and DEF Down. All allies gain ATK Up and DEF Up.	\N
+2040038	True Abyssal Hell-Fire	Massive Dark damage to all foes. Bonus Fire and Water damage.	\N	\N	\N
+2040039	Distortion Field	Variable Wind damage to all foes based on the number of debuffs.	\N	\N	\N
+2040041	Stray Phantasma	Massive Dark damage to all foes. Inflict Blind.	\N	\N	\N
+2040042	Accendo	Massive Wind DMG to all foes and bonus Fire DMG. All allies gain 10% Fire Cut.	\N	Massive Wind DMG to all foes and bonus Fire DMG. All allies gain 20% Fire Cut, Fire ATK Up and Wind ATK Up.	\N
+2040043	Genesis	Massive Earth damage to all foes. Bonus Fire and Light damage.	\N	Massive Earth damage to all foes. Bonus Fire and Light damage. All allies gain Earth ATK Up.	\N
+2040044	Alfven	Massive Light damage to all foes. Inflict Blind.	\N	\N	\N
+2040045	Tsunami	Massive Water damage to all foes. All allies gain Water ATK Up.	\N	\N	\N
+2040046	Null Void Omega	Massive Dark damage to all foes. Inflict Healing Lowered.	\N	Massive Dark damage to all foes. Inflict Healing Lowered and Blind.	Massive Dark damage to all foes. Inflict Healing Lowered, Blind, and Accuracy Lowered 3.
+2040047	Blade of Light	Massive Light damage to all foes and slight chance to remove 1 buff.	\N	Massive Light damage to all foes and slight chance to remove 1 buff. All allies gain Light ATK Boosted.	Massive Light damage to all foes and remove 1 buff. All allies gain Light ATK Boosted.
+2040048	Remedius Nodus	Massive Fire damage to all foes. Inflict ATK Down.	\N	\N	\N
+2040049	Hroovitnir	Massive Water damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040050	Arc Blast	Massive Light damage to all foes. All allies gain Light ATK Boosted.	\N	\N	\N
+2040053	Pheltronan	Massive Fire damage to all foes. Inflict ATK Down and DEF Down.	\N	800% Fire damage to all foes (Damage cap: ~630,000). Inflict ATK Lowered (Stackable) and DEF Lowered (Stackable). All allies gain ATK Boosted (Stackable) and DEF Boosted (Stackable).	\N
+2040055	Wind God and Thunder God's Call	Massive Wind damage to all foes. Bonus Light damage.	\N	\N	\N
+2040056	Paradise Lost	Massive Light damage to all foes. All allies gain ATK Up.	\N	Massive Light damage to all foes. All allies gain ATK Up. Restore 30% of all allies' max HP (Healing cap: 3000).	Massive Light damage to all foes. All allies gain ATK Up and Revitalize. Restore 30% of all allies' max HP (Healing cap: 3000).
+2040057	Onyx Spire Through Crimson Moon	Massive Dark damage to all foes. Bonus Fire and Water damage.	\N	\N	\N
+2040058	Kirari Drop!	Massive Earth damage to all foes, bonus damage to all foes and allies.	\N	\N	\N
+2040059	Medusiana	Massive Earth damage to all foes and inflict Break Boosted (Time) and Break Boosted (DMG).	Massive Earth damage to all foes and inflict Break Boosted (Time) and Break Boosted (DMG).	Massive Earth damage to all foes and inflict Break Boosted (Time) and Break Boosted (DMG). Gain Debuff Resistance Boosted	\N
+2040060	Bewail	Massive Water damage to all foes and inflict Blinded.	\N	\N	\N
+2040062	Dungeon of Darkness	Massive Dark damage to all foes. Inflict ATK Down and DEF Down.	\N	\N	\N
+2040063	Frigid Blaze	Massive Fire damage to all foes. Bonus Water damage. All allies gain 10% Water Res and 10% Fire Res.	\N	Massive Fire damage to all foes. Bonus Water damage. All allies gain Water ATK Boosted, Fire ATK Boosted, 10% Water Res, and 10% Fire Res.	\N
+2040064	Erase	Massive Light damage to all foes. All allies gain TA Up.	\N	\N	\N
+2040065	Armageddon	Massive Light damage to all foes. All allies gain Drain (Healing cap: 500).	Massive Light damage to all foes. All allies gain Drain (Healing cap: 1000).	400% Light damage to all foes (Damage cap: ~830,000). All allies gain Peacemaker's Wings (Healing cap: 1000).	\N
+2040067	Bargain	Massive Wind damage to all foes. Inflict Charm.	\N	\N	\N
+2040069	Trident Storm	Massive Water damage to all foes. All allies gain DEF Up.	\N	\N	\N
+2040071	Surendra-jit	Massive Wind damage to all foes. All allies gain Mirror Image.	\N	Massive Wind damage to all foes. Inflict DA Down. All allies gain Mirror Image.	\N
+2040072	Enthralling Light	Massive Earth damage to all foes and medium hit to ATK.	\N	\N	\N
+2040073	I’ll Protect You All!	Massive Earth damage to all foes. Increase the endurance of any active Shield on allies.	\N	\N	\N
+2040076	Unicorn Astaire	Massive Fire damage to all foes. Bonus Water damage.	\N	\N	\N
+2040080	Olympian Punishment	Massive Light damage to all foes. All allies gain Shield.	\N	400% Light damage to all foes (Damage cap: ~860,000). All allies gain Shield.	400% Light damage to all foes (Damage cap: ~860,000). All allies gain Shield.
+2040081	Hyper Megaton Kick	Massive Light damage to all foes, remove one buff from all allies and foes.	\N	\N	\N
+2040084	Titanomachy	Massive Earth damage to all foes. All allies gain Lethal Attack Dodged 25.	\N	400% Earth damage to all foes. All allies gain Lethal Attack Dodged and Armored.	400% Earth damage to all foes. All allies gain Lethal Attack Dodged and Armored.
+2040085	The Tempest	Massive Water damage to all foes. Inflict Water DEF Lowered.	\N	\N	\N
+2040086	Proto-White World	Massive Dark damage to all foes, additional plain damage (up to 10000).	\N	\N	\N
+2040090	Law of Daiches	Massive Dark damage to all foes. Inflict Sleep.	\N	400% Dark damage to all foes (Damage cap: ~860,000). Inflict Sleep. All allies gain Charge Bar Speed UP.	400% Dark damage to all foes (Damage cap: ~860,000). Inflict Sleep. All allies gain Charge Bar Speed UP.
+2040091	Darkstar	Massive Light damage to all foes. Inflict Light DEF Lowered.	\N	\N	\N
+2040094	Flames of Judgement	Massive Fire damage to all foes. Inflict Burn.	\N	400% Fire damage to all foes (Damage cap: ~840,000). Inflict Burn. All allies gain Jammed.	400% Fire damage to all foes (Damage cap: ~840,000). Inflict Burn. All allies gain Jammed.
+2040095	Adepillaud Blaze	Massive Wind damage to all foes. Inflict Blind.	\N	\N	\N
+2040096	Billowy Balloon Fun	Massive Light damage to all foes. All allies gain Charge Boost.	Massive Light damage to all foes. All allies gain Charge Boost.	\N	\N
+2040097	Taste of Autumn	Massive Earth damage to all foes. Restore 10% of all allies' HP (Healing cap: 500).	\N	\N	\N
+2040098	Thracian Wind	Massive Wind damage to all foes and remove 1 buff.	\N	400% Wind damage to all foes (Damage cap: ~860,000) and remove 1 buff. All allies gain Charge Boost.	400% Wind damage to all foes (Damage cap: ~860,000) and remove 1 buff. All allies gain Charge Boost.
+2040099	Dragon's Honor	Massive Fire damage to all foes. Inflict Fire DEF Lowered.	\N	\N	\N
+2040100	Apam Napat	Massive Water damage to all foes. Inflict Putrefied.	\N	400% Water damage to all foes (Damage cap: ~860,000). Inflict Putrefied. All allies gain TA Up.	400% Water damage to all foes (Damage cap: ~860,000). Inflict Putrefied. All allies gain TA Up.
+2040105	Rose Palace	All allies gain Rose Palace, DEF Up, Revitalize, and Debuff Resistance Boosted.	All allies gain Rose Palace, DEF Up, Revitalize, and Debuff Resistance Boosted.	All allies gain Rose Palace, DEF Up, Revitalize, and Debuff Resistance Boosted.	\N
+2040109	Phantom Flame	Massive Water damage to all foes. All allies gain Water ATK Up and Earth DEF Lowered.	\N	\N	\N
+2040113	Brutal Legend	Massive Water damage to all foes. All allies gain ATK Up. Inflict DEF Down on all allies.	\N	\N	\N
+2040114	Once in a Blue Moon	Massive Water damage to all foes. All allies gain C.A. DMG Boosted and DMG Cap Boosted.	Massive Water damage to all foes. All allies gain C.A. DMG Boosted and DMG Cap Boosted.	400% Water damage to all foes. All allies gain Charge Bar, C.A. DMG Boosted, and DMG Cap Boosted.	\N
+2040115	Klesha Overdrive	Massive Wind damage to all foes. Inflict a random debuff.	\N	\N	\N
+2040122	Triad Wings	Massive wind damage to all foes. All allies gain Wind ATK Boosted and 30% Earth Res.	Massive wind damage to all foes. All allies gain Wind ATK Boosted and 50% Earth Res.	Massive wind damage to all foes. All allies gain Wind ATK Boosted and 60% Earth Res.	\N
+2040123	Crabnation	Massive Dark damage to all foes. All allies gain DEF Up.	\N	\N	\N
+2040124	Ti Icniuhtli Xolotl!	\N	All allies gain Hyped.	\N	\N
+2040125	Fire of the Goddess	Massive Fire damage to all foes. All allies gain Fire ATK Boosted and 30% Wind Res.	Massive Fire damage to all foes. All allies gain Fire ATK Boosted and 50% Wind Res.	Massive Fire damage to all foes. All allies gain Fire ATK Boosted and 60% Wind Res.	\N
+2040129	Full Barrage	Massive Fire damage to all foes and inflict Burned.	\N	\N	\N
+2040130	Force Break	Massive Earth damage to all foes. All allies gain Earth ATK Boosted and 30% Water Cut.	Massive Earth damage to all foes. All allies gain Earth ATK Boosted and 50% Water Cut.	Massive Earth damage to all foes. All allies gain Earth ATK Boosted and 60% Water Cut.	\N
+2040131	Skyfall	Massive Dark damage to all foes.	\N	\N	\N
+2040133	Force Strike	Massive Light damage to all foes. All allies gain Debuff Resistance Boosted.	\N	\N	\N
+2040134	Ophois	Massive Dark damage to all foes. All allies gain Dark ATK Boosted and 30% Light Res.	Massive Dark damage to all foes. All allies gain Dark ATK Boosted and 50% Light Res.	Massive Dark damage to all foes. All allies gain Dark ATK Boosted and 60% Light Res.	\N
+2040141	Sticky Snare	Massive Wind damage to all foes. Restore all allies' HP. All allies gain DEF Up.	\N	\N	\N
+2040142	Pillow Fight	Massive Water damage to all foes and deal bonus Water damage.	\N	\N	\N
+2040144	Invincible Arrow	Massive Light damage to all foes. All allies gain Light ATK Boosted and 30% Dark Res.	Massive Light damage to all foes. All allies gain Light ATK Boosted and 50% Dark Res.	Massive Light damage to all foes. All allies gain Light ATK Boosted and 60% Dark Res.	\N
+2040157	Omnictus	Massive Light damage to all foes.	Massive Light damage to all foes. All allies gain C.A. Instant Standby. (Cannot resummon)	\N	\N
+2040158	Delta	Massive Dark damage to all foes.	Massive Dark damage to all foes. End all allies' skill cooldowns.	\N	\N
+2040159	Hyper Gigaton Smash	Vanquish Evil! (Massive Light damage to all foes. Inflict Debuff Resistance Lowered.)	Vanquish Evil, Banish Darkness! (Massive Light damage to all foes. Inflict Debuff Resistance Lowered. Chance to inflict Lethal Hit.)	\N	\N
+2040160	Sanctuary	Massive Water damage to all foes. All allies gain Water ATK Boosted and 30% Fire Res.	Massive Water damage to all foes. All allies gain Water ATK Boosted and 50% Fire Res.	Massive Water damage to all foes. All allies gain Water ATK Boosted and 60% Fire Res.	\N
+2040167	Flying Ace	Massive Water damage to all foes. Inflict DA Down and TA Down. Slight chance for all allies to gain Charge Boost.	\N	\N	\N
+2040168	Seed Cannon	Massive Earth damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040170	Dreams of Honey	Massive Dark damage to all foes / Big boost to Dark allies' Attack.	\N	\N	\N
+2040171	Vulcanus Forge	Massive Fire damage to all foes and inflict ATK Down. Slight chance for all allies to gain ATK Up.	\N	\N	\N
+2040172	Snore	Massive Wind damage to all foes. / Blow Away.	\N	\N	\N
+2040173	Miccailhuitontli	Massive Earth damage to all foes and inflict DEF Down. Slight chance for all allies to gain Bonus Earth Damage.	\N	Massive Earth damage to all foes and inflict DEF Down. Slight chance for all allies to gain Bonus Earth Damage. The Main Character gains Little Feast of the Dead if not present or consumed; or activates Little Feast of the Dead if present and the requirements are met.	\N
+2040175	Old Friend's Penchant	All allies gain Shield. Shield endurance is randomly assigned from 1000, 1500, or 2000.	\N	\N	\N
+2040177	Was Scepter	Massive Wind damage to all foes. All allies gain Dodge Rate Boosted and slight chance to gain TA Up.	\N	\N	\N
+2040178	Crimson Fist	Massive Fire damage to all foes. All allies gain DA Up.	\N	\N	\N
+2040180	Chaos Typhoon	Massive Dark damage to all foes. Clear all foes' charge diamonds.	Massive Dark damage to all foes. Clear all foes' charge diamonds. All allies gain 10% charge bar for every filled diamond that is removed by Typhon.	Massive Dark damage to all foes. Clear all foes' charge diamonds. All allies gain Charge Boost.	\N
+2040181	Ritterliche Tapferkeit	All allies gain a random buff effect. 'Lancelot': All allies gain DA Up for 1 turn. 'Vane': All allies gain Shield for 3 turns. 'Percival': All allies gain Charge Boost. 'Siegfried': All allies gain Drain (Healing cap: 500) for 2 turns.	All allies gain a random buff effect. 'Lancelot': All allies gain DA Up and ATK Up for 1 turn. 'Vane': All allies gain Shield for 3 turns. 'Percival': All allies gain Charge Boost. 'Siegfried': All allies gain Drain (Healing cap: 800) for 2 turns.	All allies gain Armored and a random buff effect. 'Lancelot': All allies gain DA Up and ATK Up for 1 turn. 'Vane': All allies gain Shield for 3 turns. 'Percival': All allies gain Charge Boost C.A. DMG Boosted (1 time). 'Siegfried': All allies gain Drain (Healing cap: 1000) for 2 turns.	\N
+2040184	Cobalt Comet	All allies gain C.A. DMG Boosted and Charge Boost.	All allies gain C.A. DMG Boosted and Charge Boost.	\N	\N
+2040185	Awaken Inner Eye	Massive Fire damage to all foes. All allies gain Path of Destruction.	\N	\N	\N
+2040188	Mjolnir	Massive Light damage to all foes. Inflict ATK Down, DEF Down, DA Down, TA Down and Debuff Resistance Lowered.	Massive Light damage to all foes. Inflict ATK Down, DEF Down, DA Down, TA Down and Debuff Resistance Lowered. Remove 1 buff effect.	Massive Light damage to all foes. Inflict ATK Down, DEF Down, DA Down, TA Down and Debuff Resistance Lowered. Remove 1 buff effect. All Light allies gain Bonus Light Damage.	\N
+2040189	The Sky Knights Are Here to Help	Random effect to all foes or all allies. 'Mina:' Inflict DEF Down and Light Resist DOWN on all foes. 'Mona:' All allies gain Refresh (Healing cap: 500). 'Mena:' All allies gain ATK Up and Critical Hit Rate Boosted.	Random effect to all foes or all allies. 'Mina:' Inflict DEF Down and Light Resist DOWN on all foes. 'Mona:' All allies gain Refresh (Healing cap: 800). 'Mena:' All allies gain ATK Up and Critical Hit Rate Boosted.	\N	\N
+2040192	Bells of Joy	Ward. (All allies gain Ward.)	Ward. (All allies gain Ward.) Last Words: Can reuse a random summon.	\N	\N
+2040195	Paradise Lost	Massive Light damage to all foes. Restore 20% of all allies' HP (Healing cap: 1000). All allies gain ATK Up. 'Hidden Effect:' Lucio and Sandalphon gain 30% Dark Cut.	\N	\N	\N
+2040198	Terrifying Roar	Massive dark damage to all foes. All allies gain DMG Supplemented. 'Hidden Effect:' Reset the cooldown of one of Lyria (Event)'s skills.	Massive dark damage to all foes. All allies gain DMG Supplemented. 'Hidden Effect:' Reset the cooldown of one of Lyria (Event)'s skills.	\N	\N
+2040202	Simeon	Massive Wind damage to all foes. Inflict Undaunted Gale on all Earth foes for 1 to 2 turns. All Wind allies gain Mirror Image.	\N	\N	\N
+2040203	Terrablaze	Massive Earth damage to all foes. All Earth allies gain Uriel's Favor. All allies gain Charge Boost.	\N	\N	\N
+2040205	Uncrossable Realm	All allies gain 70% DMG Cut and DEF Up.	All allies gain 100% DMG Cut and DEF Up.	\N	\N
+2040207	H.P.A.	All allies gettin' a boost and feelin' the jive! Jeah, jeah, jeah! (Random effect to all allies.) 'Hidden Effect:' Katalina also gains DEF Up. Vira also gains ATK Up.	\N	\N	\N
+2040211	Ars Magna	Massive dark DMG to all foes. All allies gain small ATK Up DEF Up DA Up and TA Up 'Hidden Effect:' Remove all debuffs from Cagliostro.	Massive dark DMG to all foes. All allies gain medium ATK Up and DEF Up and small DA Up and TA Up 'Hidden Effect:' Remove all debuffs from Cagliostro.	\N	\N
+2040212	Primal Darkness	Massive Dark damage to all foes. All allies gain Mirror Image. Slight chance for all allies to gain massive Dodge Rate Boosted.	\N	\N	\N
+2040214	Sacre Blumiel!	All allies gain a random buff.	\N	\N	\N
+2040216	Agape's Grace	Restore 20% of all allies' HP (Healing cap: 1000 HP) and all allies gain Charge Boost. Slight chance for all allies to be able to use skills immediately.	\N	Restore 20% of all allies' HP (Healing cap: 1000 HP) and all allies gain Charge Boost. Slight chance for all allies to be able to use skills immediately. Gain all call effects upon consuming Heavenly Grace effect	\N
+2040219	Ranger Danger!	Inflict Blind on all foes. All allies gain Dodge Rate Boosted.	\N	\N	\N
+2040221	Feather Lance	Massive Wind damage to all foes. All allies gain small TA Up. Slight chance to clear all foes' charge diamonds.	\N	\N	\N
+2040224	Infinite Needles	Massive Fire damage to all enemies. Plain damage to all allies equal to 10% of current health.	Massive Fire damage to all enemies. Plain damage to all allies equal to 10% of current health. All allies gain Revitalize.	\N	\N
+2040225	Taurus Blight	Massive Water damage to all foes. Revive two random allies at 50% Max HP.	\N	\N	\N
+2040228	Mana Agni	Massive Fire damage to all foes. Remove a buff from all foes and allies.	\N	\N	\N
+2040229	Uganbutochi	Massive Fire damage to all foes and inflict Fire DEF Lowered. Slight chance to inflict ATK Lowered 3 and DEF Lowered 3 on all foes.	\N	\N	\N
+2040232	Tranquil Wind	Massive Dark damage to all foes. Inflict Debuff Resistance Lowered.	\N	\N	\N
+2040233	Scepter of Binding	Massive Earth damage to all foes. Inflict Double Attack Rate Lowered 3 and Triple Attack Rate Lowered 3. Slight chance to inflict Paralyzed 3.	\N	\N	\N
+2040234	Kero-chan to the Rescue!	All allies gain Light ATK Up and 15% Dark Cut.	All allies gain Light ATK Up and 30% Dark Cut.	\N	\N
+2040236	Jurist Scales	\N	400% Water damage to all foes. Balance all allies' HP. Restore Water allies' HP (Healing cap: 1250).	400% Water damage to all foes. Balance all allies' HP. Restore Water allies' HP (Healing cap: 1500).	500% Water damage to all foes. Balance all allies' HP. Restore Water allies' HP (Healing cap: 1500).
+2040237	Golden Dawn	\N	400% Earth damage to all foes. Remove 1 debuff from all allies. Earth allies gain a random buff effect.	400% Earth damage to all foes. Remove 1 debuff from all allies. Earth allies gain a random buff effect.	500% Earth damage to all foes. Remove 1 debuff from all allies. Earth allies gain a random buff effect.
+2040238	Deathly Thirteen	\N	400% Dark damage to all foes. Knock out a dark ally in fourth position (MC or Lyria won't be knocked out). Dark allies gain Guaranteed TA for 3 turns.	400% Dark damage to all foes. Knock out a dark ally in fourth position (MC or Lyria won't be knocked out). Dark allies gain Guaranteed TA for 4 turns.	500% Dark damage to all foes. Knock out a dark ally in fourth position (MC or Lyria won't be knocked out). Dark allies gain Guaranteed TA for 4 turns.
+2040239	Yin Yang	\N	400% Wind damage to all foes. Inflict Restrained (Enemy) on Earth foes. Inflict Restrained (Ally) on two allies.	400% Wind damage to all foes. Inflict Restrained (Enemy) on Earth foes.	500% Wind damage to all foes. Inflict Restrained (Enemy) on Earth foes.
+2040240	Power Plant	\N	400% Fire damage to all foes. Inflict Red Heat 3. Inflict ATK Down and DEF Down on all Wind foes.	400% Fire damage to all foes (Damage cap: ~860,000). Inflict Red Heat 3. Inflict ATK Down and DEF Down on all Wind foes.	500% Fire damage to all foes (Damage cap: ~1,120,000). Inflict Red Heat 3. Inflict ATK Down and DEF Down on all Wind foes.
+2040241	Callous Fist	\N	Summoner gains Towering	\N	\N
+2040242	Stardeath	\N	400% Light damage to all foes. Light allies gain Divinity (Summon).	\N	500% Light damage to all foes. Light allies gain Divinity (Summon).
+2040243	Koph	\N	400% Water damage to all foes. Water allies gain Crescent Moon (Summon), gradually boosting ATK and DEF over 5 turns.	\N	500% Water damage to all foes. Water allies gain Crescent Moon (Summon), gradually boosting ATK and DEF over 5 turns.
+2040244	Coronal Ejection	\N	400% Fire damage to all foes. Fire allies in first and second positions gain Double Strike.	400% Fire damage to all foes (Damage cap: ~860,000). Fire allies in first, second, and third positions gain Double Strike.	500% Fire damage to all foes (Damage cap: ~1,120,000). Fire allies in first, second, and third positions gain Double Strike.
+2040245	Verdict Sphere	\N	400% Wind damage to all foes. Revive one Wind ally at random. Revived ally is Sentenced 3 for 3 turns.	400% Wind damage to all foes. Revive one Wind ally at random. Revived ally is Sentenced 4 for 4 turns.	500% Wind damage to all foes. Revive one Wind ally at random. Revived ally is Sentenced 4 for 4 turns.
+2040248	Sapphire Dance: Gentiana	All allies gain DA Up. 'Hidden Effect:' Yuel and Societte gain TA Up.	\N	\N	\N
+2040249	Snow Memory	Massive Water damage to all foes. Inflict Water DEF Lowered. Slight chance to inflict Asleep 3.	\N	\N	\N
+2040252	White Dragon's Blade	Massive Wind damage to all foes. All allies gain Charge Boost. 'Hidden effect:' Lancelot, Vane, Percival, Siegfried, and Arthur instead gain Charge Boost.	\N	\N	\N
+2040253	Regal Cataclysm	Massive Light damage to all foes. All Light allies gain Bonus Light DMG.	\N	\N	\N
+2040255	Attack Titan	Massive fire DMG to all foes / Medium hit to DEF / Small boost to all allies' ATK / Mikasa and Levi gain Charge Boost.	\N	\N	\N
+2040259	Right Behind You	Massive Fire damage to all foes. Inflict DEF Down. 'Hidden Effect:' Zeta and Vaseraga gain Charge Boost.	Massive Fire damage to all foes. Inflict DEF Down. All allies gain Critical Up. 'Hidden Effect:' Zeta and Vaseraga gain Charge Boost.	\N	\N
+2040261	Holy Ray of Purification	Massive Wind damage to all foes. MC gains God of War Returns: 500% Wind damage to all foes 2, 4, and 6 turns after the call (Damage cap: ~800,000). All allies gain Shield.	\N	\N	\N
+2040263	Call of the Moon	Massive Dark damage to all foes. Inflict Light ATK Lowered. Slight chance for Dark allies to gain Autorevive.	\N	\N	\N
+2040269	Flames of Judgement	Massive Fire damage to all foes. Inflict Burn.	\N	\N	\N
+2040270	Apam Napat	Massive Water damage to all foes. Inflict Putrefied.	\N	\N	\N
+2040271	Titanomachy	Massive Earth damage to all foes. All allies gain Lethal Attack Dodged 25.	\N	\N	\N
+2040272	Thracian Wind	Massive Wind damage to all foes and remove 1 buff.	\N	\N	\N
+2040273	Olympian Punishment	Massive Light damage to all foes. All allies gain Shield.	\N	\N	\N
+2040274	Law of Daiches	Massive Dark damage to all foes. Inflict Sleep.	\N	\N	\N
+2040275	Pain Eternal	Massive Light damage to all foes. Inflict ATK Down, DEF Down, and Everbane.	\N	\N	\N
+2040279	Gigante Blazer	Massive Light damage to all foes. Inflict DEF Down.	Massive Light damage to all foes. Inflict DEF Down. All allies gain C.A. DMG Boosted (1 time).	\N	\N
+2040281	Alfheimr	All allies gain ATK Up, DEF Up, DMG Cap Boosted, DA Up , TA Up, Dodge Rate Boosted, Debuff Success Boosted, Skill DMG Boosted, C.A. DMG Boosted, Chain Burst DMG Boosted, and Chain Burst DMG Cap Boosted.	All allies gain ATK Up, DEF Up, DMG Cap Boosted, DA Up , TA Up, Dodge Rate Boosted, Debuff Success Boosted, Skill DMG Boosted, C.A. DMG Boosted, Chain Burst DMG Boosted, Chain Burst DMG Cap Boosted, and Veil.	All allies gain ATK Up, DEF Up, DMG Cap Boosted, DA Up , TA Up, Dodge Rate Boosted, Debuff Success Boosted, Skill DMG Boosted, C.A. DMG Boosted, Chain Burst DMG Boosted, Chain Burst DMG Cap Boosted, Veil, and Dispel Cancel.	\N
+2040282	Fist of the Red Lotus	Massive Fire damage to all foes. All Fire allies gain Bonus Fire DMG. 'Hidden Effect:' All Melee-specialty allies gain Charge Boost.	\N	\N	\N
+2040285	Ooh-Ahh-Ahh	500% Earth damage to all foes. All allies gain Gorilla.	700% Earth damage to all foes. All allies gain Gorilla.	800% Earth damage to all foes. All allies gain Gorilla.	\N
+2040286	Catastrophe Picture	Massive dark DMG to all foes / Hit to light ATK	\N	\N	\N
+2040288	Time to Fly!	Massive dark DMG to all foes / Big hit to DEF / Restore all allies' HP (Healing Cap: 500) 'Hidden Effect:' Joker gains Skill DMG Boosted.	\N	Massive dark DMG to all foes / Big hit to DEF / Restore all allies' HP (Healing Cap: 1000) 'Hidden Effect:' Joker gains Skill DMG Boosted.	\N
+2040290	Legendary Sound	\N	Restore all allies' HP (Healing cap: 1000). All allies gain Charge Boost, DA Up, and Shield. 'Hidden Effect:' All Harp-specialty allies gain ATK Up and DEF Up.	Restore all allies' HP (Healing cap: 1000). All allies gain Charge Boost, DA Up, Shield, and Refresh. 'Hidden Effect:' All Harp-specialty allies gain ATK Up and DEF Up.	\N
+2040291	Carminibus Magna	All allies gain Dark ATK Boosted. Random debuffs to all foes.	All allies gain Dark ATK Boosted. Random debuffs to all foes.	All allies gain Dark ATK Boosted, Chain Burst DMG Boosted, and Chain Burst DMG Cap Boosted. Random debuff to all foes.	\N
+2040292	Shocking Retribution	Massive Light damage to all foes. Inflict Shocking Retribution to all foes. (Effect activates when a foe uses special attack. Inflicts Paralyzed 1 for 1 turn upon activation.)	\N	\N	\N
+2040293	Astral Frost	Massive Water damage to all foes. Inflict Coldcage on all Fire foes for 1 to 2 turns.	Massive Water damage to all foes. Inflict Coldcage on all Fire foes for 1 to 2 turns. All allies gain Charge Boost.	Massive Water damage to all foes. Inflict Coldcage on all Fire foes for 1 to 2 turns. All allies gain Charge Boost.	\N
+2040294	Retractable Blade	\N	7-hit Light damage to random foes. All allies gain DA Up and TA Up.	\N	\N
+2040295	Eat My Dust	250% Wind damage to all foes (Damage cap: ~400,000). Slight chance to inflict Stunned 2. All allies gain Wind ATK Boosted.	\N	\N	\N
+2040296	Wings of Light	Massive Wind damage to all foes and remove 1 buff. Inflict ATK Down 3 and DEF Down 3 for 3 turns.	\N	800% Wind damage to all foes and remove 1 buff. Inflict ATK Down 3 and DEF Down 3 for 3 turns.	\N
+2040297	Sword of Harnam	Massive Wind damage to all foes. All allies gain ATK Up.	\N	\N	\N
+2040298	Drill	MC gains Sis. Driller (Cucouroux): 5-hit Earth damage to a foe and inflict ATK Lowered (Stackable) at the end of the turn. Next turn MC gains Sis. Driller (Camieux): 5-hit Earth damage to a foe and inflict DEF Lowered (Stackable) at the end of the turn.	\N	\N	\N
+2040299	The Guardian and His Princess	Medium boost to all allies' ATK and DEF / Remove 1 debuff from Pretty Cure	Big boost to all allies' ATK and DEF / Remove 1 debuff from Pretty Cure	Big boost to all allies' ATK and DEF / Medium boost to all allies' triple attack rate / Remove 1 debuff from Pretty Cure	\N
+2040300	Vane's Kitchen	Random buff to all allies. 'Quiche:' Restore all allies' HP (Healing cap: 1500). 'Flan:' All allies gain Charge Boost. 'Sorbet:' All allies gain Shield. 'Soup (Uncommon):' All allies gain Fire ATK Up. 'Steak (Rare):' End all allies' skill cooldowns.	Random buff to all allies. 'Quiche:' Restore all allies' HP (Healing cap: 2000). 'Flan:' All allies gain Charge Boost. 'Sorbet:' All allies gain Shield. 'Soup (Uncommon):' All allies gain Fire ATK Up. 'Steak (Rare):' End all allies' skill cooldowns.	\N	\N
+2040301	Nirarbuda	Massive Dark damage to all foes. All allies gain DA Up and Drain.	\N	\N	\N
+2040302	Evil-Smiter Trident	Massive Water damage to all foes. Inflict ATK Down and DEF Down. All allies gain ATK Up and DEF Up.	\N	\N	\N
+2040303	Union Burst	All allies gain C.A. DMG Boosted (1 time) and Charge Boost (Charge Boost for female allies).	All allies gain C.A. DMG Boosted (1 time) and Charge Boost (C.A. DMG Boosted (1 time) and Charge Boost for female allies).	\N	\N
+2040304	Optimus Nodus	Massive Fire damage to all foes. Inflict ATK Down.	\N	\N	\N
+2040305	Triad Shot	Massive Dark damage to all foes. All allies gain small TA Up.	\N	\N	\N
+2040306	Ignis Iudicium	Plain damage to all foes based on 3% of current HP (Damage cap: 500,000) and remove 1 buff. Inflict Delay.	Plain damage to all foes based on 5% of current HP (Damage cap: 999,999) and remove 1 buff. Inflict Delay.	\N	\N
+2040309	Flamek Thunder	Massive Dark damage to all foes. Inflict Paralyzed 1.	Massive Dark damage to all foes. Inflict Paralyzed 1. Eustace gains C.A. DMG Boosted (1 time).	\N	\N
+2040310	Erase en Masse	Massive Light damage to all foes. All allies gain TA Up.	\N	\N	\N
+2040311	Tidal Erasure	Massive Water damage to all foes. Inflict Pureflow 5 on Fire foes. All allies gain 70% Fire Cut.	\N	\N	\N
+2040312	Who Let the Cats Out	Massive Earth damage to all foes. Inflict Charmed 2. Restore all allies' HP (Healing cap: 500). 'Hidden Effect:' Sen, Dante, and Young Cat (Event) gain Charge Boost	\N	\N	\N
+2040323	Tupsimati	Massive Earth damage to all foes. 200% Bonus Fire and Light damage (Damage cap: ~700,000). All allies gain Earth ATK Up.	\N	\N	\N
+2040324	Deadly Flare	10-hit Dark damage (Damage cap: ~200,000 total). All allies gain ATK Up, DEF Up, and Charge Boost.	\N	\N	\N
+2040325	Big Three of Mysteria	Big Wind damage to all foes. Inflict Petrified 3.	\N	\N	\N
+2040326	Flaming Leap	Massive Wind damage to all foes. All Wind allies gain Jammed. (Consumes 25% of each Wind ally's current HP.)	\N	Massive Wind damage to all foes. All Wind allies gain Jammed and Bonus Wind DMG. (Consumes 25% of each Wind ally's current HP.)	\N
+2040327	Executioner's Scythe	Massive Dark damage to all foes. Inflict Death Sentence (Sariel) 5 on Light foes. All allies gain Charge Boost.	\N	\N	\N
+2040328	Gorgon Eye	Massive Earth damage to all foes. / Inflict a random debuff.	Massive Earth damage to all foes. / Inflict a random debuff. (DMG enhanced.)	\N	\N
+2040329	Headbutt of Love	3-hit Light damage to random foes. Inflict Charmed 2 on all foes.	\N	\N	\N
+2040330	Nimbus	2-hit Light damage to random foes and remove 1 buff from all foes. All Light allies gain Auroracoil (Summon).	\N	\N	\N
+2040331	Immortal Witch	Massive Dark damage to all foes. All allies gain C.A. DMG Boosted (1 time) and Shield.	Massive Dark damage to all foes. All allies gain C.A. DMG Boosted (1 time) and Shield. 'Hidden Effect:' Lelouch gains ATK Up and DEF Up.	Massive Dark damage to all foes. All allies gain C.A. DMG Boosted (1 time), Shield, and Charge Boost. 'Hidden Effect:' Lelouch gains ATK Up and DEF Up.	\N
+2040332	Squalene Squall	Massive Dark damage to all foes. Inflict Emergency Alert on one foe or Emergency Alert (Ally) on caster.	\N	\N	\N
+2040333	Terra Merita	All Earth allies gain Shield and Revitalize.	\N	All Earth allies gain Shield, Revitalize, and Veil.	\N
+2040334	Mother Nature	Massive Water damage to all foes. Caster gains DHA.	Massive Water damage to all foes. Caster gains DHA.	\N	\N
+2040335	Primal Pals' Summer	All Fire allies gain 20% Wind Cut. MC gains Primal Pals' Summer.	All Fire allies gain 40% Wind Cut. MC gains Primal Pals' Summer.	All Fire allies gain 50% Wind Cut. MC gains Primal Pals' Summer.	\N
+2040336	Rose-Tinted Vacation	All Wind allies gain Rose Passion.	All Wind allies gain Rose Passion.	All Wind allies gain Rose Passion and Bonus Damage.	\N
+2040337	Dancing Man	A passionate dance of love both charms and gives courage to those who lay their eyes on it. (Random effect.)	\N	\N	\N
+2040338	Flaming Sword	500% Fire damage to all foes. All Fire allies gain Hellfire Crest 1 and Fire ATK Boosted.	700% Fire damage to all foes. All Fire allies gain Hellfire Crest 1 and Fire ATK Boosted.	900% Fire damage to all foes. Inflict Blinded 3. All Fire allies gain Hellfire Crest 1 and Fire ATK Boosted.	\N
+2040339	A Pride of Lions and Dragons	3-hit Wind damage to a foe. All allies gain C.A. DMG Boosted (1 time).	3-hit Wind damage to a foe. All allies gain C.A. DMG Boosted (1 time).	\N	\N
+2040340	Unclouded Waters	500% Water damage to all foes (Damage cap: ~630,000). All Water allies gain Deluge Crest 1 and Water ATK Up.	700% Water damage to all foes (Damage cap: ~630,000). All Water allies gain Deluge Crest 1 and Water ATK Up.	900% Water damage to all foes (Damage cap: ~700,000). All Water allies gain Deluge Crest 1, Water ATK Up, and Mirror Image.	\N
+2040341	Sapphire Dance: Habotan	Inflict Foxflame 3 on all foes. All allies gain a 500-damage Shield and Sapphire Guard for 3 turns.	Inflict Foxflame 3 on all foes. All allies gain a 1000-damage Shield and Sapphire Guard for 3 turns.	\N	\N
+2040342	Giga Jomon Cannon	500% Earth damage to all foes (Damage cap: ~630,000). All Earth allies gain Wasteland Crest 1 and Earth ATK Up.	700% Earth damage to all foes (Damage cap: ~630,000). All Earth allies gain Wasteland Crest 1 and Earth ATK Up.	900% Earth damage to all foes (Damage cap: ~700,000). Inflict Stone (Local) on Water foes. All Earth allies gain Wasteland Crest 1 and Earth ATK Up.	\N
+2040343	Spick and Span	I get to sterilize the baddies while keeping my master happy! (Fire damage to all foes. Remove 1 debuff from Main Character. Main Character gains ATK Up and DA Up.)	I get to sterilize the baddies while keeping my master happy! (Fire damage to all foes. Remove 1 debuff from Main Character. Main Character gains ATK Up, DA Up, and Bonus Damage.)	\N	\N
+2040344	Duranki	500% Wind damage to all foes (Damage cap: ~630,000). All Wind allies gain Typhoon Crest 1 and Wind ATK Up.	700% Wind damage to all foes (Damage cap: ~630,000). All Wind allies gain Typhoon Crest 1 and Wind ATK Up.	900% Wind damage to all foes (Damage cap: ~700,000). All Wind allies gain Typhoon Crest 1, Wind ATK Up, and Dodge Rate Boosted.	\N
+2040345	Mu-mu-mu-mu-mu!	All allies gain ATK Up, DEF Up, and Charge Bar.	All allies gain ATK Up, DEF Up, and Charge Bar.	All allies gain ATK Up, DEF Up, Revitalize, and Charge Bar. Gachapin also gains 7 Energy Ball.	\N
+2040347	Parade's Lust	MC gains Cunning Horseplay. (Random effects to all foes or allies every 6 turns.)	MC gains Cunning Horseplay. (Random effects to all foes or allies every 5 turns.)	MC gains Cunning Horseplay. (Random effects to all foes or allies every 4 turns.)	\N
+2040348	Kleshas, Begone!	Drain a foe's charge diamond. If successful, all allies gain Charge Boost. All allies gain ATK Up and DEF Up.	Drain a foe's charge diamond. If successful, all allies gain Charge Boost. All allies gain ATK Up and DEF Up.	\N	\N
+2040349	Spaghetti Syndrome	500% Dark damage to all foes (Damage cap: ~500,000). Inflict DEF Down.	600% Dark damage to all foes (Damage cap: ~500,000). Inflict DEF Down. All allies gain ATK Up.	\N	\N
+2040350	Himinbjorg	500% Light damage to all foes (Damage cap: ~630,000). All Light allies gain Aurora Crest 1 and Light ATK Up.	700% Light damage to all foes (Damage cap: ~630,000). All Light allies gain Aurora Crest 1 and Light ATK Up.	900% Light damage to all foes (Damage cap: ~700,000). All Light allies gain Aurora Crest 1, Light ATK Up, and Charge Boost.	\N
+2040351	Eternals Assemble	Inflict Paralyzed 1, Petrified 1, Lethal Hit, Tuning, and Bounty 1 on all foes. All allies gain 10% DMG Cut, Jammed, Debuff Success Boosted, Refresh, and C.A. DMG Boosted (1 time).	Inflict Paralyzed 1, Petrified 1, Lethal Hit, Tuning, and Bounty 1 on all foes. All allies gain 20% DMG Cut, Jammed, Debuff Success Boosted, Refresh, and C.A. DMG Boosted (1 time).	\N	\N
+2040352	Wood of N'gai	500% Dark damage to all foes (Damage cap: ~630,000). All Dark allies gain Oblivion Crest 1 and Dark ATK Up.	700% Dark damage to all foes (Damage cap: ~630,000). All Dark allies gain Oblivion Crest 1 and Dark ATK Up.	900% Dark damage to all foes (Damage cap: ~700,000). Inflict Putrefied. All Dark allies gain Oblivion Crest 1 and Dark ATK Up.	\N
+2040360	Maelstroms of Discord	Massive Earth damage to all foes. Inflict ATK Down 3 and DEF Down 3.	Massive Earth damage to all foes. Inflict ATK Down 3 and DEF Down 3.	\N	\N
+2040361	Flaming Warhorse	500% Fire damage to all foes (Damage cap: ~630,000). All Fire allies gain Bonus Fire DMG, DA Up, and TA Up.	700% Fire damage to all foes (Damage cap: ~730,000). All Fire allies gain Bonus Fire DMG, DA Up, and TA Up.	\N	\N
+2040362	Battleplan: Column Formation	All allies gain C.A. DMG Boosted (1 time) and multiattack rate. (Boost to effects based on number of main Water allies.)	\N	\N	\N
+2040363	Abysmal Waters	500% Water damage to all foes (Damage cap: ~630,000). All Water allies gain Bonus Water DMG, DA Up, and TA Up.	700% Water damage to all foes (Damage cap: ~730,000). All Water allies gain Bonus Water DMG, DA Up, and TA Up.	\N	\N
+2040364	Extraterrestrial Shine	Massive Light damage to all foes. All allies gain Charge Boost. 'Hidden Effect:' Cinderella Girls characters gain Hype.	\N	Massive Light damage to all foes. All allies gain Charge Boost and C.A. DMG Boosted (1 time / Piña). 'Hidden Effect:' Cinderella Girls characters gain Hype.	\N
+2040365	Vi-cious! Vi-cious! Vi-cious!	Massive Wind damage to all foes. All allies gain Hyped. Inflict Debuff Resistance Lowered on all allies.	Massive Wind damage to all foes. Inflict Petrified 1. All allies gain Hyped. Inflict Debuff Resistance Lowered on all allies.	\N	\N
+2040366	Half-and-Half	500% Wind damage to all foes (Damage cap: ~630,000). Wind allies in first and third positions gain Bonus Wind DMG. Wind allies in second and fourth positions gain DA Up and TA Up.	700% Wind damage to all foes (Damage cap: ~730,000). Wind allies in first and third positions gain Bonus Wind DMG. Wind allies in second and fourth positions gain DA Up and TA Up.	\N	\N
+2040367	Soulfire Immolation	300% Fire damage to all foes (Damage cap: ~1,100,000). All allies gain Fire ATK Up.	400% Fire damage to all foes (Damage cap: ~1,100,000). All allies gain Fire ATK Up.	500% Fire damage to all foes (Damage cap: ~1,100,000). All allies gain Fire ATK Up.	\N
+2040368	Great Stampede	500% Earth damage to all foes (Damage cap: ~630,000). All Earth allies gain Bonus Earth DMG, DA Up, and TA Up.	700% Earth damage to all foes (Damage cap: ~730,000). All Earth allies gain Bonus Earth DMG, DA Up, and TA Up.	\N	\N
+2040369	Goddess's Vacation	All Fire allies gain Veil and Dispel Cancel.	All Fire allies gain Veil, Dispel Cancel, and Refresh.	All Fire allies gain Veil, Dispel Cancel, and Revitalize.	\N
+2040370	Apastak	300% Earth damage to all foes (Damage cap: ~1,100,000). All allies gain Earth ATK Up.	400% Earth damage to all foes (Damage cap: ~1,100,000). All allies gain Earth ATK Up.	500% Earth damage to all foes (Damage cap: ~1,100,000). All allies gain Earth ATK Up.	\N
+2040371	Hot Summer Fete	3-hit, 150% Water damage to random foes (Damage cap: ~30,000 per hit). All allies gain Water ATK Boosted.	3-hit, 150% Water damage to random foes (Damage cap: ~30,000 per hit). All allies gain Water ATK Boosted.	\N	\N
+2040373	Magma Blast	3-hit, 150% Light damage to a foe (Damage cap: ~100,000 per hit). All allies gain Light ATK Up.	3-hit, 150% Light damage to a foe (Damage cap: ~100,000 per hit). All allies gain Light ATK Up.	\N	\N
+2040374	Svartalfheim	Inflict ATK Down 6, DA Down 6, TA Down 6, and Special Attack DMG Lowered 6 on all foes.	Inflict ATK Down 6, DA Down 6, TA Down 6, and Special Attack DMG Lowered 6 on all foes. Remove 1 buff.	Inflict ATK Down 6, DA Down 6, TA Down 6, Special Attack DMG Lowered 6, and Accuracy Lowered 6 on all foes. Remove 1 buff.	\N
+2040375	Miraculous Serendipity	All Light allies gain Charge Bar.	All Light allies gain Charge Bar. Chance to revive an ally.	All Light allies gain Charge Bar. Revive an ally with 25% HP.	\N
+2040376	Wings of Battle	\N	Massive Fire damage to all foes. All Fire allies gain C.A. DMG Boosted (1 time).	Massive Fire damage to all foes. All Fire allies gain C.A. DMG Boosted (1 time). Slight chance for all Fire allies to gain Instant Charge.	\N
+2040377	Hydron Blast	\N	Massive Water damage to all foes. All Water allies gain C.A. DMG Boosted (1 time).	Massive Water damage to all foes. All Water allies gain C.A. DMG Boosted (1 time). Slight chance for all Water allies to gain Instant Charge.	\N
+2040378	Seismic Tailwhip	\N	Massive Earth damage to all foes. All Earth allies gain C.A. DMG Boosted (1 time).	Massive Earth damage to all foes. All Earth allies gain C.A. DMG Boosted (1 time). Slight chance for all Earth allies to gain Instant Charge.	\N
+2040379	Wrath of the Qing	\N	Massive Wind damage to all foes. All Wind allies gain C.A. DMG Boosted (1 time).	Massive Wind damage to all foes. All Wind allies gain C.A. DMG Boosted (1 time). Slight chance for all Wind allies to gain Instant Charge.	\N
+2040380	Wedding Bells	All allies gain ATK Boosted (Stackable) and DEF Boosted (Stackable). 'Hidden Effect:' Romeo and Juliet gain DA Up and TA Up.	All allies gain ATK Boosted (Stackable) and DEF Boosted (Stackable). 'Hidden Effect:' Romeo and Juliet gain DA Up and TA Up.	\N	\N
+2040381	Iokheira	500% Light damage to all foes (Damage cap: ~630,000). All Light allies gain Bonus Light DMG, DA Up, and TA Up.	700% Light damage to all foes (Damage cap: ~730,000). All Light allies gain Bonus Light DMG, DA Up, and TA Up.	\N	\N
+2040382	Zodiac Dimension	300% Wind damage to all foes (Damage cap: ~1,100,000). All allies gain Wind ATK Up.	400% Wind damage to all foes (Damage cap: ~1,100,000). All allies gain Wind ATK Up.	500% Wind damage to all foes (Damage cap: ~1,100,000). All allies gain Wind ATK Up.	\N
+2040383	Roar! Ignis Dragon!	300% Fire damage to all foes (Damage cap: 1,100.000). Fire damage at end of turn. (Damage cap: 420,000).	400% Fire damage to all foes (Damage cap: 1,100,000). Fire damage at end of turn. (Damage cap: 420,000).	500% Fire damage to all foes (Damage cap: 1,100,000). Fire damage at end of turn. (Damage cap: 420,000).	\N
+2040384	Relentless Advance	Massive Water damage to all foes. All Water allies gain Bonus Water DMG for 2 turns.	Massive Water damage to all foes. All Water allies gain Bonus Water DMG for 3 turns.	\N	\N
+2040385	Czarny Ryk	500% Dark damage to all foes (Damage cap: ~630,000). All Dark allies gain Bonus Dark DMG, DA Up, and TA Up.	700% Dark damage to all foes (Damage cap: ~730,000). All Dark allies gain Bonus Dark DMG, DA Up, and TA Up.	\N	\N
+2040386	Alchemic Liberation	Massive Earth damage to all foes. All Earth allies gain Critical Hit Rate Boosted (Earth) for 2 turns.	Massive Earth damage to all foes. All Earth allies gain Critical Hit Rate Boosted (Earth) for 3 turns.	\N	\N
+2040387	Ku Akua Nui	Massive Wind damage to all foes. All allies gain Wind ATK Up.	Massive Wind damage to all foes. All allies gain Wind ATK Up.	\N	\N
+2040388	Silent Night Death	Massive Dark damage to all foes. Inflict Poison, Burn, Putrefied, and Sleep 2.	Massive Dark damage to all foes. Inflict Poison, Burn, Putrefied, Sleep 2, and Debuff Resistance Lowered (Stackable).	Massive Dark damage to all foes. Inflict Poison, Burn, Putrefied, Sleep 2, Debuff Resistance Lowered (Stackable), ATK Down Stack, and DEF Down Stack.	\N
+2040389	Eleventh Form: Dead Calm	All allies gain 70% Fire Cut.	All allies gain 70% Fire Cut and Debuff Resistance Boosted.	All allies gain 70% Fire Cut and Debuff Resistance Boosted. Remove 1 buff from all foes. 'Hidden Effect:' Tanjiro, Nezuko, Zenitsu, and Inosuke gain ATK Up, DEF Up, and Guaranteed TA.	\N
+2040390	Sol Burst	300% Light damage to all foes (Damage cap: ~1,100,000). All allies gain Light ATK Up.	400% Light damage to all foes (Damage cap: ~1,100,000). All allies gain Light ATK Up.	500% Light damage to all foes (Damage cap: ~1,100,000). All allies gain Light ATK Up.	\N
+2040391	Full-Burst Kaiser Ray	500% Light damage to all foes. All allies gain C.A. DMG Boosted (1 time) and Dark DMG Lowered.	600% Light damage to all foes. All allies gain C.A. DMG Boosted (1 time) and Dark DMG Lowered.	\N	\N
+2040392	I Ain't No Snake!	All allies gain Instant Charge.	\N	All allies gain Instant Charge. Raise Bounty by ?? on all foes.	\N
+2040393	Lots of Shinies!	Massive Earth damage to all foes. Inflict one random debuff.	Massive Earth damage to all foes. Inflict two random debuffs.	\N	\N
+2040394	Single-File Formation	6-hit, 150% Dark damage to a foe (Damage cap: ~60,000 per hit). Random buff to all allies.	6-hit, 150% Dark damage to a foe (Damage cap: ~105,000 per hit). Random buff to all allies.	\N	\N
+2040395	Tromea	300% Water damage to all foes (Damage cap: ~1,100,000). All allies gain Water ATK Up.	400% Water damage to all foes (Damage cap: ~1,100,000). All allies gain Water ATK Up.	500% Water damage to all foes (Damage cap: ~1,100,000). All allies gain Water ATK Up.	\N
+2040396	Everyone Say Aloha!	All allies gain 2 random buffs.	All allies gain 3 random buffs.	\N	\N
+2040397	Electron Blade	Massive Light damage to all foes. All Light allies gain Critical Hit Rate Boosted (Light).	Massive Light damage to all foes. All Light allies gain Critical Hit Rate Boosted (Light).	\N	\N
+2040398	Hadron Sphere	15-hit Fire damage to random foes (Damage cap: ~50,000 per hit). All Fire allies gain DMG Boosted.	15-hit Fire damage to random foes (Damage cap: ~50,000 per hit). All Fire allies gain DMG Boosted.	\N	\N
+2040399	Goiter Blight	300% Dark damage to all foes (Damage cap: ~1,100,000). All allies gain Dark ATK Up.	400% Dark damage to all foes (Damage cap: ~1,100,000). All allies gain Dark ATK Up.	500% Dark damage to all foes (Damage cap: ~1,100,000). All allies gain Dark ATK Up.	\N
+2040400	Heaven's Night	Massive Earth damage to all foes. Inflict DEF Down.	Massive Earth damage to all foes. Inflict DEF Down, DA Down, and TA Down.	\N	\N
+2040401	Island Hurl	900% Earth damage to all foes. All Earth allies gain DMG Boosted.	900% Earth damage to all foes. All Earth allies gain DMG Boosted.	\N	\N
+2040402	Vortical Destruction	Massive Wind damage to all foes. Inflict Wind DEF Lowered.	Massive Wind damage to all foes. Inflict Wind DEF Lowered.	Massive Wind damage to all foes. Inflict Wind DEF Lowered and Delay.	\N
+2040403	Sunbeam Lullaby	Massive Earth damage to all foes. Inflict Poisoned, Putrefied, Sleep 2, and Blinded.	Massive Earth damage to all foes. Inflict Poisoned, Putrefied, Sleep 2, Blinded, and Debuff Resistance Lowered (Stackable).	Massive Earth damage to all foes. Inflict Poisoned, Putrefied, Sleep 2, Blinded, Debuff Resistance Lowered (Stackable), ATK Lowered (Stackable), and DEF Lowered (Stackable).	\N
+2040404	A Moment of Elegance!	Restore all allies' HP. All allies gain Hype.	Restore 25% all allies' HP (Healing cap: 1500). All allies gain Hype. 'Hidden Effect:' Special Week, Silence Suzuka, and Tokai Teio gain Charge Bar.	Restore 25% all allies' HP (Healing cap: 1500). All allies gain Hype, C.A. DMG Boosted (1 time), and C.A. DMG Cap Boosted (1 time) . 'Hidden Effect:' Special Week, Silence Suzuka, and Tokai Teio gain Charge Bar.	\N
+2040405	Drive with a "Might" Attitude	300% Wind damage to all foes. Inflict DEF Down 3.	400% Wind damage to all foes. Inflict DEF Down 3.	400% Wind damage to all foes (Damage cap: ~400,000). Inflict DEF Down 3. All allies gain C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time).	\N
+2040406	Dragon's Nest	4-hit Wind damage to random foes. All Wind allies gain DMG Boosted.	4-hit Wind damage to random foes. All Wind allies gain DMG Boosted.	\N	\N
+2040407	Three Cheers!	Shizuka, Gian, or Suneo is on the way to save the day!	\N	Shizuka, Gian, or Suneo is on the way to save the day! 'Gian:' 1000% Light damage to all foes (Damage cap: ~830,000). Inflict ATK Lowered 3, DA Down 3, TA Down 3, and Special Attack DMG Lowered 3. 'Suneo:' 300% Light damage to all foes (Damage cap: ~280,000). All allies gain TA Up and Dodge Rate Up. 'Shizuka:' All allies gain Hype, Uplift, and Veil.	\N
+2040408	Chaos Legion	1500% Elemental damage to all foes. Inflict DEF Down and Debuff Resistance Lowered.	2000% Elemental damage to all foes (Damage cap: ~2,400,000). Inflict DEF Down and Debuff Resistance Lowered.	2000% Elemental damage to all foes (Damage cap: ~2,400,000). Inflict DEF Down and Debuff Resistance Lowered. Additional effects based on MC's Trance (MC) lvl.	\N

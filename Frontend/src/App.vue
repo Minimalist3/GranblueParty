@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="flex flex-col text-primary bg-primary min-h-screen relative" :class="theme_dark ? 'theme-dark' : 'theme-light'" @click="closeMenu($event)">
+  <div id="app" class="flex flex-col text-primary bg-primary min-h-screen" :class="getTheme" @click="closeMenu($event)">
     <!-- Menu -->
-    <nav class="bg-secondary shadow-md flex flex-row justify-between items-center">
+    <nav class="bg-tertiary shadow-md flex flex-row justify-between items-center">
       <!-- left -->
       <div class="flex flex-row">
         <router-link to="/" class="flex items-center hover:bg-tertiary px-2">
@@ -14,7 +14,7 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
+            <div class="absolute left-0 top-full pb-2 bg-tertiary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
               <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
               <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
               <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
@@ -27,7 +27,8 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
+            <div class="absolute left-0 top-full pb-2 bg-tertiary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
+              <router-link class="gbf-menu-link" to="/teams">Public Teams</router-link>
               <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
               <router-link class="gbf-menu-link" to="/search">Search</router-link>
               <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
@@ -37,7 +38,7 @@
           <div class="relative px-2 h-12 flex items-center hover:bg-tertiary text-primary hover:text-primary gbf-menu-hoverable">
             <span class="select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
 
-            <div class="absolute left-0 top-full pb-2 bg-secondary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
+            <div class="absolute left-0 top-full pb-2 bg-tertiary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
               <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
               <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
               <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
@@ -54,6 +55,7 @@
           <router-link class="flex items-center gbf-menu-link h-12" to="/roomname">Room Name Gen.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/friendsum">Friend Summons</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/spark">Spark Maker</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/teams">Public Teams</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/release">Release Schedule</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/search">Search</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/replicard">Replicard Sandbox</router-link>
@@ -79,13 +81,13 @@
     </nav>
 
     <!-- Main page -->
-    <main class="p-4 mb-16 flex-shrink-0 relative">
+    <main class="p-4 grow relative">
       <!-- Menu popup -->
-      <div class="bg-secondary shadow-md w-full md:w-1/3 md:rounded-bl absolute right-0 top-0 z-40" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
+      <div class="bg-tertiary shadow-md w-full md:w-1/3 md:rounded-bl absolute right-0 top-0 z-40" :class="menu_popup ? 'block' : 'hidden'" id="menu_popup">
         <!-- For mobile -->
         <div class="md:hidden flex flex-col text-primary border-b border-primary">
           <span class="p-2 select-none">Tools <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-          <div class="px-2 flex flex-col bg-secondary">
+          <div class="px-2 flex flex-col bg-tertiary">
             <router-link class="gbf-menu-link" to="/builder">Party Builder</router-link>
             <router-link class="gbf-menu-link" to="/collection">My Collection</router-link>
             <router-link class="gbf-menu-link" to="/dailygrind">Daily Grind List</router-link>
@@ -95,14 +97,15 @@
           </div>
           
           <span class="p-2 select-none">Data <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-          <div class="px-2 flex flex-col bg-secondary">
+          <div class="px-2 flex flex-col bg-tertiary">
+            <router-link class="gbf-menu-link" to="/teams">Public Teams</router-link>
             <router-link class="gbf-menu-link" to="/release">Release Schedule</router-link>
             <router-link class="gbf-menu-link" to="/search">Search</router-link>
             <router-link class="gbf-menu-link" to="/replicard">Replicard Sandbox</router-link>
           </div>
 
           <span class="p-2 select-none">Calculators <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-          <div class="px-2 flex flex-col bg-secondary">
+          <div class="px-2 flex flex-col bg-tertiary">
             <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
             <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
             <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
@@ -113,7 +116,7 @@
         <!-- Common -->
         <div v-if="getUserId !== null" class="flex flex-col text-primary border-b border-primary">
           <span class="p-2 select-none">Account: {{ getUsername }} <fa-icon :icon="['fas', 'angle-down']" size="lg"></fa-icon></span>
-          <div class="px-2 flex flex-col bg-secondary">
+          <div class="px-2 flex flex-col bg-tertiary">
             <router-link class="gbf-menu-link" to="/account">Properties</router-link>
             <a class="gbf-menu-link cursor-pointer" @click="doLogout()">Log out</a>
           </div>
@@ -129,11 +132,12 @@
           <span>{{ getLangLabel }}</span>
         </label></div>
 
-        <div class="p-2"><label class="cursor-pointer select-none hover:text-link-hover">
-          <input type="checkbox" v-model="theme_dark" class="hidden">
-          <span v-if="theme_dark"><fa-icon :icon="['fas', 'moon']"></fa-icon> Dark theme</span>
-          <span v-else><fa-icon :icon="['fas', 'sun']"></fa-icon> Light theme</span>
-        </label></div>
+        <div class="p-2 flex flex-row gap-x-4">
+          Theme:
+          <div class="cursor-pointer select-none hover:text-link-hover" title="Dark mode" @click="theme_dark = true"><fa-icon :icon="['fas', 'moon']"></fa-icon></div>
+          <div class="cursor-pointer select-none hover:text-link-hover" title="Blue" @click="theme_dark = 'blue'"><fa-icon :icon="['fas', 'water']"></fa-icon></div>
+          <div class="cursor-pointer select-none hover:text-link-hover" title="Light mode" @click="theme_dark = false"><fa-icon :icon="['fas', 'sun']"></fa-icon></div>
+        </div>
 
         <div class="p-2 select-none">{{ getJST }} JST</div>
       </div>
@@ -141,9 +145,15 @@
       <router-view></router-view>
     </main>
 
+    <!-- horizontal -->
+    <google-ads
+      class="self-center mt-12 mb-4"
+      :adSlot="1279266386"
+    ></google-ads>
+
     <!-- Footer -->
-    <footer class="bg-secondary shadow-md absolute bottom-0 w-full py-4 text-xs text-center">
-      <p>
+    <footer class="flex flex-col items-center bg-tertiary shadow-md w-full py-4 text-xs text-center">
+      <p class="flex flex-wrap place-content-center">
         <a href="https://twitter.com/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'twitter']" class="text-primary text-lg"></fa-icon> @GranblueParty
         </a>
@@ -155,19 +165,24 @@
         </a>
       </p>
       <p>
+        <router-link to="/cookies">Cookie Policy</router-link> -
+        <router-link to="/privacy">Privacy Policy</router-link> -
+        <a href="#" @click.prevent="managePrivacy()">Manage Privacy Options</a>
+      </p>
+      <p>
         Granblue Fantasy content and materials are trademarks and copyrights of Cygames, Inc. or its licensors. All rights reserved.
       </p>
     </footer>
 
     <!-- Popups -->
     <div class="fixed bottom-0 right-0 z-50" data-nosnippet>
-      <div @click="killPopup(key)" class="w-48 bg-tertiary rounded m-4 p-2 flex flex-col break-words" v-for="(msg, key) in getPopups" :key="key">
+      <div @click="killPopup(key)" class="w-48 bg-secondary rounded border border-primary m-4 p-2 flex flex-col break-words" v-for="(msg, key) in getPopups" :key="key">
         <div class="flex justify-between">
           <span>{{ msg.title }}</span>
           <fa-icon @click="killPopup(key)" :icon="['fas', 'times-circle']" class="text-link-primary hover:text-link-hover text-xl cursor-pointer"></fa-icon>
         </div>
         <span class="text-sm">{{ msg.message }}</span>
-        <div class="h-2 bg-primary rounded progress-animation" v-if="msg.timer"></div>
+        <div class="h-2 bg-tertiary rounded progress-animation" v-if="msg.timer"></div>
       </div>
     </div>
 
@@ -178,6 +193,7 @@
 </template>
 
 <script>
+import GoogleAds from '@/components/common/GoogleAds.vue'
 import ModalLogin from '@/components/ModalLogin.vue'
 import ModalSignup from '@/components/ModalSignup.vue'
 
@@ -195,6 +211,7 @@ const getJST_options = {
 
 export default {
   components: {
+    GoogleAds,
     ModalLogin,
     ModalSignup,
   },
@@ -209,11 +226,8 @@ export default {
   },
   methods: {
     userLogged(username, userId) {
-      this.$store.commit({
-        type:'login',
-        username: username,
-        userId: userId,
-      });
+      this.$store.commit('setUserId', userId);
+      this.$store.dispatch('fetchUserInfos');
       this.menu_popup = false;
     },
     doLogout() {
@@ -243,6 +257,9 @@ export default {
     },
     killPopup(index) {
       this.$store.commit('removeMessage', index);
+    },
+    managePrivacy() {
+      __tcfapi('displayConsentUi', 2, function() {});
     }
   },
   computed: {
@@ -260,6 +277,15 @@ export default {
         return 'Display names in: English';
       }
       return '名: 日本語';
+    },
+    getTheme() {
+      if (this.theme_dark === true) {
+        return 'theme-dark';
+      }
+      if (this.theme_dark === false) {
+        return 'theme-light';
+      }
+      return 'theme-blue';
     },
     lang: {
       get() {
@@ -281,9 +307,12 @@ export default {
       return new Intl.DateTimeFormat("default", getJST_options).format(this.now);
     },
   },
+  serverPrefetch() {
+    return this.$store.dispatch('fetchUserInfos');
+  },
   watch: {
-    '$route.path'(to) {
-      this.menu_popup = false;      
+    '$route.path'(to, from) {
+      this.menu_popup = false;
     },
     lang() {
       lsMgt.setValue('lang', this);
@@ -301,6 +330,17 @@ export default {
     lsMgt.getValue(this, 'lang');
     lsMgt.getValue(this, 'theme_dark');
     lsMgt.getValue(this, 'menu_compact');
+
+    // Undo adsense ruining page layout
+    let wrapper = document.getElementById('app')
+    const observer = new MutationObserver(function (mutations, observer) {
+      wrapper.style.height = ''
+      wrapper.style.minHeight = ''
+    })
+    observer.observe(wrapper, {
+      attributes: true,
+      attributeFilter: ['style']
+    });
   }
 }
 </script>
@@ -323,7 +363,7 @@ export default {
 }
 
 .gbf-menu-link:hover {
-  @apply bg-tertiary;
+  @apply bg-secondary;
   @apply text-primary;
 }
 

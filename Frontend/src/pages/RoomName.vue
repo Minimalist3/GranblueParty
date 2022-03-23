@@ -2,8 +2,8 @@
   <div class="flex flex-col">
     <h1 class="self-center mb-8">Room Name Generator</h1>
 
-    <div class="sticky top-0 bg-secondary shadow-md">
-      <button class="btn btn-white mr-2" @click="clickCopyURL">
+    <div class="sticky top-0 bg-tertiary shadow-md">
+      <button class="btn btn-blue mr-2" @click="clickCopyURL">
         <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Copy
       </button>
       Room name: <span lang="ja">{{ getRoomName }}</span>
@@ -23,7 +23,7 @@
       <h2 class="py-4">{{ content.name }}</h2>
 
       <div v-for="(catVal, catKey) in content.data" :key="catKey" class="flex flex-col md:flex-row">
-        <div class="self-center pr-4 whitespace-nowrap">{{ catVal.name }}</div>
+        <div v-if="catVal.name" class="self-center pr-4 whitespace-nowrap">{{ catVal.name }}</div>
 
         <div class="flex flex-row flex-wrap select-none">
           <a v-for="(raidVal, raidKey) in catVal.raids"
@@ -104,7 +104,7 @@ export default {
   head: {
     title: 'Granblue.Party - Room Name Generator',
     desc: 'Create the japanese name of the co-op room you want to host',
-    image: 'https://www.granblue.party/img/preview_roomname.png',
+    image: 'https://www.granblue.party/img/card_roomname.jpg',
     keywords: 'raid, raids, host, coop, train, ubaha, lucifaa, japanese, kanji'
   },
   data() {

@@ -9,51 +9,80 @@
 
 /* Buttons */
 .btn {
+  @apply whitespace-nowrap;
   @apply font-semibold;
   @apply py-2;
   @apply px-4;
   @apply rounded;
+  @apply border-2;
 }
 .btn:focus {
   @apply outline-none;
 }
-
 .btn:disabled {
   @apply cursor-not-allowed;
-  filter: grayscale(70%);
+  @apply grayscale-70;
+  @apply opacity-70;
+}
+.btn > svg {
+  @apply align-text-bottom;
 }
 
 .btn-blue {
-  @apply text-white;
-  @apply bg-blue-500;
+  @apply border-blue-300;
 }
 .btn-blue:hover {
-  @apply bg-blue-600;
+  @apply border-blue-400;
 }
-.btn-blue:disabled {
-  @apply bg-blue-500;
+.btn-blue:disabled:hover {
+  @apply border-blue-300;
+}
+.btn-blue > svg {
+  @apply text-blue-300;
+}
+.btn-blue:hover > svg {
+  @apply text-blue-400;
+}
+.btn-blue:disabled:hover > svg {
+  @apply text-blue-300;
 }
 
 .btn-white {
-  @apply text-black;
-  @apply bg-gray-300;
+  @apply border-zinc-300;
 }
 .btn-white:hover {
-  @apply bg-gray-400;
+  @apply border-zinc-400;
 }
-.btn-white:disabled {
-  @apply bg-gray-300;
+.btn-white:disabled:hover {
+  @apply border-zinc-300;
+}
+.btn-white > svg {
+  @apply text-zinc-300;
+}
+.btn-white:hover > svg {
+  @apply text-zinc-400;
+}
+.btn-white:disabled:hover > svg {
+  @apply text-zinc-300;
 }
 
 .btn-red {
-  @apply text-white;
-  @apply bg-red-700;
+  @apply border-pink-400;
 }
 .btn-red:hover {
-  @apply bg-red-800;
+  @apply border-pink-600;
 }
-.btn-red:disabled {
-  @apply bg-red-700;
+.btn-red:disabled:hover {
+  @apply border-pink-400;
+}
+.btn-red > svg {
+  @apply text-pink-400;
+}
+.btn-red:hover > svg {
+  @apply text-pink-600;
+}
+.btn-red:disabled:hover > svg {
+  @apply text-pink-400;
 }
 
 .btn-sm {
@@ -64,23 +93,31 @@
 }
 
 .btn-group .btn {
-  @apply border-l;
-  @apply border-transparent;
+  @apply border-l-0;
+  @apply border-r-0;
 }
 .btn-group .btn:first-of-type {
   @apply rounded-r-none;
+  @apply border-l-2;
+  @apply border-r;
 }
 .btn-group .btn:last-of-type {
   @apply rounded-l-none;
+  @apply border-r-2;
+  @apply border-l;
 }
 .btn-group .btn:not(:first-of-type):not(:last-of-type) {
   @apply rounded-none;
+  @apply border-x;
 }
-.btn-group .btn-white + .btn-white {
-  @apply border-tertiary;
+.btn-group .btn-blue {
+  @apply text-black;
+  @apply bg-blue-300;
+  @apply border-blue-300;
 }
-.btn-group .btn-blue + .btn-blue {
-  @apply border-primary;
+.btn-group .btn-blue:hover {
+  @apply bg-blue-400;
+  @apply border-blue-400;
 }
 
 /* Text Input */
@@ -97,10 +134,19 @@
 .input:hover {
   @apply border-primary;
 }
+.input:read-only:hover {
+  @apply border-tertiary;
+  @apply cursor-default;
+}
 .input:focus {
   @apply outline-none;
   @apply border-primary;
   box-shadow: 0 0 0 3px var(--color-shadow-primary);
+}
+
+.input:disabled {
+  @apply cursor-not-allowed;
+  @apply bg-gray-300;
 }
 
 .input-sm {
@@ -120,6 +166,9 @@
 }
 .select:hover {
   @apply border-primary;
+}
+.select:disabled:hover {
+  @apply border-tertiary;
 }
 .select:focus {
   @apply outline-none;
@@ -142,7 +191,7 @@
   @apply px-2;
   @apply py-1;
   @apply z-10;
-  bottom: 100%;
+  @apply bottom-full;
 }
 
 .tooltip-parent .tooltip {
@@ -180,7 +229,7 @@
   @apply bg-table-stripe;
 }
 .table > tbody > tr:hover {
-  @apply bg-secondary;
+  @apply bg-tertiary;
 }
 
 .table-px th {

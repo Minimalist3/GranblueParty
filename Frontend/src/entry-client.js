@@ -7,15 +7,6 @@ if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)
 }
 
-// Load state of localStorage
-const username = localStorage.getItem('username');
-if (username) {
-  store.commit({
-    type: 'login_client',
-    username: username,
-  });
-}
-
 router.onReady(() => {
   app.$mount('#app')
 })

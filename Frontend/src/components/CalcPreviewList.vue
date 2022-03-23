@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row items-center">
     <a :href="'https://gbf.wiki/' + name" target="_blank" title="Go to gbf.wiki" class="mr-2">
       <img :src="'/img/item/' + tag + (animated ? '.gif' : '.jpg')" style="max-height: 25px; max-width: 25px;">
       {{ name }}

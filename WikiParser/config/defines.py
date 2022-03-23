@@ -6,11 +6,13 @@ ELEMENTS = ['fire', 'wind', 'earth', 'water', 'light', 'dark', 'any']
 CHARATYPES = ['attack', 'balanced', 'defense', 'heal', 'special']
 RACES = ['human', 'draph', 'erune', 'harvin', 'primal', 'unknown']
 WEAPONTYPES = ['axe', 'bow', 'dagger', 'gun', 'harp', 'katana', 'melee', 'sabre', 'spear', 'staff']
+NEWSTYPES = ['update', 'change', 'fix', 'other']
 
 # How to obtain each Character
 OBTAIN = {
   'Eternal': 10,
   'Evoker': 20,
+  '[[Classic Draw]]': 500,
   '[[Premium Draw]]': 1000,
   '[[Draw#Premium_Draw|Premium Draw]]': 1000,
   '[[Draw#Premium|Premium Draw]]': 1000,
@@ -29,8 +31,8 @@ CHARA_EVOKERS = {'3040160', '3040161', '3040162', '3040163', '3040164', '3040165
 
 SUMMON_EVOKERS = {'2040236', '2040237', '2040238', '2040239', '2040240', '2040241', '2040242', '2040243', '2040244', '2040245'}
 
-CLASSES_ROWS = ['1', '2', '3', '4', '11', '12']
-CLASSES_ROWS_NAMES = ['1', '2', '3', '4', 'Ex1', 'Ex2']
+CLASSES_ROWS = ['1', '2', '3', '4', '11', '12', '5']
+CLASSES_ROWS_NAMES = ['1', '2', '3', '4', 'Ex1', 'Ex2', '5']
 
 # Classes are a pain to scrape, let's hardcode the whole list
 # /!\ Always add new classes at the END of the list /!\
@@ -44,6 +46,7 @@ CLASSES = [
 	('Alchemist', 200201), ('Ninja', 210201), ('Samurai', 220201), ('Sword Master', 230201), ('Gunslinger', 240201), ('Mystic', 250201), ('Assassin', 260201), ('Drum Master', 270201), ('Dancer', 280201), ('Mechanic', 290201),
 	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301), ('Tormentor', 260301), ('Rising Force', 270301), ('Lumberjack', 410301), ('Cavalier', 420301),
   ('Monk', 430301), ('Robin Hood', 440301), ('Masquerade', 280301), ('Relic Buster', 450301),
+  ('Viking', 100401),
 ]
 
 IGNORE_MISSING_SKILL = {'3358', '3855', '3936', '4055', '4080', '4200', '4302'}

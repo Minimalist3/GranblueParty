@@ -4,6 +4,12 @@ Disallow: /*?
 User-agent: *
 Disallow: /api
 Disallow: /collection/*
+Disallow: /friendsum/*
+Disallow: /reset
+Disallow: /401
 
 User-agent: *
 Allow: /
+
+User-agent: Twitterbot
+Allow: /friendsum/*

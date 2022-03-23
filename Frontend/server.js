@@ -48,7 +48,17 @@ app.get('*', (req, res) => {
       if (fs.existsSync(dist_dir + '/' + req.url)) {
         res.sendFile(req.url, {root: dist_dir});
       }
+      else if (req.url.startsWith('/img/unit_small/')) {
+        res.sendFile('/img/unit_small/blank.jpg', {root: dist_dir});
+      }
+      else if (req.url.startsWith('/img/weapon/')) {
+        res.sendFile('/img/weapon/blank.jpg', {root: dist_dir});
+      }
+      else if (req.url.startsWith('/previews/')) {
+        res.sendFile(req.url, {root: dist_dir + '../../../..'});
+      }
       else {
+        console.log(req.url)
         res.sendStatus(404);
       }
       return;

@@ -1,7 +1,7 @@
 <template>
-  <div v-if="show" class="fixed inset-0 z-40 flex justify-center items-start bg-alpha-80" @click.self="close()">
-    <div class="w-screen h-auto md:w-3/4 xl:w-1/2 mt-8 bg-primary md:rounded flex flex-col overflow-hidden" style="max-height: calc(100vh - 4rem);">
-      <div class="px-4 py-2">
+  <div v-if="show" class="fixed inset-0 z-40 flex justify-center items-start bg-black/80" @click.self="close()">
+    <div class="w-screen h-auto md:w-3/4 xl:w-3/5 2xl:1/2 mt-8 bg-primary md:rounded flex flex-col overflow-hidden" style="max-height: calc(100vh - 4rem);">
+      <div class="px-4 py-2 mt-8 sm:mt-0">
         <slot name="header"></slot>
       </div>
 
@@ -9,7 +9,7 @@
         <slot></slot>
       </div>
 
-      <div class="px-4 py-2 flex-shrink-0">
+      <div class="px-4 py-2 shrink-0">
         <slot name="footer"></slot>
       </div>
     </div>

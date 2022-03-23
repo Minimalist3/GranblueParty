@@ -13,7 +13,7 @@
 
     <stars-line
       v-if="! objectIsEmpty"
-      class="absolute bottom-0 right-0 w-3/4 bg-alpha-50"
+      class="absolute bottom-0 right-0 w-3/4 bg-black/50"
       :base="object.starsbase"
       :extra="object.starsmax"
       :current="object.stars"

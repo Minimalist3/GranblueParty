@@ -8,6 +8,8 @@ const router = express.Router();
 router.use(express.json()); // For parsing application/json body
 router.use(cookieParser()); // For using cookies
 
+// Base route: /tracker
+
 router.get('/charas/:id', (req, res) => {
   res.setHeader("Cache-Control", "no-store");
   res.removeHeader('ETag');

@@ -28,21 +28,34 @@ export function searchCharacters (req, response) {
 
 export function searchWeapons (req, response) {
   pool.query(`SELECT Weapon.weaponid AS id, Weapon.nameen AS n, Weapon.elementid AS e, Weapon.weapontypeid AS w,
-    Weapon_Ougi.OugiMLB AS o1, Weapon_Ougi.OugiFLB AS o2, Weapon_Ougi.OugiULB AS o3, (
+  to_json(array[Weapon_Ougi.OugiMLB, Weapon_Ougi.OugiFLB, Weapon_Ougi.OugiULB]) AS o, (
     SELECT json_agg(to_jsonb(skills) - 'rownum') FROM (
       SELECT
         row_number() over (partition by slot ORDER BY Weapon_Skill.level DESC) as rownum,
         Weapon_Skilldata.skillname AS n,
         Weapon_Skill.description AS d
-      FROM Weapon_Skill, Weapon_Skilldata
-      WHERE Weapon_Skill.weaponid = Weapon.weaponid
-      AND Weapon_Skill.skilldataid = Weapon_Skilldata.skilldataid
-    ) AS skills
-    WHERE rownum <= 1
-  ) AS s
-  FROM Weapon, Weapon_Ougi
-  WHERE Weapon.weaponid = Weapon_Ougi.weaponid
-  ORDER BY Weapon.nameen;`)
+        FROM Weapon_Skill, Weapon_Skilldata
+        WHERE Weapon_Skill.weaponid = Weapon.weaponid
+        AND Weapon_Skill.skilldataid = Weapon_Skilldata.skilldataid
+      ) AS skills
+      WHERE rownum <= 1
+    ) AS s
+    FROM Weapon, Weapon_Ougi
+    WHERE Weapon.weaponid = Weapon_Ougi.weaponid
+    ORDER BY Weapon.nameen;`)
+  .then(res => response.status(200).json(res.rows))
+  .catch(() => { response.sendStatus(400) });
+}
+
+export function searchSummons (req, response) {
+  pool.query(`SELECT Summon.summonid AS id, Summon.nameen AS n, Summon.elementid AS e, Summon.rarityId AS ri,
+  to_json(array[SummonAura.aura, SummonAura.auramlb, SummonAura.auraflb, SummonAura.auraulb]) AS a,
+  to_json(array[SummonAura.subaura, SummonAura.subauramlb, SummonAura.subauraflb, SummonAura.subauraulb]) AS s,
+  SummonCall.callName AS cn,
+  to_json(array[SummonCall.call, SummonCall.callmlb, SummonCall.callflb]) AS c
+  FROM Summon, SummonAura, SummonCall
+  WHERE Summon.summonid = SummonAura.summonid AND Summon.summonid = SummonCall.summonid
+  ORDER BY Summon.nameen;`)
   .then(res => response.status(200).json(res.rows))
   .catch(() => { response.sendStatus(400) });
 }

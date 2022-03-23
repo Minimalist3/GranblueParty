@@ -2,7 +2,7 @@
   <label :title="longName">
     {{ shortName }}
     <input
-      class="appearance-none text-primary bg-secondary"
+      class="appearance-none text-primary bg-transparent"
       :class="alignRight ? 'text-right' : ''"
       type="tel"
       :style="'width: ' + length + 'ch;'"

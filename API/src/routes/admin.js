@@ -4,6 +4,8 @@ const router = express.Router();
 
 router.use(express.json()); // For parsing application/json body
 
+// Base route: /admin
+
 router.get('/weapons', (req, res) => {  
   req.context.models.getAdminWeapons(req, res);
 });

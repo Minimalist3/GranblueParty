@@ -1,27 +1,29 @@
+import { provideModule } from '@/js/mixins'
+
 const INITIAL_DATA = () => {
   return {
     characters: [[], [], [], [], [], [], []],      
     summons: [[], [], [], [], [], [], []],
     chara_count: {
-      null: 0, 10: 0, 20: 0,
+      null: 0, 10: 0, 20: 0, 500: 0,
       1000: 0, 1010: 0, 1020: 0, 1030: 0, 1040: 0, 1050: 0,
       1500: 0, 1600: 0,
       'sum': 0,
     },
     chara_total: {
-      null: 0, 10: 0, 20: 0,
+      null: 0, 10: 0, 20: 0, 500: 0,
       1000: 0, 1010: 0, 1020: 0, 1030: 0, 1040: 0, 1050: 0,
       1500: 0, 1600: 0,
       'sum': 0,
     },
     summon_count: {
-      null: 0, 20: 0,
+      null: 0, 20: 0, 500: 0,
       1000: 0, 1020: 0, 1030: 0,
       1600: 0,
       'sum': 0,
     },
     summon_total: {
-      null: 0, 20: 0,
+      null: 0, 20: 0, 500: 0,
       1000: 0, 1020: 0, 1030: 0,
       1600: 0,
       'sum': 0,
@@ -30,7 +32,7 @@ const INITIAL_DATA = () => {
   }
 };
 
-export default {
+const myStoreModule = {
   namespaced: true,
   state() {
     return INITIAL_DATA();
@@ -79,4 +81,8 @@ export default {
       }
     },
   }
-}
+};
+
+const provideMyStoreModule = provideModule('collection', myStoreModule);
+
+export default provideMyStoreModule;

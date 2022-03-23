@@ -1,7 +1,12 @@
 <template>
   <div class="flex flex-col" style="min-width: 78px; max-width: 78px;">
     <!-- Title -->
-    <span class="text-xs h-5 px-1 text-center truncate" :title="object.nameen">{{ object.nameen }}</span>
+    <a
+      class="text-xs text-primary rounded-t h-5 px-1 text-center truncate"
+      target="_blank"
+      :href="'https://gbf.wiki/' + object.nameen"
+      :title="object.nameen"
+    >{{ object.nameen }}</a>
 
     <!-- Portrait -->
     <img

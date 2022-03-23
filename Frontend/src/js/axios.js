@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import Config from './config'
 
-export default function getAxiosInstance(store, user) {
+export default function getAxiosInstance(store, jwt) {
   let instance = Axios.create({
     baseURL: Config.app.baseURL,
     timeout: Config.app.timeout,
@@ -22,8 +22,8 @@ export default function getAxiosInstance(store, user) {
   // Always send the cookie. This needs to be set globally, else it won't work
   instance.defaults.withCredentials = true;
 
-  if (user) {
-    instance.defaults.headers.common['Cookie'] = 'jwt=' + user.jwt;
+  if (jwt) {
+    instance.defaults.headers.common['Cookie'] = 'jwt=' + jwt;
   }
 
   return instance;

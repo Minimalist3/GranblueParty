@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span class="flex flex-row flex-wrap space-x-4 mt-4 mb-2 items-center">
+  <div class="flex flex-col gap-4">
+    <span class="flex flex-row flex-wrap gap-2 items-center">
       <div>Search in</div>
       <checkbox v-model="search_name">Names</checkbox>
       <checkbox v-model="search_ca_names">Charge attack names</checkbox>
@@ -9,9 +9,8 @@
       <checkbox v-model="search_skill_desc">Skill descriptions</checkbox>
     </span>
 
-    <div class="flex flex-row flex-wrap items-center mb-2">
+    <div class="flex flex-row flex-wrap items-center gap-2">
       <data-filter
-        class="mr-2 my-2"
         v-for="category in getFilters"
         :key="category.name"
         :category="category.name"
@@ -19,7 +18,7 @@
       ></data-filter>
     </div>
 
-    <form @submit.prevent="search()" class="mb-4 flex flex-row flex-wrap space-x-2">
+    <form @submit.prevent="search()" class="flex flex-row flex-wrap gap-2">
       <input class="input" type="text" placeholder="Search" ref="searchfield" autofocus>
       <button class="btn btn-blue" type="submit">
         <fa-icon :icon="['fas', 'search']" class="text-xl"></fa-icon> Search
@@ -28,19 +27,21 @@
       <checkbox v-model="whole_word">Match whole word</checkbox>
     </form>
 
-    <div class="mb-4" v-if="getResults.length > 0">
+    <div id="results">
       Results: {{ getResults.length }}
     </div>
 
-    <div v-for="(item, k) in getResultsSlice()" :key="k" class="flex flex-col lg:flex-row bg-secondary border-r-2 border-l-2 border-t border-b border-primary p-2 space-x-2">
-      <span class="flex flex-col">
+    <div v-for="(item, k) in getResultsSlice()" :key="k" class="flex flex-col lg:flex-row bg-secondary p-2 gap-2">
+      <span class="flex flex-col gap-2">
         <!-- Name -->
-        <span class="mb-2">
+        <span>
           {{ index * slice_size + k + 1 }}-
-          <a class="text-primary font-medium" target="_blank" :href="'https://gbf.wiki/' + item.n" v-html="highlight(item.n, search_name)"></a>
+          <a class="font-medium" target="_blank" :href="'https://gbf.wiki/' + item.n" v-html="highlight(item.n, search_name)"></a>
           <br>
-          [{{ data_model['e'].expand(item) }}
-          {{ data_model['w'].expand(item) }}]
+          <div class="font-medium">
+            {{ data_model['e'].expand(item) }}
+            {{ data_model['w'].expand(item) }}
+          </div>
         </span>
 
         <img style="max-height: 96px; max-width:168px; height: 96px; width:168px;" :src="'/img/unit_small/' +  item.id + '000.jpg'">
@@ -48,36 +49,36 @@
 
       <span class="flex flex-col">
         <!-- Ougi -->
-        <div class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-nowrap mr-2 italic">Charge attack:</div>
-          <div class="divide-y border-secondary">
-            <div v-for="(ougi, l) in item.o" :key="l" class="flex flex-row space-x-4">
-              <div class="whitespace-nowrap italic" v-html="highlight(ougi.n, search_ca_names)" />
-              <div v-html="highlight(ougi.d, search_ca_desc)" />
+        <div class="flex flex-col lg:flex-row lg:items-center flex-wrap lg:flex-nowrap mt-2 gap-2">
+          <h4 class="whitespace-nowrap">Charge attack:</h4>
+          <div class="divide-y divide-inherit border-secondary">
+            <div v-for="(ougi, l) in item.o" :key="l" class="flex flex-col lg:flex-row lg:items-center gap-x-4">
+              <div class="whitespace-nowrap font-medium" v-html="highlight(ougi.n, search_ca_names)" />
+              <div class="text-sm" v-html="highlight(ougi.d, search_ca_desc)" />
             </div>
           </div>
         </div>
 
         <!-- Skills -->
-        <div v-if="item.s" class="flex flex-row flex-wrap mt-2">
-          <div class="whitespace-nowrap mr-2 italic">Skills:</div>
-          <div class="divide-y border-secondary">
-            <div v-for="(skill, l) in item.s" :key="l" class="flex flex-row space-x-4">
-              <div class="whitespace-nowrap italic" v-html="highlight(skill.n, search_skill_names)" />
-              <div v-html="highlight(skill.d, search_skill_desc)" />
+        <div v-if="item.s" class="flex flex-col lg:flex-row lg:items-center flex-wrap lg:flex-nowrap mt-2 gap-2">
+          <h4 class="whitespace-nowrap">Skills:</h4>
+          <div class="divide-y divide-inherit border-secondary">
+            <div v-for="(skill, l) in item.s" :key="l" class="flex flex-col lg:flex-row lg:items-center gap-x-4">
+              <div class="whitespace-nowrap font-medium" v-html="highlight(skill.n, search_skill_names)" />
+              <div class="text-sm" v-html="highlight(skill.d, search_skill_desc)" />
             </div>
           </div>
         </div>
       </span>
     </div>
 
-    <nav class="mt-4 flex flex-row flex-wrap" role="navigation" aria-label="pagination" v-if="getResults.length > slice_size">
+    <nav class="flex flex-row flex-wrap gap-2" role="navigation" aria-label="pagination" v-if="getResults.length > slice_size">
       <span
-        class="mr-2 mb-2 px-2 py-1 rounded cursor-pointer hover:text-link-hover"
+        class="px-2 py-1 rounded cursor-pointer hover:text-link-hover"
         :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
         v-for="i in Math.ceil(getResults.length / slice_size)"
         :key="i"
-        @click="index = i-1"
+        @click="changeSlice(i)"
       >{{ i }}</span>
     </nav>
 
@@ -85,8 +86,8 @@
 </template>
 
 <script>
-import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
+import MixinSearch from '@/js/mixin-search.js'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import DataFilter from '@/components/common/DataFilter.vue'
@@ -126,56 +127,25 @@ const categories = [
   },
 ];
 
-function getDataModel() {
-  // Copy the data model locally to modify "checked" properties
-  return Object.fromEntries(categories.map(c => [c.key, Utils.copy(DataModel[c.key])]));  
-}
-
 export default {
   components: {
     Checkbox,
     DataFilter
   },
+  mixins: [
+    MixinSearch(categories, lsMgt)
+  ],
   data() {
     return {
       search_name: false,
       search_ca_names: false,
-      search_ca_desc: false,
+      search_ca_desc: true,
       search_skill_names: false,
-      search_skill_desc: false,
-      case_sensitive: false,
-      whole_word: false,
-      data_model: getDataModel(),
-      data: null,
-      results: [],
-      index: 0,
-      slice_size: 10,
+      search_skill_desc: true,
     }
   },
   methods: {
-    search() {
-      let expression = this.$refs.searchfield.value;
-      if (this.whole_word) {
-        expression =  '\\b' + expression + '\\b';
-      }
-      const expression_length = this.$refs.searchfield.value.length;
-      
-      // Reset the results
-      this.results = [];
-      this.index = 0;
-      if (this.data === null) {
-        return;
-      }
-      if (expression_length === 0) {
-        return;
-      }
-
-      let flags = '';
-      if (this.case_sensitive === false) {
-        flags += 'i';
-      }
-      const re = new RegExp(expression, flags);
-
+    search_impl(re) {
       this.results = this.data.filter(obj => {
         if (this.search_name && obj.n !== null) {
           if (re.test(obj.n)) {
@@ -201,48 +171,6 @@ export default {
         return false;
       });
     },
-    highlight(text, highlight = true) {
-      if (highlight === false) {
-        return text;
-      }
-
-      let expression = this.$refs.searchfield.value;
-      if (this.whole_word) {
-        expression =  '\\b' + expression + '\\b';
-      }
-      const expression_length = this.$refs.searchfield.value.length;
-      let flags = 'g';
-      if (this.case_sensitive === false) {
-        flags += 'i';
-      }
-      const re = new RegExp(expression, flags);
-      const res_split = text.split(re);
-
-      let result = res_split[0];
-      let size = result.length;
-      for (let i=1; i < res_split.length; i++) {
-        result += '<span class="bg-primary">' + text.slice(size, size + expression_length) + '</span>' + res_split[i];
-        size += res_split[i].length + expression_length;
-      }
-
-      return result;
-    },
-    getResultsSlice() {
-      if (this.index * this.slice_size > this.getResults.length) {
-        this.index = 0;
-      }
-      return this.getResults.slice(this.index * this.slice_size, this.index * this.slice_size + this.slice_size);
-    }
-  },
-  computed: {
-    getFilters() {
-      return categories.filter(c => { return c.isFilter });
-    },
-    getResults() {
-      return this.results.filter(item => {
-        return this.getFilters.every(f => this.data_model[f.key].show(item[f.key]));
-      });
-    }
   },
   watch: {
     search_name() {
@@ -260,12 +188,6 @@ export default {
     search_skill_desc() {
       lsMgt.setValue('search_skill_desc', this);
     },
-    case_sensitive() {
-      lsMgt.setValue('case_sensitive', this);
-    },
-    whole_word() {
-      lsMgt.setValue('whole_word', this);
-    },
   },
   mounted() {
     lsMgt.getValue(this, 'search_name');
@@ -273,16 +195,10 @@ export default {
     lsMgt.getValue(this, 'search_ca_desc');
     lsMgt.getValue(this, 'search_skill_names');
     lsMgt.getValue(this, 'search_skill_desc');
-    lsMgt.getValue(this, 'case_sensitive');
-    lsMgt.getValue(this, 'whole_word');
 
     this.axios.get('/search/characters')
       .then(response => this.data = response.data)
       .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
-
-    this.$nextTick().then(() => {
-      this.$refs.searchfield.focus();
-    });
   }
 }
 </script>

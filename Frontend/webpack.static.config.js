@@ -5,7 +5,6 @@ const path = require("path");
 const baseConfig = require('./webpack.base.config.js')
 
 const CopyPlugin = require('copy-webpack-plugin');
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const RemovePlugin = require('remove-files-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -31,19 +30,8 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new CopyPlugin( { patterns: [
-      { from: path.resolve(__dirname, 'src', 'img'), to: 'img' }
+      { from: path.resolve(__dirname, 'src', 'img_opti'), to: 'img' }
     ]} ),
-    new ImageMinimizerPlugin({
-      minimizer: {
-        implementation: ImageMinimizerPlugin.imageminMinify,
-        options: {
-          plugins: [
-            ['jpegtran', { progressive: true }],
-            ['optipng', { optimizationLevel: 5 }],
-          ],
-        }
-      },
-    }),
     new RemovePlugin({
       after: {
         root: './' + dist_path,
@@ -51,6 +39,6 @@ module.exports = merge(baseConfig, {
           'garbage.js',
         ]
       }
-  })
+    })
   ]
 })

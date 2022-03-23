@@ -1,65 +1,91 @@
 <template>
-  <div class="flex flex-col">
-    <div class="flex flex-row flex-wrap items-center mb-4" v-if="isUserLogged">
-      <span class="mr-2">My parties</span>
-
-      <dropdown class="mr-2" :disabled="parties.length === 0" v-model.number="selected_party" :index="selected_party_index">
-        <option disabled :value="-1">Please select a party</option>
-        <option
-          v-for="(party, index) in parties"
-          :key="party.id"
-          :value="party.id"
-        >Party{{ index+1 }}: {{ party.name }}</option>
-      </dropdown>
-
-      <span class="flex flex-row flex-wrap" v-if="parties.length > 0 && selected_party_index > 0">
-        <button class="btn btn-blue mr-2" @click="clickPartyLoad()">
-          <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load
-        </button>
-        <button class="btn btn-white mr-2" @click="clickPartyShare()">
-          <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share Party{{ selected_party_index }}
-        </button>
-        <button class="btn btn-red mr-2" @click="clickPartyDelete()">
-          <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete Party{{ selected_party_index }}
-        </button>
-        <button class="btn btn-blue" @click="clickPartyNew()">
-          <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> Clear Party
-        </button>
-      </span>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-row flex-wrap items-center gap-2" v-if="isUserLogged">
+      <button class="btn btn-red" @click="new_party_modal = true">
+        <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> New Party
+      </button>
+      <button class="btn btn-blue" @click="show_parties_modal = true">
+        <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load&#8230;
+      </button>
+      <button class="btn btn-blue" @click="clickPartySave(current_party)" :disabled="disableButtons">
+        <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save
+      </button>
+      <button class="btn btn-blue" @click="save_as_modal = true">
+        <fa-icon :icon="['fas', 'file-pen']" class="text-xl"></fa-icon> Save As&#8230;
+      </button>
+      <button class="btn btn-red" @click="delete_party_modal = true" :disabled="disableButtons">
+        <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete
+      </button>
+      <button class="btn btn-blue" @click="add_video_modal = true" disabled="true" title="Coming soon">
+        <fa-icon :icon="['fab', 'youtube']" class="text-xl"></fa-icon> Add Video
+      </button>
+      <!-- TODO Twitter, Facebook -->
+      <button class="btn btn-blue" @click="clickPartyShare()" :disabled="disableButtons">
+        <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
+      </button>
+      <span v-if="current_party === null">(unsaved)</span>
     </div>
 
-    <div class="flex flex-row flex-wrap items-center mb-8" v-if="isUserLogged">
-      <span class="mr-2">Party Name</span>
-
-      <input class="input mr-2" type="text" placeholder="Unnamed party" v-model="party_name">
-
-      <div class="flex flex-row mr-2" :class="selected_party_index > 0 ? 'btn-group' : ''">
-        <button class="btn btn-blue" @click="clickPartySave(null)">
-          <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save New
-        </button>
-
-        <button v-if="parties.length > 0 && selected_party_index > 0" class="btn btn-blue" @click="clickPartySave(selected_party)">
-          Update Party{{ selected_party_index }}
-        </button>
-      </div>
-
-      <span class="mr-2" v-if="current_party === null">(unsaved)</span>
+    <div class="flex flex-row flex-wrap items-center gap-2">
+      <input class="input w-52" type="text" placeholder="Party name" v-model="party_name" maxlength="64">
+      <label>
+        Category
+        <content-categories v-model.number="content"></content-categories>
+      </label>
+      <checkbox
+        v-model="isPublic"
+        :disabled="content === null"
+        :title="content === null ? 'Uncategorized parties cannot be made public' : 'Make this team visible in the Teams section'"
+      >
+        Public Team
+      </checkbox>
+      <fa-icon v-if="video_url" :icon="['fab', 'youtube']" class="text-4xl"></fa-icon>
     </div>
+
+    <!-- Modals -->
+    <modal-selector
+      v-model="show_parties_modal"
+      route="/party/list"
+      :categories="getCategories"
+      :canUnselect="false"
+      @item-selected="loadPartyFromModal"
+      :key="reload_route"
+    ></modal-selector>
+    <modal-confirm 
+      v-model="new_party_modal"
+      :confirm="clickPartyNew"
+      text="This will clear the current party and start a new one."
+      button="New Party"
+    ></modal-confirm>
+    <modal-confirm
+      v-model="save_as_modal"
+      :confirm="clickPartySave"
+      :text="'This will create a new ' + (this.isPublic ? 'public' : 'private') + ' Party' + (this.party_name ? ' called \'' + this.party_name + '\'.' : ' with no name.')"
+      button="Save new Party"
+    ></modal-confirm>
+    <modal-confirm 
+      v-model="delete_party_modal"
+      :confirm="clickPartyDelete"
+      text="This will permanently delete this party from your account."
+      button="Delete Party"
+    ></modal-confirm>
 
     <input v-show="clipboard_text.length > 0" id="clipboardInput" readonly type="text" :value="clipboard_text">
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 
-import msgpack from '@/js/libs/msgpack.js'
-import base64js from '@/js/libs/base64js.js'
 import Utils from '@/js/utils.js'
 import KeyData from '@/js/key-data'
-import partiesModule from '@/store/modules/parties'
+import partiesStoreMixin from '@/store/modules/parties'
 
-import Dropdown from '@/components/common/Dropdown.vue';
+import Checkbox from '@/components/common/Checkbox.vue'
+import ContentCategories from '@/components/common/ContentCategories.vue'
+import Dropdown from '@/components/common/Dropdown.vue'
+import ModalConfirm from '@/components/ModalConfirm.vue'
+import ModalSelector from '@/components/ModalSelector.vue'
 
 const BOOKMARKLET_VERSION = 6;
 
@@ -83,42 +109,50 @@ const getDefaultValues = (data, category) => {
 
 export default {
   components: {
+    Checkbox,
+    ContentCategories,
     Dropdown,
+    ModalConfirm,
+    ModalSelector
   },
+  mixins: [
+    partiesStoreMixin
+  ],
   data() {
     return {
       clipboard_text: '',
+      new_party_modal: false,
+      save_as_modal: false,
+      delete_party_modal: false,
+      show_parties_modal: false,
+      add_video_modal: false,
+      reload_route: 0,
     }
   },
   methods: {
     clickPartyNew({clean_url = true} = {}) {
       this.current_party = null;
-      this.$store.commit('setClasse', Utils.copy(DEFAULT_VALUES['classe']));
-      this.$store.dispatch('setCharacters', Utils.copy(DEFAULT_VALUES['characters']));
-      this.$store.dispatch('setSummons', Utils.copy(DEFAULT_VALUES['summons']));
-      this.$store.dispatch('setWeapons', Utils.copy(DEFAULT_VALUES['weapons']));
-      this.$store.commit('clearActions');
+      this.party_name = "";
+      this.$store.commit('resetParty');
 
       // Clean the URL
       if (clean_url) {
         history.pushState(null, null, window.location.origin + window.location.pathname);
-        this.selected_party = -1;
       }
     },
-    clickPartyLoad() {
-      this.axios.get('/party/load/' + this.selected_party)
+    loadPartyFromModal(party) {
+      this.axios.get('/party/load/' + party)
         .then(response => {
           this.loadPartyFromResponse(response);
-          
-          this.current_party = parseInt(this.selected_party, 10);
+          this.current_party = parseInt(party, 10);
         })
         .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickPartyShare() {
-      const text = '?p=' + this.selected_party;
+      const text = '?p=' + this.current_party + '#';
 
       this.clipboard_text = window.location.href.split('?')[0] + text;
-      history.pushState(null, null, text);
+      // history.pushState(null, null, text);
 
       let self = this;
       this.$nextTick().then(() => {
@@ -131,18 +165,17 @@ export default {
       });
     },
     clickPartyDelete() {
-      if (this.parties.length !== 0) {
-        this.axios.post('/party/delete', {id: this.selected_party})
+      if (this.current_party) {
+        this.axios.post('/party/delete', {id: this.current_party})
           .then(() => {
             this.clickPartyNew();
-            this.loadParties();
-
+            this.reloadParties();
             this.$store.dispatch('addMessage', {message: 'Party deleted successfully'});
           })
           .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
       }
     },
-    clickPartySave(partyId) {
+    clickPartySave(partyId = null) {
       let data = {
         classe: this.classe.classid,
         class_skills: Utils.isEmpty(this.classe.skills) ? null : this.classe.skills.map(s => {return s ? s.skillid : null}), // Skill ids
@@ -161,32 +194,37 @@ export default {
         weapons_skill_levels: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.sklevel }),
         weapons_skill_names: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.keys.map(k => k ? k.name : null) }),
         weapons_stars: this.weapons.map(e => { return Utils.isEmpty(e) ? null : e.stars }),
-        actions: this.actions.map(e => { return [e.sourceSlot-1, e.skillSlot-1, e.type] })
+        actions: this.actions.map(e => { return [e.sourceSlot-1, e.skillSlot-1, e.type] }),
       }
 
       this.axios.post('/party/save', {
           id: partyId,
           name: this.party_name,
-          data: data
+          data: data,
+          content: this.content,
+          isPublic: this.isPublic,
+          desc: this.description,
         })
         .then(response => {
           this.current_party = response.data.id;
-          return this.loadParties();
+          this.reloadParties();
+          this.$store.dispatch('addMessage', {message: 'Party saved successfully'});
         })
-        .then(_ => this.$store.dispatch('addMessage', {message: 'Party saved successfully'}))
-        .then(_ => this.selected_party = this.current_party)
         .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
-    loadParties() {
-      return this.$store.dispatch('parties/fetchParties');
+    reloadParties() {
+      this.reload_route++;
     },
     loadPartyFromResponse(response) {
       this.loadParty(response.data, {
         actions: response.data.actions,
+        content: response.data.content,
         characters_stars: response.data.characters_stars,
         characters_levels: response.data.characters_levels,
         characters_pluses: response.data.characters_pluses,
         characters_prings: response.data.characters_prings,
+        description: response.data.desc,
+        isPublic: response.data.isPublic,
         summons_levels: response.data.summons_levels,
         summons_pluses: response.data.summons_pluses,
         summons_stars: response.data.summons_stars,
@@ -197,13 +235,15 @@ export default {
         weapons_stars: response.data.weapons_stars,
       });
     },
-    loadParty(data, {actions = null,
+    loadParty(data, {actions = null, content = null, isPublic = true, description = '',
       characters_levels = null, characters_stars = null, characters_pluses = null, characters_prings = null,
       summons_levels = null, summons_stars = null, summons_pluses = null,
       weapons_levels = null, weapons_stars = null, weapons_pluses = null, weapons_skill_levels = null, weapons_skill_names = null} = {}) 
     {
       // Clear current party
       this.clickPartyNew({clean_url: false});
+
+      this.party_name = data.n ? data.n : "";
 
       this.$store.commit('setClasse', getDefaultValues(data, 'classe'));
       
@@ -339,11 +379,12 @@ export default {
       }
       if (weapons_skill_names) {
         for (let i=0; i<this.weapons.length && i<weapons_skill_names.length; i++) {
-          if (weapons_skill_names[i] !== null) {
+          if (weapons_skill_names[i]) {
             this.$set(this.weapons[i], 'keys', [null, null, null]);
 
             for (let j=0; j<weapons_skill_names[i].length; j++) {
-              if (weapons_skill_names[i][j]) {
+              // Only add keys for weapon skills that support them
+              if (weapons_skill_names[i][j] && this.weapons[i].skills[j] && this.weapons[i].skills[j][0] && this.weapons[i].skills[j][0].keyid) {
                 this.$set(this.weapons[i].keys, j, KeyData.getSkillByName(weapons_skill_names[i][j].trim()));
               }
             }
@@ -354,6 +395,10 @@ export default {
       if ( ! Utils.isEmpty(actions)) {
         this.$store.dispatch('addActions', actions);
       }
+
+      this.content = content;
+      this.isPublic = isPublic;
+      this.$store.commit('setDescription', description);
     },
   },
   computed: {
@@ -363,35 +408,61 @@ export default {
       summons: state => state.party_builder.summons,
       weapons: state => state.party_builder.weapons,
       actions: state => state.party_builder.actions,
-    }),
-    ...mapGetters('parties', {
-      selected_party_index: 'getSelectedPartyIndex'
+      description: state => state.party_builder.description,
     }),
     isUserLogged() {
       return this.$store.getters.getUserId !== null;
     },
-    parties: {
-      get() { return this.$store.state.parties.parties },
-      set(value) { this.$store.commit('parties/setParties', value) }
+    content: {
+      get() { return this.$store.state.party_builder.content },
+      set(value) { this.$store.commit('setContent', value) }
     },
-    selected_party: {
-      get() { return this.$store.state.parties.selected_party },
-      set(value) { this.$store.dispatch('parties/setSelectedParty', value) }
+    isPublic: {
+      get() { return this.$store.state.party_builder.isPublic },
+      set(value) { this.$store.commit('setPublic', value) }
+    },
+    party_name: {
+      get() { return this.$store.state.parties.party_name },
+      set(value) { this.$store.commit('parties/setPartyName', value) }
     },
     current_party: {
       get() { return this.$store.state.parties.current_party },
       set(value) { this.$store.commit('parties/setCurrentParty', value) }
     },
-    party_name: {
-      get() { return this.$store.state.parties.party_name },
-      set(value) { this.$store.commit('parties/setPartyName', value) }
+    video_url: {
+      get() { return this.$store.state.parties.video_url },
+      set(value) { this.$store.commit('parties/setVideoURL', value) }
+    },
+    disableButtons() {
+      return this.current_party === null;
+    },
+    getCategories() {
+      return [
+        {
+          name: "Name",
+          isColumn: true,
+          isFilter: false,
+          key: "n",
+        },
+        {
+          name: "Element",
+          isColumn: true,
+          isFilter: true,
+          key: "e",
+        },
+        {
+          name: "Public",
+          isColumn: true,
+          isFilter: true,
+          key: "pub",
+        },
+      ];
     }
   },
   watch: {
     '$store.getters.getUserId'(id) {
       if (id !== null) {
-        this.$store.commit('parties/clearParties');
-        this.loadParties();
+        this.reloadParties();
       }
     },
   },
@@ -399,35 +470,11 @@ export default {
     let promises = [];
 
     /**
-     * Load parties list
-     */
-    if (this.isUserLogged) {
-      promises.push(this.loadParties());
-    }
-
-    /**
      * Load party from URL
      */
 
-    // permaURL
-    if ( ! Utils.isEmpty(this.$route.query.t)) {
-      const data = msgpack.deserialize(base64js.toByteArray(Utils.unescapeBase64(this.$route.query.t)));
-      const postData = {
-        classe: Utils.isEmpty(data[0]) ? null : data[0][0],
-        skills: Utils.isEmpty(data[0]) ? null : data[0].slice(1), // Skill IDs
-        characters: data[1],
-        summons: data[2],
-        weapons: data[3],
-      }
-
-      promises.push(
-        this.axios.post('/party/load', postData)
-          .then(response => this.loadParty(response.data, {actions: data[4]}))
-          .catch(error => this.$store.dispatch('addAxiosErrorMessage', error))
-      );
-    }
     // Bookmarklet
-    else if ( ! Utils.isEmpty(this.$route.query.l)) {
+    if ( ! Utils.isEmpty(this.$route.query.l)) {
       const data = JSON.parse(this.$route.query.l);
       const postData = {
         classe: data.p,
@@ -469,35 +516,17 @@ export default {
           .then(response => {
             this.loadPartyFromResponse(response);
             // Preselect party if it belongs to current user
-            this.parties.forEach(p => {
-              if (p.id === param) {
-                this.current_party = p.id;
-                this.selected_party = p.id;
-              }
-            })
+            if (response.data.userid === this.$store.getters.getUserId) {
+              this.current_party = param;
+            }
             const timestamp = response.data.updated ? response.data.updated : '0';
-            this.$ssrContext.head_image = 'https://www.granblue.party/previews/' + 'party/party_' + param + '.' + timestamp + '.png';
+            this.$ssrContext.head_image = 'https://www.granblue.party/previews/party/party_' + param + '.' + timestamp + '.jpg';
           })
           .catch(_ => this.$store.dispatch('addMessage', { title: 'Error', message: 'Party not found'}))
       );
     }
 
     return Promise.all(promises);
-  },
-  mounted() {
-    /**
-     * Load parties list
-     */
-    if (this.isUserLogged && this.$store.state.parties.parties.length === 0) {
-      this.loadParties();
-    }
-  },
-  beforeCreate() {
-    const preserve_state = !! this.$store.state.parties
-    this.$store.registerModule('parties', partiesModule, { preserveState: preserve_state });
-  },
-  destroyed() {
-    this.$store.unregisterModule('parties');
   },
 }
 </script>

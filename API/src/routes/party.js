@@ -8,6 +8,8 @@ const router = express.Router();
 router.use(express.json()); // For parsing application/json body
 router.use(cookieParser()); // For using cookies
 
+// Base route: /party
+
 // Load a Party from JSON object
 router.post('/load', (req, res) => {
   req.context.models.getPartyByJSON(req, res);

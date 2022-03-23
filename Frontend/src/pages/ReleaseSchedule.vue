@@ -7,17 +7,16 @@
     </div>
     <div class="flex flex-col items-center" v-else>
       <!-- Data filters -->
-      <div class="flex flex-row flex-wrap items-center">
+      <div class="flex flex-row flex-wrap items-center gap-4">
         <data-filter
-          class="mr-2 my-2"
           v-for="category in getFilters"
           :key="category.name"
           :category="category.name"
           :data="data_model[category.key].data"          
         ></data-filter>
 
-        <div class="inline-flex flex-row flex-wrap items-center btn-group mr-2">
-          <span class="mr-2 my-2">Year</span>
+        <div class="inline-flex flex-row flex-wrap items-center btn-group">
+          <span class="mr-2">Year</span>
           <button
             v-for="(year, index) in getYears"
             :key="year"
@@ -29,14 +28,21 @@
           </button>
         </div>
 
-        <div class="inline-flex flex-row flex-wrap items-center btn-group mr-2">
-          <span class="mr-2 my-2">Obtain</span>
+        <div class="inline-flex flex-row flex-wrap items-center btn-group">
+          <span class="mr-2">Obtain</span>
           <button
             class="btn btn-sm"
-            :class="show_obtain_gacha ? 'btn-blue' : 'btn-white'"
-            @click="show_obtain_gacha = ! show_obtain_gacha"
+            :class="show_obtain_premium ? 'btn-blue' : 'btn-white'"
+            @click="show_obtain_premium = ! show_obtain_premium"
           >
-            Gacha
+            Premium Draw
+          </button>
+          <button
+            class="btn btn-sm"
+            :class="show_obtain_classic ? 'btn-blue' : 'btn-white'"
+            @click="show_obtain_classic = ! show_obtain_classic"
+          >
+            Classic Draw
           </button>
           <button
             class="btn btn-sm"
@@ -48,7 +54,7 @@
         </div>
 
         <div class="inline-flex flex-row flex-wrap items-center btn-group">
-          <span class="mr-2 my-2">Show</span>
+          <span class="mr-2">Show</span>
           <button
             class="btn btn-sm"
             :class="show_characters ? 'btn-blue' : 'btn-white'"
@@ -74,10 +80,10 @@
       </div>
 
       <!-- List -->
-      <div class="flex flex-row flex-wrap">
-        <div class="flex flex-col m-2 p-2 bg-secondary rounded" v-for="days in getRelease" :key="days[0]">
+      <div class="flex flex-row flex-wrap gap-2">
+        <div class="flex flex-col p-2 bg-secondary rounded" v-for="days in getRelease" :key="days[0]">
           <span class="text-xl font-bold self-center">{{ days[1][0].rd.toLocaleDateString("default", { month: 'long', day: 'numeric' }) }}</span>
-          <div class="flex flex-row flex-wrap">
+          <div class="flex flex-row flex-wrap self-center">
             <span
               class="flex flex-col"
               style="width: 105px;"
@@ -109,7 +115,7 @@ import { mapState } from 'vuex'
 import DataModel from '@/js/data-model.js'
 import Utils from '@/js/utils.js'
 import { LANGUAGES } from '@/js/lang'
-import releaseModule from '@/store/modules/release-schedule'
+import releaseStoreMixin from '@/store/modules/release-schedule'
 
 import DataFilter from '@/components/common/DataFilter.vue'
 
@@ -147,10 +153,13 @@ export default {
   components: {
     DataFilter,
   },
+  mixins: [
+    releaseStoreMixin
+  ],
   head: {
     title: 'Granblue.Party - Release Schedule',
     desc: 'Take a look at every character and summoned already released, sorted by date',
-    image: 'https://www.granblue.party/img/preview_release.png',
+    image: 'https://www.granblue.party/img/card_release.jpg',
     keywords: 'release, schedule, new units, new characters, new summons, gacha, event'
   },
   data() {
@@ -162,7 +171,8 @@ export default {
       data_model: getDataModel(),
       show_characters: true,
       show_summons: true,
-      show_obtain_gacha: true,
+      show_obtain_premium: true,
+      show_obtain_classic: true,
       show_obtain_other: true,
       loading: true,
    }
@@ -206,10 +216,13 @@ export default {
           if ( ! this.getFilters.every(e => this.data_model[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.show_obtain_gacha && unit.d >= 1000) {
+          if ( ! this.show_obtain_premium && unit.d >= 1000) {
             return;
           }
-          if ( ! this.show_obtain_other && unit.d < 1000) {
+          if ( ! this.show_obtain_classic && unit.d == 500) {
+            return;
+          }
+          if ( ! this.show_obtain_other && unit.d < 500) {
             return;
           }
 
@@ -232,10 +245,13 @@ export default {
           if ( ! this.getFilters.every(e => this.data_model[e.key].show(unit[e.key]))) {
             return;
           }
-          if ( ! this.show_obtain_gacha && unit.d >= 1000) {
+          if ( ! this.show_obtain_premium && unit.d >= 1000) {
             return;
           }
-          if ( ! this.show_obtain_other && unit.d < 1000) {
+          if ( ! this.show_obtain_classic && unit.d == 500) {
+            return;
+          }
+          if ( ! this.show_obtain_other && unit.d < 500) {
             return;
           }
 
@@ -267,13 +283,6 @@ export default {
     await this.loadData()
       .then(_ => this.$store.dispatch('release/makeDates'))
       .then(_ => this.loading = false);
-  },
-  beforeCreate() {
-    const preserve_state = !! this.$store.state.release;
-    this.$store.registerModule('release', releaseModule, { preserveState: preserve_state });
-  },
-  destroyed() {
-    this.$store.unregisterModule('release');
   },
 }
 </script>

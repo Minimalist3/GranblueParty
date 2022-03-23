@@ -1,24 +1,26 @@
 <template>
   <span class="relative tooltip-parent">
     <img
-      class="cursor-pointer w-full"
+      class="w-full"
+      :class="readOnly ? '' : 'cursor-pointer'"
       style="min-height: 83px; max-height: 83px;"
       :draggable="! objectIsEmpty"
       :src="getImage"
-      @click="$emit('click-portrait')"
-      @dragstart="$emit('drag-portrait', $event)"
+      @click="tryToEmit('click-portrait')"
+      @dragstart="tryToEmit('drag-portrait', $event)"
       @dragover.prevent
-      @drop.prevent="$emit('drop-portrait', $event)"   
+      @drop.prevent="tryToEmit('drop-portrait', $event)"   
     >
 
     <stars-line
       v-if="! objectIsEmpty"
-      class="absolute bottom-0 right-0 w-4/5 bg-alpha-50"
+      class="absolute bottom-0 right-0 w-4/5 bg-black/50"
       :base="object.starsbase"
       :extra="object.starsmax"
       :current="object.stars"
       @update:current="$emit('stars-changed', $event)"
       :max="5"
+      :readOnly="readOnly"
     ></stars-line>
 
     <span class="tooltip" v-if="object.current_data !== undefined">
@@ -42,7 +44,21 @@ export default {
     objectIsEmpty
   ],
   props: {
-    object: Object,
+    object: {
+      type: Object,
+      required: true
+    },
+    readOnly: {
+      type: Boolean,
+      default: false
+    },
+  },
+  methods: {
+    tryToEmit(name, event) {
+      if ( ! this.readOnly) {
+        this.$emit(name, event);
+      }
+    }
   },
   computed: {
     getImage() {

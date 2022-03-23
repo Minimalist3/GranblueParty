@@ -17,12 +17,19 @@
         <label for="password2">Confirm password</label>
         <input class="input w-full" id="password2" ref="password2" placeholder="Password" type="password" minlength="1" required>
       </div>
+      <div>
+        <label for="email" class="">Email address (optional)</label>
+        <input class="input w-full" id="email" ref="email" type="email" placeholder="Email address" v-model="email">
+      </div>
 
       <p v-if="error_message.length > 0">
         <fa-icon :icon="['fas', 'exclamation-triangle']" class="text-red-400"></fa-icon>
         {{ error_message }}
       </p>
       <p v-else>&nbsp;</p>
+
+      <!-- Honeypot -->
+      <input type="checkbox" name="captcha" v-model="captcha" style="display:none !important" tabindex="-1" autocomplete="off">
 
       <input class="btn btn-blue pt-2" type="submit" value="Create">
     </form>
@@ -49,7 +56,9 @@ export default {
   data() {
     return {
       username: "",
+      email: "",
       error_message: "",
+      captcha: false,
     }
   },
   methods: {
@@ -69,7 +78,9 @@ export default {
 
       const body = {
         username: this.username,
+        email: this.email,
         password: this.$refs.password.value,
+        captcha: this.captcha
       }
 
       this.axios.post('/user/register', body)

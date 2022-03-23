@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-row flex-wrap">
-    <span class="flex flex-col px-2">
-      <span class="bg-tertiary rounded-lg text-center mb-1">Main</span>        
+  <div class="flex flex-row flex-wrap gap-x-2">
+    <span class="flex flex-col">
+      <span class="bg-secondary rounded-lg text-center mb-1">Main</span>        
 
       <box-summon
         :object="objects[0]"
@@ -12,14 +12,14 @@
       ></box-summon>
     </span>
 
-    <span class="flex flex-col flex-wrap px-2">
+    <span class="flex flex-col flex-wrap">
       <div class="flex flex-row justify-around mb-1">
         <span>Atk {{ getStats.atk }}</span>
         <span>HP {{ getStats.hp }}</span>
       </div>
 
       <div class="flex flex-row flex-wrap" v-for="(line, lineIndex) in getIndexes" :key="lineIndex">
-        <span v-for="index in line" :key="index">
+        <span v-for="index in line" :key="index" :class="lineIndex === 1 ? 'mt-1' : ''">
           <box-summon
             :object="objects[index]"
             :showLevel="showLevel"
@@ -31,8 +31,8 @@
       </div>
     </span>
 
-    <span class="flex flex-col px-2">
-      <span class="bg-tertiary rounded-lg text-center mb-1">Friend</span>        
+    <span class="flex flex-col">
+      <span class="bg-secondary rounded-lg text-center mb-1">Friend</span>        
 
       <box-summon
         :object="objects[5]"
@@ -44,9 +44,8 @@
     </span>
 
     <!-- Sub Aura -->
-    <span class="flex flex-col bg-secondary rounded-lg px-2 pb-2">
-      <span class="bg-tertiary rounded-lg text-center mb-1">Sub Aura</span>        
-
+    <span class="flex flex-col bg-secondary rounded-lg gap-y-1">
+      <span class="rounded-lg text-center">Sub Aura</span>        
       <box-summon
         :object="objects[6]"
         :showLevel="showLevel"
@@ -101,8 +100,6 @@ const CATEGORIES = [
     key: "e",
   },
 ];
-
-const INDEXES = [[1, 2], [3, 4]];
 
 export default {
   components: {
@@ -165,7 +162,7 @@ export default {
       return CATEGORIES;
     },
     getIndexes() {
-      return INDEXES;
+      return [[1, 2], [3, 4]];
     }
   }
 }

@@ -35,7 +35,7 @@
     </div>
 
     <!-- Preview -->
-    <div class="flex flex-row flex-wrap space-x-2">
+    <div class="flex flex-row flex-wrap gap-2">
       <div v-for="(item, key) in items" :key="key" class="border-secondary border-2 rounded">
         <calc-preview-item
           v-if="item.item"

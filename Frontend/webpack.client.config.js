@@ -132,13 +132,15 @@ else {
           '/calceternal',
           '/calcevoker',
           '/calcgw',
+          '/calcevent',
           '/release',
           '/friendsum',
           '/dailygrind',
           '/replicard',
           '/roomname',
           '/search',
-          '/spark'
+          '/spark',
+          '/teams',
         ],
         options: {
           changefreq: 'weekly',

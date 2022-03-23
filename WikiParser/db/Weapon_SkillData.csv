@@ -13,7 +13,7 @@
 12	ws_skill_job_weapon.png	Thunderswift Bladework	\N	\N
 13	ws_skill_atk_4_3.png	Ventosus's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"}]}	big
 14	ws_skill_atk_4_3_2.png	Ventosus's Might II	{"data":[{"percent":{"1":7,"10":16,"15":20,"20":22},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"}]}	big
-15	ws_skill_da_4_2.png	Whirlwind's Dual-Edge	\N	medium
+15	ws_skill_da_4_2.png	Whirlwind's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["wind"]},"stat":"da","aura_type":"optimus"}]}	medium
 16	ws_skill_job_weapon.png	Sage's Aura	\N	\N
 17	ws_skill_hp_2_3.png	Hoarfrost's Aegis	\N	big
 18	ws_skill_job_weapon.png	Holy Knight's Honor	\N	\N
@@ -35,14 +35,14 @@
 34	ws_skill_guard_1.png	Preemptive Fire Wall	\N	\N
 35	ws_skill_atk_a_1_3.png	Strength	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 36	ws_skill_atk_2_4_3.png	Hoarfrost's Might III	{"data":[{"percent":{"1":8,"10":17,"15":22,"20":25.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"}]}	massive
-37	ws_skill_ta_2_1.png	Water's Trium	\N	small
+37	ws_skill_ta_2_1.png	Water's Trium	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"ta","restriction":{"element":["water"]}}]}	small
 38	ws_skill_hp_all.png	Titan's Aegis	\N	\N
 39	ws_skill_guard_3.png	Preemptive Rock Wall	\N	\N
 40	ws_skill_barrier_6.png	Preemptive Shadow Barrier	\N	\N
 41	ws_skill_atk_3_2.png	Mountain's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"}]}	medium
 42	ws_skill_hp_3_1.png	Earth's Aegis	\N	small
 43	ws_skill_backwater_6_3.png	Oblivion's Enmity	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"enmity"}]}	big
-44	ws_skill_da_6_1.png	Dark's Dual-Edge	\N	small
+44	ws_skill_da_6_1.png	Dark's Dual-Edge	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"da"}]}	small
 45	ws_skill_coki_6_1.png	Dark's Restraint	{"data":[{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"crit"},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}}]}	small
 46	ws_skill_atk_a_6_3.png	Grace of the Omnilight	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 47	ws_skill_atk_a_2_3.png	Auto Apparatus	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -99,7 +99,7 @@
 98	ws_skill_guard_5.png	Preemptive Silver Wall	\N	\N
 99	ws_skill_job_weapon.png	Realm Binder	\N	\N
 100	ws_skill_chain_atk_limit.png	Chain Force	\N	\N
-101	ws_skill_weapon_atk_1.png	Gladius Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["sabre"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["sabre"]},"aura_type":"normal","stat":"hp"}]}	\N
+101	ws_skill_weapon_atk_1.png	Gladius Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["sabre"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["sabre"]},"aura_type":"normal","stat":"hp"}]}	big
 102	ws_skill_blank.png	Soulless Passage	\N	\N
 103	ws_skill_sp_atk_2_1.png	Water's Mystery	\N	small
 104	ws_skill_job_weapon.png	Legionnaire's Nature	\N	\N
@@ -113,7 +113,7 @@
 112	ws_skill_whole_6_2.png	Hatred's Stamina	{"data":[{"percent":{"1":65},"aura_type":"optimus","stat":"stamina","restriction":{"element":["dark"]}}]}	medium
 113	ws_skill_job_weapon.png	Paragon's Nature	\N	\N
 114	ws_skill_blank.png	Paragon's Essence	\N	\N
-115	ws_skill_musou_m_1_2.png	Ironflame's Primacy	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}}]}	medium
+115	ws_skill_musou_m_1_2.png	Ironflame's Primacy	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"omega","stat":"da","restriction":{"element":["fire"]}}]}	medium
 116	ws_skill_hp_m_1_2.png	Ironflame's Aegis	\N	small
 117	ws_skill_atk_a_5_3.png	Heaven's Truth	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 118	ws_skill_job_weapon.png	Herald of the Seraph	\N	\N
@@ -150,7 +150,7 @@
 149	ws_skill_sp_atk_2_3.png	Hoarfrost's Mystery	\N	big
 150	ws_skill_backwater_1_2.png	Hellfire's Enmity	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"enmity"}]}	medium
 151	ws_skill_job_weapon.png	Grand Epic	\N	\N
-152	ws_skill_da_6_2.png	Hatred's Dual-Edge	\N	medium
+152	ws_skill_da_6_2.png	Hatred's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["dark"]},"stat":"da","aura_type":"optimus"}]}	medium
 153	ws_skill_job_weapon.png	Insight of Elation	\N	\N
 154	ws_skill_hp_3_3_2.png	Terra's Aegis II	\N	big
 155	ws_skill_hp_4_3.png	Ventosus's Aegis	\N	big
@@ -172,9 +172,9 @@
 171	ws_skill_tec_3_1.png	Earth's Verity	{"data":[{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	small
 172	ws_skill_tec_3_2.png	Mountain's Verity	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	medium
 173	ws_skill_tyrant_m_6.png	Mistfall's Tyranny	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"}]}	big
-174	ws_skill_ta_m_6_3.png	Mistfall's Trium III	\N	big
+174	ws_skill_ta_m_6_3.png	Mistfall's Trium III	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"omega","stat":"da","restriction":{"element":["dark"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"omega","stat":"ta","restriction":{"element":["dark"]}}]}	big
 175	ws_skill_tyrant_6.png	Oblivion's Tyranny	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"}]}	big
-176	ws_skill_ta_6_3.png	Oblivion's Trium	\N	big
+176	ws_skill_ta_6_3.png	Oblivion's Trium	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"ta","restriction":{"element":["dark"]}}]}	big
 177	ws_skill_self_4.png	Shady Business	\N	\N
 178	ws_skill_self_4.png	Shady Business II	\N	\N
 179	ws_skill_self_5.png	Release's Insight	\N	\N
@@ -185,18 +185,18 @@
 184	ws_skill_tec_6_3.png	Oblivion's Verity	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"crit"}]}	big
 185	ws_skill_atk_6_1.png	Dark's Might	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"}]}	small
 186	ws_skill_god_4.png	Wind's Majesty	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"hp"}]}	small
-187	ws_skill_ta_1_3.png	Inferno's Trium	\N	big
+187	ws_skill_ta_1_3.png	Inferno's Trium	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"ta","restriction":{"element":["fire"]}}]}	big
 188	ws_skill_counter_1_2.png	Hellfire's Clarity	\N	\N
 189	ws_skill_atk_a_4_3.png	Emerald Rose Thorns	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 190	ws_skill_damage_red_3.png	Emerald Rose Barrier	\N	\N
-191	ws_skill_ta_6_1.png	Dark's Trium	\N	small
+191	ws_skill_ta_6_1.png	Dark's Trium	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"ta","restriction":{"element":["dark"]}}]}	small
 192	ws_skill_job_weapon.png	Trust in Me	\N	\N
 193	ws_skill_atk_a_4_3.png	My Words for You	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 194	ws_skill_job_weapon.png	Royal Gift	\N	\N
 195	ws_skill_atk_a_3_3.png	Royal Affection	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 196	ws_skill_tyrant_4.png	Ventosus's Tyranny	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"}]}	big
-197	ws_skill_ta_4_3.png	Ventosus's Trium	\N	big
-198	ws_skill_weapon_atk_2.png	Sica Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["dagger"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["dagger"]},"aura_type":"normal","stat":"hp"}]}	\N
+197	ws_skill_ta_4_3.png	Ventosus's Trium	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"ta","restriction":{"element":["wind"]}}]}	big
+198	ws_skill_weapon_atk_2.png	Sica Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["dagger"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["dagger"]},"aura_type":"normal","stat":"hp"}]}	big
 199	ws_skill_backwater_m_3_1.png	Lifetree's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"enmity"}]}	small
 200	ws_skill_sp_limit_3.png	Terrae Excelsior	\N	\N
 201	ws_skill_moment_m_5_1.png	Knightcode's Celere	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["light"]},"aura_type":"omega","stat":"crit"}]}	small
@@ -217,7 +217,7 @@
 216	ws_skill_moment_m_2.png	Oceansoul's Celere II	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["water"]},"aura_type":"omega","stat":"crit"}]}	medium
 217	ws_skill_backwater_m_2_1.png	Oceansoul's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["water"]},"aura_type":"omega","stat":"enmity"}]}	small
 218	ws_skill_grace_2_2.png	Tsunami's Grace	\N	medium
-219	ws_skill_ta_2_2.png	Tsunami's Trium	\N	medium
+219	ws_skill_ta_2_2.png	Tsunami's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["water"]}}]}	medium
 220	ws_skill_atk_a_5_3.png	One Light	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 221	ws_skill_job_weapon.png	Make Our Dreams Come True	\N	\N
 222	ws_skill_tec_5_2.png	Thunder's Verity	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"crit"}]}	medium
@@ -251,7 +251,7 @@
 250	ws_skill_baha_4.png	Concrio Corun	\N	\N
 251	ws_skill_cosmos_3.png	Cosmic Lance	\N	\N
 252	ws_skill_atk_6.png	Mutiny's Shadow Blade	\N	\N
-253	ws_skill_ta_5_3.png	Zion's Trium	\N	big
+253	ws_skill_ta_5_3.png	Zion's Trium	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["light"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"ta","restriction":{"element":["light"]}}]}	big
 254	ws_skill_backwater_5_1.png	Light's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"enmity"}]}	small
 255	ws_skill_tyrant_1.png	Inferno's Tyranny	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"}]}	big
 256	ws_skill_job_weapon.png	Enriching Elevation	\N	\N
@@ -268,7 +268,7 @@
 267	ws_skill_job_weapon.png	Forbidden Putrefaction	\N	\N
 268	ws_skill_atk_a_5_3.png	Grand Works	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 269	ws_skill_atk_3_3_2.png	Terra's Might II	{"data":[{"percent":{"1":7,"10":16,"15":20,"20":22},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"}]}	big
-270	ws_skill_weapon_atk_3.png	Lancea Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["spear"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["spear"]},"aura_type":"normal","stat":"hp"}]}	\N
+270	ws_skill_weapon_atk_3.png	Lancea Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["spear"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["spear"]},"aura_type":"normal","stat":"hp"}]}	big
 271	ws_skill_atk_a_4_4.png	Horseman's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	massive
 272	ws_skill_job_weapon.png	Conviction Arc	\N	\N
 273	ws_skill_musou_2_2.png	Tsunami's Primacy	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}}]}	medium
@@ -277,7 +277,7 @@
 276	ws_skill_moment_6.png	Hatred's Celere	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"crit"}]}	medium
 277	ws_skill_job_weapon.png	Mutinous Flare	\N	\N
 278	ws_skill_atk_m_1_2.png	Ironflame's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"}]}	medium
-279	ws_skill_ta_m_1_1.png	Ironflame's Devastation	\N	small
+279	ws_skill_ta_m_1_1.png	Ironflame's Devastation	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"omega","stat":"da","restriction":{"element":["fire"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"omega","stat":"ta","restriction":{"element":["fire"]}}]}	small
 280	ws_skill_atk_m_4_2.png	Stormwyrm's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"atk"}]}	medium
 281	ws_skill_job_weapon.png	Stormwyrm's Abandon	\N	\N
 282	ws_skill_job_weapon.png	Bountiful Protection	\N	\N
@@ -297,7 +297,7 @@
 296	ws_skill_job_weapon.png	Locked on the Heart	\N	\N
 297	ws_skill_job_weapon.png	Voidforged Lance	{"data":[{"percent":{"1":20},"restriction":{"weapon":["spear","katana"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":10},"restriction":{"weapon":["spear","katana"]},"aura_type":"ex","stat":"hp"}]}	\N
 298	ws_skill_weapon_hollowsky_3.png	Impervious Covenant	\N	\N
-299	ws_skill_da_1_2.png	Hellfire's Dual-Edge	\N	medium
+299	ws_skill_da_1_2.png	Hellfire's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["fire"]},"stat":"da","aura_type":"optimus"}]}	medium
 300	ws_skill_backwater_4_2.png	Whirlwind's Enmity	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"enmity"}]}	medium
 301	ws_skill_counter_4_2.png	Whirlwind's Clarity	\N	\N
 302	ws_skill_atk_a_6_3.png	Lion and Cow's Call	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -313,13 +313,13 @@
 312	ws_skill_job_weapon.png	Enchantress's Barrier	\N	\N
 313	ws_skill_job_weapon.png	God of War	\N	\N
 314	ws_skill_job_weapon.png	God of War II	\N	\N
-315	ws_skill_da_2_2.png	Tsunami's Dual-Edge	\N	medium
+315	ws_skill_da_2_2.png	Tsunami's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["water"]},"stat":"da","aura_type":"optimus"}]}	medium
 316	ws_skill_job_weapon.png	Cursed Halberd	\N	\N
 317	ws_skill_job_weapon.png	Fire Barrier	\N	\N
 318	ws_skill_hp_m_5_3.png	Knightcode's Aegis II	\N	medium
 319	ws_skill_job_weapon.png	Wild's Wanderer	\N	massive
 320	ws_skill_counter_2_3.png	Hoarfrost's Clarity	\N	\N
-321	ws_skill_da_2_3.png	Hoarfrost's Dual-Edge	\N	big
+321	ws_skill_da_2_3.png	Hoarfrost's Dual-Edge	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}}]}	big
 322	ws_skill_job_weapon.png	Swordmaster's Soul	\N	\N
 323	ws_skill_job_weapon.png	Supreme Trepidation	\N	\N
 324	ws_skill_race_atk_3.png	Draph Animus Dominion	\N	\N
@@ -341,14 +341,14 @@
 340	ws_skill_atk_a_3_3.png	Mysterious ATK II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"mysterious","stat":"atk"}]}	big
 341	ws_skill_atk_a_1_4.png	Dreadflame's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	massive
 342	ws_skill_job_weapon.png	Dreadflame's Claws	\N	\N
-343	ws_skill_da_2_1.png	Water's Dual-Edge	\N	small
+343	ws_skill_da_2_1.png	Water's Dual-Edge	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"da"}]}	small
 344	ws_skill_job_weapon.png	Shell of the Bereft	\N	\N
 345	ws_skill_job_weapon.png	Essence of the North	\N	\N
 346	ws_skill_guard_2.png	Preemptive Ice Wall	\N	\N
 347	ws_skill_god_a_4.png	Emerald Rose Brier	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"hp"}]}	medium
 348	ws_skill_damage_red_1.png	Emerald Rose Bud	\N	\N
 349	ws_skill_god_6_2.png	Hatred's Majesty	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"hp"}]}	medium
-350	ws_skill_weapon_atk_4.png	Labrys Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["axe"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["axe"]},"aura_type":"normal","stat":"hp"}]}	\N
+350	ws_skill_weapon_atk_4.png	Labrys Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["axe"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["axe"]},"aura_type":"normal","stat":"hp"}]}	big
 351	ws_skill_job_weapon.png	Barbarian's Nature	\N	\N
 352	ws_skill_blank.png	Barbarian's Essence	\N	\N
 353	ws_skill_deadly_5_2.png	Thunder's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["light"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["light"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
@@ -358,7 +358,7 @@
 357	ws_skill_whole_m_3_2.png	Lifetree's Stamina	{"data":[{"percent":{"1":60.4},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"stamina"}]}	medium
 358	ws_skill_tec_m_3_3.png	Lifetree's Verity II	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"crit"}]}	big
 359	ws_skill_backwater_m_6_1.png	Mistfall's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"enmity"}]}	small
-360	ws_skill_eye_m_6.png	Mistfall's Heed	\N	small
+360	ws_skill_eye_m_6.png	Mistfall's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"omega","stat":"da","restriction":{"element":["dark"]}}]}	small
 361	ws_skill_job_weapon.png	Crustaceous Crush	\N	\N
 362	ws_skill_tec_arcarum_6_4.png	Sephira Dark-Tek	\N	massive
 363	ws_skill_atk_a_2_3.png	Gourmet Banana	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -403,7 +403,7 @@
 402	ws_skill_tresure_1.png	Flames of Prosperity	\N	\N
 403	ws_skill_hp_4_1.png	Wind's Aegis	\N	small
 404	ws_skill_heal_limit_6_2.png	Hatred's Healing	\N	medium
-405	ws_skill_ta_5_1.png	Light's Trium	\N	small
+405	ws_skill_ta_5_1.png	Light's Trium	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["light"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"ta","restriction":{"element":["light"]}}]}	small
 406	ws_skill_barrier_3.png	Preemptive Amber Barrier	\N	\N
 407	ws_skill_heal_limit_3_1.png	Terra's Healing	\N	big
 408	ws_skill_hp_m_3_1.png	Lifetree's Aegis	\N	small
@@ -423,9 +423,9 @@
 422	ws_skill_backwater_a_5_2.png	Magic Charge	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["light"]},"aura_type":"ex","stat":"enmity"}]}	medium
 423	ws_skill_atk_a_5_1.png	Speed Cast	{"data":[{"percent":{"1":1,"10":10,"15":12},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	small
 424	ws_skill_tyrant_a_6.png	Intelligence	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
-425	ws_skill_da_a_6_1.png	Dexterity	\N	small
+425	ws_skill_da_a_6_1.png	Dexterity	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"da"}]}	small
 426	ws_skill_numbers_3_3.png	Terra's Third Spur	\N	big
-427	ws_skill_da_1_3.png	Inferno's Dual-Edge	\N	big
+427	ws_skill_da_1_3.png	Inferno's Dual-Edge	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}}]}	big
 428	ws_skill_atk_1_1.png	Fire's Might	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"}]}	small
 429	ws_skill_barrier_2.png	Preemptive Azure Barrier	\N	\N
 430	ws_skill_heal_limit_6_1.png	Oblivion's Healing	\N	big
@@ -437,7 +437,7 @@
 436	ws_skill_job_weapon.png	Alchemic Regeneration	\N	\N
 437	ws_skill_deadly_2_2.png	Tsunami's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["water"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["water"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
 438	ws_skill_noroi_1.png	Inferno's Insignia	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"aura_type":"optimus","stat":"atk","restriction":{"element":["fire"]}}]}	big
-439	ws_skill_weapon_atk_5.png	Baculum Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["staff"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["staff"]},"aura_type":"normal","stat":"hp"}]}	\N
+439	ws_skill_weapon_atk_5.png	Baculum Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["staff"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["staff"]},"aura_type":"normal","stat":"hp"}]}	big
 440	ws_skill_weapon_atk_5.png	Mysteries of Mysteria	\N	\N
 441	ws_skill_atk_a_4_3.png	Breath of Mysteria	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 442	ws_skill_job_weapon.png	Saint's Nature	\N	\N
@@ -472,7 +472,7 @@
 471	ws_skill_god_m_2_3.png	Oceansoul's Majesty III	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["water"]},"aura_type":"omega","stat":"hp"}]}	big
 472	ws_skill_primal_2_2.png	Tsunami's Essence	\N	medium
 473	ws_skill_seraphic_2_3.png	Gabriel's Blessing III	{"data":[{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["water"]},"aura_type":"seraphic","stat":"atk"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["water"]},"aura_type":"seraphic","stat":"atk_cap"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["water"]},"aura_type":"seraphic","stat":"ca_dmg"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["water"]},"aura_type":"seraphic","stat":"ca_cap"}]}	\N
-474	ws_skill_da_3_2.png	Mountain's Dual-Edge	\N	medium
+474	ws_skill_da_3_2.png	Mountain's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["earth"]},"stat":"da","aura_type":"optimus"}]}	medium
 475	ws_skill_hp_4_2.png	Whirlwind's Aegis	\N	medium
 476	ws_skill_moment_2.png	Tsunami's Celere	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"crit"}]}	medium
 477	ws_skill_job_weapon.png	Transcendent Cuteness	\N	\N
@@ -509,24 +509,24 @@
 508	ws_skill_guard_2_1.png	Water's Garrison	\N	small
 509	ws_skill_backwater_6_1.png	Dark's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"enmity"}]}	small
 510	ws_skill_coki_3.png	Mountain's Restraint	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}}]}	medium
-511	ws_skill_eye_6.png	Oblivion's Heed	\N	small
+511	ws_skill_eye_6.png	Oblivion's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}}]}	small
 512	ws_skill_hp_6_2.png	Hatred's Aegis	\N	medium
-513	ws_skill_da_3_1.png	Earth's Dual-Edge	\N	small
+513	ws_skill_da_3_1.png	Earth's Dual-Edge	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"da"}]}	small
 514	ws_skill_self_3.png	Shoots and Leaves	\N	\N
 515	ws_skill_job_weapon.png	Ranger Smoke	\N	\N
 516	ws_skill_atk_a_2_3.png	Wicked Sick Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
-517	ws_skill_weapon_atk_6.png	Arma Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["gun"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["gun"]},"aura_type":"normal","stat":"hp"}]}	\N
+517	ws_skill_weapon_atk_6.png	Arma Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["gun"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["gun"]},"aura_type":"normal","stat":"hp"}]}	big
 518	ws_skill_job_weapon.png	Kingpin's Nature	\N	\N
 519	ws_skill_blank.png	Kingpin's Essence	\N	\N
 520	ws_skill_job_weapon.png	Treasure Trick	\N	\N
 521	ws_skill_sp_limit_5.png	Luminis Excelsior	\N	\N
 522	ws_skill_atk_m_6_2.png	Mistfall's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"}]}	medium
 523	ws_skill_coki_m_6.png	Mistfall's Restraint	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"crit"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"omega","stat":"da","restriction":{"element":["dark"]}}]}	medium
-524	ws_skill_da_4_3.png	Ventosus's Dual-Edge	\N	big
+524	ws_skill_da_4_3.png	Ventosus's Dual-Edge	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}}]}	big
 525	ws_skill_tec_arcarum_2_4.png	Sephira Water-Tek	\N	massive
 526	ws_skill_atk_a_4_3.png	Weaver Stance	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 527	ws_skill_job_weapon.png	Sidearm	\N	\N
-528	ws_skill_eye_2.png	Hoarfrost's Heed	\N	small
+528	ws_skill_eye_2.png	Hoarfrost's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}}]}	small
 529	ws_skill_atk_a_6_3.png	The Phantom	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 530	ws_skill_job_weapon.png	Trickster	\N	\N
 531	ws_skill_job_weapon.png	Femme Fatale	\N	\N
@@ -564,7 +564,7 @@
 563	ws_skill_atk_a_3_3.png	V-Skill	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 564	ws_skill_counter_1_1.png	Fire's Clarity	\N	\N
 565	ws_skill_numbers_2_4.png	Hoarfrost's Fourth Pursuit	\N	\N
-566	ws_skill_da_1_1.png	Fire's Dual-Edge	\N	small
+566	ws_skill_da_1_1.png	Fire's Dual-Edge	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"da"}]}	small
 567	ws_skill_job_weapon.png	Feral Roar	\N	\N
 568	ws_skill_atk_a_1_3.png	Rachis of Fire	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 569	ws_skill_seraphic_3_2.png	Uriel's Blessing II	{"data":[{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"seraphic","stat":"atk"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"seraphic","stat":"atk_cap"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"seraphic","stat":"ca_dmg"},{"percent":{"1":20,"10":20,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"seraphic","stat":"ca_cap"}]}	\N
@@ -575,11 +575,11 @@
 574	ws_skill_atk_a_4_3.png	Mysterious ATK II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"mysterious","stat":"atk"}]}	big
 575	ws_skill_god_a_3.png	Bronze Rose Brier	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"hp"}]}	medium
 576	ws_skill_damage_red_4.png	Bronze Rose Bud	\N	\N
-577	ws_skill_weapon_atk_7.png	Luctor Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["melee"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["melee"]},"aura_type":"normal","stat":"hp"}]}	\N
+577	ws_skill_weapon_atk_7.png	Luctor Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["melee"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["melee"]},"aura_type":"normal","stat":"hp"}]}	big
 578	ws_skill_job_weapon.png	Echinoderm	\N	\N
 579	ws_skill_atk_a_1_3.png	Tube Feet	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 580	ws_skill_tec_2_3.png	Hoarfrost's Verity	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"crit"}]}	big
-581	ws_skill_da_5_1.png	Light's Dual-Edge	\N	small
+581	ws_skill_da_5_1.png	Light's Dual-Edge	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"da"}]}	small
 582	ws_skill_job_weapon.png	Reigning Champ's Nature	\N	\N
 583	ws_skill_blank.png	Reigning Champ's Essence	\N	\N
 584	ws_skill_me_m_3_1.png	Ironflame's Gauntlet	\N	big
@@ -620,7 +620,7 @@
 619	ws_skill_job_weapon.png	Zero to Hero	\N	\N
 620	ws_skill_job_weapon.png	Master of the Arcane	\N	\N
 621	ws_skill_eye_m_5.png	Knightcode's Heed	\N	\N
-622	ws_skill_eye_5.png	Zion's Heed	\N	small
+622	ws_skill_eye_5.png	Zion's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["light"]}}]}	small
 623	ws_skill_self_1.png	Slayer of Immortals	\N	\N
 624	ws_skill_self_1.png	Slayer of Immortals II	\N	\N
 625	ws_skill_race_da_2.png	Erune Animus Parity	\N	\N
@@ -641,8 +641,8 @@
 640	ws_skill_god_a_1.png	Blood Rose Brier	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"hp"}]}	medium
 641	ws_skill_damage_red_2.png	Blood Rose Bud	\N	\N
 642	ws_skill_whole_5_3.png	Zion's Stamina	{"data":[{"percent":{"1":56.4},"aura_type":"optimus","stat":"stamina","restriction":{"element":["light"]}}]}	big
-643	ws_skill_da_5_2.png	Thunder's Dual-Edge	\N	medium
-644	ws_skill_weapon_atk_8.png	Arcus Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["bow"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["bow"]},"aura_type":"normal","stat":"hp"}]}	\N
+643	ws_skill_da_5_2.png	Thunder's Dual-Edge	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"restriction":{"element":["light"]},"stat":"da","aura_type":"optimus"}]}	medium
+644	ws_skill_weapon_atk_8.png	Arcus Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["bow"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["bow"]},"aura_type":"normal","stat":"hp"}]}	big
 645	ws_skill_job_weapon.png	Shadowhound's Nature	\N	\N
 646	ws_skill_blank.png	Shadowhound's Essence	\N	\N
 647	ws_skill_job_weapon.png	Amethyst's Grace	\N	\N
@@ -668,12 +668,12 @@
 667	ws_skill_god_m_3.png	Lifetree's Majesty	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"hp"}]}	small
 668	ws_skill_nirrti_m_3.png	Lifetree's Haunt	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"aura_type":"omega","stat":"atk","restriction":{"element":["earth"]}}]}	medium
 669	ws_skill_nirrti_3.png	Mountain's Haunt	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"aura_type":"optimus","stat":"atk","restriction":{"element":["earth"]}}]}	medium
-670	ws_skill_eye_1.png	Inferno's Heed	\N	small
+670	ws_skill_eye_1.png	Inferno's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}}]}	small
 671	ws_skill_self_1.png	Vouge Hymn	\N	\N
 672	ws_skill_self_1.png	Vouge Hymn II	\N	\N
 673	ws_skill_race_da_4.png	Harvin Animus Parity	\N	\N
-674	ws_skill_eye_3.png	Terra's Heed	\N	small
-675	ws_skill_eye_4.png	Ventosus's Heed	\N	small
+674	ws_skill_eye_3.png	Terra's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}}]}	small
+675	ws_skill_eye_4.png	Ventosus's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}}]}	small
 676	ws_skill_cosmos_9.png	Cosmic Harp	\N	\N
 677	ws_skill_numbers_1_2.png	Inferno's Second Insignia	\N	big
 678	ws_skill_backwater_5_2.png	Thunder's Enmity	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"enmity"}]}	medium
@@ -686,7 +686,7 @@
 685	ws_skill_heal_limit_3_2.png	Mountain's Healing	\N	medium
 686	ws_skill_god_a_2.png	Ice Rose Brier	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["water"]},"aura_type":"ex","stat":"hp"}]}	medium
 687	ws_skill_damage_red_3.png	Ice Rose Bud	\N	\N
-688	ws_skill_weapon_atk_9.png	Musica Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["harp"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["harp"]},"aura_type":"normal","stat":"hp"}]}	\N
+688	ws_skill_weapon_atk_9.png	Musica Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["harp"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["harp"]},"aura_type":"normal","stat":"hp"}]}	big
 689	ws_skill_job_weapon.png	Virtuoso's Nature	\N	\N
 690	ws_skill_blank.png	Virtuoso's Essence	\N	\N
 691	ws_skill_atk_m_2_2.png	Oceansoul's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["water"]},"aura_type":"omega","stat":"atk"}]}	medium
@@ -711,7 +711,7 @@
 710	ws_skill_god_m_3_3.png	Lifetree's Majesty III	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"hp"}]}	big
 711	ws_skill_seraphic_5_3.png	Teachers' Guidance III	{"data":[{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"atk"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"atk_cap"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"ca_dmg"},{"percent":{"1":23,"10":23,"15":23,"20":23},"restriction":{"element":["light"]},"aura_type":"seraphic","stat":"ca_cap"}]}	\N
 712	ws_skill_job_weapon.png	Glacial Frostcage	\N	\N
-713	ws_skill_wargod_m_4_2.png	Stormwyrm's Heroism II	\N	medium
+713	ws_skill_wargod_m_4_2.png	Stormwyrm's Heroism II	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"omega","stat":"da","restriction":{"element":["wind"]}},{"percent":{"1":6,"10":15,"15":18,"20":20},"aura_type":"omega","stat":"hp","restriction":{"element":["wind"]}}]}	medium
 714	ws_skill_job_weapon.png	Fluttering Slash	\N	\N
 715	ws_skill_hp_2_2.png	Tsunami's Aegis	\N	medium
 716	ws_skill_job_weapon.png	Spirit of the Morning Star	\N	\N
@@ -729,7 +729,7 @@
 728	ws_skill_cosmos_10.png	Cosmic Blade	\N	\N
 729	ws_skill_job_weapon.png	Defender's Perseverance	\N	\N
 730	ws_skill_tyrant_a_1.png	Mifune Style, Zen Impact	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
-731	ws_skill_da_a_1_1.png	Mifune Style, Binary Star	\N	small
+731	ws_skill_da_a_1_1.png	Mifune Style, Binary Star	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"da"}]}	small
 732	ws_skill_tresure_1.png	Spirit of Giving	\N	\N
 733	ws_skill_atk_a_4_3.png	Self-taught Swordsmanship	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 734	ws_skill_job_weapon.png	Self-taught Mastery	\N	\N
@@ -740,7 +740,7 @@
 739	ws_skill_job_weapon.png	Essence of the South	{"data":[{"percent":{"1":7},"restriction":{"element":["fire"]},"aura_type":"normal","stat":"atk_cap"},{"percent":{"1":7},"restriction":{"element":["fire"]},"aura_type":"normal","stat":"ca_cap"}]}	\N
 740	ws_skill_tyrant_5_2.png	Zion's Tyranny II	{"data":[{"percent":{"1":8,"10":17,"15":22,"20":25.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"atk"}]}	massive
 741	ws_skill_job_weapon.png	Prayer of the Sunrise	\N	\N
-742	ws_skill_weapon_atk_10.png	Makhaira Rubell	{"data":[{"percent":{"1":2,"10":20},"restriction":{"weapon":["katana"]},"aura_type":"normal","stat":"atk"},{"percent":{"1":1,"10":10},"restriction":{"weapon":["katana"]},"aura_type":"normal","stat":"hp"}]}	\N
+742	ws_skill_weapon_atk_10.png	Makhaira Rubell	{"data":[{"percent":{"1":1,"10":15,"15":20,"20":25},"restriction":{"weapon":["katana"]},"aura_type":"ex","stat":"atk"},{"percent":{"1":1,"10":10,"15":15,"20":20},"restriction":{"weapon":["katana"]},"aura_type":"normal","stat":"hp"}]}	big
 743	ws_skill_job_weapon.png	Immortal Dragonblood	\N	\N
 744	ws_skill_atk_a_5_3.png	Great Sword Under Heaven	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 745	ws_skill_weapon_atk_10.png	Munechika Sanjo Crafted	\N	\N
@@ -834,7 +834,7 @@
 833	ws_skill_deadly_3_2.png	Mountain's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["earth"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":0.8,"10":3.5,"15":5},"restriction":{"element":["earth"]},"stat":"ca_cap","aura_type":"optimus"}]}	medium
 834	ws_skill_backwater_5_3.png	Zion's Enmity	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"enmity"}]}	big
 835	ws_skill_tec_5_1.png	Light's Verity	{"data":[{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"crit"}]}	small
-836	ws_skill_ta_4_2.png	Whirlwind's Trium	\N	medium
+836	ws_skill_ta_4_2.png	Whirlwind's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["wind"]}}]}	medium
 837	ws_skill_atk_a_6_3.png	Rending's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 838	ws_skill_job_weapon.png	Excess Voltage	\N	\N
 839	ws_skill_guard_1_2.png	Hellfire's Garrison	\N	medium
@@ -877,7 +877,7 @@
 876	ws_skill_job_weapon.png	Undefeated Hero	\N	\N
 877	ws_skill_moment_1_3.png	Inferno's Celere	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"stat":"atk","aura_type":"optimus","restriction":{"element":["fire"]}},{"percent":{"1":4.4,"10":8,"15":10,"20":11},"aura_type":"optimus","stat":"crit","restriction":{"element":["fire"]}}]}	big
 878	ws_skill_moment_1_3_2.png	Inferno's Celere II	{"data":[{"percent":{"1":7,"10":16,"15":20,"20":22},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":5,"10":10,"15":12},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"crit"}]}	big
-879	ws_skill_ta_1_1.png	Fire's Trium	\N	small
+879	ws_skill_ta_1_1.png	Fire's Trium	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"ta","restriction":{"element":["fire"]}}]}	small
 880	ws_skill_whole_2_2.png	Tsunami's Stamina	{"data":[{"percent":{"1":65},"aura_type":"optimus","stat":"stamina","restriction":{"element":["water"]}}]}	medium
 881	ws_skill_whole_4_2.png	Whirlwind's Stamina	{"data":[{"percent":{"1":65},"aura_type":"optimus","stat":"stamina","restriction":{"element":["wind"]}}]}	medium
 882	ws_skill_job_weapon.png	Scarlet Hunt	\N	\N
@@ -908,10 +908,10 @@
 907	ws_skill_guard_5_2.png	Thunder's Garrison	\N	medium
 908	ws_skill_atk_a_6_3.png	Mysterious ATK II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	big
 909	ws_skill_job_weapon.png	Unidentified Forbidden Oomph	\N	\N
-910	ws_skill_ta_1_2.png	Hellfire's Trium	\N	medium
-911	ws_skill_ta_3_2.png	Mountain's Trium	\N	medium
-912	ws_skill_ta_5_2.png	Thunder's Trium	\N	medium
-913	ws_skill_ta_6_2.png	Hatred's Trium	\N	medium
+910	ws_skill_ta_1_2.png	Hellfire's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["fire"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["fire"]}}]}	medium
+911	ws_skill_ta_3_2.png	Mountain's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["earth"]}}]}	medium
+912	ws_skill_ta_5_2.png	Thunder's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["light"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["light"]}}]}	medium
+913	ws_skill_ta_6_2.png	Hatred's Trium	{"data":[{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"ta","restriction":{"element":["dark"]}}]}	medium
 914	ws_skill_sp_limit_1.png	Arsus Excelsior	\N	\N
 915	ws_skill_job_weapon.png	Blood Red Blow	\N	\N
 916	ws_skill_backwater_2_3.png	Hoarfrost's Enmity	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"enmity"}]}	big
@@ -962,7 +962,7 @@
 961	ws_skill_counter_4_1.png	Wind's Clarity	\N	\N
 962	ws_skill_atk_a_5_3.png	Resort's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 963	ws_skill_job_weapon.png	Nostalgic Summer	\N	\N
-964	ws_skill_ta_3_3.png	Terra's Trium	\N	big
+964	ws_skill_ta_3_3.png	Terra's Trium	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"ta","restriction":{"element":["earth"]}}]}	big
 965	ws_skill_job_weapon.png	Primal Pugilism	\N	\N
 966	ws_skill_job_weapon.png	Oceansoul's Progression II	\N	medium
 967	ws_skill_job_weapon.png	Lifetree's Progression II	\N	medium
@@ -970,7 +970,7 @@
 969	ws_skill_job_weapon.png	Stormwyrm's Progression II	\N	medium
 970	ws_skill_backwater_m_3_3.png	Lifetree's Enmity III	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["earth"]},"aura_type":"omega","stat":"enmity"}]}	big
 971	ws_skill_backwater_m_1_3.png	Ironflame's Enmity III	{"data":[{"percent":{"1":0.83,"10":10,"15":12.5,"20":13.5},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"enmity"}]}	big
-972	ws_skill_ta_m_3_3.png	Lifetree's Trium III	\N	big
+972	ws_skill_ta_m_3_3.png	Lifetree's Trium III	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"omega","stat":"da","restriction":{"element":["earth"]}},{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"omega","stat":"ta","restriction":{"element":["earth"]}}]}	big
 973	ws_skill_atk_a_1_3.png	Spirit's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 974	ws_skill_job_weapon.png	Protector of Verona	\N	\N
 975	ws_skill_tec_m_5_3.png	Knightcode's Verity II	{"data":[{"percent":{"1":4.4,"10":8,"15":10,"20":11},"restriction":{"element":["light"]},"aura_type":"omega","stat":"crit"}]}	big
@@ -982,7 +982,7 @@
 981	ws_skill_whole_m_6_3.png	Mistfall's Stamina II	{"data":[{"percent":{"1":56.4},"aura_type":"omega","stat":"stamina","restriction":{"element":["dark"]}}]}	big
 982	ws_skill_hp_m_6_2.png	Mistfall's Aegis	\N	small
 983	ws_skill_xeno_4_4.png	True Horseman's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	massive
-984	ws_skill_atk_a_1_3.png	Shadowverse Player	\N	big
+984	ws_skill_atk_a_1_3.png	Shadowverse Player	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
 985	ws_skill_job_weapon.png	Trump Card	\N	\N
 986	ws_skill_tec_3_3_2.png	Terra's Verity II	{"data":[{"percent":{"1":5,"10":10,"15":12},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	big
 987	ws_skill_job_weapon.png	Longstrider's Nature	\N	\N
@@ -996,22 +996,22 @@
 995	ws_skill_sp_atk_2_2.png	Tsunami's Mystery	\N	medium
 996	ws_skill_atk_a_4_3.png	Warrioress's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 997	ws_skill_job_weapon.png	War-Beast Bond	\N	\N
-998	ws_skill_evoker_2.png	Empress-Justice's Virtue	\N	\N
+998	ws_skill_evoker_2.png	Empress-Justice's Virtue	\N	massive
 999	ws_skill_limit_arcarum_2.png	Sephira Maxi-Water	\N	\N
-1000	ws_skill_evoker_6.png	Lovers-Death's Demise	\N	\N
+1000	ws_skill_evoker_6.png	Lovers-Death's Demise	\N	massive
 1001	ws_skill_limit_arcarum_6.png	Sephira Maxi-Dark	\N	\N
-1002	ws_skill_evoker_3.png	Fool-Hanged Man's Perseverance	\N	\N
+1002	ws_skill_evoker_3.png	Fool-Hanged Man's Perseverance	\N	massive
 1003	ws_skill_limit_arcarum_3.png	Sephira Maxi-Earth	\N	\N
-1004	ws_skill_evoker_3.png	Magician-Tower's Calamity	\N	\N
-1005	ws_skill_evoker_4.png	Hermit-Temperance's Accord	\N	\N
+1004	ws_skill_evoker_3.png	Magician-Tower's Calamity	\N	massive
+1005	ws_skill_evoker_4.png	Hermit-Temperance's Accord	\N	massive
 1006	ws_skill_limit_arcarum_4.png	Sephira Maxi-Wind	\N	\N
-1007	ws_skill_evoker_5.png	Chariot-Star's Wish	\N	\N
+1007	ws_skill_evoker_5.png	Chariot-Star's Wish	\N	massive
 1008	ws_skill_limit_arcarum_5.png	Sephira Maxi-Light	\N	\N
-1009	ws_skill_evoker_1.png	Strength-Devil's Seduction	\N	\N
+1009	ws_skill_evoker_1.png	Strength-Devil's Seduction	\N	massive
 1010	ws_skill_limit_arcarum_1.png	Sephira Maxi-Fire	\N	\N
-1011	ws_skill_evoker_2.png	High Priestess-Moon's Bewitching	\N	\N
-1012	ws_skill_evoker_4.png	Emperor-Judgement's Awakening	\N	\N
-1013	ws_skill_evoker_1.png	Hierophant-Sun's Blessing	\N	\N
+1011	ws_skill_evoker_2.png	High Priestess-Moon's Bewitching	\N	massive
+1012	ws_skill_evoker_4.png	Emperor-Judgement's Awakening	\N	massive
+1013	ws_skill_evoker_1.png	Hierophant-Sun's Blessing	\N	massive
 1014	ws_skill_atk_a_2_3.png	Ebony Blade	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
 1015	ws_skill_weapon_hp_10.png	Member of the Corps	\N	\N
 1016	ws_skill_xeno_5_4.png	True Solaris's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	massive
@@ -1052,21 +1052,21 @@
 1051	ws_skill_job_weapon.png	With This, I'm Invincible!	\N	\N
 1052	ws_skill_tec_4_3_2.png	Ventosus's Verity II	{"data":[{"percent":{"1":5,"10":10,"15":12},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"crit"}]}	big
 1053	ws_skill_job_weapon.png	Jade Craft	\N	\N
-1054	ws_skill_musou_6_2.png	Hatred's Primacy	\N	medium
-1055	ws_skill_atk_a_5_3.png	Lightbeam's Might	\N	big
+1054	ws_skill_musou_6_2.png	Hatred's Primacy	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"optimus","stat":"da","restriction":{"element":["dark"]}}]}	medium
+1055	ws_skill_atk_a_5_3.png	Lightbeam's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 1056	ws_skill_job_weapon.png	Ever-Watching Eye	\N	\N
 1057	ws_skill_heal_limit_5_3.png	Zion's Healing	\N	big
-1058	ws_skill_god_5_2.png	Thunder's Majesty	\N	medium
-1059	ws_skill_xeno_6_4.png	True Phantom's Supremacy	\N	massive
-1060	ws_skill_atk_a_3_3.png	Hot Blood's Might	\N	big
+1058	ws_skill_god_5_2.png	Thunder's Majesty	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"hp"}]}	medium
+1059	ws_skill_xeno_6_4.png	True Phantom's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	massive
+1060	ws_skill_atk_a_3_3.png	Hot Blood's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
 1061	ws_skill_job_weapon.png	Delinquent Heart	\N	\N
-1062	ws_skill_tyrant_4.png	Ventosus's Bloodshed	\N	big
-1063	ws_skill_backwater_4_1.png	Wind's Enmity	\N	small
+1062	ws_skill_tyrant_4.png	Ventosus's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"}]}	big
+1063	ws_skill_backwater_4_1.png	Wind's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"enmity"}]}	small
 1064	ws_skill_job_weapon.png	Anointed Overture	\N	\N
 1065	ws_skill_grace_3_2.png	Mountain's Grace	\N	medium
 1066	ws_skill_train_5_3.png	Zion's Tempering	\N	big
 1067	ws_skill_ranbu_5_1.png	Light's Fandango	\N	small
-1068	ws_skill_atk_a_4_3.png	Birch's Might	\N	big
+1068	ws_skill_atk_a_4_3.png	Birch's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"mysterious","stat":"atk"}]}	big
 1069	ws_skill_job_weapon.png	Sauna-Goer's Companion	\N	\N
 1070	ws_skill_job_weapon.png	Scarlet Craft	\N	\N
 1071	ws_skill_job_weapon.png	Virtue's Champion	\N	\N
@@ -1076,8 +1076,8 @@
 1075	ws_skill_job_weapon.png	Covert Artistry	\N	\N
 1076	ws_skill_job_weapon.png	Ridge's Fortitude	\N	\N
 1077	ws_skill_job_weapon.png	Purgatory's Spectacle	\N	\N
-1078	ws_skill_tyrant_6.png	Oblivion's Bloodshed	\N	big
-1079	ws_skill_atk_a_2_2.png	Clawed Flood	\N	medium
+1078	ws_skill_tyrant_6.png	Oblivion's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"}]}	big
+1079	ws_skill_atk_a_2_2.png	Clawed Flood	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	medium
 1080	ws_skill_deadly_5_3.png	Zion's Sentence	\N	big
 1081	ws_skill_hp_a_4_3.png	Resilient Gale	\N	big
 1082	ws_skill_job_weapon.png	Technical Artistry	\N	\N
@@ -1086,7 +1086,7 @@
 1085	ws_skill_job_weapon.png	Purgatory's Quintessence	\N	\N
 1086	ws_skill_job_weapon.png	Synchronized Artistry	\N	\N
 1087	ws_skill_job_weapon.png	Tranquility's Fortitude	\N	\N
-1088	ws_skill_atk_a_5_3.png	What Happens 2x, Happens 3x	\N	big
+1088	ws_skill_atk_a_5_3.png	What Happens 2x, Happens 3x	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 1089	ws_skill_job_weapon.png	Class-Trip Memories	\N	\N
 1090	ws_skill_primal_4_2.png	Whirlwind's Essence	\N	medium
 1091	ws_skill_grace_5_2.png	Thunder's Grace	\N	medium
@@ -1103,7 +1103,7 @@
 1102	ws_skill_job_weapon.png	Rapidus Erune Animus	\N	\N
 1103	ws_skill_job_weapon.png	Rapidus Harvin Animus	\N	\N
 1104	ws_skill_job_weapon.png	Rapidus Draph Animus	\N	\N
-1105	ws_skill_atk_a_2_3.png	Air Blast	\N	big
+1105	ws_skill_atk_a_2_3.png	Air Blast	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
 1106	ws_skill_job_weapon.png	Bang!	\N	\N
 1107	ws_skill_job_weapon.png	Henny Holidays	\N	\N
 1108	ws_skill_job_weapon.png	Purgatory's Persistence	\N	\N
@@ -1114,4 +1114,37 @@
 1113	ws_skill_train_6_3.png	Oblivion's Tempering	\N	big
 1114	ws_skill_job_weapon.png	Amber Craft	\N	\N
 1115	ws_skill_heal_limit_4_3.png	Ventosus's Healing	\N	big
-1116	ws_skill_god_4_2.png	Whirlwind's Majesty	\N	medium
+1116	ws_skill_god_4_2.png	Whirlwind's Majesty	{"data":[{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":3,"10":12,"15":14.5},"restriction":{"element":["wind"]},"aura_type":"optimus","stat":"hp"}]}	medium
+1117	ws_skill_job_weapon.png	Sword Voltage	\N	\N
+1118	ws_skill_deadly_5_1.png	Light's Sentence	\N	small
+1119	ws_skill_whole_5_1.png	Light's Stamina	\N	small
+1120	ws_skill_tyrant_2.png	Hoarfrost's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"atk"}]}	big
+1121	ws_skill_secret_1_3.png	Inferno's Crux	\N	\N
+1122	ws_skill_whole_1_3.png	Inferno's Stamina	{"data":[{"percent":{"1":56.4},"aura_type":"optimus","stat":"stamina","restriction":{"element":["dark"]}}]}	big
+1123	ws_skill_atk_a_3_3.png	Sentient Simulacrum	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"ex","stat":"atk"}]}	big
+1124	ws_skill_job_weapon.png	Golden Spirit	\N	\N
+1125	ws_skill_job_weapon.png	Glimmer's Persistence	\N	\N
+1126	ws_skill_secret_5_3.png	Glimmer's Crux	\N	\N
+1127	ws_skill_job_weapon.png	Sword Voltage II	\N	\N
+1128	ws_skill_job_weapon.png	Blaze's Exertion	\N	\N
+1129	ws_skill_job_weapon.png	Dagger Voltage II	\N	\N
+1130	ws_skill_job_weapon.png	Tranquility's Exertion	\N	\N
+1131	ws_skill_job_weapon.png	Spear Voltage II	\N	\N
+1132	ws_skill_job_weapon.png	Blaze's Initiation	\N	\N
+1133	ws_skill_job_weapon.png	Ridge's Persistence	\N	\N
+1134	ws_skill_job_weapon.png	Purgatory's Exertion	\N	\N
+1135	ws_skill_job_weapon.png	Staff Voltage II	\N	\N
+1136	ws_skill_job_weapon.png	Purgatory's Fortitude	\N	\N
+1137	ws_skill_job_weapon.png	Gun Voltage II	\N	\N
+1138	ws_skill_job_weapon.png	Ridge's Surge	\N	\N
+1139	ws_skill_job_weapon.png	Glimmer's Fortitude	\N	\N
+1140	ws_skill_job_weapon.png	Gauntlet Voltage II	\N	\N
+1141	ws_skill_job_weapon.png	Snowfall's Marvel	\N	\N
+1142	ws_skill_job_weapon.png	Bow Voltage II	\N	\N
+1143	ws_skill_job_weapon.png	Snowfall's Exertion	\N	\N
+1144	ws_skill_job_weapon.png	Harp Voltage II	\N	\N
+1145	ws_skill_job_weapon.png	Glimmer's Quenching	\N	\N
+1146	ws_skill_deadly_1_1.png	Fire's Sentence	\N	small
+1147	ws_skill_primal_1_2.png	Hellfire's Essence	\N	medium
+1148	ws_skill_job_weapon.png	Glimmer's Pact	\N	\N
+1149	ws_skill_job_weapon.png	Glimmer's Quintessence	\N	\N

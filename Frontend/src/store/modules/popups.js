@@ -1,5 +1,7 @@
 import Vue from 'vue'
 
+// Always loaded
+
 export default {
   state() {
     return {

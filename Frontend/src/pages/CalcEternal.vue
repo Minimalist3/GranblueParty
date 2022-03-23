@@ -45,7 +45,7 @@ export default {
   head: {
     title: 'Granblue.Party - Eternal Calculator',
     desc: 'Get the complete list of materials needed to unlock a specific Eternal',
-    image: 'https://www.granblue.party/img/preview_calceternal.png',
+    image: 'https://www.granblue.party/img/card_calceternal.jpg',
     keywords: 'Guild wars, Eternal, Gold bar, Transcendance, Revenant weapon, 40 boxes'
   },
   data() {

@@ -2,7 +2,7 @@
   <div class="flex flex-col" style="min-width: 110px; max-width: 110px;">
     <!-- Title -->
     <a
-      class="text-xs text-gray-100 hover:text-gray-100 bg-gray-700 rounded-t h-5 px-1 text-center truncate"
+      class="text-xs text-primary hover:text-primary rounded-t h-5 px-1 text-center truncate"
       target="_blank"
       :href="'https://gbf.wiki/' + object.nameen"
       :style="getTitleColor"
@@ -18,6 +18,7 @@
       @drop-portrait="drop"
       @click-portrait="$emit('click-portrait')"
       @stars-changed="starsChanged"
+      :readOnly="readOnly"
     ></portrait>
 
     <!-- Stats -->
@@ -30,7 +31,6 @@
 
 <script>
 import { objectIsEmpty, getName } from "@/js/mixins"
-import Utils from '@/js/utils'
 import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxSummonPortrait.vue'
@@ -53,7 +53,11 @@ export default {
     showLevel: {
       type: Boolean,
       default: false,
-    }
+    },
+    readOnly: {
+      type: Boolean,
+      default: false
+    },
   },
   methods: {
     drop(ev) {

@@ -9,20 +9,29 @@ const ActionType = {
   ATTACK: 2,
 }
 
+// Always loaded
+
+const INITIAL_DATA = () => {
+  return {
+    percent_HP: 100,
+    // Duplicated in components/Parties.vue
+    classe: {},
+    characters: [{}, {}, {}, {}, {}],
+    summons: [{}, {}, {}, {}, {}, {}, {}, {}],
+    weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+    weapons_skills: [[], [], [], [], [], [], [], [], [], [], [], [], []],
+    actions: [],
+    content: null,
+    isPublic: false,
+    description: '',
+    show_bookmarklet: false,
+    show_update_bookmarklet: false,
+  }
+}
+
 export default {
   state() {
-    return {
-      percent_HP: 100,
-      // Duplicated in components/Parties.vue
-      classe: {},
-      characters: [{}, {}, {}, {}, {}],
-      summons: [{}, {}, {}, {}, {}, {}, {}, {}],
-      weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
-      weapons_skills: [[], [], [], [], [], [], [], [], [], [], [], [], []],
-      actions: [],
-      show_bookmarklet: false,
-      show_update_bookmarklet: false,
-    }
+    return INITIAL_DATA();
   },
   getters: {
     getWeaponsCurrentData: state => {
@@ -82,6 +91,9 @@ export default {
     },
   },
   mutations: {
+    resetParty(state) {
+      Object.assign(state, INITIAL_DATA());
+    },
     setPercentHP(state, value) {
       state.percent_HP = Math.min(Math.max(0, value), 100);
     },
@@ -90,6 +102,18 @@ export default {
     },
     setShowUpdateBookmarklet(state, value) {
       state.show_update_bookmarklet = value;
+    },
+    setContent(state, value) {
+      state.content = value;
+      if (value === null) {
+        state.isPublic = false;
+      }
+    },
+    setPublic(state, value) {
+      state.isPublic = value;
+    },
+    setDescription(state, value) {
+      state.description = value;
     },
     /**
      * Classes
@@ -228,20 +252,22 @@ export default {
     },
     addActions({ commit }, actions) {
       actions.forEach(e => {
-        switch(e[2]) {
-          case ActionType.SUMMON:
-            commit('addActionSummon', e[0]);
-            break;
-          case ActionType.SKILL:
-            if (e[0] < 0) {
-              commit('addActionMCSkill', e[1]);
-            } else {
-              commit('addActionCharacterSkill', { slot: e[0], index: e[1] });
-            }              
-            break;
-          case ActionType.ATTACK:
-            commit('addActionAttack');
-            break;
+        if (e && e.length >= 3) {
+          switch(e[2]) {
+            case ActionType.SUMMON:
+              commit('addActionSummon', e[0]);
+              break;
+            case ActionType.SKILL:
+              if (e[0] < 0) {
+                commit('addActionMCSkill', e[1]);
+              } else {
+                commit('addActionCharacterSkill', { slot: e[0], index: e[1] });
+              }
+              break;
+            case ActionType.ATTACK:
+              commit('addActionAttack');
+              break;
+          }
         }
       })
     },

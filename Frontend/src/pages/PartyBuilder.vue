@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col">
     <!-- Options -->
-    <div class="flex flex-row flex-wrap items-center mb-4">
+    <div class="flex flex-row flex-wrap items-center gap-2 mb-4">
       <button 
-        class="btn mr-2"
+        class="btn"
         :class="show_bookmarklet ? 'btn-blue' : 'btn-white'"
         @click="show_bookmarklet = ! show_bookmarklet; show_help = false"
       >
@@ -11,24 +11,27 @@
       </button>
 
       <button
-        class="btn mr-4"
+        class="btn"
         :class="show_help ? 'btn-blue' : 'btn-white'"
         @click="show_help = ! show_help; show_bookmarklet = false"
       >
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
 
-      <label class="mr-4">
-        <span class="mr-1">Layout</span>
+      <label class="flex flex-row items-center gap-2">
+        <span>Layout</span>
         <dropdown v-model="layout">
           <option value="square">Square</option>
           <option value="wide">Wide</option>
+          <option value="compact">Compact</option>
         </dropdown>
       </label>
 
-      <checkbox class="mr-4" v-model="edit_mode">Edit</checkbox>
+      <checkbox v-model="edit_mode">Edit Grid</checkbox>
 
-      <checkbox class="mr-4" v-model="show_level">Show level</checkbox>
+      <checkbox v-model="show_level">Levels and pluses</checkbox>
+
+      <checkbox v-model="show_rings">Perpetuity Rings</checkbox>
 
       <checkbox v-model="arcarum_weapons">Arcarum weapon slots</checkbox>
     </div>
@@ -67,63 +70,73 @@
     <div class="bg-secondary self-center rounded p-4 mb-2" v-if="show_help">
       <h2>My Parties</h2>
       <p class="pb-4">
-        By logging into your account, you can save and load as many parties as you want, then share the link to each one with your friends.<br>
-        Only you can modify your parties. When you click the Update button, people will automatically see the updated version.
+        By logging into your account, you can save and load as many parties as you want, then share the link to your friends.<br>
+        Only you can modify your parties. When you click the Save button, people will automatically see the updated version.
       </p>
       <h2>The Edit checkbox</h2>
       <p class="pb-4">
         When the Edit checkbox is checked, you can add elements to your party.<br>
-        Uncheck it to click on character skills and summons.
+        Uncheck it to click on character skills and summons to add Actions.
       </p>
       <h2>Drag and Drop support</h2>
       <p class="pb-4">
         You can drag and drop character, summons and weapons to other slots.<br>
-        If something is already at the destination, the two items will swap places.<br>
-        You can also hold the Ctrl key while before dropping to duplicate the item instead.
+        If something is already at the destination, the two items will swap places.
       </p>
       <h2>Customize your party</h2>
       <p class="pb-4">
-        Set the uncap level of your party by clicking of the stars.<br>
+        Set the uncap level of your party by clicking on the stars.<br>
         You can set a Perpetuity Ring on each character by clicking on the lower right corner of the portrait.<br>
         Click on the lock icon of the weapon skills to select a skill key.
       </p>
-      <!--<h2>Copy PermaURL (deprecated)</h2>
-      <p class="pb-4">
-        You can share your team setup by clicking the "Copy PermaURL" button and copying the URL of the page.<br>
-        This feature will be removed in the coming months, to be replaced by "My Parties".
-      </p>-->
     </div>
 
     <!-- My parties -->
     <my-parties @update-bookmarklet="updateBookmarklet()"></my-parties>
 
     <!-- Main layout -->
-    <div class="flex flex-row flex-wrap justify-center items-start">
-      <group-class :editMode="edit_mode" class="pr-2"></group-class>
+    <div class="flex flex-row flex-wrap justify-center items-start gap-2">
+      <div class="flex flex-wrap justify-center items-center gap-2" :class="layout === 'compact' ? 'flex-col' : 'flex-row'">
+        <div class="flex flex-row gap-2">
+          <group-class :editMode="edit_mode"></group-class>
 
-      <group-characters :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-characters>
+          <group-characters :editMode="edit_mode" :showLevel="show_level" :showRing="show_rings"></group-characters>
+        </div>
 
-      <group-summons :editMode="edit_mode" :showLevel="show_level" class="pr-2"></group-summons>
+        <group-summons :editMode="edit_mode" :showLevel="show_level"></group-summons>
+      </div>
 
-      <hr v-if="layout === 'square'" class="w-full invisible mb-2">
+      <hr v-if="layout === 'square'" class="w-full invisible">
 
-      <group-weapons :editMode="edit_mode" :showLevel="show_level" :showArcarum="arcarum_weapons" class="pr-2"></group-weapons>
+      <group-weapons :editMode="edit_mode" :showLevel="show_level" :showArcarum="arcarum_weapons"></group-weapons>
 
       <hr v-if="layout === 'wide'" class="w-full invisible">
 
       <!-- Tabs -->
-      <span class="flex flex-col" :class="layout === 'square' ? 'w-full md:w-128' : 'w-full'">
-        <div class="self-start flex flex-row border-primary border-b font-bold" :class="layout === 'square' ? 'w-full md:w-128' : 'w-full'">
-          <a @click="show_tab = 0" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 0 ? 'bg-secondary' : ''">Actions</a>
-          <a @click="show_tab = 1" class="px-4 py-2 text-primary cursor-pointer rounded-t" :class="show_tab === 1 ? 'bg-secondary' : ''">Details</a>
+      <span class="flex flex-col w-full self-stretch" :class="layout === 'wide' ? '' : 'md:w-128'">
+        <div class="self-start flex flex-row flex-wrap border-primary border-b font-bold w-full">
+          <a @click="show_tab = 0" class="px-4 py-2 text-primary cursor-pointer rounded-t whitespace-nowrap" :class="show_tab === 0 ? 'bg-secondary' : ''">Actions</a>
+          <a @click="show_tab = 1" class="px-4 py-2 text-primary cursor-pointer rounded-t whitespace-nowrap" :class="show_tab === 1 ? 'bg-secondary' : ''">Stats</a>
+          <a @click="show_tab = 2" class="px-4 py-2 text-primary cursor-pointer rounded-t whitespace-nowrap" :class="show_tab === 2 ? 'bg-secondary' : ''">Weapon Keys</a>
+          <a @click="show_tab = 3" class="px-4 py-2 text-primary cursor-pointer rounded-t whitespace-nowrap" :class="show_tab === 3 ? 'bg-secondary' : ''">Description</a>
         </div>
 
         <!-- Tab actions -->
-        <group-actions v-if="show_tab === 0" class="flex-grow w-full md:w-128"></group-actions>        
+        <group-actions v-if="show_tab === 0" :editMode="edit_mode" class="grow w-full md:w-128"></group-actions>        
 
         <!-- Tab stats -->
-        <div v-if="show_tab === 1" class="flex-grow">
-          <party-details></party-details>
+        <div v-else-if="show_tab === 1" class="grow">
+          <group-party-stats></group-party-stats>
+        </div>
+
+        <!-- Tab Weapon Keys -->
+        <div v-else-if="show_tab === 2" class="grow">
+          <group-weapon-keys></group-weapon-keys>
+        </div>
+
+        <!-- Description -->
+        <div v-else-if="show_tab === 3" class="grow">
+          <group-description></group-description>
         </div>
       </span>
     </div>
@@ -139,10 +152,12 @@ import Dropdown from '@/components/common/Dropdown.vue';
 import GroupActions from '@/components/GroupActions.vue';
 import GroupClass from "@/components/GroupClass.vue";
 import GroupCharacters from "@/components/GroupCharacters.vue";
+import GroupDescription from "@/components/GroupDescription.vue";
+import GroupPartyStats from '@/components/GroupPartyStats.vue'
 import GroupSummons from "@/components/GroupSummons.vue";
 import GroupWeapons from "@/components/GroupWeapons.vue";
+import GroupWeaponKeys from "@/components/GroupWeaponKeys.vue";
 import MyParties from '@/components/Parties.vue';
-import PartyDetails from '@/components/PartyDetails.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('PartyBuilder');
 
@@ -152,16 +167,18 @@ export default {
     Dropdown,
     GroupActions,
     GroupClass,
+    GroupDescription,
     GroupCharacters,
+    GroupPartyStats,
     GroupSummons,
     GroupWeapons,
-    MyParties,
-    PartyDetails
+    GroupWeaponKeys,
+    MyParties,    
   },
   head: {
     title: 'Granblue.Party - Party Builder',
     desc: 'Build and share Granblue Fantasy teams and grids with your friends.',
-    image: 'https://www.granblue.party/img/preview_party.png',
+    image: 'https://www.granblue.party/img/card_party.jpg',
     keywords: 'party builder, team builder, grid, characters, summons, weapons, share, import, bookmarklet, damage calculator, OTK'
   },
   data() {
@@ -169,8 +186,9 @@ export default {
       show_help: false,
       edit_mode: true,
       show_level: true,
+      show_rings: true,
       arcarum_weapons: false,
-      show_tab: 0,
+      show_tab: 3,
       layout: 'square',
     };
   },
@@ -198,6 +216,9 @@ export default {
     show_level() {
       lsMgt.setValue('show_level', this);
     },
+    show_rings() {
+      lsMgt.setValue('show_rings', this);
+    },
     arcarum_weapons() {
       lsMgt.setValue('arcarum_weapons', this);
     },
@@ -208,6 +229,7 @@ export default {
   mounted() {
     lsMgt.getValue(this, 'show_tab');
     lsMgt.getValue(this, 'show_level');
+    lsMgt.getValue(this, 'show_rings');
     lsMgt.getValue(this, 'arcarum_weapons');
     lsMgt.getValue(this, 'layout');
   }

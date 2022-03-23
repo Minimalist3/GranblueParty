@@ -1,4 +1,6 @@
-export default {
+import { provideModule } from '@/js/mixins'
+
+const myStoreModule = {
   namespaced: true,
   state() {
     return {
@@ -23,3 +25,7 @@ export default {
     }
   }
 }
+
+const provideMyStoreModule = provideModule('spark', myStoreModule);
+
+export default provideMyStoreModule;

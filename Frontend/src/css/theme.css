@@ -1,4 +1,23 @@
 .theme-dark {
+  --color-text-primary: theme(colors.zinc.100);
+  --color-text-inverse: theme(colors.black);
+  --color-link-primary: theme(colors.blue.200);
+  --color-link-hover: theme(colors.blue.300);
+
+  --color-bg-primary: theme(colors.zinc.900);
+  --color-bg-secondary: theme(colors.zinc.800);
+  --color-bg-tertiary: theme(colors.zinc.700);
+  --color-bg-inverse: theme(colors.zinc.100);
+  --color-bg-table-stripe: theme(colors.zinc.600);
+
+  --color-border-primary: theme(colors.zinc.200);
+  --color-border-secondary: theme(colors.zinc.500);
+  --color-border-tertiary: theme(colors.zinc.800);
+
+  --color-shadow-primary: rgba(144, 205, 244, 0.8);
+}
+
+.theme-blue {
   --color-text-primary: theme(colors.gray.100);
   --color-text-inverse: theme(colors.black);
   --color-link-primary: theme(colors.blue.200);
@@ -19,19 +38,19 @@
 
 .theme-light {
   --color-text-primary: theme(colors.black);
-  --color-text-inverse: theme(colors.gray.100);
-  --color-link-primary: theme(colors.blue.600);
-  --color-link-hover: theme(colors.blue.800);
+  --color-text-inverse: theme(colors.zinc.100);
+  --color-link-primary: theme(colors.blue.500);
+  --color-link-hover: theme(colors.blue.300);
 
-  --color-bg-primary: theme(colors.gray.100);
-  --color-bg-secondary: theme(colors.gray.300);
-  --color-bg-tertiary: theme(colors.gray.400);
-  --color-bg-inverse: theme(colors.gray.700);
-  --color-bg-table-stripe: theme(colors.gray.200);
+  --color-bg-primary: theme(colors.zinc.50);
+  --color-bg-secondary: theme(colors.zinc.200);
+  --color-bg-tertiary: theme(colors.zinc.300);
+  --color-bg-inverse: theme(colors.zinc.700);
+  --color-bg-table-stripe: theme(colors.gray.300);
 
-  --color-border-primary: theme(colors.gray.800);
-  --color-border-secondary: theme(colors.gray.500);
-  --color-border-tertiary: theme(colors.gray.200);
+  --color-border-primary: theme(colors.zinc.800);
+  --color-border-secondary: theme(colors.zinc.500);
+  --color-border-tertiary: theme(colors.zinc.200);
 
   --color-shadow-primary: rgba(49, 130, 206, 0.5);
 }

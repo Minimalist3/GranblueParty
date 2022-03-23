@@ -22,11 +22,11 @@
       <table class="table">
         <thead>
           <tr>
-            <th v-for="(category, index) in getColumns" :key="index">{{ category.name }}</th>
+            <th v-for="(category, index) in getColumns" :key="index" class="whitespace-nowrap">{{ category.name }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr @click="selectItem(null)">
+          <tr v-if="canUnselect" @click="selectItem(null)">
             <td v-for="index in getColumns.length" :key="index">-</td>
           </tr>
           <tr v-for="item in getData" :key="item.id" @click="selectItem(item.id)">
@@ -78,7 +78,11 @@ export default {
     dataModel: {
       type: Object,
       default: undefined
-    }
+    },
+    canUnselect: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {

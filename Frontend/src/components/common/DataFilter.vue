@@ -13,13 +13,19 @@
       </button>
 
       <button
-        class="btn btn-sm"
-        :class="item.checked ? 'btn-blue ' : 'btn-white '"
+        class="btn btn-sm relative"
+        :class="getClassesForItem(item)"
         v-for="(item, index) in data_view"
         :key="index"
         @click="clickItem(index)"
       >
         {{ item.name }}
+        <div
+          v-if="count"
+          class="absolute w-5 -top-2 -right-1 z-10 rounded-full text-xs leading-5 tracking-tight bg-tertiary text-primary"
+        >
+          {{ count[index] > 0 ? count[index] : '-' }}
+        </div>
       </button>
     </span>
   </div>
@@ -33,6 +39,10 @@ export default {
     data: {
       type: Array,
       required: true,
+    },
+    count: {
+      type: Array,
+      default: undefined
     },
     category: {
       type: String,
@@ -71,7 +81,14 @@ export default {
       else {
         this.$set(this.data[index], 'checked', this.data_view[index].checked);
       }
-    }
+    },
+    getClassesForItem(item) {
+      let classes = item.checked ? 'btn-blue ' : 'btn-white ';
+      if (this.count) {
+        classes += 'pr-3 ';
+      }
+      return classes;
+    },
   },
   created() {
     if (this.hasAll === true) {

@@ -6,6 +6,13 @@ Vue.use(Router)
 export function createRouter(store) {
   const router = new Router({
     mode: 'history',
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition
+      } else {
+        return { x: 0, y: 0 }
+      }
+    },
     routes: [
       {
         path: '/',
@@ -47,6 +54,11 @@ export function createRouter(store) {
         },
       },
       {
+        path: '/reset',
+        component: () => import(/* webpackChunkName: "reset" */ '@/pages/ResetPassword.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
         path: '/calceternal',
         component: () => import(/* webpackChunkName: "eternal" */ '@/pages/CalcEternal.vue'),
         pathToRegexpOptions: { strict: true },
@@ -77,6 +89,11 @@ export function createRouter(store) {
         pathToRegexpOptions: { strict: true },
       },
       {
+        path: '/friendsum/:friend_id',
+        component: () => import(/* webpackChunkName: "friend" */ '@/pages/FriendSummons.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
         path: '/dailygrind',
         component: () => import(/* webpackChunkName: "daily" */ '@/pages/DailyGrind.vue'),
         pathToRegexpOptions: { strict: true },
@@ -99,6 +116,21 @@ export function createRouter(store) {
       {
         path: '/replicard',
         component: () => import(/* webpackChunkName: "replicard" */ '@/pages/Replicard.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
+        path: '/teams',
+        component: () => import(/* webpackChunkName: "teams" */ '@/pages/Teams.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
+        path: '/cookies',
+        component: () => import(/* webpackChunkName: "cookies" */ '@/pages/Cookies.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
+        path: '/privacy',
+        component: () => import(/* webpackChunkName: "privacy" */ '@/pages/Privacy.vue'),
         pathToRegexpOptions: { strict: true },
       },
   /// #if DEBUG

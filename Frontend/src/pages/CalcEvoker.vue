@@ -43,7 +43,7 @@ export default {
   head: {
     title: 'Granblue.Party - Evoker Calculator',
     desc: 'Get the complete list of materials needed to unlock a specific Arcarum summon and Evoker',
-    image: 'https://www.granblue.party/img/preview_calcevoker.png',
+    image: 'https://www.granblue.party/img/card_calcevoker.jpg',
     keywords: 'Arcarum, summon, Evoker, astra, evolite, New world weapon'
   },
   data() {

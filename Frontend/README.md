@@ -2,7 +2,7 @@
 Vue.js Frontend for [granblue.party](https://www.granblue.party) website with Server Side Rendering.
 
 ## Requirements
-- NodeJS 14
+- NodeJS 16
 
 ## Installation
 To install the necessary modules, run `yarn install` in the current folder.
@@ -30,6 +30,8 @@ The website is using Nginx to run in production, but you can use whatever you pr
 
 ## Changelog
 
+- 2022-03-10: New design
+- 2022-02-08: Forgotten password functionnality
 - 2020-02-01: Server Side Rendering
 - 2019-12-06: Version 2: new design, using TailwindCSS and Font Awesome.
 - 2019-08-30: Wide layout for Party Builder. The Details tab hides an experimental damage calculator

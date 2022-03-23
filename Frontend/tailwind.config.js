@@ -1,6 +1,6 @@
 // tailwind.config.js
 module.exports = {
-  purge: [
+  content: [
     './src/**/*.html',
     './src/**/*.vue',
   ],
@@ -26,9 +26,12 @@ module.exports = {
       },
       spacing: {
         '128': '32rem'
+      },
+      grayscale: {
+        70: "70%",
+        80: "80%",
       }
     }
   },
-  variants: {},
   plugins: [],
 }

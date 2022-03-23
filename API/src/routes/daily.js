@@ -8,6 +8,8 @@ const router = express.Router();
 router.use(express.json()); // For parsing application/json body
 router.use(cookieParser()); // For using cookies
 
+// Base route: /daily
+
 // Get lists of a user
 router.get('/load', passport_authenticate('jwt',
   (req, res) => {

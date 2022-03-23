@@ -12,7 +12,7 @@
     Skills: {{ getSkills.length }}
 
     <div 
-      class="flex flex-row items-center mb-4 space-x-2 border-b-2"
+      class="flex flex-row items-center mb-4 gap-2 border-b-2"
       v-for="(item, index) in getSkills" :key="item.skillname + item.icon"
     >
       <span>{{ index }}</span>
@@ -41,8 +41,8 @@
       <span>
         <button class="btn btn-blue btn-sm" @click="addProp(item)">+</button>
       </span>
-      <span class="flex flex-grow">
-        <span v-if="item.data" class="flex flex-col flex-grow space-y-2">
+      <span class="flex grow">
+        <span v-if="item.data" class="flex flex-col grow gap-y-2">
           <weapon-props v-for="(d, i) in item.data" :key="i" :object="d"></weapon-props>
         </span>
       </span>

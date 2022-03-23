@@ -13,7 +13,7 @@
 
     <stars-line
       v-if="! objectIsEmpty"
-      class="absolute top-0 bg-alpha-50"
+      class="absolute top-0 bg-black/50"
       :base="object.starsbase"
       :extra="object.starsmax"
       :current="object.stars"
@@ -23,9 +23,9 @@
     ></stars-line>
 
     <img
-      v-if="! objectIsEmpty"
+      v-if="! objectIsEmpty && showRing"
       class="cursor-pointer absolute bottom-0 right-0"
-      :class="object.haspring ? '' : 'grayscale-80 opacity-07'"
+      :class="object.haspring ? '' : 'grayscale-80 opacity-70'"
       src="/img/icon_pring.png"
       title="Perpetuity Ring"
       @click="$emit('click-pring')"
@@ -46,7 +46,14 @@ export default {
     objectIsEmpty
   ],
   props: {
-    object: Object,
+    object: {
+      type: Object,
+      required: true
+    },
+    showRing: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     getImage() {

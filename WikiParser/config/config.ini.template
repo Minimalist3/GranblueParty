@@ -5,4 +5,7 @@ user=pguser
 password=changeme
 
 [path]
+; Name of the frontend folder
 frontend=Frontend
+; Full path to the previews root dir
+previews=/home/steph/gbf/previews

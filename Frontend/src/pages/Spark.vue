@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <h1 class="self-center mb-8">Spark Maker</h1>
 
-    <div class="flex flex-row flex-wrap self-center items-center space-x-2 space-y-2 mb-4">
+    <div class="flex flex-row flex-wrap self-center items-center gap-2 mb-4">
       <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
@@ -42,12 +42,12 @@
     <div v-if="loading === true">
       Loading...
     </div>
-    <div v-else class="flex flex-row ">
+    <div v-else class="flex flex-row flex-wrap md:flex-nowrap">
       <!-- Search -->
-      <div class="flex flex-col flex-shrink pb-4 mr-2 w-96">
-        <div class="flex flex-row flex-wrap space-x-2 mb-4">
-          <input class="input" type="text" size="12" v-model="search_text" placeholder="Search" ref="searchfield" autofocus>
-          <button class="btn btn-blue" @click="clearText()">
+      <div class="flex flex-col shrink pb-4 mr-2 w-96">
+        <div class="flex flex-row gap-x-2 mb-4">
+          <input class="input" type="text" size="8" v-model="search_text" placeholder="Search" ref="searchfield" autofocus>
+          <button class="btn btn-red" @click="clearText()">
             <fa-icon :icon="['fas', 'times']" class="text-xl"></fa-icon> Clear
           </button>
         </div>
@@ -75,13 +75,13 @@
         </span>        
       </div>
 
-      <!-- Display -->
-      <div id="spark" class="flex flex-col bg-primary flex-grow">
+      <!-- Display (bg-primary for screenshots) -->
+      <div id="spark" class="flex flex-col grow bg-primary">
         <div class="flex flex-row flex-wrap">
           <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 mr-2 px-2 w-full">
               <img class="pb-2" src="/img/item/crystal.jpg" width="65" height="65">
-              <div class="flex flex-row flex-wrap">
+              <div class="flex flex-row flex-wrap justify-center">
                 <spark-unit
                   v-for="(chara, index) in drawn_characters"
                   :key="index"
@@ -96,7 +96,7 @@
           <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 mr-2 px-2 w-full">
               <img class="pb-2" src="/img/item/goldmoon.jpg" width="65" height="65">
-              <div class="flex flex-row flex-wrap">
+              <div class="flex flex-row flex-wrap justify-center">
                 <spark-unit
                   v-for="(chara, index) in drawn_GM"
                   :key="index"
@@ -111,7 +111,7 @@
           <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'">
             <div class="flex flex-col items-center bg-secondary rounded py-4 px-2 w-full" :class="include_sr ? 'mr-2' : ''">
               <img class="pb-2" src="/img/item/sunlightstone.jpg" width="65" height="65">
-              <div class="flex flex-row flex-wrap">
+              <div class="flex flex-row flex-wrap justify-center">
                 <spark-unit
                   v-for="(summon, index) in drawn_summons"
                   :key="index"
@@ -126,7 +126,7 @@
           <div class="flex pb-2 w-full" :class="include_sr ? 'md:w-1/4' : 'md:w-1/3'" v-if="include_sr">
             <div class="flex flex-col items-center bg-secondary rounded py-4 px-2 w-full">
               <img class="pb-2" src="/img/item/silvermoon.jpg" width="65" height="65">
-              <div class="flex flex-row flex-wrap">
+              <div class="flex flex-row flex-wrap justify-center">
                 <spark-unit
                   v-for="(chara, index) in drawn_SRs"
                   :key="index"
@@ -156,8 +156,8 @@ import { mapState } from 'vuex'
 
 import domtoimage from '@/js/libs/dom-to-image-more.min.js'
 import Utils from '@/js/utils.js'
-import collectionModule from '@/store/modules/collection-tracker'
-import sparkModule from '@/store/modules/spark'
+import collectionStoreMixin from '@/store/modules/collection-tracker'
+import sparkStoreMixin from '@/store/modules/spark'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import SparkUnit from '@/components/SparkUnit.vue'
@@ -169,10 +169,14 @@ export default {
     Checkbox,
     SparkUnit
   },
+  mixins: [
+    collectionStoreMixin,
+    sparkStoreMixin
+  ],
   head: {
     title: 'Granblue.Party - Spark Maker',
     desc: 'Granblue Fantasy Spark Maker',
-    image: 'https://www.granblue.party/img/preview_spark.png',
+    image: 'https://www.granblue.party/img/card_spark.jpg',
     keywords: 'spark, gacha, draws, characters, summons, weapons'
   },
   data() {
@@ -412,18 +416,6 @@ export default {
     drawn_summons() {
       lsMgt.setValue('drawn_summons', this);
     },
-  },
-  beforeCreate() {
-    const preserve_state_spark = !! this.$store.state.spark;
-    this.$store.registerModule('spark', sparkModule, { preserveState: preserve_state_spark });
-
-    const preserve_state_coll = !! this.$store.state.collection;
-    this.$store.registerModule('collection', collectionModule, { preserveState: preserve_state_coll });
-  },
-  beforeRouteLeave(to, from, next) {
-    this.$store.unregisterModule('collection');
-    this.$store.unregisterModule('spark');
-    next();
   },
 }
 </script>

@@ -1,12 +1,22 @@
+import { provideModule } from '@/js/mixins'
+
+class RaidList {
+  constructor(name, data) {
+    this.name = name;
+    this.data = data;
+    this.raid_index = 0;
+  }
+}
+
 const INITIAL_DATA = () => {
   return {
-    my_lists: [{name: 'Default list', data: []}],
-    list_index: 0,
+    my_lists: [ new RaidList('Default list', []) ],
+    current_list_index: 0,
     list_fetched: false,
   }
 }
 
-export default {
+const myStoreModule = {
   namespaced: true,
   state() {
     return INITIAL_DATA();
@@ -15,8 +25,8 @@ export default {
     setMyLists(state, value) {
       state.my_lists = value;
     },
-    setListIndex(state, value) {
-      state.list_index = value;
+    setCurrentListIndex(state, value) {
+      state.current_list_index = value;
     },
     setListFetched(state, value) {
       state.list_fetched = value;
@@ -26,3 +36,7 @@ export default {
     }
   },
 }
+
+const grindStoreMixin = provideModule('daily_grind', myStoreModule);
+
+export { grindStoreMixin, RaidList }

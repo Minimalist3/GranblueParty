@@ -12,6 +12,7 @@ export default {
       return obj.n;
     },
     show() { return true; },
+    add(e, count) { },
   },
   'ri': {
     data: [
@@ -21,6 +22,7 @@ export default {
     ],
     expand(obj) { return this.data[obj.ri].name; },
     show(e) { return this.data[e].checked; },
+    add(e, count) { count[e]++; },
   },
   'e': {
     data: [
@@ -32,8 +34,20 @@ export default {
       { name: 'Dark', checked: true },
       { name: 'Any', checked: true },
     ],
-    expand(obj) { return this.data[obj.e].name; },
-    show(e) { return this.data[e].checked; },
+    expand(obj) { 
+      if (obj.e !== null) {
+        return this.data[obj.e].name;
+      }
+      return 'None';
+    },
+    show(e) { 
+      if (e !== null) {
+        return this.data[e].checked;
+      }
+      // Show None when Any is checked
+      return this.data[6].checked;
+    },
+    add(e, count) { count[e]++; },
   },
   't': {
     data: [
@@ -45,6 +59,7 @@ export default {
     ],
     expand(obj) { return this.data[obj.t].name; },
     show(e) { return this.data[e].checked; },
+    add(e, count) { count[e]++; },
   },
   'ra': {
     data: [
@@ -57,6 +72,7 @@ export default {
     ],
     expand(obj) { return this.data[obj.ra].name; },
     show(e) { return this.data[e].checked; },
+    add(e, count) { count[e]++; },
   },
   'w': {
     data: [
@@ -90,6 +106,14 @@ export default {
       }
       return this.data[e].checked;
     },
+    add(e, count) { 
+      if (Array.isArray(e)) {
+        e.forEach(i => count[i]++)
+      }
+      else {
+        count[e]++;
+      }
+    },
   },
   'row': {
     data: [
@@ -99,21 +123,28 @@ export default {
       { name: '4', checked: true },
       { name: 'Ex1', checked: true },
       { name: 'Ex2', checked: true },
+      { name: '5', checked: true },
     ],
     expand(obj) { return this.data[obj.row].name; },
     show(e) { return this.data[e].checked; },
+    add(e, count) { count[e]++; },
   },
   'owned': {
     data: [
       { name: 'Yes', checked: true },
       { name: 'No', checked: true },
     ],
-    expand(obj) { return this.data[obj.owned].name; },
-    show(e) {
-      if (e) {
-        return this.data[0].checked;
-      }
-      return this.data[1].checked;
-    },
+    expand(obj) { return this.data[obj.owned ? 0 : 1].name; },
+    show(e) { return this.data[e ? 0 : 1].checked; },
+    add(e, count) { count[e ? 0 : 1]++; },
   },
+  'pub': {
+    data: [
+      { name: 'Yes', checked: true },
+      { name: 'No', checked: true },
+    ],
+    expand(obj) { return this.data[obj.pub ? 0 : 1].name; },
+    show(e) { return this.data[e ? 0 : 1].checked; },
+    add(e, count) { count[e ? 0 : 1]++; },
+  }
 }

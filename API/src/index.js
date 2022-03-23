@@ -53,14 +53,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes for Daily Grind
+// Daily Grind
 app.use('/daily', routes.daily);
-// Routes For Party Builder
+// Friend Summons
+app.use('/friendsum', routes.friendsum);
+// Party Builder
 app.use('/party', routes.party);
-// GET routes for Collection Tracker
-app.use('/tracker', routes.tracker);
-// User creation/login route
-app.use('/user', routes.user);
 // Release schedule
 app.use('/release', routes.release);
 // Replicard progress
@@ -69,9 +67,18 @@ app.use('/replicard', routes.replicard);
 app.use('/search', routes.search);
 // Spark
 app.use('/spark', routes.spark);
+// List of teams
+app.use('/teams', routes.teams);
+// Collection Tracker
+app.use('/tracker', routes.tracker);
+// User creation/login route
+app.use('/user', routes.user);
 
 if (process.env.NODE_ENV === "production") {
-
+  // Don't send back the errors in production
+  app.use((err, req, res, next) => {
+    res.sendStatus(500);
+  });
 }
 else {
   app.use('/admin', routes.admin);

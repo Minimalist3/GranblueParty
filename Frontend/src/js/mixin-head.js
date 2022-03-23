@@ -17,8 +17,8 @@ function getKeywords(head) {
 
 const DEFAULT_TITLE = 'Granblue.Party - Granblue Fantasy Tools';
 const DEFAULT_DESC = 'A collection of useful tools for Granblue Fantasy';
-const DEFAULT_IMAGE = 'https://www.granblue.party/img/preview_party.png';
-const DEFAULT_KEYWORDS = 'Granblue Fantasy, GBF, Cygames, tools';
+const DEFAULT_IMAGE = 'https://www.granblue.party/img/card_index.jpg';
+const DEFAULT_KEYWORDS = 'Granblue Fantasy, GBF, Cygames, tool, tools';
 
 const serverTitleMixin = {
   created() {

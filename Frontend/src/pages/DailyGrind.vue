@@ -3,14 +3,14 @@
     <h1 class="self-center">Daily Grind Lists</h1>
 
     <!-- Top bar -->
-    <div class="flex flex-row flex-wrap py-2">
-      <button class="btn mr-2" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
+    <div class="flex flex-row flex-wrap py-2 gap-2">
+      <button class="btn" :class="show_help ? 'btn-blue' : 'btn-white'" @click="show_help = ! show_help">
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
       
-      <checkbox class="mr-2" v-model="isMagfes">MagnaFest</checkbox>
+      <checkbox v-model="isMagfes">MagnaFest</checkbox>
 
-      <checkbox class="mr-2" v-model="editMode">Edit mode</checkbox>
+      <checkbox v-model="editMode">Edit mode</checkbox>
 
       <checkbox v-model="renameLists">Rename lists</checkbox>
     </div>
@@ -38,9 +38,9 @@
     </div>    
 
     <div v-if="isUserLogged">
-      <div class="flex flex-row flex-wrap items-center">
-        <div class="relative mr-2">
-          <dropdown v-model.number="list_index" class="w-64">
+      <div class="flex flex-row flex-wrap items-center gap-2">
+        <div class="relative">
+          <dropdown v-model.number="current_list_index" class="w-64">
             <option v-for="(list, index) in my_lists" :key="index" :value="index">{{ list.name }}</option>
           </dropdown>
           <div class="absolute top-0 left-0" v-if="renameLists">
@@ -48,15 +48,15 @@
           </div>
         </div>
 
-        <button class="btn btn-blue mr-2" @click="clickListSave()">
+        <button class="btn btn-blue" @click="clickListSave()">
           <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save All
         </button>
 
-        <button class="btn btn-blue mr-2" @click="clickListNew()">
+        <button class="btn btn-blue" @click="clickListNew()">
           <fa-icon :icon="['fas', 'file']" class="text-xl"></fa-icon> New List
         </button>
 
-        <button class="btn btn-red" :disabled="list_index === 0" @click="clickListDelete()">
+        <button class="btn btn-red" :disabled="current_list_index === 0" @click="clickListDelete()">
           <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete List
         </button>
       </div>
@@ -111,35 +111,18 @@
                           <span class="flex flex-row justify-around">
                             <span
                               v-if="editMode"
-                              class="tag inline-block text-inverse" style="min-width: 2rem"
+                              class="tag text-center inline-block text-inverse mr-1" style="min-width: 2rem"
                               :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
                             >{{ getIndexString(raidKey) }}</span>
                             <span>{{ raidVal.name }}</span>
                           </span>
 
                           <span class="flex flex-row justify-around">
-                            <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
-                            <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
+                            <span v-if="raidVal.times" class="tag bg-tertiary mr-1 mt-1">x{{ raidVal.times }}</span>
+                            <span v-if="raidVal.cost" class="tag bg-tertiary mt-1">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
                           </span>
                         </div>
                       </div>
-
-
-                      <!--
-                      <span class="flex flex-row">
-                        <span
-                          v-if="editMode"
-                          class="tag inline-block text-inverse" style="min-width: 1.5rem"
-                          :class="getIndex(raidKey) >= 0 ? 'bg-inverse' : 'bg-tertiary'"
-                        >{{ getIndexString(raidKey) }}</span>
-                        <img v-if="raidVal.icon" :src="'/img/item/' + raidVal.icon + '.jpg'" style="max-height: 50px; max-width: 50px;">
-                        <div class="pl-4">{{ raidVal.name }}</div>
-                      </span>
-                      <span class="flex flex-row">
-                        <span v-if="raidVal.times" class="tag bg-tertiary mr-1">x{{ raidVal.times }}</span>
-                        <span v-if="raidVal.cost" class="tag bg-tertiary">{{ isMagfes ? raidVal.magfes : raidVal.cost }} AP</span>
-                      </span>
-                      -->
                     </div>
                   </a>
                 </td>
@@ -155,22 +138,22 @@
     <div v-if="showTab === 1" class="flex flex-col mt-4">
       <span class="font-semibold">AP needed: {{ getTotalAP }}</span>      
 
-      <div class="flex flex-row flex-wrap my-4">
-        <button class="btn btn-white mr-2" @click="undoRaid()">Undo</button>
-        <button class="btn btn-blue mr-2" @click="launchRaid()">Launch Raid</button>
-        <button class="btn btn-white" @click="skipRaid()">Skip</button>
+      <div class="flex flex-row flex-wrap gap-2 my-4">
+        <button class="btn btn-blue" @click="undoRaid()" :disabled="currentListRaidIndex === 0">Undo</button>
+        <button class="btn btn-blue" @click="launchRaid()" :disabled="remainingList.length === 0">Launch Raid</button>
+        <button class="btn btn-blue" @click="skipRaid()" :disabled="remainingList.length === 0">Skip</button>
       </div>
 
       <span v-for="raid in remainingList" :key="raid.id" class="mb-1">
-        <span class="tag bg-inverse text-inverse">x{{ raid.remaining }}</span>
+        <span class="tag bg-inverse text-inverse mr-1">x{{ raid.remaining }}</span>
         <img v-if="raid.icon" :src="'/img/item/' + raid.icon + '.jpg'" class="vcenter-img" style="max-height: 25px; max-width: 25px;">
         {{ raid.name }}
-        <span class="tag bg-tertiary">{{ getCategories[raid.category].name }}</span>
+        <span v-if="getCategories[raid.category].name.length > 0" class="tag bg-tertiary">{{ getCategories[raid.category].name }}</span>
         <br>
       </span>
 
       <span class="mt-4">
-        <button class="btn btn-white" @click="resetRaid()">Reset</button>
+        <button class="btn btn-red" @click="resetRaid()" :disabled="currentListRaidIndex === 0">Reset</button>
       </span>
     </div>
 
@@ -180,7 +163,7 @@
 <script>
 import Utils from '@/js/utils.js'
 import Raids from '@/js/raids.js'
-import grindModule from '@/store/modules/daily-grind'
+import { grindStoreMixin, RaidList } from '@/store/modules/daily-grind'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import Dropdown from '@/components/common/Dropdown.vue'
@@ -195,10 +178,13 @@ export default {
     Checkbox,
     Dropdown,
   },
+  mixins: [
+    grindStoreMixin
+  ],
   head: {
     title: 'Granblue.Party - Daily Grind',
     desc: 'Choose the content you want to farm and click Next to grind!',
-    image: 'https://www.granblue.party/img/preview_dailygrind.png',
+    image: 'https://www.granblue.party/img/card_dailygrind.jpg',
     keywords: 'raid, raids, host, magnafest, grind, farming'
   },
   data() {
@@ -208,7 +194,6 @@ export default {
       editMode: false,
       renameLists: true,
       showTab: 0,
-      raid_index: 0,
       content: [
         { name: 'Solo Content', data: Raids.CAT_SOLO, show: true },
         { name: 'Standard Raids', data: Raids.CAT_STANDARD, show: true },
@@ -240,30 +225,30 @@ export default {
       }
     },
     undoRaid() {
-      if (this.raid_index > 0) {
-        this.raid_index--;
-        let raid = this.currentList[this.raid_index];
+      if (this.currentListRaidIndex > 0) {
+        this.currentListRaidIndex--;
+        let raid = this.currentList[this.currentListRaidIndex];
         raid.remaining = raid.times;
       }
     },
     launchRaid() {
-      if (this.raid_index < this.currentList.length) {
-        let raid = this.currentList[this.raid_index];
-        window.open('http://game.granbluefantasy.jp/#quest/supporter/' + raid.id, 'gbf');
+      if (this.currentListRaidIndex < this.currentList.length) {
+        let raid = this.currentList[this.currentListRaidIndex];
         raid.remaining--;
         if (raid.remaining < 1) {
           this.skipRaid();
         }
+        window.open('http://game.granbluefantasy.jp/#quest/supporter/' + raid.id, 'gbf');
       }
     },
     skipRaid() {
-      if (this.raid_index < this.currentList.length) {
-        this.raid_index++;
+      if (this.currentListRaidIndex < this.currentList.length) {
+        this.currentListRaidIndex++;
       }
     },
     resetRaid() {
       this.currentList.forEach(r => r.remaining = r.times);
-      this.raid_index = 0;
+      this.currentListRaidIndex = 0;
     },
     getIndex(raidKey) {
       return this.currentList.findIndex(e => e.id === raidKey);
@@ -282,17 +267,17 @@ export default {
       });
 
       this.axios.post('/daily/save', data)
-        .then(response => this.$store.dispatch('addMessage', {message: 'Lists saved successfully'}))
+        .then(_ => this.$store.dispatch('addMessage', {message: 'Lists saved successfully'}))
         .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickListNew() {
-      this.my_lists.push({name: 'List ' + (this.my_lists.length + 1), data: []});
-      this.list_index = this.my_lists.length-1;
+      this.my_lists.push(new RaidList('List ' + (this.my_lists.length + 1), []));
+      this.current_list_index = this.my_lists.length-1;
     },
     clickListDelete() {
-      if (this.list_index > 0) {
-        this.my_lists.splice(this.list_index, 1);
-        this.list_index = 0;
+      if (this.current_list_index > 0) {
+        this.my_lists.splice(this.current_list_index, 1);
+        this.current_list_index = 0;
       }
     },
     loadServerLists() {
@@ -302,15 +287,12 @@ export default {
             if (response.data !== null) {
               let user_lists = [];
               response.data.forEach(l => {
-                let obj = {
-                  name: l.name,
-                  data: []
-                }              
+                let obj = new RaidList(l.name, []);    
                 l.data.forEach(r => this.addRaid(r.id, obj.data));
                 user_lists.push(obj);
               });
               this.$set(this, 'my_lists', user_lists);
-              this.list_index = 0;
+              this.current_list_index = 0;
               this.list_fetched = true;
             }
           })
@@ -336,9 +318,9 @@ export default {
       get() { return this.$store.state.daily_grind.my_lists },
       set(value) { this.$store.commit('daily_grind/setMyLists', value) }
     },
-    list_index: {
-      get() { return this.$store.state.daily_grind.list_index },
-      set(value) { this.$store.commit('daily_grind/setListIndex', value) }
+    current_list_index: {
+      get() { return this.$store.state.daily_grind.current_list_index },
+      set(value) { this.$store.commit('daily_grind/setCurrentListIndex', value) }
     },
     list_fetched: {
       get() { return this.$store.state.daily_grind.list_fetched },
@@ -371,7 +353,7 @@ export default {
       }
 
       let total = 0;
-      this.currentList.slice(this.raid_index).forEach(val => {
+      this.currentList.slice(this.currentListRaidIndex).forEach(val => {
         let res = 0;
         if (this.isMagfes) {
           res = (val.magfes ? val.magfes : this.getCategories[val.category].magfes);
@@ -384,20 +366,28 @@ export default {
       return total;
     },
     currentList() {
-      return this.my_lists[this.list_index].data;
+      return this.my_lists[this.current_list_index].data;
     },
     currentListIds() {
       return this.currentList.flatMap(r => [{id: r.id}]);
     },
+    currentListRaidIndex: {
+      get() {
+        return this.my_lists[this.current_list_index].raid_index;
+      },
+      set(value) {
+        this.my_lists[this.current_list_index].raid_index = value;
+      }      
+    },
     remainingList() {
-      return this.currentList.slice(this.raid_index);
+      return this.currentList.slice(this.currentListRaidIndex);
     },
     currentListName: {
       get() {
-        return this.my_lists[this.list_index].name;
+        return this.my_lists[this.current_list_index].name;
       },
       set(value) {
-        this.my_lists[this.list_index].name = value;
+        this.my_lists[this.current_list_index].name = value;
       }      
     }
   },
@@ -433,20 +423,5 @@ export default {
 
     this.loadList();
   },
-  beforeCreate() {
-    const preserve_state = !! this.$store.state.daily_grind;
-    this.$store.registerModule('daily_grind', grindModule, { preserveState: preserve_state });
-  },
-  destroyed() {
-    this.$store.unregisterModule('daily_grind');
-  },
 }
 </script>
-
-<style scoped>
-
-.columns:not(:last-child) {
-  margin-bottom: 0px;
-}
-
-</style>
