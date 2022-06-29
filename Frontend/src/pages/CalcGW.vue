@@ -99,18 +99,6 @@ const lsMgt = new Utils.LocalStorageMgt('CalcGW');
 
 const FIGHT_DATA = [
   {
-    name: 'Very Hard',
-    cost_ap: 30,
-    cost_meat: 0,
-    cost_ep: 1,
-    honor: 21400,
-    token_host: 16,
-    token_join: 18,
-    token_1: 10,
-    token_2: 0,
-    token_3: 0
-  },
-  {
     name: 'Ex',
     cost_ap: 30,
     cost_meat: 0,
@@ -181,6 +169,18 @@ const FIGHT_DATA = [
     token_1: 52,
     token_2: 42,
     token_3: 30
+  },
+  {
+    name: 'NM 200',
+    cost_ap: 50,
+    cost_meat: 30,
+    cost_ep: 3,
+    honor: 10250000,
+    token_host: 160,
+    token_join: 110,
+    token_1: 68,
+    token_2: 54,
+    token_3: 40
   },
 ];
 
