@@ -10,7 +10,7 @@ import { buildWhereClause, sendError } from './utils'
 const getCharacterById = (id) => {
   if (id == null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'Character.characterId': id,
     'WeaponSpecialty.characterId': id
   });
@@ -31,7 +31,7 @@ const getCharacterById = (id) => {
 const getCharacterBySkinId = (id) => {
   if (id == null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'Skin_Character.skinId': id,
   });
 
@@ -55,7 +55,7 @@ export function getCharacter (req, response) {
 }
 
 export function getAllCharacters (req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'rarityId': req.query.rarity,
     'elementId': req.query.element,
     'characterTypeId': req.query.type,
@@ -79,7 +79,7 @@ export function getAllCharacters (req, response) {
 const getSkillById = (id) => {
   if (id === null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'skillId': id
   });
 
@@ -89,7 +89,7 @@ const getSkillById = (id) => {
 const getSkillByName = (name) => {
   if (name === null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'nameEn': name
   });
 
@@ -104,7 +104,7 @@ export function getSkill (req, response) {
 
 export function getSkills (req, response) {
   const varTrue = true;
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'family': req.query.family,
     'exMastery': varTrue,
   });
@@ -148,7 +148,7 @@ function convertArcarumSummon (id) {
 const getSummonById = (id) => {
   if (id == null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'summonId': convertArcarumSummon(id)
   });
 
@@ -162,7 +162,7 @@ export function getSummon (req, response) {
 }
 
 export function getAllSummons (req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'rarityId': req.query.rarity,
     'elementId': req.query.element,
   });
@@ -179,7 +179,7 @@ export function getAllSummons (req, response) {
 const getClassById = (id) => {
   if (id == null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'classId': id,
   });
 
@@ -208,7 +208,7 @@ export function getAllClasses (req, response) {
 const getWeaponById = (id) => {
   if (id == null) return Promise.resolve(null);
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'weaponId': id
   });
 
@@ -242,7 +242,7 @@ export function getWeapon (req, response) {
 }
 
 export function getAllWeapons (req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'rarityId': req.query.rarity,
     'elementId': req.query.element,
     'weaponTypeId': req.query.weapon,
@@ -276,13 +276,19 @@ export function getPartyByJSON (req, response) {
 }
 
 export function getPartyById (req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'partyId': req.params.id,
   });
 
+  let moreQuery = ''
+  if (req.user) {
+    moreQuery = '(SELECT userId FROM PartyLike WHERE PartyLike.userId = $2 AND Party.partyId = PartyLike.partyId) AS liked, ';
+    values.push(req.user.userid);
+  }
+
   pool.query(
-   `SELECT partyData, EXTRACT(EPOCH FROM updated::timestamp with time zone)::bigint AS updated,
-      contentId, public AS pub, partyName AS n, userId, description
+   `SELECT partyId AS id, ${moreQuery} partyData, EXTRACT(EPOCH FROM updated::timestamp with time zone)::bigint AS updated,
+      contentId, public AS pub, partyName AS n, userId, description, video
       FROM party ${query}`, values
     )
     .then(res => {
@@ -291,10 +297,13 @@ export function getPartyById (req, response) {
       res.rows[0].partydata.isPublic = res.rows[0].pub;
       res.rows[0].partydata.n = res.rows[0].n;
       res.rows[0].partydata.userid = res.rows[0].userid;
+      res.rows[0].partydata.id = res.rows[0].id;
       res.rows[0].partydata.desc = res.rows[0].description;
+      res.rows[0].partydata.l = res.rows[0].liked;
+      res.rows[0].partydata.video = res.rows[0].video;
       getParty(res.rows[0].partydata, true, response)
     })
-    .catch(() => response.sendStatus(400));
+    .catch(() => { response.sendStatus(400) });
 }
 
 const getParty = (party, getSkillsById, response) => {
@@ -372,19 +381,20 @@ const getParty = (party, getSkillsById, response) => {
 function saveParty_impl (req, response, elementId) {
   const userId = req.user.userid;
   const partyId = req.body.id;
-  const partyName = req.body.name;
+  const partyName = req.body.name.substring(0, 64);
   const partyData = req.body.data;
   const contentId = req.body.content;
   const isPublic = req.body.isPublic;
   const desc = req.body.desc;
+  const video = req.body.video;
 
   // New party
   if (partyId === null) {
     pool.query(
-    `INSERT INTO Party (userid, partyname, partydata, updated, contentId, elementId, public, description)
-      VALUES (${userId}, $1, $2, CURRENT_TIMESTAMP, $3, $4, $5, $6) 
+    `INSERT INTO Party (userid, partyname, partydata, updated, contentId, elementId, public, description, video)
+      VALUES (${userId}, $1, $2, CURRENT_TIMESTAMP, $3, $4, $5, $6, $7) 
       ON CONFLICT DO NOTHING
-      RETURNING partyid AS id;`, [partyName, partyData, contentId, elementId, isPublic, desc])
+      RETURNING partyid AS id;`, [partyName, partyData, contentId, elementId, isPublic, desc, video])
     .then((res) => {
       response.status(200).json(res.rows[0]);
       previews_socket.write("p" + res.rows[0].id + '\n');
@@ -394,7 +404,7 @@ function saveParty_impl (req, response, elementId) {
   // Modify existing party
   else {
     // Compare with current user id
-    const {query, values} = buildWhereClause({
+    const [query, values] = buildWhereClause({
       'partyId': partyId,
     });
 
@@ -408,8 +418,8 @@ function saveParty_impl (req, response, elementId) {
         }
 
         pool.query(
-          `UPDATE party SET partyName = $2, partyData = $3, updated = CURRENT_TIMESTAMP, contentId = $4, elementId = $5, public = $6, description = $7 ${query};`,
-          [...values, partyName, partyData, contentId, elementId, isPublic, desc])
+          `UPDATE party SET partyName = $2, partyData = $3, updated = CURRENT_TIMESTAMP, contentId = $4, elementId = $5, public = $6, description = $7, video = $8 ${query};`,
+          [...values, partyName, partyData, contentId, elementId, isPublic, desc, video])
         .then(_ => {
           response.status(200).json({id: partyId});
           previews_socket.write("p" + partyId + '\n');
@@ -454,7 +464,7 @@ export function deleteParty (req, response) {
   const partyId = req.body.id;
 
   // Compare with current user id
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'partyId': partyId,
   });
 
@@ -467,8 +477,12 @@ export function deleteParty (req, response) {
         return sendError(response, 400, "User doesn't own this party");
       }
       
-      pool.query(`DELETE FROM Party ${query};`, values)
-        .then(() => response.sendStatus(200))
+      pool.query(`DELETE FROM PartyLike ${query};`, values)
+        .then(() => {
+          return pool.query(`DELETE FROM Party ${query};`, values)
+            .then(() => response.sendStatus(200))
+            .catch(() => response.sendStatus(400));
+        })
         .catch(() => response.sendStatus(400));
     })
     .catch(() => response.sendStatus(400));
@@ -477,11 +491,79 @@ export function deleteParty (req, response) {
 export function listParties (req, response) {
   const userId = req.user.userid;
 
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': userId,
   });
 
   pool.query(`SELECT partyId AS id, partyName AS n, elementId AS e, public AS pub FROM Party ${query} ORDER BY partyId;`, values)
     .then(res => response.status(200).json(res.rows))
     .catch((e) => response.sendStatus(400));
+}
+
+export function likeParty (req, response) {
+  (async () => {
+    const [query, values] = buildWhereClause({
+      'partyId': req.params.id,
+    });
+  
+    // note: we don't try/catch this because if connecting throws an exception
+    // we don't need to dispose of the client (it will be undefined)
+    const client = await pool.connect()
+  
+    try {
+      await client.query('BEGIN');
+
+      await client.query(`UPDATE Party SET likes = likes + 1 ${query}`, values);
+      await client.query(`INSERT INTO PartyLike (partyId, userId) VALUES ($1, $2)`, [req.params.id, req.user.userid])
+
+      await client.query('COMMIT');
+      response.sendStatus(200);
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
+  })().catch(() => {
+    response.sendStatus(400)
+  })
+}
+
+export function unlikeParty (req, response) {
+  (async () => {
+    let query, values;
+    [query, values] = buildWhereClause({
+      'partyId': req.params.id,
+    });
+  
+    // note: we don't try/catch this because if connecting throws an exception
+    // we don't need to dispose of the client (it will be undefined)
+    const client = await pool.connect()
+  
+    try {
+      await client.query('BEGIN');
+
+      await client.query(`UPDATE Party SET likes = likes - 1 ${query}`, values);
+
+      [query, values] = buildWhereClause({
+        'partyId': req.params.id,
+        'userId': req.user.userid
+      });
+
+      const res = await client.query(`DELETE FROM PartyLike ${query}`, values)
+      if (res.rowCount !== 1) {
+        throw 'Not liked'
+      }
+
+      await client.query('COMMIT');
+      response.sendStatus(200);
+    } catch (e) {
+      await client.query('ROLLBACK');
+      throw e;
+    } finally {
+      client.release();
+    }
+  })().catch(() => {
+    response.sendStatus(400)
+  })
 }

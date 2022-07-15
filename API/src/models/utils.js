@@ -1,6 +1,8 @@
 import config from '../config';
-const mailjet = require ('node-mailjet')
-  .connect(config.mailinjet.public_key, config.mailinjet.private_key)
+const Mailjet = require('node-mailjet');
+const mailjet = Mailjet.apiConnect(
+  config.mailinjet.public_key, config.mailinjet.private_key
+);
 
 export function buildWhereClause(data, query = '') {
   let values = [];
@@ -19,7 +21,7 @@ export function buildWhereClause(data, query = '') {
       counter++;
     }
   }
-  return {query, values};
+  return [query, values];
 }
 
 export function sendSuccess(response, data = null) {

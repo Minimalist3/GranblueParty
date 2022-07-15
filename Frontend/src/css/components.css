@@ -1,6 +1,6 @@
 /* Others */
 .tag {
-  @apply rounded;
+  @apply rounded-md;
   @apply text-xs;
   @apply py-1;
   @apply px-2;
@@ -13,7 +13,7 @@
   @apply font-semibold;
   @apply py-2;
   @apply px-4;
-  @apply rounded;
+  @apply rounded-md;
   @apply border-2;
 }
 .btn:focus {
@@ -67,22 +67,22 @@
 }
 
 .btn-red {
-  @apply border-pink-400;
+  @apply border-rose-400;
 }
 .btn-red:hover {
-  @apply border-pink-600;
+  @apply border-rose-600;
 }
 .btn-red:disabled:hover {
-  @apply border-pink-400;
+  @apply border-rose-400;
 }
 .btn-red > svg {
-  @apply text-pink-400;
+  @apply text-rose-400;
 }
 .btn-red:hover > svg {
-  @apply text-pink-600;
+  @apply text-rose-600;
 }
 .btn-red:disabled:hover > svg {
-  @apply text-pink-400;
+  @apply text-rose-400;
 }
 
 .btn-sm {
@@ -123,7 +123,7 @@
 /* Text Input */
 .input {
   @apply appearance-none;
-  @apply rounded;
+  @apply rounded-md;
   @apply p-1;
   @apply my-1;
   @apply text-black;
@@ -156,7 +156,7 @@
 /* Select */
 .select {
   @apply appearance-none;
-  @apply rounded;
+  @apply rounded-md;
   @apply text-black;
   @apply bg-white;
   @apply border;

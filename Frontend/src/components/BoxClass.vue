@@ -10,7 +10,7 @@
 
     <!-- Portrait -->
     <img
-      class="cursor-pointer"
+      :class="party_mode === $MODE.Edit ? 'cursor-pointer' : ''"
       style="min-height: 142px; max-height: 142px;"
       :src="getPortraitImage"
       @click="$emit('click-portrait')">
@@ -19,7 +19,8 @@
     <div class="flex flex-row flex-wrap">
       <span v-for="(skill, skillIndex) in object.skills" :key="skillIndex" class="w-1/2 tooltip-parent">
         <img
-          class="cursor-pointer w-full"
+          class="w-full"
+          :class="party_mode !== $MODE.ReadOnly ? 'cursor-pointer' : ''"
           :src="getSkillImage(skillIndex)"
           @click="$emit('click-skill', skillIndex)"
         >
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Utils from '@/js/utils.js'
 
 export default {
@@ -48,8 +51,14 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
     getPortraitImage() {
       if (Utils.isEmpty(this.object.nameen)) {
+        if (this.party_mode !== this.$MODE.Edit) {
+          return '/img/empty_chara_ro.jpg';
+        }
         return '/img/empty_chara.jpg';
       }
       return '/img/class/' + this.object.nameen.replace(/\s/g, '_') + '.jpg';

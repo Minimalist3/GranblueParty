@@ -27,7 +27,7 @@
         </dropdown>
       </label>
 
-      <checkbox v-model="edit_mode">Edit Grid</checkbox>
+      <checkbox :value="party_mode === $MODE.Edit" @input="party_mode = ($event ? $MODE.Edit : $MODE.Action)">Edit Grid</checkbox>
 
       <checkbox v-model="show_level">Levels and pluses</checkbox>
 
@@ -98,17 +98,17 @@
     <div class="flex flex-row flex-wrap justify-center items-start gap-2">
       <div class="flex flex-wrap justify-center items-center gap-2" :class="layout === 'compact' ? 'flex-col' : 'flex-row'">
         <div class="flex flex-row gap-2">
-          <group-class :editMode="edit_mode"></group-class>
+          <group-class></group-class>
 
-          <group-characters :editMode="edit_mode" :showLevel="show_level" :showRing="show_rings"></group-characters>
+          <group-characters :showLevel="show_level" :showRing="show_rings"></group-characters>
         </div>
 
-        <group-summons :editMode="edit_mode" :showLevel="show_level"></group-summons>
+        <group-summons :showLevel="show_level"></group-summons>
       </div>
 
       <hr v-if="layout === 'square'" class="w-full invisible">
 
-      <group-weapons :editMode="edit_mode" :showLevel="show_level" :showArcarum="arcarum_weapons"></group-weapons>
+      <group-weapons :showLevel="show_level" :showArcarum="arcarum_weapons"></group-weapons>
 
       <hr v-if="layout === 'wide'" class="w-full invisible">
 
@@ -122,7 +122,7 @@
         </div>
 
         <!-- Tab actions -->
-        <group-actions v-if="show_tab === 0" :editMode="edit_mode" class="grow w-full md:w-128"></group-actions>        
+        <group-actions v-if="show_tab === 0" class="grow w-full md:w-128"></group-actions>        
 
         <!-- Tab stats -->
         <div v-else-if="show_tab === 1" class="grow">
@@ -184,7 +184,6 @@ export default {
   data() {
     return {
       show_help: false,
-      edit_mode: true,
       show_level: true,
       show_rings: true,
       arcarum_weapons: false,
@@ -199,6 +198,10 @@ export default {
     }
   },
   computed: {
+    party_mode: {
+      get() { return this.$store.state.party_builder.party_mode },
+      set(value) { this.$store.commit('setPartyMode', value) }
+    },
     show_bookmarklet: {
       get() { return this.$store.state.party_builder.show_bookmarklet },
       set(value) { this.$store.commit('setShowBookmarklet', value) }
@@ -232,6 +235,7 @@ export default {
     lsMgt.getValue(this, 'show_rings');
     lsMgt.getValue(this, 'arcarum_weapons');
     lsMgt.getValue(this, 'layout');
+    this.$store.commit('setPartyMode', this.$MODE.Edit);
   }
 }
 </script>

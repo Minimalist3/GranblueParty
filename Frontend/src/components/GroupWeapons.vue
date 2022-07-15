@@ -41,6 +41,7 @@
 
     <!-- Modal -->
     <modal
+      v-if="party_mode !== $MODE.ReadOnly"
       v-model="show_modal"
       route="/party/weapons"
       :categories="getCategories"
@@ -92,10 +93,6 @@ export default {
     Modal,
   },
   props: {
-    editMode: {
-      type: Boolean,
-      default: true
-    },
     showLevel: {
       type: Boolean,
       default: false,
@@ -116,12 +113,19 @@ export default {
       ev.dataTransfer.setData("weapon", JSON.stringify(index));
     },
     showModal(index) {
-      if (this.editMode) {
-        this.selected_box_index = index;
-        this.show_modal = true;
-      }
-      else {
-        // TODO warning
+      switch (this.party_mode) {
+        case this.$MODE.Action:
+          // TODO show warning
+          break;
+
+        case this.$MODE.Edit:
+          this.selected_box_index = index;
+          this.show_modal = true;
+          break;
+
+        case this.$MODE.ReadOnly:
+          // Do nothing
+          break;
       }
     },
     changeObject(id) {
@@ -136,6 +140,9 @@ export default {
       }
     },
     swap(from, to) {
+      if (this.party_mode === this.$MODE.ReadOnly) {
+        return;
+      }
       let tmp = this.objects[from];
       this.$store.commit('setWeapon', { index: from, data: this.objects[to] })
       this.$store.commit('setWeapon', { index: to, data: tmp })
@@ -145,6 +152,7 @@ export default {
     ...mapState({
       objects: state => state.party_builder.weapons,
       skills: state => state.party_builder.weapons_skills,
+      party_mode: state => state.party_builder.party_mode
     }),
     getCategories() {
       return CATEGORIES;

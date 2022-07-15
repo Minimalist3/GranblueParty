@@ -1,36 +1,45 @@
 <template>
   <div class="flex flex-col flex-wrap gap-4 items-center">
-    <h1>Public Teams</h1>
+    <h1>Public Teams
+      <div class="text-sm">Beta version. More to come soon</div>
+    </h1>
 
     <!-- Filters -->
-    <div class="flex flex-row flex-wrap items-center gap-2">
-      <label>
-        Content
-        <content-categories v-model.number="content_filter" :all="true"></content-categories>
+    <div class="flex flex-row flex-wrap items-end gap-2">
+      <label class="flex flex-col">
+        <span class="text-sm">Content</span>
+        <content-categories v-model.number="content_filter" :all="true" :showPrivateCategories="false"></content-categories>
       </label>
 
-      <label>
-        Element
+      <label class="flex flex-col">
+        <span class="text-sm">Element</span>
         <dropdown v-model.number="element_filter">
-          <option :value="-1">All Elements</option>
+          <option :value="-1">--- All ---</option>
           <option :value="0">Fire</option>
           <option :value="1">Wind</option>
           <option :value="2">Earth</option>
           <option :value="3">Water</option>
           <option :value="4">Light</option>
           <option :value="5">Dark</option>
-          <option :value="6">Any</option>
         </dropdown>
       </label>
 
-      <label>
-        Age
+      <label class="flex flex-col">
+        <span class="text-sm">Age</span>
         <dropdown v-model.number="age_filter">
           <option :value="-1">All time</option>
           <option :value="1">Today</option>
           <option :value="30">This month</option>
           <option :value="90">Last 3 months</option>
           <option :value="365">This year</option>
+        </dropdown>
+      </label>
+
+      <label class="flex flex-col">
+        <span class="text-sm">Sort by</span>
+        <dropdown v-model.number="sort_filter">
+          <option :value="-1">Date</option>
+          <option :value="1">Popularity</option>
         </dropdown>
       </label>
 
@@ -59,11 +68,23 @@
       <!-- Teams -->
       <div class="flex flex-row flex-wrap gap-4 justify-center">
         <div v-for="(team, index) in getTeams" :key="index" class="flex flex-col bg-tertiary p-1 gap-y-1">
-          <div class="flex flex-row justify-between px-1">
-            <div class="tag" :class="getElementColors(team.e)">{{ getElementName(team.e) }}</div>
+          <!-- Line 1 -->
+          <div class="flex flex-row  justify-center px-1 relative">
+            <div class="absolute left-0 text-sm">
+              <img height="18" width="18" class="align-text-top" :src="'/img/e_' + getElementName(team.e).toLowerCase() + '.png'">
+              {{ getElementName(team.e) }}
+            </div>
             <div class="font-semibold text-center w-36 sm:w-72 truncate" :title="team.n">{{ team.n }}&nbsp;</div>
-            <div class="tag invisible">{{ getElementName(team.e) }}</div>            
+            <div class="flex flex-row absolute right-1 gap-x-4">
+              <div>
+                <fa-icon v-if="team.desc" :icon="['fas', 'file-lines']" class="text-lg" title="Contains a description"></fa-icon>
+              </div>
+              <div :class="team.l >= 1 ? '' : 'opacity-70'" title="Likes">
+                <fa-icon :icon="['fas', 'heart']" class="text-lg"></fa-icon> {{ team.l }}
+              </div>
+            </div>
           </div>
+          <!-- Line 2 -->
           <div class="grid grid-cols-3 px-1">
             <div class="flex items-center justify-start text-xs md:text-sm w-32 truncate"><fa-icon :icon="['fas', 'user']" class="pr-1"></fa-icon>{{ team.u }}</div>
             <span class="flex flex-row shrink justify-center">
@@ -71,7 +92,8 @@
             </span>
             <div class="flex items-center justify-end text-xs md:text-sm truncate"><fa-icon :icon="['fas', 'clock']" class="pr-1"></fa-icon>{{ getPrintableDate(team.d) }}</div>
           </div>
-          <a :href="'/builder?p=' + team.id">
+          <!-- Image -->
+          <div @click="previewTeam(team.id)" class="cursor-pointer">
             <img
               :src="'/previews/party/party_' + team.id + '.' + team.d + '.jpg'"
               class="object-cover object-top"
@@ -79,7 +101,7 @@
               height="336"
               style=" aspect-ratio: 596 / 314;"
             >
-          </a>
+          </div>
         </div>
       </div>
 
@@ -101,15 +123,7 @@
       No results
     </div>
 
-      <!--
-Content
-Element
-Likes
-Visible
-Youtube
-
-        -->
-
+    <modal-team-preview v-model="show_preview" :teamId="preview_id"></modal-team-preview>
   </div>
 </template>
 
@@ -118,6 +132,7 @@ import { mapState } from 'vuex'
 
 import ContentCategories from '@/components/common/ContentCategories.vue'
 import Dropdown from '@/components/common/Dropdown.vue'
+import ModalTeamPreview from '@/components/ModalTeamPreview.vue'
 
 import Content from '@/js/content'
 import teamsStoreMixin from '@/store/modules/teams'
@@ -125,24 +140,28 @@ import teamsStoreMixin from '@/store/modules/teams'
 export default {
   components: {
     ContentCategories,
-    Dropdown
+    Dropdown,
+    ModalTeamPreview
   },
   mixins: [
     teamsStoreMixin
   ],
   head: {
-    title: 'Granblue.Party - Evoker Calculator',
-    desc: 'Get the complete list of materials needed to unlock a specific Arcarum summon and Evoker',
-    image: 'https://www.granblue.party/img/card_calcevoker.jpg',
-    keywords: 'Arcarum, summon, Evoker, astra, evolite, New world weapon'
+    title: 'Granblue.Party - Public Teams',
+    desc: 'Browse public teams made by fellow players',
+    image: 'https://www.granblue.party/img/card_index.jpg',
+    keywords: 'Granblue Fantasy, GBF, Party, Teams, Public teams, Grid, Share'
   },
   data() {
     return {
       loading: true,
       now: this.getUTCnow(),
+      show_preview: false,
+      preview_id: 0,
       content_filter: -1,
       element_filter: -1,
       age_filter: -1,
+      sort_filter: -1,
       index: 0,
     }
   },
@@ -200,26 +219,6 @@ export default {
       }
       return "";
     },
-    getElementColors(element) {
-      switch(element) {
-        case 0:
-          return "text-white bg-red-600";
-        case 1:
-          return "text-white bg-emerald-600";
-        case 2:
-          return "text-white bg-amber-800";
-        case 3:
-          return "text-white bg-blue-600";
-        case 4:
-          return "text-black bg-amber-400";
-        case 5:
-          return "text-white bg-violet-600";
-        case 6:
-          return "text-black bg-white";
-        default:
-      }
-      return "text-primary bg-secondary";
-    },
     fetchTeams() {
       this.loading = true;
       this.index = 0;
@@ -234,6 +233,9 @@ export default {
       if (this.age_filter >= 0) {
         params['t'] = this.age_filter;
       }
+      if (this.sort_filter >= 0) {
+        params['o'] = this.sort_filter;
+      }
 
       this.$store.dispatch('teams/fetchTeams', params)
         .then(_ => this.loading = false);
@@ -242,7 +244,12 @@ export default {
       this.content_filter = -1;
       this.element_filter = -1;
       this.age_filter = -1;
+      this.sort_filter = -1;
       this.fetchTeams();
+    },
+    previewTeam(teamId) {
+      this.preview_id = teamId;
+      this.show_preview = true;
     }
   },
   computed: {

@@ -611,7 +611,9 @@ def updateSummons():
           name = name.replace('[Skybound] ', '')
         elif name == '{{PAGENAME}}':
           name = page_title
-        elif summon_id == '2040335':
+        elif obtain == 1020 and ' (Holiday)' not in name:
+          name += ' (Holiday)'
+        elif obtain == 1030 and ' (Summer)' not in name:
           name += ' (Summer)'
         
         if name.find('<!--') > 0:
@@ -853,9 +855,9 @@ def updateWeapons():
     database.dico_tables.get('Weapon_Ougi').insert(ougis)
     database.dico_tables.get('Weapon_Skill').insert(skills)
 
-    orphans = database.dico_tables.get('Weapon').getOrphans(weapon_ids, 'weaponId')
-    database.dico_tables.get('Weapon_Skill').removeOrphans(orphans, 'weaponId')
-    database.dico_tables.get('Weapon').removeOrphans(orphans, 'weaponId')
+    #orphans = database.dico_tables.get('Weapon').getOrphans(weapon_ids, 'weaponId')
+    #database.dico_tables.get('Weapon_Skill').removeOrphans(orphans, 'weaponId')
+    #database.dico_tables.get('Weapon').removeOrphans(orphans, 'weaponId')
 
   if verbose:
     print(values)

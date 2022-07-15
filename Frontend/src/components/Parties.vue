@@ -7,20 +7,20 @@
       <button class="btn btn-blue" @click="show_parties_modal = true">
         <fa-icon :icon="['fas', 'folder-open']" class="text-xl"></fa-icon> Load&#8230;
       </button>
-      <button class="btn btn-blue" @click="clickPartySave(current_party)" :disabled="disableButtons">
+      <button class="btn btn-blue" @click="clickPartySave(current_party)" :disabled=" ! isMyParty">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save
       </button>
       <button class="btn btn-blue" @click="save_as_modal = true">
         <fa-icon :icon="['fas', 'file-pen']" class="text-xl"></fa-icon> Save As&#8230;
       </button>
-      <button class="btn btn-red" @click="delete_party_modal = true" :disabled="disableButtons">
+      <button class="btn btn-red" @click="delete_party_modal = true" :disabled=" ! isMyParty">
         <fa-icon :icon="['fas', 'trash']" class="text-xl"></fa-icon> Delete
       </button>
-      <button class="btn btn-blue" @click="add_video_modal = true" disabled="true" title="Coming soon">
+      <button class="btn btn-blue" @click="add_video_modal = true" :disabled=" ! isMyParty">
         <fa-icon :icon="['fab', 'youtube']" class="text-xl"></fa-icon> Add Video
       </button>
       <!-- TODO Twitter, Facebook -->
-      <button class="btn btn-blue" @click="clickPartyShare()" :disabled="disableButtons">
+      <button class="btn btn-blue" @click="clickPartyShare()" :disabled=" ! isMyParty">
         <fa-icon :icon="['fas', 'share-alt']" class="text-xl"></fa-icon> Share
       </button>
       <span v-if="current_party === null">(unsaved)</span>
@@ -33,13 +33,17 @@
         <content-categories v-model.number="content"></content-categories>
       </label>
       <checkbox
+        v-if="isUserLogged"
         v-model="isPublic"
-        :disabled="content === null"
-        :title="content === null ? 'Uncategorized parties cannot be made public' : 'Make this team visible in the Teams section'"
+        :disabled="cannotBePublic"
+        :title="cannotBePublic ? 'Parties uncategorized or without a main weapon cannot be made public' : 'Make this team visible in the Teams section'"
       >
         Public Team
       </checkbox>
-      <fa-icon v-if="video_url" :icon="['fab', 'youtube']" class="text-4xl"></fa-icon>
+      <a :href="'https://www.youtube.com/watch?v=' + video_id" target="_blank" v-if="video_id" title="Open YouTube video">
+        <fa-icon :icon="['fab', 'youtube']" class="text-4xl"></fa-icon>
+      </a>
+      <like-button :teamId="this.current_party"></like-button>
     </div>
 
     <!-- Modals -->
@@ -69,6 +73,11 @@
       text="This will permanently delete this party from your account."
       button="Delete Party"
     ></modal-confirm>
+    <modal-youtube
+      v-model="add_video_modal"
+      :url="video_id"
+      @add="addVideo"
+    ></modal-youtube>
 
     <input v-show="clipboard_text.length > 0" id="clipboardInput" readonly type="text" :value="clipboard_text">
   </div>
@@ -78,46 +87,27 @@
 import { mapState } from 'vuex'
 
 import Utils from '@/js/utils.js'
-import KeyData from '@/js/key-data'
-import partiesStoreMixin from '@/store/modules/parties'
 
 import Checkbox from '@/components/common/Checkbox.vue'
 import ContentCategories from '@/components/common/ContentCategories.vue'
 import Dropdown from '@/components/common/Dropdown.vue'
+import LikeButton from '@/components/common/LikeButton.vue'
 import ModalConfirm from '@/components/ModalConfirm.vue'
 import ModalSelector from '@/components/ModalSelector.vue'
+import ModalYoutube from '@/components/ModalYoutube.vue'
 
 const BOOKMARKLET_VERSION = 6;
-
-// Duplicated in store/modules/party-builder.js
-const DEFAULT_VALUES = {
-  classe: {},
-  characters: [{}, {}, {}, {}, {}],
-  summons: [{}, {}, {}, {}, {}, {}, {}, {}],
-  weapons: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
-}
-// Helper to match categories with proper default values
-const getDefaultValues = (data, category) => {
-  if (Utils.isEmpty(data[category])) {
-    return Utils.copy(DEFAULT_VALUES[category]);
-  }
-  if (data[category] instanceof Array) {          
-    return data[category].map(e => Utils.isEmpty(e) ? {} : e);
-  }
-  return data[category];
-};
 
 export default {
   components: {
     Checkbox,
     ContentCategories,
     Dropdown,
+    LikeButton,
     ModalConfirm,
-    ModalSelector
+    ModalSelector,
+    ModalYoutube,
   },
-  mixins: [
-    partiesStoreMixin
-  ],
   data() {
     return {
       clipboard_text: '',
@@ -130,22 +120,18 @@ export default {
     }
   },
   methods: {
-    clickPartyNew({clean_url = true} = {}) {
-      this.current_party = null;
-      this.party_name = "";
+    clickPartyNew() {
       this.$store.commit('resetParty');
-
-      // Clean the URL
-      if (clean_url) {
+      this.cleanURL();
+    },
+    cleanURL() {
+      if (VUE_ENV !== 'server') {
         history.pushState(null, null, window.location.origin + window.location.pathname);
       }
     },
     loadPartyFromModal(party) {
       this.axios.get('/party/load/' + party)
-        .then(response => {
-          this.loadPartyFromResponse(response);
-          this.current_party = parseInt(party, 10);
-        })
+        .then(response => this.loadParty(Utils.getPartyResponse(response)))
         .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
     },
     clickPartyShare() {
@@ -174,6 +160,9 @@ export default {
           })
           .catch(error => this.$store.dispatch('addAxiosErrorMessage', error));
       }
+    },
+    addVideo(id) {
+      this.video_id = (id && id.length > 0) ? id : null;
     },
     clickPartySave(partyId = null) {
       let data = {
@@ -204,9 +193,11 @@ export default {
           content: this.content,
           isPublic: this.isPublic,
           desc: this.description,
+          video: this.video_id,
         })
         .then(response => {
           this.current_party = response.data.id;
+          this.team_owner = this.$store.getters.getUserId;
           this.reloadParties();
           this.$store.dispatch('addMessage', {message: 'Party saved successfully'});
         })
@@ -215,190 +206,16 @@ export default {
     reloadParties() {
       this.reload_route++;
     },
-    loadPartyFromResponse(response) {
-      this.loadParty(response.data, {
-        actions: response.data.actions,
-        content: response.data.content,
-        characters_stars: response.data.characters_stars,
-        characters_levels: response.data.characters_levels,
-        characters_pluses: response.data.characters_pluses,
-        characters_prings: response.data.characters_prings,
-        description: response.data.desc,
-        isPublic: response.data.isPublic,
-        summons_levels: response.data.summons_levels,
-        summons_pluses: response.data.summons_pluses,
-        summons_stars: response.data.summons_stars,
-        weapons_levels: response.data.weapons_levels,
-        weapons_pluses: response.data.weapons_pluses,
-        weapons_skill_levels: response.data.weapons_skill_levels,
-        weapons_skill_names: response.data.weapons_skill_names,
-        weapons_stars: response.data.weapons_stars,
-      });
-    },
-    loadParty(data, {actions = null, content = null, isPublic = true, description = '',
-      characters_levels = null, characters_stars = null, characters_pluses = null, characters_prings = null,
-      summons_levels = null, summons_stars = null, summons_pluses = null,
-      weapons_levels = null, weapons_stars = null, weapons_pluses = null, weapons_skill_levels = null, weapons_skill_names = null} = {}) 
-    {
-      // Clear current party
-      this.clickPartyNew({clean_url: false});
-
-      this.party_name = data.n ? data.n : "";
-
-      this.$store.commit('setClasse', getDefaultValues(data, 'classe'));
-      
-      if ( ! Utils.isEmpty(data['class_skills']) && ! Utils.isEmpty(this.classe)) {
-        data['class_skills'].forEach((e, slot) => {
-          this.$store.commit('setClasseSkill', {slot: slot, data: e});
-        });
-      }
-      this.$store.dispatch('setCharacters', getDefaultValues(data, 'characters'));
-      this.$store.dispatch('setSummons', getDefaultValues(data, 'summons'));
-      this.$store.dispatch('setWeapons', getDefaultValues(data, 'weapons'));
-
-      // Set stars
-      if (characters_stars) {
-        for (let i=0; i<this.characters.length && i<characters_stars.length; i++) {
-          if (characters_stars[i] !== null) {
-            this.$set(this.characters[i], 'stars', characters_stars[i]);
-          }
-        }
-      }
-      else if (characters_levels) {
-        for (let i=0; i<this.characters.length && i<characters_levels.length; i++) {
-          if (characters_levels[i] === null) {
-            continue;
-          }
-          let lvl = parseInt(characters_levels[i], 10);
-          if (lvl > 80) {
-            this.$set(this.characters[i], 'stars', 5);
-          }
-          else if (lvl > 60) {
-            this.$set(this.characters[i], 'stars', 4);
-          }
-          else if (lvl > 40) {
-            this.$set(this.characters[i], 'stars', 3);
-          }
-          else if (lvl > 20) {
-            this.$set(this.characters[i], 'stars', 2);
-          }
-          else if (lvl > 1) {
-            this.$set(this.characters[i], 'stars', 1);
-          }
-          else {
-            this.$set(this.characters[i], 'stars', 0);
-          }
-        }
-      }
-      if (characters_levels) {
-        for (let i=0; i<this.characters.length && i<characters_levels.length; i++) {
-          if (characters_levels[i] !== null) {
-            this.$set(this.characters[i], 'level', characters_levels[i]);
-          }
-        }
-      }
-      if (characters_pluses) {
-        for (let i=0; i<this.characters.length && i<characters_pluses.length; i++) {
-          if (characters_pluses[i] !== null) {
-            this.$set(this.characters[i], 'pluses', characters_pluses[i]);
-          }
-        }
-      }
-      if (characters_prings) {
-        for (let i=0; i<this.characters.length && i<characters_prings.length; i++) {
-          if (characters_prings[i] !== null) {
-            this.$set(this.characters[i], 'haspring', characters_prings[i]);
-          }
+    loadParty(data) {
+      // Clean URL when party id changes
+      if ( ! Utils.isEmpty(this.$route.query.p)) {
+        const param = parseInt(this.$route.query.p, 10);
+        if (data.id !== param) {
+          this.cleanURL();
         }
       }
 
-      if (summons_stars) {
-        for (let i=0; i<this.summons.length && i<summons_stars.length; i++) {
-          if (summons_stars[i] !== null) {
-            this.$set(this.summons[i], 'stars', summons_stars[i]);
-          }
-        }
-      }
-      if (summons_levels) {
-        for (let i=0; i<this.summons.length && i<summons_levels.length; i++) {
-          if (summons_levels[i] !== null) {
-            this.$set(this.summons[i], 'level', summons_levels[i]);
-          }
-        }
-      }
-      if (summons_pluses) {
-        for (let i=0; i<this.summons.length && i<summons_pluses.length; i++) {
-          if (summons_pluses[i] !== null) {
-            this.$set(this.summons[i], 'pluses', summons_pluses[i]);
-          }
-        }
-      }
-
-      if (weapons_stars) {
-        for (let i=0; i<this.weapons.length && i<weapons_stars.length; i++) {
-          if (weapons_stars[i] !== null) {
-            this.$set(this.weapons[i], 'stars', weapons_stars[i]);
-          }
-        }
-      }
-      else if (weapons_skill_levels) {
-        for (let i=0; i<this.weapons.length && i<weapons_skill_levels.length; i++) {
-          let sl = parseInt(weapons_skill_levels[i], 10);
-          if (sl > 15) {
-            this.$set(this.weapons[i], 'stars', 5);
-          }
-          else if (sl > 10) {
-            this.$set(this.weapons[i], 'stars', 4);
-          }
-          else if (sl > 1) {
-            this.$set(this.weapons[i], 'stars', 3);
-          }
-          // SL1 means Special Skill with no SL
-        }
-      }
-      if (weapons_skill_levels) {
-        for (let i=0; i<this.weapons.length && i<weapons_skill_levels.length; i++) {
-          if (weapons_skill_levels[i] !== null) {
-            this.$set(this.weapons[i], 'sklevel', weapons_skill_levels[i]);
-          }
-        }
-      }
-      if (weapons_levels) {
-        for (let i=0; i<this.weapons.length && i<weapons_levels.length; i++) {
-          if (weapons_levels[i] !== null) {
-            this.$set(this.weapons[i], 'level', weapons_levels[i]);
-          }
-        }
-      }
-      if (weapons_pluses) {
-        for (let i=0; i<this.weapons.length && i<weapons_pluses.length; i++) {
-          if (weapons_pluses[i] !== null) {
-            this.$set(this.weapons[i], 'pluses', weapons_pluses[i]);
-          }
-        }
-      }
-      if (weapons_skill_names) {
-        for (let i=0; i<this.weapons.length && i<weapons_skill_names.length; i++) {
-          if (weapons_skill_names[i]) {
-            this.$set(this.weapons[i], 'keys', [null, null, null]);
-
-            for (let j=0; j<weapons_skill_names[i].length; j++) {
-              // Only add keys for weapon skills that support them
-              if (weapons_skill_names[i][j] && this.weapons[i].skills[j] && this.weapons[i].skills[j][0] && this.weapons[i].skills[j][0].keyid) {
-                this.$set(this.weapons[i].keys, j, KeyData.getSkillByName(weapons_skill_names[i][j].trim()));
-              }
-            }
-          }
-        }
-      }
-
-      if ( ! Utils.isEmpty(actions)) {
-        this.$store.dispatch('addActions', actions);
-      }
-
-      this.content = content;
-      this.isPublic = isPublic;
-      this.$store.commit('setDescription', description);
+      this.$store.dispatch('loadParty', data);
     },
   },
   computed: {
@@ -421,20 +238,27 @@ export default {
       get() { return this.$store.state.party_builder.isPublic },
       set(value) { this.$store.commit('setPublic', value) }
     },
+    team_owner: {
+      get() { return this.$store.state.party_builder.team_owner },
+      set(value) { this.$store.commit('setTeamOwner', value) }
+    },
     party_name: {
-      get() { return this.$store.state.parties.party_name },
-      set(value) { this.$store.commit('parties/setPartyName', value) }
+      get() { return this.$store.state.party_builder.party_name },
+      set(value) { this.$store.commit('setPartyName', value) }
     },
     current_party: {
-      get() { return this.$store.state.parties.current_party },
-      set(value) { this.$store.commit('parties/setCurrentParty', value) }
+      get() { return this.$store.state.party_builder.current_party },
+      set(value) { this.$store.commit('setCurrentParty', value) }
     },
-    video_url: {
-      get() { return this.$store.state.parties.video_url },
-      set(value) { this.$store.commit('parties/setVideoURL', value) }
+    video_id: {
+      get() { return this.$store.state.party_builder.video_id },
+      set(value) { this.$store.commit('setVideoId', value) }
     },
-    disableButtons() {
-      return this.current_party === null;
+    isMyParty() {
+      return this.team_owner === this.$store.getters.getUserId;
+    },
+    cannotBePublic() {
+      return this.content === null || Utils.isEmpty(this.weapons[0]);
     },
     getCategories() {
       return [
@@ -490,8 +314,8 @@ export default {
 
       promises.push(
         this.axios.post('/party/load', postData)
-          .then(response => this.loadParty(response.data,
-          {
+          .then(response => this.loadParty({
+            data: response.data,
             characters_levels: data.cl,
             characters_stars: data.cs,
             characters_pluses: data.cp,
@@ -514,11 +338,7 @@ export default {
       promises.push(
         this.axios.get('/party/load/' + param)
           .then(response => {
-            this.loadPartyFromResponse(response);
-            // Preselect party if it belongs to current user
-            if (response.data.userid === this.$store.getters.getUserId) {
-              this.current_party = param;
-            }
+            this.loadParty(Utils.getPartyResponse(response));
             const timestamp = response.data.updated ? response.data.updated : '0';
             this.$ssrContext.head_image = 'https://www.granblue.party/previews/party/party_' + param + '.' + timestamp + '.jpg';
           })

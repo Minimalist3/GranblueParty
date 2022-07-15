@@ -14,7 +14,7 @@ export function getSparkSummons (req, response) {
   pool.query(
    `SELECT summonid AS id, nameEn AS n, nameJp AS nj
     FROM Summon
-    WHERE rarityid = 2 AND drawTypeId >= 1000
+    WHERE rarityid = 2 AND drawTypeId >= 500
     ORDER BY nameen;`)
   .then(res => response.status(200).json(res.rows))
   .catch(() => { response.sendStatus(400) });

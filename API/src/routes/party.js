@@ -1,7 +1,7 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
 
-import { passport_authenticate } from '../passport-providers'
+import { passport_authenticate, read_cookie } from '../passport-providers'
 
 const router = express.Router();
 
@@ -16,11 +16,13 @@ router.post('/load', (req, res) => {
 });
 
 // Load a party from an id
-router.get('/load/:id', (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-  res.removeHeader('ETag');
-  req.context.models.getPartyById(req, res);
-})
+router.get('/load/:id', read_cookie('jwt',
+  (req, res) => {
+    res.setHeader("Cache-Control", "no-store");
+    res.removeHeader('ETag');
+    req.context.models.getPartyById(req, res);
+  })
+);
 
 // Save or update a Party
 router.post('/save', passport_authenticate('jwt',
@@ -42,6 +44,22 @@ router.get('/list', passport_authenticate('jwt',
     res.setHeader("Cache-Control", "no-store");
     res.removeHeader('ETag');
     req.context.models.listParties(req, res);
+  })
+);
+
+// Like / un-like
+router.get('/like/:id', passport_authenticate('jwt',
+  (req, res) => {
+    res.setHeader("Cache-Control", "no-store");
+    res.removeHeader('ETag');
+    req.context.models.likeParty(req, res);
+  })
+);
+router.get('/unlike/:id', passport_authenticate('jwt',
+  (req, res) => {
+    res.setHeader("Cache-Control", "no-store");
+    res.removeHeader('ETag');
+    req.context.models.unlikeParty(req, res);
   })
 );
 

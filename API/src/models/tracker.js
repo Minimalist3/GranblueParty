@@ -24,7 +24,7 @@ export function getTrackerCharacters (req, response, userid) {
 }
 
 export function getTrackerSummons (req, response, userid) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'rarityId': 2,
   });
 

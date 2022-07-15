@@ -16,7 +16,7 @@ export function getAdminWeapons (req, response) {
     ORDER BY ws.icon ASC;`
   )
   .then(res => response.status(200).json(res.rows))
-  .catch((e) => { console.log(e); response.sendStatus(400) } );
+  .catch((e) => { response.sendStatus(400) } );
 }
 
 export function saveAdminWeapons (req, response) {

@@ -3,7 +3,8 @@ import { previews_socket } from '../previews-server'
 import { buildWhereClause } from './utils'
 
 export function friendSummonsLoad (req, response, id) {
-  const {query, values} = buildWhereClause({
+  let query, values;
+  [query, values] = buildWhereClause({
     'userId': id,
   });
 
@@ -13,7 +14,7 @@ export function friendSummonsLoad (req, response, id) {
         // Fetch all summons
         const allSummons = res.rows[0].friendsummonsdata.map(s => {
           if (s) {
-            const {query, values} = buildWhereClause({
+            [query, values] = buildWhereClause({
               'summonId': s.id
             });
             return pool.query('SELECT * FROM Summon ' + query + ';', values)
@@ -51,7 +52,7 @@ export function friendSummonsSave (req, response) {
       data: [{id: '', uncap: ''}, ...]
      }
    */
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': req.user.userid,
     'gbfId': req.body.gbfid,
     'friendSummonsData': JSON.stringify(req.body.data), // Stringify to fix a bug in pg when inserting arrays   

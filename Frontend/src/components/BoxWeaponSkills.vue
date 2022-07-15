@@ -2,7 +2,7 @@
   <div class="flex flex-row flex-nowrap justify-around" v-if="! objectIsEmpty">
     <span v-for="(skill, skillIndex) in skills" :key="skillIndex" class="tooltip-parent">
       <img
-        :class="skill.keyid !== null ? 'cursor-pointer' : ''"
+        :class="(skill.keyid !== null && party_mode !== $MODE.ReadOnly) ? 'cursor-pointer' : ''"
         style="width: 30px; height: 30px;"
         :src="'/img/weapon_skills/' + skill.icon"
         @click="showKeyModal(skillIndex, skill.keyid)"
@@ -18,12 +18,18 @@
     </span>
 
     <!-- Modal -->
-    <modal-keys v-model="show_modal_keys" :keyId="modal_key_id" @key-selected="selectKey"></modal-keys>
+    <modal-keys
+      v-if="party_mode !== $MODE.ReadOnly"
+      v-model="show_modal_keys"
+      :keyId="modal_key_id"
+      @key-selected="selectKey"
+    ></modal-keys>
   </div>  
 </template>
 
 <script>
 import { objectIsEmpty } from "@/js/mixins"
+import { mapState } from 'vuex'
 
 import ModalKeys from '@/components/ModalKeys.vue'
 
@@ -47,7 +53,7 @@ export default {
   },
   methods: {
     showKeyModal(index, keyid) {
-      if (keyid !== null) {
+      if (keyid !== null && this.party_mode !== this.$MODE.ReadOnly) {
         this.modal_skill_index = index;
         this.modal_key_id = keyid;
         this.show_modal_keys = true;
@@ -57,5 +63,10 @@ export default {
       this.$set(this.object.keys, this.modal_skill_index, key);
     }
   },
+  computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
+  }
 }
 </script>

@@ -469,6 +469,14 @@ const CAT_IMPOSSIBLE = {
     magfes: 60,
     times: 2,
     raids: {
+      '305321/1/0/41': {
+        name: 'Atum',
+        namejp: 'アトゥム'
+      },
+      '305341/1/0/43': {
+        name: 'Bennu',
+        namejp: 'ベンヌ'
+      },
       '305361/1/0/45': {
         name: 'Horus',
         namejp: 'ホルス'
@@ -691,6 +699,20 @@ const CAT_IMPOSSIBLE = {
       },
     }
   },
+  1085: {
+    name: 'Automagod',
+    tier: 'impossible',
+    stars: 10,
+    cost: 100,
+    magfes: 50,
+    times: 1,
+    raids: {
+      '305391/1/0/550': {
+        name: 'Diaspora',
+        namejp: 'ディアスポラ',
+      },
+    }
+  },
   1090: {
     name: 'Super Ultimate',
     tier: 'impossible',
@@ -750,8 +772,47 @@ const CAT_SOLO = {
   }
 };
 
+// Solo Content
+const CAT_COOP = {
+  3000: {
+    name: 'Tier 5',
+    stars: 1,
+    cost: 0,
+    magfes: 0,
+    times: 1,
+    raids: {
+      '1': {
+        name: 'EX 5-3',
+        namejp: '死翼の刻 （ＥＸ５－３）',
+      },
+      '2': {
+        name: 'EX 5-4',
+        namejp: '災揮と絶斧の刻 （ＥＸ５－４）',
+      },
+    }
+  },
+  3100: {
+    name: 'Final Tier',
+    stars: 1,
+    cost: 0,
+    magfes: 0,
+    times: 1,
+    raids: {
+      '1': {
+        name: 'EX 6-1',
+        namejp: '黒紫獣の刻 （ＥＸ６－１）',
+      },
+      '2': {
+        name: 'EX 6-2',
+        namejp: '終焉の刻 （ＥＸ６－２）',
+      },
+    }
+  }
+};
+
 export default {
   CAT_STANDARD,
   CAT_IMPOSSIBLE,
-  CAT_SOLO
+  CAT_SOLO,
+  CAT_COOP
 }

@@ -95,6 +95,7 @@ function filterContent(data) {
 const CONTENT = [
   { name: 'Standard Raids', data: filterContent(Raids.CAT_STANDARD) },
   { name: 'Impossible Raids', data: filterContent(Raids.CAT_IMPOSSIBLE) },
+  { name: 'Co-op', data: filterContent(Raids.CAT_COOP) },
 ];
 
 export default {

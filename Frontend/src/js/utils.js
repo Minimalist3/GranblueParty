@@ -74,6 +74,28 @@ class LocalStorageMgt {
   }
 }
 
+function getPartyResponse(response) {
+  return {
+    data: response.data,
+    actions: response.data.actions,
+    content: response.data.content,
+    characters_stars: response.data.characters_stars,
+    characters_levels: response.data.characters_levels,
+    characters_pluses: response.data.characters_pluses,
+    characters_prings: response.data.characters_prings,
+    description: response.data.desc,
+    isPublic: response.data.isPublic,
+    summons_levels: response.data.summons_levels,
+    summons_pluses: response.data.summons_pluses,
+    summons_stars: response.data.summons_stars,
+    weapons_levels: response.data.weapons_levels,
+    weapons_pluses: response.data.weapons_pluses,
+    weapons_skill_levels: response.data.weapons_skill_levels,
+    weapons_skill_names: response.data.weapons_skill_names,
+    weapons_stars: response.data.weapons_stars,
+  };
+}
+
 export default {
   isEmpty,
   filterObject,
@@ -81,4 +103,5 @@ export default {
   unescapeBase64,
   escapeBase64,
   LocalStorageMgt,
+  getPartyResponse
 }

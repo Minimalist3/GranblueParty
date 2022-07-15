@@ -1,8 +1,4 @@
-
-import Vue from 'vue'
-
 import { provideModule } from '@/js/mixins'
-import Utils from '@/js/utils.js'
 
 const INITIAL_DATA = () => {
   return {

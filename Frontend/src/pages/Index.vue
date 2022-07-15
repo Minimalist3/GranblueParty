@@ -28,8 +28,8 @@
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
         <h2 class="text-center">Last update</h2>
-        <h3 class="text-center">2022-03-15</h3>
-        <p class="text-center mt-2">Lyria 5*</p>
+        <h3 class="text-center">2022-07-15</h3>
+        <p class="text-center mt-2">Mirin (Summer), Shion (Summer)</p>
       </div>
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
@@ -69,7 +69,7 @@
             </picture>
           </router-link>
 
-          <div class="mt-2" v-html="section.text"/>
+          <div class="mt-2 text-sm" v-html="section.text"/>
         </div>
       
       </div>

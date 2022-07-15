@@ -1,7 +1,8 @@
 <template>
   <span class="relative">
     <img
-      class="cursor-pointer w-full"
+      class="w-full"
+      :class="party_mode === $MODE.Edit ? 'cursor-pointer' : ''"
       style="max-height: 60px;"
       :draggable="! objectIsEmpty"
       :src="getImage"
@@ -19,12 +20,14 @@
       :current="object.stars"
       @update:current="$emit('stars-changed', object, $event)"
       :max="5"
+      :readOnly="party_mode === $MODE.ReadOnly"
     ></stars-line>
   </span>
 </template>
 
 <script>
 import { objectIsEmpty } from "@/js/mixins"
+import { mapState } from 'vuex'
 
 import StarsLine from '@/components/StarsLine.vue'
 
@@ -46,8 +49,14 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
     getImage() {
       if (this.objectIsEmpty) {
+        if (this.party_mode !== this.$MODE.Edit) {
+          return '/img/empty_weapon_ro.jpg';
+        }
         if (this.isArcarum) {
           return '/img/empty_weapon_arcarum.jpg';
         }

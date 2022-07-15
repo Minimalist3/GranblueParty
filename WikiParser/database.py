@@ -325,6 +325,24 @@ all_tables = [
         constraint="UNIQUE(icon, skillName)",
         conflictCondition="icon, skillName")
         .setUpdateOnConflict(),
+  Table('Weapon_Skill',
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('slot', 'INT NOT NULL', primary=True),
+          Col('level', 'INT NOT NULL', primary=True),
+          Col('keyId', 'INT'),
+          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)'),
+          Col('description', 'TEXT')
+        ])
+        .setUpdateOnConflict(),
+        #.setDropBeforeUpdate(), Until weapons.json gives all weapons
+  Table('Weapon_Ougi',
+        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
+          Col('ougiMLB', 'TEXT'),
+          Col('ougiFLB', 'TEXT'),
+          Col('ougiULB', 'TEXT')
+        ])
+        .setUpdateOnConflict(),
+        #.setDropBeforeUpdate(),
   Table('SummonAura',
         [ Col('summonId', 'INT NOT NULL REFERENCES Summon(summonId)', primary=True),
           Col('aura', 'TEXT'),
@@ -346,25 +364,9 @@ all_tables = [
           Col('family', 'INT NOT NULL')
         ])
         .setDropBeforeUpdate(),
-  Table('Weapon_Skill',
-        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
-          Col('slot', 'INT NOT NULL', primary=True),
-          Col('level', 'INT NOT NULL', primary=True),
-          Col('keyId', 'INT'),
-          Col('skilldataId', 'INT NOT NULL REFERENCES Weapon_SkillData(skilldataId)'),
-          Col('description', 'TEXT')
-        ])
-        .setDropBeforeUpdate(),
   Table('WeaponSpecialty',
         [ Col('characterId', 'INT REFERENCES Character(characterId)', primary=True),
           Col('weaponTypeId', 'INT REFERENCES WeaponType(weaponTypeId)', primary=True)
-        ])
-        .setDropBeforeUpdate(),
-  Table('Weapon_Ougi',
-        [ Col('weaponId', 'INT NOT NULL REFERENCES Weapon(weaponId)', primary=True),
-          Col('ougiMLB', 'TEXT'),
-          Col('ougiFLB', 'TEXT'),
-          Col('ougiULB', 'TEXT')
         ])
         .setDropBeforeUpdate(),
   Table('CharacterSkill',
@@ -447,6 +449,15 @@ all_tables = [
           Col('elementId', 'INT REFERENCES Element(elementId)'),
           Col('public', 'BOOLEAN DEFAULT FALSE'),
           Col('description', 'TEXT'),
+          Col('likes', 'INT NOT NULL DEFAULT 0'),
+          Col('video', 'TEXT'),
+        ])
+        .setDoNotCopy()
+        .setDoNotUpdate(),
+  Table('PartyLike',
+        [
+          Col('partyId', 'INT NOT NULL REFERENCES Party(partyId)', primary=True),
+          Col('userId', 'INT NOT NULL REFERENCES UserAccount(userid)', primary=True)
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),

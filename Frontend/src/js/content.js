@@ -39,6 +39,7 @@ export default [
       { name: 'NM 95', id: 103 },
       { name: 'NM 100', id: 104 },
       { name: 'NM 150', id: 105 },
+      { name: 'NM 200', id: 106 },
     ]
   },
   {
@@ -50,6 +51,7 @@ export default [
       { name: 'Nalhe Great Wall', id: 124 },
       { name: 'Violet Knight', id: 125 },
       { name: 'White Knight', id: 126 },
+      { name: 'Cherub', id: 127 },
     ]
   },
   {

@@ -2,11 +2,11 @@ import Vue from 'vue'
 
 import { library as faCore, config as faConfig } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faCircle, faEnvelope, faFaceGrinWide } from '@fortawesome/free-regular-svg-icons'
 import {
   faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
   faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave,
-  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faFileLines,
+  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faFileLines, faHeart
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon as faVue } from '@fortawesome/vue-fontawesome'
 import faCSS from '@fortawesome/fontawesome-free/css/svg-with-js.min.css'
@@ -31,7 +31,7 @@ faConfig.autoAddCss = false;
 faCore.add(
   faTwitter, faGithub, faEnvelope, faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
   faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave,
-  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faYoutube, faFileLines
+  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faYoutube, faFileLines, faCircle, faFaceGrinWide, faHeart
 );
 Vue.component('fa-icon', faVue);
 
@@ -46,6 +46,12 @@ Vue.mixin({
 });
 
 Vue.prototype.$isDebug = process.env.NODE_ENV !== 'production';
+
+Vue.prototype.$MODE = Object.freeze({
+  Action: 0,
+  Edit: 1,
+  ReadOnly: 2,
+});
 
 // Remove prod warning
 Vue.config.productionTip = false;

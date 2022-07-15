@@ -141,7 +141,15 @@
 
         <div class="p-2 select-none">{{ getJST }} JST</div>
       </div>
-      
+
+      <!-- Top -->
+      <div class="flex flex-col">
+        <google-ads
+          class="self-center my-4"
+          :adSlot="9594384410"
+        ></google-ads>
+      </div>
+
       <router-view></router-view>
     </main>
 
@@ -159,9 +167,6 @@
         </a>
         <a href="https://github.com/Minimalist3/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'github']" class="text-primary text-lg"></fa-icon> Minimalist3/GranblueParty
-        </a>
-        <a href="https://www.minimalist.codes" target="_blank">
-          <fa-icon :icon="['fas', 'external-link-alt']" class="text-primary text-lg"></fa-icon> minimalist.codes
         </a>
       </p>
       <p>

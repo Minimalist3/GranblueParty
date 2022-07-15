@@ -64,6 +64,7 @@
 
     <!-- Modal -->
     <modal
+      v-if="party_mode !== $MODE.ReadOnly"
       v-model="show_modal"
       route="/party/summons"
       :categories="getCategories"
@@ -107,10 +108,6 @@ export default {
     Modal,
   },
   props: {
-    editMode: {
-      type: Boolean,
-      default: true
-    },
     showLevel: {
       type: Boolean,
       default: false,
@@ -127,12 +124,19 @@ export default {
       ev.dataTransfer.setData("summon", JSON.stringify(index));
     },
     showModal(index) {
-      if (this.editMode) {
-        this.selected_box_index = index;
-        this.show_modal = true;
-      }
-      else {
-        this.$store.commit('addActionSummon', index);
+      switch (this.party_mode) {
+        case this.$MODE.Action:
+          this.$store.commit('addActionSummon', index);
+          break;
+
+        case this.$MODE.Edit:
+          this.selected_box_index = index;
+          this.show_modal = true;
+          break;
+
+        case this.$MODE.ReadOnly:
+          // Do nothing
+          break;
       }
     },
     changeObject(id) {
@@ -146,6 +150,9 @@ export default {
       }
     },
     swap(from, to) {
+      if (this.party_mode === this.$MODE.ReadOnly) {
+        return;
+      }
       let tmp = this.objects[from];
       this.$store.commit('setSummon', { index: from, data: this.objects[to] })
       this.$store.commit('setSummon', { index: to, data: tmp })
@@ -153,7 +160,8 @@ export default {
   },
   computed: {
     ...mapState({
-      objects: state => state.party_builder.summons
+      objects: state => state.party_builder.summons,
+      party_mode: state => state.party_builder.party_mode
     }),
     getStats() {
       return this.$store.getters.getSummonsStats;

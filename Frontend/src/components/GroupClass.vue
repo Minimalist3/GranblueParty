@@ -8,12 +8,14 @@
 
     <!-- Modals -->
     <modal
+      v-if="party_mode !== $MODE.ReadOnly"
       v-model="show_modal_class"
       route="/party/classes"
       :categories="getCategoriesClass"
       @item-selected="changeObject"
     ></modal>
     <modal
+      v-if="party_mode !== $MODE.ReadOnly"
       v-model="show_modal_skill"
       route="/party/skills"
       :routeParameters="'family=' + getObject.family"
@@ -24,6 +26,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Utils from '@/js/utils'
 
 import BoxClass from "@/components/BoxClass.vue";
@@ -34,12 +38,6 @@ export default {
     BoxClass,
     Modal,
   },
-  props: {
-    editMode: {
-      type: Boolean,
-      default: true
-    }
-  },
   data() {
     return {
       show_modal_class: false,
@@ -49,24 +47,40 @@ export default {
   },
   methods: {
     showModalClass() {
-      if (this.editMode) {
-        this.show_modal_class = true
-      }
-      else {
-        // TODO show warning
+      switch (this.party_mode) {
+        case this.$MODE.Action:
+          // TODO show warning
+          break;
+
+        case this.$MODE.Edit:
+          this.show_modal_class = true;
+          break;
+
+        case this.$MODE.ReadOnly:
+          // Do nothing
+          break;
       }
     },
     clickSkill(index) {
-      if (this.editMode) {
-        // Show modal
-        if (this.getObject.skills[index] === null || ! this.getObject.skills[index].fixed) {
-          this.selected_skill_index = index;
-          this.show_modal_skill = true;
-        }
-      }
-      else if (this.getObject.skills[index] !== null) {
-        // Send action
-        this.$store.commit('addActionMCSkill', index);
+      switch (this.party_mode) {
+        case this.$MODE.Action:
+          if (this.getObject.skills[index] !== null) {
+            // Send action
+            this.$store.commit('addActionMCSkill', index);
+          }
+          break;
+
+        case this.$MODE.Edit:
+          // Show modal
+          if (this.getObject.skills[index] === null || ! this.getObject.skills[index].fixed) {
+            this.selected_skill_index = index;
+            this.show_modal_skill = true;
+          }
+          break;
+
+        case this.$MODE.ReadOnly:
+          // Do nothing
+          break;
       }
     },
     changeObject(id) {
@@ -91,6 +105,9 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
     getObject() {
       return this.$store.state.party_builder.classe;
     },

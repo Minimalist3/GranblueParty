@@ -2,7 +2,7 @@
   <span class="relative tooltip-parent">
     <img
       class="w-full"
-      :class="readOnly ? '' : 'cursor-pointer'"
+      :class="party_mode !== $MODE.ReadOnly ? 'cursor-pointer' : ''"
       style="min-height: 83px; max-height: 83px;"
       :draggable="! objectIsEmpty"
       :src="getImage"
@@ -20,7 +20,7 @@
       :current="object.stars"
       @update:current="$emit('stars-changed', $event)"
       :max="5"
-      :readOnly="readOnly"
+      :readOnly="party_mode === $MODE.ReadOnly"
     ></stars-line>
 
     <span class="tooltip" v-if="object.current_data !== undefined">
@@ -33,6 +33,7 @@
 
 <script>
 import { objectIsEmpty } from "@/js/mixins"
+import { mapState } from 'vuex'
 
 import StarsLine from '@/components/StarsLine.vue'
 
@@ -48,22 +49,24 @@ export default {
       type: Object,
       required: true
     },
-    readOnly: {
-      type: Boolean,
-      default: false
-    },
   },
   methods: {
     tryToEmit(name, event) {
-      if ( ! this.readOnly) {
+      if (this.party_mode !== this.$MODE.ReadOnly) {
         this.$emit(name, event);
       }
     }
   },
   computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
     getImage() {
       if (this.objectIsEmpty) {
-        return '/img/empty_summon.jpg';
+        if (this.party_mode === this.$MODE.Edit) {
+          return '/img/empty_summon.jpg';
+        }
+        return '/img/empty_summon_ro.jpg';
       }
       return "/img/unit/" + this.object.summonid + "000.jpg";
     },

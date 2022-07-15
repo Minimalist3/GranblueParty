@@ -4,7 +4,7 @@
       <slot></slot>
     </select>
 
-    <div v-if="! disabled" class="pointer-events-none absolute inset-y-0 right-0 rounded flex items-center px-2 text-gray-700">
+    <div v-if="! disabled" class="pointer-events-none absolute inset-y-0 right-0 rounded-md flex items-center px-2 text-gray-700">
       <fa-icon :icon="['fas', 'angle-down']" class="text-xl"></fa-icon>
     </div>
   </div>

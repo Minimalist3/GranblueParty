@@ -76,3 +76,22 @@ export const passport_authenticate = (method, callback) => {
     })(req, res, next); // IIFE
   };
 }
+
+export const read_cookie = (method, callback) => {
+	return (req, res, next) => {    
+		passport.authenticate(method, { session: false }, (err, user, info) => {
+      if (err) {
+        return next(err);
+      }
+      
+			if (user) {
+        req.user = user;
+      }
+      else {
+        req.user = null;
+      }
+
+      return callback(req, res, next);
+    })(req, res, next); // IIFE
+  };
+}

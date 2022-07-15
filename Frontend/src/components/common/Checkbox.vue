@@ -5,8 +5,8 @@
     :class="getClasses"
   >
     <!-- Box -->
-    <fa-icon v-if="value === true" :icon="['fa', 'toggle-on']" class="text-4xl"></fa-icon>
-    <fa-icon v-else :icon="['fa', 'toggle-off']" class="text-4xl "></fa-icon>
+    <fa-icon v-if="value === true" :icon="on" :class="iconSize"></fa-icon>
+    <fa-icon v-else :icon="off" :class="iconSize"></fa-icon>
     <!-- Label -->
     <span class="ml-1 my-1 text-primary">
       <slot></slot>
@@ -25,6 +25,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    on: {
+      type: Array,
+      default: () => ['fa', 'toggle-on']
+    },
+    off: {
+      type: Array,
+      default: () => ['fa', 'toggle-off']
+    },
+    iconSize: {
+      type: String,
+      default: 'text-4xl'
+    }
   },
   methods: {
     changeValue() {
@@ -35,7 +47,7 @@ export default {
   },
   computed: {
     getClasses() {
-      let classes = this.value ? 'text-blue-300 ' : 'text-pink-400 ';
+      let classes = this.value ? 'text-blue-300 ' : 'text-rose-400 ';
       if (this.disabled) {
         classes += ' cursor-not-allowed grayscale-70 opacity-70 ';
       }
@@ -43,7 +55,7 @@ export default {
         classes += 'cursor-pointer hover:underline hover:decoration-2 ';
         classes += this.value ?
           'hover:text-blue-400 hover:decoration-blue-400 ' :
-          'hover:text-pink-600 hover:decoration-pink-600 ';
+          'hover:text-rose-600 hover:decoration-rose-600 ';
       }
       return classes;
     }

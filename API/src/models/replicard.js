@@ -2,7 +2,7 @@ import { pool } from '../db';
 import { buildWhereClause } from './utils'
 
 export function replicardLoad (req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': req.user.userid,
   });
 
@@ -24,7 +24,7 @@ export function replicardSave (req, response) {
       data: [{id: ''}, ...]
      }, ...]
    */
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': req.user.userid,
     'replicardData': req.body, // Embed the array in an object to make it work
   });

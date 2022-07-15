@@ -18,7 +18,6 @@
       @drop-portrait="drop"
       @click-portrait="$emit('click-portrait')"
       @stars-changed="starsChanged"
-      :readOnly="readOnly"
     ></portrait>
 
     <!-- Stats -->
@@ -53,10 +52,6 @@ export default {
     showLevel: {
       type: Boolean,
       default: false,
-    },
-    readOnly: {
-      type: Boolean,
-      default: false
     },
   },
   methods: {

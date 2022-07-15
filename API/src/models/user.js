@@ -79,7 +79,7 @@ export function userRegister(req, response) {
  * jwt: true
  */
 export function userInfos(req, response) {
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': req.user.userid,
   });
 
@@ -98,7 +98,7 @@ export function userInfos(req, response) {
  * jwt: true
  */
 export function userSetEmail(req, response) {
-  const {query, values} = buidWhereClause({
+  const [query, values] = buidWhereClause({
     'userId': req.user.userid,
   });
 
@@ -127,7 +127,7 @@ export function userSetEmail(req, response) {
 export function userSendResetPassword(req, response) {
   const email = req.body.email;
   const captcha = req.body.captcha;
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'email': email,
   });
 
@@ -174,7 +174,7 @@ export function userResetPassword(req, response) {
   const email = req.body.email;
   const token = req.body.token;
   const captcha = req.body.captcha;
-  const {query, values} = buildWhereClause({
+  const [query, values] = buildWhereClause({
     'email': email,
   });
 

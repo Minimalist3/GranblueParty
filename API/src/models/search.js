@@ -23,7 +23,7 @@ export function searchCharacters (req, response) {
       FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId
       GROUP BY Character.characterId ORDER BY Character.nameEn ASC;`)
   .then(res => response.status(200).json(res.rows))
-  .catch((e) => { console.log(e); response.sendStatus(400) });
+  .catch((e) => { response.sendStatus(400) });
 }
 
 export function searchWeapons (req, response) {

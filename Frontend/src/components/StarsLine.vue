@@ -86,7 +86,7 @@ export default {
     },
     getTranscendanceClass(index) {
       let result = '';
-      if (this.readOnly) result += 'cursor-pointer ';
+      if ( ! this.readOnly) result += 'cursor-pointer ';
       if ( ! this.isStarEnabled(index)) result += 'grayscale-80 opacity-70';
       return result;
     },

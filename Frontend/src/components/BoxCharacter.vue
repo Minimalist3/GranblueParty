@@ -17,7 +17,7 @@
       @drag-portrait="$emit('drag-portrait', $event)"
       @drop-portrait="drop"
       @click-portrait="$emit('click-portrait')"
-      @click-pring="object.haspring = ! object.haspring"
+      @click-pring="clickPRing"
       @stars-changed="starsChanged"
     ></portrait>
 
@@ -37,6 +37,7 @@
 
 <script>
 import { objectIsEmpty, getName } from "@/js/mixins"
+import { mapState } from 'vuex'
 import UtilsParty from '@/js/utils-party'
 
 import Portrait from '@/components/BoxCharacterPortrait.vue'
@@ -74,6 +75,11 @@ export default {
         this.$emit('swap', JSON.parse(data));
       }
     },
+    clickPRing() {
+      if (this.party_mode !== this.$MODE.ReadOnly) {
+        this.object.haspring = ! this.object.haspring
+      }
+    },
     starsChanged(object, count) {
       this.$set(object, "stars", count);
 
@@ -83,6 +89,9 @@ export default {
     },
   },
   computed: {
+    ...mapState({
+      party_mode: state => state.party_builder.party_mode
+    }),
     getLevel() {
       return UtilsParty.getCharacterLevel(this.object);
     }
