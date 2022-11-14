@@ -473,9 +473,17 @@ const CAT_IMPOSSIBLE = {
         name: 'Atum',
         namejp: 'アトゥム'
       },
+      '305331/1/0/42': {
+        name: 'Tefnut',
+        namejp: 'テフヌト'
+      },
       '305341/1/0/43': {
         name: 'Bennu',
         namejp: 'ベンヌ'
+      },
+      '305351/1/0/44': {
+        name: 'Ra',
+        namejp: 'ラー'
       },
       '305361/1/0/45': {
         name: 'Horus',
@@ -707,6 +715,10 @@ const CAT_IMPOSSIBLE = {
     magfes: 50,
     times: 1,
     raids: {
+      '305381/1/0/549': {
+        name: 'Mugen',
+        namejp: 'ムゲン',
+      },
       '305391/1/0/550': {
         name: 'Diaspora',
         namejp: 'ディアスポラ',

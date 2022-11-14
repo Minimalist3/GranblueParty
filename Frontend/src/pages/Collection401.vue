@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>My Collection</h1>
-    <img src="/img/preview_collection.png">
+    <picture>
+      <source type="image/webp" srcset="/img/preview_collection.webp">
+      <img src="/img/preview_collection.png">
+    </picture>
+
     <p>
       Create a free account to gain access to "My Collection".
     </p>

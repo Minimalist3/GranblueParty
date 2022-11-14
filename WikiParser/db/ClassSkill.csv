@@ -252,7 +252,7 @@
 251	Tactical Shield	25	t
 252	Limit Burst	25	t
 253	Blitz Raid	25	t
-254	Norden Harr	\N	f
+254	Norden Harr	0	f
 255	Banahogg	0	t
 256	Vinland	0	t
 257	Jomsborg	0	t
@@ -260,3 +260,7 @@
 259	Noblesse Proteger	1	t
 260	Boosted Resistance	1	t
 261	Sacred Protection	1	t
+262	Vita Brevis	2	f
+263	Amyntiko Fos	2	t
+264	Pneuma	2	t
+265	Megali Fotia	2	t

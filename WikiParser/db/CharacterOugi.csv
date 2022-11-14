@@ -344,7 +344,7 @@
 3030244	1	Interlude to Light	 Restore all allies' HP (Healing cap: 500). All allies gain DA Up, TA Up, and Uplift.
 3030245	1	Skyblade Eleganza	 Big Wind damage to a foe. Various effects based on Chivalry (Summer) lvl. (Consumes all Chivalry (Summer).)
 3030246	1	Dark Fallen Sword	 Big Dark damage to a foe. Gain Dark ATK Boosted.
-3030247	1	Tropical Summer Festival	 Restore all other allies' HP (Healing cap: 2000) and grant ATK Up, DEF Up and Charge Boost.
+3030247	1	Tropical Summer Festival	 Restore other allies' HP (Healing cap: 2000). Other allies gain ATK Up, DEF Up, and Charge Boost.
 3030248	1	Sizzling Super Slash!	 350% Water damage to a foe. (It may deal super-duper damage... sometimes.)
 3030249	1	Selene Timoria	 Big Dark damage to a foe. All allies gain Charge Boost.
 3030250	1	Mine Your Manners	 Big Earth damage to a foe. Inflict Earth DEF Down.
@@ -600,6 +600,7 @@
 3040130	1	Cleaving Madness	 450% Fire damage to a foe. (4-hit, 100% Bonus Fire damage to a foe with Dracoforce [Damage cap: ~185,000 per hit].)
 3040131	1	Mikazuki Munechika	 Massive Light damage to a foe. Gain DA Up.
 3040132	1	Deterrent Thrust	 1250% Water damage to a foe (Damage cap: ~2,420,000). Activate Anti-Collision Spell. All allies gain Dispel Cancel.
+3040132	2	Overwhelming Deterrent	After 5★: 1400% Water damage to a foe (Damage cap: ~2,420,000). Remove 1 buff. Activate Anti-Collision Spell. All allies gain Dispel Cancel.
 3040133	1	Bounty Bind	Normal form: 450% Fire damage to a foe.
 3040133	2	Line of Fire	Dragon form: 900% Fire damage to a foe (Damage cap: ~1,840,000). Gain Guaranteed TA.
 3040134	1	Grim Flame	Dorothy: 450% Light damage to a foe. Inflict DA Down.
@@ -616,7 +617,7 @@
 3040143	1	Holy Star	 450% Light damage to a foe. Activate Snowdrop.
 3040144	1	A Farewell to Arms	 Unworldly Fire damage to a foe and remove 3 buffs. Charioce XVII self-inflicts Forbidden Price. (Can only be used when Dromos is active)
 3040145	1	Dark Fallen Sword	 450% Dark damage to a foe. Gain Dark ATK Up and Soul Blades. (Next use of Peccatum Mortale activates twice.)
-3040146	1	Savage Rampage	 Massive Earth damage to a foe. Gain To the Bone (Next use of Batallions of Fear deals 300%-1400% damage [Damage cap: ~1,500,000]).
+3040146	1	Savage Rampage	 Massive Earth damage to a foe. Gain To the Bone. (Next use of Batallions of Fear deals 300%-1400% damage [Damage cap: ~1,500,000].)
 3040147	1	Gilded Heaven Strike	 500% Water damage to a foe. All allies gain 1 Loyalty Eternal 1 stack. (Effect enhanced for each stack.)
 3040147	2	Dogged Innocence	After 5★: 550% Water damage to a foe and remove 1 buff. All allies gain 1 Loyalty Eternal 1 stack. (Effect enhanced for each stack.)
 3040148	1	Burst Erasure	 450% Earth damage to a foe. Reload all Bullets (Ilsa) 9. Gain Guaranteed TA.
@@ -727,7 +728,8 @@
 3040239	1	Abyssal Wall	 Massive Earth damage to a foe. Gain Counters on Dodge/DMG.
 3040240	1	Night of Crazy Insanity	 450% Light damage to a foe. (Bonus Light DMG based on Party All Night lvl [Max: 5].) Crazy boo-tiful! (Gain High Tension. Ends upon taking non-Plain damage.)
 3040241	1	Purification Dance: Jouka	 Massive Wind damage to a foe. Inflict Foxflame 3. (Restores 20% HP of allies with Nasori Rite [Healing cap: 2500].)
-3040242	1	Ebon Dance: Kage-Zakura	 Massive Dark damage to a foe. Inflict Special Attack DMG Lowered 2. Gain Ake-Zakura: Next Ninth Dance: Akezome affects all allies.
+3040242	1	Ebon Dance: Kage-Zakura	 450% Dark damage to a foe. Inflict Special Attack DMG Lowered 2. Gain Ake-Zakura. (Next Ninth Dance: Akezome affects all allies.)
+3040242	2	Betel Nut Dye	After 5★: 500% Dark damage to a foe. Inflict Special Attack DMG Lowered 2, ATK Lowered (Stackable), and DEF Lowered (Stackable). Gain Ake-Zakura. (Next Ninth Dance: Akezome affects all allies.)
 3040243	1	Blades of Ardor	 Massive Fire damage to a foe. 1-turn cut to Vira's skill cooldown.
 3040244	1	Thunderous Star Piercer	 450% Light damage to a foe. Gain Charge Bar.
 3040245	1	Sauveur Eclatant	 450% Light damage to a foe. Gain Holy Banner. (Next Sanctify affects all allies.) End cooldown for Sanctify.
@@ -785,7 +787,8 @@
 3040295	1	Fly, My Fairies!	 450% Wind damage to a foe. 1-turn cut to Mimori's skill cooldowns.
 3040296	1	Bloomin' Five Flowers	 Restore Earth allies' HP (Healing cap: 2500) and remove 1 debuff. Extend Earth allies' Hype by 2 turns.
 3040297	1	Starless Twilight Slash	 450% Earth damage to a foe. 1-turn cut to Golden Knight's skill cooldowns.
-3040298	1	Spontaneous Indiscretion	 450% Light damage to a foe. (50% boost to C.A. damage and 30% boost to C.A. damage cap when below 25% HP.) Activate Puncture.
+3040298	1	Spontaneous Indiscretion	 450% Light damage to a foe. ('When below 25% HP:' 50% boost to C.A. damage and 30% boost to C.A. damage cap.) Activate Puncture.
+3040298	2	Heavenly Sanction	After 5★: 500% Light damage to a foe. ('When below 25% HP:' 50% boost to C.A. damage and 30% boost to C.A. damage cap.) All allies gain 20% Dark Cut. Activate Puncture.
 3040299	1	Nature's Retribution	 450% Wind damage to a foe and remove 1 buff. Gain Typhoon Crest 1.
 3040300	1	Grigori's Inferno	 450% Fire damage to a foe. (30% boost to C.A. damage and 10% boost to C.A. damage cap against foes with Petrified.) Inflict Blinded 2.
 3040301	1	Phantom Rose	 450% Water damage to a foe. Restore 5 Petals of Sapphire.
@@ -896,5 +899,27 @@
 3040406	1	Lunatic Lashings	 450% Water damage to a foe. Bonus Plain damage based on Gwynne's HP (Damage cap: 400,000 per hit / Max: 3 hits).
 3040407	1	Unconditional Friend	 450% Dark damage to a foe. Gain Dodge All 1. Raise Pawsitivity lvl by 1 (Max: 5).
 3040408	1	Rodent Rally	 Restore 20% of Earth allies' HP (Healing cap: 4000). 2-turn cut to Earth allies' debuff durations. All Earth allies gain DA Up, TA Up, and Bonus Earth DMG. Activate Yintopian Bounty.
-3040409	1	Watermelon Smash	 Massive fire DMG to a foe / 1 Watermelon to Mirin (Max: 3) (Buffs to all allies based on chain burst's number of chains)
-3040410	1	Midsummer Wave	 Massive wind DMG to a foe / Dodge-and-Counter effect to Shion (2 hits) (Bonus DMG based on number of katana-specialty allies [Max: 6 hits])
+3040409	1	Watermelon Smash	 450% Fire damage to a foe. Gain 1 Watermelon (Max: 3). (Buffs to all allies based on chain burst's number of chains.)
+3040410	1	Midsummer Wave	 450% Wind damage to a foe. Gain Counters on Dodge. (Bonus Wind damage based on number of katana-specialty allies [Max: 6 hits].)
+3040411	1	Cumulonimbus Burst	 450% Wind damage to a foe. Inflict ATK Lowered (Stackable) and Earth ATK Lowered.
+3040412	1	Desperate Maelstrom	 450% Dark damage to a foe. End cooldown for Tidemark. (Deal 100% Bonus Dark damage based on number of Oblivion Crest [Damage cap: ~120,000 per hit / Max: 5 hits].)
+3040413	1	Alea Jacta Est	 450% Water damage to a foe. Inflict Water DEF Lowered and Fire ATK Lowered. Gain Deluge Crest 1.
+3040414	1	Fiore di Salvezza	 Restore all allies' HP (Healing cap: 2000). All allies gain Shield and Vaccine.
+3040415	1	Summer's Angel	 450% Light damage to a foe. Gain 2 Beachside Blade.
+3040416	1	Gum-Gum Kong Gun	 1250% Fire damage to a foe (Damage cap: ~2,420,000). End cooldown for Luffy's damage skills.
+3040416	2	Gum-Gum Kong Gun	After 5★: 1300% Fire damage to a foe (Damage cap: ~2,420,000). End cooldown for Luffy's damage skills. ('When used from 10th turn onward:' Activates twice.)
+3040417	1	Trichiliocosm & Concasse	 1250% Dark damage to a foe (Damage cap: ~2,420,000). Gain Charge Boost. (Consumes 15% of max HP.)
+3040418	1	Lightning Blast & Gigantesco Mano	 450% Wind damage to a foe. Activate Storm Cloud Rod. Raise Nami and Robin's Sorcery Climate Baton 1 lvl by 1.
+3040419	1	Hydrozoa	 1250% Water damage to a foe (Damage cap: ~2,900,000). All Water allies gain DMG Mitigation.
+3040420	1	Valkyrie Noire	 450% Water damage to a foe. End cooldown for Confront.
+3040421	1	Pas de Bourree du le Mort	 450% Water damage to a foe. End cooldown for Ordre du Soutien. Gain Tactical Edge.
+3040422	1	Schwarzer Kanonier	 450% Fire damage to a foe. Remove 1 buff. Restore Anderson's HP (Healing cap: 2000).
+3040423	1	Wandelnde Flamme	 1250% Dark damage to a foe (Damage cap: ~2,420,000). All allies gain C.A. DMG Boosted (1 time), C.A. DMG Cap Boosted (1 time), and Charge Boost. Consume 1 Cannonball. (Can only be used with 1 or more Cannonball.)
+3040424	1	Phantom Impact	 450% Dark damage to a foe. Gain Bonus Dark Damage.
+3040425	1	Stolze Flamme	 1250% Fire damage to a foe (Damage cap: ~2,900,000). Raise foe's Singed lvl by 2 (Max: 10). Gain King's Blaze.
+3040426	1	Siegreiche Welt	 450% Earth damage to a foe. End cooldown for Eismesser. (50% boost to C.A. damage and 30% boost to C.A. damage cap against foes with Glaciate.)
+3040427	1	Halloween Scream End	 450% Wind damage to a foe. Gain Charge Boost. 1-turn cut to Lich's skill cooldowns.
+3040428	1	Multi-Swing Mugen	 450% Light damage to a foe. Restore 20% of Light allies' HP (Healing cap: 2500).
+3040429	1	Radiance's Merriment	 450% Light damage to a foe. All Light allies gain Armored. Florence gains Aurora Crest 1.
+3040430	1	Sapphire Dance: Yuen	 450% Dark damage to a foe. Inflict Foxflame 3. 2-turn cut to Yuel and Societte's skill cooldowns.
+3040431	1	Starless Twilight Slash	 450% Wind damage to a foe. Remove 1 buff.

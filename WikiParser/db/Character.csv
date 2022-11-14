@@ -472,7 +472,7 @@
 3040129	Diantha (Summer)	ディアンサ	4	4	2	3	4	0	1030	2017-08-15	8100	\N	1420	\N	Tlepilli
 3040130	Grea	グレア	4	4	2	0	0	5	1000	2017-08-31	10100	\N	1150	\N	Draco Claw
 3040131	Mikazuki Munechika	三日月宗近	4	4	2	4	1	5	\N	2017-09-09	7580	\N	1490	\N	\N
-3040132	Anne	アン	4	4	2	3	2	0	1000	2017-09-14	7925	\N	1615	\N	Daemon's Spine
+3040132	Anne	アン	4	5	2	3	2	0	1000	2017-09-14	7925	9350	1615	1930	Daemon's Spine
 3040133	Nina Drango	ニーナ・ドランゴ	4	4	2	0	0	5	\N	2017-09-20	7720	\N	972	\N	\N
 3040134	Dorothy and Claudia	サーヴァンツ ドロシー＆クラウディア	4	4	2	4	4	0	1000	2017-09-30	9300	\N	1400	\N	Gothic Cutlery
 3040135	Danua (Halloween)	ダヌア	4	4	2	0	4	1	1040	2017-10-23	8610	\N	1550	\N	Snack Pole‎
@@ -581,7 +581,7 @@
 3040239	Zeta and Vaseraga (Halloween)	真紅と冥闇 ゼタ＆バザラガ	4	4	2	2	1	0	1040	2019-10-16	5200	\N	1520	\N	Enchanted Broomstick
 3040240	Hallessena (Halloween)	ハレゼナ	4	4	2	4	0	1	1040	2019-10-16	10800	\N	1090	\N	Spirit Seeker
 3040241	Societte (Wind)	ソシエ	4	4	2	1	3	2	1000	2019-10-31	5760	\N	1590	\N	Cardinal Spear
-3040242	Kou	コウ	4	4	2	5	3	2	1000	2019-10-31	6815	\N	1389	\N	Juzumaru
+3040242	Kou	コウ	4	5	2	5	3	2	1000	2019-10-31	6815	8204	1389	1629	Juzumaru
 3040243	Vira (Promo)	ヴィーラ	4	4	2	0	4	0	\N	2019-12-13	8700	\N	1300	\N	\N
 3040244	Shitori	シトリ	4	4	2	4	1	0	1000	2019-11-16	7750	\N	1650	\N	Iridescent Bow
 3040245	Jeanne d'Arc (Grand)	ジャンヌダルク	4	4	2	4	1	0	1500	2019-11-16	8400	\N	1580	\N	Sacred Standard
@@ -637,7 +637,7 @@
 3040295	Mimori Amamiya	天宮ミモリ	4	4	2	1	1	0	\N	2020-09-14	8000	\N	1600	\N	\N
 3040296	Diantha	ディアンサ	4	4	2	2	3	0	1000	2020-09-16	6500	\N	1750	\N	Brand New Melody
 3040297	Golden Knight	黄金の騎士	4	4	2	2	0	2	1500	2020-09-16	10000	\N	1200	\N	Cerastes
-3040298	Gawain (Light)	ガウェイン	4	4	2	4	0	0	1000	2020-09-30	10250	\N	1150	\N	Tabarzin
+3040298	Gawain (Light)	ガウェイン	4	5	2	4	0	0	1000	2020-09-30	10250	12050	1150	1390	Tabarzin
 3040299	Florence	フロレンス	4	4	2	1	4	0	1000	2020-09-30	8200	\N	1400	\N	Disturbance Signum
 3040300	Azazel (Halloween)	アザゼル	4	4	2	0	0	4	1040	2020-10-17	10600	\N	1160	\N	Trick Serpent
 3040301	Rosetta (Halloween)	ロゼッタ	4	4	2	3	2	4	1040	2020-10-17	6300	\N	2200	\N	Midnight Rose
@@ -701,7 +701,7 @@
 3040359	Azusa	アズサ	4	4	2	1	0	1	1000	2021-09-30	11485	\N	1223	\N	Dojigiri Yasutsuna
 3040360	Vane (Halloween)	ヴェイン	4	4	2	1	2	0	1040	2021-10-17	7860	\N	2000	\N	Creepy Claws
 3040361	Cucouroux (Halloween)	ククル	4	4	2	2	4	0	1040	2021-10-17	9000	\N	1240	\N	Naughty Witch
-3040362	Shinsengumi		4	4	2	0	0	0	\N	2021-10-15	7200	\N	1500	\N	\N
+3040362	Shinsengumi	真選組 土方十四郎&沖田総悟	4	4	2	0	0	0	\N	2021-10-15	7200	\N	1500	\N	\N
 3040363	Yorozuya	万事屋銀ちゃん 坂田銀時&志村新八&神楽	4	4	2	4	1	0	\N	2021-10-20	7700	\N	1367	\N	\N
 3040364	Lunalu (Light)	ルナール	4	4	2	4	0	3	1000	2021-10-31	10090	\N	1150	\N	Into the Sunset
 3040365	Enyo	エニュオ	4	4	2	1	0	4	1000	2021-10-31	11000	\N	1000	\N	Galvanic Lance
@@ -749,3 +749,24 @@
 3040408	Vikala (Summer)	ビカラ	4	4	2	2	4	0	1030	2022-06-30	8700	\N	1300	\N	First Tail of the Mischief
 3040409	Mirin (Summer)	ミリン	4	4	2	0	3	0	1030	2022-07-15	6400	\N	1760	\N	Vivid Verdure
 3040410	Shion (Summer)	シオン	4	4	2	1	2	0	1030	2022-07-15	6700	\N	2000	\N	Evening Floral Shower
+3040411	Eustace (Summer)	ユーステス	4	4	2	1	0	2	1030	2022-07-31	9190	\N	1042	\N	Bubbleizer
+3040412	Magisa (Summer)	マギサ	4	4	2	5	4	0	1030	2022-07-31	8650	\N	1310	\N	Plumeria Scepter
+3040413	Clarisse (Summer)	クラリス	4	4	2	3	0	0	1030	2022-07-31	9600	\N	1280	\N	Ocean's Klein
+3040414	Tikoh (Summer)	ティコ	4	4	2	2	3	2	1030	2022-08-07	4710	\N	1794	\N	Summer Healing
+3040415	Sturm (Summer)	スツルム	4	4	2	4	4	1	1030	2022-08-07	9340	\N	1330	\N	Indutiae
+3040416	Luffy	ルフィ	4	5	2	0	0	0	\N	2022-09-14	9550	11370	1290	1534	\N
+3040417	Zoro and Sanji	ゾロ＆サンジ	4	4	2	5	0	0	\N	2022-09-20	9660	\N	1268	\N	\N
+3040418	Nami and Robin	ナミ&ロビン	4	4	2	1	4	0	\N	2022-09-14	8650	\N	1310	\N	\N
+3040419	Wamdus	ワムデュス	4	4	2	3	2	3	1500	2022-08-17	5925	\N	2055	\N	Calamitous Aquashade
+3040420	Jeanne d'Arc (Water Summer)	ジャンヌ	4	4	2	3	0	0	1030	2022-08-17	9700	\N	1260	\N	Mystique
+3040421	Erika	エリカ	4	4	2	3	1	0	1000	2022-08-31	8000	\N	1600	\N	Highland Cougar
+3040422	Anderson	アンダーソン	4	4	2	0	2	0	1000	2022-08-31	7400	\N	2100	\N	Blade of Loyalty
+3040423	Jessica (SSR)	ジェシカ	4	4	2	5	1	0	1000	2022-09-19	8500	\N	1500	\N	Raffiniert Arquebus
+3040424	Bowman	ボーマン	4	4	2	5	0	0	1000	2022-09-19	11100	\N	980	\N	Imaginary Knuckles
+3040425	Percival (Grand)	パーシヴァル	4	4	2	0	0	0	1600	2022-09-30	10120	\N	1340	\N	Lord of Flames
+3040426	Aglovale and Tor	覇道を征く主従 アグロヴァル＆トー	4	4	2	2	4	0	1000	2022-09-30	7900	\N	1500	\N	Wales Pennant
+3040427	Lich (Halloween)	リッチ	4	4	2	1	4	4	1040	2022-10-16	8925	\N	1255	\N	Toothache and Suffering
+3040428	Mugen (Halloween)	ムゲン	4	4	2	4	2	1	1040	2022-10-16	7390	\N	2218	\N	Nioh
+3040429	Florence (Halloween)	フロレンス	4	4	2	4	4	0	1040	2022-10-16	8675	\N	1305	\N	Feast's Signum
+3040430	Yuel and Societte	永遠の親愛 ユエル＆ソシエ	4	4	2	5	1	2	1000	2022-10-31	7200	\N	1500	\N	Scarlet Sapphire
+3040431	Alliah	アリア	4	4	2	1	4	2	1000	2022-10-31	11000	\N	1000	\N	Dowry Blade

@@ -593,7 +593,7 @@ export default {
       'summon_total'
     ]),
     MAX_AWAKENING() {
-      return 8;
+      return 9;
     },
     getFilters() {
       return categories.filter(c => { return c.isFilter });

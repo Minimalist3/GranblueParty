@@ -24,14 +24,14 @@
 10400018	1	1	\N	7	Big boost to light allies' ATK
 10400019	1	1	\N	11	Big boost to light allies' max HP
 10400019	2	120	\N	19	Light allies gain Veil at start of the first attack phase.
-10400020	1	60	\N	20	Big boost to DEF as Light allies' HP decreases
+10400020	1	60	\N	20	Big boost to Light allies' DEF based on how low HP is
 10400020	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400020	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400020	3	200	\N	259	Medium boost to ATK as Light allies' HP increases
+10400020	3	200	\N	259	Medium boost to Light allies' ATK based on how high HP is
 10400021	1	1	\N	23	Big boost to dark allies' max HP
 10400022	1	1	\N	24	Big boost to earth allies' ATK
 10400023	1	1	\N	10	Big boost to fire allies' max HP
-10400023	2	120	\N	25	Small boost to ATK as fire allies' HP decreases
+10400023	2	120	\N	25	Small boost to fire allies' ATK based on how low HP is
 10400024	1	1	\N	7	Big boost to light allies' ATK
 10400025	1	1	\N	0	Big boost to fire allies' ATK
 10400026	1	1	\N	2	Big boost to water allies' ATK
@@ -85,7 +85,7 @@
 10400056	2	1	\N	30	Chance of Substitute effect.
 10400057	1	1	\N	29	Boost to Overdrive Surge , Overdrive Surge II , and Overdrive Surge III .
 10400057	2	1	\N	30	Chance of Substitute effect.
-10400058	1	1	\N	43	Big boost to ATK as dark allies' HP decreases
+10400058	1	1	\N	43	Big boost to dark allies' ATK based on how low HP is
 10400058	2	1	\N	44	Small boost to double attack rate for dark allies
 10400058	2	120	\N	45	Small boost to dark allies' double attack rate and critical hit rate
 10400059	1	1	\N	46	Big boost to dark allies' ATK
@@ -110,35 +110,35 @@
 10400069	1	1	\N	51	Boost to energy cap (Effect is halved when sub-equipped).
 10400069	2	1	\N	52	Reduce Light damage taken when Awakening Blade is active (Effect is halved when sub-equipped).
 10400070	1	1	\N	58	Medium boost to fire allies' ATK and critical hit rate
-10400070	2	1	\N	59	Small boost to ATK as fire allies' HP decreases
+10400070	2	1	\N	59	Small boost to fire allies' ATK based on how low HP is
 10400071	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
-10400071	2	1	\N	25	Small boost to ATK as fire allies' HP decreases
+10400071	2	1	\N	25	Small boost to fire allies' ATK based on how low HP is
 10400072	1	1	\N	61	Small boost to light allies' ATK and max HP
 10400072	2	120	\N	62	Small boost to light allies' ATK
 10400073	1	1	\N	63	Medium boost to wind allies' ATK
 10400073	2	1	\N	64	Small boost to wind allies' critical hit rate
 10400074	1	1	\N	65	Boost to Humans' and Draphs' ATK and HP.
 10400074	2	200	\N	1094	Boost to all allies' ATK and max HP based on number of Humans and Draphs in party.
-10400075	1	60	\N	66	Big boost to DEF as Fire allies' HP decreases
+10400075	1	60	\N	66	Big boost to Fire allies' DEF based on how low HP is
 10400075	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400075	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400075	3	200	\N	737	Medium boost to ATK as Fire allies' HP increases
-10400076	1	60	\N	67	Big boost to DEF as Water allies' HP decreases
+10400075	3	200	\N	737	Medium boost to Fire allies' ATK based on how high HP is
+10400076	1	60	\N	67	Big boost to Water allies' DEF based on how low HP is
 10400076	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400076	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400076	3	200	\N	880	Medium boost to ATK as Water allies' HP increases
-10400077	1	60	\N	68	Big boost to DEF as Earth allies' HP decreases
+10400076	3	200	\N	880	Medium boost to Water allies' ATK based on how high HP is
+10400077	1	60	\N	68	Big boost to Earth allies' DEF based on how low HP is
 10400077	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400077	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400077	3	200	\N	759	Medium boost to ATK as Earth allies' HP increases
-10400078	1	60	\N	69	Big boost to DEF as Wind allies' HP decreases
+10400077	3	200	\N	759	Medium boost to Earth allies' ATK based on how high HP is
+10400078	1	60	\N	69	Big boost to Wind allies' DEF based on how low HP is
 10400078	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400078	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400078	3	200	\N	881	Medium boost to ATK as Wind allies' HP increases
+10400078	3	200	\N	881	Medium boost to Wind allies' ATK based on how high HP is
 10400079	1	60	\N	70	Big boost to DEF as Dark allies' HP decreases
 10400079	2	100	\N	21	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is.
 10400079	2	150	\N	22	When main weapon (MC only): Boost and supplement C.A. DMG based on how high HP is and 30% Boost to C.A. DMG Cap.
-10400079	3	200	\N	112	Medium boost to ATK as Dark allies' HP increases
+10400079	3	200	\N	112	Medium boost to Dark allies' ATK based on how high HP is
 10400085	1	1	\N	0	Big boost to fire allies' ATK
 10400086	1	1	\N	26	Big boost to dark allies' ATK
 10400086	2	1	\N	7	Big boost to light allies' ATK
@@ -268,7 +268,7 @@
 10400159	2	100	\N	129	When main weapon (MC only): Boost to multiattack rate and DEF when there is only 1 foe remaining.
 10400160	1	1	\N	2	Big boost to water allies' ATK
 10400160	2	1	\N	103	Small boost to water allies' C.A. DMG
-10400160	3	120	\N	458	Boost to water charge attack DMG cap
+10400160	3	120	\N	458	Boost to water allies' C.A. DMG cap
 10400161	1	1	\N	130	Big boost to Fire allies' ATK
 10400161	2	120	\N	131	Boost to Fire allies' skill damage cap.
 10400162	1	1	\N	132	Big boost to Water allies' ATK
@@ -345,7 +345,7 @@
 10400203	1	1	\N	949	Massive boost to dark allies' ATK based on how high HP is
 10400203	2	150	\N	950	Supplement Dark allies' C.A. DMG based on how high HP is.
 10400204	1	1	\N	369	Medium boost to light allies' ATK and critical hit rate
-10400204	2	1	\N	521	Boost to light charge attack DMG cap
+10400204	2	1	\N	521	Boost to light allies' C.A. DMG cap
 10400204	3	120	\N	1071	When main weapon (MC only): At end of turn when Aurora Crest is at 5: Light damage to all foes and all allies gain Charge Bar +10% .
 10400205	1	1	\N	157	Big boost to water allies' ATK
 10400205	2	120	\N	966	Medium boost to water allies' water ATK based on number of turns passed
@@ -361,7 +361,7 @@
 10400209	2	150	\N	498	Small boost to earth allies' ATK / Small boost to triple attack rate
 10400210	1	1	\N	5	Big boost to earth allies' ATK
 10400210	2	1	\N	606	Small boost to earth allies' C.A. DMG
-10400210	3	120	\N	200	Boost to earth charge attack DMG cap
+10400210	3	120	\N	200	Boost to earth allies' C.A. DMG cap
 10400211	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
 10400211	2	1	\N	1036	When main weapon (MC only): Bonus Fire DMG effect based on number of Machine Cell .
 10400212	1	1	\N	1035	When main weapon: Tactical Shield now always grants Shield (4500) .
@@ -402,6 +402,7 @@
 10400226	2	1	\N	1128	Boost to fire allies' multiattack rate based on how high their HP is
 10400227	1	1	\N	68	Big boost to earth allies' DEF based on how low HP is
 10400227	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
+10400227	2	120	\N	492	Big boost to earth allies' ATK based on how low HP is
 10400228	1	1	\N	0	Big boost to fire allies' ATK
 10400228	2	1	\N	368	Small boost to fire allies' C.A. DMG
 10400228	3	120	\N	914	Boost to fire allies' C.A. DMG cap
@@ -414,6 +415,20 @@
 10400233	1	1	\N	492	Big boost to earth allies' ATK based on how low HP is
 10400233	2	1	\N	901	Small boost to earth allies' ATK and critical hit rate
 10400233	3	120	\N	918	20% Bonus Earth DMG effect to the third hit of Earth allies' triple attacks.
+10400234	1	1	\N	7	Big boost to light allies' ATK
+10400234	2	1	\N	222	Medium boost to light allies' critical hit rate
+10400234	3	120	\N	1028	Supplement light allies' critical hit DMG
+10400235	1	1	\N	66	Big boost to fire allies' DEF based on how low HP is
+10400235	2	1	\N	897	Small boost to fire allies' ATK and critical hit rate
+10400235	3	120	\N	1070	Supplement fire allies' critical hit DMG
+10400236	1	1	\N	91	Small boost to fire allies' ATK and max HP
+10400236	2	1	\N	243	Small boost to fire allies' max HP
+10400237	1	1	\N	1182	When at least 4 weapons of the same weapon group are equipped: Boost to fire allies' ATK, DEF, and DMG cap
+10400237	2	150	\N	91	Small boost to fire allies' ATK and max HP
+10400238	1	1	\N	137	Big boost to wind allies' ATK
+10400238	2	100	\N	1086	When main weapon (MC only): Medium boost to multiattack rate.
+10400239	1	1	\N	63	Medium boost to wind allies' ATK
+10400239	2	1	\N	1186	Small boost to wind allies' C.A. DMG and C.A. DMG cap
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -592,10 +607,10 @@
 10401102	1	1	2	198	Big boost to dagger-specialty allies' ATK and max HP
 10401102	2	1	11	102	A gate to the summits of power locked within ultima weapons. These gates can only be opened with gauph keys.
 10401102	3	200	50	1095	A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys.
-10401103	1	1	\N	199	Small boost to ATK as earth allies' HP decreases
-10401103	2	1	\N	200	Boost to earth charge attack DMG cap
+10401103	1	1	\N	199	Small boost to earth allies' ATK based on how low HP is
+10401103	2	1	\N	200	Boost to earth allies' C.A. DMG cap
 10401104	1	1	\N	201	Small boost to light allies' ATK and critical hit rate
-10401104	2	1	\N	202	Small boost to ATK as light allies' HP decreases
+10401104	2	1	\N	202	Small boost to light allies' ATK based on how low HP is
 10401105	1	1	\N	203	Big boost to fire allies' ATK
 10401105	2	1	\N	204	Massive boost to fire allies' critical hit rate in Arcarum
 10401106	1	1	\N	205	Big boost to earth allies' ATK and double attack rate
@@ -607,10 +622,10 @@
 10401108	2	1	\N	209	When main weapon (MC only): 10% bonus Water DMG effect when double attack rate is boosted.
 10401109	1	1	\N	210	Big boost to dark allies' ATK
 10401109	2	100	\N	211	When main weapon (MC only): 15% Bonus Dark damage effect when under Cursed .
-10401110	1	1	\N	212	Boost to Wind charge attack damage cap
+10401110	1	1	\N	212	Boost to wind allies' C.A. DMG cap
 10401110	2	120	\N	213	Big boost to wind allies' ATK based on how low HP is
 10401111	1	1	\N	26	Big boost to dark allies' ATK
-10401111	2	120	\N	214	Boost to dark charge attack DMG cap
+10401111	2	120	\N	214	Boost to dark allies' C.A. DMG cap
 10401112	1	1	\N	48	Medium boost to light allies' ATK
 10401112	2	1	\N	215	Medium boost to light allies' double attack rate and critical hit rate
 10401113	1	1	\N	216	Medium boost to water allies' ATK and critical hit rate
@@ -636,7 +651,7 @@
 10401122	2	120	\N	327	Small boost to light allies' max HP
 10401122	3	150	\N	787	Boost to light allies' DMG cap
 10401123	1	1	\N	273	Medium boost to water allies' ATK / Medium boost to double attack rate for water allies
-10401123	2	120	\N	458	Boost to water charge attack DMG cap
+10401123	2	120	\N	458	Boost to water allies' C.A. DMG cap
 10401124	1	1	\N	181	30% boost to ATK and HP of equipped daggers
 10401124	1	120	\N	821	50% boost to ATK and HP of equipped daggers
 10401124	2	150	\N	805	Boost to DMG cap based on how many daggers are equipped
@@ -694,10 +709,12 @@
 10401148	2	120	\N	1026	Supplement water allies' critical hit DMG
 10401149	1	1	\N	1057	Big boost to light allies' healing cap
 10401149	2	1	\N	1058	Medium boost to light allies' ATK and max HP
+10401149	3	120	\N	1020	Small boost to light allies' DEF based on how low HP is
 10401151	1	1	\N	898	Medium boost to water allies' ATK / Medium boost to triple attack rate
 10401151	2	120	\N	1079	Medium boost to water allies' ATK
 10401152	1	1	\N	1092	Big boost to wind allies' C.A. DMG
 10401152	2	1	\N	841	Boost to wind allies' skill DMG cap
+10401152	3	120	\N	212	Boost to wind allies' C.A. DMG cap
 10401153	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
 10401153	2	1	\N	914	Boost to fire allies' C.A. DMG cap
 10401153	3	120	\N	1070	Supplement fire allies' critical hit DMG
@@ -709,14 +726,18 @@
 10401156	2	150	\N	417	Small boost to water allies' ATK and max HP
 10401158	1	1	\N	373	Big boost to light allies' C.A. DMG
 10401158	2	1	\N	1154	Boost to light allies' ATK for first 8 turns of battle
+10401158	3	120	\N	1145	Supplement light allies' C.A. DMG based on how high their HP is
 10401159	1	1	\N	1076	Supplement earth allies' DMG based on how low HP is
 10401159	2	1	\N	1138	Boost to earth allies' multiattack rate based on how low their HP is
 10401160	1	1	\N	1155	Big boost to earth allies' ATK / Take DMG worth 20% of max HP at battle start
 10401160	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
+10401160	3	120	\N	493	Small boost to earth allies' ATK
 10401161	1	1	\N	354	Big boost to earth allies' C.A. DMG
 10401161	2	1	\N	1162	Boost to earth allies' ATK for first 8 turns of battle
 10401162	1	1	\N	69	Big boost to wind allies' DEF based on how low HP is
 10401162	2	1	\N	475	Medium boost to wind allies' max HP
+10401163	1	1	\N	782	Big boost to Dark allies' ATK
+10401163	2	100	\N	1086	When main weapon (MC only): 30% boost to double attack rate and 10% boost to triple attack rate.
 10402000	1	1	\N	222	Medium boost to light allies' critical hit rate
 10402000	2	1	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10402002	1	1	\N	0	Big boost to fire allies' ATK
@@ -726,7 +747,7 @@
 10402003	3	120	\N	226	When main weapon (MC Only): Medium boost to critical hit rate.
 10402007	1	1	\N	26	Big boost to dark allies' ATK
 10402007	1	101	\N	78	Big boost to dark allies' ATK
-10402007	2	120	\N	227	Medium boost to ATK as dark allies' HP decreases
+10402007	2	120	\N	227	Medium boost to dark allies' ATK based on how low HP is
 10402008	1	1	\N	155	Big boost to wind allies' max HP
 10402008	2	1	\N	11	Big boost to light allies' max HP
 10402008	3	120	\N	228	Boost to Wind allies' debuff success rate.
@@ -745,7 +766,7 @@
 10402017	2	120	\N	235	5% boost to skill DMG cap for earth allies
 10402018	1	1	\N	2	Big boost to water allies' ATK
 10402019	1	1	\N	236	Big boost to dark allies' ATK
-10402019	2	1	\N	213	Big boost to ATK as wind allies' HP decreases
+10402019	2	1	\N	213	Big boost to wind allies' ATK based on how low HP is
 10402020	1	1	\N	26	Big boost to dark allies' ATK
 10402021	1	1	\N	7	Big boost to light allies' ATK
 10402022	1	1	\N	0	Big boost to fire allies' ATK
@@ -822,7 +843,7 @@
 10402065	1	1	\N	26	Big boost to dark allies' ATK
 10402065	2	1	\N	252	Dark allies gain ATK Up (Stackable) upon taking damage.
 10402066	1	1	\N	253	Big boost to light allies' multiattack rate
-10402066	2	1	\N	254	Small boost to ATK as light allies' HP decreases
+10402066	2	1	\N	254	Small boost to light allies' ATK based on how low HP is
 10402067	1	1	\N	48	Medium boost to light allies' ATK
 10402067	2	1	\N	215	Medium boost to light allies' double attack rate and critical hit rate
 10402068	1	1	\N	255	Big Boost to fire allies' ATK / 10% cut to fire allies' max HP
@@ -830,7 +851,7 @@
 10402069	1	1	\N	256	5% boost to Rank EXP
 10402070	1	1	\N	257	Big boost to light allies' ATK
 10402070	1	120	\N	258	Massive boost to light allies' ATK
-10402070	2	150	\N	259	Medium boost to ATK as light allies' HP increases
+10402070	2	150	\N	259	Medium boost to light allies' ATK based on how high HP is
 10402071	1	1	\N	5	Big boost to earth allies' ATK
 10402071	2	1	\N	39	Boost to DEF for earth allies for first 8 turns of battle
 10402072	1	1	\N	260	Big boost to Earth allies' ATK
@@ -854,7 +875,7 @@
 10402080	1	1	\N	267	When main weapon: All allies take 10% less DMG from foes with Putrefied .
 10402080	2	100	\N	268	Big boost to light allies' ATK
 10402081	1	1	\N	269	Big boost to earth allies' ATK
-10402081	2	1	\N	200	Boost to earth charge attack DMG cap
+10402081	2	1	\N	200	Boost to earth allies' C.A. DMG cap
 10402082	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402083	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
 10402084	1	1	3	270	Big boost to spear-specialty allies' ATK and max HP
@@ -916,12 +937,12 @@
 10402112	1	1	\N	11	Big boost to light allies' max HP
 10402112	2	1	\N	222	Medium boost to light allies' critical hit rate
 10402113	1	1	\N	288	Big boost to Light allies' ATK
-10402113	2	100	\N	289	When main weapon: Light damage to all foes at end of turn if MC takes damage during that turn.
+10402113	2	100	\N	289	When main weapon: Light damage to all foes at end of turn if MC takes damage during that turn. (Damage cap: ~400,000)
 10402114	1	1	\N	2	Big boost to water allies' ATK
 10402114	2	120	\N	290	When main weapon (MC only): Gain 8% ATK Up (Stackable / Max: 40%) upon triple attack
 10402115	1	1	\N	291	Big boost to Earth allies' ATK
 10402115	2	100	\N	292	When main weapon (MC only): Gain 5% ATK Up (Stackable / Max: 20%) upon one-foe attack
-10402116	1	1	\N	1042	Big boost to ATK as water allies' HP increases
+10402116	1	1	\N	1042	Big boost to water allies' ATK based on how high HP is
 10402116	2	150	\N	294	Medium boost to water allies' double attack rate and critical hit rate
 10402117	1	1	\N	295	Medium boost to fire allies' ATK and double attack rate
 10402117	2	1	\N	243	Small boost to fire allies' max HP
@@ -945,7 +966,7 @@
 10402126	1	1	\N	305	Big boost to Wind allies' ATK and max HP
 10402126	2	120	12	140	A symbol of apocalyptic corruption. Empowered by a chosen pendulum.
 10402126	3	200	24	141	A symbol of evolution's holy outcome. Empowered by a chosen pendulum.
-10402127	1	1	\N	306	Big boost to wind allies' ATK based on how high HP is
+10402127	1	1	\N	1187	Big boost to wind allies' ATK based on how high HP is
 10402127	2	150	\N	307	Medium boost to wind allies' max HP and debuff resistance
 10402128	1	1	\N	5	Big boost to earth allies' ATK
 10402128	2	120	\N	308	Reduce earth allies' water DMG
@@ -971,7 +992,7 @@
 10402137	2	120	\N	850	When main weapon: 50%-10% boost to Light allies' skill damage cap based on how high their HP is.
 10402137	2	200	\N	933	50%-10% boost to Light allies' skill damage cap based on how high their HP is.
 10402138	1	1	\N	540	Big boost to water allies' ATK
-10402138	2	120	\N	873	Boost to Water allies' counter damage. Water allies gain Adjudicator's Revelation (Stackable / Max: 2) upon countering.
+10402138	2	120	\N	873	200% boost to Water allies' counter damage. Water allies gain Adjudicator's Revelation (Stackable / Max: 2) upon countering.
 10402139	1	1	\N	874	Big boost to earth allies' ATK
 10402139	2	1	\N	685	Medium boost to earth allies' healing cap
 10402140	1	1	\N	921	When main weapon (MC only): Gain Drain upon using Dragphract .
@@ -1018,7 +1039,7 @@
 10402160	1	1	\N	1048	Big boost to fire allies' skill DMG cap / Big supplemental boost to skill DMG
 10402160	2	120	\N	428	Small boost to fire allies' ATK
 10402161	1	1	\N	60	Medium boost to fire allies' ATK and critical hit rate
-10402161	2	1	\N	914	Boost to fire charge attack DMG cap
+10402161	2	1	\N	914	Boost to fire allies' C.A. DMG cap
 10402162	1	1	\N	916	Big boost to water allies' ATK based on how low HP is
 10402162	2	1	\N	232	Small boost to water allies' ATK
 10402163	1	1	\N	916	Big boost to water allies' ATK based on how low HP is
@@ -1039,6 +1060,7 @@
 10402170	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
 10402171	1	1	\N	276	Medium boost to dark allies' ATK and critical hit rate
 10402171	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
+10402171	3	120	\N	465	Medium boost to dark allies' DEF based on how low HP is
 10402172	1	1	\N	1123	Big boost to earth allies' ATK
 10402172	2	1	\N	1124	When main weapon: Big boost to all allies' ATK based on how low MC's HP is.
 10402175	1	1	\N	5	Big boost to earth allies' ATK
@@ -1048,6 +1070,10 @@
 10402176	2	1	\N	131	Boost to fire allies' skill DMG cap
 10402177	1	1	\N	1159	Supplement fire allies' DMG based on how high their HP is
 10402177	2	1	\N	83	Boost to fire allies' ATK for first 8 turns of battle
+10402178	1	1	\N	1120	Big boost to water allies' ATK / Take DMG worth 20% of max HP at battle start
+10402178	2	1	\N	507	Small boost to water allies' ATK based on how low HP is
+10402179	1	1	\N	593	Medium boost to earth allies' ATK and double attack rate
+10402179	2	1	\N	42	Small boost to earth allies' max HP
 10403000	1	1	\N	7	Big boost to light allies' ATK
 10403000	2	120	\N	312	When main weapon, boost to debuff resistance
 10403001	1	60	\N	892	Medium boost to Light allies' ATK / Medium boost to triple attack rate.
@@ -1148,7 +1174,7 @@
 10403057	2	1	\N	336	Earth allies gain ATK Up (Stackable) upon taking damage.
 10403057	3	120	\N	337	Small boost to earth allies' DEF based on how low HP is
 10403058	1	1	\N	5	Big boost to earth allies' ATK
-10403058	2	1	\N	338	Small boost to ATK as earth allies' HP decreases
+10403058	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
 10403059	1	1	\N	155	Big boost to wind allies' max HP
 10403059	2	1	\N	339	Boost to DEF for Wind allies for first 8 turns of battle
 10403060	1	1	\N	340	Big boost to earth allies' ATK
@@ -1175,7 +1201,7 @@
 10403070	1	1	\N	347	Medium boost to wind allies' ATK and max HP
 10403070	2	1	\N	348	Lessen fire DMG taken for wind allies
 10403071	1	1	\N	349	Medium boost to dark allies' ATK and max HP
-10403071	2	1	\N	214	Boost to dark charge attack DMG cap
+10403071	2	1	\N	214	Boost to dark allies' C.A. DMG cap
 10403072	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403073	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
 10403074	1	1	4	350	Big boost to axe-specialty allies' ATK and max HP
@@ -1216,12 +1242,12 @@
 10403090	1	120	\N	258	Massive boost to light allies' ATK
 10403090	2	150	\N	353	Medium boost to light allies' C.A. DMG and C.A. DMG cap
 10403091	1	1	\N	354	Big boost to earth allies' C.A. DMG
-10403091	2	1	\N	338	Small boost to ATK as earth allies' HP decreases
+10403091	2	1	\N	338	Small boost to earth allies' ATK based on how low HP is
 10403092	1	1	\N	355	When main weapon (MC only): Chance to remove 1 debuff with every one-foe attack.
 10403092	2	100	\N	356	Big boost to wind allies' ATK
-10403093	1	1	\N	357	Medium boost to ATK as earth allies' HP increases
+10403093	1	1	\N	357	Medium boost to earth allies' ATK based on how high HP is
 10403093	2	1	\N	358	Big boost to earth allies' critical hit rate
-10403094	1	1	\N	359	Small boost to ATK as dark allies' HP decreases
+10403094	1	1	\N	359	Small boost to dark allies' ATK based on how low HP is
 10403094	2	1	\N	360	Small boost to dark allies' double attack rate / Slight chance to dodge and counter (Big DMG)
 10403095	1	1	\N	9	Big boost to earth allies' max HP
 10403095	2	1	\N	361	When main weapon (MC only): Can't deal multiattacks but always deal critical hits; 100% chance of dealing 130% more damage.
@@ -1258,9 +1284,9 @@
 10403109	1	1	\N	379	Big boost to Dark allies' ATK
 10403109	2	1	\N	380	When main weapon: Debuff from the summon Rainy Day 's call will always land on a foe.
 10403110	1	1	\N	381	Big boost to Water allies' ATK
-10403110	2	100	\N	382	When main weapon (MC only): 30% Bonus Water DMG effect against foes affected by Glaciate .
+10403110	2	100	\N	382	When main weapon (MC only): 30% Bonus Water DMG effect against foes with Glaciate .
 10403111	1	1	\N	383	Boost to Earth allies' skill damage cap.
-10403111	2	120	\N	384	Boost to ATK and damage cap when all weapon types are equipped.
+10403111	2	120	\N	384	Boost to ATK and damage cap when all weapon groups are equipped.
 10403112	1	1	\N	0	Big boost to fire allies' ATK
 10403112	2	1	\N	771	Medium boost to fire allies' critical hit rate
 10403113	1	1	\N	777	Big boost to earth allies' ATK
@@ -1326,7 +1352,7 @@
 10403139	1	1	\N	0	Big boost to fire allies' ATK
 10403139	2	1	\N	1032	Small boost to fire allies' DEF based on how low HP is
 10403140	1	1	\N	835	Small boost to light allies' critical hit rate
-10403140	2	1	\N	521	Boost to light charge attack DMG cap
+10403140	2	1	\N	521	Boost to light allies' C.A. DMG cap
 10403140	3	120	\N	1028	Supplement light allies' critical hit DMG
 10403141	1	1	\N	1049	Big boost to fire allies' ATK
 10403141	2	100	\N	1050	When main weapon (MC only): Gain Charge Bar +5% upon multiattacks.
@@ -1349,8 +1375,18 @@
 10403149	2	150	\N	869	Medium boost to fire allies' ATK and max HP
 10403150	1	1	\N	881	Medium boost to wind allies' ATK based on how high HP is
 10403150	2	1	\N	615	Small boost to wind allies' ATK
+10403150	2	120	\N	903	Small boost to wind allies' ATK and critical hit rate
 10403152	1	1	\N	130	Big boost to fire allies' ATK
 10403152	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.
+10403153	1	1	\N	1143	Boost to water allies' multiattack rate based on how high their HP is
+10403153	2	1	\N	541	Boost to water allies' skill DMG cap
+10403154	1	1	\N	1169	Supplement wind allies' DMG based on how high their HP is
+10403154	2	1	\N	1170	Medium boost to wind allies' wind ATK based on number of turns passed
+10403155	1	1	\N	1177	Boost to water allies' ATK, DEF, and DMG cap based on their max HP
+10403155	2	150	\N	417	Small boost to water allies' ATK and max HP
+10403156	1	1	\N	1183	Boost to ATK, max HP, and multiattack rate based on how many axes are equipped
+10403156	2	1	\N	1084	Boost to ATK based on how many axes are equipped
+10403156	3	150	\N	1184	Supplement wind allies' C.A. DMG based on how high their HP is
 10404002	1	1	\N	13	Big boost to wind allies' ATK
 10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Dodge-and-Counter (1 time) (Boost to counter damage based on skill lvl).
 10404003	1	1	\N	386	Small boost to healing for healing type allies.
@@ -1454,7 +1490,7 @@
 10404066	2	1	\N	410	Boost Splitting Spirit to 3% charge bar per 200 HP.
 10404067	1	1	\N	409	Boost Fate Foreseen to 1 MP per 8% charge bar.
 10404067	2	1	\N	410	Boost Splitting Spirit to 3% charge bar per 200 HP.
-10404068	1	1	\N	411	Big boost to ATK as fire allies' HP decreases
+10404068	1	1	\N	411	Big boost to fire allies' ATK based on how low HP is
 10404068	2	1	\N	412	Small boost to healing cap for fire allies
 10404068	3	120	\N	413	When main weapon (MC only): Boost to double attack rate when the field effect Flare is active.
 10404069	1	60	\N	91	Small boost to Fire allies' ATK and max HP
@@ -1488,7 +1524,7 @@
 10404082	1	1	\N	86	Big boost to wind allies' critical hit rate
 10404082	2	1	\N	182	Small boost to healing cap for wind allies
 10404083	1	1	\N	2	Big boost to water allies' ATK
-10404084	1	1	\N	422	Medium boost to ATK as Light allies' HP decreases
+10404084	1	1	\N	1185	Medium boost to light allies' ATK based on how low HP is
 10404084	2	1	\N	423	Small boost to Light allies' ATK
 10404085	1	1	\N	424	Big boost to dark allies' ATK / 7% cut to dark allies' max HP
 10404085	2	1	\N	425	Small boost to double attack rate for dark allies
@@ -1601,7 +1637,7 @@
 10404140	1	1	\N	5	Big boost to earth allies' ATK
 10404140	2	120	\N	456	Big boost to triple attack rate (MC only). Immunity to Stone effect
 10404141	1	1	\N	457	Big boost to staff-specialty water allies' ATK
-10404141	2	1	\N	458	Boost to water charge attack DMG cap
+10404141	2	1	\N	458	Boost to water allies' C.A. DMG cap
 10404142	1	1	\N	459	Medium boost to dark allies' ATK and max HP
 10404142	2	120	\N	460	Medium boost to dark allies' C.A. DMG and C.A. DMG cap
 10404143	1	1	\N	461	Big boost to light allies' ATK
@@ -1730,8 +1766,10 @@
 10404198	1	1	\N	1115	Big boost to wind allies' healing cap
 10404198	2	1	\N	1116	Medium boost to wind allies' ATK and max HP
 10404199	1	1	\N	1122	Big boost to fire allies' ATK based on how high HP is
+10404199	3	120	\N	1171	Small boost to fire allies' max HP and critical hit rate
 10404201	1	1	\N	1156	Big boost to water allies' healing cap
 10404201	2	1	\N	947	Medium boost to water allies' ATK and max HP
+10404201	3	120	\N	508	Small boost to water allies' DEF based on how low HP is
 10404202	1	1	\N	540	Big boost to water allies' ATK
 10404202	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.
 10404203	1	1	\N	1157	Big boost to earth allies' ATK
@@ -1740,6 +1778,15 @@
 10404204	2	1	\N	914	Boost to fire allies' C.A. DMG cap
 10404205	1	1	\N	1164	When 3 or more of the same weapon are equipped: Boost to Earth allies' ATK, DEF, and DMG cap.
 10404205	2	150	\N	418	Small boost to earth allies' ATK and max HP
+10404206	1	1	\N	1172	Supplement water allies' DMG based on how low HP is
+10404206	2	1	\N	1173	Medium boost to water allies' ATK based on how low HP is
+10404207	1	1	\N	43	Big boost to dark allies' ATK based on how low HP is
+10404207	2	1	\N	309	Boost to dark allies' skill DMG cap
+10404208	1	1	\N	1176	Big boost to earth allies' healing cap
+10404208	2	1	\N	709	Big boost to earth allies' ATK and max HP
+10404209	1	1	\N	1178	Big boost to light allies' ATK
+10404209	2	1	\N	1179	When main weapon: Reduce all allies' DMG taken from foes with Thunderstruck by 10%.
+10404210	1	1	\N	642	Big boost to light allies' ATK based on how high HP is
 10405000	1	1	\N	5	Big boost to earth allies' ATK
 10405000	1	101	\N	269	Big boost to earth allies' ATK
 10405000	2	120	\N	481	Slight chance to dodge and counter (medium DMG) for earth allies
@@ -1778,7 +1825,7 @@
 10405025	1	120	\N	489	Massive boost to fire allies' ATK
 10405025	2	150	\N	490	Medium boost to fire allies' double attack rate and critical hit rate
 10405026	1	1	\N	280	Medium boost to wind allies' ATK
-10405026	2	1	\N	491	Small boost to ATK as wind allies' HP decreases
+10405026	2	1	\N	491	Small boost to wind allies' ATK based on how low HP is
 10405027	1	1	\N	485	When main weapon: Bounty Hunter line of skills inflict 1 extra Bounty .
 10405027	2	1	\N	486	When main weapon: ~5% boost to item-drop rate.
 10405028	1	1	\N	485	When main weapon: Bounty Hunter line of skills inflict 1 extra Bounty .
@@ -1793,7 +1840,7 @@
 10405032	2	1	\N	486	When main weapon: ~5% boost to item-drop rate.
 10405033	1	1	\N	485	When main weapon: Bounty Hunter line of skills inflict 1 extra Bounty .
 10405033	2	1	\N	486	When main weapon: ~5% boost to item-drop rate.
-10405034	1	1	\N	492	Big boost to ATK as earth allies' HP decreases
+10405034	1	1	\N	492	Big boost to earth allies' ATK based on how low HP is
 10405034	2	1	\N	493	Small boost to earth allies' ATK
 10405034	3	120	\N	494	4% boost to Earth allies' Skill DMG cap.
 10405035	1	1	\N	495	Boost Triple Threat to 40% ATK Up (Stackable / Max: 200%) and 5% DEF Down (Stackable / Max: 20%) .
@@ -1844,10 +1891,10 @@
 10405057	1	1	\N	506	Big boost to light allies' ATK
 10405058	1	1	\N	26	Big boost to dark allies' ATK
 10405059	1	1	\N	2	Big boost to water allies' ATK
-10405059	2	1	\N	507	Small boost to ATK as water allies' HP decreases
+10405059	2	1	\N	507	Small boost to water allies' ATK based on how low HP is
 10405059	3	120	\N	508	Small boost to water allies' DEF based on how low HP is
 10405060	1	1	\N	176	Big boost to dark allies' multiattack rate
-10405060	2	120	\N	509	Small boost to ATK as dark allies' HP decreases
+10405060	2	120	\N	509	Small boost to dark allies' ATK based on how low HP is
 10405061	1	1	\N	503	Big boost to earth allies' ATK / 10% cut to earth allies' max HP
 10405061	2	1	\N	510	Medium boost to earth allies' double attack rate and critical hit rate
 10405062	1	1	\N	511	Small boost to dark allies' double attack rate / Slight chance to dodge and counter (Big DMG)
@@ -1901,7 +1948,7 @@
 10405087	2	120	\N	520	When main weapon (MC only): Boost to double attack rate based on foe's Bounty level.
 10405088	1	1	\N	7	Big boost to light allies' ATK
 10405088	2	1	\N	370	Small boost to light allies' C.A. DMG
-10405088	3	120	\N	521	Boost to light charge attack DMG cap
+10405088	3	120	\N	521	Boost to light allies' C.A. DMG cap
 10405089	1	1	\N	522	Medium boost to dark allies' ATK
 10405089	2	1	\N	523	Medium boost to dark allies' double attack rate and critical hit rate
 10405090	1	1	\N	524	Big boost to double attack rate for wind allies
@@ -1952,7 +1999,7 @@
 10405111	1	1	\N	538	When main weapon (MC only): 20% boost to bullets' ATK.
 10405111	2	1	\N	539	This is the essence of greatness. Gain its power by using emblems.
 10405112	1	1	\N	540	Big boost to water allies' ATK
-10405112	2	120	\N	541	Boost to Water allies' skill damage cap.
+10405112	2	120	\N	541	Boost to water allies' skill DMG cap
 10405113	1	1	\N	542	Big boost to Wind allies' ATK
 10405113	2	1	\N	543	When main weapon: Boost to Wind allies' skill DMG specs
 10405114	1	1	\N	278	Medium boost to fire allies' ATK
@@ -1979,7 +2026,7 @@
 10405123	3	200	46	865	Emblem of the six colors in which the world is rendered. Empowered by a chosen teluma.
 10405125	1	1	\N	2	Big boost to water allies' ATK
 10405125	2	1	\N	103	Small boost to water allies' C.A. DMG
-10405125	3	120	\N	458	Boost to water charge attack DMG cap
+10405125	3	120	\N	458	Boost to water allies' C.A. DMG cap
 10405126	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
 10405126	2	1	\N	926	When main weapon (MC only): Bonus Fire DMG effect based on Equestrian Affinity lvl.
 10405127	1	1	\N	925	When main weapon: All allies gain Charge Bar +20% upon using Dragphract .
@@ -1994,14 +2041,14 @@
 10405131	2	1	\N	926	When main weapon (MC only): Bonus Dark DMG effect based on Equestrian Affinity lvl.
 10405132	1	1	\N	0	Big boost to fire allies' ATK
 10405132	2	1	\N	368	Small boost to fire allies' C.A. DMG
-10405132	3	120	\N	914	Boost to fire charge attack DMG cap
+10405132	3	120	\N	914	Boost to fire allies' C.A. DMG cap
 10405134	1	1	\N	955	Massive boost to earth allies' C.A. DMG
 10405134	2	150	\N	956	Supplement Earth allies' C.A. DMG.
 10405135	1	1	\N	119	Big boost to wind allies' ATK
 10405135	2	120	\N	969	Medium boost to wind allies' wind ATK based on number of turns passed
 10405136	1	1	\N	41	Medium boost to earth allies' ATK
 10405136	1	120	\N	597	Medium boost to earth allies' ATK and critical hit rate
-10405136	2	1	\N	200	Boost to earth charge attack DMG cap
+10405136	2	1	\N	200	Boost to earth allies' C.A. DMG cap
 10405137	1	1	\N	1007	When main weapon: Massive boost to Light allies' ATK . 20% Bonus Light DMG effect to Light allies with Divinity .
 10405137	1	150	\N	1007	Massive boost to Light allies' ATK . 20% Bonus Light DMG effect to Light allies with Divinity .
 10405137	2	1	\N	1008	20% boost to Light allies' DMG cap in Arcarum
@@ -2020,12 +2067,12 @@
 10405143	2	1	\N	1036	When main weapon: Gain 1 Machine Cell every 3 turns.
 10405144	1	1	\N	149	Big boost to water allies' C.A. DMG
 10405144	2	1	\N	541	Boost to water allies' skill DMG cap
-10405144	3	120	\N	458	Boost to water charge attack DMG cap
+10405144	3	120	\N	458	Boost to water allies' C.A. DMG cap
 10405145	1	1	\N	782	Big boost to dark allies' ATK
-10405145	2	120	\N	309	Boost to Dark allies' skill damage cap.
+10405145	2	120	\N	309	Boost to dark allies' skill damage cap
 10405146	1	1	\N	5	Big boost to earth allies' ATK
 10405146	2	1	\N	606	Small boost to earth allies' C.A. DMG
-10405146	3	120	\N	200	Boost to earth charge attack DMG cap
+10405146	3	120	\N	200	Boost to earth allies' C.A. DMG cap
 10405147	1	1	\N	130	Big boost to fire allies' ATK
 10405147	2	100	\N	1075	When main weapon (MC only): Boost to C.A. damage.
 10405148	1	1	\N	597	Medium boost to earth allies' ATK and critical hit rate
@@ -2038,12 +2085,21 @@
 10405151	2	1	\N	1139	Supplement light allies' DMG based on how low HP is
 10405153	1	1	\N	1150	Big boost to fire allies' C.A. specs and chain burst specs.
 10405153	2	120	\N	1151	10% boost to Fire allies' special C.A. damage cap.
+10405154	1	1	\N	69	Big boost to wind allies' DEF based on how low HP is
+10405154	2	1	\N	1063	Small boost to wind allies' ATK based on how low HP is
+10405155	1	1	\N	540	Big boost to water allies' ATK
+10405155	2	100	\N	1082	When main weapon (MC only): 20% boost to skill damage.
+10405156	1	1	\N	2	Big boost to water allies' ATK
+10405156	2	1	\N	508	Small boost to water allies' DEF based on how low HP is
+10405157	1	1	\N	26	Big boost to dark allies' ATK
+10405157	2	1	\N	786	Big boost to dark allies' C.A. DMG
+10405157	3	120	\N	214	Boost to dark allies' C.A. DMG cap
 10406000	1	1	\N	7	Big boost to light allies' ATK
 10406000	1	101	\N	257	Big boost to light allies' ATK
 10406000	2	120	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10406002	1	1	\N	0	Big boost to fire allies' ATK
 10406002	1	101	\N	482	Big boost to fire allies' ATK
-10406002	2	120	\N	150	Medium boost to ATK as fire allies' HP decreases
+10406002	2	120	\N	150	Medium boost to fire allies' ATK based on how low HP is
 10406004	1	1	\N	17	Big boost to water allies' max HP
 10406005	1	1	\N	119	Big boost to wind allies' ATK
 10406006	1	1	\N	26	Big boost to dark allies' ATK
@@ -2106,7 +2162,7 @@
 10406042	2	150	\N	560	When main weapon (MC only): Guaranteed triple attacks / Take 5% damage every turn / 30% Bonus Elemental damage 
 10406042	3	200	\N	915	20% Bonus Fire DMG effect to third hit of Fire allies' triple attacks.
 10406043	1	1	\N	522	Medium boost to dark allies' ATK
-10406043	2	1	\N	359	Small boost to ATK as dark allies' HP decreases
+10406043	2	1	\N	359	Small boost to dark allies' ATK based on how low HP is
 10406044	1	1	\N	549	Boost to Humans' HP.
 10406044	2	1	\N	561	Boost to Humans' multiattack rate.
 10406044	3	200	\N	1101	Boost to all allies' multiattack rate based on number of Humans in party.
@@ -2133,12 +2189,12 @@
 10406055	1	1	\N	563	Big boost to earth allies' ATK
 10406056	1	1	\N	0	Big boost to fire allies' ATK
 10406056	2	1	\N	564	Slight chance to dodge and counter (small DMG) for fire allies
-10406057	1	1	\N	492	Big boost to ATK as Earth allies' HP decreases
+10406057	1	1	\N	492	Big boost to earth allies' ATK based on how low HP is
 10406057	2	1	\N	513	Small boost to double attack rate for Earth allies
 10406057	3	120	\N	840	Medium boost to earth allies' DEF based on how low HP is
 10406058	1	1	\N	565	Bonus Water DMG effect to fourth-positioned water ally / 30% hit to charge bar gain
 10406058	2	120	\N	2	Big boost to water allies' ATK
-10406059	1	1	\N	43	Big boost to ATK as dark allies' HP decreases
+10406059	1	1	\N	43	Big boost to dark allies' ATK based on how low HP is
 10406059	2	1	\N	185	Small boost to dark allies' ATK
 10406060	1	1	\N	502	Big Boost to water allies' ATK / 10% cut to water allies' max HP
 10406060	2	1	\N	4	Medium boost to water allies' critical hit rate
@@ -2163,7 +2219,7 @@
 10406070	2	1	\N	571	Boost to Earth allies' damage cap.
 10406071	1	1	\N	572	Big boost to Light allies' ATK
 10406071	2	1	\N	573	Lessen Dark damage.
-10406072	1	1	\N	213	Big boost to ATK as wind allies' HP decreases
+10406072	1	1	\N	213	Big boost to wind allies' ATK based on how low HP is
 10406072	2	1	\N	64	Small boost to wind allies' critical hit rate
 10406072	2	120	\N	263	Medium boost to wind allies' critical hit rate
 10406073	1	1	\N	574	Big boost to wind allies' ATK
@@ -2237,6 +2293,7 @@
 10406109	2	1	\N	474	Medium boost to double attack rate for earth allies
 10406110	1	1	\N	271	Massive boost to wind allies' ATK
 10406111	1	1	\N	271	Massive boost to wind allies' ATK.
+10406111	1	200	\N	983	Massive boost to wind allies' ATK / Small boost to max HP
 10406111	2	120	\N	598	When main weapon (MC only): All allies gain Guaranteed TA after a chain burst activation of 4 or more chains.
 10406112	1	1	\N	599	Big boost to Earth allies' ATK
 10406112	2	100	\N	600	When main weapon (MC only): 15% boost to charge bar gain.
@@ -2261,7 +2318,7 @@
 10406123	1	1	\N	562	30% boost to ATK and HP of equipped melee weapons
 10406123	1	120	\N	828	50% boost to ATK and HP of equipped melee weapons
 10406123	2	150	\N	811	Boost to DMG cap based on how many melee weapons are equipped
-10406124	1	1	\N	66	Big boost to DEF as fire allies' HP decreases
+10406124	1	1	\N	66	Big boost to fire allies' DEF based on how low HP is
 10406124	2	120	\N	91	Small boost to fire allies' ATK and max HP
 10406125	1	1	\N	855	Unworldly boost to dark allies' ATK
 10406125	2	120	\N	856	When main weapon: 10% boost to Dark allies' one-foe attack damage cap on multiattacks.
@@ -2273,9 +2330,10 @@
 10406127	2	1	\N	879	Small boost to fire allies' multiattack rate
 10406128	1	1	\N	913	Medium boost to dark allies' multiattack rate
 10406128	2	1	\N	332	Small boost to dark allies' critical hit rate
+10406128	3	120	\N	1136	Supplement dark allies' DMG based on how low HP is
 10406130	1	1	\N	354	Big boost to earth allies' C.A. DMG
 10406130	2	1	\N	383	Boost to Earth allies' skill damage cap.
-10406130	3	120	\N	200	Boost to earth charge attack DMG cap
+10406130	3	120	\N	200	Boost to earth allies' C.A. DMG cap
 10406131	1	1	\N	944	When main weapon: Boost Martial Prowess lvl gain from Snap Punch by 1. Martial Prowess lvl lowers by 2 instead of 5 when MC is below 25% HP at end of turn.
 10406131	2	1	\N	945	When main weapon: Inflict 7% ATK Down (Stackable / Max: 30%) and 7% DEF Down (Stackable / Max: 30%) on all foes when damage is dealt by Mantra.
 10406132	1	1	\N	944	When main weapon: Boost Martial Prowess lvl gain from Snap Punch by 1. Martial Prowess lvl lowers by 2 instead of 5 when MC is below 25% HP at end of turn.
@@ -2341,6 +2399,12 @@
 10406164	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
 10406165	1	1	\N	1054	Medium boost to dark allies' ATK and double attack rate
 10406165	2	120	\N	191	Small boost to dark allies' multiattack rate
+10406166	1	1	\N	1087	Supplement wind allies' DMG based on how low HP is
+10406166	2	1	\N	1174	Boost to wind allies' ATK for first 8 turns of battle
+10406167	1	1	\N	227	Medium boost to dark allies' ATK based on how low HP is
+10406167	2	1	\N	1021	Slight chance to dodge and counter (medium DMG) for dark allies
+10406168	1	1	\N	1054	Medium boost to dark allies' ATK and double attack rate
+10406168	2	1	\N	404	Medium boost to dark allies' healing cap
 10407000	1	1	\N	0	Big boost to fire allies' ATK
 10407000	1	101	\N	482	Big boost to fire allies' ATK
 10407000	2	120	\N	299	Medium boost to double attack rate for fire allies
@@ -2431,13 +2495,13 @@
 10407042	3	200	\N	80	Small boost to Dark allies' ATK and critical hit rate
 10407048	1	1	\N	905	Medium boost to water allies' DEF based on how low HP is
 10407048	2	1	\N	947	Medium boost to water allies' ATK and max HP
-10407050	1	1	\N	293	Big boost to ATK as water allies' HP increases
+10407050	1	1	\N	293	Big boost to water allies' ATK based on how high HP is
 10407050	2	120	\N	245	Small boost to water allies' max HP
 10407051	1	1	\N	631	Boost to water allies' ATK for first 8 turns of battle
 10407051	2	1	\N	244	Medium boost to water allies' ATK
 10407051	2	120	\N	2	Big boost to water allies' ATK
 10407052	1	1	\N	632	Medium boost to wind allies' ATK and critical hit rate
-10407052	2	1	\N	69	Big boost to DEF as wind allies' HP decreases
+10407052	2	1	\N	69	Big boost to wind allies' DEF based on how low HP is
 10407053	1	1	\N	17	Big boost to water allies' max HP
 10407053	2	1	\N	429	All water allies gain shield at start of battle
 10407054	1	1	\N	5	Big boost to earth allies' ATK
@@ -2662,9 +2726,9 @@
 10408050	2	1	\N	327	Small boost to light allies' max HP
 10408051	1	1	\N	677	Big boost to ATK for a Fire ally in second position. Take damage every turn (5% of max HP).
 10408051	2	120	\N	0	Big boost to fire allies' ATK
-10408052	1	1	\N	254	Small boost to ATK as light allies' HP decreases
-10408052	1	120	\N	678	Medium boost to ATK as light allies' HP decreases
-10408052	2	1	\N	20	Big boost to DEF as light allies' HP decreases
+10408052	1	1	\N	254	Small boost to light allies' ATK based on how low HP is
+10408052	1	120	\N	678	Medium boost to light allies' ATK based on how low HP is
+10408052	2	1	\N	20	Big boost to light allies' DEF based on how low HP is
 10408053	1	1	\N	679	When main weapon: 5% boost to all allies' debuff success rate.
 10408053	2	100	\N	680	Big boost to wind allies' ATK
 10408054	1	1	\N	94	This masterless weapon slumbers through eternal night.
@@ -2724,7 +2788,7 @@
 10408081	2	1	\N	690	This is the essence of greatness. Gain its power by using emblems.
 10408082	1	1	\N	691	Medium boost to water allies' ATK
 10408082	2	120	\N	692	Medium boost to water allies' C.A. DMG and C.A. DMG cap
-10408083	1	1	\N	693	Medium boost to ATK as wind allies' HP increases
+10408083	1	1	\N	693	Medium boost to wind allies' ATK based on how high HP is
 10408083	2	1	\N	694	Big boost to wind allies' critical hit rate
 10408084	1	1	\N	157	Big boost to water allies' ATK
 10408084	2	1	\N	695	Big boost to water allies' max HP in Arcarum
@@ -2747,7 +2811,7 @@
 10408092	2	1	\N	419	Small boost to light allies' ATK and max HP
 10408093	1	1	\N	13	Big boost to wind allies' ATK
 10408093	2	1	\N	708	Small boost to wind allies' C.A. DMG
-10408093	3	120	\N	212	Boost to wind charge attack DMG cap
+10408093	3	120	\N	212	Boost to wind allies' C.A. DMG cap
 10408094	1	1	\N	709	Big boost to Earth allies' ATK and max HP
 10408094	2	120	12	140	A symbol of apocalyptic corruption. Empowered by a chosen pendulum.
 10408094	3	200	33	141	A symbol of evolution's holy outcome. Empowered by a chosen pendulum.
@@ -2841,7 +2905,7 @@
 10408135	2	1	\N	836	Medium boost to wind allies' multiattack rate
 10408136	1	1	\N	5	Big boost to earth allies' ATK
 10408136	2	1	\N	606	Small boost to earth allies' C.A. DMG
-10408136	3	120	\N	200	Boost to earth charge attack DMG cap
+10408136	3	120	\N	200	Boost to earth allies' C.A. DMG cap
 10408137	1	1	\N	1066	Big boost to light allies' skill DMG cap / Big supplemental boost to skill DMG
 10408137	2	150	\N	1067	Small boost to light allies' ATK / Small boost to triple attack rate
 10408138	1	1	\N	7	Big boost to light allies' ATK
@@ -2854,13 +2918,19 @@
 10408141	2	1	\N	301	Slight chance to dodge and counter (medium DMG) for wind allies
 10408142	1	1	\N	580	Big boost to water allies' critical hit rate
 10408142	2	1	\N	232	Small boost to water allies' ATK
+10408142	3	120	\N	541	Boost to water allies' skill damage cap
 10408143	1	1	\N	225	Medium boost to fire allies' ATK
 10408143	2	1	\N	1146	Small boost to fire allies' C.A. DMG and C.A. DMG cap
+10408143	3	120	\N	1132	Supplement fire allies' C.A. DMG based on how low their HP is
 10408145	1	1	\N	1148	Supplement light allies' DMG
 10408145	2	1	\N	1144	Boost to ATK based on how many harps are equipped
 10408145	3	150	\N	1149	Boost to light allies' DMG cap
 10408146	1	1	\N	992	Big boost to light allies' ATK
 10408146	2	100	\N	1086	When main weapon (MC only): 20% boost to double attack rate and 10% boost to triple attack rate.
+10408147	1	1	\N	880	Medium boost to water allies' ATK based on how high HP is
+10408147	2	1	\N	1175	Small boost to water allies' C.A. DMG and C.A. DMG cap
+10408148	1	1	\N	419	Small boost to light allies' ATK and max HP
+10408148	2	1	\N	327	Small boost to light allies' max HP
 10409000	1	1	\N	0	Big boost to fire allies' ATK
 10409000	1	101	\N	482	Big boost to fire allies' ATK
 10409000	2	120	\N	2	Big boost to water allies' ATK
@@ -2898,7 +2968,7 @@
 10409022	1	1	\N	722	Big boost to Dark allies' ATK
 10409023	1	1	\N	244	Medium boost to water allies' ATK
 10409023	2	1	\N	245	Small boost to water allies' max HP
-10409024	1	1	\N	43	Big boost to ATK as dark allies' HP decreases
+10409024	1	1	\N	43	Big boost to dark allies' ATK based on how low HP is
 10409024	2	1	\N	332	Small boost to dark allies' critical hit rate
 10409025	1	1	\N	0	Big boost to fire allies' ATK
 10409025	1	101	\N	482	Big boost to fire allies' ATK
@@ -2979,7 +3049,7 @@
 10409063	1	1	\N	95	A soul from eons past lingers within.
 10409064	1	1	\N	482	Big boost to fire allies' ATK
 10409064	1	120	\N	489	Massive boost to fire allies' ATK
-10409064	2	150	\N	737	Medium boost to ATK as fire allies' HP increases
+10409064	2	150	\N	737	Medium boost to fire allies' ATK based on how high HP is
 10409065	1	1	\N	0	Big boost to fire allies' ATK
 10409065	1	101	\N	482	Big boost to fire allies' ATK
 10409065	2	1	\N	243	Small boost to fire allies' max HP
@@ -3053,7 +3123,7 @@
 10409098	2	1	\N	758	This is the essence of greatness. Gain its power by using emblems.
 10409100	1	1	\N	269	Big boost to earth allies' ATK
 10409100	1	120	\N	497	Massive boost to earth allies' ATK
-10409100	2	150	\N	759	Medium boost to ATK as earth allies' HP increases
+10409100	2	150	\N	759	Medium boost to earth allies' ATK based on how high HP is
 10409101	1	1	\N	341	Massive boost to Fire allies' ATK
 10409102	1	1	\N	341	Massive boost to Fire allies' ATK
 10409102	1	200	\N	934	Massive boost to fire allies' ATK / Small boost to max HP
@@ -3085,7 +3155,7 @@
 10409114	1	1	\N	0	Big boost to fire allies' ATK
 10409114	2	1	\N	368	Small boost to fire allies' C.A. DMG
 10409114	3	120	\N	1031	Big boost to fire allies' ATK / Take DMG worth 20% of max HP at battle start
-10409115	1	1	\N	779	Big boost to wind allies' C.A. DMG and C.A. DMG cap
+10409115	1	1	\N	1188	Big boost to wind allies' C.A. specs and chain burst specs
 10409115	2	150	\N	780	Small boost to wind allies' ATK / Small boost to triple attack rate
 10409116	1	1	\N	786	Big boost to dark allies' C.A. DMG
 10409116	2	1	\N	262	Boost to dark allies' ATK for first 8 turns of battle
@@ -3096,7 +3166,7 @@
 10409118	2	150	\N	814	Boost to DMG cap based on how many katanas are equipped
 10409119	1	1	\N	786	Big boost to dark allies' C.A. DMG
 10409119	2	1	\N	309	Boost to Dark allies' skill damage cap
-10409119	3	120	\N	214	Boost to dark charge attack DMG cap
+10409119	3	120	\N	214	Boost to dark allies' C.A. DMG cap
 10409120	1	1	\N	597	Medium boost to earth allies' ATK and critical hit rate
 10409120	2	1	\N	481	Slight chance to dodge and counter (medium DMG) for earth allies
 10409121	1	1	\N	866	Boost to Light allies' ATK based on number of turns passed
@@ -3140,3 +3210,7 @@
 10409140	1	1	\N	869	Medium boost to fire allies' ATK and max HP
 10409140	2	1	\N	1168	Medium boost to fire allies' healing cap
 10409140	3	120	\N	1152	Boost to ATK, max HP, and multiattack rate based on how many katanas are equipped
+10409141	1	1	\N	1180	Big boost to light allies' ATK
+10409141	2	1	\N	1181	10% boost to katana-specialty allies' C.A. damage cap.
+10409142	1	1	\N	782	Big boost to dark allies' ATK
+10409142	2	100	\N	1075	When main weapon (MC only): Boost to C.A. DMG.

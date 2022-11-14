@@ -1602,6 +1602,42 @@
     "icon": "Ability_Elemental.png"
   },
   {
+    "class": "Iatromantis",
+    "name": "Amyntiko Fos",
+    "ix": "ex1",
+    "family": "priest",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1818_3.png"
+  },
+  {
+    "class": "Iatromantis",
+    "name": "Pneuma",
+    "ix": "ex2",
+    "family": "priest",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1819_3.png"
+  },
+  {
+    "class": "Iatromantis",
+    "name": "Megali Fotia",
+    "ix": "ex3",
+    "family": "priest",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1820_1.png"
+  },
+  {
+    "class": "Iatromantis",
+    "name": "Vita Brevis",
+    "ix": "s1",
+    "family": "priest",
+    "row": "5",
+    "ex": "0",
+    "icon": "Ability_m_1817_2.png"
+  },
+  {
     "class": "Paladin",
     "name": "Noblesse Proteger",
     "ix": "ex1",
@@ -1670,7 +1706,7 @@
     "ix": "s1",
     "family": "fighter",
     "row": "5",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_m_1703_3.png"
   },
   {

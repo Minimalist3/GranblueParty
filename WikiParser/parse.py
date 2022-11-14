@@ -378,6 +378,11 @@ def updateCharacters():
               template = t
             elif t.name.matches('CharSkin'):
               skins.append(getTemplateValue(t, 'id')[:-3])
+
+          # Skip styles for now
+          style_id = getTemplateValueOrNone(template, 'style_id')
+          if style_id is not None and int(style_id) > 1:
+            continue
           
           # Images
           npc_quest_id = getTemplateValue(template, 'id')

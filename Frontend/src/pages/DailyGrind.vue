@@ -213,7 +213,7 @@ export default {
         }
       }
       else {
-        window.open('http://game.granbluefantasy.jp/#quest/supporter/' + raidKey, 'gbf');
+        window.open('https://game.granbluefantasy.jp/#quest/supporter/' + raidKey, 'gbf');
       }
     },
     addRaid(raidKey, raidList) {
@@ -238,7 +238,7 @@ export default {
         if (raid.remaining < 1) {
           this.skipRaid();
         }
-        window.open('http://game.granbluefantasy.jp/#quest/supporter/' + raid.id, 'gbf');
+        window.open('https://game.granbluefantasy.jp/#quest/supporter/' + raid.id, 'gbf');
       }
     },
     skipRaid() {
