@@ -1,21 +1,17 @@
 <template>
-  <div class="flex flex-col items-center">
-    <h1 class="mb-8">Guild Wars tokens and boxes Calculator</h1>
+  <div class="flex flex-col flex-wrap gap-4 items-center">
+    <h1>Dread Barrage Calculator</h1>
 
     <!-- Stats -->
     <div class="flex flex-col mb-8 gap-x-4">
       <span class="flex flex-row flex-wrap items-center gap-4">
         <label>Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
         <label>Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
-        <span>Progress: {{ getProgress }}%</span>
       </span>
 
       <span class="flex flex-row flex-wrap items-center gap-4">
         <label>Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
-        <span>
-          <label>Total honor <input class="input input-sm" type="number" min="0" style="width: 14ch;" v-model.lazy="total_honor"></label>
-          {{ total_honor >= 1000000 ? '(&asymp;' + (total_honor / 1000000).toFixed(2) + 'm)' : '' }}
-        </span>
+        <span>Progress: {{ getProgress }}%</span>
       </span>
 
       <span>{{ tokens_explained }}</span>
@@ -46,8 +42,6 @@
           Join
         </button>
       </span>
-
-      <checkbox v-model="add_honor">Include honor to tokens sum</checkbox>
     </div>
 
     <!-- Table -->
@@ -56,15 +50,12 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Solo honor</th>
             <th></th>
             <th></th>
             <th>Tokens</th>
             <th v-if="show_host">Tokens/AP</th>
-            <th v-if="show_host">Tokens/meat</th>
             <th v-if="show_join">Tokens/EP</th>
             <th>Fights</th>
-            <th v-if="show_host">Meats</th>
             <th v-if="show_host">Pots</th>
             <th v-if="show_join">Berries</th>
           </tr>
@@ -72,15 +63,12 @@
         <tbody>
           <tr v-for="(data, index) in getData" :key="index">
             <td :rowspan="data.name_rows" class="is-td-vcentered" v-if="data.name">{{ data.name }}</td>
-            <td :rowspan="data.honor_rows" class="is-td-vcentered" v-if="data.honor">{{ data.honor }}</td>
             <td :rowspan="data.type_rows" class="is-td-vcentered" v-if="data.type">{{ data.type }}</td>
             <td>{{ data.finish }}</td>
             <td>{{ data.token }}</td>
             <td v-if="show_host">{{ (data.cost_ap ? (data.token / data.cost_ap).toFixed(2) : '') }}</td>
-            <td v-if="show_host">{{ (data.cost_meat ? (data.token / data.cost_meat).toFixed(2) : '') }}</td>
             <td v-if="show_join">{{ (data.cost_ep ? (data.token / data.cost_ep).toFixed(2) : '') }}</td>
             <td>{{ Math.ceil(tokens_needed / data.token) }}</td>
-            <td v-if="show_host">{{ data.cost_meat > 0 ? Math.ceil(tokens_needed / data.token * data.cost_meat ) : '' }}</td>
             <td v-if="show_host">{{ data.cost_ap > 0 ? Math.ceil(tokens_needed / data.token * (data.cost_ap / 75) ) : '' }}</td>
             <td v-if="show_join">{{ data.cost_ep > 0 ? Math.ceil(tokens_needed / data.token * data.cost_ep ) : '' }}</td>
           </tr>
@@ -93,53 +81,69 @@
 <script>
 import Utils from '@/js/utils.js'
 
-import Checkbox from '@/components/common/Checkbox.vue'
-
-const lsMgt = new Utils.LocalStorageMgt('CalcGW');
+const lsMgt = new Utils.LocalStorageMgt('CalcDread');
 
 const FIGHT_DATA = [
   {
-    name: 'Ex',
-    cost_ap: 30,
-    cost_meat: 0,
-    cost_ep: 1,
-    honor: 51000,
-    token_host: 22,
+    name: '1★',
+    cost_ap: 20,
+    cost_ep: 2,
+    honor: 320,
+    token_host: 18,
     token_join: 20,
     token_1: 14,
     token_2: 0,
     token_3: 0
   },
   {
-    name: 'Ex+',
+    name: '2★',
     cost_ap: 30,
-    cost_meat: 0,
-    cost_ep: 1,
-    honor: 80800,
-    token_host: 26,
-    token_join: 20,
+    cost_ep: 2,
+    honor: 788,
+    token_host: 28,
+    token_join: 22,
     token_1: 20,
     token_2: 0,
     token_3: 0
   },
   {
-    name: 'NM 90',
-    cost_ap: 30,
-    cost_meat: 5,
+    name: '3★',
+    cost_ap: 40,
     cost_ep: 2,
-    honor: 260000,
-    token_host: 45,
-    token_join: 20,
-    token_1: 18,
-    token_2: 10,
-    token_3: 5
+    honor: 3730,
+    token_host: 50,
+    token_join: 25,
+    token_1: 22,
+    token_2: 15,
+    token_3: 8
   },
   {
-    name: 'NM 95',
-    cost_ap: 40,
-    cost_meat: 10,
+    name: '4★',
+    cost_ap: 50,
     cost_ep: 3,
-    honor: 910000,
+    honor: 20330,
+    token_host: 72,
+    token_join: 40,
+    token_1: 34,
+    token_2: 26,
+    token_3: 18
+  },
+  {
+    name: '5★',
+    cost_ap: 50,
+    cost_ep: 3,
+    honor: 410000,
+    token_host: 115,
+    token_join: 80,
+    token_1: 48,
+    token_2: 40,
+    token_3: 28
+  },
+  {
+    name: 'Lvl 95',
+    cost_ap: 0,
+    cost_ep: 3,
+    honor: 11855,
     token_host: 55,
     token_join: 30,
     token_1: 26,
@@ -147,65 +151,48 @@ const FIGHT_DATA = [
     token_3: 10
   },
   {
-    name: 'NM 100',
-    cost_ap: 50,
-    cost_meat: 20,
+    name: 'Lvl 135',
+    cost_ap: 0,
     cost_ep: 3,
-    honor: 2650000,
-    token_host: 80,
-    token_join: 48,
-    token_1: 40,
-    token_2: 30,
-    token_3: 20
+    honor: 11855,
+    token_host: 100,
+    token_join: 60,
+    token_1: 44,
+    token_2: 34,
+    token_3: 24
   },
   {
-    name: 'NM 150',
-    cost_ap: 50,
-    cost_meat: 20,
+    name: 'Lvl 175',
+    cost_ap: 0,
     cost_ep: 3,
-    honor: 4100000,
-    token_host: 120,
-    token_join: 85,
-    token_1: 52,
-    token_2: 42,
-    token_3: 30
-  },
-  {
-    name: 'NM 200',
-    cost_ap: 50,
-    cost_meat: 30,
-    cost_ep: 3,
-    honor: 10250000,
+    honor: 75000,
     token_host: 160,
     token_join: 110,
     token_1: 68,
-    token_2: 0,
-    token_3: 0
+    token_2: 54,
+    token_3: 38
   },
 ];
 
 export default {
   components: {
-    Checkbox
   },
   head: {
-    title: 'Granblue.Party - Guild Wars Tokens Calculator',
-    desc: 'Calculator for Guild Wars tokens and boxes',
-    image: 'https://www.granblue.party/img/card_calcgw.jpg',
-    keywords: 'Guild Wars, GW, Unite and Fight, U&F, 40 boxes, calculator, eternals, meat, gold bar'
+    title: 'Granblue.Party - Dread Barrage Calculator',
+    desc: 'Calculator for Dread Barrage tokens',
+    image: 'https://www.granblue.party/img/card_index.jpg',
+    keywords: 'Granblue Fantasy, GBF, Dread Barrage, tokens, eternals, valor badge'
   },
   data() {
     return {
       boxes_needed: 40,
       boxes_opened: 0,
-      total_honor: 0,
       tokens_explained: '',
       tokens_obtained: 0,
       tokens_total: 0,
-      show_fight: [false, true, true, true, true, true, true],
+      show_fight: [false, true, true, true, true, true, true, true],
       show_host: true,
       show_join: true,
-      add_honor: false,
     }
   },
   methods: {
@@ -220,36 +207,30 @@ export default {
         result.push({
           name: fight.name,
           name_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
-          honor: fight.honor,
-          honor_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
           type: 'Host',
           type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
           finish: 'MVP',
-          token: fight.token_host + fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_host + fight.token_join + fight.token_1,
           cost_ap: fight.cost_ap,
-          cost_meat: fight.cost_meat,
         })
         if (fight.token_2 > 0) {
           result.push({
             finish: '2nd',
-            token: fight.token_host + fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            token: fight.token_host + fight.token_join + fight.token_2,
             cost_ap: fight.cost_ap,
-            cost_meat: fight.cost_meat,
           })
         }
         if (fight.token_3 > 0) {
           result.push({
             finish: '3rd',
-            token: fight.token_host + fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            token: fight.token_host + fight.token_join + fight.token_3,
             cost_ap: fight.cost_ap,
-            cost_meat: fight.cost_meat,
           })
         }
         result.push({
           finish: '',
-          token: fight.token_host + fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_host + fight.token_join,
           cost_ap: fight.cost_ap,
-          cost_meat: fight.cost_meat,
         })
       }
 
@@ -259,32 +240,30 @@ export default {
           type: 'Join',
           type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
           finish: 'MVP',
-          token: fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_join + fight.token_1,
           cost_ep: fight.cost_ep,
         })
         if ( ! this.show_host) {
           result[result.length-1].name = fight.name;
           result[result.length-1].name_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-          result[result.length-1].honor = fight.honor;
-          result[result.length-1].honor_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
         }
         if (fight.token_2 > 0) {
           result.push({
             finish: '2nd',
-            token: fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            token: fight.token_join + fight.token_2,
             cost_ep: fight.cost_ep,
           })
         }
         if (fight.token_3 > 0) {
           result.push({
             finish: '3rd',
-            token: fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            token: fight.token_join + fight.token_3,
             cost_ep: fight.cost_ep,
           })
         }
         result.push({
           finish: '',
-          token: fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+          token: fight.token_join,
           cost_ep: fight.cost_ep,
         })
       }
@@ -313,9 +292,6 @@ export default {
     getTokensObtained() {
       return parseInt(this.tokens_obtained, 10)
     },
-    getTotalHonor() {
-      return parseInt(this.total_honor, 10)
-    },
     getProgress() {
       let result = (100 - (this.tokens_needed / this.tokens_total * 100)).toFixed(2);
       if (this.tokens_total == 0) {        
@@ -342,31 +318,31 @@ export default {
         this.tokens_explained += '1600';
         add_plus = true;
       }
-      // Box 2 to 4 (3 boxes): 1200 tickets * 2 per draw
+      // Box 2 to 4 (3 boxes): 1202 tickets * 2 per draw
       if (this.getBoxesOpened < 4 && boxes > 0) {
         const sum = Math.min(3, boxes, 4-this.getBoxesOpened);
-        tokens += 2400 * sum;
+        tokens += 2404 * sum;
         boxes -= sum;
-        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2400';
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2404';
         add_plus = true;
       }
-      // Box 5 to 45 (41 boxes): 2000 tickets * 2 per draw
-      if (this.getBoxesOpened < 45 && boxes > 0) {
-        const sum = Math.min(41, boxes, 45-this.getBoxesOpened);
+      // Box 5 to 20 (16 boxes): 1000 tickets * 2 per draw
+      if (this.getBoxesOpened < 20 && boxes > 0) {
+        const sum = Math.min(16, boxes, 20-this.getBoxesOpened);
         tokens += 2000 * sum;
         boxes -= sum;
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2000';
         add_plus = true;
       }
-      // Box 46 to 80 (35 boxes): 2500 tickets * 4 per draw
-      if (this.getBoxesOpened < 80 && boxes > 0) {
-        const sum = Math.min(35, boxes, 80-this.getBoxesOpened);
+      // Box 21 to 40 (20 boxes): 2500 tickets * 4 per draw
+      if (this.getBoxesOpened < 40 && boxes > 0) {
+        const sum = Math.min(20, boxes, 40-this.getBoxesOpened);
         tokens += 10000 * sum;
         boxes -= sum;
         this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x10000';
         add_plus = true;
       }
-      // Box 81+: 2500 tickets * 6 per draw
+      // Box 41+: 2500 tickets * 6 per draw
       if (boxes > 0) {
         tokens += 15000 * boxes;
         this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x15000';
@@ -389,31 +365,11 @@ export default {
           }
         }
       }
-
-      const honor_tokens = Math.floor(this.getTotalHonor * 60 / 1000000);
-      if (honor_tokens > 0) {
-        tokens -= honor_tokens;
-        if (this.tokens_total > 0) {
-          this.tokens_explained += ' - ' + honor_tokens;
-          if (honor_tokens > 1) {
-            this.tokens_explained += ' final rally tokens';
-          }
-          else {
-            this.tokens_explained += ' final rally token';
-          }
-        }
-      }
       
       return Math.max(0, tokens);
     }
   },
   watch: {
-    boxes_needed() {
-      lsMgt.setValue('boxes_needed', this);
-    },
-    boxes_opened() {
-      lsMgt.setValue('boxes_opened', this);
-    },
     show_fight() {
       lsMgt.setValue('show_fight', this);
     },
@@ -426,22 +382,20 @@ export default {
     tokens_obtained() {
       lsMgt.setValue('tokens_obtained', this);
     },
-    total_honor() {
-      lsMgt.setValue('total_honor', this);
+    boxes_needed() {
+      lsMgt.setValue('boxes_needed', this);
     },
-    add_honor() {
-      lsMgt.setValue('add_honor', this);
+    boxes_opened() {
+      lsMgt.setValue('boxes_opened', this);
     },
   },
   mounted() {
-    lsMgt.getValue(this, 'boxes_needed');
-    lsMgt.getValue(this, 'boxes_opened');
     lsMgt.getValue(this, 'show_fight');
     lsMgt.getValue(this, 'show_host');
     lsMgt.getValue(this, 'show_join');
+    lsMgt.getValue(this, 'boxes_needed');
+    lsMgt.getValue(this, 'boxes_opened');
     lsMgt.getValue(this, 'tokens_obtained');
-    lsMgt.getValue(this, 'total_honor');
-    lsMgt.getValue(this, 'add_honor');
   },
-}
+};
 </script>

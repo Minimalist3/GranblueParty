@@ -28,8 +28,8 @@
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
         <h2 class="text-center">Last update</h2>
-        <h3 class="text-center">2022-10-31</h3>
-        <p class="text-center mt-2">Yuel and Societte, Alliah</p>
+        <h3 class="text-center">2022-11-17</h3>
+        <p class="text-center mt-2">Adam, Therese (Wind)</p>
       </div>
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
@@ -123,6 +123,12 @@ You can search units by English, Japanese or Weapon name.`
     text: 
 `Calculate how many tickets you need to get a given number of boxes.`
   },
+  {
+    title: 'Dread Barrage Calculator',
+    link: '/calcdread',
+    text: 
+`Calculate how many tickets you need to get a given number of boxes.`
+  },  
   {
     title: 'Daily Grind List',
     link: '/dailygrind',

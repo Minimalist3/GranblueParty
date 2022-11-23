@@ -723,6 +723,10 @@ const CAT_IMPOSSIBLE = {
         name: 'Diaspora',
         namejp: 'ディアスポラ',
       },
+      '305401/1/0/551': {
+        name: 'Siegfried',
+        namejp: 'ジークフリート',
+      }
     }
   },
   1090: {

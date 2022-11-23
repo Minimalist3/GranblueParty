@@ -389,8 +389,8 @@ def updateCharacters():
           if npc_quest_id == "3030182000" or npc_quest_id == "3020072000":
             npc_quest_id += "_01"
 
-          chara_file.write('http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc/quest/' + npc_quest_id + '_01.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
-          chara_small_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
+          chara_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/quest/' + npc_quest_id + '_01.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+          chara_small_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/npc/m/' + getTemplateValue(template, 'id') + '_01.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
         
           character_id = getTemplateValue(template, 'id')[:-3]
           name = defines.unescape(unit['title'])
@@ -582,9 +582,9 @@ def updateSummons():
           continue
 
         # Images
-        summon_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/party_sub/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
-        summon_small_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/summon/m/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
-        summon_battle_file.write('http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/summon/raid_normal/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_battle/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/summon/party_sub/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_small_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/summon/m/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_small/' + getTemplateValue(template, 'id') + '.jpg\n')
+        summon_battle_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/raid_normal/' + getTemplateValue(template, 'id') + '.jpg' + '\t' + './unit_battle/' + getTemplateValue(template, 'id') + '.jpg\n')
         
         # How to obtain
         obtain = None
@@ -732,7 +732,7 @@ def updateWeapons():
         continue
 
       # Image	
-      weapons_file.write('http://game-a.granbluefantasy.jp/assets_en/img_mid/sp/assets/weapon/m/' + weapon['id'] + '.jpg' + '\t' + './weapon/' + weapon['id'] + '.jpg\n')
+      weapons_file.write('https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/' + weapon['id'] + '.jpg' + '\t' + './weapon/' + weapon['id'] + '.jpg\n')
 
       weapon_id = weapon['id'][:-2]
       weapon_ids.add(int(weapon_id))

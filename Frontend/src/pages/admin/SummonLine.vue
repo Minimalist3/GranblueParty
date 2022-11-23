@@ -6,7 +6,7 @@
       {{ item.starsmax }}*<br>
       <label><input type="checkbox" v-model="item.ignore" tabindex="-1"> Ignore</label>
     </td>
-    <td class="w-128">
+    <td class="w-1/2">
       <div v-for="aura in [{name: 'aura', index: 0}, {name: 'auramlb', index: 3}, {name: 'auraflb', index: 4}, {name: 'auraulb', index: 5}, ]" :key="aura.index">
         <span v-if="item[aura.name] !== null">
           <span class="flex flex-row items-center">

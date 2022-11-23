@@ -2327,3 +2327,9 @@
 3040431	0	Changing Force	1	3 random buffs to caster.
 3040431	1	Rage of Twilight	1	1100% Wind damage to all foes (Damage cap: ~1,215,000). Extend caster's buff durations by 3 turns. (Excludes 1-turn buffs.)
 3040431	2	Royal Classic	45	Replicate caster's or an ally's skill. (Gain Charge Bar when skill is replicated.)
+3040432	0	Indomitability	1	All Earth allies gain Shield and Auxiliary 2. (Auxiliary 2 ends upon taking damage 2 times.)
+3040432	1	Indemnity	1	700% Earth damage to a foe (Damage cap: ~730,000). Remove 1 buff. ('When Achillea is in effect:' Activate twice.)
+3040432	2	Radiant Egis	45	All allies gain 70% Water Cut.
+3040433	0	Isolation Raise	1	 6-to-15 hit, 150% Wind damage to random foes (Damage cap: ~165,000 per hit). ('During Jackpot effect:' Minimum number of hits increased to 10.)
+3040433	1	Lamina Indicam	1	Gain Guaranteed TA and Bonus Wind DMG. (Consumes 25% of max HP.)
+3040433	2	Polarized Range	45	Change number of times caster does an attack this turn. ('During Jackpot effect:' Improve chances of getting higher numbers of attacks.)

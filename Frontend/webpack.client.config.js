@@ -133,6 +133,7 @@ else {
           '/calcevoker',
           '/calcgw',
           '/calcevent',
+          '/calcdread',
           '/release',
           '/friendsum',
           '/dailygrind',

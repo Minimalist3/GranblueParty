@@ -429,6 +429,8 @@
 10400238	2	100	\N	1086	When main weapon (MC only): Medium boost to multiattack rate.
 10400239	1	1	\N	63	Medium boost to wind allies' ATK
 10400239	2	1	\N	1186	Small boost to wind allies' C.A. DMG and C.A. DMG cap
+10400240	1	1	\N	632	Medium boost to wind allies' ATK and critical hit rate
+10400240	2	1	\N	301	Slight chance to dodge and counter (medium DMG) for wind allies
 10401000	1	1	\N	26	Big boost to dark allies' ATK
 10401000	2	1	\N	0	Big boost to fire allies' ATK
 10401003	1	1	\N	26	Big boost to dark allies' ATK
@@ -738,6 +740,8 @@
 10401162	2	1	\N	475	Medium boost to wind allies' max HP
 10401163	1	1	\N	782	Big boost to Dark allies' ATK
 10401163	2	100	\N	1086	When main weapon (MC only): 30% boost to double attack rate and 10% boost to triple attack rate.
+10401164	1	1	\N	1189	Big boost to earth allies' ATK / Take 5% damage every turn.
+10401164	2	120	\N	418	Small boost to earth allies' ATK and max HP
 10402000	1	1	\N	222	Medium boost to light allies' critical hit rate
 10402000	2	1	\N	223	Slight chance to dodge and counter (medium DMG) for light allies
 10402002	1	1	\N	0	Big boost to fire allies' ATK
@@ -1387,6 +1391,8 @@
 10403156	1	1	\N	1183	Boost to ATK, max HP, and multiattack rate based on how many axes are equipped
 10403156	2	1	\N	1084	Boost to ATK based on how many axes are equipped
 10403156	3	150	\N	1184	Supplement wind allies' C.A. DMG based on how high their HP is
+10403158	1	1	\N	68	Big boost to earth allies' DEF based on how low HP is
+10403158	2	150	\N	418	Small boost to earth allies' ATK and max HP
 10404002	1	1	\N	13	Big boost to wind allies' ATK
 10404002	2	120	\N	385	When dealing a one-foe attack, chance to gain Dodge-and-Counter (1 time) (Boost to counter damage based on skill lvl).
 10404003	1	1	\N	386	Small boost to healing for healing type allies.

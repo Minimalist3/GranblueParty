@@ -1,284 +1,389 @@
 <template>
   <div class="flex flex-col flex-wrap gap-4 items-center">
-    <h1>Public Teams
-      <div class="text-sm">Beta version. More to come soon</div>
-    </h1>
+    <h1>Dread Barrage Calculator</h1>
 
-    <!-- Filters -->
-    <div class="flex flex-row flex-wrap items-end gap-2">
-      <label class="flex flex-col">
-        <span class="text-sm">Content</span>
-        <content-categories v-model.number="content_filter" :all="true" :showPrivateCategories="false"></content-categories>
-      </label>
+    <!-- Stats -->
+    <div class="flex flex-col mb-8 gap-x-4">
+      <span class="flex flex-row flex-wrap items-center gap-4">
+        <label>Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
+        <label>Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
+      </span>
 
-      <label class="flex flex-col">
-        <span class="text-sm">Element</span>
-        <dropdown v-model.number="element_filter">
-          <option :value="-1">--- All ---</option>
-          <option :value="0">Fire</option>
-          <option :value="1">Wind</option>
-          <option :value="2">Earth</option>
-          <option :value="3">Water</option>
-          <option :value="4">Light</option>
-          <option :value="5">Dark</option>
-        </dropdown>
-      </label>
+      <span class="flex flex-row flex-wrap items-center gap-4">
+        <label>Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
+        <span>Progress: {{ getProgress }}%</span>
+      </span>
 
-      <label class="flex flex-col">
-        <span class="text-sm">Age</span>
-        <dropdown v-model.number="age_filter">
-          <option :value="-1">All time</option>
-          <option :value="1">Today</option>
-          <option :value="30">This month</option>
-          <option :value="90">Last 3 months</option>
-          <option :value="365">This year</option>
-        </dropdown>
-      </label>
-
-      <label class="flex flex-col">
-        <span class="text-sm">Sort by</span>
-        <dropdown v-model.number="sort_filter">
-          <option :value="-1">Date</option>
-          <option :value="1">Popularity</option>
-        </dropdown>
-      </label>
-
-      <button class="btn btn-blue" @click="fetchTeams()">Filter</button>
-      <button class="btn btn-red" @click="clearFilters()">Reset</button>
+      <span>{{ tokens_explained }}</span>
+      <span class="text-lg font-bold">Tokens needed: {{ tokens_needed }}</span>
     </div>
 
-    <!-- Teams -->
-    <div v-if="loading === true">
-      Loading...
-    </div>
-    <div v-else-if="teams.length > 0" class="flex flex-col gap-y-4 items-center">
-      <!-- Top nav -->
-      <nav role="navigation" aria-label="pagination">
-        <ul class="flex flex-row flex-wrap">
-          <li v-for="i in Math.ceil(teams.length / slice_size)" :key="i">
-            <a
-              class="text-primary mr-2 py-1 px-2 rounded"
-              :class="index === i-1 ? 'bg-tertiary cursor-default text-link-hover' : 'bg-secondary cursor-pointer'"
-              @click="index = i-1"
-            >{{i}}</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Teams -->
-      <div class="flex flex-row flex-wrap gap-4 justify-center">
-        <div v-for="(team, index) in getTeams" :key="index" class="flex flex-col bg-tertiary p-1 gap-y-1">
-          <!-- Line 1 -->
-          <div class="flex flex-row  justify-center px-1 relative">
-            <div class="absolute left-0 text-sm">
-              <img height="18" width="18" class="align-text-top" :src="'/img/e_' + getElementName(team.e).toLowerCase() + '.png'">
-              {{ getElementName(team.e) }}
-            </div>
-            <div class="font-semibold text-center w-36 sm:w-72 truncate" :title="team.n">{{ team.n }}&nbsp;</div>
-            <div class="flex flex-row absolute right-1 gap-x-4">
-              <div>
-                <fa-icon v-if="team.desc" :icon="['fas', 'file-lines']" class="text-lg" title="Contains a description"></fa-icon>
-              </div>
-              <div :class="team.l >= 1 ? '' : 'opacity-70'" title="Likes">
-                <fa-icon :icon="['fas', 'heart']" class="text-lg"></fa-icon> {{ team.l }}
-              </div>
-            </div>
-          </div>
-          <!-- Line 2 -->
-          <div class="grid grid-cols-3 px-1">
-            <div class="flex items-center justify-start text-xs md:text-sm w-32 truncate"><fa-icon :icon="['fas', 'user']" class="pr-1"></fa-icon>{{ team.u }}</div>
-            <span class="flex flex-row shrink justify-center">
-              <div class="tag bg-secondary truncate" :title="content[team.c]">{{ content[team.c] }}</div>
-            </span>
-            <div class="flex items-center justify-end text-xs md:text-sm truncate"><fa-icon :icon="['fas', 'clock']" class="pr-1"></fa-icon>{{ getPrintableDate(team.d) }}</div>
-          </div>
-          <!-- Image -->
-          <div @click="previewTeam(team.id)" class="cursor-pointer">
-            <img
-              :src="'/previews/party/party_' + team.id + '.' + team.d + '.jpg'"
-              class="object-cover object-top"
-              width="596"
-              height="336"
-              style=" aspect-ratio: 596 / 314;"
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom nav -->
-      <nav role="navigation" aria-label="pagination">
-        <ul class="flex flex-row flex-wrap">
-          <li v-for="i in Math.ceil(teams.length / slice_size)" :key="i">
-            <a
-              class="text-primary mr-2 py-1 px-2 rounded cursor-pointer"
-              :class="index === i-1 ? 'bg-tertiary' : 'bg-secondary'"
-              @click="index = i-1"
-            >{{i}}</a>
-          </li>
-        </ul>
-      </nav>
-
-    </div>
-    <div v-else>
-      No results
+    <!-- Select fights -->
+    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+      <span class="flex flex-row flex-wrap btn-group items-center">
+        <span class="mr-2">Fight</span>
+        <button
+          v-for="(fight, index) in getFightNames"
+          :key="index"
+          class="btn btn-sm"
+          :class="show_fight[index] ? 'btn-blue' : 'btn-white'"
+          @click="showFight(index)"
+        >
+          {{ fight }}
+        </button>
+      </span>
+      
+      <span class="flex flex-row flex-wrap btn-group items-center">
+        <span class="mr-2">Type</span>
+        <button class="btn btn-sm" :class="show_host ? 'btn-blue' : 'btn-white'" @click="show_host = ! show_host">
+          Host
+        </button>
+        <button class="btn btn-sm" :class="show_join ? 'btn-blue' : 'btn-white'" @click="show_join = ! show_join">
+          Join
+        </button>
+      </span>
     </div>
 
-    <modal-team-preview v-model="show_preview" :teamId="preview_id"></modal-team-preview>
+    <!-- Table -->
+    <div class="overflow-y-auto w-full">
+      <table class="table table-striped bg-secondary table-px w-auto ml-auto mr-auto">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th>Tokens</th>
+            <th v-if="show_host">Tokens/AP</th>
+            <th v-if="show_join">Tokens/EP</th>
+            <th>Fights</th>
+            <th v-if="show_host">Pots</th>
+            <th v-if="show_join">Berries</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(data, index) in getData" :key="index">
+            <td :rowspan="data.name_rows" class="is-td-vcentered" v-if="data.name">{{ data.name }}</td>
+            <td :rowspan="data.type_rows" class="is-td-vcentered" v-if="data.type">{{ data.type }}</td>
+            <td>{{ data.finish }}</td>
+            <td>{{ data.token }}</td>
+            <td v-if="show_host">{{ (data.cost_ap ? (data.token / data.cost_ap).toFixed(2) : '') }}</td>
+            <td v-if="show_join">{{ (data.cost_ep ? (data.token / data.cost_ep).toFixed(2) : '') }}</td>
+            <td>{{ Math.ceil(tokens_needed / data.token) }}</td>
+            <td v-if="show_host">{{ data.cost_ap > 0 ? Math.ceil(tokens_needed / data.token * (data.cost_ap / 75) ) : '' }}</td>
+            <td v-if="show_join">{{ data.cost_ep > 0 ? Math.ceil(tokens_needed / data.token * data.cost_ep ) : '' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import Utils from '@/js/utils.js'
 
-import ContentCategories from '@/components/common/ContentCategories.vue'
-import Dropdown from '@/components/common/Dropdown.vue'
-import ModalTeamPreview from '@/components/ModalTeamPreview.vue'
+const lsMgt = new Utils.LocalStorageMgt('CalcDread');
 
-import Content from '@/js/content'
-import teamsStoreMixin from '@/store/modules/teams'
+const FIGHT_DATA = [
+  {
+    name: '1★',
+    cost_ap: 20,
+    cost_ep: 2,
+    honor: 320,
+    token_host: 18,
+    token_join: 20,
+    token_1: 14,
+    token_2: 0,
+    token_3: 0
+  },
+  {
+    name: '2★',
+    cost_ap: 30,
+    cost_ep: 2,
+    honor: 788,
+    token_host: 28,
+    token_join: 22,
+    token_1: 20,
+    token_2: 0,
+    token_3: 0
+  },
+  {
+    name: '3★',
+    cost_ap: 40,
+    cost_ep: 2,
+    honor: 3730,
+    token_host: 50,
+    token_join: 25,
+    token_1: 22,
+    token_2: 15,
+    token_3: 8
+  },
+  {
+    name: '4★',
+    cost_ap: 50,
+    cost_ep: 3,
+    honor: 20330,
+    token_host: 72,
+    token_join: 40,
+    token_1: 34,
+    token_2: 26,
+    token_3: 18
+  },
+  {
+    name: '5★',
+    cost_ap: 50,
+    cost_ep: 3,
+    honor: 410000,
+    token_host: 115,
+    token_join: 80,
+    token_1: 48,
+    token_2: 40,
+    token_3: 28
+  },
+  {
+    name: 'Lvl 95',
+    cost_ap: 0,
+    cost_ep: 3,
+    honor: 11855,
+    token_host: 55,
+    token_join: 30,
+    token_1: 26,
+    token_2: 18,
+    token_3: 10
+  },
+  {
+    name: 'Lvl 135',
+    cost_ap: 0,
+    cost_ep: 3,
+    honor: 11855,
+    token_host: 100,
+    token_join: 60,
+    token_1: 44,
+    token_2: 34,
+    token_3: 24
+  },
+  {
+    name: 'Lvl 175',
+    cost_ap: 0,
+    cost_ep: 3,
+    honor: 75000,
+    token_host: 160,
+    token_join: 110,
+    token_1: 68,
+    token_2: 54,
+    token_3: 38
+  },
+];
 
 export default {
   components: {
-    ContentCategories,
-    Dropdown,
-    ModalTeamPreview
   },
-  mixins: [
-    teamsStoreMixin
-  ],
   head: {
     title: 'Granblue.Party - Public Teams',
-    desc: 'Browse public teams made by fellow players',
+    desc: 'Calculator for Dread Barrage tokens',
     image: 'https://www.granblue.party/img/card_index.jpg',
-    keywords: 'Granblue Fantasy, GBF, Party, Teams, Public teams, Grid, Share'
+    keywords: 'Granblue Fantasy, GBF, Dread Barrage, tokens, eternals, valor badge'
   },
   data() {
     return {
-      loading: true,
-      now: this.getUTCnow(),
-      show_preview: false,
-      preview_id: 0,
-      content_filter: -1,
-      element_filter: -1,
-      age_filter: -1,
-      sort_filter: -1,
-      index: 0,
+      boxes_needed: 40,
+      boxes_opened: 0,
+      tokens_explained: '',
+      tokens_obtained: 0,
+      tokens_total: 0,
+      show_fight: [false, true, true, true, true, true, true, true],
+      show_host: true,
+      show_join: true,
     }
   },
   methods: {
-    getUTCnow() {
-      const date = new Date(); 
-      return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    showFight(index) {
+      this.$set(this.show_fight, index, ! this.show_fight[index]);
     },
-    getPrintableDate(origin) {
-      const date = new Date(this.now - parseInt(origin, 10) * 1000);
+    getFightData(fight) {
+      let result = [];
 
-      if (date.toUTCString() > 1970) {
-        return 'A year ago';
-      }
-      if (date.getUTCMonth() === 1) {
-        return 'One month ago';
-      }
-      if (date.getUTCMonth() > 1) {
-        return date.getUTCMonth() + ' months ago';
-      }
-      if (date.getUTCDate() === 2) {
-        return 'One day ago';
-      }
-      if (date.getUTCDate() > 2) {
-        return (date.getUTCDate() - 1) + ' days ago';
-      }
-      if (date.getUTCHours() === 1) {
-        return 'One hour ago';
-      }
-      if (date.getUTCHours() > 1) {
-        return date.getUTCHours() + ' hours ago';
-      }
-      if (date.getUTCMinutes() > 1) {
-        return date.getUTCMinutes() + ' minutes ago';
-      }
-      return 'Right now';
-    },
-    getElementName(element) {
-      switch(element) {
-        case 0:
-          return "Fire";
-        case 1:
-          return "Wind";
-        case 2:
-          return "Earth";
-        case 3:
-          return "Water";
-        case 4:
-          return "Light";
-        case 5:
-          return "Dark";
-        case 6:
-          return "Any";
-        default:
-      }
-      return "";
-    },
-    fetchTeams() {
-      this.loading = true;
-      this.index = 0;
-
-      const params = {};
-      if (this.content_filter >= 0) {
-        params['c'] = this.content_filter;
-      }
-      if (this.element_filter >= 0) {
-        params['e'] = this.element_filter;
-      }
-      if (this.age_filter >= 0) {
-        params['t'] = this.age_filter;
-      }
-      if (this.sort_filter >= 0) {
-        params['o'] = this.sort_filter;
+      // Host
+      if (this.show_host) {
+        result.push({
+          name: fight.name,
+          name_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
+          type: 'Host',
+          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          finish: 'MVP',
+          token: fight.token_host + fight.token_join + fight.token_1,
+          cost_ap: fight.cost_ap,
+        })
+        if (fight.token_2 > 0) {
+          result.push({
+            finish: '2nd',
+            token: fight.token_host + fight.token_join + fight.token_2,
+            cost_ap: fight.cost_ap,
+          })
+        }
+        if (fight.token_3 > 0) {
+          result.push({
+            finish: '3rd',
+            token: fight.token_host + fight.token_join + fight.token_3,
+            cost_ap: fight.cost_ap,
+          })
+        }
+        result.push({
+          finish: '',
+          token: fight.token_host + fight.token_join,
+          cost_ap: fight.cost_ap,
+        })
       }
 
-      this.$store.dispatch('teams/fetchTeams', params)
-        .then(_ => this.loading = false);
+      // Join
+      if (this.show_join) {
+        result.push({
+          type: 'Join',
+          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          finish: 'MVP',
+          token: fight.token_join + fight.token_1,
+          cost_ep: fight.cost_ep,
+        })
+        if ( ! this.show_host) {
+          result[result.length-1].name = fight.name;
+          result[result.length-1].name_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
+        }
+        if (fight.token_2 > 0) {
+          result.push({
+            finish: '2nd',
+            token: fight.token_join + fight.token_2,
+            cost_ep: fight.cost_ep,
+          })
+        }
+        if (fight.token_3 > 0) {
+          result.push({
+            finish: '3rd',
+            token: fight.token_join + fight.token_3,
+            cost_ep: fight.cost_ep,
+          })
+        }
+        result.push({
+          finish: '',
+          token: fight.token_join,
+          cost_ep: fight.cost_ep,
+        })
+      }
+
+      return result;
     },
-    clearFilters() {
-      this.content_filter = -1;
-      this.element_filter = -1;
-      this.age_filter = -1;
-      this.sort_filter = -1;
-      this.fetchTeams();
-    },
-    previewTeam(teamId) {
-      this.preview_id = teamId;
-      this.show_preview = true;
-    }
   },
   computed: {
-    ...mapState('teams', [
-      'teams',
-    ]),
-    slice_size() {
-      return 12;
-    },
-    content() {
-      return Object.fromEntries(Content.flatMap(cat =>
-        cat.content.map(entry =>
-          [entry.id, entry.name])
-        )
-      );
-    },
-    getTeams() {
-      return this.teams
-        .slice(this.index * this.slice_size, this.index * this.slice_size + this.slice_size);
-    },
-  },
-  serverPrefetch() {
-    return this.$store.dispatch('teams/fetchTeams');
-  },
-  async mounted() {
-    await this.$store.dispatch('teams/fetchTeams')
-      .then(_ => {
-        this.loading = false;
+    getData() {
+      return FIGHT_DATA.flatMap((f, index) => {
+        if (this.show_fight[index]) {
+          return this.getFightData(f);
+        }
+        return [];
       });
+    },
+    getFightNames() {
+      return FIGHT_DATA.map(f => f.name);
+    },
+    getBoxesNeeded() {
+      return parseInt(this.boxes_needed, 10)
+    },
+    getBoxesOpened() {
+      return parseInt(this.boxes_opened, 10)
+    },
+    getTokensObtained() {
+      return parseInt(this.tokens_obtained, 10)
+    },
+    getProgress() {
+      let result = (100 - (this.tokens_needed / this.tokens_total * 100)).toFixed(2);
+      if (this.tokens_total == 0) {        
+        return (100).toFixed(2);
+      }
+      return result;
+    },
+    tokens_needed() {
+      let tokens = 0;
+      let boxes = this.getBoxesNeeded - this.getBoxesOpened;
+      this.tokens_explained = '';
+      if (boxes ===  1) {
+        this.tokens_explained = boxes + ' box = (';
+      }
+      else if (boxes > 1) {
+        this.tokens_explained = boxes + ' boxes = (';
+      }
+      let add_plus = false;
+
+      // Box 1 (1 box): 800 tickets * 2 per draw
+      if (this.getBoxesOpened === 0 && boxes > 0) {
+        tokens += 1600;
+        boxes--;
+        this.tokens_explained += '1600';
+        add_plus = true;
+      }
+      // Box 2 to 4 (3 boxes): 1202 tickets * 2 per draw
+      if (this.getBoxesOpened < 4 && boxes > 0) {
+        const sum = Math.min(3, boxes, 4-this.getBoxesOpened);
+        tokens += 2404 * sum;
+        boxes -= sum;
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2404';
+        add_plus = true;
+      }
+      // Box 5 to 20 (16 boxes): 1000 tickets * 2 per draw
+      if (this.getBoxesOpened < 20 && boxes > 0) {
+        const sum = Math.min(16, boxes, 20-this.getBoxesOpened);
+        tokens += 2000 * sum;
+        boxes -= sum;
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x2000';
+        add_plus = true;
+      }
+      // Box 21 to 40 (20 boxes): 2500 tickets * 4 per draw
+      if (this.getBoxesOpened < 40 && boxes > 0) {
+        const sum = Math.min(20, boxes, 40-this.getBoxesOpened);
+        tokens += 10000 * sum;
+        boxes -= sum;
+        this.tokens_explained += (add_plus ? ' + ' : '') + sum + 'x10000';
+        add_plus = true;
+      }
+      // Box 41+: 2500 tickets * 6 per draw
+      if (boxes > 0) {
+        tokens += 15000 * boxes;
+        this.tokens_explained += (add_plus ? ' + ' : '') + boxes + 'x15000';
+      }
+
+      this.tokens_total = tokens;
+      if (this.tokens_explained) {
+        this.tokens_explained += ' tokens)';
+      }
+
+      if (this.getTokensObtained > 0) {
+        tokens -= this.getTokensObtained;
+        if (this.tokens_total > 0) {
+          this.tokens_explained += ' - ' + this.getTokensObtained;
+          if (this.getTokensObtained > 1) {
+            this.tokens_explained += ' tokens obtained';
+          }
+          else {
+            this.tokens_explained += ' token obtained';
+          }
+        }
+      }
+      
+      return Math.max(0, tokens);
+    }
+  },
+  watch: {
+    show_fight() {
+      lsMgt.setValue('show_fight', this);
+    },
+    show_host() {
+      lsMgt.setValue('show_host', this);
+    },
+    show_join() {
+      lsMgt.setValue('show_join', this);
+    },    
+  },
+  mounted() {
+    lsMgt.getValue(this, 'show_fight');
+    lsMgt.getValue(this, 'show_host');
+    lsMgt.getValue(this, 'show_join');
   },
 };
 </script>

@@ -79,6 +79,11 @@ export function createRouter(store) {
         pathToRegexpOptions: { strict: true },
       },
       {
+        path: '/calcdread',
+        component: () => import(/* webpackChunkName: "calcdread" */ '@/pages/CalcDread.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
         path: '/release',
         component: () => import(/* webpackChunkName: "schedule" */ '@/pages/ReleaseSchedule.vue'),
         pathToRegexpOptions: { strict: true },
