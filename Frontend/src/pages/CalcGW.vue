@@ -3,7 +3,7 @@
     <h1 class="mb-8">Guild Wars tokens and boxes Calculator</h1>
 
     <!-- Stats -->
-    <div class="flex flex-col mb-8 gap-x-4">
+    <div class="flex flex-col gap-x-4">
       <span class="flex flex-row flex-wrap items-center gap-4">
         <label>Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
         <label>Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
@@ -17,13 +17,84 @@
           {{ total_honor >= 1000000 ? '(&asymp;' + (total_honor / 1000000).toFixed(2) + 'm)' : '' }}
         </span>
       </span>
-
+    </div>
+    <div class="flex flex-col mb-8 gap-x-4">
       <span>{{ tokens_explained }}</span>
       <span class="text-lg font-bold">Tokens needed: {{ tokens_needed }}</span>
     </div>
 
+    <!-- Time calc -->
+    <h2 class="mb-4">Farming time calculator (input in seconds):</h2>
+
+    <div class="overflow-y-auto w-full">
+      <table class="table bg-secondary table-px w-auto ml-auto mr-auto mb-4">
+        <thead>
+          <tr>
+            <th><abbr title="Percentage of tokens coming from this raid">%</abbr></th>
+            <th>Name</th>
+            <th>Time/fight</th>
+            <th>Fights</th>
+            <th>Tokens</th>
+            <th>Honor</th>
+            <th>Time</th>
+            <th>Pots</th>
+            <th>Meat/fight</th>
+            <th>Meat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>
+              <dropdown v-model.number="chosen_ex">
+                <option v-for="(fight, index) in getExFights" :key="index" :value="index">{{ fight.name }}</option>
+              </dropdown>
+            </td>
+            <td><input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="time_fight_ex[chosen_ex]"></td>
+            <td>{{ getExFights[chosen_ex].fights }}</td>
+            <td>{{ getExFights[chosen_ex].tokens }}</td>
+            <td>{{ getExFights[chosen_ex].honor }}</td>
+            <td>{{ getExFights[chosen_ex].time }}</td>
+            <td>{{ Math.ceil(getExFights[chosen_ex].pots) }}</td>
+            <td><input class="input input-sm" type="number" min="1" step=".5" style="width: 7ch;" v-model.lazy.number="meat_fight[chosen_ex]"></td>
+            <td>{{ getExFights[chosen_ex].meat }}</td>
+          </tr>
+          <tr v-for="(fight, index) in getRaidFights" :key="index">
+            <td><input class="input input-sm" type="number" min="0" max="100" style="width: 7ch;" v-model.lazy.number="quota_fight_raid[index]"></td>
+            <td>{{ fight.name }}</td>
+            <td><input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy.number="time_fight_raid[index]"></td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.fights : '' }}</td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.tokens : '' }}</td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.honor : '' }}</td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.time : '' }}</td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.pots : '' }}</td>
+            <td></td>
+            <td>{{ quota_fight_raid[index] > 0 ? fight.meat : '' }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><b>Total</b></td>
+            <td></td>
+            <td>{{ getTotalFights.fights }}</td>
+            <td>{{ getTotalFights.tokens }}</td>
+            <td>{{ getTotalFights.honor }}</td>
+            <td>{{ getTotalFights.time }}</td>
+            <td>{{ Math.ceil(getTotalFights.pots) }}</td>
+            <td></td>
+            <td>{{ getTotalFights.meat }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-8">
+      <h3 v-if="getTotalQuota != 100" class="text-rose-600">
+        The sum of all % must be 100
+      </h3>
+    </div>
+
     <!-- Select fights -->
-    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+    <div class="flex flex-row flex-wrap items-center gap-4">
       <span class="flex flex-row flex-wrap btn-group items-center">
         <span class="mr-2">Fight</span>
         <button
@@ -50,6 +121,13 @@
       <checkbox v-model="add_honor">Include honor to tokens sum</checkbox>
     </div>
 
+    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+      Show results for
+      <checkbox v-model="show_result_2nd" class="ordinal">2nd</checkbox>
+      <checkbox v-model="show_result_3rd" class="ordinal">3rd</checkbox>
+      <checkbox v-model="show_result_other">Other</checkbox>
+    </div>
+
     <!-- Table -->
     <div class="overflow-y-auto w-full">
       <table class="table table-striped bg-secondary table-px w-auto ml-auto mr-auto">
@@ -57,8 +135,8 @@
           <tr>
             <th>Name</th>
             <th>Solo honor</th>
-            <th></th>
-            <th></th>
+            <th v-if="show_host && show_join"></th>
+            <th v-if="show_result_2nd || show_result_3rd || show_result_other"></th>
             <th>Tokens</th>
             <th v-if="show_host">Tokens/AP</th>
             <th v-if="show_host">Tokens/meat</th>
@@ -71,10 +149,10 @@
         </thead>
         <tbody>
           <tr v-for="(data, index) in getData" :key="index">
-            <td :rowspan="data.name_rows" class="is-td-vcentered" v-if="data.name">{{ data.name }}</td>
-            <td :rowspan="data.honor_rows" class="is-td-vcentered" v-if="data.honor">{{ data.honor }}</td>
-            <td :rowspan="data.type_rows" class="is-td-vcentered" v-if="data.type">{{ data.type }}</td>
-            <td>{{ data.finish }}</td>
+            <td :rowspan="data.name_rows" class="is-td-vcentered bg-secondary" v-if="data.name">{{ data.name }}</td>
+            <td :rowspan="data.honor_rows" class="is-td-vcentered bg-secondary" v-if="data.honor">{{ data.honor }}</td>
+            <td :rowspan="data.type_rows" class="is-td-vcentered bg-secondary" v-if="data.type && show_host && show_join">{{ data.type }}</td>
+            <td v-if="show_result_2nd || show_result_3rd || show_result_other">{{ data.finish }}</td>
             <td>{{ data.token }}</td>
             <td v-if="show_host">{{ (data.cost_ap ? (data.token / data.cost_ap).toFixed(2) : '') }}</td>
             <td v-if="show_host">{{ (data.cost_meat ? (data.token / data.cost_meat).toFixed(2) : '') }}</td>
@@ -94,6 +172,7 @@
 import Utils from '@/js/utils.js'
 
 import Checkbox from '@/components/common/Checkbox.vue'
+import Dropdown from '@/components/common/Dropdown.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('CalcGW');
 
@@ -186,7 +265,8 @@ const FIGHT_DATA = [
 
 export default {
   components: {
-    Checkbox
+    Checkbox,
+    Dropdown
   },
   head: {
     title: 'Granblue.Party - Guild Wars Tokens Calculator',
@@ -203,9 +283,17 @@ export default {
       tokens_obtained: 0,
       tokens_total: 0,
       show_fight: [false, true, true, true, true, true, true],
+      time_fight_ex: [15, 15],
+      time_fight_raid: [30, 120, 300, 300, 420],
+      quota_fight_raid: [0, 40, 0, 30, 30],
+      meat_fight: [5, 6.5],
+      chosen_ex: 1,
       show_host: true,
       show_join: true,
       add_honor: false,
+      show_result_2nd: false,
+      show_result_3rd: false,
+      show_result_other: true,
     }
   },
   methods: {
@@ -215,21 +303,22 @@ export default {
     getFightData(fight) {
       let result = [];
 
+      const nb_rows = 1 +
+        ((fight.token_2 > 0 && this.show_result_2nd) ? 1 : 0) +
+        ((fight.token_3 > 0 && this.show_result_3rd) ? 1 : 0) +
+        (this.show_result_other ? 1 : 0);
+
       // Host
       if (this.show_host) {
         result.push({
-          name: fight.name,
-          name_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
-          honor: fight.honor,
-          honor_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
           type: 'Host',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: nb_rows,
           finish: 'MVP',
           token: fight.token_host + fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
           cost_ap: fight.cost_ap,
           cost_meat: fight.cost_meat,
         })
-        if (fight.token_2 > 0) {
+        if (fight.token_2 > 0 && this.show_result_2nd) {
           result.push({
             finish: '2nd',
             token: fight.token_host + fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
@@ -237,7 +326,7 @@ export default {
             cost_meat: fight.cost_meat,
           })
         }
-        if (fight.token_3 > 0) {
+        if (fight.token_3 > 0 && this.show_result_3rd) {
           result.push({
             finish: '3rd',
             token: fight.token_host + fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
@@ -245,48 +334,53 @@ export default {
             cost_meat: fight.cost_meat,
           })
         }
-        result.push({
-          finish: '',
-          token: fight.token_host + fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-          cost_ap: fight.cost_ap,
-          cost_meat: fight.cost_meat,
-        })
+        if (this.show_result_other) {
+          result.push({
+            finish: '',
+            token: fight.token_host + fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            cost_ap: fight.cost_ap,
+            cost_meat: fight.cost_meat,
+          })
+        }
       }
 
       // Join
       if (this.show_join) {
         result.push({
           type: 'Join',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: nb_rows,
           finish: 'MVP',
           token: fight.token_join + fight.token_1 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
           cost_ep: fight.cost_ep,
         })
-        if ( ! this.show_host) {
-          result[result.length-1].name = fight.name;
-          result[result.length-1].name_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-          result[result.length-1].honor = fight.honor;
-          result[result.length-1].honor_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-        }
-        if (fight.token_2 > 0) {
+        if (fight.token_2 > 0 && this.show_result_2nd) {
           result.push({
             finish: '2nd',
             token: fight.token_join + fight.token_2 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
             cost_ep: fight.cost_ep,
           })
         }
-        if (fight.token_3 > 0) {
+        if (fight.token_3 > 0 && this.show_result_3rd) {
           result.push({
             finish: '3rd',
             token: fight.token_join + fight.token_3 + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
             cost_ep: fight.cost_ep,
           })
         }
-        result.push({
-          finish: '',
-          token: fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
-          cost_ep: fight.cost_ep,
-        })
+        if (this.show_result_other) {
+          result.push({
+            finish: '',
+            token: fight.token_join + (this.add_honor ? fight.honor * 60 / 1000000 : 0),
+            cost_ep: fight.cost_ep,
+          })
+        }
+      }
+
+      if (result.length > 0) {
+        result[0].name = fight.name;
+        result[0].name_rows = nb_rows * (this.show_host && this.show_join ? 2 : 1);
+        result[0].honor = fight.honor;
+        result[0].honor_rows = nb_rows * (this.show_host && this.show_join ? 2 : 1);
       }
 
       return result;
@@ -405,6 +499,93 @@ export default {
       }
       
       return Math.max(0, tokens);
+    },
+    // Farming time calculator
+    getExFights() {
+      return this.getAllFights.slice(0, 2);
+    },
+    getRaidFights() {
+      return this.getAllFights.slice(2, FIGHT_DATA.length);
+    },
+    getTotalFights() {
+      return this.getAllFights[this.getAllFights.length - 1];
+    },
+    getTotalQuota() {
+      return this.quota_fight_raid.reduce((acc, val) => acc + val);
+    },
+    getAllFights() {
+      let result = FIGHT_DATA.map(f => {
+          return {
+            name: f.name,
+            fights: 0,
+            meat: 0,
+            tokens: 0,
+            honor: 0,
+            time: 0,
+            pots: 0
+          }     
+        });
+      result.push({
+        name: "Total",
+        fights: 0,
+        meat: 0,
+        tokens: 0,
+        honor: 0,
+        time: 0,
+        pots: 0
+      });
+
+      let total_tokens = this.tokens_needed;
+      const chosen_ex = FIGHT_DATA[this.chosen_ex];
+
+      for (let i=0; i<FIGHT_DATA.length - 2; i++) {
+        if (this.quota_fight_raid[i] === 0) {
+          result[i+2].fights = 0;
+          continue;
+        }
+
+        const raid = FIGHT_DATA[i+2];
+        const tokens_from_one_raid =  raid.token_host + raid.token_join + raid.token_1 + raid.honor * 60 / 1000000;
+        const ex_per_raid = raid.cost_meat / this.meat_fight[this.chosen_ex]; 
+        const tokens_from_one_ex = chosen_ex.token_host + chosen_ex.token_join + chosen_ex.token_1 + chosen_ex.honor * 60 / 1000000;
+        const tokens_from_one_group = tokens_from_one_raid + ex_per_raid * tokens_from_one_ex;
+        const number_of_groups = Math.ceil((total_tokens / tokens_from_one_group) * (this.quota_fight_raid[i] / 100));
+        const number_of_ex = Math.ceil(number_of_groups * ex_per_raid);
+
+        result[i+2].fights = number_of_groups;
+        result[i+2].meat = - raid.cost_meat * number_of_groups;
+        result[i+2].tokens = Math.floor(tokens_from_one_raid * number_of_groups);
+        result[i+2].honor = Math.floor(raid.honor * number_of_groups);
+        result[i+2].time = this.time_fight_raid[i] * number_of_groups;
+        result[i+2].pots = Math.ceil(raid.cost_ap * number_of_groups / 75);
+
+        result[this.chosen_ex].fights += number_of_ex;
+        result[this.chosen_ex].meat += this.meat_fight[this.chosen_ex] * number_of_ex;
+        result[this.chosen_ex].tokens += Math.floor(tokens_from_one_ex * number_of_ex);
+        result[this.chosen_ex].honor += Math.floor(chosen_ex.honor * number_of_ex);
+        result[this.chosen_ex].time += this.time_fight_ex[this.chosen_ex] * number_of_ex;
+        result[this.chosen_ex].pots += chosen_ex.cost_ap * number_of_ex / 75;
+      }
+
+      for (let i=0; i<FIGHT_DATA.length; i++) {
+        result[result.length-1].fights += result[i].fights;
+        result[result.length-1].meat += result[i].meat;
+        result[result.length-1].tokens += result[i].tokens;
+        result[result.length-1].honor += result[i].honor;
+        result[result.length-1].time += result[i].time;
+        result[result.length-1].pots += result[i].pots;
+
+        if (result[i].honor >= 1000000) {
+          result[i].honor = (result[i].honor / 1000000).toFixed(2) + 'm';
+        }
+        result[i].time = Utils.toReadableTime(result[i].time);
+      }
+      if (result[result.length-1].honor >= 1000000) {
+        result[result.length-1].honor = (result[result.length-1].honor / 1000000).toFixed(2) + 'm';
+      }
+      result[result.length-1].time = Utils.toReadableTime(result[result.length-1].time);
+
+      return result;
     }
   },
   watch: {
@@ -432,6 +613,30 @@ export default {
     add_honor() {
       lsMgt.setValue('add_honor', this);
     },
+    show_result_2nd() {
+      lsMgt.setValue('show_result_2nd', this);
+    },
+    show_result_3rd() {
+      lsMgt.setValue('show_result_3rd', this);
+    },
+    show_result_other() {
+      lsMgt.setValue('show_result_other', this);
+    },
+    time_fight_ex() {
+      lsMgt.setValue('time_fight_ex', this);
+    },
+    time_fight_raid() {
+      lsMgt.setValue('time_fight_raid', this);
+    },
+    quota_fight_raid() {
+      lsMgt.setValue('quota_fight_raid', this);
+    },
+    meat_fight() {
+      lsMgt.setValue('meat_fight', this);
+    },
+    chosen_ex() {
+      lsMgt.setValue('chosen_ex', this);
+    },
   },
   mounted() {
     lsMgt.getValue(this, 'boxes_needed');
@@ -442,6 +647,14 @@ export default {
     lsMgt.getValue(this, 'tokens_obtained');
     lsMgt.getValue(this, 'total_honor');
     lsMgt.getValue(this, 'add_honor');
+    lsMgt.getValue(this, 'show_result_2nd');
+    lsMgt.getValue(this, 'show_result_3rd');
+    lsMgt.getValue(this, 'show_result_other');
+    lsMgt.getValue(this, 'time_fight_ex');
+    lsMgt.getValue(this, 'time_fight_raid');
+    lsMgt.getValue(this, 'quota_fight_raid');
+    lsMgt.getValue(this, 'meat_fight');
+    lsMgt.getValue(this, 'chosen_ex');
   },
 }
 </script>

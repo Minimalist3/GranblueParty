@@ -69,8 +69,20 @@ function getSummonLevel(summon) {
       return 100;
     case 4:
       return 150;
+    case 5:
+      return 200;
+    case 6:
+      return 210;
+    case 7:
+      return 220;
+    case 8:
+      return 230;
+    case 9:
+      return 240;
+    case 10:
+      return 250;
   }
-  return 200;
+  return 100;
 }
 
 function setSummonCurrentData(summon) {

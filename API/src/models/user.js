@@ -98,7 +98,7 @@ export function userInfos(req, response) {
  * jwt: true
  */
 export function userSetEmail(req, response) {
-  const [query, values] = buidWhereClause({
+  const [query, values] = buildWhereClause({
     'userId': req.user.userid,
   });
 

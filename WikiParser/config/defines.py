@@ -36,7 +36,7 @@ CLASSES_ROWS_NAMES = ['1', '2', '3', '4', 'Ex1', 'Ex2', '5']
 
 # Classes are a pain to scrape, let's hardcode the whole list
 # /!\ Always add new classes at the END of the list /!\
-# http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/leader/quest/*_xx_0_01.jpg
+# https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/assets/leader/quest/*_xx_0_01.jpg
 # In GBF Classes selection panel, see cnt-job-image > img-job, for xx value
 CLASSES = [
   ('Fighter', 100001), ('Knight', 110001), ('Priest', 120001), ('Wizard', 130001), ('Thief', 140001), ('Enhancer', 150001), ('Grappler', 160001), ('Ranger', 170001), ('Harpist', 180001), ('Lancer', 190001),
@@ -46,7 +46,7 @@ CLASSES = [
 	('Alchemist', 200201), ('Ninja', 210201), ('Samurai', 220201), ('Sword Master', 230201), ('Gunslinger', 240201), ('Mystic', 250201), ('Assassin', 260201), ('Drum Master', 270201), ('Dancer', 280201), ('Mechanic', 290201),
 	('Doctor', 200301), ('Runeslayer', 210301), ('Kengo', 220301), ('Glorybringer', 230301), ('Soldier', 240301), ('Nekomancer', 250301), ('Tormentor', 260301), ('Rising Force', 270301), ('Lumberjack', 410301), ('Cavalier', 420301),
   ('Monk', 430301), ('Robin Hood', 440301), ('Masquerade', 280301), ('Relic Buster', 450301),
-  ('Viking', 100401), ('Paladin', 110401), ('Iatromantis', 120401)
+  ('Viking', 100401), ('Paladin', 110401), ('Iatromantis', 120401), ('Manadiver', 130401), ('Yamato', 460301),
 ]
 
 IGNORE_MISSING_SKILL = {'3358', '3855', '3936', '4055', '4080', '4200', '4302'}
@@ -135,7 +135,7 @@ def toInt(str):
 		return 1
 	return int(str)
 
-ix_map = {'s1': 1, 's2': 2, 's3': 3, 's4': 4, 'ex1': 5, 'ex2': 6, 'ex3': 7, 'ex4': 8, 'ex5': 9}
+ix_map = {'s1': 1, 's2': 2, 's3': 3, 's4': 4, 'ex1': 5, 'ex2': 6, 'ex3': 7, 'ex4': 8, 'ex5': 9, 'umex1': 10, 'umex2': 11, 'umex3': 12, }
 
 def sortClasse(a, b):
   if ix_map[a['ix']] < ix_map[b['ix']]:

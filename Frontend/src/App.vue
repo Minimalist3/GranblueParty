@@ -171,6 +171,9 @@
         <a href="https://github.com/Minimalist3/GranblueParty" target="_blank" class="pr-4">
           <fa-icon :icon="['fab', 'github']" class="text-primary text-lg"></fa-icon> Minimalist3/GranblueParty
         </a>
+        <a href="https://minimalist3.github.io/" target="_blank" class="pr-4">
+          <fa-icon :icon="['fa', 'external-link-alt']" class="text-primary text-lg"></fa-icon> Main Website
+        </a>
       </p>
       <p>
         <router-link to="/cookies">Cookie Policy</router-link> -

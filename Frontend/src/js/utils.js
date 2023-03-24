@@ -31,6 +31,25 @@ const escapeBase64 = (str) => {
     .replace(/=/g, '')
 }
 
+const toReadableTime = (time) => {
+  const hours = Math.floor(time / 3600);
+  const minutes = Math.floor(time / 60) - hours * 60;
+  const seconds = time % 60;
+  let result = "";
+  if (hours > 0) {
+    result += hours + "h";
+  }
+  if (minutes > 0) {
+    if (result.length > 0) result += ' ';
+    result += minutes + "min"
+  }
+  if (seconds > 0 && result.length === 0) {
+    if (result.length > 0) result += ' ';
+    result += seconds + "s";
+  }
+  return result;
+}
+
 class LocalStorageMgt {
   constructor(page) {
     this.page = page;
@@ -102,6 +121,7 @@ export default {
   copy,
   unescapeBase64,
   escapeBase64,
+  toReadableTime,
   LocalStorageMgt,
   getPartyResponse
 }

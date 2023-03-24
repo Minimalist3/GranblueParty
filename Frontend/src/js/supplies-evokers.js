@@ -78,6 +78,9 @@ const EVOKERS_DATA = Object.freeze({
     new MaterialStep('Uncap Weapon 4*',
       [{"item":"newworldquartz","q":20},{"group":"veritas","q":150},{"group":"verum","q":250},{"group":"idean","q":100},{"group":"luster","q":60},{"group":"sixdragonjewel","q":30},{"group":"astra","q":120}]
     ),
+    new MaterialStep('Uncap Weapon 5*',
+      [{"item":"newworldquartz","q":30},{"group":"luster","q":70},{"group":"veritas","q":170},{"group":"sixdragon","q":30},{"group":"arcarumfragment","q":30},{"group":"astra","q":140},{"group":"idean","q":130},{"item":"eternitysand","q":3}]
+    ),
   ]
 });
 

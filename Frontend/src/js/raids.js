@@ -127,7 +127,7 @@ const CAT_STANDARD = {
     }
   },
   41: {
-    name: 'Omega+',
+    name: 'Omega +',
     stars: 4,
     cost: 90,
     magfes: 45,
@@ -152,6 +152,18 @@ const CAT_STANDARD = {
         name: 'Celeste',        
       },
     }
+  },
+  42: {
+    name: 'Omega + Pro',
+    stars: 4,
+    cost: 540,
+    magfes: 270,
+    times: 1,
+    raids: {
+      '305441/28': {
+        name: 'All Omega +',       
+      },
+    },
   },
   50: {
     name: 'Tier 1 Summons',
@@ -726,7 +738,15 @@ const CAT_IMPOSSIBLE = {
       '305401/1/0/551': {
         name: 'Siegfried',
         namejp: 'ジークフリート',
-      }
+      },
+      '305411/1/0/552': {
+        name: 'Seofon',
+        namejp: 'シエテ',
+      },
+      '305431/1/0/554': {
+        name: 'Agastia',
+        namejp: 'アガスティア',
+      },
     }
   },
   1090: {
@@ -777,13 +797,18 @@ const CAT_SOLO = {
   2600: {
     name: 'Miscellaneous',
     stars: 1,
-    cost: 200,
-    magfes: 100,
     times: 1,
     raids: {
       '305301/28': {
-        name: 'Angel Halo Pro'
+        name: 'Angel Halo Pro',
+        cost: 200,
+        magfes: 100,
       },
+      '103951/28': {
+        name: 'Showdown Pro',
+        cost: 300,
+        magfes: 150,
+      }
     }
   }
 };

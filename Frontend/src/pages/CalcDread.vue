@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col flex-wrap gap-4 items-center">
-    <h1>Dread Barrage Calculator</h1>
+  <div class="flex flex-col flex-wrap items-center">
+    <h1 class="mb-8">Dread Barrage Calculator</h1>
 
     <!-- Stats -->
-    <div class="flex flex-col mb-8 gap-x-4">
+    <div class="flex flex-col gap-x-4">
       <span class="flex flex-row flex-wrap items-center gap-4">
         <label>Boxes needed <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="boxes_needed"></label>
         <label>Already opened <input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="boxes_opened"></label>
@@ -13,13 +13,47 @@
         <label>Tokens obtained <input class="input input-sm" type="number" min="0" style="width: 10ch;" v-model.lazy="tokens_obtained"></label>
         <span>Progress: {{ getProgress }}%</span>
       </span>
-
+    </div>
+    <div class="flex flex-col gap-x-4 mb-8">
       <span>{{ tokens_explained }}</span>
       <span class="text-lg font-bold">Tokens needed: {{ tokens_needed }}</span>
     </div>
 
+    <!-- Time calc -->
+    <h2 class="mb-4">Farming time calculator (input in seconds):</h2>
+
+    <div class="overflow-y-auto w-full">
+      <table class="table bg-secondary table-px w-auto ml-auto mr-auto mb-8">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Total</th>
+            <th>Tokens/hour</th>
+            <th>AP/hour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Loading</td>
+            <td><input class="input input-sm" type="number" min="0" style="width: 7ch;" v-model.lazy="time_loading"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr v-for="(fight, index) in getFights" :key="index">
+            <td>{{ fight.name }}</td>
+            <td><input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model.lazy="time_fight[index]"></td>
+            <td>{{ fight.total_time }}</td>
+            <td>{{ fight.token_per_hour }}</td>
+            <td>{{ fight.ap_per_hour }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Select fights -->
-    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+    <div class="flex flex-row flex-wrap items-center gap-4">
       <span class="flex flex-row flex-wrap btn-group items-center">
         <span class="mr-2">Fight</span>
         <button
@@ -44,14 +78,21 @@
       </span>
     </div>
 
+    <div class="flex flex-row flex-wrap mb-4 items-center gap-4">
+      Show results for
+      <checkbox v-model="show_result_2nd" class="ordinal">2nd</checkbox>
+      <checkbox v-model="show_result_3rd" class="ordinal">3rd</checkbox>
+      <checkbox v-model="show_result_other">Other</checkbox>
+    </div>
+
     <!-- Table -->
     <div class="overflow-y-auto w-full">
       <table class="table table-striped bg-secondary table-px w-auto ml-auto mr-auto">
         <thead>
           <tr>
             <th>Name</th>
-            <th></th>
-            <th></th>
+            <th v-if="show_host && show_join"></th>
+            <th v-if="show_result_2nd || show_result_3rd || show_result_other"></th>
             <th>Tokens</th>
             <th v-if="show_host">Tokens/AP</th>
             <th v-if="show_join">Tokens/EP</th>
@@ -62,9 +103,9 @@
         </thead>
         <tbody>
           <tr v-for="(data, index) in getData" :key="index">
-            <td :rowspan="data.name_rows" class="is-td-vcentered" v-if="data.name">{{ data.name }}</td>
-            <td :rowspan="data.type_rows" class="is-td-vcentered" v-if="data.type">{{ data.type }}</td>
-            <td>{{ data.finish }}</td>
+            <td :rowspan="data.name_rows" class="is-td-vcentered bg-secondary" v-if="data.name">{{ data.name }}</td>
+            <td :rowspan="data.type_rows" class="is-td-vcentered bg-secondary" v-if="data.type && show_host && show_join">{{ data.type }}</td>
+            <td v-if="show_result_2nd || show_result_3rd || show_result_other">{{ data.finish }}</td>
             <td>{{ data.token }}</td>
             <td v-if="show_host">{{ (data.cost_ap ? (data.token / data.cost_ap).toFixed(2) : '') }}</td>
             <td v-if="show_join">{{ (data.cost_ep ? (data.token / data.cost_ep).toFixed(2) : '') }}</td>
@@ -80,6 +121,8 @@
 
 <script>
 import Utils from '@/js/utils.js'
+
+import Checkbox from '@/components/common/Checkbox.vue'
 
 const lsMgt = new Utils.LocalStorageMgt('CalcDread');
 
@@ -176,6 +219,7 @@ const FIGHT_DATA = [
 
 export default {
   components: {
+    Checkbox
   },
   head: {
     title: 'Granblue.Party - Dread Barrage Calculator',
@@ -185,14 +229,19 @@ export default {
   },
   data() {
     return {
-      boxes_needed: 40,
+      boxes_needed: 20,
       boxes_opened: 0,
       tokens_explained: '',
       tokens_obtained: 0,
       tokens_total: 0,
       show_fight: [false, true, true, true, true, true, true, true],
+      time_loading: 1,
+      time_fight: [0, 0, 0, 0, 0],
       show_host: true,
       show_join: true,
+      show_result_2nd: false,
+      show_result_3rd: false,
+      show_result_other: true,
     }
   },
   methods: {
@@ -202,74 +251,100 @@ export default {
     getFightData(fight) {
       let result = [];
 
+      const nb_rows = 1 +
+        ((fight.token_2 > 0 && this.show_result_2nd) ? 1 : 0) +
+        ((fight.token_3 > 0 && this.show_result_3rd) ? 1 : 0) +
+        (this.show_result_other ? 1 : 0);
+
       // Host
       if (this.show_host) {
         result.push({
-          name: fight.name,
-          name_rows: (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / (this.show_join ? 1 : 2),
           type: 'Host',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: nb_rows,
           finish: 'MVP',
           token: fight.token_host + fight.token_join + fight.token_1,
           cost_ap: fight.cost_ap,
         })
-        if (fight.token_2 > 0) {
+        if (fight.token_2 > 0 && this.show_result_2nd) {
           result.push({
             finish: '2nd',
             token: fight.token_host + fight.token_join + fight.token_2,
             cost_ap: fight.cost_ap,
           })
         }
-        if (fight.token_3 > 0) {
+        if (fight.token_3 > 0 && this.show_result_3rd) {
           result.push({
             finish: '3rd',
             token: fight.token_host + fight.token_join + fight.token_3,
             cost_ap: fight.cost_ap,
           })
         }
-        result.push({
-          finish: '',
-          token: fight.token_host + fight.token_join,
-          cost_ap: fight.cost_ap,
-        })
+        if (this.show_result_other) {
+          result.push({
+            finish: '',
+            token: fight.token_host + fight.token_join,
+            cost_ap: fight.cost_ap,
+          })
+        }
       }
 
       // Join
       if (this.show_join) {
         result.push({
           type: 'Join',
-          type_rows: 2 + (fight.token_2 > 0 ? 1 : 0) + (fight.token_3 > 0 ? 1 : 0),
+          type_rows: nb_rows,
           finish: 'MVP',
           token: fight.token_join + fight.token_1,
           cost_ep: fight.cost_ep,
         })
-        if ( ! this.show_host) {
-          result[result.length-1].name = fight.name;
-          result[result.length-1].name_rows = (4 + (fight.token_2 > 0 ? 2 : 0) + (fight.token_3 > 0 ? 2 : 0)) / 2;
-        }
-        if (fight.token_2 > 0) {
+        if (fight.token_2 > 0 && this.show_result_2nd) {
           result.push({
             finish: '2nd',
             token: fight.token_join + fight.token_2,
             cost_ep: fight.cost_ep,
           })
         }
-        if (fight.token_3 > 0) {
+        if (fight.token_3 > 0 && this.show_result_3rd) {
           result.push({
             finish: '3rd',
             token: fight.token_join + fight.token_3,
             cost_ep: fight.cost_ep,
           })
         }
-        result.push({
-          finish: '',
-          token: fight.token_join,
-          cost_ep: fight.cost_ep,
-        })
+        if (this.show_result_other) {
+          result.push({
+            finish: '',
+            token: fight.token_join,
+            cost_ep: fight.cost_ep,
+          })
+        }
+      }
+
+      if (result.length > 0) {
+        result[0].name = fight.name;
+        result[0].name_rows = nb_rows * (this.show_host && this.show_join ? 2 : 1);
       }
 
       return result;
     },
+    getFightTime(fight, index) {
+      const time_fight = parseInt(this.time_fight[index], 10);
+      const time_loading = parseInt(this.time_loading, 10);
+
+      if (time_fight < 1) {
+        return "";
+      }
+      const token_per_fight = fight.token_host + fight.token_join + fight.token_1;
+      const time = Math.ceil(this.tokens_needed / token_per_fight) * (time_fight + time_loading);
+      const token_per_hour = Math.ceil(3600 * this.tokens_needed / time);
+      const ap_per_hour = Math.ceil(3600 * (this.tokens_needed / token_per_fight * (fight.cost_ap)) / time);
+
+      return {
+        total_time: Utils.toReadableTime(time),
+        token_per_hour: token_per_hour,
+        ap_per_hour: ap_per_hour
+      };
+    }
   },
   computed: {
     getData() {
@@ -279,6 +354,16 @@ export default {
         }
         return [];
       });
+    },
+    getFights() {
+      return FIGHT_DATA
+        .slice(0, 5)
+        .map((f, index) => {
+          return {
+            name: f.name,
+            ...this.getFightTime(f, index)
+          }          
+        });
     },
     getFightNames() {
       return FIGHT_DATA.map(f => f.name);
@@ -388,6 +473,21 @@ export default {
     boxes_opened() {
       lsMgt.setValue('boxes_opened', this);
     },
+    show_result_2nd() {
+      lsMgt.setValue('show_result_2nd', this);
+    },
+    show_result_3rd() {
+      lsMgt.setValue('show_result_3rd', this);
+    },
+    show_result_other() {
+      lsMgt.setValue('show_result_other', this);
+    },
+    time_loading() {
+      lsMgt.setValue('time_loading', this);
+    },
+    time_fight() {
+      lsMgt.setValue('time_fight', this);
+    },
   },
   mounted() {
     lsMgt.getValue(this, 'show_fight');
@@ -396,6 +496,11 @@ export default {
     lsMgt.getValue(this, 'boxes_needed');
     lsMgt.getValue(this, 'boxes_opened');
     lsMgt.getValue(this, 'tokens_obtained');
+    lsMgt.getValue(this, 'show_result_2nd');
+    lsMgt.getValue(this, 'show_result_3rd');
+    lsMgt.getValue(this, 'show_result_other');
+    lsMgt.getValue(this, 'time_loading');
+    lsMgt.getValue(this, 'time_fight');
   },
 };
 </script>

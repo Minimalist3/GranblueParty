@@ -28,8 +28,8 @@
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
         <h2 class="text-center">Last update</h2>
-        <h3 class="text-center">2022-11-17</h3>
-        <p class="text-center mt-2">Adam, Therese (Wind)</p>
+        <h3 class="text-center">2023-03-16</h3>
+        <p class="text-center mt-2">Ewiyar (Grand), Azusa (Summer), Monika (Summer)</p>
       </div>
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">

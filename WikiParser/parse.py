@@ -351,6 +351,7 @@ def getTemplateValueOrDefault(template, value, default):
 def getTemplateValueOrNone(template, value):
   return getTemplateValueOrDefault(template, value, default=None)
 
+
 def updateCharacters():
   cache_dir = os.path.join(os.getcwd(), 'data', 'cache')
   chara_file = os.path.join('data', 'chara.images')
@@ -742,6 +743,18 @@ def updateWeapons():
         if name in add_element:
           name += ' (' + weapon['element'][0].upper() + weapon['element'][1:] + ')'
 
+        # Fix bugged names
+        if int(weapon_id) == 10400189:
+          name = "Chains of Caucasus"
+        elif int(weapon_id) == 10403111:
+          name = "All-Might Battle-Axe"
+        elif int(weapon_id) == 10404157:
+          name = "Savior of Hallowed Ground"
+        elif int(weapon_id) == 10406117:
+          name = "Adamantine Gauntlet"
+        elif int(weapon_id) == 10407092:
+          name = "Unius"
+
         # Check missing Atk and HP values
         if int(weapon['evo max']) == 5:
           if int(weapon['atk4']) == 0:
@@ -877,6 +890,8 @@ def updateClasses():
   with open(working_file, "r", encoding='utf8') as read_file:
     class_values = []
     skill_values = []
+    new_skills_added = 0
+    um_skills_added = 0
     junction = []
     families = {}
     
@@ -884,9 +899,9 @@ def updateClasses():
 
     # New skills are pushing the index, but it's too late to fix the model
     # Hardcode an index for them
-    new_skills = ['Ulfhedinn', 'Lightning Strike', 'Spring\'s Gate', 'Oratorio', 'Time On Target', 'Resounding Chant']
-    new_skills_id_start = 224
-    new_skills_count = 0
+    new_skills = {'Ulfhedinn':224, 'Resounding Chant':225, 'Spring\'s Gate':226, 'Time On Target':227, 'Oratorio':228, 'Lightning Strike':229}
+    um_skills = {"Nyagrodha":10000, "Crowning Fluidity":10001, "Showstopper":10002, "Ferocious Roar":10003, "Beast Fang":10004, "Bloodzerker":10005,
+      "Nocked Exorcism":10006, "Secret Style: Blink Slash":10007, "Intuition":10008, "Oculus Felis":10009, "Matatabby":10010, "Scratching Post":10011,}
 
     for (classe_name, classe_id) in defines.CLASSES:
       row = ''
@@ -912,18 +927,21 @@ def updateClasses():
         if skill['ex'] != '1' and skill['ex'] != '0':
           raise ValueError('Bad ex value for ' + skill['name'])
 
-        isSubSkill = skill['ex'] == '1' and skill['ix'][0] == 's'
+        isSubSkill = skill['ix'][0] == 's' and int(skill['ix'][1]) > 1 and (skill['ex'] == '1' or row == '1' or row == '2' or row == '3')
         isExMastery = skill['ix'][0] == 'e'
         # For ExI classes, s2 and s3 are considered Ex mastery (eg: Neko can use Fate Foreseen)
         if row == defines.CLASSES_ROWS[4] and (skill['ix'] == 's2' or skill['ix'] == 's3'):
           isExMastery = True
         
-        skill_id = len(skill_values) - new_skills_count
-        if skill_id >= new_skills_id_start:
-          skill_id += new_skills_count
+        skill_id = len(skill_values) - new_skills_added - um_skills_added
+        if skill_id >= 224:
+          skill_id += new_skills_added
         if skill['name'] in new_skills:
-          skill_id = new_skills_id_start + new_skills_count
-          new_skills_count += 1
+          skill_id = new_skills[skill['name']]
+          new_skills_added += 1
+        elif skill['name'] in um_skills:
+          skill_id = um_skills[skill['name']]
+          um_skills_added += 1
 
         skill_filename = os.path.join(images_dir, str(skill_id) + '.png')
         if not os.path.isfile(skill_filename):

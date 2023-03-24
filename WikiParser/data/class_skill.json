@@ -14,7 +14,7 @@
     "ix": "s2",
     "family": "enhancer",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Ability.png"
   },
   {
@@ -32,7 +32,7 @@
     "ix": "s2",
     "family": "fighter",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Rage.png"
   },
   {
@@ -50,7 +50,7 @@
     "ix": "s2",
     "family": "grappler",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Sacrifice.png"
   },
   {
@@ -68,7 +68,7 @@
     "ix": "s2",
     "family": "harpist",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_MusicPurple.png"
   },
   {
@@ -86,7 +86,7 @@
     "ix": "s2",
     "family": "knight",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Drive.png"
   },
   {
@@ -104,7 +104,7 @@
     "ix": "s2",
     "family": "lancer",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Piercing.png"
   },
   {
@@ -122,7 +122,7 @@
     "ix": "s2",
     "family": "priest",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Aura.png"
   },
   {
@@ -140,7 +140,7 @@
     "ix": "s2",
     "family": "ranger",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Arrow.png"
   },
   {
@@ -158,7 +158,7 @@
     "ix": "s2",
     "family": "thief",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Treasure.png"
   },
   {
@@ -176,7 +176,7 @@
     "ix": "s2",
     "family": "wizard",
     "row": "1",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Fire.png"
   },
   {
@@ -194,7 +194,7 @@
     "ix": "s2",
     "family": "enhancer",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Ability.png"
   },
   {
@@ -203,7 +203,7 @@
     "ix": "s3",
     "family": "enhancer",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Quick.png"
   },
   {
@@ -221,7 +221,7 @@
     "ix": "s2",
     "family": "ranger",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Arrow.png"
   },
   {
@@ -230,7 +230,7 @@
     "ix": "s3",
     "family": "ranger",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Killstreak.png"
   },
   {
@@ -248,7 +248,7 @@
     "ix": "s2",
     "family": "harpist",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_MusicPurple.png"
   },
   {
@@ -257,7 +257,7 @@
     "ix": "s3",
     "family": "harpist",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Regen.png"
   },
   {
@@ -275,7 +275,7 @@
     "ix": "s2",
     "family": "priest",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_ClearAll.png"
   },
   {
@@ -284,7 +284,7 @@
     "ix": "s3",
     "family": "priest",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Light.png"
   },
   {
@@ -302,7 +302,7 @@
     "ix": "s2",
     "family": "lancer",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Piercing.png"
   },
   {
@@ -311,7 +311,7 @@
     "ix": "s3",
     "family": "lancer",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Pyre.png"
   },
   {
@@ -329,7 +329,7 @@
     "ix": "s2",
     "family": "grappler",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Sacrifice.png"
   },
   {
@@ -338,7 +338,7 @@
     "ix": "s3",
     "family": "grappler",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Selfheal.png"
   },
   {
@@ -356,7 +356,7 @@
     "ix": "s2",
     "family": "thief",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Treasure.png"
   },
   {
@@ -365,7 +365,7 @@
     "ix": "s3",
     "family": "thief",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Duration.png"
   },
   {
@@ -383,7 +383,7 @@
     "ix": "s2",
     "family": "knight",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Drive.png"
   },
   {
@@ -392,7 +392,7 @@
     "ix": "s3",
     "family": "knight",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Invincible.png"
   },
   {
@@ -410,7 +410,7 @@
     "ix": "s2",
     "family": "wizard",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Ice.png"
   },
   {
@@ -419,7 +419,7 @@
     "ix": "s3",
     "family": "wizard",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Blind.png"
   },
   {
@@ -437,7 +437,7 @@
     "ix": "s2",
     "family": "fighter",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Rage.png"
   },
   {
@@ -446,7 +446,7 @@
     "ix": "s3",
     "family": "fighter",
     "row": "2",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_ArmorBreak.png"
   },
   {
@@ -482,7 +482,7 @@
     "ix": "s2",
     "family": "priest",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Dispel.png"
   },
   {
@@ -491,7 +491,7 @@
     "ix": "s3",
     "family": "priest",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Revive.png"
   },
   {
@@ -527,7 +527,7 @@
     "ix": "s2",
     "family": "enhancer",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Miserable.png"
   },
   {
@@ -536,7 +536,7 @@
     "ix": "s3",
     "family": "enhancer",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Gravity.png"
   },
   {
@@ -572,7 +572,7 @@
     "ix": "s2",
     "family": "gladiator",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Twin Coil.png"
   },
   {
@@ -581,7 +581,7 @@
     "ix": "s3",
     "family": "gladiator",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Decimate.png"
   },
   {
@@ -617,7 +617,7 @@
     "ix": "s2",
     "family": "thief",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Treasure.png"
   },
   {
@@ -626,7 +626,7 @@
     "ix": "s3",
     "family": "thief",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Triple.png"
   },
   {
@@ -662,7 +662,7 @@
     "ix": "s2",
     "family": "wizard",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Poison.png"
   },
   {
@@ -671,7 +671,7 @@
     "ix": "s3",
     "family": "wizard",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Focus.png"
   },
   {
@@ -707,7 +707,7 @@
     "ix": "s2",
     "family": "knight",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Drive.png"
   },
   {
@@ -716,7 +716,7 @@
     "ix": "s3",
     "family": "knight",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Cover.png"
   },
   {
@@ -752,7 +752,7 @@
     "ix": "s2",
     "family": "grappler",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_FightingSpirit.png"
   },
   {
@@ -761,7 +761,7 @@
     "ix": "s3",
     "family": "grappler",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Ougi.png"
   },
   {
@@ -797,7 +797,7 @@
     "ix": "s2",
     "family": "ranger",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Arrow.png"
   },
   {
@@ -806,7 +806,7 @@
     "ix": "s3",
     "family": "ranger",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Killstreak.png"
   },
   {
@@ -842,7 +842,7 @@
     "ix": "s2",
     "family": "harpist",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Pilfer.png"
   },
   {
@@ -851,7 +851,7 @@
     "ix": "s3",
     "family": "harpist",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Quick.png"
   },
   {
@@ -887,7 +887,7 @@
     "ix": "s2",
     "family": "lancer",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Piercing.png"
   },
   {
@@ -896,7 +896,7 @@
     "ix": "s3",
     "family": "lancer",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Killstreak.png"
   },
   {
@@ -932,7 +932,7 @@
     "ix": "s2",
     "family": "fighter",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Rampage.png"
   },
   {
@@ -941,7 +941,7 @@
     "ix": "s3",
     "family": "fighter",
     "row": "3",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Rage.png"
   },
   {
@@ -997,6 +997,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability_m_1594_1.png"
+  },
+  {
+    "class": "Apsaras",
+    "name": "Nyagrodha",
+    "ix": "umex1",
+    "family": "lancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1980 1.png"
+  },
+  {
+    "class": "Apsaras",
+    "name": "Crowning Fluidity",
+    "ix": "umex2",
+    "family": "lancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1981 3.png"
+  },
+  {
+    "class": "Apsaras",
+    "name": "Showstopper",
+    "ix": "umex3",
+    "family": "lancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1982 3.png"
   },
   {
     "class": "Bandit Tycoon",
@@ -1087,6 +1114,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability_Burst.png"
+  },
+  {
+    "class": "Berserker",
+    "name": "Ferocious Roar",
+    "ix": "umex1",
+    "family": "fighter",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1977 3.png"
+  },
+  {
+    "class": "Berserker",
+    "name": "Beast Fang",
+    "ix": "umex2",
+    "family": "fighter",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1978 1.png"
+  },
+  {
+    "class": "Berserker",
+    "name": "Bloodzerker",
+    "ix": "umex3",
+    "family": "fighter",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1979 3.png"
   },
   {
     "class": "Cavalier",
@@ -1602,6 +1656,42 @@
     "icon": "Ability_Elemental.png"
   },
   {
+    "class": "Yamato",
+    "name": "Watch and Wound",
+    "ix": "ex1",
+    "family": "yamato",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1965_1.png"
+  },
+  {
+    "class": "Yamato",
+    "name": "Whitehail Gust",
+    "ix": "ex2",
+    "family": "yamato",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1966_3.png"
+  },
+  {
+    "class": "Yamato",
+    "name": "Seasplitter",
+    "ix": "ex3",
+    "family": "yamato",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1967_1.png"
+  },
+  {
+    "class": "Yamato",
+    "name": "Take the Head",
+    "ix": "s1",
+    "family": "yamato",
+    "row": "4",
+    "ex": "0",
+    "icon": "Ability_m_1964_1.png"
+  },
+  {
     "class": "Iatromantis",
     "name": "Amyntiko Fos",
     "ix": "ex1",
@@ -1636,6 +1726,42 @@
     "row": "5",
     "ex": "0",
     "icon": "Ability_m_1817_2.png"
+  },
+  {
+    "class": "Manadiver",
+    "name": "Wild Magica",
+    "ix": "ex1",
+    "family": "wizard",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1922_1.png"
+  },
+  {
+    "class": "Manadiver",
+    "name": "Secret Triad",
+    "ix": "ex2",
+    "family": "wizard",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1923_3.png"
+  },
+  {
+    "class": "Manadiver",
+    "name": "Overtrance",
+    "ix": "ex3",
+    "family": "wizard",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_1924_3.png"
+  },
+  {
+    "class": "Manadiver",
+    "name": "Aether Siphon",
+    "ix": "s1",
+    "family": "wizard",
+    "row": "5",
+    "ex": "0",
+    "icon": "Ability_m_1921_1.png"
   },
   {
     "class": "Paladin",
@@ -1733,7 +1859,7 @@
     "ix": "s2",
     "family": "alchemist",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability HealAll.png"
   },
   {
@@ -1742,7 +1868,7 @@
     "ix": "s3",
     "family": "alchemist",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Morale.png"
   },
   {
@@ -1769,7 +1895,7 @@
     "ix": "s2",
     "family": "assassin",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Misdirect.png"
   },
   {
@@ -1958,7 +2084,7 @@
     "ix": "s3",
     "family": "mystic",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Convert.png"
   },
   {
@@ -1985,7 +2111,7 @@
     "ix": "s2",
     "family": "ninja",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Shuriken.png"
   },
   {
@@ -1994,7 +2120,7 @@
     "ix": "s3",
     "family": "ninja",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability_Cloudy.png"
   },
   {
@@ -2021,7 +2147,7 @@
     "ix": "s2",
     "family": "samurai",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Meditation.png"
   },
   {
@@ -2030,7 +2156,7 @@
     "ix": "s3",
     "family": "samurai",
     "row": "11",
-    "ex": "1",
+    "ex": "0",
     "icon": "Ability Aurora.png"
   },
   {
@@ -2178,6 +2304,33 @@
     "icon": "Ability One with the Blade.png"
   },
   {
+    "class": "Kengo",
+    "name": "Nocked Exorcism",
+    "ix": "umex1",
+    "family": "samurai",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 1983_1.png"
+  },
+  {
+    "class": "Kengo",
+    "name": "Secret Style: Blink Slash",
+    "ix": "umex2",
+    "family": "samurai",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_1984_1.png"
+  },
+  {
+    "class": "Kengo",
+    "name": "Intuition",
+    "ix": "umex3",
+    "family": "samurai",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_1985_3.png"
+  },
+  {
     "class": "Masquerade",
     "name": "Bounce Chasse",
     "ix": "ex1",
@@ -2248,6 +2401,33 @@
     "row": "12",
     "ex": "0",
     "icon": "Ability Cat's Meow.png"
+  },
+  {
+    "class": "Nekomancer",
+    "name": "Oculus Felis",
+    "ix": "umex1",
+    "family": "mystic",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 1986 3.png"
+  },
+  {
+    "class": "Nekomancer",
+    "name": "Matatabby",
+    "ix": "umex2",
+    "family": "mystic",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 1987 3.png"
+  },
+  {
+    "class": "Nekomancer",
+    "name": "Scratching Post",
+    "ix": "umex3",
+    "family": "mystic",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 1988 3.png"
   },
   {
     "class": "Rising Force",

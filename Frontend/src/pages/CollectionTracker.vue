@@ -186,7 +186,7 @@
               :src="'/img/unit_small/' + summon.id + '000.jpg'"
               @click="selectSummon(summon)"
             >
-            <span @click="starsModified()" style="height: 21px;" v-if="showStars">
+            <span @click="starsModified()" style="min-height: 21px;" v-if="showStars">
               <stars-line
                 v-if="summon.owned"
                 :base="summon.sb"
@@ -194,6 +194,7 @@
                 :current.sync="summon.sc"
                 :max="5"
                 :readOnly=" ! isOwnCollection"
+                :transcendance="true"
               ></stars-line>
             </span>
           </span>

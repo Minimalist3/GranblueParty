@@ -15,6 +15,11 @@
     </form>
 
     <p class="bg-secondary rounded p-4">
+      To reset your password, log out, then in the "Log in" panel,<br>
+      click on "Forgot password?" to receive a link to change your password.
+    </p>
+
+    <p class="bg-secondary rounded p-4">
       We will never send you spam or sell your email address.<br>
       Its only use is to recover your password if you forget it.
     </p>

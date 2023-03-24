@@ -39,6 +39,7 @@ const items = Object.freeze({
   tearsoftheapocalypse: new Item('Tears of the Apocalypse', Categories.quest),
   abyssalwing: new Item('Abyssal Wing', Categories.quest),
   cunningdevilshorn: new Item('Cunning Devil\'s Horn', Categories.quest),
+  eternitysand: new Item('Eternity Sand', Categories.quest),
   //: new Item('', Categories.quest),
   flawlessprism: new Item('Flawless Prism', Categories.quest),
   flawedprism: new Item('Flawed Prism', Categories.quest),

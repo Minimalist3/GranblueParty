@@ -118,7 +118,7 @@
 117	ws_skill_atk_a_5_3.png	Heaven's Truth	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 118	ws_skill_job_weapon.png	Herald of the Seraph	\N	\N
 119	ws_skill_atk_m_4_3.png	Stormwyrm's Might II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["wind"]},"aura_type":"omega","stat":"atk"}]}	big
-120	ws_skill_tec_arcarum_4_4.png	Sephira Wind-Tek	\N	massive
+120	ws_skill_tec_arcarum_4_4.png	Sephira Wind-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["wind"]}}]}	massive
 121	ws_skill_atk_a_5_4.png	Solaris's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	massive
 122	ws_skill_job_weapon.png	Sunveil's Radiance	\N	\N
 123	ws_skill_atk_a_1_3.png	A Thousand Dreams	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["fire"]},"aura_type":"ex","stat":"atk"}]}	big
@@ -202,7 +202,7 @@
 201	ws_skill_moment_m_5_1.png	Knightcode's Celere	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["light"]},"aura_type":"omega","stat":"crit"}]}	small
 202	ws_skill_backwater_m_5_1.png	Knightcode's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["light"]},"aura_type":"omega","stat":"enmity"}]}	small
 203	ws_skill_atk_m_1_3.png	Ironflame's Might II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["fire"]},"aura_type":"omega","stat":"atk"}]}	big
-204	ws_skill_tec_arcarum_1_4.png	Sephira Fire-Tek	\N	massive
+204	ws_skill_tec_arcarum_1_4.png	Sephira Fire-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["fire"]}}]}	massive
 205	ws_skill_musou_3_3_2.png	Terra's Primacy II	{"data":[{"percent":{"1":7,"10":16,"15":20,"20":20},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"},{"percent":{"1":1.5,"10":7,"15":9},"aura_type":"optimus","stat":"da","restriction":{"element":["earth"]}}]}	big
 206	ws_skill_jinkai_3_1.png	Earth's Bladeshield	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"aura_type":"optimus","stat":"hp","restriction":{"element":["earth"]}},{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"crit"}]}	small
 207	ws_skill_job_weapon.png	Rose's Refuge	\N	\N
@@ -360,7 +360,7 @@
 359	ws_skill_backwater_m_6_1.png	Mistfall's Enmity	{"data":[{"percent":{"1":0.5,"10":6,"15":7,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"enmity"}]}	small
 360	ws_skill_eye_m_6.png	Mistfall's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"omega","stat":"da","restriction":{"element":["dark"]}}]}	small
 361	ws_skill_job_weapon.png	Crustaceous Crush	\N	\N
-362	ws_skill_tec_arcarum_6_4.png	Sephira Dark-Tek	\N	massive
+362	ws_skill_tec_arcarum_6_4.png	Sephira Dark-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["dark"]}}]}	massive
 363	ws_skill_atk_a_2_3.png	Gourmet Banana	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	big
 364	ws_skill_job_weapon.png	Organic Smackdown	\N	\N
 365	ws_skill_job_weapon.png	Visitor in the Night	\N	\N
@@ -460,7 +460,7 @@
 459	ws_skill_god_m_6_2.png	Mistfall's Majesty II	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"},{"percent":{"1":1,"10":10,"15":12,"20":12.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"hp"}]}	medium
 460	ws_skill_deadly_m_6_2.png	Mistfall's Sentence	{"data":[{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["dark"]},"stat":"ca_dmg","aura_type":"omega"},{"percent":{"1":2.5,"10":7,"15":9.5},"restriction":{"element":["dark"]},"stat":"ca_cap","aura_type":"omega"}]}	medium
 461	ws_skill_atk_m_5_3.png	Knightcode's Might II	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["light"]},"aura_type":"omega","stat":"atk"}]}	big
-462	ws_skill_tec_arcarum_5_4.png	Sephira Light-Tek	\N	massive
+462	ws_skill_tec_arcarum_5_4.png	Sephira Light-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["light"]}}]}	massive
 463	ws_skill_atk_a_5_3.png	Divine Gavel	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 464	ws_skill_job_weapon.png	Oracle's Boon	\N	\N
 465	ws_skill_guard_6_2.png	Hatred's Garrison	\N	medium
@@ -523,7 +523,7 @@
 522	ws_skill_atk_m_6_2.png	Mistfall's Might	{"data":[{"percent":{"1":3,"10":12,"15":14.5,"20":16},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"atk"}]}	medium
 523	ws_skill_coki_m_6.png	Mistfall's Restraint	{"data":[{"percent":{"1":3.2,"10":5,"15":6.5,"20":7.5},"restriction":{"element":["dark"]},"aura_type":"omega","stat":"crit"},{"percent":{"1":0.8,"10":3.5,"15":5,"20":6},"aura_type":"omega","stat":"da","restriction":{"element":["dark"]}}]}	medium
 524	ws_skill_da_4_3.png	Ventosus's Dual-Edge	{"data":[{"percent":{"1":1.2,"10":5,"15":7},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}}]}	big
-525	ws_skill_tec_arcarum_2_4.png	Sephira Water-Tek	\N	massive
+525	ws_skill_tec_arcarum_2_4.png	Sephira Water-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["water"]}}]}	massive
 526	ws_skill_atk_a_4_3.png	Weaver Stance	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"ex","stat":"atk"}]}	big
 527	ws_skill_job_weapon.png	Sidearm	\N	\N
 528	ws_skill_eye_2.png	Hoarfrost's Heed	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["water"]}}]}	small
@@ -751,10 +751,10 @@
 750	ws_skill_atk_a_6_4.png	Phantom's Supremacy	{"data":[{"percent":{"1":9,"10":18,"15":23,"20":25.5},"restriction":{"element":["dark"]},"aura_type":"ex","stat":"atk"}]}	massive
 751	ws_skill_job_weapon.png	Undersky's Hatebonds	\N	\N
 752	ws_skill_job_weapon.png	Shall We Duel?	\N	\N
-753	ws_skill_fullcut_m_3.png	Lifetree's Truce	\N	small
+753	ws_skill_fullcut_m_3.png	Lifetree's Truce	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"omega","stat":"da","restriction":{"element":["earth"]}}]}	small
 754	ws_skill_wargod_m_4.png	Stormwyrm's Heroism	\N	\N
 755	ws_skill_primal_m_4.png	Stormwyrm's Essence	\N	medium
-756	ws_skill_tec_arcarum_3_4.png	Sephira Earth-Tek	\N	massive
+756	ws_skill_tec_arcarum_3_4.png	Sephira Earth-Tek	{"data":[{"percent":{"1":2,"10":20,"15":30},"aura_type":"normal","stat":"crit","restriction":{"element":["earth"]}}]}	massive
 757	ws_skill_job_weapon.png	Kengo's Nature	\N	\N
 758	ws_skill_blank.png	Kengo's Essence	\N	\N
 759	ws_skill_whole_3_2.png	Mountain's Stamina	{"data":[{"percent":{"1":65},"aura_type":"optimus","stat":"stamina","restriction":{"element":["earth"]}}]}	medium
@@ -1065,7 +1065,7 @@
 1064	ws_skill_job_weapon.png	Anointed Overture	\N	\N
 1065	ws_skill_grace_3_2.png	Mountain's Grace	\N	medium
 1066	ws_skill_train_5_3.png	Zion's Tempering	\N	big
-1067	ws_skill_ranbu_5_1.png	Light's Fandango	\N	small
+1067	ws_skill_ranbu_5_1.png	Light's Fandango	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":13},"restriction":{"element":["light"]},"stat":"atk","aura_type":"optimus"}]}	small
 1068	ws_skill_atk_a_4_3.png	Birch's Might	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["wind"]},"aura_type":"mysterious","stat":"atk"}]}	big
 1069	ws_skill_job_weapon.png	Sauna-Goer's Companion	\N	\N
 1070	ws_skill_job_weapon.png	Scarlet Craft	\N	\N
@@ -1078,7 +1078,7 @@
 1077	ws_skill_job_weapon.png	Purgatory's Spectacle	\N	\N
 1078	ws_skill_tyrant_6.png	Oblivion's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":20},"restriction":{"element":["dark"]},"aura_type":"optimus","stat":"atk"}]}	big
 1079	ws_skill_atk_a_2_2.png	Clawed Flood	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["water"]},"aura_type":"ex","stat":"atk"}]}	medium
-1080	ws_skill_deadly_5_3.png	Zion's Sentence	\N	big
+1080	ws_skill_deadly_5_3.png	Zion's Sentence	{"data":[{"percent":{"1":5.5,"10":10,"15":12.5},"restriction":{"element":["light"]},"stat":"ca_dmg","aura_type":"optimus"},{"percent":{"1":1.2,"10":4.8,"15":6.8},"restriction":{"element":["light"]},"stat":"ca_cap","aura_type":"optimus"}]}	big
 1081	ws_skill_hp_a_4_3.png	Resilient Gale	\N	big
 1082	ws_skill_job_weapon.png	Technical Artistry	\N	\N
 1083	ws_skill_job_weapon.png	Purgatory's Pact	\N	\N
@@ -1153,13 +1153,13 @@
 1152	ws_skill_job_weapon.png	Blade's Wrath	\N	\N
 1153	ws_skill_job_weapon.png	Sword Princess	\N	\N
 1154	ws_skill_atk_5.png	Preemptive Light Blade	\N	\N
-1155	ws_skill_tyrant_3.png	Terra's Bloodshed	\N	big
+1155	ws_skill_tyrant_3.png	Terra's Bloodshed	{"data":[{"percent":{"1":6,"10":15,"15":18},"restriction":{"element":["earth"]},"aura_type":"optimus","stat":"atk"}]}	big
 1156	ws_skill_heal_limit_2_3.png	Hoarfrost's Healing	\N	big
-1157	ws_skill_atk_a_3_3.png	Up in Arms	\N	big
+1157	ws_skill_atk_a_3_3.png	Up in Arms	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["earth"]},"aura_type":"mysterious","stat":"atk"}]}	big
 1158	ws_skill_job_weapon.png	Hundred Fists	\N	\N
 1159	ws_skill_job_weapon.png	Blaze's Persistence	\N	\N
 1160	ws_skill_secret_1_3.png	Blaze's Crux	\N	\N
-1161	ws_skill_ta_4_1.png	Wind's Trium	\N	small
+1161	ws_skill_ta_4_1.png	Wind's Trium	{"data":[{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"da","restriction":{"element":["wind"]}},{"percent":{"1":0.4,"10":2.2,"15":3.5},"aura_type":"optimus","stat":"ta","restriction":{"element":["wind"]}}]}	small
 1162	ws_skill_atk_3.png	Preemptive Terra Blade	\N	\N
 1163	ws_skill_whole_2_1.png	Water's Stamina	\N	small
 1164	ws_skill_job_weapon.png	Amber Resonator	\N	\N
@@ -1169,22 +1169,83 @@
 1168	ws_skill_heal_limit_1_2.png	Hellfire's Healing	\N	medium
 1169	ws_skill_job_weapon.png	Tranquility's Persistence	\N	\N
 1170	ws_skill_job_weapon.png	Whirlwind's Progression	\N	medium
-1171	ws_skill_jinkai_1_1.png	Fire's Bladeshield	\N	small
+1171	ws_skill_jinkai_1_1.png	Fire's Bladeshield	{"data":[{"percent":{"1":1,"10":10,"15":12,"20":12.5},"aura_type":"optimus","stat":"hp","restriction":{"element":["fire"]}},{"percent":{"1":1.1,"10":2,"15":3,"20":4},"restriction":{"element":["fire"]},"aura_type":"optimus","stat":"crit"}]}	small
 1172	ws_skill_job_weapon.png	Snowfall's Fortitude	\N	\N
-1173	ws_skill_backwater_2_2.png	Tsunami's Enmity	\N	medium
+1173	ws_skill_backwater_2_2.png	Tsunami's Enmity	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["water"]},"aura_type":"optimus","stat":"enmity"}]}	medium
 1174	ws_skill_atk_4.png	Preemptive Gale Blade	\N	\N
 1175	ws_skill_deadly_2_1.png	Water's Sentence	\N	small
 1176	ws_skill_heal_limit_3_3.png	Terra's Healing	\N	big
 1177	ws_skill_job_weapon.png	Cobalt Vitality	\N	\N
-1178	ws_skill_atk_a_5_3.png	Weather Controller	\N	big
+1178	ws_skill_atk_a_5_3.png	Weather Controller	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 1179	ws_skill_job_weapon.png	Instinctive Forecast	\N	\N
-1180	ws_skill_atk_a_5_3.png	21 Excellent-Grade Sword	\N	big
+1180	ws_skill_atk_a_5_3.png	21 Excellent-Grade Sword	{"data":[{"percent":{"1":6,"10":15,"15":18,"20":21},"restriction":{"element":["light"]},"aura_type":"ex","stat":"atk"}]}	big
 1181	ws_skill_weapon_atk_10.png	The Opening Draw	\N	\N
 1182	ws_skill_job_weapon.png	Scarlet Convergence	\N	\N
 1183	ws_skill_job_weapon.png	Axe's Wrath	\N	\N
 1184	ws_skill_job_weapon.png	Tranquility's Quenching	\N	\N
-1185	ws_skill_backwater_5_2.png	Magic Charge	\N	medium
+1185	ws_skill_backwater_5_2.png	Magic Charge	{"data":[{"percent":{"1":0.66,"10":8,"15":10},"restriction":{"element":["light"]},"aura_type":"optimus","stat":"enmity"}]}	medium
 1186	ws_skill_deadly_4_1.png	Wind's Sentence	\N	small
-1187	ws_skill_whole_4_3_2.png	Ventosus's Stamina II	\N	big
+1187	ws_skill_whole_4_3_2.png	Ventosus's Stamina II	{"data":[{"percent":{"1":53.7},"aura_type":"optimus","stat":"stamina","restriction":{"element":["wind"]}}]}	big
 1188	ws_skill_hero_4_3.png	Ventosus's Glory	\N	big
 1189	ws_skill_noroi_m_3_3.png	Lifetree's Insignia III	\N	big
+1190	ws_skill_coki_3_2.png	Mountain's Restraint	\N	medium
+1191	ws_skill_baha_7.png	Concrio Albus	\N	\N
+1192	ws_skill_job_weapon.png	Savage Mythology	\N	\N
+1193	ws_skill_job_weapon.png	Abandoned Role	\N	\N
+1194	ws_skill_job_weapon.png	Knightcode's Trituration	\N	\N
+1195	ws_skill_hp_m_5_2.png	Knightcode's Aegis	\N	small
+1196	ws_skill_job_weapon.png	Jade Valuables	\N	\N
+1197	ws_skill_job_weapon.png	Thunder God's Authority	\N	\N
+1198	ws_skill_job_weapon.png	Thunder God's Subjugation	\N	\N
+1199	ws_skill_job_weapon.png	Purity of Nature	\N	\N
+1200	ws_skill_job_weapon.png	Fine Wind, Clear Heart	\N	\N
+1201	ws_skill_job_weapon.png	Cyclonic Strike	\N	\N
+1202	ws_skill_job_weapon.png	Electrifying Onslaught	\N	\N
+1203	ws_skill_job_weapon.png	Mistfall's Trituration	\N	\N
+1204	ws_skill_job_weapon.png	Gugalanna	\N	\N
+1205	ws_skill_job_weapon.png	Disease Demon	\N	\N
+1206	ws_skill_job_weapon.png	Tell Ibrahim	\N	\N
+1207	ws_skill_job_weapon.png	Cheirokmeta	\N	\N
+1208	ws_skill_job_weapon.png	Hydor Theion	\N	\N
+1209	ws_skill_job_weapon.png	Authentic Memoirs	\N	\N
+1210	ws_skill_job_weapon.png	Fortified Staff	\N	\N
+1211	ws_skill_job_weapon.png	Geisa Ari	\N	\N
+1212	ws_skill_job_weapon.png	Einar	\N	\N
+1213	ws_skill_job_weapon.png	Mikill Las	\N	\N
+1214	ws_skill_job_weapon.png	Ogre's Retribution	\N	\N
+1215	ws_skill_job_weapon.png	Eternal Animosity	\N	\N
+1216	ws_skill_ranbu_5_3.png	Zion's Fandango	\N	big
+1217	ws_skill_job_weapon.png	Fortified Gauntlet	\N	\N
+1218	ws_skill_job_weapon.png	Sangre Caliente	\N	\N
+1219	ws_skill_job_weapon.png	Robar Tiempo	\N	\N
+1220	ws_skill_job_weapon.png	Cepheid Variable	\N	\N
+1221	ws_skill_job_weapon.png	Galactic Bulge	\N	\N
+1222	ws_skill_hero_3_3.png	Terra's Glory	\N	big
+1223	ws_skill_job_weapon.png	Fortified Harp	\N	\N
+1224	ws_skill_job_weapon.png	Hero's Testament	\N	\N
+1225	ws_skill_job_weapon.png	Transience of Life	\N	\N
+1226	ws_skill_job_weapon.png	Blazing Chain	\N	\N
+1227	ws_skill_job_weapon.png	Nue's Omen	\N	\N
+1228	ws_skill_job_weapon.png	Nue's Cry	\N	\N
+1229	ws_skill_hero_2_3.png	Hoarfrost's Glory	\N	big
+1230	ws_skill_job_weapon.png	Fortified Blade	\N	\N
+1231	ws_skill_job_weapon.png	Black Night Fever	\N	big
+1232	ws_skill_job_weapon.png	Blaze's Pact	\N	\N
+1233	ws_skill_job_weapon.png	Blaze's Quintessence	\N	\N
+1234	ws_skill_job_weapon.png	Graphite Convergence	\N	\N
+1235	ws_skill_tyrant_m_6_3.png	Mistfall's Bloodshed III	\N	big
+1236	ws_skill_hp_a_6_3.png	Resilient Shadow	\N	big
+1237	ws_skill_heal_limit_2_1.png	Water's Healing	\N	small
+1238	ws_skill_job_weapon.png	Scarlet Reticle	\N	\N
+1239	ws_skill_job_weapon.png	Golden Vitality	\N	\N
+1240	ws_skill_job_weapon.png	Tranquility's Pact	\N	\N
+1241	ws_skill_job_weapon.png	Tranquility's Quintessence	\N	\N
+1242	ws_skill_job_weapon.png	Venerator's Nature	\N	\N
+1243	ws_skill_job_weapon.png	Venerator's Apex	\N	\N
+1244	ws_skill_job_weapon.png	Sword's Wrath	\N	\N
+1245	ws_skill_job_weapon.png	Sword's Charge	\N	\N
+1246	ws_skill_job_weapon.png	Tranquility's Spectacle	\N	\N
+1247	ws_skill_hero_5_3.png	Zion's Glory	\N	big
+1248	ws_skill_job_weapon.png	Glimmer's Ascendancy	\N	\N
+1249	ws_skill_job_weapon.png	Purgatory's Marvel	\N	\N
+1250	ws_skill_job_weapon.png	Gauntlet's Wrath	\N	\N

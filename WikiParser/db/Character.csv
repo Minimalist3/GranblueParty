@@ -383,7 +383,7 @@
 3040038	Niyon	ニオ	4	6	2	1	4	3	10	2015-04-16	10399	12199	1299	1599	\N
 3040039	Tien	エッセル	4	6	2	0	1	2	10	2015-04-16	8200	10000	1600	2000	\N
 3040040	Jeanne d'Arc	ジャンヌダルク	4	5	2	4	1	0	500	2015-01-22	8290	9850	1550	1840	Caladbolg
-3040041	Sara	サラ	4	4	2	2	2	0	500	2015-01-31	7200	\N	2080	\N	Sandcastle Song-Lume
+3040041	Sara	サラ	4	5	2	2	2	0	500	2015-01-31	7200	8550	2080	2470	Sandcastle Song-Lume
 3040042	Carmelina	カルメリーナ	4	4	2	1	4	1	500	2015-02-13	9240	\N	1350	\N	Turpin Spear
 3040043	Vira (SSR)	ヴィーラ	4	5	2	5	0	0	500	2015-02-28	8960	10640	1280	1520	Lyst Sin
 3040044	Societte	ソシエ	4	5	2	3	4	2	500	2015-03-17	7920	9410	1160	1380	Scarlet Vane
@@ -452,7 +452,7 @@
 3040108	Marquiares	マルキアレス	4	4	2	5	4	3	1000	2017-01-20	9290	\N	1150	\N	Gridarvor
 3040109	Razia	ラスティナ	4	4	2	2	2	1	1000	2017-01-31	7100	\N	2150	\N	Gae Derg
 3040110	Beatrix (Summer)	ベアトリクス	4	4	2	0	4	0	1030	2017-02-13	11000	\N	990	\N	Delta Quartz
-3040111	Orchid	オーキス	4	5	2	5	4	5	1500	2017-02-28	7300	8850	1650	1950	Parazonium
+3040111	Orchid (Grand)	オーキス	4	5	2	5	4	5	1500	2017-02-28	7300	8850	1650	1950	Parazonium
 3040112	Zeta (Dark)	ゼタ	4	4	2	5	0	0	1000	2017-02-28	10400	\N	1020	\N	Sunspot Spear
 3040113	De La Fille (Earth)	レ・フィーエ	4	4	2	2	3	0	1000	2017-03-20	5800	\N	1910	\N	Thyrsus
 3040115	Sturm (Grand)	スツルム	4	4	2	0	0	1	1500	2017-03-31	11100	\N	1100	\N	Ixaba
@@ -476,7 +476,7 @@
 3040133	Nina Drango	ニーナ・ドランゴ	4	4	2	0	0	5	\N	2017-09-20	7720	\N	972	\N	\N
 3040134	Dorothy and Claudia	サーヴァンツ ドロシー＆クラウディア	4	4	2	4	4	0	1000	2017-09-30	9300	\N	1400	\N	Gothic Cutlery
 3040135	Danua (Halloween)	ダヌア	4	4	2	0	4	1	1040	2017-10-23	8610	\N	1550	\N	Snack Pole‎
-3040136	Sakura Kinomoto	木之本桜	4	4	2	4	4	0	\N	2017-10-10	6730	\N	1660	\N	\N
+3040136	Sakura Kinomoto	木之本桜	4	5	2	4	4	0	\N	2017-10-10	6730	7930	1660	1960	\N
 3040137	Azazel	アザゼル	4	4	2	5	0	4	1000	2017-10-17	9990	\N	1380	\N	Shadow Viperlance
 3040138	Yuel (Water)	ユエル	4	4	2	3	4	2	1000	2017-10-31	8500	\N	1140	\N	Izayoi
 3040140	Lancelot (Wind)	ランスロット	4	4	2	1	0	0	1000	2017-11-30	9400	\N	1350	\N	Heiliges Schwert
@@ -512,7 +512,7 @@
 3040170	Soriz (SSR)	ソリッズ	4	5	2	2	0	0	1000	2018-05-21	10200	12060	1300	1550	Wyrmtiger Claw
 3040171	Cain (Grand)	カイン	4	4	2	2	4	0	1600	2018-05-31	8950	\N	1250	\N	Ichigo Hitofuri
 3040172	Lunalu (SSR)	ルナール	4	5	2	5	4	3	1000	2018-05-31	9240	10980	1160	1380	Ruling Pen
-3040173	Joker	ジョーカー	4	4	2	5	4	0	\N	2018-06-18	8700	\N	1300	\N	\N
+3040173	Joker	ジョーカー	4	5	2	5	4	0	\N	2018-06-18	8700	10300	1300	1550	\N
 3040174	Wulf and Renie	ウーフとレニー	4	4	2	5	0	5	1000	2018-06-18	8600	\N	1480	\N	Master Key
 3040175	Selfira	セレフィラ	4	4	2	1	4	2	1000	2018-06-30	7880	\N	1160	\N	Cythara Anglica
 3040176	Rosetta (Summer)	ロゼッタ	4	4	2	2	4	4	1030	2018-07-18	8500	\N	1340	\N	Thorny Rose
@@ -535,7 +535,7 @@
 3040193	Levin Sisters	レヴィオン姉妹 マイム＆ミイム＆メイム	4	4	2	4	4	0	1000	2018-11-15	4300	\N	1320	\N	Levin Shooter
 3040194	Charlotta (Light)	シャルロッテ	4	4	2	4	0	3	1000	2018-11-30	10350	\N	1110	\N	Claidheamh Soluis
 3040195	Metera (Holiday)	メーテラ	4	4	2	4	1	2	1020	2018-12-17	7310	\N	1418	\N	Pinkie Needle
-3040196	Shiva	シヴァ	4	4	2	0	0	4	1500	2018-12-28	11400	\N	1240	\N	Purifying Thunderbolt
+3040196	Shiva	シヴァ	4	5	2	0	0	4	1500	2018-12-28	11400	13680	1240	1464	Purifying Thunderbolt
 3040197	Kumbhira	クビラ	4	5	2	4	0	1	1050	2018-12-31	10600	12600	1400	1660	Porculius
 3040198	Eustace (Dark)	ユーステス	4	5	2	5	0	2	1000	2018-12-31	8600	10200	1200	1430	Ishtar
 3040199	Yurius	ユリウス	4	5	2	1	4	0	1000	2018-11-15	8900	11550	1260	1930	Returner Staff
@@ -558,7 +558,7 @@
 3040216	Karyl	キャル	4	4	2	5	0	5	\N	2019-05-29	8950	\N	1200	\N	\N
 3040217	Ladiva (SSR)	ファスティバ	4	4	2	2	0	1	1000	2019-05-31	10000	\N	1356	\N	Rainbow Hand
 3040218	Morrigna	バイヴカハ	4	4	2	1	4	4	1000	2019-05-31	8700	\N	1300	\N	Trí Bandia
-3040219	Lelouch Lamperouge	ルルーシュ・ランペルージ	4	4	2	5	1	0	\N	2019-06-19	6125	\N	1800	\N	\N
+3040219	Lelouch Lamperouge	ルルーシュ・ランペルージ	4	5	2	5	1	0	\N	2019-06-19	6125	7225	1800	2120	\N
 3040220	Suzaku Kururugi	枢木スザク	4	4	2	1	0	0	\N	2019-06-14	8710	\N	1200	\N	\N
 3040221	Kallen Kouzuki	紅月カレン	4	4	2	0	0	0	\N	2019-06-14	8315	\N	1550	\N	\N
 3040222	Kolulu	コルル	4	4	2	5	4	0	1000	2019-06-19	11100	\N	950	\N	Vagabond
@@ -591,7 +591,7 @@
 3040249	Narmaya (Holiday)	ナルメア	4	4	2	2	0	1	1020	2019-12-15	10885	\N	1185	\N	Blade of Purification
 3040250	Seruel (Holiday)	セルエル	4	4	2	1	2	2	1020	2019-12-15	6505	\N	1725	\N	Brand of Binding Oath
 3040251	Helel ben Shalem	ヘレル・ベン・シャレム	4	4	2	5	4	5	1500	2019-12-28	8880	\N	1270	\N	Bab-el-Mandeb
-3040252	Vikala	ビカラ	4	4	2	5	1	0	1050	2019-12-31	8500	\N	1500	\N	Rodentius
+3040252	Vikala	ビカラ	4	5	2	5	1	0	1050	2019-12-31	8500	9618	1500	1877	Rodentius
 3040253	Yuisis (Fire)	ユイシス	4	4	2	0	0	2	1000	2019-12-31	9640	\N	952	\N	Gangsta Knife
 3040254	Lucius (SSR)	ルシウス	4	4	2	5	0	0	1000	2019-12-31	9800	\N	1285	\N	Alabaster Zenith
 3040255	Noa (Grand)	ノア	4	4	2	4	4	4	1600	2019-12-31	9700	\N	1100	\N	Ivory Ark
@@ -772,3 +772,24 @@
 3040431	Alliah	アリア	4	4	2	1	4	2	1000	2022-10-31	11000	\N	1000	\N	Dowry Blade
 3040432	Adam	アダム	4	4	2	2	2	5	1000	2022-11-17	6720	\N	2016	\N	Zroa Yeshana
 3040433	Therese (Wind)	テレーズ	4	4	2	1	0	0	1000	2022-11-17	9475	\N	1305	\N	Tanzanite Duellum
+3040434	Europa (Holiday)	エウロペ	4	4	2	2	1	4	1020	2022-11-30	6900	\N	1980	\N	Saintly Fountain
+3040435	Fiorito (Holiday)	フィオリト	4	4	2	5	0	0	1020	2022-11-30	9700	\N	1300	\N	Training Wreath
+3040436	Cain (Holiday)	カイン	4	4	2	0	4	0	1020	2022-12-15	8800	\N	1280	\N	Strawberry Slasher
+3040437	Catura (Holiday)	シャトラ	4	4	2	3	0	1	1020	2022-12-15	9240	\N	1350	\N	Second Boss of the Herd
+3040438	Charlotta (Grand)	シャルロッテ	4	4	2	1	2	3	1500	2022-12-28	7560	\N	1730	\N	Claíomh Solais Díon
+3040439	Erin (SSR)	エリン	4	4	2	3	3	5	1000	2022-12-28	6250	\N	1810	\N	Crystal Edge
+3040440	Michael	ミカエル	4	4	2	0	0	4	1600	2022-12-31	11320	\N	1256	\N	Crimson Scale
+3040441	Makura	マコラ	4	4	2	4	0	2	1050	2022-12-31	8640	\N	1160	\N	Leporidius
+3040442	Ultimate Friday	Ｕ・フライデー	4	4	2	1	1	0	1000	2022-12-31	9900	\N	1700	\N	FRIED Spear
+3040443	Halluel and Malluel	ハールート・マールート	4	4	2	5	4	4	1500	2023-01-19	4400	\N	1500	\N	Eternal Signature
+3040444	Amelia	エミリア	4	4	2	2	1	0	1000	2023-01-19	7000	\N	1800	\N	Shining Silver
+3040445	Cendrillon	サンドリヨン	4	4	2	5	0	5	1000	2023-01-31	10150	\N	1140	\N	Lame d'ourlet
+3040446	Orchid	オーキス	4	4	2	2	4	5	1000	2023-01-31	6960	\N	1968	\N	In Full Whisker
+3040447	Sandalphon (Valentine)	サンダルフォン	4	4	2	1	1	4	1010	2023-02-14	8100	\N	1580	\N	Nostalgic Coffee Jelly
+3040448	Sen (Valentine)	セン	4	4	2	3	0	2	1010	2023-02-14	8840	\N	1120	\N	The Hand That Scritches
+3040449	Lu Woh	ル・オー	4	4	2	4	3	2	1600	2023-02-28	5760	\N	1590	\N	Imperious Fury
+3040450	Hekate	ヘカテー	4	4	2	0	0	5	1000	2023-02-28	10150	\N	1140	\N	Lulling Flambeau
+3040451	Seofon (Event)	シエテ	4	4	2	1	0	0	\N	2023-03-04	9777	\N	1277	\N	\N
+3040452	Ewiyar (Grand)	イーウィヤ	4	4	2	1	4	5	1500	2023-03-16	9410	\N	1118	\N	Piercing Galewing
+3040453	Azusa (Summer)	アズサ	4	4	2	5	0	1	1030	2023-03-16	11160	\N	1288	\N	Shishisosho
+3040454	Monika (Summer)	モニカ	4	4	2	4	1	0	1030	2023-03-16	7250	\N	1750	\N	Marine Ace

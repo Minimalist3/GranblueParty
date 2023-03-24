@@ -20,6 +20,7 @@
       :current="object.stars"
       @update:current="$emit('stars-changed', $event)"
       :max="5"
+      :transcendance="true"
       :readOnly="party_mode === $MODE.ReadOnly"
     ></stars-line>
 
