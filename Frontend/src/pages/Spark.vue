@@ -7,6 +7,7 @@
         <fa-icon :icon="['fas', 'info-circle']" class="text-xl"></fa-icon> Usage
       </button>
       <checkbox v-model="include_sr">Include Rs and SRs</checkbox>
+      <checkbox v-model="show_spark">Show Spark target</checkbox>
       <button class="btn btn-blue" @click="screenSpark()">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save as PNG
       </button>
@@ -29,6 +30,11 @@
         Left-click on a unit in the search section to add it to your spark.<br>
         Right-click on a unit to add it as a Gold Moon.<br>
         To remove a unit from your spark, left-click on its image in the spark section.
+      </p>
+      <h2>Spark target <img src="/img/item/ceruleanspark.png" class="h-6"></h2>
+      <p class="pb-4">
+        The last element you add is your spark target.<br>
+        The spark target does not count in the SSR ratio.
       </p>
       <h2>Add to my Collection</h2>
       <p class="pb-4">
@@ -87,7 +93,8 @@
                   :key="index"
                   :unit="chara"
                   :width="126" :height="72"
-                  @left-click-unit="drawn_characters.splice(index, 1)"
+                  :isSpark="isSpark(chara)"
+                  @left-click-unit="removeElement(drawn_characters, index)"
                 ></spark-unit>
               </div>
             </div>
@@ -102,7 +109,8 @@
                   :key="index"
                   :unit="chara"
                   :width="126" :height="72"
-                  @left-click-unit="drawn_GM.splice(index, 1)"
+                  :isSpark="isSpark(chara)"
+                  @left-click-unit="removeElement(drawn_GM, index)"
                 ></spark-unit>
               </div>
             </div>
@@ -117,7 +125,8 @@
                   :key="index"
                   :unit="summon"
                   :width="126" :height="72"
-                  @left-click-unit="drawn_summons.splice(index, 1)"
+                  :isSpark="isSpark(summon)"
+                  @left-click-unit="removeElement(drawn_summons, index)"
                 ></spark-unit>
               </div>
             </div>
@@ -132,7 +141,7 @@
                   :key="index"
                   :unit="chara"
                   :width="126" :height="72"
-                  @left-click-unit="drawn_SRs.splice(index, 1)"
+                  @left-click-unit="removeElement(drawn_SRs, index)"
                 ></spark-unit>
               </div>
             </div>
@@ -143,6 +152,7 @@
           <span>
             <label v-if="! screenshot" class="ml-2">Draws <input class="input input-sm" type="number" min="1" style="width: 7ch;" v-model="draws"></label>
             <span class="ml-2">SSR ratio: {{ ssrRatio }}%</span>
+            <span v-if="show_spark === true && spark_targets.length > 0" class="ml-2">Sparked: {{getName(spark_targets[spark_targets.length - 1])}}</span>
           </span>
           <span v-if="screenshot" class="pr-2 ml-2">https://www.granblue.party/spark</span>
         </div>
@@ -156,6 +166,7 @@ import { mapState } from 'vuex'
 
 import domtoimage from '@/js/libs/dom-to-image-more.min.js'
 import Utils from '@/js/utils.js'
+import { LANGUAGES } from '@/js/lang'
 import collectionStoreMixin from '@/store/modules/collection-tracker'
 import sparkStoreMixin from '@/store/modules/spark'
 
@@ -185,10 +196,13 @@ export default {
       include_sr: false,
       loading: true,
       show_help: false,
+      show_spark: true,
       drawn_characters: [],
       drawn_SRs: [],
       drawn_GM: [],
       drawn_summons: [],
+      spark_targets: [],
+      unique_index: 0,
       draws: 300,
       screenshot: false
     }
@@ -210,6 +224,8 @@ export default {
       this.drawn_SRs = [];
       this.drawn_GM = [];
       this.drawn_summons = [];
+      this.spark_targets = [];
+      this.unique_index = 0;
     },
     clearText() {
       this.search_text = '';
@@ -218,6 +234,10 @@ export default {
       });
     },
     selectCharacter(element) {
+      element = Utils.copy(element);
+      element.uniqueId = this.unique_index;
+      this.unique_index++;
+
       if (element.r == 2) {
         // SSR
         if (this.drawn_characters.some(c => c.id == element.id) || this.drawn_GM.some(c => c.id == element.id)) {
@@ -229,6 +249,8 @@ export default {
         else {
           this.drawn_characters.push(element);
         }
+
+        this.spark_targets.push(element);
       }
       else {
         // SR
@@ -237,8 +259,13 @@ export default {
       this.clearText();
     },
     selectGM(element) {
+      element = Utils.copy(element);
+      element.uniqueId = this.unique_index;
+      this.unique_index++;
+
       if (element.r == 2) {
         this.drawn_GM.push(element);
+        this.spark_targets.push(element);
       }
       else {
         this.drawn_SRs.push(element);
@@ -246,8 +273,32 @@ export default {
       this.clearText();
     },
     selectSummon(element) {
+      element = Utils.copy(element);
+      element.uniqueId = this.unique_index;
+      this.unique_index++;
+
       this.drawn_summons.push(element);
+      this.spark_targets.push(element);
+
       this.clearText();
+    },
+    removeElement(array, index) {
+      const removed = array.splice(index, 1);
+      if (removed.length === 1) {
+        const sparkIndex = this.spark_targets.findIndex(e => e.uniqueId === removed[0].uniqueId);
+        if (sparkIndex >= 0) {
+          this.spark_targets.splice(sparkIndex, 1);
+        }
+      }
+    },
+    isSpark(element) {
+      return this.show_spark === true && this.spark_targets[this.spark_targets.length - 1].uniqueId === element.uniqueId;
+    },
+    getName(element) {
+      if (this.isLangEnglish) {
+        return element.n;
+      }
+      return element.nj;
     },
     screenSpark() {
       this.screenshot = true;
@@ -269,13 +320,13 @@ export default {
         this.drawn_characters.forEach(chara => {
           const chara_owned = this.ownedCharactersMap[chara.id];
           if (chara_owned && chara_owned.owned !== true) {
-            postData.c.push([chara.id, chara_owned.sb, true, aw]);
+            postData.c.push([chara.id, chara_owned.sb, true, aw, false]);
           }
         });
         this.drawn_SRs.forEach(chara => {
           const chara_owned = this.ownedCharactersMap[chara.id];
           if (chara_owned && chara_owned.owned !== true) {
-            postData.c.push([chara.id, chara_owned.sb, true, aw]);
+            postData.c.push([chara.id, chara_owned.sb, true, aw, false]);
           }
         });
 
@@ -325,6 +376,9 @@ export default {
     isUserLogged() {
       return this.$store.getters.getUserId !== null;
     },
+    isLangEnglish() {
+      return this.$store.getters.getLang === LANGUAGES.EN;
+    },
     searchCharacters() {
       if (this.search_text.length < 2) {
         return {};
@@ -354,7 +408,11 @@ export default {
       if (this.draws < 1) {
         return 0;
       }
-      return ((this.drawn_characters.length + this.drawn_GM.length + this.drawn_summons.length) / this.draws * 100).toFixed(2);
+      let drawn = this.drawn_characters.length + this.drawn_GM.length + this.drawn_summons.length;
+      if (drawn > 0 && this.show_spark === true) {
+        drawn--;
+      }
+      return (drawn / this.draws * 100).toFixed(2);
     },
     ownedCharactersMap() {
       let result = {};
@@ -386,10 +444,25 @@ export default {
       });
     
     lsMgt.getValue(this, 'include_sr');
+    lsMgt.getValue(this, 'show_spark');
     lsMgt.getValue(this, 'drawn_characters');
     lsMgt.getValue(this, 'drawn_SRs');
     lsMgt.getValue(this, 'drawn_GM');
     lsMgt.getValue(this, 'drawn_summons');
+    lsMgt.getValue(this, 'unique_index');
+
+    const addToSparkTarget = (e) => {
+      if ( ! e.hasOwnProperty('uniqueId')) {
+        e.uniqueId = this.unique_index;
+        this.unique_index++;
+      }
+      this.spark_targets.push(e);
+    };
+
+    this.drawn_characters.forEach(e => addToSparkTarget(e));
+    this.drawn_GM.forEach(e => addToSparkTarget(e));
+    this.drawn_summons.forEach(e => addToSparkTarget(e));
+    this.spark_targets.sort((lhs, rhs) => lhs.uniqueId > rhs.uniqueId);
   },
   watch: {
     '$store.getters.getUserId'(id) {
@@ -404,6 +477,9 @@ export default {
     include_sr() {
       lsMgt.setValue('include_sr', this);
     },
+    show_spark() {
+      lsMgt.setValue('show_spark', this);
+    },
     drawn_characters() {
       lsMgt.setValue('drawn_characters', this);
     },
@@ -415,6 +491,9 @@ export default {
     },
     drawn_summons() {
       lsMgt.setValue('drawn_summons', this);
+    },
+    unique_index() {
+      lsMgt.setValue('unique_index', this);
     },
   },
 }

@@ -69,6 +69,11 @@ export function createRouter(store) {
         pathToRegexpOptions: { strict: true },
       },
       {
+        path: '/calcbullets',
+        component: () => import(/* webpackChunkName: "calcbullets" */ '@/pages/CalcBullets.vue'),
+        pathToRegexpOptions: { strict: true },
+      },
+      {
         path: '/calcgw',
         component: () => import(/* webpackChunkName: "gw" */ '@/pages/CalcGW.vue'),
         pathToRegexpOptions: { strict: true },

@@ -1,5 +1,6 @@
 import { pool } from '../db';
 import { buildWhereClause } from './utils'
+import logger from '../logger';
 
 export function getTrackerCharacters (req, response, userid) {
   pool.query(
@@ -10,17 +11,21 @@ export function getTrackerCharacters (req, response, userid) {
       array_agg(WeaponSpecialty.weaponTypeId ORDER BY WeaponSpecialty.weaponTypeId ASC) AS w,
       UserCollectionCharacter.owned AS owned,
       COALESCE(UserCollectionCharacter.stars, Character.starsmax) AS sc,
-      COALESCE(UserCollectionCharacter.awakening, 0) as aw
+      COALESCE(UserCollectionCharacter.awakening, 0) as aw,
+      COALESCE(UserCollectionCharacter.ring, FALSE) AS ring
       FROM Character
       INNER JOIN WeaponSpecialty
         ON Character.characterId = WeaponSpecialty.characterId
       LEFT OUTER JOIN UserCollectionCharacter
         ON character.characterid = UserCollectionCharacter.characterid
         AND UserCollectionCharacter.userid = ${userid} 
-      GROUP BY Character.characterId, UserCollectionCharacter.owned, UserCollectionCharacter.stars, UserCollectionCharacter.awakening
+      GROUP BY Character.characterId, UserCollectionCharacter.owned, UserCollectionCharacter.stars, UserCollectionCharacter.awakening, UserCollectionCharacter.ring
       ORDER BY Character.nameEn ASC;`)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getTrackerCharacters", {e: e, req: req});
+      response.sendStatus(400)
+    })
 }
 
 export function getTrackerSummons (req, response, userid) {
@@ -41,7 +46,10 @@ export function getTrackerSummons (req, response, userid) {
       ${query} GROUP BY Summon.summonId, UserCollectionSummon.owned, UserCollectionSummon.stars
       ORDER BY Summon.nameEn ASC;`, values)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getTrackerSummons", {e: e, req: req});
+      response.sendStatus(400)
+    })
 }
 
 export function saveCollection (req, response) {
@@ -56,9 +64,10 @@ export function saveCollection (req, response) {
       const userId = req.user.userid;
       for (let chara of req.body.c) {
         await client.query(
-          `INSERT INTO UserCollectionCharacter (userid, characterid, stars, owned, awakening)
-           VALUES (${userId}, $1, $2, $3, $4)
-           ON CONFLICT (userid, characterid) DO UPDATE SET (stars, owned, awakening) = (Excluded.stars, Excluded.owned, Excluded.awakening);`, chara);
+          `INSERT INTO UserCollectionCharacter (userid, characterid, stars, owned, awakening, ring)
+           VALUES (${userId}, $1, $2, $3, $4, $5)
+           ON CONFLICT (userid, characterid) DO UPDATE
+           SET (stars, owned, awakening, ring) = (Excluded.stars, Excluded.owned, Excluded.awakening, Excluded.ring);`, chara);
       }
       for (let summ of req.body.s) {
         await client.query(
@@ -75,7 +84,8 @@ export function saveCollection (req, response) {
     } finally {
       client.release();
     }
-  })().catch((e) => {
+  })().catch(e => {
+    logger.error("saveCollection", {e: e, req: req});
     response.sendStatus(400)
   })
 }

@@ -6,7 +6,8 @@ import { faCircle, faEnvelope, faFaceGrinWide } from '@fortawesome/free-regular-
 import {
   faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
   faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave,
-  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faFileLines, faHeart
+  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faFileLines, faHeart, faRing,
+  faMinusCircle, faPlusCircle
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon as faVue } from '@fortawesome/vue-fontawesome'
 import faCSS from '@fortawesome/fontawesome-free/css/svg-with-js.min.css'
@@ -31,7 +32,8 @@ faConfig.autoAddCss = false;
 faCore.add(
   faTwitter, faGithub, faEnvelope, faAngleDown, faAngleRight, faBars, faCheck, faExclamationTriangle, faExternalLinkAlt,
   faFile, faFolderOpen, faInfoCircle, faSearch, faShareAlt, faSun, faTimes, faTimesCircle, faTrash, faMoon, faSave,
-  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faYoutube, faFileLines, faCircle, faFaceGrinWide, faHeart
+  faToggleOn, faToggleOff, faWater, faUser, faClock, faFilePen, faYoutube, faFileLines, faCircle, faFaceGrinWide, faHeart, faRing,
+  faMinusCircle, faPlusCircle
 );
 Vue.component('fa-icon', faVue);
 

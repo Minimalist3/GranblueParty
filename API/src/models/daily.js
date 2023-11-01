@@ -1,5 +1,6 @@
 import { pool } from '../db';
 import { buildWhereClause } from './utils'
+import logger from '../logger';
 
 export function dailyLoad (req, response) {
   const [query, values] = buildWhereClause({
@@ -14,7 +15,10 @@ export function dailyLoad (req, response) {
         }
         response.status(200).json(data);
       })
-     .catch(() => { response.sendStatus(400) });
+      .catch(e => {
+        logger.error("dailyLoad", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 export function dailySave (req, response) {
@@ -33,5 +37,8 @@ export function dailySave (req, response) {
    `INSERT INTO Daily (userId, dailyData) VALUES ($1, $2)
     ON CONFLICT ON CONSTRAINT daily_pkey DO UPDATE SET (userId, dailyData) = (excluded.userId, excluded.dailyData);`, values)
   .then(() => response.sendStatus(200))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("dailySave", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

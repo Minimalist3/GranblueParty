@@ -1,5 +1,6 @@
 import { pool } from '../db';
 import { sendError } from './utils'
+import logger from '../logger';
 
 export function getAdminWeapons (req, response) {
   pool.query(
@@ -16,7 +17,10 @@ export function getAdminWeapons (req, response) {
     ORDER BY ws.icon ASC;`
   )
   .then(res => response.status(200).json(res.rows))
-  .catch((e) => { response.sendStatus(400) } );
+  .catch(e => {
+    logger.error("getAdminWeapons", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }
 
 export function saveAdminWeapons (req, response) {
@@ -40,7 +44,10 @@ export function saveAdminWeapons (req, response) {
     } finally {
       client.release();
     }
-  })().catch((e) => sendError(response, 400, e))  
+  })().catch(e => {
+    logger.error("saveAdminWeapons", {e: e, req: req});
+    sendError(response, 400, e)
+  })
 }
 
 export function getAdminSummons (req, response) {
@@ -77,5 +84,8 @@ export function saveAdminSummons (req, response) {
     } finally {
       client.release();
     }
-  })().catch((e) => sendError(response, 400, e))  
+  })().catch(e => {
+    logger.error("saveAdminSummons", {e: e, req: req});
+    sendError(response, 400, e)
+  })
 }

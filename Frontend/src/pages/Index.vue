@@ -28,8 +28,8 @@
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
         <h2 class="text-center">Last update</h2>
-        <h3 class="text-center">2023-03-16</h3>
-        <p class="text-center mt-2">Ewiyar (Grand), Azusa (Summer), Monika (Summer)</p>
+        <h3 class="text-center">2023-10-31</h3>
+        <p class="text-center mt-2">Sevilbarra, Utsusemi</p>
       </div>
 
       <div class="mb-4 px-4 py-2 bg-secondary rounded">
@@ -45,11 +45,6 @@
               <fa-icon :icon="['fas', 'external-link-alt']" class="text-sm"></fa-icon>
             </a>
           </li>
-          <li>A nice Raid Finder:
-            <a href="https://gbf.life" target="_blank">gbf.life
-              <fa-icon :icon="['fas', 'external-link-alt']" class="text-sm"></fa-icon>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -57,7 +52,7 @@
     <!-- Sections -->
     <div class="flex flex-row flex-wrap justify-center mt-8 gap-8">
 
-      <div v-for="(section, index) in sections " :key="index" class="flex flex-row sm:w-2/5 lg:w-1/4 bg-secondary rounded px-2 py-2">
+      <div v-for="(section, index) in sections" :key="index" class="flex flex-row sm:w-2/5 lg:w-1/4 bg-secondary rounded px-2 py-2">
         <img :src="'/img/index' + section.link + '.jpg'" width="48px" class="self-start mt-2 mr-2">
 
         <div>
@@ -95,7 +90,14 @@ You can track the uncap and awakening level of each unit.`
     link: '/teams',
     text: 
 `Browse public teams made by fellow players, and share your own.`
-  },  
+  },
+  {
+    title: 'Bullets Calculator',
+    link: '/calcbullets',
+    text:
+`Keep track of the materials needed to craft Bullets.
+Everything is memorized for when you want to come back`
+  },
   {
     title: 'Eternals Calculator',
     link: '/calceternal',

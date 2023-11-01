@@ -1224,6 +1224,33 @@
     "icon": "Ability_Slow.png"
   },
   {
+    "class": "Chaos Ruler",
+    "name": "Bleak Disorder",
+    "ix": "umex1",
+    "family": "enhancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2005_1.png"
+  },
+  {
+    "class": "Chaos Ruler",
+    "name": "Flames of Chaos",
+    "ix": "umex2",
+    "family": "enhancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2006_4.png"
+  },
+  {
+    "class": "Chaos Ruler",
+    "name": "Malignity",
+    "ix": "umex3",
+    "family": "enhancer",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2007_4.png"
+  },
+  {
     "class": "Chrysaor",
     "name": "Dual Arts",
     "ix": "ex1",
@@ -1258,6 +1285,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability Blade Swap.png"
+  },
+  {
+    "class": "Chrysaor",
+    "name": "Deuce Xiphos",
+    "ix": "umex1",
+    "family": "gladiator",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2131_3.png"
+  },
+  {
+    "class": "Chrysaor",
+    "name": "Astrapste",
+    "ix": "umex2",
+    "family": "gladiator",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2132_1.png"
+  },
+  {
+    "class": "Chrysaor",
+    "name": "Amber Edge",
+    "ix": "umex3",
+    "family": "gladiator",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 774_1.png"
   },
   {
     "class": "Elysian",
@@ -1305,6 +1359,33 @@
     "icon": "Ability Concludere.png"
   },
   {
+    "class": "Elysian",
+    "name": "Flageolet",
+    "ix": "umex1",
+    "family": "harpist",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2008_1.png"
+  },
+  {
+    "class": "Elysian",
+    "name": "Diatonic Harmony",
+    "ix": "umex2",
+    "family": "harpist",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2009_3.png"
+  },
+  {
+    "class": "Elysian",
+    "name": "Accelerando",
+    "ix": "umex3",
+    "family": "harpist",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2010_3.png"
+  },
+  {
     "class": "Luchador",
     "name": "Ring Ruler",
     "ix": "ex1",
@@ -1341,6 +1422,33 @@
     "icon": "Ability_Counter.png"
   },
   {
+    "class": "Luchador",
+    "name": "Lucha de Parejas",
+    "ix": "umex1",
+    "family": "grappler",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_1234_3.png"
+  },
+  {
+    "class": "Luchador",
+    "name": "Fight Song",
+    "ix": "umex2",
+    "family": "grappler",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2074_3.png"
+  },
+  {
+    "class": "Luchador",
+    "name": "Vez de Rudo",
+    "ix": "umex3",
+    "family": "grappler",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2075_3.png"
+  },
+  {
     "class": "Lumberjack",
     "name": "Laughing Logger",
     "ix": "ex1",
@@ -1375,6 +1483,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability Woodcutter's Song.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Verdant Melody",
+    "ix": "umex1",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 637_3.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Birdsong of Balmy Breeze",
+    "ix": "umex2",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2147_3.png"
+  },
+  {
+    "class": "Lumberjack",
+    "name": "Log Lop",
+    "ix": "umex3",
+    "family": "lumberjack",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2148_1.png"
   },
   {
     "class": "Monk",
@@ -1539,6 +1674,33 @@
     "icon": "Ability_m_1273_1.png"
   },
   {
+    "class": "Robin Hood",
+    "name": "Thousand Arrows",
+    "ix": "umex1",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2149_1.png"
+  },
+  {
+    "class": "Robin Hood",
+    "name": "Rebellion Shot",
+    "ix": "umex2",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 1204_1.png"
+  },
+  {
+    "class": "Robin Hood",
+    "name": "Rapid Nocking",
+    "ix": "umex3",
+    "family": "robinhood",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2150_3.png"
+  },
+  {
     "class": "Sage",
     "name": "Blessing II",
     "ix": "ex1",
@@ -1575,6 +1737,33 @@
     "icon": "Ability_HealAll.png"
   },
   {
+    "class": "Sage",
+    "name": "Path Illuminated",
+    "ix": "umex1",
+    "family": "priest",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2011_1.png"
+  },
+  {
+    "class": "Sage",
+    "name": "Lapin Blanc",
+    "ix": "umex2",
+    "family": "priest",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2012_3.png"
+  },
+  {
+    "class": "Sage",
+    "name": "Cathedral's Benison",
+    "ix": "umex3",
+    "family": "priest",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2013_3.png"
+  },
+  {
     "class": "Spartan",
     "name": "Guardian",
     "ix": "ex1",
@@ -1609,6 +1798,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability_Phalanx.png"
+  },
+  {
+    "class": "Spartan",
+    "name": "Thermopylae",
+    "ix": "umex1",
+    "family": "knight",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2076_1.png"
+  },
+  {
+    "class": "Spartan",
+    "name": "Hoplite",
+    "ix": "umex2",
+    "family": "knight",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2077_3.png"
+  },
+  {
+    "class": "Spartan",
+    "name": "Molon Labe",
+    "ix": "umex3",
+    "family": "knight",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability_m_2078_3.png"
   },
   {
     "class": "Warlock",
@@ -1654,6 +1870,33 @@
     "row": "4",
     "ex": "0",
     "icon": "Ability_Elemental.png"
+  },
+  {
+    "class": "Warlock",
+    "name": "Demonic Flare",
+    "ix": "umex1",
+    "family": "wizard",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2144_1.png"
+  },
+  {
+    "class": "Warlock",
+    "name": "Arcane Field",
+    "ix": "umex2",
+    "family": "wizard",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2145_3.png"
+  },
+  {
+    "class": "Warlock",
+    "name": "Crest Discharge",
+    "ix": "umex3",
+    "family": "wizard",
+    "row": "4",
+    "ex": "1",
+    "icon": "Ability m 2146_3.png"
   },
   {
     "class": "Yamato",
@@ -1798,6 +2041,42 @@
     "row": "5",
     "ex": "0",
     "icon": "Ability_m_1720_3.png"
+  },
+  {
+    "class": "Street King",
+    "name": "Couteau Royal",
+    "ix": "ex1",
+    "family": "thief",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_2111_1.png"
+  },
+  {
+    "class": "Street King",
+    "name": "Parfait d'Amour",
+    "ix": "ex2",
+    "family": "thief",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_2112_3.png"
+  },
+  {
+    "class": "Street King",
+    "name": "La Manteau Du Roi",
+    "ix": "ex3",
+    "family": "thief",
+    "row": "5",
+    "ex": "1",
+    "icon": "Ability_m_2113_3.png"
+  },
+  {
+    "class": "Street King",
+    "name": "Aperitif",
+    "ix": "s1",
+    "family": "thief",
+    "row": "5",
+    "ex": "0",
+    "icon": "Ability_m_2110_3.png"
   },
   {
     "class": "Viking",
@@ -2232,6 +2511,33 @@
     "icon": "Ability Potion Refinement.png"
   },
   {
+    "class": "Doctor",
+    "name": "Primary Care",
+    "ix": "umex1",
+    "family": "alchemist",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2141_3.png"
+  },
+  {
+    "class": "Doctor",
+    "name": "Outperform",
+    "ix": "umex2",
+    "family": "alchemist",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2142_3.png"
+  },
+  {
+    "class": "Doctor",
+    "name": "High Immunity",
+    "ix": "umex3",
+    "family": "alchemist",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2143_3.png"
+  },
+  {
     "class": "Glorybringer",
     "name": "Espada",
     "ix": "ex1",
@@ -2266,6 +2572,33 @@
     "row": "12",
     "ex": "0",
     "icon": "Ability Glory Arts.png"
+  },
+  {
+    "class": "Glorybringer",
+    "name": "Glorious Vow",
+    "ix": "umex1",
+    "family": "swordmaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2014_3.png"
+  },
+  {
+    "class": "Glorybringer",
+    "name": "Gloryblade",
+    "ix": "umex2",
+    "family": "swordmaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_960_1.png"
+  },
+  {
+    "class": "Glorybringer",
+    "name": "Mastery's Edge",
+    "ix": "umex3",
+    "family": "swordmaster",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2016_3.png"
   },
   {
     "class": "Kengo",
@@ -2502,6 +2835,33 @@
     "icon": "Ability Runeweaving.png"
   },
   {
+    "class": "Runeslayer",
+    "name": "Multiplying Magic",
+    "ix": "umex1",
+    "family": "ninja",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2017 3.png"
+  },
+  {
+    "class": "Runeslayer",
+    "name": "Circle of Coalescence",
+    "ix": "umex2",
+    "family": "ninja",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2018 3.png"
+  },
+  {
+    "class": "Runeslayer",
+    "name": "Quadruple Hex",
+    "ix": "umex3",
+    "family": "ninja",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability m 2019 1.png"
+  },
+  {
     "class": "Soldier",
     "name": "Open Fire",
     "ix": "ex1",
@@ -2538,6 +2898,33 @@
     "icon": "Ability Three-Round Burst.png"
   },
   {
+    "class": "Soldier",
+    "name": "Combat Rations",
+    "ix": "umex1",
+    "family": "gunslinger",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2079_3.png"
+  },
+  {
+    "class": "Soldier",
+    "name": "Immortal Operative",
+    "ix": "umex2",
+    "family": "gunslinger",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_1134_3.png"
+  },
+  {
+    "class": "Soldier",
+    "name": "Ammunition Belt",
+    "ix": "umex3",
+    "family": "gunslinger",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2080_3.png"
+  },
+  {
     "class": "Tormentor",
     "name": "Devotion",
     "ix": "ex1",
@@ -2572,5 +2959,32 @@
     "row": "12",
     "ex": "0",
     "icon": "Ability Execute.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Fatal Venom",
+    "ix": "umex1",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_1768_1.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Thousand Slices",
+    "ix": "umex2",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2081_4.png"
+  },
+  {
+    "class": "Tormentor",
+    "name": "Executing Blow",
+    "ix": "umex3",
+    "family": "assassin",
+    "row": "12",
+    "ex": "1",
+    "icon": "Ability_m_2082_3.png"
   }
 ]

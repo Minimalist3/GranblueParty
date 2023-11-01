@@ -175,7 +175,7 @@
 2040180	Typhon	テュポーン	3	4	2	5	1000	2016-11-30	340	2095	2530	\N	120	735	890	\N	\N
 2040181	Dragon Knights	ドラゴンナイツ	3	4	2	1	\N	2016-11-30	235	1450	1750	\N	92	575	700	\N	\N
 2040184	Blue Orbit	ブルーオービット	3	3	2	1	\N	2016-12-31	230	1440	\N	\N	93	573	\N	\N	\N
-2040185	Shiva	シヴァ	3	3	2	0	1600	2016-12-31	345	2150	\N	\N	135	850	\N	\N	{"0":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"fire","aura_type":"elemental","stat":"atk"}]}
+2040185	Shiva	シヴァ	3	4	2	0	1600	2016-12-31	345	2150	3053	\N	135	850	1208	\N	{"0":[{"percent":120,"element":"fire","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"fire","aura_type":"elemental","stat":"atk"}]}
 2040188	Thor	トール	3	4	2	4	1000	2017-01-31	310	1810	2190	\N	117	710	860	\N	\N
 2040189	Levin Sisters	レヴィオンシスターズ	3	3	2	4	\N	2017-01-31	220	1425	\N	\N	95	570	\N	\N	\N
 2040192	Bellringer Angel	ベルエンジェル	3	3	2	4	\N	2017-02-22	200	1400	\N	\N	91	575	\N	\N	{"0":[{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}],"3":[{"percent":20,"element":"light","aura_type":"elemental","stat":"hp"}]}
@@ -183,7 +183,7 @@
 2040198	Dark Flame Scion	闇の炎の子	3	3	2	5	\N	2017-03-01	245	1420	\N	\N	86	556	\N	\N	\N
 2040202	Raphael	ラファエル	3	4	2	1	1600	2018-06-30	251	1750	2500	\N	158	930	1316	\N	{"0":[{"percent":100,"element":"wind","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"wind","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
 2040203	Uriel	ウリエル	3	4	2	2	1600	2018-04-30	352	2180	3094	\N	133	844	1200	\N	{"0":[{"percent":100,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":5,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}],"3":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"atk_cap","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_dmg","slot":"sub"},{"percent":10,"element":"earth","aura_type":"seraphic","stat":"ca_cap","slot":"sub"}]}
-2040205	Godsworn Alexiel	ゴッドガード・ブローディア	3	3	2	2	1600	2017-03-31	320	2100	\N	\N	140	870	\N	\N	{"0":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"earth","aura_type":"elemental","stat":"atk"}]}
+2040205	Godsworn Alexiel	ゴッドガード・ブローディア	3	4	2	2	1600	2017-03-31	320	2100	2990	\N	140	870	1235	\N	{"0":[{"percent":120,"element":"earth","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"earth","aura_type":"elemental","stat":"atk"}]}
 2040207	H.P.A.	K・B・S・N	3	3	2	5	\N	2017-04-01	250	1470	\N	\N	83	574	\N	\N	\N
 2040211	Super Cute Genius Alchemist	美少女錬金術師	3	3	2	5	\N	2017-04-30	240	1450	\N	\N	91	578	\N	\N	\N
 2040212	Nacht	ナハト	3	4	2	5	1000	2017-04-30	285	1780	2150	\N	128	731	880	\N	\N
@@ -192,7 +192,7 @@
 2040219	Forest Ranger	フォレストレンジャー	3	3	2	2	\N	2017-06-30	231	1446	\N	\N	93	575	\N	\N	\N
 2040221	Garula, Shining Hawk	シャインホーク・ガルラ	3	3	2	1	1000	2017-06-30	320	1880	\N	\N	107	693	\N	\N	\N
 2040224	Urkin	ンニ	3	3	2	0	\N	2017-07-31	220	1420	\N	\N	95	580	\N	\N	\N
-2040225	Europa	エウロペ	3	3	2	3	1600	2017-07-31	325	2070	\N	\N	150	880	\N	\N	{"0":[{"percent":120,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"water","aura_type":"elemental","stat":"atk"}]}
+2040225	Europa	エウロペ	3	4	2	3	1600	2017-07-31	325	2070	2943	\N	150	880	1245	\N	{"0":[{"percent":120,"element":"water","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"water","aura_type":"elemental","stat":"atk"}]}
 2040228	Lonesome Dragoness	孤独の竜姫	3	3	2	0	\N	2017-08-31	225	1430	\N	\N	94	578	\N	\N	\N
 2040229	Zaoshen	ザオシェン	3	4	2	0	1000	2017-08-31	293	1711	2060	\N	122	756	920	\N	\N
 2040232	Sharom	シャローム	3	3	2	5	\N	2017-09-30	230	1320	\N	\N	95	600	\N	\N	\N
@@ -214,7 +214,7 @@
 2040253	Adramelech	アドラメレク	3	3	2	4	1000	2017-11-30	300	1808	\N	\N	106	715	\N	\N	\N
 2040255	Eren	エレン	3	3	2	0	\N	2017-12-08	251	1495	\N	\N	88	559	\N	\N	\N
 2040259	Crimson Spear, Ebony Scythe	紅き穿光と黒き大鎌	3	3	2	0	\N	2017-12-31	240	1455	\N	\N	91	574	\N	\N	\N
-2040261	Grimnir	グリームニル	3	3	2	1	1600	2017-12-31	347	2145	\N	\N	134	851	\N	\N	{"0":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"wind","aura_type":"elemental","stat":"atk"}]}
+2040261	Grimnir	グリームニル	3	4	2	1	1600	2017-12-31	347	2145	3044	\N	134	851	1210	\N	{"0":[{"percent":120,"element":"wind","aura_type":"elemental","stat":"atk"}],"3":[{"percent":140,"element":"wind","aura_type":"elemental","stat":"atk"}]}
 2040263	Tsukuyomi	ツクヨミ	3	3	2	5	1000	2018-01-31	319	1828	\N	\N	116	711	\N	\N	\N
 2040269	Demi Agni	アグニス・ディヴィジョン	3	4	2	0	\N	2018-02-28	270	1630	2310	\N	103	647	919	\N	{"0":[{"percent":70,"element":"fire","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"fire","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"fire","aura_type":"optimus","stat":"atk"}]}
 2040270	Demi Varuna	ヴァルナ・ディヴィジョン	3	4	2	3	\N	2018-02-28	250	1610	2290	\N	107	653	926	\N	{"0":[{"percent":70,"element":"water","aura_type":"optimus","stat":"atk"}],"3":[{"percent":110,"element":"water","aura_type":"optimus","stat":"atk"}],"4":[{"percent":130,"element":"water","aura_type":"optimus","stat":"atk"}]}
@@ -337,3 +337,9 @@
 2040416	Hekate	ヘカテー	3	4	2	0	1000	2022-09-30	347	2042	2466	\N	134	812	982	\N	\N
 2040417	Yatima	ヤチマ	3	4	2	3	1600	2022-12-31	327	2022	2870	\N	138	816	1155	\N	\N
 2040418	Fediel	フェディエル	3	4	2	5	1000	2023-02-28	374	2154	3044	\N	132	810	1149	\N	\N
+2040419	Sanrio Characters	サンリオキャラクターズ☆	3	4	2	0	\N	2023-04-01	210	1403	1701	\N	97	588	711	\N	\N
+2040420	Cerberus (Summer)	ケルベロス	3	4	2	0	1030	2023-07-31	325	1850	2231	\N	139	851	1029	\N	\N
+2040421	Satoru Gojo	五条 悟	3	4	2	5	\N	2023-08-11	260	1532	1850	\N	87	562	681	\N	\N
+2040422	Aoi Todo	東堂 葵	3	4	2	4	\N	2023-08-05	240	1487	1800	\N	91	567	685	\N	\N
+2040423	Tyrannosaurus (Summer)	ティラノサウルス	3	4	2	3	1030	2023-08-16	327	2022	2446	\N	138	816	986	\N	\N
+2040424	Noire	ノワール	3	4	2	1	1000	2023-10-31	415	2350	2834	\N	120	750	908	\N	\N

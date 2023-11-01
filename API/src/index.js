@@ -11,6 +11,7 @@ import passport from 'passport';
 import models from './models';
 import routes from './routes';
 import config from './config';
+import logger from './logger';
 
 const app = express();
 
@@ -77,6 +78,7 @@ app.use('/user', routes.user);
 if (process.env.NODE_ENV === "production") {
   // Don't send back the errors in production
   app.use((err, req, res, next) => {
+    logger.error(err);
     res.sendStatus(500);
   });
 }
@@ -90,5 +92,5 @@ app.use((req, res) => {
 });
 
 app.listen(config.app.port, () =>
-  console.log('Granblue Party REST API listening on port ' + config.app.port),
+  logger.info('Granblue Party REST API listening on port ' + config.app.port)
 );

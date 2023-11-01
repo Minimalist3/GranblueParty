@@ -282,6 +282,11 @@ const items = Object.freeze({
   aquilafragment: new Item('Aquila Fragment', Categories.arcarum),
   bellatorfragment: new Item('Bellator Fragment', Categories.arcarum),
   celsusfragment: new Item('Celsus Fragment', Categories.arcarum),
+  // Gospel
+  gospelofgenea: new Item('Gospel of Genea', Categories.arcarum),
+  gospelofegeiro: new Item('Gospel of Egeiro', Categories.arcarum),
+  gospelofthysia: new Item('Gospel of Thysia', Categories.arcarum),
+  gospelofanalipsis: new Item('Gospel of Analipsis', Categories.arcarum),
   // Anima
   animafire: new Item('Colossus Anima', Categories.anima),
   animawater: new Item('Leviathan Anima', Categories.anima),
@@ -630,6 +635,15 @@ const groups = Object.freeze({
     wind: 'windluster',
     light: ['fireluster', 'windluster'],
     dark: ['waterluster', 'earthluster']
+  },
+  gospel: {
+    type: GroupType.element,
+    fire: 'gospelofegeiro',
+    water: 'gospelofanalipsis',
+    earth: 'gospelofthysia',
+    wind: 'gospelofgenea',
+    light: ['gospelofgenea', 'gospelofegeiro'],
+    dark: ['gospelofanalipsis', 'gospelofthysia']
   },
   haze: {
 		type: GroupType.element,

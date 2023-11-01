@@ -252,7 +252,7 @@ const FIGHT_DATA = [
   {
     name: 'NM 200',
     cost_ap: 50,
-    cost_meat: 30,
+    cost_meat: 20,
     cost_ep: 3,
     honor: 10250000,
     token_host: 160,

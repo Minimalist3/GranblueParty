@@ -1,4 +1,5 @@
 import { pool } from '../db';
+import logger from '../logger';
 
 export function searchCharacters (req, response) {
   pool.query(`SELECT Character.characterId AS id, Character.nameEn AS n, Character.rarityId AS ri,
@@ -23,7 +24,10 @@ export function searchCharacters (req, response) {
       FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId
       GROUP BY Character.characterId ORDER BY Character.nameEn ASC;`)
   .then(res => response.status(200).json(res.rows))
-  .catch((e) => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("searchCharacters", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }
 
 export function searchWeapons (req, response) {
@@ -44,7 +48,10 @@ export function searchWeapons (req, response) {
     WHERE Weapon.weaponid = Weapon_Ougi.weaponid
     ORDER BY Weapon.nameen;`)
   .then(res => response.status(200).json(res.rows))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("searchWeapons", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }
 
 export function searchSummons (req, response) {
@@ -57,5 +64,8 @@ export function searchSummons (req, response) {
   WHERE Summon.summonid = SummonAura.summonid AND Summon.summonid = SummonCall.summonid
   ORDER BY Summon.nameen;`)
   .then(res => response.status(200).json(res.rows))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("searchSummons", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

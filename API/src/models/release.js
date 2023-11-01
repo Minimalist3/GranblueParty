@@ -1,4 +1,5 @@
 import { pool } from '../db';
+import logger from '../logger';
 
 export function getReleaseCharacters (req, response) {
   pool.query(
@@ -6,7 +7,10 @@ export function getReleaseCharacters (req, response) {
     FROM character
     ORDER BY releasedate DESC, characterid;`)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getReleaseCharacters", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function getReleaseSummons (req, response) {
@@ -16,5 +20,8 @@ export function getReleaseSummons (req, response) {
     WHERE releasedate IS NOT null AND rarityid = 2
     ORDER BY releasedate DESC, summonid;`)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getReleaseSummons", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }

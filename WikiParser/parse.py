@@ -1,21 +1,19 @@
 #!/usr/bin/python3
 
-import datetime
 import functools
 import html
 from html.parser import HTMLParser
 import getopt
 import json
-import math
 import os
 import re
 import sys
 import time
-import requests
 
 import mwparserfromhell
 
 from config import defines
+from config.wikirequest import getImageURL, sessionGet
 import database
 
 # Parse description tooltips
@@ -153,15 +151,6 @@ TABLES = {
   'weapons': 'id,name,jpname,evo_base,evo_max,rarity,element,type,ca1_desc,ca2_desc,ca3_desc,s1_name,s1_icon,s1_lvl,s1_desc,s1u1_name,s1u1_icon,s1u1_lvl,s1u1_desc,s2_name,s2_icon,s2_lvl,s2_desc,s2u1_name,s2u1_icon,s2u1_lvl,s2u1_desc,s3_name,s3_icon,s3_lvl,s3_desc,s3u1_name,s3u1_icon,s3u1_lvl,s3u1_desc,atk1,atk2,atk3,atk4,hp1,hp2,hp3,hp4',
   'class_skill': 'class,name,ix,family,row,ex,icon'
 }
-session = requests.Session()
-
-def sessionGet(url, params = {}):
-  request = session.get(url = url, params = params)
-
-  if request.status_code != 200:
-    print('Got status code', request.status_code, 'for', url)
-  
-  return request
 
 
 def downloadCargo(path, table, where = '', order_by = 'id', unique_ident = ['id']):
@@ -264,7 +253,7 @@ def updateCache(category):
       page_name = os.path.join(cache_dir, page_id + '.page')
       page_title = unit['title']
 
-      if page_title.endswith(' List') or page_title.startswith('Category:'):
+      if page_title.endswith(' List') or page_title.startswith('Category:') or page_title.startswith('User:'):
         continue
 
       if not os.path.isfile(page_name) or not page_id in data_revs or data_revs[page_id] != unit['lastrevid']:
@@ -291,24 +280,6 @@ def updateCache(category):
     json.dump(data_revs, fd_revs, indent=2)
     fd_revs.truncate()    
 
-
-def getImageURL(image):
-  time.sleep(.1) # Don't hammer the server
-  request = sessionGet(
-    url = 'https://gbf.wiki/api.php',
-    params = {
-      'action': 'query',
-      'prop': 'imageinfo',
-      'iiprop': 'url',
-      'format': 'json',
-      'titles': 'File:' + image
-    })
-  request_json = request.json()['query']['pages']
-  try:
-    return next(iter(request_json.values()))['imageinfo'][0]['url']
-  except:
-    print(request_json)
-    raise
 
 def downloadNewData():
   # Create working directory
@@ -562,7 +533,7 @@ def updateSummons():
       page_id = str(summon['pageid'])
       page_title = summon['title']
 
-      if page_title.endswith(' List') or page_title.startswith('Category:'):
+      if page_title.endswith(' List') or page_title.startswith('Category:') or page_title.startswith('User:'):
         continue
 
       with open(os.path.join(cache_dir, page_id + '.page'), 'r', encoding='utf8') as page_file:
@@ -595,7 +566,7 @@ def updateSummons():
             obtain = defines.OBTAIN['[[Premium Draw]]']
           elif obtainValue == 'premium,summer' or obtainValue == 'premium,swimsuit':
             obtain = defines.OBTAIN['Summer Premium Draw']
-          elif obtainValue == 'premium,non-ticketable' or obtainValue == 'premium,classic,non-ticketable' or obtainValue == 'premium,premium,non-ticketable':
+          elif obtainValue == 'premium,non-ticketable' or obtainValue == 'premium,classic,non-ticketable' or obtainValue == 'premium,premium,non-ticketable' or obtainValue == 'premium,normal,non-ticketable' or obtainValue == 'premium,classic,normal,non-ticketable':
             obtain = defines.OBTAIN['Premium Gala']
           elif obtainValue == 'premium,holiday':
             obtain = defines.OBTAIN['Holiday Premium Draw']
@@ -795,8 +766,12 @@ def updateWeapons():
           weapon['s3 desc'] = "A gate to the summits of power locked within Ultima weapons. These gates can only be opened with gauph keys."
           weapon['s3 lvl'] = 200
 
+        jpname = weapon.get('jpname', '')
+        if jpname is None:
+          jpname = ''
+
         # Base infos
-        values += [(weapon_id, name, weapon.get('jpname', ''), weapon['evo base'], evo_max,
+        values += [(weapon_id, name, jpname, weapon['evo base'], evo_max,
           defines.getValue(weapon['rarity'], defines.RARITIES), defines.getValue(weapon['element'], defines.ELEMENTS),
           defines.getValue(weapon['type'], defines.WEAPONTYPES),
           int(weapon['atk1']), int(weapon['atk2']), int(weapon['atk3']), int(weapon['atk4']),
@@ -901,7 +876,17 @@ def updateClasses():
     # Hardcode an index for them
     new_skills = {'Ulfhedinn':224, 'Resounding Chant':225, 'Spring\'s Gate':226, 'Time On Target':227, 'Oratorio':228, 'Lightning Strike':229}
     um_skills = {"Nyagrodha":10000, "Crowning Fluidity":10001, "Showstopper":10002, "Ferocious Roar":10003, "Beast Fang":10004, "Bloodzerker":10005,
-      "Nocked Exorcism":10006, "Secret Style: Blink Slash":10007, "Intuition":10008, "Oculus Felis":10009, "Matatabby":10010, "Scratching Post":10011,}
+      "Nocked Exorcism":10006, "Secret Style: Blink Slash":10007, "Intuition":10008, "Oculus Felis":10009, "Matatabby":10010, "Scratching Post":10011,
+      "Bleak Disorder":10012, "Flames of Chaos":10013, "Malignity":10014, "Flageolet":10015, "Diatonic Harmony":10016, "Accelerando":10017,
+      "Path Illuminated":10018,"Lapin Blanc":10019,"Cathedral's Benison":10020,"Glorious Vow":10020,"Gloryblade":10021,"Mastery's Edge":10022,
+      "Multiplying Magic":10023,"Circle of Coalescence":10024,"Quadruple Hex":10025, "Thermopylae": 10026, "Hoplite": 10027, "Molon Labe": 10028,
+      "Lucha de Parejas": 10029, "Fight Song": 10030, "Vez de Rudo": 10031, "Fatal Venom": 10032, "Thousand Slices": 10033, "Executing Blow": 10034,
+      "Combat Rations": 10035, "Immortal Operative": 10036, "Ammunition Belt": 10037,
+      "Couteau Royal": 10038, "Parfait d'Amour": 10039, "La Manteau Du Roi": 10040, "Aperitif": 10041,
+      "Deuce Xiphos": 10042, "Astrapste": 10043, "Amber Edge": 10044, "Primary Care": 10045, "Outperform": 10046, "High Immunity": 10047,
+      "Verdant Melody": 10048, "Birdsong of Balmy Breeze": 10049, "Log Lop": 10050, "Thousand Arrows": 10051, "Rebellion Shot": 10052,
+      "Rapid Nocking": 10053, "Demonic Flare": 10054, "Arcane Field": 10055, "Crest Discharge": 10056
+      }
 
     for (classe_name, classe_id) in defines.CLASSES:
       row = ''

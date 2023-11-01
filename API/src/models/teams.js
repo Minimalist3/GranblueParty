@@ -1,6 +1,7 @@
 import { pool } from '../db';
 
 import { buildWhereClause } from './utils'
+import logger from '../logger';
 
 export function getTeams (req, response) {
   let [query, values] = buildWhereClause({
@@ -29,5 +30,8 @@ export function getTeams (req, response) {
     ${query}
     ${order} FETCH FIRST 120 ROWS ONLY;`, values)
   .then(res => response.status(200).json(res.rows))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("getTeams", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

@@ -1,4 +1,5 @@
 import { pool } from '../db';
+import logger from '../logger';
 
 export function getSparkCharacters (req, response) {
   pool.query(
@@ -7,7 +8,10 @@ export function getSparkCharacters (req, response) {
     WHERE weapon IS NOT NULL AND drawTypeId IS NOT NULL
     ORDER BY nameen;`)
   .then(res => response.status(200).json(res.rows))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("getSparkCharacters", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }
 
 export function getSparkSummons (req, response) {
@@ -17,5 +21,8 @@ export function getSparkSummons (req, response) {
     WHERE rarityid = 2 AND drawTypeId >= 500
     ORDER BY nameen;`)
   .then(res => response.status(200).json(res.rows))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("getSparkSummons", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

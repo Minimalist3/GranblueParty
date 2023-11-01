@@ -14,6 +14,9 @@
       <button class="btn btn-blue" @click="saveCollection()" :disabled="! modification">
         <fa-icon :icon="['fas', 'save']" class="text-xl"></fa-icon> Save changes
       </button>
+      <button class="btn" :class="editRings ? 'btn-red' : 'btn-blue'" @click="editRings = ! editRings">
+        <fa-icon :icon="['fas', 'ring']" class="text-xl"></fa-icon> Edit rings
+      </button>
     </div>
     
     <!-- Data filters -->
@@ -35,7 +38,8 @@
 
       <checkbox v-model="showNames">Show names</checkbox>
       <checkbox v-model="showStars">Show stars</checkbox>
-      <checkbox v-model="showAwakening">Show awakening</checkbox>      
+      <checkbox v-model="showAwakening">Show awakening</checkbox>
+      <checkbox v-model="showRings">Show rings</checkbox>
     </div>
 
     <!-- Draw stats -->
@@ -118,6 +122,19 @@
       </div>
     </div>
 
+    <!-- Ring edit warning -->
+    <div v-if="editRings" class="sticky top-0 bg-tertiary shadow-md z-10 mb-4 flex flex-row justify-between items-center">
+      <span></span>
+      <h2>
+        <fa-icon :icon="['fas', 'ring']" class="text-xl text-red-400"></fa-icon>
+        Editing Purity rings
+        <fa-icon :icon="['fas', 'ring']" class="text-xl text-red-400"></fa-icon>
+      </h2>
+      <button class="btn btn-red" @click="editRings = false">
+        Stop editing
+      </button>
+    </div>
+
     <!-- Collection -->
     <div v-if="loading === true">
       Loading...
@@ -133,13 +150,21 @@
               :title="getName(chara)"
               v-if="showNames"
             >{{ getName(chara) }}</a>
-            <img
-              :class="chara.owned ? '' : 'grayscale-80'"
-              style="height: 60px;"
-              :title="getName(chara)"
-              :src="'/img/unit_small/' + chara.id + '000.jpg'"
-              @click="selectChara(chara)"
-            >
+            <span class="relative">
+              <img
+                :class="chara.owned ? '' : 'grayscale-80'"
+                style="height: 60px;"
+                :title="getName(chara)"
+                :src="'/img/unit_small/' + chara.id + '000.jpg'"
+                @click="selectChara(chara)"
+              >
+              <img
+                v-if="showRings && chara.ring"
+                class="absolute bottom-0 right-0 pointer-events-none"
+                src="/img/icon_pring.png"
+                title="Perpetuity Ring"
+              >
+            </span>
             <span @click="starsModified()" style="min-height: 21px;" v-if="showStars">
               <stars-line
                 v-if="chara.owned"
@@ -277,6 +302,13 @@ const categories = [
     hasAll: false,
     key: "owned",
   },
+  {
+    name: "Ringed",
+    isColumn: false,
+    isFilter: true,
+    hasAll: false,
+    key: "ring",
+  }
 ];
 
 function getDataModel() {
@@ -313,12 +345,14 @@ const INITIAL_DATA = () => {
     showNames: true,
     showStars: true,
     showAwakening: false,
+    showRings: true,
     showCharacters: true,
     showSummons: true,
     showStats: false,
     show_modal_url: false,
     clipboard_text: '',
     loading: true,
+    editRings: false,
   }
 };
 
@@ -359,20 +393,30 @@ export default {
     },
     selectChara(object) {
       if (this.isOwnCollection) {
-        object.owned = ! object.owned;
-        if (object.owned) {
-          this.chara_count.sum++;
-          this.chara_count[object.d]++;
+        if (this.editRings) {
+          object.ring = ! object.ring;
         }
         else {
-          this.chara_count.sum--;
-          this.chara_count[object.d]--;
+          object.owned = ! object.owned;
+          if (object.owned) {
+            this.chara_count.sum++;
+            this.chara_count[object.d]++;
+          }
+          else {
+            this.chara_count.sum--;
+            this.chara_count[object.d]--;
+          }
         }
+
         this.modification = true;
       }
     },
     selectSummon(object) {
       if (this.isOwnCollection) {
+        if (this.editRings) {
+          return;
+        }
+
         object.owned = ! object.owned;
         if (object.owned) {
           this.summon_count.sum++;
@@ -396,7 +440,7 @@ export default {
         this.characters.forEach(cat => {
           cat.forEach(chara => {
             if (chara.owned != null) {
-              postData.c.push([chara.id, chara.sc, chara.owned, chara.aw]);
+              postData.c.push([chara.id, chara.sc, chara.owned, chara.aw, chara.ring]);
             }
           });
         });
@@ -685,7 +729,8 @@ export default {
   async mounted() {
     lsMgt.getValue(this, 'showNames');
     lsMgt.getValue(this, 'showStars');
-    lsMgt.getValue(this, 'showAwakening');    
+    lsMgt.getValue(this, 'showAwakening');
+    lsMgt.getValue(this, 'showRings');
     lsMgt.getValue(this, 'showCharacters');
     lsMgt.getValue(this, 'showSummons');
 
@@ -710,6 +755,10 @@ export default {
       const owned = lsMgt.fetchValue('owned-' + index);
       if (owned !== undefined) {
         this.$set(this.data_model.owned.data[index], 'checked', owned);
+      }
+      const ring = lsMgt.fetchValue('ring-' + index);
+      if (ring !== undefined) {
+        this.$set(this.data_model.ring.data[index], 'checked', ring);
       }
     });
 
@@ -752,6 +801,13 @@ export default {
       },
       deep: true
     },
+    'data_model.ring.data': {
+      handler() {
+        lsMgt.setNamedValue('ring-0', this.data_model.ring.data[0].checked);
+        lsMgt.setNamedValue('ring-1', this.data_model.ring.data[1].checked);
+      },
+      deep: true
+    },
     showNames() {
       lsMgt.setValue('showNames', this);
     },
@@ -760,6 +816,9 @@ export default {
     },
     showAwakening() {
       lsMgt.setValue('showAwakening', this);
+    },
+    showRings() {
+      lsMgt.setValue('showRings', this);
     }
   }
 }

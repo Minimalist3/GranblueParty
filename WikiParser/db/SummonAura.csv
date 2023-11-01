@@ -10,7 +10,7 @@
 2030010	25% boost to earth Elemental ATK.	30% boost to earth Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2030011	10% boost to Water Normal ATK. 10% boost to Water HP.	15% boost to Water Normal ATK. 15% boost to Water HP.	\N	\N	\N	\N	\N	\N	f
 2030012	25% boost to Dark Elemental ATK.	30% boost to Dark Elemental ATK.	\N	\N	\N	\N	\N	\N	f
-2030013	25% boost to Fire allies' HP	\N	\N	\N	\N	\N	\N	\N	f
+2030013	25% boost to Fire allies' HP	30% boost to Fire allies' HP	\N	\N	\N	\N	\N	\N	f
 2030015	10% boost to earth allies' ATK and HP.	15% boost to earth allies' ATK and HP.	\N	\N	\N	\N	\N	\N	f
 2030016	30% boost to debuff resistance.	40% boost to debuff resistance.	\N	\N	\N	\N	\N	\N	f
 2030018	20% boost to Fire allies' HP.	25% boost to Fire allies' HP.	\N	\N	\N	\N	\N	\N	f
@@ -64,7 +64,7 @@
 2030117	60% boost to Wind allies' ATK. 10% boost to DEF.	80% boost to Wind allies' ATK. 10% boost to DEF.	\N	\N	3% boost to Wind allies' DMG dealt against Earth foes.	5% boost to Wind allies' DMG dealt against Earth foes.	\N	\N	f
 2040001	40% boost to Dark and Earth Elemental ATK.	60% boost to Dark and Earth Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040002	50% boost to Water Elemental ATK.	80% boost to Water Elemental ATK.	80% boost to Water Elemental ATK. 20% boost to Water HP.	\N	\N	\N	\N	\N	f
-2040003	100% boost to Dark ATK.	120% boost to Dark ATK.	130% boost to Dark ATK.	150% boost to Dark ATK.	\N	\N	\N	\N	f
+2040003	100% boost to Dark Elemental ATK.	120% boost to Dark Elemental ATK.	130% boost to Dark Elemental ATK.	150% boost to Dark Elemental ATK.	\N	\N	\N	\N	f
 2040004	40% boost to Light and Fire Elemental ATK.	60% boost to Light and Fire Elemental ATK.	'Light allies:' 80% boost to Light Elemental ATK, 25% boost to C.A. DMG, and 10% boost to C.A. DMG Cap. 'Fire allies:' 60% boost to Fire Elemental ATK, 30% boost to HP, and lessen Wind damage taken by 10%.	\N	\N	\N	\N	\N	f
 2040005	25% boost to Dark allies' Normal ATK and HP.	40% boost to Dark allies' Normal ATK and HP.	60% boost to Dark allies' Normal ATK and 40% boost to HP. 25% boost to chain burst damage.	\N	\N	\N	\N	\N	f
 2040006	50% boost to Wind Elemental ATK.	80% boost to Wind Elemental ATK.	\N	\N	\N	\N	\N	\N	f
@@ -175,7 +175,7 @@
 2040180	Refresh all Dark allies (Healing cap: 300). 30% boost to Dark allies' Normal ATK.	Refresh all Dark allies. 40% boost to Dark allies' Normal ATK.	Refresh all Dark allies (Healing cap: 600). 50% boost to Dark allies' Normal ATK.	\N	\N	\N	\N	\N	f
 2040181	10% boost to all allies' DEF	20% boost to all allies' DEF	30% boost to all allies' DEF / Debuff immunity at start of battle (1 time)	\N	\N	\N	\N	\N	f
 2040184	100% boost to chain burst damage.	150% boost to chain burst damage.	\N	\N	\N	\N	\N	\N	f
-2040185	120% boost to Fire Elemental ATK.	140% boost to Fire Elemental ATK.	\N	\N	\N	\N	\N	\N	f
+2040185	120% boost to Fire Elemental ATK.	140% boost to Fire Elemental ATK.	160% boost to Fire Elemental ATK.	\N	\N	\N	\N	\N	f
 2040188	30% boost to Light allies' ATK / Slight chance to deal critical hits with big DMG for foes weak against Light.	40% boost to Light allies' ATK / Slight chance to deal critical hits with big DMG for foes weak against Light.	50% boost to Light allies' ATK / Slight chance to deal critical hits with big DMG for foes weak against Light.	\N	\N	\N	\N	\N	f
 2040189	10% boost to all allies' DEF.	20% boost to all allies' DEF.	\N	\N	\N	\N	\N	\N	f
 2040192	20% boost to Light allies' HP.	30% boost to Light allies' HP.	\N	\N	\N	\N	\N	\N	f
@@ -183,7 +183,7 @@
 2040198	30% boost to all Elemental ATK.	40% boost to all Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040202	100% boost to Wind Elemental ATK.	120% boost to Wind Elemental ATK.	140% boost to Wind Elemental ATK.	\N	5% boost to Wind allies' damage cap.	10% boost to Wind allies' damage cap.	15% boost to Wind allies' damage cap.	\N	f
 2040203	100% boost to Earth Elemental ATK.	120% boost to Earth Elemental ATK.	140% boost to Earth Elemental ATK.	\N	5% boost to Earth allies' damage cap.	10% boost to Earth allies' damage cap.	15% boost to Earth allies' damage cap.	\N	f
-2040205	120% boost to Earth Elemental ATK.	140% boost to Earth Elemental ATK.	\N	\N	\N	\N	\N	\N	f
+2040205	120% boost to Earth Elemental ATK.	140% boost to Earth Elemental ATK.	160% boost to Earth Elemental ATK.	\N	\N	\N	\N	\N	f
 2040207	10% boost to all allies' ATK.	20% boost to all allies' ATK.	\N	\N	\N	\N	\N	\N	f
 2040211	20% boost to dark allies' ATK and healing skills	25% boost to dark allies' ATK and healing skills	\N	\N	\N	\N	\N	\N	f
 2040212	Up to 80% boost to Dark Elemental ATK based on the number of Dark summons equipped.	Up to 100% boost to Dark Elemental ATK based on the number of Dark summons equipped.	Up to 110% boost to Dark Elemental ATK based on the number of Dark summons equipped. 10% boost to Dark allies' HP. 'Main/Support:' MC gains Final Uncap: Nacht at the start of battle.	\N	\N	\N	\N	\N	f
@@ -192,7 +192,7 @@
 2040219	30% boost to Earth Normal ATK. Immunity to Blind.	40% boost to Earth Normal ATK. Immunity to Blind.	\N	\N	\N	\N	\N	\N	f
 2040221	Boost to Wind Elemental ATK based on number of Wind summons equipped (Up to 100%).	Boost to Wind Elemental ATK based on number of Wind summons equipped (Up to 120%).	\N	\N	\N	\N	\N	\N	f
 2040224	40% boost to Fire Elemental ATK. 10% boost to DEF.	40% boost to Fire Elemental ATK. 20% boost to DEF.	\N	\N	\N	\N	\N	\N	f
-2040225	120% boost to Water Elemental ATK.	140% boost to Water Elemental ATK.	\N	\N	\N	\N	\N	\N	f
+2040225	120% boost to Water Elemental ATK.	140% boost to Water Elemental ATK.	160% boost to Water Elemental ATK.	\N	\N	\N	\N	\N	f
 2040228	40% boost to Fire Elemental ATK. Hit to DEF.	40% boost to Fire Elemental ATK. Boost to double attack rate.	\N	\N	\N	\N	\N	\N	f
 2040229	Up to 100% boost to Fire Elemental ATK based on the number of Fire summons equipped.	Up to 120% boost to Fire Elemental ATK based on the number of Fire summons equipped.	Up to 130% boost to Fire Elemental ATK based on the number of Fire summons equipped. 10% boost to Fire allies' DEF. 'Main/Support:' MC gains Final Uncap: Zaoshen at the start of battle.	\N	\N	\N	\N	\N	f
 2040232	30% boost to Dark allies' ATK. Immunity to Charm for Dark allies.	40% boost to Dark allies' ATK. Immunity to Charm for Dark allies.	\N	\N	\N	\N	\N	\N	f
@@ -214,7 +214,7 @@
 2040253	Boost to Light Elemental ATK based on number of Light summons equipped (Up to 80%).	Boost to Light Elemental ATK based on number of Light summons equipped (Up to 100%).	\N	\N	\N	\N	\N	\N	f
 2040255	40% boost to fire and wind ATK	40% boost to fire and wind ATK / 15% boost to fire and wind allies' HP	\N	\N	\N	\N	\N	\N	f
 2040259	40% boost to Fire and Dark Elemental ATK.	40% boost to Fire and Dark Elemental ATK. 15% boost to Fire and Dark HP.	\N	\N	\N	\N	\N	\N	f
-2040261	120% boost to Wind Elemental ATK.	140% boost to Wind Elemental ATK.	\N	\N	\N	\N	\N	\N	f
+2040261	120% boost to Wind Elemental ATK.	140% boost to Wind Elemental ATK.	160% boost to Wind Elemental ATK.	\N	\N	\N	\N	\N	f
 2040263	Boost to Dark Elemental ATK based on number of main allies' races (Up to 80%).	Boost to Dark Elemental ATK based on number of main allies' races (Up to 100%).	\N	\N	\N	\N	\N	\N	f
 2040269	70% boost to Fire's, Hellfire's, and Inferno's weapon skills.	110% boost to Fire's, Hellfire's, and Inferno's weapon skills.	130% boost to Fire's, Hellfire's, and Inferno's weapon skills.	\N	\N	\N	\N	\N	f
 2040270	70% boost to Water's, Tsunami's, and Hoarfrost's weapon skills.	110% boost to Water's, Tsunami's, and Hoarfrost's weapon skills.	130% boost to Water's, Tsunami's, and Hoarfrost's weapon skills.	\N	\N	\N	\N	\N	f
@@ -225,7 +225,7 @@
 2040275	30% boost to all Elemental ATK. 20% boost to double attack rate.	40% boost to all Elemental ATK. 30% boost to double attack rate.	50% boost to all Elemental ATK. 50% boost to double attack rate.	\N	5% boost to double attack rate.	10% boost to double attack rate.	20% boost to double attack rate. 10% boost to triple attack rate.	\N	f
 2040279	40% boost to Light ATK. 10% boost to Light allies' C.A. DMG.	50% boost to Light ATK. 15% boost to Light allies' C.A. DMG.	\N	\N	\N	\N	\N	\N	f
 2040281	40% boost to Wind Elemental ATK. Refresh effect to all Wind allies (Healing cap: 300).	60% boost to Wind Elemental ATK. Refresh effect to all Wind allies (Healing cap: 400).	80% boost to Wind Elemental ATK. Refresh effect to all Wind allies (Healing cap: 400).	\N	\N	\N	\N	\N	f
-2040282	40% boost to Fire ATK.	50% boost to Fire ATK. Speed up charge bar for single attacks.	\N	\N	\N	\N	\N	\N	f
+2040282	40% boost to Fire ATK.	50% boost to Fire ATK. 50% boost to charge bar gain for single attacks.	\N	\N	\N	\N	\N	\N	f
 2040285	50% boost to Earth Elemental ATK.	60% boost to Earth Elemental ATK.	110% boost to Earth Elemental ATK. All allies start battle with Banana.	\N	\N	\N	\N	\N	f
 2040286	40% boost to Dark Elemental ATK.	50% boost to Dark Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040288	40% boost to Dark ATK. 10% boost to Dark allies' HP.	50% boost to Dark ATK. 10% boost to Dark allies' HP.	60% boost to Dark ATK. 10% boost to Dark allies' HP. 10% boost to C.A. DMG.	100% boost to Dark ATK. 10% boost to Dark allies' HP. 10% boost to C.A. DMG.	\N	\N	\N	\N	f
@@ -235,7 +235,7 @@
 2040293	60% boost to Water Elemental ATK.	80% boost to Water Elemental ATK.	90% boost to Water Elemental ATK.	\N	\N	\N	\N	\N	f
 2040294	\N	40% boost to all Elemental ATK. 10% boost to max HP. 10% boost to double attack rate.	\N	\N	\N	\N	\N	\N	f
 2040295	40% boost to Wind Elemental ATK.	50% boost to Wind Elemental ATK. Boost to critical hit rate for Wind attacks.	\N	\N	\N	\N	\N	\N	f
-2040296	80% boost to Wind ATK / 10% boost to Wind allies' HP	100% boost to Wind ATK / 10% boost to Wind allies' HP	110% boost to Wind ATK / 20% boost to Wind allies' HP	\N	\N	\N	\N	\N	f
+2040296	80% boost to Wind Elemental ATK. 10% boost to Wind allies' HP.	100% boost to Wind Elemental ATK. 10% boost to Wind allies' HP.	110% boost to Wind Elemental ATK. 20% boost to Wind allies' HP.	\N	\N	\N	\N	\N	f
 2040297	120% boost to Wind Elemental ATK.	140% boost to Wind Elemental ATK.	\N	\N	\N	\N	\N	\N	f
 2040298	25% boost to Earth Elemental ATK (Boost rises based on turns passed [Up to 50%]).	30% boost to Earth Elemental ATK (Boost rises based on turns passed [Up to 60%]).	\N	\N	\N	\N	\N	\N	f
 2040299	40% boost to Light Elemental ATK	50% boost to Light Elemental ATK / 10% boost to Light allies' HP	50% boost to Light Elemental ATK / 20% boost to Light allies' HP / 25% boost to Debuff Resistance	\N	\N	\N	\N	\N	f
@@ -320,7 +320,7 @@
 2040399	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 80%).	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 100%).	Boost to Dark Elemental ATK based on number of Dark weapons equipped (Up to 120%).	\N	\N	\N	\N	\N	f
 2040400	40% boost to Earth Elemental ATK. 20% boost to Earth allies' C.A. DMG.	50% boost to Earth Elemental ATK. 20% boost to Earth allies' C.A. DMG.	\N	\N	\N	\N	\N	\N	f
 2040401	100% boost to Earth ATK.	120% boost to Earth ATK.	140% boost to Earth ATK.	\N	10% boost to Earth's, Mountain's, and Terra's weapon skills.	20% boost to Earth's, Mountain's, and Terra's weapon skills.	40% boost to Earth's, Mountain's, and Terra's weapon skills.	\N	f
-2040402	80% boost to Wind Elemental ATK.	100% boost to Wind Elemental ATK.	110% boost to Wind Elemental ATK.	\N	Wind allies start battle with Veil.	Wind allies start battle with Veil and boost to multiattack rate for 1 turn.	Wind allies start battle with Veil and deal triple attacks for 1 turn.	\N	f
+2040402	80% boost to Wind Elemental ATK.	100% boost to Wind Elemental ATK.	110% boost to Wind Elemental ATK.	\N	Wind allies start battle with Veil.	Wind allies start battle with Veil and boost to multiattack rate for 1 turn.	Wind allies start battle with Veil and Guaranteed TA.	\N	f
 2040403	70% boost to Earth Elemental ATK. 20% boost to Earth allies' HP.	90% boost to Earth Elemental ATK. 20% boost to Earth allies' HP.	100% boost to Earth Elemental ATK. 20% boost to Earth allies' HP.	\N	Earth allies start battle with Dispel Cancel.	Earth allies start battle with Dispel Cancel and Strength.	Earth allies start battle with Dispel Cancel and Strength.	\N	f
 2040404	60% boost to Earth allies' ATK. 10% boost to Earth allies' chain burst.	60% boost to Earth allies' ATK. 10% boost to Earth allies' HP. 10% boost to Earth allies' chain burst.	60% boost to Earth allies' ATK. 20% boost to Earth allies' HP. 20% boost to Earth allies' chain burst.	\N	\N	\N	\N	\N	f
 2040405	50% boost to all allies' ATK. 10% boost to C.A. DMG. 20% boost to HP.	50% boost to all allies' ATK. 20% boost to C.A. DMG. 20% boost to HP.	50% boost to all allies' ATK. 30% boost to C.A. DMG. 20% boost to HP	\N	Yorozuya starts battle with Veil.	Yorozuya starts battle with Veil and ATK Up.	Yorozuya starts battle with Veil, ATK Up, and Guaranteed TA.	\N	f
@@ -337,3 +337,9 @@
 2040416	100% boost to Fire ATK.	120% boost to Fire ATK.	130% boost to Fire ATK. Hekate's Embrace to Fire MC at battle start. (Deals 700% Fire damage to all foes every 3 turns [Damage cap: ~1,160,000].)	\N	\N	\N	Hekate's Embrace to Fire MC at battle start. (Deals 700% Fire damage to all foes every 3 turns [Damage cap: ~1,160,000].)	\N	f
 2040417	100% boost to all Elemental ATK	120% boost to all Elemental ATK	140% boost to all Elemental ATK	\N	\N	\N	Can call 2 summons per turn.	\N	f
 2040418	100% boost to Dark ATK.	120% boost to Dark ATK.	140% boost to Dark ATK.	\N	10% boost to Dark's, Hatred's, and Oblivion's weapon skills.	20% boost to Dark's, Hatred's, and Oblivion's weapon skills.	40% boost to Dark's, Hatred's, and Oblivion's weapon skills.	\N	f
+2040419	50% boost to all allies' ATK 10% boost to chain burst All allies start battle with +10% charge bar.	50% boost to all allies' ATK 20% boost to chain burst All allies start battle with +10% charge bar.	50% boost to all allies' ATK 20% boost to chain burst All allies start battle with +20% charge bar.	\N	\N	\N	\N	\N	f
+2040420	80% boost to Fire Elemental ATK.	100% boost to Fire Elemental ATK.	110% boost to Fire Elemental ATK. Boost to main allies' triple attack rate based on how low their HP is.	\N	Fire allies start battle with Dispel Cancel.	Fire allies start battle with Dispel Cancel.	Fire allies start battle with Dispel Cancel and Jammed.	\N	f
+2040421	60% boost to Dark Elemental ATK.	70% boost to Dark Elemental ATK.	80% boost to Dark Elemental ATK.	\N	\N	\N	\N	\N	f
+2040422	40% boost to all allies' ATK. 20% boost to C.A. DMG.	50% boost to all allies' ATK. 20% boost to C.A. DMG. 10% boost to charge bars at battle start.	50% boost to all allies' ATK. 30% boost to C.A. DMG. 20% boost to charge bars at battle start.	\N		Yuji Itadori and Megumi Fushiguro start battle with Revitalize and Strength.	Yuji Itadori and Megumi Fushiguro start battle with Revitalize, Strength, and Guaranteed TA.	\N	f
+2040423	100% boost to Water Elemental ATK. 30% boost to Water allies' charge bars at battle start.	120% boost to Water Elemental ATK. 30% boost to Water allies' charge bars at battle start.	130% boost to Water Elemental ATK. 30% boost to Water allies' charge bars at battle start.	\N	Water allies start battle with C.A. DMG Boosted (1 time).	Water allies start battle with C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time).	Water allies start battle with C.A. DMG Boosted (1 time) and C.A. DMG Cap Boosted (1 time). Water MC also starts battle with C.A. Reactivation (1 time).	\N	f
+2040424	100% boost to wind ATK	120% boost to wind ATK	130% boost to Wind ATK. Maddened Eyes effect to Wind MC at battle start. ('Every 3 turns:' MC gains TA Up and Bonus Wind DMG (1 time).)	\N	\N	\N	Maddened Eyes effect to Wind MC at battle start. ('Every 3 turns:' MC gains TA Up and Bonus Wind DMG (1 time).)	\N	f

@@ -2,6 +2,7 @@ import { pool } from '../db';
 import { previews_socket } from '../previews-server'
 
 import { buildWhereClause, sendError } from './utils'
+import logger from '../logger';
 
 /**
  * Characters
@@ -51,7 +52,10 @@ const getCharacterBySkinId = (id) => {
 export function getCharacter (req, response) {
   getCharacterById(req.params.id)
     .then(res => response.status(200).json(res.rows[0]))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getCharacter", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function getAllCharacters (req, response) {
@@ -69,7 +73,10 @@ export function getAllCharacters (req, response) {
     FROM Character INNER JOIN WeaponSpecialty ON Character.characterId = WeaponSpecialty.characterId
     ${query} GROUP BY Character.characterId ORDER BY Character.nameEn ASC;`, values)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getAllCharacters", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 /**
@@ -99,7 +106,10 @@ const getSkillByName = (name) => {
 export function getSkill (req, response) {
   getSkillById(req.params.id)
     .then(res => response.status(200).json(res.rows[0]))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getSkill", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function getSkills (req, response) {
@@ -111,7 +121,10 @@ export function getSkills (req, response) {
 
   pool.query('SELECT skillId AS id, nameEn AS n FROM ClassSkill ' + query + ' OR family IS NULL ORDER BY CASE WHEN family Is NULL Then 1 Else 0 End, family, nameEn ASC;', values)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getSkills", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 /**
@@ -158,7 +171,10 @@ const getSummonById = (id) => {
 export function getSummon (req, response) {
   getSummonById(req.params.id)
     .then(res => response.status(200).json(res.rows[0]))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getSummon", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function getAllSummons (req, response) {
@@ -169,7 +185,10 @@ export function getAllSummons (req, response) {
 
   pool.query('SELECT summonId AS id, nameEn AS n, nameJp AS nj, rarityId AS ri, elementId AS e FROM Summon ' + query + ' ORDER BY nameEn ASC;', values)
     .then(res => response.status(200).json(res.rows))
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getAllSummons", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 /**
@@ -192,13 +211,19 @@ const getClassById = (id) => {
 export function getClass (req, response) {
   getClassById(req.params.id)
       .then(res => response.status(200).json(res.rows[0]))
-      .catch(() => response.sendStatus(400));
+      .catch(e => {
+        logger.error("getClass", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 export function getAllClasses (req, response) {
   pool.query('SELECT classId AS id, nameEn AS n, row FROM Class ORDER BY row DESC, nameEn ASC;')
       .then(res => response.status(200).json(res.rows))
-      .catch(() => response.sendStatus(400));  
+      .catch(e => {
+        logger.error("getAllClasses", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 /**
@@ -238,7 +263,10 @@ const getWeaponById = (id) => {
 export function getWeapon (req, response) {
   getWeaponById(req.params.id)
       .then(res => response.status(200).json(res.rows[0]))
-      .catch(() => response.sendStatus(400));
+      .catch(e => {
+        logger.error("getWeapon", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 export function getAllWeapons (req, response) {
@@ -250,7 +278,10 @@ export function getAllWeapons (req, response) {
 
   pool.query('SELECT weaponId AS id, nameEn AS n, nameJp AS nj, rarityId AS ri, elementId AS e, weaponTypeId AS w FROM Weapon ' + query + ' ORDER BY nameEn ASC;', values)
       .then(res => response.status(200).json(res.rows))
-      .catch(() => response.sendStatus(400));
+      .catch(e => {
+        logger.error("getAllWeapons", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 /**
@@ -303,7 +334,10 @@ export function getPartyById (req, response) {
       res.rows[0].partydata.video = res.rows[0].video;
       getParty(res.rows[0].partydata, true, response)
     })
-    .catch(() => { response.sendStatus(400) });
+    .catch(e => {
+      logger.error("getPartyById", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 const getParty = (party, getSkillsById, response) => {
@@ -375,7 +409,10 @@ const getParty = (party, getSkillsById, response) => {
 
       response.status(200).json(party);
     })
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("getParty", {e: e});
+      response.sendStatus(400)
+    });
 }
 
 function saveParty_impl (req, response, elementId) {
@@ -399,7 +436,10 @@ function saveParty_impl (req, response, elementId) {
       response.status(200).json(res.rows[0]);
       previews_socket.write("p" + res.rows[0].id + '\n');
     })
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("saveParty_impl1", {e: e, req: req});
+      response.sendStatus(400)
+    });
   }
   // Modify existing party
   else {
@@ -411,9 +451,11 @@ function saveParty_impl (req, response, elementId) {
     pool.query(`SELECT userid FROM Party ${query}`, values)
       .then(res => {
         if (res.rows.length !== 1) {
+          logger.error("saveParty_impl4", {e: e, req: req});
           return sendError(response, 400, "Party not found");
         }
         if (res.rows[0].userid !== userId) {
+          logger.error("saveParty_impl5", {e: e, req: req});
           return sendError(response, 400, "User doesn't own this party");
         }
 
@@ -424,9 +466,15 @@ function saveParty_impl (req, response, elementId) {
           response.status(200).json({id: partyId});
           previews_socket.write("p" + partyId + '\n');
         })
-        .catch(_ => response.sendStatus(400));
+        .catch(e => {
+          logger.error("saveParty_impl2", {e: e, req: req});
+          response.sendStatus(400)
+        });
       })
-      .catch(() => response.sendStatus(400));
+      .catch(e => {
+        logger.error("saveParty_impl3", {e: e, req: req});
+        response.sendStatus(400)
+      });
   }
 }
 
@@ -447,7 +495,10 @@ export function saveParty (req, response) {
         const elementId = resElement.rows[0].e;
         return saveParty_impl(req, response, elementId);
       })
-      .catch(() => response.sendStatus(400));
+      .catch(e => {
+        logger.error("saveParty", {e: e, req: req});
+        response.sendStatus(400)
+      });
   }
   else {
     return saveParty_impl(req, response, null);
@@ -471,9 +522,11 @@ export function deleteParty (req, response) {
   pool.query(`SELECT userid FROM Party ${query};`, values)
     .then(res => {
       if (res.rows.length !== 1) {
+        logger.error("deleteParty4", {e: e, req: req});
         return sendError(response, 400, "Party not found");
       }
       if (res.rows[0].userid !== userId) {
+        logger.error("deleteParty5", {e: e, req: req});
         return sendError(response, 400, "User doesn't own this party");
       }
       
@@ -481,11 +534,20 @@ export function deleteParty (req, response) {
         .then(() => {
           return pool.query(`DELETE FROM Party ${query};`, values)
             .then(() => response.sendStatus(200))
-            .catch(() => response.sendStatus(400));
+            .catch(e => {
+              logger.error("deleteParty1", {e: e, req: req});
+              response.sendStatus(400)
+            });
         })
-        .catch(() => response.sendStatus(400));
+        .catch(e => {
+          logger.error("deleteParty2", {e: e, req: req});
+          response.sendStatus(400)
+        });
     })
-    .catch(() => response.sendStatus(400));
+    .catch(e => {
+      logger.error("deleteParty3", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function listParties (req, response) {
@@ -497,7 +559,10 @@ export function listParties (req, response) {
 
   pool.query(`SELECT partyId AS id, partyName AS n, elementId AS e, public AS pub FROM Party ${query} ORDER BY partyId;`, values)
     .then(res => response.status(200).json(res.rows))
-    .catch((e) => response.sendStatus(400));
+    .catch(e => {
+      logger.error("listParties", {e: e, req: req});
+      response.sendStatus(400)
+    });
 }
 
 export function likeParty (req, response) {
@@ -524,9 +589,10 @@ export function likeParty (req, response) {
     } finally {
       client.release();
     }
-  })().catch(() => {
+  })().catch(e => {
+    logger.error("likeParty", {e: e, req: req});
     response.sendStatus(400)
-  })
+  });
 }
 
 export function unlikeParty (req, response) {
@@ -563,7 +629,8 @@ export function unlikeParty (req, response) {
     } finally {
       client.release();
     }
-  })().catch(() => {
+  })().catch(e => {
+    logger.error("unlikeParty", {e: e, req: req});
     response.sendStatus(400)
-  })
+  });
 }

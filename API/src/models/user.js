@@ -4,6 +4,7 @@ import crypto from 'crypto'
 
 import config from '../config';
 import { pool } from '../db';
+import logger from '../logger';
 
 import { buildWhereClause, sendSuccess, sendError, sendResetPasswordEmail } from './utils'
 
@@ -68,11 +69,15 @@ export function userRegister(req, response) {
             sendError(response, 422, "Email address already registered")
           }
           else {
+            logger.error("userRegister1", {e: e});
             sendError(response, 500, "There was a problem while registering the user (" + e.code + ")")
           }          
         });
     })
-    .catch(() => sendError(response, 500, "Cannot register the user"));
+    .catch(e => {
+      logger.error("userRegister2", {e: e});
+      sendError(response, 500, "Cannot register the user")
+    });
 }
 
 /**
@@ -91,7 +96,10 @@ export function userInfos(req, response) {
       }
       response.status(200).json(data);
     })
-    .catch(_ => response.sendStatus(400));
+    .catch(e => {
+      logger.error("userInfos", {e: e});
+      response.sendStatus(400)
+    });
 }
 
 /**
@@ -115,7 +123,7 @@ export function userSetEmail(req, response) {
         sendError(response, 422, "Email address already registered");
       }
       else {
-        response.sendStatus(400);
+        logger.error("userSetEmail", {e: e});
       }
     });
 }
@@ -158,9 +166,15 @@ export function userSendResetPassword(req, response) {
             // Send the email
             sendResetPasswordEmail(username, email, token)
               .then(_ => response.sendStatus(200))
-              .catch(_ => response.sendStatus(400));
+              .catch(e => {
+                logger.error("userSendResetPassword1", {e: e});
+                response.sendStatus(400)
+              });
           })
-          .catch(_ => response.sendStatus(400));
+          .catch(e => {
+            logger.error("userSendResetPassword2", {e: e});
+            response.sendStatus(400)
+          });
       });
     })
     .catch(_ => sendError(response, 422, "Unknown email address"));
@@ -214,7 +228,10 @@ export function userResetPassword(req, response) {
           pool.query(`UPDATE UserAccount SET (password, resetToken, resetTimestamp) = ($2, $3, $4) ${query};`, values)
             .then(_ => response.sendStatus(200))
         })
-        .catch(() => sendError(response, 500, "Cannot change the password"));
+        .catch(e => {
+          logger.error("userResetPassword", {e: e});
+          sendError(response, 500, "Cannot change the password")
+        });
     })
     .catch(_ => sendError(response, 422, "Unknown email address"));
 }
@@ -273,5 +290,8 @@ export function userDelete(req, response) {
       client.release();
     }
   })()
-    .catch(_ => sendError(response, 500, "Failed to delete user"))
+    .catch(e => {
+      logger.error("userDelete", {e: e});
+      sendError(response, 500, "Failed to delete user");
+    })
 }

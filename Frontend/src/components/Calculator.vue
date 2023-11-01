@@ -31,11 +31,15 @@
     <!-- Unit box -->
     <div v-for="(_, unitKey) in progress" :key="unitKey" class="flex flex-col mt-8 border-4 border-secondary rounded p-1 lg:p-4 bg-tertiary w-full">
 
-      <span class="text-3xl font-bold self-center">
+      <span class="flex flex-row justify-between text-3xl font-bold">
+        <div></div>
         <a class="cursor-pointer" @click="toggleFolded(progress[unitKey])">
           {{ getUnits[unitKey].name }}
           <fa-icon v-if="progress[unitKey].fold" :icon="['fas', 'angle-right']" class="ml-2"></fa-icon>
           <fa-icon v-else :icon="['fas', 'angle-down']" class="ml-2"></fa-icon>
+        </a>
+        <a class="cursor-pointer" @click="removeUnit(unitKey)" title="Remove">
+          <fa-icon :icon="['fas', 'trash']" class="ml-2"></fa-icon>
         </a>
       </span>
 
@@ -174,8 +178,11 @@ export default {
   },
   methods: {
     addUnit() {
-      this.$set(this.progress, this.unit_index, new UnitProgress(this.unitsData.materials.length));      
+      this.$set(this.progress, this.unit_index, new UnitProgress(this.unitsData.materials.length));
       this.unit_index = -1;
+    },
+    removeUnit(unitKey) {
+      this.$delete(this.progress, unitKey);
     },
     getItemProgressFor(unitKey, item, materialStep) {
       let itemRefs = [];

@@ -165,69 +165,6 @@ const CAT_STANDARD = {
       },
     },
   },
-  50: {
-    name: 'Tier 1 Summons',
-    stars: 5,
-    cost: 40,
-    magfes: 20,
-    times: 2,
-    raids: {
-      '300411/1/0/1313': {
-          name: 'Twin Elem.',
-          namejp: 'フラム',
-          icon: 'whorlfire',
-      },
-      '300411/1/0/1111': {
-          name: 'Twin Elem.',
-          icon: 'reddragonscale',
-      },
-      '300381/1/0/1323': {
-          name: 'Macula M.',
-          namejp: 'マキュラ',
-          icon: 'whorlwater',
-      },
-      '300381/1/0/1121': {
-          name: 'Macula M.',
-          icon: 'bluedragonscale',
-      },
-      '300391/1/0/1333': {
-          name: 'Medusa',
-          namejp: 'メドゥーサ',
-          icon: 'whorlearth',
-      },
-      '300391/1/0/1131': {
-          name: 'Medusa',
-          icon: 'browndragonscale',
-      },
-      '300421/1/0/1343': {
-          name: 'Nezha',
-          namejp: 'ナタク',
-          icon: 'whorlwind',
-      },
-      '300421/1/0/1141': {
-          name: 'Nezha',
-          icon: 'greendragonscale',
-      },
-      '300431/1/0/1353': {
-          name: 'Apollo',
-          namejp: 'アポロ',
-          icon: 'whorllight',
-      },
-      '300431/1/0/1151': {
-          name: 'Apollo',
-          icon: 'whitedragonscale',
-      },
-      '300401/1/0/1363': {
-          name: 'D.A.Olivia',
-          namejp: 'オリヴィエ',
-          icon: 'whorldark',
-      },
-      '300401/1/0/1161': {
-          name: 'D.A.Olivia',
-          icon: 'blackdragonscale',
-      },
-    }
-  },
   60: {
     name: 'Tier 2 Summons',
     stars: 6,
@@ -235,61 +172,43 @@ const CAT_STANDARD = {
     magfes: 20,
     times: 2,
     raids: {
-      '301071/1/0/1313': {
+      '301071/1/0/47': {
           name: 'Athena',
           namejp: 'アテナ',
-          icon: 'whorlfire',
       },
-      '301071/1/0/1111': {
-          name: 'Athena',
-          icon: 'reddragonscale',
-      },
-      '300481/1/0/1323': {
+      '300481/1/0/48': {
           name: 'Grani',
           namejp: 'グラニ',
-          icon: 'whorlwater',
       },
-      '300481/1/0/1121': {
-          name: 'Grani',
-          icon: 'bluedragonscale',
-      },
-      '301371/1/0/1333': {
+      '301371/1/0/49': {
           name: 'Baal',
           namejp: 'バアル',
-          icon: 'whorlearth',
       },
-      '301371/1/0/1131': {
-          name: 'Baal',
-          icon: 'browndragonscale',
-      },
-      '301381/1/0/1343': {
+      '301381/1/0/32': {
           name: 'Garuda',
           namejp: 'ガルダ',
-          icon: 'whorlwind',
       },
-      '301381/1/0/1141': {
-          name: 'Garuda',
-          icon: 'greendragonscale',
-      },
-      '300461/1/0/1353': {
+      '300461/1/0/50': {
           name: 'Odin',
           namejp: 'オーディン',
-          icon: 'whorllight',
       },
-      '300461/1/0/1151': {
-          name: 'Odin',
-          icon: 'whitedragonscale',
-      },
-      '300551/1/0/1363': {
+      '300551/1/0/51': {
           name: 'Lich',
           namejp: 'リッチ',
-          icon: 'whorldark',
-      },
-      '300551/1/0/1161': {
-          name: 'Lich',
-          icon: 'blackdragonscale',
       },
     }
+  },
+  61: {
+    name: 'Primal Legends Pro',
+    stars: 5,
+    cost: 480,
+    magfes: 240,
+    times: 1,
+    raids: {
+      '305471/28': {
+        name: 'All Tier 2 Summons',       
+      },
+    },
   },
   70: {
     name: 'Nightmare',
@@ -401,43 +320,18 @@ const CAT_IMPOSSIBLE = {
       },
     }
   },
-  1020: {
-    name: 'Tier 1 Summons',
+  1011: {
+    name: 'Omega HL Pro',
     tier: 'impossible',
-    stars: 2,
-    cost: 50,
-    magfes: 25,
+    stars: 1,
+    cost: 600,
+    magfes: 300,
     times: 1,
     raids: {
-      '300501/1/0/41': {
-        name: 'Twin Elements',
-        namejp: 'フラムＨＬ'
+      '305461/28': {
+        name: 'All Omega HL',       
       },
-      '300521/1/0/42': {
-        name: 'Macula Marius',
-        namejp: 'マキュラＨＬ'
-      },
-      '300541/1/0/43': {
-        name: 'Medusa',
-        namejp: 'メドゥーサＨＬ'
-      },
-      '300451/1/0/44': {
-        name: 'Nezha',
-        namejp: 'ナタクＨＬ'
-      },
-      '300571/1/0/45': {
-        name: 'Apollo',
-        namejp: 'アポロＨＬ'
-      },
-      '300591/1/0/46': {
-        name: 'D.A.Olivia',
-        namejp: 'オリヴィエＨＬ'
-      },
-      '300471/1/0/1204': {
-        name: 'Rose Queen',
-        namejp: 'ＪＫ'
-      },
-    }
+    },
   },
   1030: {
     name: 'Regalia',
@@ -507,40 +401,6 @@ const CAT_IMPOSSIBLE = {
       },
     }
   },
-  1040: {
-    name: 'Epic Summons',
-    tier: 'impossible',
-    stars: 4,
-    cost: 50,
-    magfes: 25,
-    times: 1,
-    raids: {
-      '302751/1/0/41': {
-        name: 'Prometheus',
-        namejp: 'プロメテウス'
-      },
-      '303041/1/0/42': {
-        name: 'Ca Ong',
-        namejp: 'カーオン'
-      },
-      '302711/1/0/43': {
-        name: 'Gilgamesh',
-        namejp: 'ギルガメッシュ'
-      },
-      '303051/1/0/44': {
-        name: 'Morrigna',
-        namejp: 'バイヴカハ'
-      },
-      '303061/1/0/45': {
-        name: 'Hector',
-        namejp: 'ヘクトル'
-      },
-      '303071/1/0/46': {
-        name: 'Anubis',
-        namejp: 'アヌビス'
-      },
-    }
-  },
   1041: {
     name: 'Malice',
     tier: 'impossible',
@@ -593,6 +453,15 @@ const CAT_IMPOSSIBLE = {
       '305251/1/0/102': {
         name: 'Phronesis',
         icon: 'indicuscentrum',
+      },
+      '305481/1/0/101': {
+        name: 'Legion Void',
+        namejp: 'レギオン・ヴォイド',
+        icon: 'rubeuscentrum',
+      },
+      '305481/1/0/104': {
+        name: 'Legion Void',
+        icon: 'galbinuscentrum',
       },
     }
   },
@@ -743,6 +612,10 @@ const CAT_IMPOSSIBLE = {
         name: 'Seofon',
         namejp: 'シエテ',
       },
+      '305421/1/0/553': {
+        name: 'Cosmos',
+        namejp: '',
+      },
       '305431/1/0/554': {
         name: 'Agastia',
         namejp: 'アガスティア',
@@ -761,6 +634,10 @@ const CAT_IMPOSSIBLE = {
         name: 'Rage of Super Ultimate Bahamut',
         namejp: 'スーパーアルティメットバハムート',
       },
+      '305491/1/0/549': {
+        name: 'Hexachromatic Hierarch',
+        namejp: '天元たる六色の理',
+      }
     }
   },
 };
@@ -794,6 +671,72 @@ const CAT_SOLO = {
       },
     }
   },
+  2550: {
+    name: 'Tier 1 Showdowns',
+    stars: 2,
+    times: 1,
+    cost: 50,
+    magfes: 25,
+    raids: {
+      '103791/3': {
+          name: 'Twin Elem.',
+          namejp: 'フラム',
+      },
+      '103801/3': {
+          name: 'Macula M.',
+          namejp: 'マキュラ',
+      },
+      '103811/3': {
+          name: 'Medusa',
+          namejp: 'メドゥーサ',
+      },
+      '103821/3': {
+          name: 'Nezha',
+          namejp: 'ナタク',
+      },
+      '103831/3': {
+          name: 'Apollo',
+          namejp: 'アポロ',
+      },
+      '103841/3': {
+          name: 'D.A.Olivia',
+          namejp: 'オリヴィエ',
+      },
+    }
+  },
+  2570: {
+    name: 'Epic Showdowns',
+    stars: 3,
+    cost: 50,
+    magfes: 25,
+    times: 1,
+    raids: {
+      '103851/3': {
+        name: 'Prometheus',
+        namejp: 'プロメテウス'
+      },
+      '103861/3': {
+        name: 'Ca Ong',
+        namejp: 'カーオン'
+      },
+      '103871/3': {
+        name: 'Gilgamesh',
+        namejp: 'ギルガメッシュ'
+      },
+      '103881/3': {
+        name: 'Morrigna',
+        namejp: 'バイヴカハ'
+      },
+      '103891/3': {
+        name: 'Hector',
+        namejp: 'ヘクトル'
+      },
+      '103901/3': {
+        name: 'Anubis',
+        namejp: 'アヌビス'
+      },
+    }
+  },
   2600: {
     name: 'Miscellaneous',
     stars: 1,
@@ -808,6 +751,11 @@ const CAT_SOLO = {
         name: 'Showdown Pro',
         cost: 300,
         magfes: 150,
+      },
+      '103991/28': {
+        name: 'Clash Pro',
+        cost: 600,
+        magfes: 300,
       }
     }
   }

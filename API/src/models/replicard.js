@@ -1,5 +1,6 @@
 import { pool } from '../db';
 import { buildWhereClause } from './utils'
+import logger from '../logger';
 
 export function replicardLoad (req, response) {
   const [query, values] = buildWhereClause({
@@ -14,7 +15,10 @@ export function replicardLoad (req, response) {
         }
         response.status(200).json(data);
       })
-     .catch(() => { response.sendStatus(400) });
+      .catch(e => {
+        logger.error("replicardLoad", {e: e, req: req});
+        response.sendStatus(400)
+      });
 }
 
 export function replicardSave (req, response) {
@@ -33,5 +37,8 @@ export function replicardSave (req, response) {
    `INSERT INTO Arcarum (userId, replicardData) VALUES ($1, $2)
     ON CONFLICT ON CONSTRAINT arcarum_pkey DO UPDATE SET (userId, replicardData) = (excluded.userId, excluded.replicardData);`, values)
   .then(() => response.sendStatus(200))
-  .catch(() => { response.sendStatus(400) });
+  .catch(e => {
+    logger.error("replicardSave", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

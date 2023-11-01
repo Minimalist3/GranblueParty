@@ -31,7 +31,8 @@ const config = {
   mailinjet: {
     public_key: '',
     private_key: '',
-  }
+  },
+  logs: '/home/.../API/logs'
 };
 
 module.exports = config;

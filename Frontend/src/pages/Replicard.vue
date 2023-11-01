@@ -47,7 +47,13 @@
         </a>
       </div>
 
-      <div v-if="currentZone.boss3">
+      <div v-if="currentZone.boss4">
+        <div><span class="text-pink-500">Pink:</span> {{ currentZone.boss1 }} (Gospel of Egeiro)</div>
+        <div><span class="text-emerald-500">Green:</span> {{ currentZone.boss2 }} (Gospel of Genea)</div>
+        <div><span class="text-amber-500">Yellow:</span> {{ currentZone.boss3 }} (Gospel of Thysia)</div>
+        <div><span class="text-blue-500">Blue:</span> {{ currentZone.boss4 }} (Gospel of Analipsis)</div>
+      </div>
+      <div v-else-if="currentZone.boss3">
         <div><span class="text-pink-500">Pink:</span> {{ currentZone.boss1 }} (Organ)</div>
         <div><span class="text-emerald-500">Green:</span> {{ currentZone.boss2 }} (Rib)</div>
         <div><span class="text-amber-500">Yellow:</span> {{ currentZone.boss3 }} (Core)</div>
@@ -211,6 +217,15 @@ const ZONES = {
     stars: [
     ]
   },
+  'M': {
+    name: 'Mundus',
+    boss1: ' ',
+    boss2: ' ',
+    boss3: ' ',
+    boss4: ' ',
+    width: 960,
+    stars: []
+  }
 }
 
 export default {
@@ -225,7 +240,7 @@ export default {
     title: 'Granblue.Party - Replicard Sandbox Maps',
     desc: 'View Replicard Sandbox Maps with loots, colors, and progression for each node',
     image: 'https://www.granblue.party/img/card_replicard.jpg',
-    keywords: 'Replicard, Sandbox, Maps, Arcarum, Evoker, Eletio, Faym, Goliath, Harbinger, Invidia, Joculator, Kalendae, Liber'
+    keywords: 'Replicard, Sandbox, Maps, Arcarum, Evoker, Eletio, Faym, Goliath, Harbinger, Invidia, Joculator, Kalendae, Liber, Mundus'
   },
   data() {
     return {

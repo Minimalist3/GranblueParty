@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col" :style="'width: ' + width + 'px;'">
+  <div class="flex flex-col relative" :style="'width: ' + width + 'px;'">
     <a
       class="text-xs text-primary h-5 px-1 text-center truncate"
       target="_blank"
@@ -15,6 +15,13 @@
       :src="'/img/unit_small/' + unit.id + '000.jpg'"
       @click="$emit('left-click-unit')"
       @contextmenu.prevent="$emit('right-click-unit')"
+    >
+    <img
+      v-if="isSpark === true"
+      class="absolute bottom-0 right-0 pointer-events-none"
+      height="39"
+      width="38"
+      src="/img/item/ceruleanspark.png"
     >
   </div>
 </template>
@@ -35,6 +42,10 @@ export default {
     height: {
       type: Number,
       default: 60
+    },
+    isSpark: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

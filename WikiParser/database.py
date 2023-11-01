@@ -427,7 +427,8 @@ all_tables = [
           Col('characterId', 'INT NOT NULL REFERENCES Character(characterId)', primary=True),
           Col('stars', 'INT'),
           Col('owned', 'BOOLEAN NOT NULL'),
-          Col('awakening', 'INT')
+          Col('awakening', 'INT'),
+          Col('ring', 'BOOLEAN DEFAULT FALSE'),
         ])
         .setDoNotCopy()
         .setDoNotUpdate(),

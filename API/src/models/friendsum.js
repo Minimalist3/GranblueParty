@@ -1,6 +1,7 @@
 import { pool } from '../db';
 import { previews_socket } from '../previews-server'
 import { buildWhereClause } from './utils'
+import logger from '../logger';
 
 export function friendSummonsLoad (req, response, id) {
   let query, values;
@@ -36,13 +37,20 @@ export function friendSummonsLoad (req, response, id) {
               updated: res.rows[0].updated,
             })
           )
-          .catch(_ => response.sendStatus(400));
+          .catch(e => {
+            logger.error("friendSummonsLoad1", {e: e, req: req});
+            response.sendStatus(400);
+          });
       }
       else {
+        logger.error("friendSummonsLoad2", {req: req});
         response.sendStatus(400);
       }
     })
-    .catch(_ => response.sendStatus(400));
+    .catch(e => {
+      logger.error("friendSummonsLoad3", {e: e, req: req});
+      response.sendStatus(400);
+    });
 }
 
 export function friendSummonsSave (req, response) {
@@ -66,5 +74,8 @@ export function friendSummonsSave (req, response) {
     response.sendStatus(200);
     previews_socket.write("f" + req.user.userid + '\n');
   })
-  .catch(_ => response.sendStatus(400));
+  .catch(e => {
+    logger.error("friendSummonsSave", {e: e, req: req});
+    response.sendStatus(400)
+  });
 }

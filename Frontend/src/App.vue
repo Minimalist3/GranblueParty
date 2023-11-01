@@ -41,6 +41,7 @@
             <div class="absolute left-0 top-full pb-2 bg-tertiary shadow-md rounded-b border-t border-primary gbf-menu-hover z-30">
               <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
               <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
+              <router-link class="gbf-menu-link" to="/calcbullets">Bullets</router-link>
               <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
               <router-link class="gbf-menu-link" to="/calcdread">Dread Barrage Tokens</router-link>
               <router-link class="gbf-menu-link" to="/calcevent">New Event Tokens</router-link>
@@ -62,6 +63,7 @@
           <router-link class="flex items-center gbf-menu-link h-12" to="/replicard">Replicard Sandbox</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calceternal">Eternals Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevoker">Evokers Calc.</router-link>
+          <router-link class="flex items-center gbf-menu-link h-12" to="/calcbullets">Bullets Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcgw">Guild Wars Tokens Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcdread">Dread Barrage Tokens Calc.</router-link>
           <router-link class="flex items-center gbf-menu-link h-12" to="/calcevent">New Event Tokens Calc.</router-link>
@@ -110,6 +112,7 @@
           <div class="px-2 flex flex-col bg-tertiary">
             <router-link class="gbf-menu-link" to="/calceternal">Eternals</router-link>
             <router-link class="gbf-menu-link" to="/calcevoker">Evokers</router-link>
+            <router-link class="gbf-menu-link" to="/calcbullets">Bullets</router-link>
             <router-link class="gbf-menu-link" to="/calcgw">Guild Wars Tokens</router-link>
             <router-link class="gbf-menu-link" to="/calcdread">Dread Barrage Tokens</router-link>
             <router-link class="gbf-menu-link" to="/calcevent">New Events Tokens</router-link>

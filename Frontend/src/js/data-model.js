@@ -138,6 +138,15 @@ export default {
     show(e) { return this.data[e ? 0 : 1].checked; },
     add(e, count) { count[e ? 0 : 1]++; },
   },
+  'ring': {
+    data: [
+      { name: 'Yes', checked: true },
+      { name: 'No', checked: true },
+    ],
+    expand(obj) { return this.data[obj.ring ? 0 : 1].name; },
+    show(e) { return this.data[e ? 0 : 1].checked; },
+    add(e, count) { count[e ? 0 : 1]++; },
+  },
   'pub': {
     data: [
       { name: 'Yes', checked: true },

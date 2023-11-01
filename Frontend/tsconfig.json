@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true,
+    "outDir": "build"
+  },
+  "vueCompilerOptions": {
+    "target": 2.7,
+  },
+  "exclude": ["./node_modules", "./dist", "./dist_dev", "./dist_new", "./dist_old", "build"]
+}
